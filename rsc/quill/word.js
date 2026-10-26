@@ -24,6 +24,28 @@ function make(tag, cls, css) {
   return e;
 }
 
+// Where the nib lifts the writing: the strokes are centre lines and the slanted nib hangs below
+// them by half its height, so the writing is drawn this far up to put the lowest ink on the baseline.
+function nibDropOf(o) { return Math.sin(o.nibAngle * Math.PI / 180) * o.nibWidth / 2; }
+
+// A function giving, in page coordinates, the middle of the ink of letter `k` of a word: the
+// middle of the box around that glyph's strokes (the nib spreads ink evenly either side).
+function inkCentreOf(cell, word, o, pad, advance) {
+  var chars = Array.from(word);
+  return function (k) {
+    var g = getGlyph(chars[k], o.style), x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+    g.strokes.forEach(function (s) {
+      s.forEach(function (p) { x0 = Math.min(x0, p[0]); x1 = Math.max(x1, p[0]); y0 = Math.min(y0, p[1]); y1 = Math.max(y1, p[1]); });
+    });
+    var left = 0;
+    for (var i = 0; i < k; i++) left += advance(chars[i]);
+    var r = cell.getBoundingClientRect();
+    // the cell's top is ASCENT above the baseline, less the lift; glyph y points up
+    var baseline = r.top + ASCENT * o.size - nibDropOf(o);
+    return [r.left + left + (x0 + x1) / 2 * o.size, baseline - (y0 + y1) / 2 * o.size];
+  };
+}
+
 // Fill `box` with the words of `text`, laid out but not yet drawn. Returns { draw(animate), cancel() }.
 // The box gets font-size 0 so the spaces between words take only the word-spacing set here.
 export function layoutQuill(box, text, options) {
@@ -61,6 +83,8 @@ export function layoutQuill(box, text, options) {
       real.appendChild(s);
     }
     cell.append(canvas, real);
+    cell.dataset.word = word;
+    cell.inkCentre = inkCentreOf(cell, word, o, pad, advance);
     box.appendChild(cell);
     words.push({ text: word, canvas: canvas, pad: pad });
   });
@@ -77,7 +101,7 @@ export function layoutQuill(box, text, options) {
       var signal = control.signal;
       // The strokes are centre lines and the slanted nib hangs below them by half its height;
       // lift the writing by that much so the lowest ink, not the nib's middle, sits on the baseline.
-      var nibDrop = Math.sin(o.nibAngle * Math.PI / 180) * o.nibWidth / 2;
+      var nibDrop = nibDropOf(o);
       var base = pad + ASCENT * o.size - nibDrop;
       words.forEach(function (w) {
         var ctx = w.canvas.getContext("2d");

@@ -1046,10 +1046,22 @@
         });
         var title = document.querySelector("h1.story-title");
         if (title) {
+          // the quill words know where each letter's ink is (their text over it is only a rough box)
+          [].forEach.call(title.querySelectorAll(".qw"), function (cell) {
+            if (!cell.inkCentre) return;
+            for (var j = 0; j < cell.dataset.word.length; j++) {
+              if (!/[oO]/.test(cell.dataset.word.charAt(j))) continue;
+              (function (k) {
+                var centre = function () { return cell.isConnected ? cell.inkCentre(k) : null; };
+                var c = centre();
+                if (c && onScreen(c[0], c[1])) out.os.push({ c: centre, r: 12, burst: true });
+              })(j);
+            }
+          });
           var walker = document.createTreeWalker(title, NodeFilter.SHOW_TEXT);
           var node;
           while ((node = walker.nextNode())) {
-            if (node.parentNode.closest && node.parentNode.closest(".glyph")) continue;     // the hidden copy of the first letter
+            if (node.parentNode.closest && node.parentNode.closest(".glyph, .qw")) continue;     // the hidden copy of the first letter; the quill words (above)
             for (var i = 0; i < node.data.length; i++) {
               if (!/[oO]/.test(node.data.charAt(i))) continue;
               (function (n, k) {
@@ -1340,6 +1352,7 @@
       }
 
       function startSprite() {
+        sprite.nextAct = Math.floor(Math.random() * ACTIVITIES.length);     // begin anywhere in the round, then go round in order
         gems().forEach(function (g, i) { g.spot = i; });
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
         sprite.clock = performance.now();
@@ -1436,8 +1449,6 @@
         if (!items.length) return;
         sprite.drawTimer = setTimeout(function () {
           sprite.queue = items;
-          // a newly opened story's own jobs come first: start the round of activities at corrections, or circles
-          sprite.nextAct = items.some(function (t) { return t.kind === "respell"; }) ? 0 : 1;
           if (sprite.mode === "rail" && sprite.spec.kind === "wander") pickNext();      // break off a sweep to go and work
         }, 3000);
       }
