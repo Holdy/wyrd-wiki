@@ -11,13 +11,22 @@ npm run server        # python -m http.server, then open http://localhost:8000/
 
 The page reads its sitemap and story files with `fetch`, so it must be opened through a server. Opened straight from disk it shows a message saying so. How the filing works is in [filing-scheme.md](filing-scheme.md).
 
+## Publishing
+
+The site is served by GitHub Pages from the `main` branch, at the root, at **https://wyrd.wiki** (repo `Holdy/wyrd-wiki`). Pushing to `main` publishes it within a minute or two.
+
+- `CNAME` holds the custom domain and `.nojekyll` stops GitHub processing the files, so keep both.
+- DNS is at GoDaddy: four A records for `@` (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`) and the default `www` CNAME to `wyrd.wiki`. "Enforce HTTPS" is on.
+- Not done yet: verifying the domain in GitHub (Settings → Pages, account level, a TXT record), which stops anyone else claiming it on Pages.
+- The `origin` remote is SSH, and the SSH key on this machine belongs to a different GitHub account than the repo's owner, so pushes have been made over HTTPS with the `gh` login: `git -c credential.helper='!gh auth git-credential' push https://github.com/Holdy/wyrd-wiki.git main`.
+
 ## What's here
 
 | Path | What it is |
 | --- | --- |
 | `index.html` | The whole page: styles, markup and all the scripts |
-| `js/triangles.js` | Renderer for the triangle drawings, copied from the triangle-evolution project |
-| `rsc/quill/` | The quill font: its TypeScript source (`src/`, built with `npm run quill`), a demo page, and `word.js`, which draws the rest of each title as pen-written words, one canvas per word, with the real text over them. See its README |
+| `js/triangles.js` | Renderer for the triangle drawings, copied from the triangle-evolution project and extended here (the `animateIn` options below) |
+| `rsc/quill/` | The quill font: its TypeScript source (`src/`, built with `npm run quill`), a demo page, and `word.js`, which draws the rest of each title as pen-written words, one canvas per word, with the real text over them. See its README and "Quill titles" below |
 | `rsc/letters/A.bin` … `Z.bin` | The illuminated letters |
 | `rsc/tags/*.bin` | 182 more drawings, one per tag (witch, ghost-light, …). Shown at the top of the menu for a story |
 | `rsc/tags/index.txt` | The names of those drawings, one per line without `.bin`. **Keep it up to date** whenever a drawing is added, removed or renamed |
@@ -86,6 +95,8 @@ All of the animation respects the visitor's *reduced motion* setting (see the en
 
 - The paper is generated in CSS and SVG noise, with no image files: colour blotches, a fine grain, larger stains, and darkened edges.
 - The grain and stains scroll with the page. The dark edges stay fixed to the window.
+- **Arrival:** the page starts white, turns to the flat parchment colour over 1.6 s, then the blotches, the light-to-dark sweep, the grain and the dark edges come in together over 3.5 s. This is plain CSS: `--blotch` (a registered `@property`, 0 to 1) scales every blotch, and the grain and edge layers fade by opacity. Under reduced motion the finished paper shows at once.
+- **No flash of the home text:** a script at the top of the head adds a `deep` class to `<html>` when the URL has a query string, which hides the home section until the first render has chosen what to show.
 
 ### Illuminated letters
 
@@ -94,9 +105,22 @@ All of the animation respects the visitor's *reduced motion* setting (see the en
 - A real letter lies invisibly on top, so selecting and copying a title gives plain text ("Peter the wild boy").
 - The empty margin inside each drawing is measured, and the text is pulled in to meet the ink.
 - **Story titles:** the first line sits on the bottom of the letter; wrapped lines hang below it, right-aligned, and never run under the letter.
-- **Home page:** "yrd Wiki" is aligned to the top of the 200 px W.
+- **Baseline:** on the home page too, the title's baseline is the bottom of the letter's ink (after trimming), and the quill writing's lowest ink sits on it.
+- **Arrival:** each letter unfolds with the `sweep-right` transition (see "Animating a drawing in"). Its empty margin is measured from a finished copy drawn off the page, since the real one starts out flat.
 - If a letter file can't be loaded, the plain letter is shown.
 - The points of each drawing flee a mouse pointer, or the flyer (below), and drift back.
+
+### Quill titles
+
+The rest of each title (everything after the illuminated letter, and the "yrd Wiki" of the home page) is written in a quill font, a stroke font drawn by sweeping a fixed-angle nib along each stroke. The library is in `rsc/quill/` (TypeScript in `src/`, built with `npm run quill`, a demo page in `demo/`); `rsc/quill/word.js` is the page's own part, called by `writeTitle()` in `index.html`.
+
+- **One canvas per word.** Each word is an inline-block holding a canvas and, over it, the real characters in transparent type, each as wide as its glyph. So the browser wraps the words, and selecting, copying and ctrl-F work on real text. The h1 carries the whole title as `aria-label` and the drawn parts are `aria-hidden`, so a screen reader reads it once.
+- **No other font flashes up.** The quill font needs no loading, so the h1 is hidden (`pending`) only until its words are laid out, and nothing is ever shown in another face first. If the module can't load, the plain text is shown.
+- **Look:** black ink at 74% opacity multiplied onto the paper (`.qw canvas` in the CSS: opacity is on the whole canvas so overlapping strokes don't darken), nib glitches (ink dropouts) at twice the library's default rate (`inkFadeRate` in `QUILL`), size 0.62 of the h1's font size, drawn at the screen's pixel density.
+- **Baseline:** the strokes are centre lines and the slanted nib hangs below them by half its height, so the writing is lifted by that much and the lowest ink sits on the baseline. Word boxes give back `TRIM` (0.15 of the size) above and below, and the offset allows for it, so lines are about 2.1 × the size apart.
+- **Writing:** words are written by the pen at 300 px/s. Each letter starts 0.15 s (`LETTER_GAP`) after the one before, so pens overlap, and the next word starts when the last letter of the previous word starts. All the timing runs on one clock that advances by real frame time but never more than a frame's worth, so under load everything slows together and nothing catches up. It begins when the illuminated letter's sweep is a third of the way in (`doneAt: 1 / 3` in `drawInitial`). Under reduced motion the title is drawn at once.
+- **Resizing** redraws the words (without animation) only if the font size changed; the line grouping is redone either way.
+- **The flyer** flies through the middle of an "o" using `cell.inkCentre(k)` from `word.js`, which works out the centre of that glyph's strokes, not the transparent text box.
 
 ### Dust
 
@@ -104,7 +128,7 @@ All of the animation respects the visitor's *reduced motion* setting (see the en
 - Each mote circles a point that drifts in a slowly turning direction.
 - **Mouse:** motes near the pointer's path are pushed mostly sideways, a little along it, with a short delay and a swirl, at half of the original strength.
 - **Flyer:** moves them in the same way.
-- **Bursts:** the flyer can also throw out eight extra motes from one spot (see the flyer's activities). They are temporary and don't count towards the density.
+- **Bursts:** flying through an "o" adds eight motes (see the flyer's activities). They are ordinary motes: thrown out from the letter (12 px per frame, coasting about 100 px under the same damping as any push), always at full visibility (0.9), then they circle and drift like the rest, with no fading. They stay among the dust, at most 24 at a time (`BURST_KEEP`): the oldest give way to new ones. Resizing the window doesn't remove them.
 
 ### Tag drawing in the menu
 
@@ -117,7 +141,9 @@ All of the animation respects the visitor's *reduced motion* setting (see the en
 
 `renderTriangles` (in `js/triangles.js`) takes an option `animateIn: "from-center"`. In triangle order, each triangle starts as a dot in the middle of the image and eases out to its real position and size. A new one sets off every 1/100 second (`animateGap`, in seconds) and each takes 3 seconds to arrive (`animateTime`), so a 90-triangle drawing finishes after about 4 seconds. Triangles keep their colour throughout; those that haven't set off yet aren't drawn. It works together with the mouse-repel option, and is skipped under reduced motion. Only the menu's tag drawing uses it so far.
 
-This option exists only in this site's copy of `js/triangles.js`, not in the triangle-evolution project, so keep it if you copy a newer renderer over.
+`animateIn: "sweep-right"` is used by the illuminated letters. An imaginary line crosses the image from left to right in 2 seconds (`animateTime`, default `SWEEP_TIME`), easing in and out. Each triangle starts flat, all three points at its own leftmost x (so it draws nothing), and stretches to its real width as the line crosses it; very narrow triangles take at least 8% of the image (`SWEEP_MIN_SPAN`). `onDone` is called when the sweep has run `doneAt` of its time (default 1; the title uses 1/3 to start the quill), and at once if nothing animates. Both options work with mouse-repel and are skipped under reduced motion.
+
+These options exist only in this site's copy of `js/triangles.js`, not in the triangle-evolution project, so keep it if you copy a newer renderer over.
 
 ### Spelling corrections
 
@@ -152,28 +178,30 @@ If the thing it is heading for moves (the mouse, or a word or letter that has sc
 | mouse | Rails towards the mouse, rewritten whenever the mouse moves about 35 px, until within 3 cm (it doesn't circle it) |
 | home | A rail to the free place at the left of the closing row, arriving heading right, then it rests there |
 
-- **Activities:** a flight is one or two activities (the number is chosen at random as it sets off). They are taken in turn, in the order below, carrying on from where the last flight stopped; one the page can't offer just now (no words to circle, no mouse, no "o" in the title) is passed over (when a story opens, the round restarts at corrections, or circles if there are none, so its own jobs come first):
+- **Activities:** a flight is one or two activities (the number is chosen at random as it sets off). They are taken in turn, in the order below, carrying on from where the last flight stopped. The round starts at a **random** activity when the page loads (not always at corrections or circles), then goes round in order; one the page can't offer just now (no words to circle, no mouse, no "o" in the title) is passed over:
   - correct a spelling (see Spelling corrections),
   - circle a word with the pencil,
   - fly to the mouse (if there is a real mouse over the window),
   - fly straight through an illuminated letter or the menu's tag drawing (in from one side, out the other, so it disturbs the drawing),
-  - fly straight through an "o" or "O" in the story title. As it passes through, eight dust motes fly out from the letter, one to each compass point (N, NE, E, …), coast about 100 px and fade away over 6 seconds.
+  - fly straight through an "o" or "O" in the story title. As it passes through the middle of the ink, eight dust motes join the dust there, thrown one to each compass point (N, NE, E, …); see "Dust".
   Between activities it wanders. As soon as its allowance is used up and the last activity is finished, it goes straight back to the three diamonds, even if they are scrolled off screen. If the page offers nothing to do, it wanders until 65–70 seconds and then goes home.
+- **Console log:** the browser console shows what it is doing: `flyer: taking off, plans N activities, home in about Ns` at each takeoff (the activities themselves are chosen one at a time, as the page allows), `flyer: next activity "..."` for each, and `flyer: nothing on offer, wandering`.
 - **Mouse visit:** it follows rails towards the mouse until within 3 cm; it gives up after 40 seconds. Only a real mouse counts, not touch.
 - **Leaving and landing smoothly:** it leaves the three diamonds already facing right, on a straight rail out to the right of the row, so it never turns on the spot. Coming home, its rail ends at the free place heading right, so it always arrives from the left (looping round first if it has to).
 - **Flight length:** a flight usually lasts from half a minute to a minute, and never more than 90 seconds: at 75 seconds, whatever it is doing, it turns for home.
 - The tip of the diamond always faces the way it is heading, and it nudges the illuminated letters and dust as it passes. Flying through a letter, the tag drawing or an "o" is a rail that curves in to line up and then runs straight through the middle, going in and out only a little past the edge. The direction is chosen from many random ones so that the rail doesn't cross any of the other drawings on the page (the tag drawing and the title letter sit side by side).
 
-### The closing diamonds
+### The diamonds
 
-- Three diamonds in a row end the page content, lying on their sides.
-- The flyer is always the rightmost one. While it is away the other two slide one place right over a minute. If the flyer comes back before that minute is up, they hurry the rest of the way (in about 6 seconds), and the flyer circles its waypoint until the place is free.
+- **The flyer's row** is directly under the title (`#pips`). `render()` moves it to follow whichever title is showing, so it is under "Wyrd Wiki" on the home page and under the story's title elsewhere. It is where the flyer starts, lands and rests, so the flyer flies back up to the top to land, even if the page is scrolled.
+- **The bottom row** (three diamonds ending the page content) is decoration only; the flyer ignores it.
+- The three diamonds lie on their sides. The flyer is always the rightmost one. While it is away the other two slide one place right over a minute. If the flyer comes back before that minute is up, they hurry the rest of the way (in about 6 seconds), and the flyer circles its waypoint until the place is free.
 - It lands in the free place at the left and rests for 10 seconds as that diamond. Then the rightmost diamond becomes the next flyer, and so on, so each takes a turn.
 - At the start the flyer rests 4 seconds before the first launch.
 
 ### Reduced motion
 
-If the visitor asks for reduced motion: there is no flyer, circles or dust animation (the dust is drawn once), and the three closing diamonds just sit still.
+If the visitor asks for reduced motion: there is no flyer, circles or dust animation (the dust is drawn once), the three diamonds just sit still, the parchment shows finished, the illuminated letters appear complete (no sweep) and the quill titles are drawn at once.
 
 ## Settings worth knowing
 
@@ -191,3 +219,10 @@ All are variables near the code they affect in `index.html`.
 | `255000` | `finishCircle` | Fade time of a circle |
 | `65000`, `75000` | `launch`, `stepSprite` | When the flyer comes home |
 | `3 * CM` | `mouse` mode | How close counts as having reached the mouse |
+| `BURST_SPEED`, `BURST_KEEP` | dust script | How hard the "o" motes are thrown, and how many stay |
+| `QUILL` (`color`, `inkFadeRate`), size `0.62` | `index.html`, `writeTitle` | Quill ink colour, nib glitch rate, size relative to the title |
+| `.qw canvas` opacity | CSS | How see-through the quill writing is |
+| `LETTER_GAP`, `TRIM`, speed `300` | `rsc/quill/word.js` | Delay between letters, line spacing, pen speed (px/s) |
+| `doneAt: 1 / 3` | `drawInitial` | How far through the letter's sweep the quill starts |
+| `SWEEP_TIME`, `SWEEP_MIN_SPAN` | `js/triangles.js` | Length of the sweep, and the least stretch time of a narrow triangle |
+| `1.6s`, `3.5s` | parchment `animation:` lines | Arrival: white to parchment, then the blotches |
