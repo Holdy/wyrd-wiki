@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>aberdeenshire/Aberdeenshire.xml</loc></sitemap>
+  <sitemap><loc>angus/Angus.xml</loc></sitemap>
+  <sitemap><loc>argyll/Argyll.xml</loc></sitemap>
+  <sitemap><loc>ayrshire/Ayrshire.xml</loc></sitemap>
+  <sitemap><loc>banffshire/Banffshire.xml</loc></sitemap>
+  <sitemap><loc>berwickshire/Berwickshire.xml</loc></sitemap>
+  <sitemap><loc>caithness/Caithness.xml</loc></sitemap>
+  <sitemap><loc>clackmannanshire/Clackmannanshire.xml</loc></sitemap>
+  <sitemap><loc>dumfriesshire/Dumfriesshire.xml</loc></sitemap>
+  <sitemap><loc>dunbartonshire/Dunbartonshire.xml</loc></sitemap>
+  <sitemap><loc>east-lothian/East_Lothian.xml</loc></sitemap>
+  <sitemap><loc>fife/Fife.xml</loc></sitemap>
+  <sitemap><loc>inverness-shire/Inverness-shire.xml</loc></sitemap>
+  <sitemap><loc>kincardineshire/Kincardineshire.xml</loc></sitemap>
+  <sitemap><loc>kirkcudbrightshire/Kirkcudbrightshire.xml</loc></sitemap>
+  <sitemap><loc>lanarkshire/Lanarkshire.xml</loc></sitemap>
+  <sitemap><loc>moray/Moray.xml</loc></sitemap>
+  <sitemap><loc>nairnshire/Nairnshire.xml</loc></sitemap>
+  <sitemap><loc>orkney/Orkney.xml</loc></sitemap>
+  <sitemap><loc>peeblesshire/Peeblesshire.xml</loc></sitemap>
+  <sitemap><loc>perthshire/Perthshire.xml</loc></sitemap>
+  <sitemap><loc>renfrewshire/Renfrewshire.xml</loc></sitemap>
+  <sitemap><loc>ross-and-cromarty/Ross_and_Cromarty.xml</loc></sitemap>
+  <sitemap><loc>roxburghshire/Roxburghshire.xml</loc></sitemap>
+  <sitemap><loc>shetland/Shetland.xml</loc></sitemap>
+  <sitemap><loc>stirlingshire/Stirlingshire.xml</loc></sitemap>
+  <sitemap><loc>sutherland/Sutherland.xml</loc></sitemap>
+  <sitemap><loc>west-lothian/West_Lothian.xml</loc></sitemap>
+  <sitemap><loc>wigtownshire/Wigtownshire.xml</loc></sitemap>
+</sitemapindex>

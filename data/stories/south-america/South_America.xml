@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>argentina/Argentina.xml</loc></sitemap>
+  <sitemap><loc>bolivia/Bolivia.xml</loc></sitemap>
+  <sitemap><loc>brazil/Brazil.xml</loc></sitemap>
+  <sitemap><loc>chile/Chile.xml</loc></sitemap>
+  <sitemap><loc>colombia/Colombia.xml</loc></sitemap>
+  <sitemap><loc>ecuador/Ecuador.xml</loc></sitemap>
+  <sitemap><loc>guyana/Guyana.xml</loc></sitemap>
+  <sitemap><loc>paraguay/Paraguay.xml</loc></sitemap>
+  <sitemap><loc>peru/Peru.xml</loc></sitemap>
+  <sitemap><loc>suriname/Suriname.xml</loc></sitemap>
+  <sitemap><loc>uruguay/Uruguay.xml</loc></sitemap>
+  <sitemap><loc>venezuela/Venezuela.xml</loc></sitemap>
+</sitemapindex>

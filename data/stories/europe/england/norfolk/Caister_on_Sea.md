@@ -21,3 +21,69 @@ https://norfolkrecordofficeblog.org/2019/10/28/elizabeth-bradwell-accused-of-wit
 
 #tags
 accused,gallows
+
+---
+
+#title
+The Ghost of Caister Castle
+
+#summary
+A phantom carriage drawn by four headless horses appears in the courtyard of Caister Castle at midnight once a year.
+
+#details
+Local legend holds that a spectral carriage drawn by four headless horses materializes at the stroke of midnight annually within the courtyard of Caister Castle. Historically associated with the Paston family as an omen of death or a phantom hearse, the carriage is said to arrive to carry away unearthly visitors before vanishing into the night.
+
+#location
+The courtyard of Caister Castle, situated one mile west of Caister-on-Sea, Norfolk, UK.
+
+#upstream-source
+Rye, W., ed. (1877). *The Norfolk Antiquarian Miscellany*. Vol. 2. Norwich: Samuel Miller and Co., p. 289.
+
+#reference
+https://pantheon.org/articles/g/ghost_of_caister_castle.html
+
+---
+
+#title
+The Loyal Ghost Dog of Yarmouth Road
+
+#summary
+Following the death of its beloved master, a faithful black dog continues its daily spectral trek from Caister-on-Sea down Yarmouth Road toward Great Yarmouth.
+
+#details
+The legend concerns a large black dog that once belonged to an elderly man living in Caister-on-Sea. In life, the man and his dog would regularly walk together down the road into Great Yarmouth. After the old man passed away and was buried, the devoted dog, unable to understand its master's absence, continued making the familiar trek into town all by itself. When the dog eventually died, its spirit did not stop, and its ghost continues to make the exact same journey along Yarmouth Road (now the A149) to this day.
+
+#location
+Along Yarmouth Road (the A149) running from Caister-on-Sea toward Great Yarmouth.
+
+#upstream-source
+None.
+
+#reference
+https://www.hiddenea.com/shuckland/caister.htm
+
+#tags
+pinless
+
+---
+
+#title
+The Loyal Ghost Hound of Caister
+
+#summary
+Following the death of its elderly master, a faithful black dog continued its daily walk into neighbouring Yarmouth until its own passing, after which its spectral spirit began haunting the route. On stormy nights, this ghostly hound can still be encountered roaming the coastal paths and roads of Caister-on-Sea.
+
+#details
+In local folklore, the phantom black dog known as Black Shuck is said to have originally been the companion of an old man living in Caister. During his life, the old man regularly walked into Yarmouth accompanied by his loyal dog. When the master passed away and was buried, the grieving hound persistently made the familiar trek into town alone. After the dog eventually died, its spirit continued the exact same journey, haunting the road and coastal cliffs between Caister-on-Sea and Great Yarmouth, particularly on dark and stormy nights.
+
+#location
+The spirit of the hound haunts Yarmouth Road (now the A149) and the coastal cliffs running between Caister-on-Sea and Great Yarmouth.
+
+#upstream-source
+None.
+
+#reference
+https://www.hiddenea.com/shuckland/caister.htm
+
+#tags
+duplicate

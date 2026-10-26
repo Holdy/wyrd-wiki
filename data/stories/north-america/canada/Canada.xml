@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>alberta/Alberta.xml</loc></sitemap>
+  <sitemap><loc>british-columbia/British_Columbia.xml</loc></sitemap>
+  <sitemap><loc>manitoba/Manitoba.xml</loc></sitemap>
+  <sitemap><loc>new-brunswick/New_Brunswick.xml</loc></sitemap>
+  <sitemap><loc>newfoundland-and-labrador/Newfoundland_and_Labrador.xml</loc></sitemap>
+  <url><loc>/index.html?/north-america/canada/the-haunting-of-buck-hill</loc></url>
+  <url><loc>/index.html?/north-america/canada/the-possession-of-barbe-hallay</loc></url>
+  <url><loc>/index.html?/north-america/canada/the-tuberculosis-curse-of-castle-kilbride</loc></url>
+</sitemapindex>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>anglesey/Anglesey.xml</loc></sitemap>
+  <sitemap><loc>brecknockshire/Brecknockshire.xml</loc></sitemap>
+  <sitemap><loc>cardiganshire/Cardiganshire.xml</loc></sitemap>
+  <sitemap><loc>carmarthenshire/Carmarthenshire.xml</loc></sitemap>
+  <sitemap><loc>denbighshire/Denbighshire.xml</loc></sitemap>
+  <sitemap><loc>flintshire/Flintshire.xml</loc></sitemap>
+  <sitemap><loc>glamorgan/Glamorgan.xml</loc></sitemap>
+  <sitemap><loc>merionethshire/Merionethshire.xml</loc></sitemap>
+  <sitemap><loc>monmouthshire/Monmouthshire.xml</loc></sitemap>
+  <sitemap><loc>montgomeryshire/Montgomeryshire.xml</loc></sitemap>
+  <sitemap><loc>pembrokeshire/Pembrokeshire.xml</loc></sitemap>
+  <sitemap><loc>radnorshire/Radnorshire.xml</loc></sitemap>
+</sitemapindex>

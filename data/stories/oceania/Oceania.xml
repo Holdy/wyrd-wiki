@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>australia/Australia.xml</loc></sitemap>
+  <sitemap><loc>fiji/Fiji.xml</loc></sitemap>
+  <sitemap><loc>kiribati/Kiribati.xml</loc></sitemap>
+  <sitemap><loc>micronesia/Micronesia.xml</loc></sitemap>
+  <sitemap><loc>new-zealand/New_Zealand.xml</loc></sitemap>
+  <sitemap><loc>palau/Palau.xml</loc></sitemap>
+  <sitemap><loc>papua-new-guinea/Papua_New_Guinea.xml</loc></sitemap>
+  <sitemap><loc>samoa/Samoa.xml</loc></sitemap>
+  <sitemap><loc>solomon-islands/Solomon_Islands.xml</loc></sitemap>
+  <sitemap><loc>tonga/Tonga.xml</loc></sitemap>
+  <sitemap><loc>vanuatu/Vanuatu.xml</loc></sitemap>
+</sitemapindex>
