@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>africa/Africa.xml</loc></sitemap>
+  <sitemap><loc>antarctica/Antarctica.xml</loc></sitemap>
+  <sitemap><loc>asia/Asia.xml</loc></sitemap>
+  <sitemap><loc>europe/Europe.xml</loc></sitemap>
+  <sitemap><loc>north-america/North_America.xml</loc></sitemap>
+  <sitemap><loc>oceania/Oceania.xml</loc></sitemap>
+  <sitemap><loc>south-america/South_America.xml</loc></sitemap>
+</sitemapindex>

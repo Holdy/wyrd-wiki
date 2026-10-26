@@ -1,2 +1,192 @@
-# wyrd-wiki
-Backing for https://wyrd.wiki
+# wyrd.wiki
+
+A gazetteer of folklore, filed by place, shown on a parchment-coloured page.
+It is a static site (plain HTML, CSS and JavaScript, no build step), meant for GitHub Pages.
+
+## Running it
+
+```
+npm run server        # python -m http.server, then open http://localhost:8000/
+```
+
+The page reads its sitemap and story files with `fetch`, so it must be opened through a server. Opened straight from disk it shows a message saying so. How the filing works is in [filing-scheme.md](filing-scheme.md).
+
+## What's here
+
+| Path | What it is |
+| --- | --- |
+| `index.html` | The whole page: styles, markup and all the scripts |
+| `js/triangles.js` | Renderer for the triangle drawings, copied from the triangle-evolution project |
+| `rsc/letters/A.bin` … `Z.bin` | The illuminated letters |
+| `rsc/tags/*.bin` | 181 more drawings, one per tag (witch, ghost-light, …). Shown at the top of the menu for a story |
+| `rsc/tags/index.txt` | The names of those drawings, one per line without `.bin`. **Keep it up to date** whenever a drawing is added, removed or renamed |
+| `data/stories/` | Sitemaps and story files (see below) |
+| `data/spelling.txt` | The word changes the flyer makes to story text (American → British), one `from -> to` per line |
+| `W.base64` | The old inline form of the W. No longer used |
+
+The `.bin` files and `js/triangles.js` are copies. When the triangle-evolution project produces new ones, copy them over again (letters go in `rsc/letters/`, the rest in `rsc/tags/`).
+
+After changing the files in `rsc/tags/`, regenerate its index from inside that folder:
+
+```
+ls *.bin | sed 's/\.bin$//' > index.txt
+```
+
+## Content and navigation
+
+### Layout
+
+- **Top:** breadcrumbs for what the visitor has chosen, for example *Wyrd Wiki › Europe › England › Norfolk › Norwich › Peter the wild boy*. Every crumb but the last is a link.
+- **Left:** the options at the current level (no heading). When a story is open it is not listed again; instead the drawing for the first of its tags that has one (see below) is shown at the top of the column, and the menu lists the other stories at that level.
+- **Main:** the home page text at the top level, otherwise the open story, or a short prompt if only a level is chosen.
+- Narrow screens (under 700 px) put the options above the main area.
+
+### The address
+
+`index.html?/europe/england/norfolk/norwich/peter-the-wild-boy`
+
+Clicking updates the page without reloading, and the back button works. Unknown places show "Nothing found here".
+
+### Sitemaps
+
+Navigation is built from the sitemap files, starting at `data/stories/sitemap.xml`:
+
+- A sitemap is either an **index** (`<sitemapindex>`, listing further sitemaps) or a **page list** (`<urlset>`, listing stories). A blank file counts as an empty index.
+- Each path segment is found by matching the file name of a listed sitemap: `North_America.xml` has the address segment `north-america` and the name "North America" (lower case, `_` becomes `-`; `_` becomes a space for display).
+- A settlement's sitemap (for example `Norwich.xml`) lists its stories. The story file is the same name with `.md` (`Norwich.md`), in the same folder.
+- The `<loc>` values are relative to the sitemap, so only this site's own navigation can follow them. They are not the full addresses search engines expect.
+
+```
+data/stories/
+  sitemap.xml                 → africa/Africa.xml, europe/Europe.xml, …
+  europe/Europe.xml           → england/England.xml
+  europe/england/England.xml  → norfolk/Norfolk.xml
+  europe/england/norfolk/
+    Norfolk.xml               → Buxton.xml, Norwich.xml, …
+    Norwich.xml               → one <url> per story
+    Norwich.md                → the stories
+```
+
+### Story files
+
+A settlement file holds one or more stories, separated by a line containing only `---`. Each has `title`, `summary` and (optionally) `details` sections. The page shows the title, then the summary, then the details under their own heading if there are any. Paragraphs are separated by blank lines, and text between `*asterisks*` is shown in italics. Headings may be written `# title` or `#title`. The `tags` section (comma-separated, for example `witch, approx`) picks the drawing shown in the menu column. Other sections (`location`, `upstream-source`, `reference`, `coordinates`, …) are kept in the file but not shown yet.
+
+A story that belongs to a river, rock formation or road rather than a settlement goes in the file of the next level up, such as `Norfolk.md`. That file has no sitemap or page yet.
+
+Stories tagged `skip` or `duplicate` are kept in the files but left out of the settlement's sitemap, so they don't appear on the site.
+
+The Norfolk stories were copied from the witch data in the local-llm-agent project. Four were filed in a different settlement from the one they were found under (the Boleyn bridges → `Norfolk.md`, the Hethel Thorn → `Hethel.md`, East Somerton, Great Yarmouth).
+
+## Look and behaviour
+
+All of the animation respects the visitor's *reduced motion* setting (see the end).
+
+### Parchment
+
+- The paper is generated in CSS and SVG noise, with no image files: colour blotches, a fine grain, larger stains, and darkened edges.
+- The grain and stains scroll with the page. The dark edges stay fixed to the window.
+
+### Illuminated letters
+
+- The first letter of a story or level title, and the **W** of the home page, is a drawing made of semi-transparent triangles, loaded from `rsc/letters/<letter>.bin` and drawn by `js/triangles.js`.
+- Each letter's canvas is multiplied onto the paper, so the white of the drawing disappears.
+- A real letter lies invisibly on top, so selecting and copying a title gives plain text ("Peter the wild boy").
+- The empty margin inside each drawing is measured, and the text is pulled in to meet the ink.
+- **Story titles:** the first line sits on the bottom of the letter; wrapped lines hang below it, right-aligned, and never run under the letter.
+- **Home page:** "yrd Wiki" is aligned to the top of the 200 px W.
+- If a letter file can't be loaded, the plain letter is shown.
+- The points of each drawing flee a mouse pointer, or the flyer (below), and drift back.
+
+### Dust
+
+- Round motes, half a millimetre across, pale yellow, 70–90% opaque, about one per 10 cm × 10 cm of window.
+- Each mote circles a point that drifts in a slowly turning direction.
+- **Mouse:** motes near the pointer's path are pushed mostly sideways, a little along it, with a short delay and a swirl, at half of the original strength.
+- **Flyer:** moves them in the same way.
+- **Bursts:** the flyer can also throw out eight extra motes from one spot (see the flyer's activities). They are temporary and don't count towards the density.
+
+### Tag drawing in the menu
+
+- When a story opens, the page looks through its tags in order and uses the first one that has a drawing in `rsc/tags/`. A story with no matching tag shows no drawing.
+- Which tags have drawings comes from `rsc/tags/index.txt`, which is loaded in the background when the page starts. It must be kept up to date.
+- The drawing is 200 px, multiplied onto the paper like the letters, with the tag name as its tooltip. Its points flee the mouse and the flyer in the same way.
+- It builds up on screen: each triangle starts as a dot in the middle of the image and moves out to its position and size (see "Animating a drawing in" below).
+
+### Animating a drawing in
+
+`renderTriangles` (in `js/triangles.js`) takes an option `animateIn: "from-center"`. In triangle order, each triangle starts as a dot in the middle of the image and eases out to its real position and size. A new one sets off every 1/100 second (`animateGap`, in seconds) and each takes 3 seconds to arrive (`animateTime`), so a 90-triangle drawing finishes after about 4 seconds. Triangles keep their colour throughout; those that haven't set off yet aren't drawn. It works together with the mouse-repel option, and is skipped under reduced motion. Only the menu's tag drawing uses it so far.
+
+This option exists only in this site's copy of `js/triangles.js`, not in the triangle-evolution project, so keep it if you copy a newer renderer over.
+
+### Spelling corrections
+
+The flyer corrects spellings in the summary and details text of a story, by editing the page text for real (a copy of the text only, the story files are not changed).
+
+- **The list:** `data/spelling.txt`, lines like `neighbor -> neighbour`. Matching is by whole word, ignoring case, and a capital at the start is kept. Add plural and other forms as separate lines. Lines starting `#` are comments. The list is loaded in the background when the page starts.
+- **What it does:** about 3 seconds after a story opens, after any pencil circles, the flyer flies to a point just below the place inside the word where the spelling differs. There it narrows to a thin text cursor, then slides up into the gap between the letters. It backspaces the letters that are wrong one at a time and types the right ones (about 0.26 seconds each), pauses a moment, slides up out of the line still thin, and flies off, its diamond shape returning as it goes.
+- **Limit:** corrections count as flight activities (see "The flyer" below): at most one or two per flight. Any left over wait, in the story's queue, for a later flight.
+- **Which letters:** it compares the old and new word from both ends, so `baptizing → baptising` changes only the `z`, `center → centre` swaps the last two letters, and `fulfill → fulfil` deletes one `l`.
+- **Without the flyer** (reduced motion) the corrections are applied straight away.
+- Titles and the story files themselves are not changed.
+
+### Pencil circles
+
+- In a story's summary and details, the words *witch*, *witchcraft*, *magic* and *wizard* (any capitalisation) are circled about 3 seconds after the story opens, when the flyer picks that activity. To add a word, edit the pattern in `fillText` in `index.html`.
+- The circle is a loose, open, hand-drawn loop: its ends miss each other and the shape is different each time.
+- The flyer draws it. It goes round whichever way carries on from how the flyer arrived.
+- Once drawn, the circle fades out evenly over 255 seconds.
+
+### The flyer
+
+A small 50% see-through sepia diamond that flies along **rails**. A rail is a smooth path, made only of arcs and straight lines with no sharp corners, worked out in advance from where the diamond is and which way it is heading to where it wants to be and the way it should be heading when it gets there (a Dubins path: the shortest path for a given tightest turn, here 110 px). The diamond follows its rail at an even speed, easing in and out only where it starts from or stops at a place.
+
+If the thing it is heading for moves (the mouse, or a word or letter that has scrolled), the rail is **rewritten** from where the diamond now is and the way it is facing, so it still turns smoothly. Everything is at one fifth of the original pace (`PACE`).
+
+| Mode | What it does |
+| --- | --- |
+| rest | Sits in its place in the closing diamonds |
+| wander | Rails to random points around the window, each arriving already heading for the next so the legs join without a turn |
+| approach | Rails to the start of a word's circle, arriving along the oval (going round whichever way is the shorter way in), or to a point just below a word it will correct, arriving heading up |
+| trace | Goes round the oval itself, which is the rail; the stroke is drawn behind the diamond |
+| mouse | Rails towards the mouse, rewritten whenever the mouse moves about 35 px, until within 3 cm (it doesn't circle it) |
+| home | A rail to the free place at the left of the closing row, arriving heading right, then it rests there |
+
+- **Activities:** a flight is one or two activities (the number is chosen at random as it sets off). They are taken in turn, in the order below, carrying on from where the last flight stopped; one the page can't offer just now (no words to circle, no mouse, no "o" in the title) is passed over (when a story opens, the round restarts at corrections, or circles if there are none, so its own jobs come first):
+  - correct a spelling (see Spelling corrections),
+  - circle a word with the pencil,
+  - fly to the mouse (if there is a real mouse over the window),
+  - fly straight through an illuminated letter or the menu's tag drawing (in from one side, out the other, so it disturbs the drawing),
+  - fly straight through an "o" or "O" in the story title. As it passes through, eight dust motes fly out from the letter, one to each compass point (N, NE, E, …), coast about 100 px and fade away over 6 seconds.
+  Between activities it wanders. As soon as its allowance is used up and the last activity is finished, it goes straight back to the three diamonds, even if they are scrolled off screen. If the page offers nothing to do, it wanders until 65–70 seconds and then goes home.
+- **Mouse visit:** it follows rails towards the mouse until within 3 cm; it gives up after 40 seconds. Only a real mouse counts, not touch.
+- **Leaving and landing smoothly:** it leaves the three diamonds already facing right, on a straight rail out to the right of the row, so it never turns on the spot. Coming home, its rail ends at the free place heading right, so it always arrives from the left (looping round first if it has to).
+- **Flight length:** a flight usually lasts from half a minute to a minute, and never more than 90 seconds: at 75 seconds, whatever it is doing, it turns for home.
+- The tip of the diamond always faces the way it is heading, and it nudges the illuminated letters and dust as it passes. Flying through a letter, the tag drawing or an "o" is a rail that curves in to line up and then runs straight through the middle, going in and out only a little past the edge. The direction is chosen from many random ones so that the rail doesn't cross any of the other drawings on the page (the tag drawing and the title letter sit side by side).
+
+### The closing diamonds
+
+- Three diamonds in a row end the page content, lying on their sides.
+- The flyer is always the rightmost one. While it is away the other two slide one place right over a minute. If the flyer comes back before that minute is up, they hurry the rest of the way (in about 6 seconds), and the flyer circles its waypoint until the place is free.
+- It lands in the free place at the left and rests for 10 seconds as that diamond. Then the rightmost diamond becomes the next flyer, and so on, so each takes a turn.
+- At the start the flyer rests 4 seconds before the first launch.
+
+### Reduced motion
+
+If the visitor asks for reduced motion: there is no flyer, circles or dust animation (the dust is drawn once), and the three closing diamonds just sit still.
+
+## Settings worth knowing
+
+All are variables near the code they affect in `index.html`.
+
+| Setting | Where | What it does |
+| --- | --- | --- |
+| `AREA_PER_MOTE` | dust script | Dust density |
+| `MOTE` | dust script | Mote size |
+| `PUSH_ASIDE`, `PUSH_ALONG`, `REACH`, `CURL`, `DAMPING` | dust script | How the dust reacts to a moving point |
+| `PACE` | flyer code | Overall slowdown (1 = original pace) |
+| `CRUISE`, `TURN_RADIUS` | flyer code | Speed, and the tightest curve a rail may make |
+| `1700 * PACE` | `trace` mode | How long a circle takes to draw |
+| `EDIT_STEP`, `BELOW` | flyer code | Time per letter when correcting a spelling, and how far below the word it waits before sliding up |
+| `255000` | `finishCircle` | Fade time of a circle |
+| `65000`, `75000` | `launch`, `stepSprite` | When the flyer comes home |
+| `3 * CM` | `mouse` mode | How close counts as having reached the mouse |

@@ -1,0 +1,1717 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wyrd Wiki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --parchment: #ecdcb4;
+      --parchment-light: #f6ead0;
+      --parchment-dark: #c9ab72;
+      --ink: #3b2614;
+      --ink-faded: #6b4a2b;
+      --rubric: #8a2a1a;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      position: relative;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "IM Fell English", Georgia, "Times New Roman", serif;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      background-color: var(--parchment);
+      /* Base colour blotches: uneven ageing across the sheet */
+      background-image:
+        radial-gradient(ellipse at 20% 15%, rgba(255, 248, 225, 0.55), transparent 55%),
+        radial-gradient(ellipse at 80% 30%, rgba(201, 160, 90, 0.25), transparent 50%),
+        radial-gradient(ellipse at 35% 80%, rgba(180, 135, 70, 0.22), transparent 55%),
+        radial-gradient(ellipse at 75% 85%, rgba(255, 245, 215, 0.4), transparent 50%),
+        linear-gradient(170deg, var(--parchment-light), var(--parchment) 45%, var(--parchment-dark));
+    }
+
+    /* Generated fibre / grain texture from SVG turbulence */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.55;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.45  0 0 0 0 0.32  0 0 0 0 0.16  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='900'><filter id='s' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='3' seed='7' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.33  0 0 0 0 0.12  0 0 0 1.1 -0.45'/></filter><rect width='100%' height='100%' filter='url(%23s)'/></svg>");
+      background-size: 300px 300px, 900px 900px;
+    }
+
+    /* Darkened, scorched edges */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      box-shadow:
+        inset 0 0 80px rgba(90, 55, 20, 0.55),
+        inset 0 0 200px rgba(120, 80, 30, 0.35);
+      background: radial-gradient(ellipse at center, transparent 55%, rgba(110, 70, 25, 0.35) 100%);
+    }
+
+    /* Everything below is positioned so it paints above the grain layer */
+    .crumbs {
+      position: relative;
+      border-bottom: 1px dashed rgba(107, 74, 43, 0.45);
+    }
+    .crumbs ol {
+      list-style: none;
+      margin: 0 auto;
+      padding: 0.9rem 16px;
+      max-width: 62rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 0.6rem;
+      font-family: "IM Fell English SC", Georgia, serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+    }
+    .crumbs li + li::before {
+      content: "\203A";
+      color: var(--rubric);
+      margin-right: 0.6rem;
+    }
+    .crumbs [aria-current] { color: var(--ink); }
+
+    .layout {
+      position: relative;
+      max-width: 62rem;
+      margin: 0 auto;
+      padding: 2.5rem 16px 5rem;
+      display: grid;
+      grid-template-columns: 15rem minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    aside {
+      padding-right: 1.5rem;
+      border-right: 1px dashed rgba(107, 74, 43, 0.45);
+    }
+    aside ul.realms { margin: 0; }
+    .story h2.later-heading { margin-top: 1.6em; }
+
+    /* The drawing for an open story's first tag, at the top of the menu column */
+    #tag-image { position: relative; margin-bottom: 1.2rem; }
+    #tag-image:empty { display: none; }
+    #tag-image canvas { display: block; mix-blend-mode: multiply; }
+    .empty, .hint {
+      font-style: italic;
+      color: var(--ink-faded);
+    }
+
+    main { min-width: 0; }
+
+    /* Story titles: the illuminated letter sits on the baseline with the rest of the
+       title as a block beside it, so extra lines wrap beside the letter, not under it. */
+    .story-title .initial {
+      vertical-align: baseline;
+      margin-top: 0;
+    }
+    .story-title .lines { display: block; }
+    .story-title .line {
+      display: inline-block;
+      width: 100%;
+      text-align: left;
+    }
+    .story-title .line.later { text-align: right; }
+    .story-title .rest {
+      /* inline-grid takes its baseline from the first line, so line one sits on the
+         letter's baseline and any wrapped lines hang below it */
+      display: inline-grid;
+      grid-template-columns: minmax(0, 1fr);
+      vertical-align: baseline;
+    }
+
+    h1.story-title {
+      font-size: clamp(1.9rem, 5vw, 2.8rem);
+      text-align: left;
+      margin: 0 0 0.6em;
+    }
+    /* The little grey diamond that flies about and draws the pencil circles */
+    .sprite, .gem {
+      background: rgba(125, 85, 45, 0.5);
+      clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    }
+    /* the closing diamonds lie on their sides; the flyer is drawn tip-up and turned to match */
+    .gem { width: 20px; height: 11px; }
+    .sprite {
+      width: 11px;
+      height: 20px;
+      transition: width 0.5s, height 0.5s, margin 0.5s;
+      position: fixed;
+      left: 0;
+      top: 0;
+      margin: -10px 0 0 -5px;
+      pointer-events: none;
+      z-index: 3;
+      will-change: transform;
+    }
+
+    /* Three diamonds in a row close the page content. Each sits in one of three
+       places 32px apart (set by JS); one of them at a time is away being the flyer. */
+    .ending {
+      position: relative;
+      width: 84px;
+      height: 11px;
+      margin: 2.5rem auto 0;
+    }
+    .ending .gem {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    /* While correcting a spelling the flyer narrows to a text cursor */
+    .sprite.cursor {
+      width: 3px;
+      height: 22px;
+      margin: -11px 0 0 -1.5px;
+    }
+
+    /* Words circled in pencil: the oval is an SVG laid over the word */
+    .pencil { position: relative; }
+    .pencil svg {
+      position: absolute;
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    .story h2 {
+      font-family: "IM Fell English SC", Georgia, serif;
+      font-weight: normal;
+      font-size: 1.3rem;
+      letter-spacing: 0.04em;
+      color: var(--rubric);
+      margin: 0 0 0.4em;
+    }
+
+    @media (max-width: 700px) {
+      .layout { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+      aside {
+        padding: 0 0 1rem;
+        border-right: 0;
+        border-bottom: 1px dashed rgba(107, 74, 43, 0.45);
+      }
+    }
+
+    h1 {
+      font-family: "IM Fell English SC", Georgia, serif;
+      font-weight: normal;
+      font-size: clamp(2.6rem, 8vw, 4.5rem);
+      line-height: 1.1;
+      text-align: center;
+      margin: 0 0 0.25em;
+      letter-spacing: 0.04em;
+      text-shadow: 0 0 1px rgba(59, 38, 20, 0.4);
+    }
+
+    .subtitle {
+      text-align: center;
+      font-style: italic;
+      color: var(--ink-faded);
+      margin: 0 0 2rem;
+    }
+
+    .flourish {
+      text-align: center;
+      color: var(--rubric);
+      font-size: 1.6rem;
+      letter-spacing: 0.6em;
+      margin: 1.5rem 0;
+      user-select: none;
+    }
+
+    p { margin: 0 0 1em; }
+
+    /* Illuminated drop cap */
+    .opening::first-letter {
+      float: left;
+      font-family: "IM Fell English SC", Georgia, serif;
+      font-size: 4.2em;
+      line-height: 0.8;
+      padding: 0.08em 0.1em 0 0;
+      color: var(--rubric);
+    }
+
+    a {
+      color: var(--rubric);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    a:hover { color: var(--ink); }
+
+    ul.realms {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+    ul.realms li {
+      padding: 0.4rem 0;
+      border-bottom: 1px dashed rgba(107, 74, 43, 0.35);
+    }
+    ul.realms li::before {
+      content: "❧ ";
+      color: var(--rubric);
+    }
+
+    /* Drifting dust motes, drawn by the script at the bottom */
+    #dust {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* The illustrated W: a canvas of triangles with a real, invisible "W" laid
+       over it, so selecting and copying the title still gives "Wyrd Wiki". */
+    .initial {
+      position: relative;
+      display: inline-block;
+      width: var(--size);
+      height: var(--size);
+      vertical-align: top;
+      margin-top: -0.38em; /* pulls the letter up so its top meets the cap height of the title */
+      margin-right: 0.04em;
+      letter-spacing: 0;
+    }
+    /* The trained W includes white triangles, so multiply the whole canvas onto
+       the parchment: white vanishes and the greys read as ink. */
+    .initial canvas { display: block; mix-blend-mode: multiply; }
+    .initial .glyph {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      font-size: var(--size);
+      line-height: var(--size);
+      text-align: center;
+      color: transparent;
+      text-shadow: none;
+      pointer-events: none;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--ink-faded);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="dust" aria-hidden="true"></canvas>
+  <nav class="crumbs" aria-label="Breadcrumb"><ol id="crumbs"></ol></nav>
+  <div class="layout">
+    <aside aria-label="Options at this level">
+      <div id="tag-image"></div>
+      <ul class="realms" id="options"></ul>
+    </aside>
+    <main>
+      <section id="home">
+    <h1><span id="initial" class="initial" style="--size: 200px"><span class="glyph">W</span></span>yrd Wiki</h1>
+    <p class="subtitle">A gazetteer of folklore, filed by place</p>
+
+    <div class="flourish">✦ ✦ ✦</div>
+
+    <p class="opening">Here are set down the tales of the land: of wells and hollow hills, of drowned bells and things that walk the old roads at dusk. Each story is filed by the place where it was told, from the whole world down to a single village.</p>
+
+    <p>Choose a realm from the list to begin.</p>
+
+    <footer>Here endeth the index.</footer>
+      </section>
+      <article id="view" class="story" hidden></article>
+      <div class="ending" aria-hidden="true"><span class="gem" style="transform: translateX(0)"></span><span class="gem" style="transform: translateX(32px)"></span><span class="gem" style="transform: translateX(64px)"></span></div>
+    </main>
+  </div>
+  <script src="js/triangles.js"></script>
+  <script>
+    // Navigation is driven by the sitemap files under data/stories/.
+    // The URL looks like index.html?/europe/england/norfolk/norwich/peter-the-wild-boy
+    // and each segment is found by following the sitemaps down from sitemap.xml.
+    (function () {
+      var ROOT = "data/stories/sitemap.xml";
+      var crumbsEl = document.getElementById("crumbs");
+      var optionsEl = document.getElementById("options");
+      var tagImageEl = document.getElementById("tag-image");
+      var homeEl = document.getElementById("home");
+      var viewEl = document.getElementById("view");
+      var token = 0;
+
+      function pretty(name) { return name.replace(/_/g, " "); }
+      function slugOf(name) { return name.toLowerCase().replace(/_/g, "-"); }
+      function slugify(text) {
+        return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+      }
+      function sentence(text) { return text.charAt(0).toUpperCase() + text.slice(1); }
+      function hrefFor(parts) {
+        return "index.html" + (parts.length ? "?/" + parts.map(encodeURIComponent).join("/") : "");
+      }
+      function nameOf(loc) {
+        return loc.split("/").pop().replace(/\.xml$/i, "");
+      }
+
+      function parsePath() {
+        var q = location.search.slice(1);
+        try { q = decodeURIComponent(q); } catch (e) {}
+        return q.split("/").filter(Boolean);
+      }
+
+      async function fetchText(url) {
+        var res = await fetch(url);
+        if (!res.ok) throw new Error(url + " (" + res.status + ")");
+        return res.text();
+      }
+
+      // A sitemap is either an index of further sitemaps or a list of pages.
+      // A blank file counts as an empty list.
+      async function fetchSitemap(url) {
+        var text = await fetchText(url);
+        if (!text.trim()) return { kind: "index", locs: [] };
+        var doc = new DOMParser().parseFromString(text, "application/xml");
+        if (doc.getElementsByTagName("parsererror").length) throw new Error("Bad XML in " + url);
+        var locs = [].map.call(doc.getElementsByTagName("loc"), function (el) {
+          return el.textContent.trim();
+        });
+        return { kind: doc.documentElement.localName === "urlset" ? "urlset" : "index", locs: locs };
+      }
+
+      // Settlement files hold stories as "# title" / "# summary" blocks.
+      function parseStories(md) {
+        var stories = [], cur = null, section = null;
+        md.split(/\r?\n/).forEach(function (line) {
+          var h = line.match(/^#\s*(.*)$/);
+          if (h) {
+            var name = h[1].trim().toLowerCase();
+            if (name === "title") { cur = { title: "", lines: [], detailLines: [], tagLines: [] }; stories.push(cur); }
+            section = name;
+            return;
+          }
+          if (!cur) return;
+          if (section === "title" && !cur.title && line.trim()) cur.title = line.trim();
+          else if (section === "summary") cur.lines.push(line);
+          else if (section === "details") cur.detailLines.push(line);
+          else if (section === "tags") cur.tagLines.push(line);
+        });
+        return stories.map(function (st) {
+          return {
+            title: st.title,
+            slug: slugify(st.title),
+            paragraphs: st.lines.join("\n").trim().split(/\n\s*\n/).filter(Boolean),
+            details: st.detailLines.join("\n").trim().split(/\n\s*\n/).filter(Boolean),
+            tags: st.tagLines.join(",").split(",").map(function (t) { return t.trim().toLowerCase(); }).filter(Boolean)
+          };
+        });
+      }
+
+      function el(tag, text, cls) {
+        var node = document.createElement(tag);
+        if (text != null) node.textContent = text;
+        if (cls) node.className = cls;
+        return node;
+      }
+      function link(text, href) {
+        var a = el("a", text);
+        a.href = href;
+        a.setAttribute("data-nav", "");
+        return a;
+      }
+
+      // Illuminated letters are triangle genomes served from rsc/letters/<A-Z>.bin.
+      // The span keeps a real (invisible) letter, so copying still gives the text.
+      // The first line of a title starts beside the letter; any later lines are
+      // right-aligned. Lines are found by measuring where each word lands, then each
+      // is wrapped in a full-width inline-block, so the text still copies as one line.
+      function alignLines(rest) {
+        var lines = rest.querySelector(".lines");
+        var text = rest.dataset.text;
+        if (!lines || !text) return;
+        lines.textContent = text;
+        var node = lines.firstChild;
+        var groups = [], top = null, m, re = /\S+/g;
+        while ((m = re.exec(text))) {
+          var range = document.createRange();
+          range.setStart(node, m.index);
+          range.setEnd(node, m.index + m[0].length);
+          var t = range.getBoundingClientRect().top;
+          if (top === null || t > top + 4) { groups.push([]); top = t; }
+          groups[groups.length - 1].push(m[0]);
+        }
+        if (groups.length < 2) return;
+        lines.textContent = "";
+        groups.forEach(function (g, i) {
+          if (i) lines.appendChild(document.createTextNode(" "));
+          lines.appendChild(el("span", g.join(" "), i ? "line later" : "line"));
+        });
+      }
+
+      // Each letter has its own empty margin inside its square canvas. Find where
+      // the dark ink starts and ends and pull the neighbours in to meet it.
+      function trimInitial(span, canvas, size) {
+        try {
+          var w = canvas.width, h = canvas.height;
+          var d = canvas.getContext("2d").getImageData(0, 0, w, h).data;
+          var min = w, max = -1, last = -1;
+          for (var y = 0; y < h; y++) {
+            for (var x = 0; x < w; x++) {
+              if (d[(y * w + x) * 4] < 160) {
+                if (x < min) min = x;
+                if (x > max) max = x;
+                last = y;
+              }
+            }
+          }
+          if (max < 0) return;
+          var scale = w / size;
+          var fontSize = parseFloat(getComputedStyle(span).fontSize);
+          var rest = span.nextElementSibling;
+          var right = max, pad = fontSize * 0.14;
+          if (rest && rest.classList.contains("rest")) {
+            // The title only sits beside the lowest part of the letter, so only that
+            // band decides how close it can come (a T's arm can overhang its foot).
+            var band = Math.round(fontSize * 0.8 * scale);
+            right = min;
+            for (var y2 = Math.max(0, last - band); y2 <= last; y2++) {
+              for (var x2 = w - 1; x2 > right; x2--) {
+                if (d[(y2 * w + x2) * 4] < 160) { right = x2; break; }
+              }
+            }
+            pad = fontSize * 0.08;
+            span.style.marginBottom = -((h - 1 - last) / scale) + "px";
+            rest.style.maxWidth = "calc(100% - " + ((right - min + 1) / scale + pad) + "px)";
+          }
+          span.style.marginLeft = -(min / scale) + "px";
+          span.style.marginRight = -((w - 1 - right) / scale) + pad + "px";
+          if (rest && rest.classList.contains("rest")) document.fonts.ready.then(function () { alignLines(rest); });
+        } catch (e) {}
+      }
+
+      // A drawing file as the base64 text the renderer takes.
+      async function genomeBase64(url) {
+        var res = await fetch(url);
+        if (!res.ok) throw new Error(url + " (" + res.status + ")");
+        var bytes = new Uint8Array(await res.arrayBuffer());
+        var binary = "";
+        for (var i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+        return btoa(binary);
+      }
+
+      // The spelling changes (data/spelling.txt, lines "from -> to"), fetched once, in the background.
+      var spellingPromise = null;
+      var spelling = {};
+      function spellingList() {
+        if (!spellingPromise) {
+          spellingPromise = fetchText("data/spelling.txt").then(function (text) {
+            text.split(/\r?\n/).forEach(function (line) {
+              var m = line.match(/^\s*([^#\s][^\s]*)\s*->\s*(\S+)\s*$/);
+              if (m) spelling[m[1].toLowerCase()] = m[2];
+            });
+          }).catch(function () {});
+        }
+        return spellingPromise;
+      }
+
+      // The tags that have a drawing (rsc/tags/index.txt), fetched once, in the background.
+      var tagIndexPromise = null;
+      function tagIndex() {
+        if (!tagIndexPromise) {
+          tagIndexPromise = fetchText("rsc/tags/index.txt").then(function (text) {
+            return text.split(/\r?\n/).map(function (l) { return l.trim(); }).filter(Boolean);
+          }).catch(function () { return []; });
+        }
+        return tagIndexPromise;
+      }
+
+      // The first of a story's tags that has a drawing, or null.
+      async function firstTagWithImage(tags) {
+        var have = await tagIndex();
+        return tags.filter(function (t) { return have.indexOf(t) >= 0; })[0] || null;
+      }
+
+      async function drawTag(box, tag) {
+        try {
+          var canvas = renderTriangles(box, await genomeBase64("rsc/tags/" + tag + ".bin"), 200, { repel: true, animateIn: "from-center" });
+          canvas.setAttribute("aria-hidden", "true");
+          canvas.title = tag;
+        } catch (e) {}
+      }
+
+      async function drawInitial(span, letter, size) {
+        try {
+          var canvas = renderTriangles(span, await genomeBase64("rsc/letters/" + letter.toUpperCase() + ".bin"), size, { repel: true });
+          canvas.setAttribute("aria-hidden", "true");
+          trimInitial(span, canvas, size);
+        } catch (e) {
+          var next = span.nextElementSibling;
+          if (next && next.classList.contains("rest")) next.style.maxWidth = "";
+          span.replaceWith(document.createTextNode(letter));
+        }
+      }
+
+      function addInitial(h1, text) {
+        var first = text.charAt(0);
+        if (!/[a-z]/i.test(first)) { h1.textContent = text; return; }
+        var span = el("span", null, "initial");
+        span.appendChild(el("span", first.toUpperCase(), "glyph"));
+        h1.appendChild(span);
+        var rest = el("span", null, "rest");
+        rest.dataset.text = text.slice(1);
+        rest.appendChild(el("span", text.slice(1), "lines"));
+        h1.appendChild(rest);
+        // Same proportion to the title text as the big W on the home page
+        var size = Math.round(parseFloat(getComputedStyle(h1).fontSize) * 2.75);
+        span.style.setProperty("--size", size + "px");
+        rest.style.maxWidth = "calc(100% - " + size + "px)";
+        drawInitial(span, first, size);
+      }
+
+      // A paragraph in which "witch" / "witchcraft" / "magic" are wrapped, ready to be circled.
+      // Add `text` to `box`, wrapping the words to circle and the words to respell.
+      function fillText(box, text) {
+        var last = 0, m;
+        var words = Object.keys(spelling).sort(function (x, y) { return y.length - x.length; });
+        var re = new RegExp("\\b(witch(?:craft)?|magic|wizard)\\b" + (words.length ? "|\\b(" + words.join("|") + ")\\b" : ""), "gi");
+        while ((m = re.exec(text))) {
+          box.appendChild(document.createTextNode(text.slice(last, m.index)));
+          var mark = el("span", m[0], m[1] ? "pencil" : "respell");
+          if (!m[1]) {
+            // the corrected word, with a capital kept if the original had one
+            var to = spelling[m[0].toLowerCase()];
+            mark.dataset.to = m[0].charAt(0) === m[0].charAt(0).toUpperCase() ? to.charAt(0).toUpperCase() + to.slice(1) : to;
+          }
+          box.appendChild(mark);
+          last = m.index + m[0].length;
+        }
+        box.appendChild(document.createTextNode(text.slice(last)));
+      }
+
+      // A paragraph; text between *asterisks* is shown in italics.
+      function paragraph(text) {
+        var p = document.createElement("p");
+        text.split(/\*([^*]+)\*/).forEach(function (part, i) {
+          if (i % 2) {
+            var em = document.createElement("em");
+            fillText(em, part);
+            p.appendChild(em);
+          } else {
+            fillText(p, part);
+          }
+        });
+        return p;
+      }
+
+      // One loose pencil loop: it starts inside, comes round past where it began and
+      // finishes outside, so the two ends miss each other instead of closing. The
+      // radius drifts and wobbles, and the centre slips, like a quick hand-drawn ring.
+      // ovalShape picks the random character of the loop once; ovalPath draws it going
+      // round either way (dir 1 = clockwise, -1 = anticlockwise) from the same start.
+      function ovalShape(w, h, mx, my) {
+        return {
+          cx: w / 2 + mx, cy: h / 2 + my,
+          rx: w / 2 + mx * 0.8, ry: h / 2 + my * 0.3,
+          tilt: (Math.random() * 8 - 5) * Math.PI / 180,
+          start: (0.9 + Math.random() * 0.5) * Math.PI,      // somewhere on the left
+          sweep: Math.PI * 2 * (1.12 + Math.random() * 0.14),
+          inward: 0.1 + Math.random() * 0.06,                  // how far inside the start is
+          outward: 0.1 + Math.random() * 0.08,                 // how far outside the end is
+          wob: [Math.random() * 6.28, Math.random() * 6.28],
+          driftX: (Math.random() - 0.5) * 7, driftY: (Math.random() - 0.5) * 4
+        };
+      }
+
+      // The direction the pencil is moving as the loop begins (clockwise), in page pixels.
+      function startTangent(P) {
+        var dx = -P.rx * Math.sin(P.start), dy = P.ry * Math.cos(P.start);
+        return [dx * Math.cos(P.tilt) - dy * Math.sin(P.tilt), dx * Math.sin(P.tilt) + dy * Math.cos(P.tilt)];
+      }
+
+      function ovalPath(P, dir) {
+        var n = 40, pts = [];
+        for (var i = 0; i <= n; i++) {
+          var t = i / n, a = P.start + dir * P.sweep * t;
+          var r = 1 - P.inward + t * (P.inward + P.outward)
+            + 0.045 * Math.sin(a * 2 + P.wob[0]) + 0.03 * Math.sin(a * 3 + P.wob[1])
+            + (Math.random() - 0.5) * 0.025;
+          var x = P.rx * r * Math.cos(a), y = P.ry * r * Math.sin(a);
+          pts.push([
+            P.cx + t * P.driftX + x * Math.cos(P.tilt) - y * Math.sin(P.tilt),
+            P.cy + t * P.driftY + x * Math.sin(P.tilt) + y * Math.cos(P.tilt)
+          ]);
+        }
+        var d = "M" + pts[0][0].toFixed(1) + " " + pts[0][1].toFixed(1);
+        for (var j = 0; j < n; j++) {
+          var p0 = pts[Math.max(j - 1, 0)], p1 = pts[j], p2 = pts[j + 1], p3 = pts[Math.min(j + 2, n)];
+          d += "C" + (p1[0] + (p2[0] - p0[0]) / 6).toFixed(1) + " " + (p1[1] + (p2[1] - p0[1]) / 6).toFixed(1) +
+            " " + (p2[0] - (p3[0] - p1[0]) / 6).toFixed(1) + " " + (p2[1] - (p3[1] - p1[1]) / 6).toFixed(1) +
+            " " + p2[0].toFixed(1) + " " + p2[1].toFixed(1);
+        }
+        return d;
+      }
+
+      // A small see-through grey diamond that flies about the window along rails. A rail is a
+      // smooth path (arcs and straight lines, never a sharp corner) worked out in advance
+      // from where the diamond is and which way it is heading, and the diamond follows it at
+      // an even speed. When the thing it is heading for moves (the mouse, a scrolled word),
+      // the rail is rewritten from where the diamond now is, so it still turns smoothly.
+      var sprite = {
+        el: null, x: 0, y: 0, heading: 0, angle: 0, last: 0, clock: 0,
+        mode: "rest", t0: 0, restSlot: 2, restFor: 4000, edit: null, trace: null,
+        rail: null, spec: null, wpNext: null, task: null,
+        actsLeft: 0, nextAct: 0, slideEnd: 0, homeAt: 0, away: null, launchAt: 0, returning: false,
+        mouse: null, lastMouse: [0, 0], queue: [], drawTimer: 0
+      };
+
+      function smooth(u) { return u * u * (3 - 2 * u); }
+
+      // How many times slower than the original pace the diamond moves.
+      var PACE = 5;
+      var CRUISE = 0.28 / PACE;         // px per ms while wandering (about 56 px a second)
+      var TURN_RADIUS = 110;            // px: the tightest curve a rail ever makes
+      var CM = 96 / 2.54;               // CSS px in a centimetre (a CSS inch is 96 px)
+
+      // ---- rails: Dubins paths (the shortest path of arcs and straights, for a given turning
+      // radius, from one position and heading to another), as points a few px apart.
+      function mod2pi(a) {
+        a = a % (2 * Math.PI);
+        return a < 0 ? a + 2 * Math.PI : a;
+      }
+
+      function dubins(x0, y0, h0, x1, y1, h1) {
+        var R = TURN_RADIUS, dx = x1 - x0, dy = y1 - y0, D = Math.hypot(dx, dy);
+        if (D < 1) return { pts: [[x0, y0], [x1, y1]], len: D };
+        var d = D / R, th = Math.atan2(dy, dx), a = mod2pi(h0 - th), b = mod2pi(h1 - th);
+        var sa = Math.sin(a), sb = Math.sin(b), ca = Math.cos(a), cb = Math.cos(b), cab = Math.cos(a - b);
+        var best = null, p, t, q, tmp, psq;
+        function consider(type, t, p, q) {
+          var len = t + p + q;
+          if (!best || len < best.len) best = { type: type, t: t, p: p, q: q, len: len };
+        }
+        psq = 2 + d * d - 2 * cab + 2 * d * (sa - sb);                                   // left, straight, left
+        if (psq >= 0) { tmp = Math.atan2(cb - ca, d + sa - sb); consider("LSL", mod2pi(-a + tmp), Math.sqrt(psq), mod2pi(b - tmp)); }
+        psq = 2 + d * d - 2 * cab + 2 * d * (sb - sa);                                   // right, straight, right
+        if (psq >= 0) { tmp = Math.atan2(ca - cb, d - sa + sb); consider("RSR", mod2pi(a - tmp), Math.sqrt(psq), mod2pi(-b + tmp)); }
+        psq = -2 + d * d + 2 * cab + 2 * d * (sa + sb);                                  // left, straight, right
+        if (psq >= 0) {
+          p = Math.sqrt(psq);
+          tmp = Math.atan2(-ca - cb, d + sa + sb) - Math.atan2(-2, p);
+          consider("LSR", mod2pi(-a + tmp), p, mod2pi(-mod2pi(b) + tmp));
+        }
+        psq = d * d - 2 + 2 * cab - 2 * d * (sa + sb);                                   // right, straight, left
+        if (psq >= 0) {
+          p = Math.sqrt(psq);
+          tmp = Math.atan2(ca + cb, d - sa - sb) - Math.atan2(2, p);
+          consider("RSL", mod2pi(a - tmp), p, mod2pi(b - tmp));
+        }
+        tmp = (6 - d * d + 2 * cab + 2 * d * (sa - sb)) / 8;                             // right, left, right
+        if (Math.abs(tmp) <= 1) {
+          p = mod2pi(2 * Math.PI - Math.acos(tmp));
+          t = mod2pi(a - Math.atan2(ca - cb, d - sa + sb) + p / 2);
+          consider("RLR", t, p, mod2pi(a - b - t + p));
+        }
+        tmp = (6 - d * d + 2 * cab + 2 * d * (sb - sa)) / 8;                             // left, right, left
+        if (Math.abs(tmp) <= 1) {
+          p = mod2pi(2 * Math.PI - Math.acos(tmp));
+          t = mod2pi(-a - Math.atan2(ca - cb, d + sa - sb) + p / 2);
+          consider("LRL", t, p, mod2pi(mod2pi(b) - a - t + p));
+        }
+        var pts = [[x0, y0]], x = x0, y = y0, h = h0, lens = [best.t, best.p, best.q];
+        for (var s = 0; s < 3; s++) {
+          var kind = best.type.charAt(s), total = lens[s], steps = Math.max(1, Math.ceil(total * R / 4));
+          for (var k = 1; k <= steps; k++) {
+            var part = total / steps, nx, ny;
+            if (kind === "S") { nx = x + Math.cos(h) * part * R; ny = y + Math.sin(h) * part * R; }
+            else if (kind === "L") { nx = x + R * (Math.sin(h + part) - Math.sin(h)); ny = y + R * (Math.cos(h) - Math.cos(h + part)); h += part; }
+            else { nx = x + R * (Math.sin(h) - Math.sin(h - part)); ny = y + R * (Math.cos(h - part) - Math.cos(h)); h -= part; }
+            x = nx; y = ny;
+            pts.push([x, y]);
+          }
+        }
+        return { pts: pts, len: best.len * R };
+      }
+
+      function line(a, b, pts) {
+        var n = Math.max(1, Math.ceil(Math.hypot(b[0] - a[0], b[1] - a[1]) / 4));
+        for (var i = 1; i <= n; i++) pts.push([a[0] + (b[0] - a[0]) * i / n, a[1] + (b[1] - a[1]) * i / n]);
+      }
+
+      function makeRail(pts, speed, slowStart, slowEnd) {
+        var cum = [0];
+        for (var i = 1; i < pts.length; i++) cum.push(cum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+        return { pts: pts, cum: cum, len: cum[cum.length - 1], s: 0, i: 0, speed: speed, slowStart: slowStart, slowEnd: slowEnd };
+      }
+
+      // Move along a rail for dt ms, easing off at its ends if it asks to.
+      function moveRail(r, dt) {
+        var v = r.speed;
+        if (r.slowStart) v *= Math.min(1, 0.12 + r.s / 220);
+        if (r.slowEnd) v *= Math.min(1, 0.12 + (r.len - r.s) / 220);
+        r.s = Math.min(r.len, r.s + v * dt);
+        while (r.i < r.pts.length - 2 && r.cum[r.i + 1] < r.s) r.i++;
+        var a = r.pts[r.i], b = r.pts[r.i + 1], seg = r.cum[r.i + 1] - r.cum[r.i] || 1, f = Math.min(1, (r.s - r.cum[r.i]) / seg);
+        sprite.x = a[0] + (b[0] - a[0]) * f;
+        sprite.y = a[1] + (b[1] - a[1]) * f;
+        if (b[0] !== a[0] || b[1] !== a[1]) sprite.heading = Math.atan2(b[1] - a[1], b[0] - a[0]);
+      }
+
+      // Lay a rail for a job (spec). spec.build() gives { pts, fixAt? }; spec.key() (optional) is the
+      // point the rail is aimed at, so it can be rewritten if that point moves.
+      function startRail(spec, first) {
+        var built = spec.build();
+        spec.fixAt = built.fixAt;
+        spec.planned = spec.key ? spec.key() : null;
+        sprite.spec = spec;
+        sprite.rail = makeRail(built.pts, spec.speed, first && !!spec.slowStart, !!spec.slowEnd);
+        sprite.mode = "rail";
+      }
+
+      function pathLength(pts) { return makeRail(pts, 1, false, false).len; }
+
+      // The closing row has three places, 0 (left) to 2 (right), 32px apart.
+      function slotCentre(i) {
+        var r = document.querySelector(".ending").getBoundingClientRect();
+        return [r.left + i * 32 + 10, r.top + r.height / 2];
+      }
+
+      function slotInViewport(i) {
+        var c = slotCentre(i);
+        return c[1] > 0 && c[1] < window.innerHeight && c[0] > 0 && c[0] < window.innerWidth;
+      }
+
+      function gems() { return [].slice.call(document.querySelectorAll(".ending .gem")); }
+
+      function placeGem(g, slot, slide) {
+        g.spot = slot;
+        g.style.transition = slide ? "transform 60s linear" : "none";
+        g.style.transform = "translateX(" + slot * 32 + "px)";
+        if (!slide) void g.offsetWidth;
+      }
+
+      // The rightmost diamond becomes the flyer (the others slide one place right over
+      // a minute, leaving the left place free to land in). A diamond that has just
+      // landed is first shown in its place, so the row is whole again for an instant.
+      function launch() {
+        var landed = sprite.away;
+        if (landed && landed.spot === null) {
+          placeGem(landed, 0, false);
+          landed.style.visibility = "visible";
+        }
+        var out = gems().filter(function (g) { return g.spot === 2; })[0];
+        out.style.visibility = "hidden";
+        out.spot = null;
+        sprite.away = out;
+        var home = slotCentre(2);
+        sprite.x = home[0];
+        sprite.y = home[1];
+        sprite.heading = 0;                              // facing right, the way it will go
+        sprite.angle = Math.PI / 2;
+        if (window.dustFlyer) window.dustFlyer.reset();    // that jump is not movement
+        gems().forEach(function (g) { if (g.spot !== null) placeGem(g, g.spot + 1, true); });
+        sprite.launchAt = sprite.clock;
+        sprite.returning = false;
+        sprite.actsLeft = 1 + Math.floor(Math.random() * 2);        // one or two activities per flight
+        sprite.wpNext = null;
+        // back after the others have finished sliding (60s); if that is missed, stepSprite brings it home at 75s
+        sprite.homeAt = sprite.clock + 65000 + Math.random() * 5000;
+        console.log("flyer: taking off, plans " + sprite.actsLeft + " activit" + (sprite.actsLeft === 1 ? "y" : "ies") +
+          ", home in about " + Math.round((sprite.homeAt - sprite.clock) / 1000) + "s");
+      }
+
+      function randomPoint() {
+        var w = window.innerWidth, h = window.innerHeight, to;
+        do {
+          to = [60 + Math.random() * (w - 120), 60 + Math.random() * (h - 120)];
+        } while (Math.hypot(to[0] - sprite.x, to[1] - sprite.y) < Math.min(w, h) * 0.4);
+        return to;
+      }
+
+      // Wandering: a rail to a random point, arriving already heading for the next one,
+      // so the legs join without a turn.
+      function wander() {
+        var to = sprite.wpNext || randomPoint();
+        sprite.wpNext = randomPoint();
+        var after = Math.atan2(sprite.wpNext[1] - to[1], sprite.wpNext[0] - to[0]);
+        startRail({
+          kind: "wander", speed: CRUISE, onDone: pickNext,
+          build: function () { return dubins(sprite.x, sprite.y, sprite.heading, to[0], to[1], after); }
+        }, true);
+      }
+
+      // Setting off from the closing row: straight out to the right of the three diamonds first.
+      function leaveRow() {
+        var c = slotCentre(2), to = [Math.min(c[0] + 150, window.innerWidth - 30), c[1]];
+        startRail({
+          kind: "wander", speed: CRUISE, slowStart: true, onDone: pickNext,
+          build: function () { return dubins(sprite.x, sprite.y, sprite.heading, to[0], to[1], 0); }
+        }, true);
+      }
+
+      function hurrySlide() {
+        var left = 60000 - (sprite.clock - sprite.launchAt);
+        sprite.slideEnd = sprite.launchAt + 60000;
+        if (left <= 7000) return;
+        var secs = 6;
+        gems().forEach(function (g) {
+          if (g.spot === null) return;
+          var from = new DOMMatrix(getComputedStyle(g).transform).m41;
+          g.style.transition = "none";
+          g.style.transform = "translateX(" + from + "px)";
+          void g.offsetWidth;
+          g.style.transition = "transform " + secs + "s ease-in-out";
+          g.style.transform = "translateX(" + g.spot * 32 + "px)";
+        });
+        sprite.slideEnd = sprite.clock + secs * 1000;
+      }
+
+      // Back to the free place at the left of the closing row, arriving heading right, and rest there.
+      function goHome() {
+        hurrySlide();     // coming back early: the other two diamonds finish sliding over so the place is free
+        sprite.returning = true;
+        startRail({
+          kind: "home", speed: CRUISE * 2.5, slowEnd: true, tol: 25, key: function () { return slotCentre(0); },
+          build: function () { var c = slotCentre(0); return dubins(sprite.x, sprite.y, sprite.heading, c[0], c[1], 0); },
+          onDone: function () { sprite.mode = "hold"; }
+        }, true);
+      }
+
+      // Go for the mouse, rewriting the rail whenever it moves, until within 3 cm; close is enough.
+      function visitMouse() {
+        startRail({
+          kind: "mouse", speed: CRUISE * 1.6, tol: 35, until: sprite.clock + 40000,
+          key: function () { return sprite.lastMouse; },
+          build: function () {
+            var m = sprite.lastMouse;
+            return dubins(sprite.x, sprite.y, sprite.heading, m[0], m[1], Math.atan2(m[1] - sprite.y, m[0] - sprite.x));
+          },
+          onDone: pickNext
+        }, true);
+      }
+
+      // The things a flight can do, taken in turn (one or two per flight): correct a spelling,
+      // circle a word, fly to the mouse, fly through an illustrated letter or the tag drawing,
+      // fly through an "o" in the title. An activity the page can't offer just now is passed over.
+      // Between activities it wanders; when its allowance is used up it goes home.
+      var ACTIVITIES = ["edit", "circle", "mouse", "letter", "o"];
+      function pickNext() {
+        sprite.queue = sprite.queue.filter(taskAlive);
+        if (sprite.clock >= sprite.homeAt) return goHome();
+        if (sprite.actsLeft <= 0) return goHome();      // all its activities are done: back to the pips, seen or not
+        var circle = sprite.queue.filter(function (t) { return t.kind !== "respell"; })[0];
+        var edit = sprite.queue.filter(function (t) { return t.kind === "respell"; })[0];
+        var through = flyThroughTargets();
+        var offered = {
+          edit: !!edit, circle: !!circle, mouse: !!sprite.mouse,
+          letter: through.letters.length > 0, o: through.os.length > 0
+        };
+        for (var i = 0; i < ACTIVITIES.length; i++) {
+          var at = (sprite.nextAct + i) % ACTIVITIES.length, name = ACTIVITIES[at];
+          if (!offered[name]) continue;
+          sprite.nextAct = (at + 1) % ACTIVITIES.length;
+          sprite.actsLeft--;
+          console.log("flyer: next activity \"" + name + "\" (" + sprite.actsLeft + " more after this)");
+          if (name === "circle" || name === "edit") {
+            var task = name === "circle" ? circle : edit;
+            sprite.queue.splice(sprite.queue.indexOf(task), 1);
+            return approach(task);
+          }
+          if (name === "mouse") return visitMouse();
+          var list = name === "letter" ? through.letters : through.os;
+          return flyThrough(list[Math.floor(Math.random() * list.length)]);
+        }
+        console.log("flyer: nothing on offer, wandering");
+        wander();
+      }
+
+      // Things it can fly through: each is { c: () => centre or null, r: rough radius }.
+      function flyThroughTargets() {
+        var out = { letters: [], os: [] };
+        var onScreen = function (x, y) { return x > 0 && x < window.innerWidth && y > 0 && y < window.innerHeight; };
+        [].forEach.call(document.querySelectorAll("canvas[data-triangles]"), function (cv) {
+          var r = cv.getBoundingClientRect();
+          if (r.width > 0 && onScreen(r.left + r.width / 2, r.top + r.height / 2)) {
+            out.letters.push({
+              el: cv,
+              c: function () {
+                if (!cv.isConnected) return null;
+                var q = cv.getBoundingClientRect();
+                return [q.left + q.width / 2, q.top + q.height / 2];
+              },
+              r: Math.max(r.width, r.height) / 2
+            });
+          }
+        });
+        var title = document.querySelector("h1.story-title");
+        if (title) {
+          var walker = document.createTreeWalker(title, NodeFilter.SHOW_TEXT);
+          var node;
+          while ((node = walker.nextNode())) {
+            if (node.parentNode.closest && node.parentNode.closest(".glyph")) continue;     // the hidden copy of the first letter
+            for (var i = 0; i < node.data.length; i++) {
+              if (!/[oO]/.test(node.data.charAt(i))) continue;
+              (function (n, k) {
+                var centre = function () {
+                  if (!n.isConnected || k >= n.data.length) return null;
+                  var range = document.createRange();
+                  range.setStart(n, k);
+                  range.setEnd(n, k + 1);
+                  var q = range.getBoundingClientRect();
+                  return [q.left + q.width / 2, q.top + q.height / 2];
+                };
+                var c = centre();
+                if (c && onScreen(c[0], c[1])) out.os.push({ c: centre, r: 12, burst: true });
+              })(node, i);
+            }
+          }
+        }
+        return out;
+      }
+
+      // Fly straight through the middle of a target: a rail that curves in to line up with it,
+      // then runs straight through the middle and out the other side. Through an "o", eight
+      // dust motes fly out as it passes.
+      function flyThrough(target) {
+        var c = target.c(), dir = [1, 0], reach = target.r + 70;      // in and out a little past the edge of it
+        // keep clear of the other drawings: of many directions, take one whose rail crosses none of them
+        var others = [].filter.call(document.querySelectorAll("canvas[data-triangles]"), function (cv) {
+          return cv !== target.el && cv.getBoundingClientRect().width > 0;
+        }).map(function (cv) {
+          var q = cv.getBoundingClientRect();
+          return { l: q.left - 12, t: q.top - 12, r: q.right + 12, b: q.bottom + 12 };
+        });
+        var inside = function (q) { return q[0] > -40 && q[0] < window.innerWidth + 40 && q[1] > -40 && q[1] < window.innerHeight + 40; };
+        var best = null;
+        for (var tries = 0; tries < 120; tries++) {
+          var a = Math.random() * Math.PI * 2, u = [Math.cos(a), Math.sin(a)];
+          var e = [c[0] - u[0] * reach, c[1] - u[1] * reach], f = [c[0] + u[0] * reach, c[1] + u[1] * reach];
+          if (!inside(e) || !inside(f)) continue;
+          var trial = dubins(sprite.x, sprite.y, sprite.heading, e[0], e[1], a).pts.slice();
+          line(e, f, trial);
+          var hits = 0;
+          trial.forEach(function (q) {
+            if (others.some(function (o) { return q[0] >= o.l && q[0] <= o.r && q[1] >= o.t && q[1] <= o.b; })) hits++;
+          });
+          if (!best || hits < best.hits) best = { u: u, hits: hits };
+          if (hits === 0) break;
+        }
+        if (best) dir = best.u;
+        var spec = {
+          kind: "through", speed: CRUISE * 1.3, tol: 30, burst: !!target.burst, fired: false,
+          centre: target.c, key: target.c,
+          build: function () {
+            var m = target.c();
+            var enter = [m[0] - dir[0] * reach, m[1] - dir[1] * reach], leave = [m[0] + dir[0] * reach, m[1] + dir[1] * reach];
+            var d = dubins(sprite.x, sprite.y, sprite.heading, enter[0], enter[1], Math.atan2(dir[1], dir[0]));
+            var pts = d.pts.slice();
+            line(enter, leave, pts);
+            return { pts: pts, fixAt: d.len };
+          },
+          onDone: function () {
+            var m = target.c();
+            if (spec.burst && !spec.fired && m && window.dustBurst) window.dustBurst(m[0], m[1]);
+            pickNext();
+          }
+        };
+        startRail(spec, true);
+      }
+
+      function taskAlive(task) {
+        return task.kind === "respell" ? task.span.isConnected : task.path.isConnected;
+      }
+
+      // Where in the window the caret sits after `index` letters of a word.
+      function caretPoint(span, index) {
+        var node = span.firstChild;
+        if (!node) return [sprite.x, sprite.y];
+        var range = document.createRange();
+        var before = index > 0;
+        range.setStart(node, before ? index - 1 : 0);
+        range.setEnd(node, before ? index : 1);
+        var r = range.getBoundingClientRect();
+        return [before ? r.right : r.left, r.top + r.height / 2];
+      }
+
+      function circleStart(task) {
+        var r = task.svg.getBoundingClientRect(), pt = task.path.getPointAtLength(0);
+        return [r.left + pt.x, r.top + pt.y];
+      }
+
+      var EDIT_STEP = 260;              // ms per letter deleted or typed
+      var BELOW = 34;                   // px below the line it flies to first, before sliding up as the cursor
+
+      // Go to a job (a word to circle, or a word to correct): a rail that ends at the right
+      // spot, heading the right way for what comes next.
+      function approach(task) {
+        sprite.task = task;
+        var alive = function () { return taskAlive(task); };
+        if (task.kind === "respell") {
+          // to a point just below the place in the word, arriving heading up
+          var below = function () {
+            var c = caretPoint(task.span, task.prefix.length + task.oldMid.length);
+            return [c[0], c[1] + BELOW];
+          };
+          startRail({
+            kind: "approach", speed: CRUISE * 1.5, slowEnd: true, tol: 20, key: below, alive: alive,
+            build: function () { var q = below(); return dubins(sprite.x, sprite.y, sprite.heading, q[0], q[1], -Math.PI / 2); },
+            onDone: function () { beginEdit(task); }
+          }, true);
+          return;
+        }
+        // to the start of the circle, arriving along the oval, going round whichever way is the shorter way in
+        var spec = {
+          kind: "approach", speed: CRUISE * 1.5, slowEnd: true, tol: 20, dir: 1, alive: alive,
+          key: function () { return circleStart(task); },
+          build: function () {
+            var st = circleStart(task), tan = startTangent(task.shape), h = Math.atan2(tan[1], tan[0]);
+            var cw = dubins(sprite.x, sprite.y, sprite.heading, st[0], st[1], h);
+            var ccw = dubins(sprite.x, sprite.y, sprite.heading, st[0], st[1], h + Math.PI);
+            spec.dir = cw.len <= ccw.len ? 1 : -1;
+            return spec.dir === 1 ? cw : ccw;
+          },
+          onDone: function () { beginTrace(task, spec.dir); }
+        };
+        startRail(spec, true);
+      }
+
+      // The diamond is at the start of the circle: it goes round the oval, the stroke drawn behind it.
+      function beginTrace(task, dir) {
+        task.path.setAttribute("d", ovalPath(task.shape, dir));
+        sprite.trace = { task: task, t0: sprite.clock };
+        sprite.mode = "trace";
+      }
+
+      // It has reached the spot just below the word: narrow to a cursor, slide up into the
+      // gap between the letters, then backspace the letters that are wrong and type the right ones.
+      function beginEdit(task) {
+        var ops = [];
+        for (var i = 0; i < task.oldMid.length; i++) ops.push("");
+        for (var j = 0; j < task.newMid.length; j++) ops.push(task.newMid.charAt(j));
+        sprite.edit = { task: task, ops: ops, i: 0, mid: task.oldMid, stage: "thin", t0: sprite.clock, next: 0, doneAt: 0 };
+        sprite.heading = -Math.PI / 2;
+        sprite.el.classList.add("cursor");
+        sprite.mode = "edit";
+      }
+
+      function endEdit(complete) {
+        var e = sprite.edit;
+        if (complete) e.task.span.textContent = e.task.to;
+        sprite.el.classList.remove("cursor");
+        sprite.edit = null;
+      }
+
+      // a circle, once drawn (or cut short), fades away over 255 seconds
+      function finishCircle(t) {
+        t.path.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 255000, easing: "linear", fill: "forwards" });
+      }
+
+      // Following a rail: if the thing it is aimed at has moved, rewrite the rail from here.
+      function stepRail(dt, now) {
+        var sp = sprite.spec, r = sprite.rail;
+        if (sp.alive && !sp.alive()) { pickNext(); return; }
+        if (sp.key) {
+          var k = sp.key();
+          if (!k) { pickNext(); return; }
+          if (sp.planned && Math.hypot(k[0] - sp.planned[0], k[1] - sp.planned[1]) > sp.tol && (sp.fixAt === undefined || r.s < sp.fixAt - 30)) {
+            startRail(sp, false);
+            r = sprite.rail;
+          }
+        }
+        // the mouse: getting within 3 cm is enough
+        if (sp.kind === "mouse" && (Math.hypot(sprite.x - sprite.lastMouse[0], sprite.y - sprite.lastMouse[1]) < 3 * CM || now > sp.until)) { pickNext(); return; }
+        moveRail(r, dt);
+        // passing through an "o": eight motes fly out from it, one to each compass point
+        if (sp.kind === "through" && sp.burst && !sp.fired && r.s >= (sp.fixAt || 0) - 5) {
+          var c = sp.centre();
+          if (c && Math.hypot(sprite.x - c[0], sprite.y - c[1]) < 25) {
+            sp.fired = true;
+            if (window.dustBurst) window.dustBurst(c[0], c[1]);
+          }
+        }
+        if (r.s >= r.len) { sprite.rail = null; sp.onDone(); }
+      }
+
+      // The tip leads: turn smoothly to face the way it is heading.
+      function faceHeading(rate) {
+        var want = sprite.heading + Math.PI / 2;
+        var diff = Math.atan2(Math.sin(want - sprite.angle), Math.cos(want - sprite.angle));
+        sprite.angle += diff * rate;
+      }
+
+      function stepSprite(now) {
+        var dt = Math.min(Math.max(now - (sprite.last || now), 0), 50);   // ms, capped so a stalled tab doesn't jump
+        sprite.last = now;
+        sprite.clock = now;
+
+        // no flight lasts more than 90s: by 75s, whatever it is doing, it turns for home
+        if (sprite.away && !sprite.returning && sprite.mode !== "rest" && sprite.mode !== "hold" && now - sprite.launchAt >= 75000) {
+          if (sprite.mode === "trace") finishCircle(sprite.trace.task);
+          if (sprite.mode === "edit") endEdit(true);
+          goHome();
+        }
+
+        var mode = sprite.mode;
+        if (mode === "rest" || mode === "hold") {
+          // sit in its place (following it if the page scrolls), on its side like the others
+          var slot = slotCentre(mode === "rest" ? sprite.restSlot : 0);
+          sprite.x = slot[0];
+          sprite.y = slot[1];
+          faceHeading(0.08);
+          if (mode === "hold") {
+            if (now >= sprite.slideEnd) {      // the others are in place: now it rests as the left diamond
+              sprite.mode = "rest";
+              sprite.restSlot = 0;
+              sprite.restFor = 10000;
+              sprite.t0 = 0;
+            }
+            return;
+          }
+          if (!sprite.t0) sprite.t0 = now;
+          if (now - sprite.t0 >= sprite.restFor) {
+            sprite.t0 = 0;
+            launch();
+            leaveRow();
+          }
+          return;
+        }
+
+        if (mode === "rail") {
+          stepRail(dt, now);
+        } else if (mode === "trace") {
+          var tr = sprite.trace, t = tr.task;
+          if (!t.path.isConnected) { pickNext(); return; }
+          var u = Math.min((now - tr.t0) / (1700 * PACE), 1), e = smooth(u);
+          var rect = t.svg.getBoundingClientRect(), len = t.path.getTotalLength(), at = e * len;
+          var pt = t.path.getPointAtLength(at), ahead = t.path.getPointAtLength(Math.min(len, at + 2));
+          sprite.x = rect.left + pt.x;
+          sprite.y = rect.top + pt.y;
+          if (ahead.x !== pt.x || ahead.y !== pt.y) sprite.heading = Math.atan2(ahead.y - pt.y, ahead.x - pt.x);
+          t.path.setAttribute("stroke-dashoffset", String(1 - e));
+          if (u >= 1) {
+            finishCircle(t);
+            pickNext();
+          }
+        } else if (mode === "edit") {
+          var ed = sprite.edit, tk = ed.task;
+          if (!tk.span.isConnected) { endEdit(false); pickNext(); return; }
+          if (ed.stage === "thin" && now - ed.t0 >= 700) { ed.stage = "slide"; ed.t0 = now; }
+          if (ed.stage === "slide" && now - ed.t0 >= 800) { ed.stage = "ops"; ed.next = now + 150; }
+          if (ed.stage === "ops" && now >= ed.next) {
+            if (ed.i < ed.ops.length) {
+              var op = ed.ops[ed.i++];
+              ed.mid = op === "" ? ed.mid.slice(0, -1) : ed.mid + op;
+              tk.span.textContent = tk.prefix + ed.mid + tk.suffix;
+              ed.next = now + EDIT_STEP;
+            } else {
+              ed.stage = "done";
+              ed.doneAt = now;
+            }
+          }
+          // finished: a moment's pause, then slide up out of the line, still thin
+          if (ed.stage === "done" && now - ed.doneAt >= 300) { ed.stage = "lift"; ed.doneAt = now; }
+          if (ed.stage === "lift" && now - ed.doneAt >= 800) { endEdit(false); pickNext(); return; }   // widens again as it flies off
+          // the cursor sits where the next letter goes, upright; first it waits below and slides up, and at the end slides up out of the line
+          var cp = caretPoint(tk.span, tk.prefix.length + ed.mid.length);
+          var off = ed.stage === "thin" ? BELOW
+            : ed.stage === "slide" ? BELOW * (1 - smooth((now - ed.t0) / 800))
+            : ed.stage === "lift" ? -BELOW * smooth((now - ed.doneAt) / 800) : 0;
+          sprite.x = cp[0];
+          sprite.y = cp[1] + off;
+        }
+        faceHeading(0.2);
+      }
+
+      // The renderer reacts to pointermove / pointerleave on its canvas, so the diamond
+      // sends it those same events while it is over (and as it leaves) a letter.
+      function nudgeLetters() {
+        [].forEach.call(document.querySelectorAll("canvas[data-triangles]"), function (c) {
+          var r = c.getBoundingClientRect();
+          var inside = sprite.x >= r.left && sprite.x <= r.right && sprite.y >= r.top && sprite.y <= r.bottom;
+          if (inside) {
+            c.dispatchEvent(new PointerEvent("pointermove", { clientX: sprite.x, clientY: sprite.y }));
+            c.dataset.diamond = "1";
+          } else if (c.dataset.diamond) {
+            delete c.dataset.diamond;
+            c.dispatchEvent(new PointerEvent("pointerleave"));
+          }
+        });
+      }
+
+      function startSprite() {
+        gems().forEach(function (g, i) { g.spot = i; });
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        sprite.clock = performance.now();
+        sprite.homeAt = sprite.clock + 65000;
+        window.addEventListener("pointermove", function (e) {
+          if (e.pointerType !== "mouse") return;
+          sprite.mouse = sprite.lastMouse = [e.clientX, e.clientY];
+        }, { passive: true });
+        document.documentElement.addEventListener("mouseleave", function () { sprite.mouse = null; });
+        sprite.el = el("div", null, "sprite");
+        sprite.el.setAttribute("aria-hidden", "true");
+        document.body.appendChild(sprite.el);
+        // it starts in its own place in the closing diamonds, and sets off after a few seconds
+        var home = slotCentre(2);
+        sprite.x = home[0];
+        sprite.y = home[1];
+        sprite.angle = Math.PI / 2;
+        sprite.heading = 0;
+        gems()[2].style.visibility = "hidden";     // the flyer takes the place of the third diamond
+        sprite.mode = "rest";
+        sprite.restSlot = 2;
+        sprite.restFor = 4000;
+        (function tick(now) {
+          stepSprite(now);
+          nudgeLetters();
+          if (window.dustFlyer) window.dustFlyer(sprite.x, sprite.y);
+          sprite.el.style.transform = "translate(" + sprite.x.toFixed(1) + "px," + sprite.y.toFixed(1) + "px) rotate(" + sprite.angle.toFixed(3) + "rad)";
+          requestAnimationFrame(tick);
+        })(performance.now());
+      }
+
+      // Marked words get a pencil oval (drawn by the diamond above) that then fades out.
+      function circleWords(root) {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return [];
+        var ns = "http://www.w3.org/2000/svg";
+        var items = [];
+        [].forEach.call(root.querySelectorAll(".pencil"), function (mark, i) {
+          var box = mark.getBoundingClientRect();
+          var mx = 12, my = 9;
+          var svg = document.createElementNS(ns, "svg");
+          svg.setAttribute("width", box.width + mx * 2);
+          svg.setAttribute("height", box.height + my * 2);
+          svg.style.left = -mx + "px";
+          svg.style.top = -my + "px";
+          svg.setAttribute("aria-hidden", "true");
+          var filter = document.createElementNS(ns, "filter");
+          filter.id = "graphite" + i;
+          filter.innerHTML = '<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="n"/>' +
+            '<feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/>';
+          var path = document.createElementNS(ns, "path");
+          var shape = ovalShape(box.width, box.height, mx, my);
+          path.setAttribute("d", ovalPath(shape, 1));
+          path.setAttribute("fill", "none");
+          path.setAttribute("stroke", "rgba(60, 50, 42, 0.75)");
+          path.setAttribute("stroke-width", "1.6");
+          path.setAttribute("stroke-linecap", "round");
+          path.setAttribute("pathLength", "1");
+          path.setAttribute("stroke-dasharray", "1 2");
+          path.setAttribute("stroke-dashoffset", "1");
+          path.setAttribute("filter", "url(#graphite" + i + ")");
+          svg.appendChild(filter);
+          svg.appendChild(path);
+          mark.appendChild(svg);
+
+          items.push({ svg: svg, path: path, shape: shape });
+        });
+        return items;
+      }
+
+      // Words to correct. Without the flyer (reduced motion) they are simply corrected.
+      function respellTasks(root) {
+        var tasks = [];
+        [].forEach.call(root.querySelectorAll(".respell"), function (span) {
+          var from = span.textContent, to = span.dataset.to;
+          if (!to || from === to) return;
+          if (!sprite.el) { span.textContent = to; return; }
+          var p = 0;
+          while (p < from.length && p < to.length && from.charAt(p) === to.charAt(p)) p++;
+          var q = 0;
+          while (q < from.length - p && q < to.length - p && from.charAt(from.length - 1 - q) === to.charAt(to.length - 1 - q)) q++;
+          tasks.push({
+            kind: "respell", span: span, from: from, to: to,
+            prefix: from.slice(0, p), oldMid: from.slice(p, from.length - q),
+            newMid: to.slice(p, to.length - q), suffix: from.slice(from.length - q)
+          });
+        });
+        return tasks;
+      }
+
+      // A few seconds after a story opens, hand its jobs (circles, corrections) to the diamond.
+      function handOff(items) {
+        clearTimeout(sprite.drawTimer);
+        sprite.queue = [];
+        if (!items.length) return;
+        sprite.drawTimer = setTimeout(function () {
+          sprite.queue = items;
+          // a newly opened story's own jobs come first: start the round of activities at corrections, or circles
+          sprite.nextAct = items.some(function (t) { return t.kind === "respell"; }) ? 0 : 1;
+          if (sprite.mode === "rail" && sprite.spec.kind === "wander") pickNext();      // break off a sweep to go and work
+        }, 3000);
+      }
+
+      function render(state) {
+        crumbsEl.textContent = "";
+        state.crumbs.forEach(function (c, i) {
+          var li = document.createElement("li");
+          if (i === state.crumbs.length - 1) {
+            li.appendChild(el("span", c.title));
+            li.firstChild.setAttribute("aria-current", "page");
+          } else {
+            li.appendChild(link(c.title, c.href));
+          }
+          crumbsEl.appendChild(li);
+        });
+
+        // the open story is not listed again: its first tag's drawing sits at the top instead
+        tagImageEl.textContent = "";
+        if (state.tagImage) drawTag(tagImageEl, state.tagImage);
+        optionsEl.textContent = "";
+        var listed = state.items.filter(function (item) { return item.slug !== state.activeSlug; });
+        listed.forEach(function (item) {
+          var li = document.createElement("li");
+          li.appendChild(link(item.title, item.href));
+          optionsEl.appendChild(li);
+        });
+        if (!listed.length && !state.story) {
+          var li = document.createElement("li");
+          li.className = "empty";
+          li.textContent = "Nothing filed here yet.";
+          optionsEl.appendChild(li);
+        }
+
+        var atHome = !state.path.length;
+        homeEl.hidden = !atHome;
+        viewEl.hidden = atHome;
+        viewEl.textContent = "";
+        if (!atHome) {
+          if (state.story) {
+            var h1 = el("h1", null, "story-title");
+            viewEl.appendChild(h1);
+            addInitial(h1, state.story.title);
+            viewEl.appendChild(el("h2", "Summary"));
+            state.story.paragraphs.forEach(function (p) { viewEl.appendChild(paragraph(p)); });
+            if (state.story.details.length) {
+              viewEl.appendChild(el("h2", "Details", "later-heading"));
+              state.story.details.forEach(function (p) { viewEl.appendChild(paragraph(p)); });
+            }
+          } else {
+            var h1 = el("h1", null, "story-title");
+            viewEl.appendChild(h1);
+            addInitial(h1, state.message || state.levelTitle);
+            if (state.hint) viewEl.appendChild(el("p", state.hint, "hint"));
+          }
+        }
+        handOff(state.story ? circleWords(viewEl).concat(respellTasks(viewEl)) : []);
+        document.title = (state.story ? state.story.title + " — " : atHome ? "" : state.levelTitle + " — ") + "Wyrd Wiki";
+      }
+
+      async function route() {
+        var mine = ++token;
+        var segs = parsePath();
+        var state = {
+          path: segs, crumbs: [{ title: "Wyrd Wiki", href: hrefFor([]) }],
+          levelTitle: "", items: [], activeSlug: null, story: null
+        };
+        try {
+          var xmlUrl = new URL(ROOT, location.href).href;
+          await spellingList();
+          var sm = await fetchSitemap(xmlUrl);
+          var levelPath = [];
+          var i = 0;
+
+          // Follow the sitemap indexes down, one path segment at a time.
+          for (; i < segs.length && sm.kind === "index"; i++) {
+            var match = sm.locs.filter(function (loc) { return slugOf(nameOf(loc)) === segs[i]; })[0];
+            if (!match) throw { notFound: true, depth: i };
+            xmlUrl = new URL(match, xmlUrl).href;
+            sm = await fetchSitemap(xmlUrl);
+            levelPath.push(segs[i]);
+            state.levelTitle = pretty(nameOf(match));
+            state.crumbs.push({ title: state.levelTitle, href: hrefFor(levelPath) });
+          }
+
+          var stories = [];
+          if (sm.kind === "urlset") {
+            try { stories = parseStories(await fetchText(xmlUrl.replace(/\.xml$/i, ".md"))); } catch (e) {}
+          }
+
+          state.items = sm.locs.map(function (loc) {
+            if (sm.kind === "index") {
+              var name = nameOf(loc);
+              return { slug: slugOf(name), title: pretty(name), href: hrefFor(levelPath.concat(slugOf(name))) };
+            }
+            var q = loc.indexOf("?") >= 0 ? loc.slice(loc.indexOf("?") + 1) : loc;
+            var slug = q.split("/").filter(Boolean).pop() || "";
+            var known = stories.filter(function (st) { return st.slug === slug; })[0];
+            return { slug: slug, title: known ? known.title : sentence(slug.replace(/-/g, " ")), href: hrefFor(levelPath.concat(slug)) };
+          });
+
+          if (i < segs.length) {
+            // Whatever is left after the last sitemap is a story.
+            var slug = segs[i];
+            var found = stories.filter(function (st) { return st.slug === slug; })[0];
+            if (i + 1 < segs.length || !found) throw { notFound: true, depth: i };
+            state.story = found;
+            state.activeSlug = slug;
+            state.tagImage = await firstTagWithImage(found.tags);
+            state.crumbs.push({ title: found.title, href: hrefFor(levelPath.concat(slug)) });
+          } else {
+            state.hint = sm.kind === "urlset" ? "Choose a story from the list." : state.items.length ? "Choose a place from the list." : "";
+          }
+        } catch (err) {
+          if (err && err.notFound) {
+            state.message = "Nothing found here";
+            state.hint = "That place is not in the gazetteer.";
+          } else {
+            state.message = "Could not load the gazetteer";
+            state.hint = "Pages are read from the sitemap files, so open this through the server (npm run server) rather than from disk.";
+            state.levelTitle = "";
+          }
+        }
+        if (mine === token) render(state);
+      }
+
+      document.addEventListener("click", function (e) {
+        var a = e.target.closest && e.target.closest("a[data-nav]");
+        if (!a || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        if (a.href !== location.href) history.pushState(null, "", a.href);
+        route();
+        window.scrollTo(0, 0);
+      });
+      window.addEventListener("popstate", route);
+      var resizing = 0;
+      window.addEventListener("resize", function () {
+        clearTimeout(resizing);
+        resizing = setTimeout(function () {
+          [].forEach.call(document.querySelectorAll(".story-title .rest"), alignLines);
+        }, 100);
+      });
+      tagIndex();                       // start loading the tag index in the background
+      spellingList();                   // and the spelling changes
+      drawInitial(document.getElementById("initial"), "W", 200);
+      startSprite();
+      route();
+    })();
+  </script>
+  <script>
+    (function () {
+      var canvas = document.getElementById("dust");
+      var ctx = canvas.getContext("2d");
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      var CM = 96 / 2.54;            // CSS px in a centimetre (a CSS inch is 96 px)
+      var AREA_PER_MOTE = (10 * CM) * (10 * CM); // one mote per 10cm x 10cm
+      var MOTE = 96 / 25.4 / 2;      // diameter: half a mm (a CSS inch is 96 px)
+      var DRIFT_SPEED = 0.08;        // px per frame the orbit centre wanders
+      var TURN = 0.04;               // how quickly the wander direction changes
+      var DAMPING = 0.88;           // per-frame decay of pointer pushes, returns motes to wandering
+      var REACH = 70;                // how close the pointer must pass to disturb a mote
+      var PUSH_ASIDE = 0.2;          // share of pointer speed pushing motes sideways, away from its path
+      var PUSH_ALONG = 0.05;         // share of pointer speed pushing motes along its path
+      var CURL = 0.035;              // radians per frame a pending push swirls, giving eddies
+      var MAX_SPEED = 12;
+      var BURST_LIFE = 6000;         // ms a burst mote lasts, fading as it goes
+      var BURST_SPEED = 4.5;         // px per frame it starts at
+      var BURST_DRAG = 0.965;        // per-frame slowing, so it coasts about 100 px
+
+      var w, h, dpr;
+      var motes = [];
+      var bursts = [];               // motes thrown out for a while from one spot, then faded away
+
+      // Each mote circles a centre point (cx, cy). The centre wanders in a
+      // slowly turning direction and carries any push from the pointer (vx, vy).
+      // A push first waits in (px, py), then bleeds into the velocity after a
+      // short delay while swirling, so motes react late and curl like eddies.
+      function makeMote() {
+        var m = {
+          cx: Math.random() * w,
+          cy: Math.random() * h,
+          heading: Math.random() * Math.PI * 2,
+          speed: DRIFT_SPEED * (0.5 + Math.random()),
+          vx: 0,
+          vy: 0,
+          px: 0,
+          py: 0,
+          wait: 0,
+          curl: 0,
+          lag: 0.03 + Math.random() * 0.05,
+          r: 2 + Math.random() * 6,
+          angle: Math.random() * Math.PI * 2,
+          spin: (0.004 + Math.random() * 0.012) * (Math.random() < 0.5 ? -1 : 1),
+          a: 0.7 + Math.random() * 0.2
+        };
+        m.x = m.cx + Math.cos(m.angle) * m.r;
+        m.y = m.cy + Math.sin(m.angle) * m.r;
+        return m;
+      }
+
+      function resize() {
+        dpr = window.devicePixelRatio || 1;
+        w = window.innerWidth;
+        h = window.innerHeight;
+        canvas.width = Math.round(w * dpr);
+        canvas.height = Math.round(h * dpr);
+        var target = Math.round((w * h) / AREA_PER_MOTE);
+        while (motes.length < target) motes.push(makeMote());
+        motes.length = target;
+      }
+
+      function draw() {
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, w, h);
+        ctx.fillStyle = "rgb(255, 245, 190)"; // pale yellow, as if catching the light
+        for (var j = 0; j < bursts.length; j++) {
+          var b = bursts[j];
+          ctx.globalAlpha = b.a * (1 - b.age / BURST_LIFE);
+          ctx.beginPath();
+          ctx.arc(b.x, b.y, MOTE / 2, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        for (var i = 0; i < motes.length; i++) {
+          var m = motes[i];
+          ctx.globalAlpha = m.a;
+          ctx.beginPath();
+          ctx.arc(m.x, m.y, MOTE / 2, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+      }
+
+      function step(k) {
+        var damp = Math.pow(DAMPING, k);
+        for (var j = bursts.length - 1; j >= 0; j--) {
+          var b = bursts[j], slow = Math.pow(BURST_DRAG, k);
+          b.x += b.vx * k;
+          b.y += b.vy * k;
+          b.vx *= slow;
+          b.vy *= slow;
+          b.age += k * 16.67;
+          if (b.age >= BURST_LIFE) bursts.splice(j, 1);
+        }
+        for (var i = 0; i < motes.length; i++) {
+          var m = motes[i];
+          m.heading += (Math.random() - 0.5) * TURN * k;
+          m.vx *= damp;
+          m.vy *= damp;
+          if (m.wait > 0) {
+            m.wait -= k;
+          } else if (m.px !== 0 || m.py !== 0) {
+            var c = Math.cos(m.curl * k), s = Math.sin(m.curl * k);
+            var px = m.px * c - m.py * s;
+            var py = m.px * s + m.py * c;
+            var f = 1 - Math.pow(1 - m.lag, k);
+            m.vx += px * f;
+            m.vy += py * f;
+            m.px = px * (1 - f);
+            m.py = py * (1 - f);
+            if (m.px * m.px + m.py * m.py < 1e-4) m.px = m.py = 0;
+          }
+          m.cx += (Math.cos(m.heading) * m.speed + m.vx) * k;
+          m.cy += (Math.sin(m.heading) * m.speed + m.vy) * k;
+          if (m.cx < 0) m.cx += w; else if (m.cx >= w) m.cx -= w;
+          if (m.cy < 0) m.cy += h; else if (m.cy >= h) m.cy -= h;
+          m.angle += m.spin * k;
+          m.x = m.cx + Math.cos(m.angle) * m.r;
+          m.y = m.cy + Math.sin(m.angle) * m.r;
+        }
+      }
+
+      // Push motes near the segment a moving point just travelled along: mostly
+      // sideways away from its path, a little along it. Each source of movement
+      // (the mouse, the flyer) gets its own pusher, called with its latest position.
+      function makePusher() {
+      var last = null;
+      function push(x, y) {
+        var now = performance.now();
+        if (!last || now - last.t > 100) {
+          last = { x: x, y: y, t: now };
+          return;
+        }
+        var dx = x - last.x;
+        var dy = y - last.y;
+        var dt = Math.max(now - last.t, 1);
+        var len2 = dx * dx + dy * dy;
+        if (len2 > 0) {
+          // pointer speed in px per 60fps frame, and its unit direction
+          var len = Math.sqrt(len2);
+          var speed = (len / dt) * 16.67;
+          var ux = dx / len, uy = dy / len;
+          for (var i = 0; i < motes.length; i++) {
+            var m = motes[i];
+            var t = ((m.x - last.x) * dx + (m.y - last.y) * dy) / len2;
+            t = t < 0 ? 0 : t > 1 ? 1 : t;
+            var ox = m.x - (last.x + t * dx);
+            var oy = m.y - (last.y + t * dy);
+            var d = Math.sqrt(ox * ox + oy * oy);
+            if (d >= REACH) continue;
+            // which side of the path the mote is on: +1 left, -1 right
+            var side = ux * oy - uy * ox >= 0 ? 1 : -1;
+            var falloff = 1 - d / REACH;
+            var strength = speed * falloff * (0.6 + Math.random() * 0.6);
+            var aside = PUSH_ASIDE * strength * side;
+            var along = PUSH_ALONG * strength;
+            if (m.px === 0 && m.py === 0) m.wait = 4 + Math.random() * 10;
+            m.px += -uy * aside + ux * along;
+            m.py += ux * aside + uy * along;
+            m.curl = CURL * side * (0.5 + Math.random());
+            var s = Math.sqrt(m.px * m.px + m.py * m.py);
+            if (s > MAX_SPEED) {
+              m.px *= MAX_SPEED / s;
+              m.py *= MAX_SPEED / s;
+            }
+          }
+        }
+        last = { x: x, y: y, t: now };
+      }
+      push.reset = function () { last = null; };
+      return push;
+      }
+
+      var mousePush = makePusher();
+      function onPointerMove(e) { mousePush(e.clientX, e.clientY); }
+      window.dustFlyer = makePusher();
+
+      // Eight motes from (x, y), one towards each compass point.
+      window.dustBurst = function (x, y) {
+        if (reduceMotion) return;
+        for (var i = 0; i < 8; i++) {
+          var a = i * Math.PI / 4;
+          bursts.push({ x: x, y: y, vx: Math.sin(a) * BURST_SPEED, vy: -Math.cos(a) * BURST_SPEED, age: 0, a: 0.85 });
+        }
+      };
+
+      var prev = null;
+      function frame(now) {
+        var k = prev === null ? 1 : Math.min((now - prev) / 16.67, 3);
+        prev = now;
+        step(k);
+        draw();
+        requestAnimationFrame(frame);
+      }
+
+      resize();
+      window.addEventListener("resize", function () {
+        resize();
+        if (reduceMotion) draw();
+      });
+
+      if (reduceMotion) {
+        draw();
+      } else {
+        window.addEventListener("pointermove", onPointerMove, { passive: true });
+        requestAnimationFrame(frame);
+      }
+    })();
+  </script>
+</body>
+</html>
