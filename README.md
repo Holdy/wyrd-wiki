@@ -18,7 +18,7 @@ The page reads its sitemap and story files with `fetch`, so it must be opened th
 | `index.html` | The whole page: styles, markup and all the scripts |
 | `js/triangles.js` | Renderer for the triangle drawings, copied from the triangle-evolution project |
 | `rsc/letters/A.bin` … `Z.bin` | The illuminated letters |
-| `rsc/tags/*.bin` | 181 more drawings, one per tag (witch, ghost-light, …). Shown at the top of the menu for a story |
+| `rsc/tags/*.bin` | 182 more drawings, one per tag (witch, ghost-light, …). Shown at the top of the menu for a story |
 | `rsc/tags/index.txt` | The names of those drawings, one per line without `.bin`. **Keep it up to date** whenever a drawing is added, removed or renamed |
 | `data/stories/` | Sitemaps and story files (see below) |
 | `data/spelling.txt` | The word changes the flyer makes to story text (American → British), one `from -> to` per line |

@@ -7,7 +7,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+  <script>
+    // A page deep in the wiki shouldn't flash the home text while its content is still being fetched.
+    if (location.search.length > 1) document.documentElement.className = "deep";
+  </script>
   <style>
+    .deep #home { display: none; }
     :root {
       --parchment: #ecdcb4;
       --parchment-light: #f6ead0;
@@ -24,6 +29,15 @@
       min-height: 100%;
     }
 
+    html { background: #fff; }
+
+    /* The sheet arrives in stages: white, then parchment colour, then the blotches, grain and scorched edges come in.
+       --blotch (0 to 1) scales every blotch in the body's background. */
+    @property --blotch { syntax: "<number>"; inherits: false; initial-value: 1; }
+    @keyframes sheet-colour { from { background-color: #fff; } to { background-color: var(--parchment); } }
+    @keyframes sheet-blotch { from { --blotch: 0; } to { --blotch: 1; } }
+    @keyframes sheet-fade { from { opacity: 0; } }
+
     body {
       position: relative;
       min-height: 100vh;
@@ -34,11 +48,15 @@
       background-color: var(--parchment);
       /* Base colour blotches: uneven ageing across the sheet */
       background-image:
-        radial-gradient(ellipse at 20% 15%, rgba(255, 248, 225, 0.55), transparent 55%),
-        radial-gradient(ellipse at 80% 30%, rgba(201, 160, 90, 0.25), transparent 50%),
-        radial-gradient(ellipse at 35% 80%, rgba(180, 135, 70, 0.22), transparent 55%),
-        radial-gradient(ellipse at 75% 85%, rgba(255, 245, 215, 0.4), transparent 50%),
-        linear-gradient(170deg, var(--parchment-light), var(--parchment) 45%, var(--parchment-dark));
+        radial-gradient(ellipse at 20% 15%, rgba(255, 248, 225, calc(0.55 * var(--blotch))), transparent 55%),
+        radial-gradient(ellipse at 80% 30%, rgba(201, 160, 90, calc(0.25 * var(--blotch))), transparent 50%),
+        radial-gradient(ellipse at 35% 80%, rgba(180, 135, 70, calc(0.22 * var(--blotch))), transparent 55%),
+        radial-gradient(ellipse at 75% 85%, rgba(255, 245, 215, calc(0.4 * var(--blotch))), transparent 50%),
+        linear-gradient(170deg,
+          color-mix(in srgb, var(--parchment-light) calc(var(--blotch) * 100%), transparent),
+          color-mix(in srgb, var(--parchment) calc(var(--blotch) * 100%), transparent) 45%,
+          color-mix(in srgb, var(--parchment-dark) calc(var(--blotch) * 100%), transparent));
+      animation: sheet-colour 1.6s ease-in-out both, sheet-blotch 3.5s ease-in-out 1.6s both;
     }
 
     /* Generated fibre / grain texture from SVG turbulence */
@@ -49,6 +67,7 @@
       pointer-events: none;
       z-index: 0;
       opacity: 0.55;
+      animation: sheet-fade 3.5s ease-in-out 1.6s both;
       mix-blend-mode: multiply;
       background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.45  0 0 0 0 0.32  0 0 0 0 0.16  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='900'><filter id='s' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='3' seed='7' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.33  0 0 0 0 0.12  0 0 0 1.1 -0.45'/></filter><rect width='100%' height='100%' filter='url(%23s)'/></svg>");
@@ -66,6 +85,11 @@
         inset 0 0 80px rgba(90, 55, 20, 0.55),
         inset 0 0 200px rgba(120, 80, 30, 0.35);
       background: radial-gradient(ellipse at center, transparent 55%, rgba(110, 70, 25, 0.35) 100%);
+      animation: sheet-fade 3.5s ease-in-out 1.6s both;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body, body::before, body::after { animation: none; }
     }
 
     /* Everything below is positioned so it paints above the grain layer */
@@ -167,7 +191,7 @@
       will-change: transform;
     }
 
-    /* Three diamonds in a row close the page content. Each sits in one of three
+    /* Three diamonds in a row follow the title, and three more close the page content (still). Each sits in one of three
        places 32px apart (set by JS); one of them at a time is away being the flyer. */
     .ending {
       position: relative;
@@ -175,6 +199,8 @@
       height: 11px;
       margin: 2.5rem auto 0;
     }
+    /* the flying row, under the title (JS moves it to follow whichever title is showing) */
+    #pips { margin: 0.3rem auto 1.4rem; }
     .ending .gem {
       position: absolute;
       left: 0;
@@ -331,6 +357,7 @@
     <main>
       <section id="home">
     <h1><span id="initial" class="initial" style="--size: 200px"><span class="glyph">W</span></span>yrd Wiki</h1>
+    <div class="ending" id="pips" aria-hidden="true"><span class="gem" style="transform: translateX(0)"></span><span class="gem" style="transform: translateX(32px)"></span><span class="gem" style="transform: translateX(64px)"></span></div>
     <p class="subtitle">A gazetteer of folklore, filed by place</p>
 
     <div class="flourish">✦ ✦ ✦</div>
@@ -789,7 +816,7 @@
 
       // The closing row has three places, 0 (left) to 2 (right), 32px apart.
       function slotCentre(i) {
-        var r = document.querySelector(".ending").getBoundingClientRect();
+        var r = document.getElementById("pips").getBoundingClientRect();
         return [r.left + i * 32 + 10, r.top + r.height / 2];
       }
 
@@ -798,7 +825,7 @@
         return c[1] > 0 && c[1] < window.innerHeight && c[0] > 0 && c[0] < window.innerWidth;
       }
 
-      function gems() { return [].slice.call(document.querySelectorAll(".ending .gem")); }
+      function gems() { return [].slice.call(document.querySelectorAll("#pips .gem")); }
 
       function placeGem(g, slot, slide) {
         g.spot = slot;
@@ -1388,6 +1415,9 @@
           optionsEl.appendChild(li);
         }
 
+        document.documentElement.classList.remove("deep");     // from here the hidden attributes decide
+        var pips = document.getElementById("pips");
+        document.querySelector("main").appendChild(pips);      // out of harm's way while the story is rebuilt
         var atHome = !state.path.length;
         homeEl.hidden = !atHome;
         viewEl.hidden = atHome;
@@ -1410,6 +1440,8 @@
             if (state.hint) viewEl.appendChild(el("p", state.hint, "hint"));
           }
         }
+        var title = (atHome ? homeEl : viewEl).querySelector("h1");
+        if (title) title.after(pips);
         handOff(state.story ? circleWords(viewEl).concat(respellTasks(viewEl)) : []);
         document.title = (state.story ? state.story.title + " — " : atHome ? "" : state.levelTitle + " — ") + "Wyrd Wiki";
       }
