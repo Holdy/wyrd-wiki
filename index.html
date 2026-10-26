@@ -32,10 +32,8 @@
     html { background: #fff; }
 
     /* The sheet arrives in stages: white, then parchment colour, then the blotches, grain and scorched edges come in.
-       --blotch (0 to 1) scales every blotch in the body's background. */
-    @property --blotch { syntax: "<number>"; inherits: false; initial-value: 1; }
-    @keyframes sheet-colour { from { background-color: #fff; } to { background-color: var(--parchment); } }
-    @keyframes sheet-blotch { from { --blotch: 0; } to { --blotch: 1; } }
+       Each stage is a layer that only changes opacity, which the browser does without repainting, so the
+       fade stays cheap and doesn't slow the page's own animation. */
     @keyframes sheet-fade { from { opacity: 0; } }
 
     body {
@@ -45,18 +43,29 @@
       font-family: "IM Fell English", Georgia, "Times New Roman", serif;
       font-size: 1.2rem;
       line-height: 1.6;
+    }
+
+    /* The paper itself, behind everything: the parchment colour fades in over the white page... */
+    #paper {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
       background-color: var(--parchment);
-      /* Base colour blotches: uneven ageing across the sheet */
+      animation: sheet-fade 1.6s ease-in-out both;
+    }
+    /* ...then the blotches: uneven ageing across the sheet */
+    #paper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
       background-image:
-        radial-gradient(ellipse at 20% 15%, rgba(255, 248, 225, calc(0.55 * var(--blotch))), transparent 55%),
-        radial-gradient(ellipse at 80% 30%, rgba(201, 160, 90, calc(0.25 * var(--blotch))), transparent 50%),
-        radial-gradient(ellipse at 35% 80%, rgba(180, 135, 70, calc(0.22 * var(--blotch))), transparent 55%),
-        radial-gradient(ellipse at 75% 85%, rgba(255, 245, 215, calc(0.4 * var(--blotch))), transparent 50%),
-        linear-gradient(170deg,
-          color-mix(in srgb, var(--parchment-light) calc(var(--blotch) * 100%), transparent),
-          color-mix(in srgb, var(--parchment) calc(var(--blotch) * 100%), transparent) 45%,
-          color-mix(in srgb, var(--parchment-dark) calc(var(--blotch) * 100%), transparent));
-      animation: sheet-colour 1.6s ease-in-out both, sheet-blotch 3.5s ease-in-out 1.6s both;
+        radial-gradient(ellipse at 20% 15%, rgba(255, 248, 225, 0.55), transparent 55%),
+        radial-gradient(ellipse at 80% 30%, rgba(201, 160, 90, 0.25), transparent 50%),
+        radial-gradient(ellipse at 35% 80%, rgba(180, 135, 70, 0.22), transparent 55%),
+        radial-gradient(ellipse at 75% 85%, rgba(255, 245, 215, 0.4), transparent 50%),
+        linear-gradient(170deg, var(--parchment-light), var(--parchment) 45%, var(--parchment-dark));
+      animation: sheet-fade 3.5s ease-in-out 1.6s both;
     }
 
     /* Generated fibre / grain texture from SVG turbulence */
@@ -89,7 +98,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      body, body::before, body::after { animation: none; }
+      #paper, #paper::before, body::before, body::after { animation: none; }
     }
 
     /* Everything below is positioned so it paints above the grain layer */
@@ -160,6 +169,8 @@
     .qw canvas { display: block; opacity: 0.74; mix-blend-mode: multiply; }
     #home-rest { margin-left: calc(clamp(2.6rem, 8vw, 4.5rem) * 0.5); }     /* the box itself has font-size 0 */
     .qt { text-shadow: none; letter-spacing: 0; text-transform: none; font-variant: normal; }
+    /* debugging: a one-pixel red box round each quill glyph's cell (its advance width by the full line box) */
+    .quill-debug .qt span { outline: 1px solid red; outline-offset: -1px; }
     .qt::selection, .qt span::selection { background: rgba(138, 42, 26, 0.28); color: transparent; }
     .story-title .line {
       display: inline-block;
@@ -356,6 +367,7 @@
   </style>
 </head>
 <body>
+  <div id="paper" aria-hidden="true"></div>
   <canvas id="dust" aria-hidden="true"></canvas>
   <nav class="crumbs" aria-label="Breadcrumb"><ol id="crumbs"></ol></nav>
   <div class="layout">
@@ -481,6 +493,11 @@
       // right-aligned. Lines are found by where each word lands, then each is wrapped in a
       // full-width inline-block, so the text still copies as one line.
       var quill = import("./rsc/quill/word.js");
+      // Debugging: boxes every quill glyph. Off by default; quillDebug() in the console, or #quill-debug in the address, turns it on (quillDebug(false) off).
+      window.quillDebug = function (on) {
+        document.documentElement.classList.toggle("quill-debug", on === undefined ? undefined : !!on);
+      };
+      if (location.hash === "#quill-debug") window.quillDebug(true);
       var quillMod = null;
       quill.then(function (m) { quillMod = m; }, function () {});
       var QUILL = { color: "#000", inkFadeRate: 0.06 };     // the library's default rate is 0.03

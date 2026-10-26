@@ -67,7 +67,7 @@ const lower = {
     p: { width: 0.8, secondary: [1], strokes: [line([L, 1], [L, -0.7]), bowl(150, -210)] },
     q: { width: 0.8, secondary: [0, 1], strokes: [bowl(30, 390), line([R, 1], [R, -0.7])] },
     r: {
-        width: 0.65,
+        width: 0.58,
         secondary: [1],
         strokes: [line([L, 1], [L, 0]), path([L, 0.6], [0.4, 1], [0.6, 0.9])],
     },
@@ -181,7 +181,7 @@ const upper = {
         secondary: [2],
         strokes: [line([0.1, 1.5], [0.1, 0]), line([1, 1.5], [1, 0]), line([0.1, 0.8], [1, 0.8])],
     },
-    I: { width: 0.35, strokes: [line([0.12, 1.5], [0.12, 0])] },
+    I: { width: 0.25, strokes: [line([0.12, 1.5], [0.12, 0])] },
     J: { width: 0.7, strokes: [path([0.5, 1.5], [0.5, 0], [0.3, -0.2], [0.05, -0.15])] },
     K: {
         width: 1.05,

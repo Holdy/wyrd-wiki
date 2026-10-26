@@ -132,7 +132,7 @@ export function layoutQuill(box, text, options) {
       words.forEach(function (w, i) {
         var ctx = w.canvas.getContext("2d"), x = w.pad, j = 0;
         for (var ch of w.text) {
-          var opts = Object.assign({}, options, { seed: (options.seed || 1) + i * 7 + j * 3, speed: speed || 300, signal: signal });
+          var opts = Object.assign({}, options, { seed: (options.seed || 1) + i * 7 + j * 3, speed: speed || 80, signal: signal });
           running.push(clock.at(start + j * LETTER_GAP).then(animateText.bind(null, ctx, ch, x, base, opts)));
           x += advance(ch);
           j++;

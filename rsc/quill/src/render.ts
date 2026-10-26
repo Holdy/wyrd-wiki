@@ -172,13 +172,13 @@ const PUSH_TIME = 0.08;
 const RETURN_TIME = 0.8;
 /** How far from a point of influence the text is disturbed, and how far it is pushed at most, in sizes. */
 const BEND_REACH = 2.2;
-const BEND_PUSH = 0.65;
+const BEND_PUSH = 0.325;
 
 /**
  * Text kept as strokes, so it can be bent and repainted. Give `bend` up to two points of influence
- * (a pointer, a flying thing). Only the two ends of each stroke are pushed, away from them (most
- * strongly right under one); the rest of the stroke stretches between its ends, keeping its shape,
- * so a stem leans or lengthens rather than bowing. The ends spring away fast and ease back slowly.
+ * (a pointer, a flying thing). Only the two ends of each stroke are pulled, towards them (most
+ * strongly when close, never past one); the rest of the stroke stretches between its ends, keeping
+ * its shape, so a stem leans or lengthens rather than bowing. The ends move over fast and ease back slowly.
  * The ink dropouts belong to the points, so a bent drawing keeps them where they were. Made with
  * the same text, position and options as animateText, it looks the same.
  */
@@ -219,17 +219,17 @@ export function makeDrawing(text: string, x: number, y: number, options?: QuillO
   }
   let displaced = false;
 
-  /** Where an end of a stroke would be pushed to, as an offset from home. */
+  /** Where an end of a stroke would be pulled to, as an offset from home. */
   function goal(px: number, py: number, near: Point[]): Point {
     let gx = 0, gy = 0;
     for (const p of near) {
-      const dx = px - p[0], dy = py - p[1];
+      const dx = p[0] - px, dy = p[1] - py;      // towards it
       const d = Math.hypot(dx, dy);
-      if (d >= reach) continue;
-      const falloff = (1 - d / reach) ** 2;
-      // directly under it there is no direction: push straight up
-      gx += (d > 0.001 ? dx / d : 0) * push * falloff;
-      gy += (d > 0.001 ? dy / d : -1) * push * falloff;
+      if (d >= reach || d < 0.001) continue;
+      // pulled hardest when near (but never past it)
+      const pull = Math.min(push * (1 - d / reach) ** 2, d);
+      gx += (dx / d) * pull;
+      gy += (dy / d) * pull;
     }
     return [gx, gy];
   }
@@ -247,7 +247,7 @@ export function makeDrawing(text: string, x: number, y: number, options?: QuillO
         for (let end = 0; end < 2; end++) {
           const home = s[end ? s.length - 1 : 0];
           const [gx, gy] = goal(home[0], home[1], near);
-          // moving further from home than now = being pushed (fast); otherwise drifting back (slow)
+          // moving further from home than now = being pulled (fast); otherwise drifting back (slow)
           const k = Math.hypot(gx, gy) > Math.hypot(e[end * 2], e[end * 2 + 1]) ? pushK : returnK;
           e[end * 2] += (gx - e[end * 2]) * k;
           e[end * 2 + 1] += (gy - e[end * 2 + 1]) * k;
