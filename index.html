@@ -152,6 +152,15 @@
       margin-top: 0;
     }
     .story-title .lines { display: block; }
+    /* Quill titles: the words are drawn on canvases with the real text laid transparently over them */
+    h1.pending { visibility: hidden; }
+    /* the baseline of the quill is the bottom of the illuminated letter (the ink, once trimmed) */
+    h1 .initial { vertical-align: baseline; margin-top: 0; }
+    /* opacity is on the whole canvas, not the ink, so strokes that overlap don't show darker joins */
+    .qw canvas { display: block; opacity: 0.74; mix-blend-mode: multiply; }
+    #home-rest { margin-left: calc(clamp(2.6rem, 8vw, 4.5rem) * 0.5); }     /* the box itself has font-size 0 */
+    .qt { text-shadow: none; letter-spacing: 0; text-transform: none; font-variant: normal; }
+    .qt::selection, .qt span::selection { background: rgba(138, 42, 26, 0.28); color: transparent; }
     .story-title .line {
       display: inline-block;
       width: 100%;
@@ -356,7 +365,7 @@
     </aside>
     <main>
       <section id="home">
-    <h1><span id="initial" class="initial" style="--size: 200px"><span class="glyph">W</span></span>yrd Wiki</h1>
+    <h1 class="pending" aria-label="Wyrd Wiki"><span id="initial" class="initial" style="--size: 200px"><span class="glyph">W</span></span><span id="home-rest" class="rest" data-text="yrd Wiki"></span></h1>
     <div class="ending" id="pips" aria-hidden="true"><span class="gem" style="transform: translateX(0)"></span><span class="gem" style="transform: translateX(32px)"></span><span class="gem" style="transform: translateX(64px)"></span></div>
     <p class="subtitle">A gazetteer of folklore, filed by place</p>
 
@@ -467,29 +476,61 @@
 
       // Illuminated letters are triangle genomes served from rsc/letters/<A-Z>.bin.
       // The span keeps a real (invisible) letter, so copying still gives the text.
-      // The first line of a title starts beside the letter; any later lines are
-      // right-aligned. Lines are found by measuring where each word lands, then each
-      // is wrapped in a full-width inline-block, so the text still copies as one line.
+      // The rest of a title is written in quill (rsc/quill): one canvas per word, with the real
+      // text laid over it. The first line starts beside the letter; any later lines are
+      // right-aligned. Lines are found by where each word lands, then each is wrapped in a
+      // full-width inline-block, so the text still copies as one line.
+      var quill = import("./rsc/quill/word.js");
+      var QUILL = { color: "#000", inkFadeRate: 0.06 };     // the library's default rate is 0.03
+
       function alignLines(rest) {
-        var lines = rest.querySelector(".lines");
-        var text = rest.dataset.text;
-        if (!lines || !text) return;
-        lines.textContent = text;
-        var node = lines.firstChild;
-        var groups = [], top = null, m, re = /\S+/g;
-        while ((m = re.exec(text))) {
-          var range = document.createRange();
-          range.setStart(node, m.index);
-          range.setEnd(node, m.index + m[0].length);
-          var t = range.getBoundingClientRect().top;
+        var lines = rest.querySelector(".lines") || rest;
+        var words = [].slice.call(lines.querySelectorAll(".qw"));
+        if (!words.length) return;
+        lines.textContent = "";                              // flatten any earlier grouping first
+        words.forEach(function (w, i) {
+          if (i) lines.appendChild(document.createTextNode(" "));
+          lines.appendChild(w);
+        });
+        var groups = [], top = null;
+        words.forEach(function (w) {
+          var t = w.offsetTop;
           if (top === null || t > top + 4) { groups.push([]); top = t; }
-          groups[groups.length - 1].push(m[0]);
-        }
-        if (groups.length < 2) return;
+          groups[groups.length - 1].push(w);
+        });
+        if (groups.length < 2 || !rest.classList.contains("rest") || !rest.closest(".story-title")) return;
         lines.textContent = "";
         groups.forEach(function (g, i) {
           if (i) lines.appendChild(document.createTextNode(" "));
-          lines.appendChild(el("span", g.join(" "), i ? "line later" : "line"));
+          var line = el("span", null, i ? "line later" : "line");
+          g.forEach(function (w, k) {
+            if (k) line.appendChild(document.createTextNode(" "));
+            line.appendChild(w);
+          });
+          lines.appendChild(line);
+        });
+      }
+
+      // Write the rest of a title in quill. The h1 stays hidden until its words are laid out
+      // (there is no other face to flash up first), then the pen writes them.
+      // `after` (a promise) holds the writing back, for the letter to finish arriving first.
+      function writeTitle(h1, rest, text, animate, after) {
+        rest.dataset.text = text;
+        var size = parseFloat(getComputedStyle(h1).fontSize) * 0.62;
+        quill.then(function (q) {
+          if (!rest.isConnected) return;
+          if (rest.quill) rest.quill.cancel();
+          var box = rest.querySelector(".lines") || rest;
+          rest.quillSize = size;
+          rest.quill = q.layoutQuill(box, text, Object.assign({ size: size }, QUILL));
+          alignLines(rest);
+          h1.classList.remove("pending");
+          var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          var write = function () { if (rest.isConnected) rest.quill.draw(animate !== false && !still); };
+          if (after) after.then(write); else write();
+        }).catch(function () {
+          (rest.querySelector(".lines") || rest).textContent = text;     // the module could not load
+          h1.classList.remove("pending");
         });
       }
 
@@ -530,7 +571,7 @@
           }
           span.style.marginLeft = -(min / scale) + "px";
           span.style.marginRight = -((w - 1 - right) / scale) + pad + "px";
-          if (rest && rest.classList.contains("rest")) document.fonts.ready.then(function () { alignLines(rest); });
+          if (rest && rest.classList.contains("rest")) alignLines(rest);
         } catch (e) {}
       }
 
@@ -584,33 +625,49 @@
         } catch (e) {}
       }
 
-      async function drawInitial(span, letter, size) {
+      // `done` is called when the letter is a third of the way in (so the quill can start), or could not be drawn.
+      async function drawInitial(span, letter, size, done) {
         try {
-          var canvas = renderTriangles(span, await genomeBase64("rsc/letters/" + letter.toUpperCase() + ".bin"), size, { repel: true });
+          var genome = await genomeBase64("rsc/letters/" + letter.toUpperCase() + ".bin");
+          // trim from a finished copy drawn off the page: the real one starts out flat
+          trimInitial(span, renderTriangles(document.createElement("div"), genome, size), size);
+          var canvas = renderTriangles(span, genome, size, { repel: true, animateIn: "sweep-right", onDone: done, doneAt: 1 / 3 });
           canvas.setAttribute("aria-hidden", "true");
-          trimInitial(span, canvas, size);
         } catch (e) {
           var next = span.nextElementSibling;
           if (next && next.classList.contains("rest")) next.style.maxWidth = "";
           span.replaceWith(document.createTextNode(letter));
+          if (done) done();
         }
       }
 
       function addInitial(h1, text) {
         var first = text.charAt(0);
-        if (!/[a-z]/i.test(first)) { h1.textContent = text; return; }
+        h1.setAttribute("aria-label", text);          // the drawn parts below are hidden from readers
+        h1.classList.add("pending");
+        if (!/[a-z]/i.test(first)) {
+          var whole = el("span", null, "rest");
+          whole.setAttribute("aria-hidden", "true");
+          whole.appendChild(el("span", null, "lines"));
+          h1.appendChild(whole);
+          writeTitle(h1, whole, text, true, null);
+          return;
+        }
         var span = el("span", null, "initial");
         span.appendChild(el("span", first.toUpperCase(), "glyph"));
         h1.appendChild(span);
         var rest = el("span", null, "rest");
+        rest.setAttribute("aria-hidden", "true");
         rest.dataset.text = text.slice(1);
-        rest.appendChild(el("span", text.slice(1), "lines"));
+        rest.appendChild(el("span", null, "lines"));
         h1.appendChild(rest);
+        var arrive, arrived = new Promise(function (resolve) { arrive = resolve; });
+        writeTitle(h1, rest, text.slice(1), true, arrived);
         // Same proportion to the title text as the big W on the home page
         var size = Math.round(parseFloat(getComputedStyle(h1).fontSize) * 2.75);
         span.style.setProperty("--size", size + "px");
         rest.style.maxWidth = "calc(100% - " + size + "px)";
-        drawInitial(span, first, size);
+        drawInitial(span, first, size, arrive);
       }
 
       // A paragraph in which "witch" / "witchcraft" / "magic" are wrapped, ready to be circled.
@@ -1525,12 +1582,21 @@
       window.addEventListener("resize", function () {
         clearTimeout(resizing);
         resizing = setTimeout(function () {
-          [].forEach.call(document.querySelectorAll(".story-title .rest"), alignLines);
+          [].forEach.call(document.querySelectorAll("h1 .rest"), function (rest) {
+            var h1 = rest.parentNode, size = parseFloat(getComputedStyle(h1).fontSize) * 0.62;
+            if (rest.quill && Math.abs(size - rest.quillSize) > 0.5) writeTitle(h1, rest, rest.dataset.text, false);
+            else alignLines(rest);
+          });
         }, 100);
       });
       tagIndex();                       // start loading the tag index in the background
       spellingList();                   // and the spelling changes
-      drawInitial(document.getElementById("initial"), "W", 200);
+      (function () {
+        var rest = document.getElementById("home-rest"), arrive;
+        var arrived = new Promise(function (resolve) { arrive = resolve; });
+        drawInitial(document.getElementById("initial"), "W", 200, arrive);
+        writeTitle(rest.parentNode, rest, rest.dataset.text, true, arrived);
+      })();
       startSprite();
       route();
     })();
@@ -1552,22 +1618,21 @@
       var PUSH_ALONG = 0.05;         // share of pointer speed pushing motes along its path
       var CURL = 0.035;              // radians per frame a pending push swirls, giving eddies
       var MAX_SPEED = 12;
-      var BURST_LIFE = 6000;         // ms a burst mote lasts, fading as it goes
-      var BURST_SPEED = 4.5;         // px per frame it starts at
-      var BURST_DRAG = 0.965;        // per-frame slowing, so it coasts about 100 px
+      var BURST_SPEED = 12;          // px per frame a burst mote is thrown at; the damping coasts it about 100 px
+      var BURST_KEEP = 24;           // burst motes that stay among the dust; the oldest go as new ones join
 
       var w, h, dpr;
       var motes = [];
-      var bursts = [];               // motes thrown out for a while from one spot, then faded away
 
       // Each mote circles a centre point (cx, cy). The centre wanders in a
       // slowly turning direction and carries any push from the pointer (vx, vy).
       // A push first waits in (px, py), then bleeds into the velocity after a
       // short delay while swirling, so motes react late and curl like eddies.
-      function makeMote() {
+      // (x, y), if given, is where the mote starts out rather than a random place.
+      function makeMote(x, y) {
         var m = {
-          cx: Math.random() * w,
-          cy: Math.random() * h,
+          cx: x === undefined ? Math.random() * w : x,
+          cy: y === undefined ? Math.random() * h : y,
           heading: Math.random() * Math.PI * 2,
           speed: DRIFT_SPEED * (0.5 + Math.random()),
           vx: 0,
@@ -1582,6 +1647,10 @@
           spin: (0.004 + Math.random() * 0.012) * (Math.random() < 0.5 ? -1 : 1),
           a: 0.7 + Math.random() * 0.2
         };
+        if (x !== undefined) {         // start exactly at the spot: the orbit centre is offset to suit
+          m.cx -= Math.cos(m.angle) * m.r;
+          m.cy -= Math.sin(m.angle) * m.r;
+        }
         m.x = m.cx + Math.cos(m.angle) * m.r;
         m.y = m.cy + Math.sin(m.angle) * m.r;
         return m;
@@ -1594,21 +1663,17 @@
         canvas.width = Math.round(w * dpr);
         canvas.height = Math.round(h * dpr);
         var target = Math.round((w * h) / AREA_PER_MOTE);
-        while (motes.length < target) motes.push(makeMote());
-        motes.length = target;
+        var plain = motes.filter(function (m) { return !m.burst; });
+        var kept = motes.filter(function (m) { return m.burst; });
+        while (plain.length < target) plain.push(makeMote());
+        plain.length = target;
+        motes = plain.concat(kept);
       }
 
       function draw() {
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         ctx.clearRect(0, 0, w, h);
         ctx.fillStyle = "rgb(255, 245, 190)"; // pale yellow, as if catching the light
-        for (var j = 0; j < bursts.length; j++) {
-          var b = bursts[j];
-          ctx.globalAlpha = b.a * (1 - b.age / BURST_LIFE);
-          ctx.beginPath();
-          ctx.arc(b.x, b.y, MOTE / 2, 0, Math.PI * 2);
-          ctx.fill();
-        }
         for (var i = 0; i < motes.length; i++) {
           var m = motes[i];
           ctx.globalAlpha = m.a;
@@ -1621,15 +1686,6 @@
 
       function step(k) {
         var damp = Math.pow(DAMPING, k);
-        for (var j = bursts.length - 1; j >= 0; j--) {
-          var b = bursts[j], slow = Math.pow(BURST_DRAG, k);
-          b.x += b.vx * k;
-          b.y += b.vy * k;
-          b.vx *= slow;
-          b.vy *= slow;
-          b.age += k * 16.67;
-          if (b.age >= BURST_LIFE) bursts.splice(j, 1);
-        }
         for (var i = 0; i < motes.length; i++) {
           var m = motes[i];
           m.heading += (Math.random() - 0.5) * TURN * k;
@@ -1713,12 +1769,22 @@
       function onPointerMove(e) { mousePush(e.clientX, e.clientY); }
       window.dustFlyer = makePusher();
 
-      // Eight motes from (x, y), one towards each compass point.
+      // Eight motes join the dust at (x, y), each thrown towards a compass point, then they
+      // circle and drift like the rest. Only so many are kept; the oldest give way.
       window.dustBurst = function (x, y) {
         if (reduceMotion) return;
         for (var i = 0; i < 8; i++) {
           var a = i * Math.PI / 4;
-          bursts.push({ x: x, y: y, vx: Math.sin(a) * BURST_SPEED, vy: -Math.cos(a) * BURST_SPEED, age: 0, a: 0.85 });
+          var m = makeMote(x, y);
+          m.burst = true;
+          m.a = 0.9;                   // as visible as any mote gets (they range 0.7 to 0.9)
+          m.vx = Math.sin(a) * BURST_SPEED;
+          m.vy = -Math.cos(a) * BURST_SPEED;
+          motes.push(m);
+        }
+        var over = motes.filter(function (m) { return m.burst; }).length - BURST_KEEP;
+        for (var j = 0; j < motes.length && over > 0; j++) {
+          if (motes[j].burst) { motes.splice(j--, 1); over--; }
         }
       };
 

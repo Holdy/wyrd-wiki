@@ -17,6 +17,14 @@
  * middle of the image and moves out to its position and size. A new triangle sets
  * off every 1/100 second (options.animateGap, seconds) and each takes 3 seconds to
  * arrive (options.animateTime, seconds). Skipped if the visitor prefers reduced motion.
+ *
+ * animateIn "sweep-right": an imaginary line sweeps from the left edge to the right over
+ * options.animateTime seconds (default 2). Each triangle starts flat (every point at its
+ * own leftmost x) and stretches out to its real width as the line crosses it, so the
+ * picture unfolds from left to right.
+ *
+ * options.onDone is called once the sweep has run options.doneAt of its time (default 1, all of it;
+ * at once if nothing animates).
  */
 const BYTES_PER_TRIANGLE = 8;
 /** Seconds for a point to move most of the way when pushed / when drifting home. */
@@ -25,6 +33,9 @@ const RETURN_TIME = 0.8;
 /** animateIn: seconds between one triangle setting off and the next, and each one's travel time. */
 const ANIMATE_GAP = 1 / 100;
 const ANIMATE_TIME = 3;
+/** animateIn "sweep-right": seconds for the line to cross the image, and the least width (as a fraction of the image) a triangle takes to stretch. */
+const SWEEP_TIME = 2;
+const SWEEP_MIN_SPAN = 0.08;
 /** Stops the animation and listeners from a previous render into the same canvas. */
 const cleanups = new WeakMap();
 function decodeBase64(base64) {
@@ -78,18 +89,26 @@ function renderTriangles(target, base64, size, options = {}) {
     const pos = new Float32Array(home);
     // animateIn: triangles that have not set off yet are not drawn.
     const animateIn = options.animateIn;
-    if (animateIn !== undefined && animateIn !== "from-center") {
-        throw new Error(`renderTriangles: unknown animateIn "${String(animateIn)}" (expected "from-center")`);
+    if (animateIn !== undefined && animateIn !== "from-center" && animateIn !== "sweep-right") {
+        throw new Error(`renderTriangles: unknown animateIn "${String(animateIn)}" (expected "from-center" or "sweep-right")`);
     }
     const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-    const animating = animateIn === "from-center" && !reduceMotion;
+    const animating = animateIn !== undefined && !reduceMotion;
     const final = new Float32Array(home);
-    const shown = new Uint8Array(n).fill(animating ? 0 : 1);
+    const shown = new Uint8Array(n).fill(animating && animateIn === "from-center" ? 0 : 1);
     const stops = [];
-    if (animating) {
+    if (animating && animateIn === "from-center") {
         for (let i = 0; i < home.length; i += 2) {
             home[i] = pos[i] = size / 2;
             home[i + 1] = pos[i + 1] = size / 2;
+        }
+    }
+    if (animating && animateIn === "sweep-right") {
+        // flat: every point at its triangle's leftmost x (a triangle with no width draws nothing)
+        for (let t = 0; t < n; t++) {
+            const left = Math.min(final[t * 6], final[t * 6 + 2], final[t * 6 + 4]);
+            for (let k = 0; k < 6; k += 2)
+                home[t * 6 + k] = pos[t * 6 + k] = left;
         }
     }
     const draw = () => {
@@ -110,9 +129,14 @@ function renderTriangles(target, base64, size, options = {}) {
         }
     };
     draw();
-    if (animating) {
+    if (animating && animateIn === "from-center") {
         stops.push(startAnimateIn(final, home, pos, shown, size, options.animateGap ?? ANIMATE_GAP, options.animateTime ?? ANIMATE_TIME, draw));
     }
+    if (animating && animateIn === "sweep-right") {
+        stops.push(startSweepRight(final, home, pos, size, options.animateTime ?? SWEEP_TIME, draw, options.onDone, options.doneAt ?? 1));
+    }
+    else
+        options.onDone?.();
     if (options.repel) {
         const r = options.repel === true ? {} : options.repel;
         stops.push(startRepel(canvas, home, pos, size * (r.radius ?? 0.15), size * (r.strength ?? 0.18), draw));
@@ -151,6 +175,49 @@ function startAnimateIn(final, home, pos, shown, size, gap, travel, draw) {
         }
         draw();
         frame = done ? 0 : requestAnimationFrame(step);
+    };
+    frame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frame);
+}
+/**
+ * A line crosses the image from left to right in `travel` seconds (easing in and out).
+ * A triangle starts to stretch when the line reaches its leftmost point and is full size
+ * once the line has passed its rightmost (or SWEEP_MIN_SPAN of the image further on, for
+ * very narrow ones). Home positions are updated as it goes, so a push from the cursor is
+ * carried along.
+ */
+function startSweepRight(final, home, pos, size, travel, draw, onDone, doneAt) {
+    const n = final.length / 6;
+    const left = new Float32Array(n);
+    const span = new Float32Array(n);
+    for (let t = 0; t < n; t++) {
+        const xs = [final[t * 6], final[t * 6 + 2], final[t * 6 + 4]];
+        left[t] = Math.min(...xs);
+        span[t] = Math.max(Math.max(...xs) - left[t], size * SWEEP_MIN_SPAN);
+    }
+    let frame = 0;
+    let start = 0;
+    const step = (now) => {
+        if (!start)
+            start = now;
+        const p = Math.min((now - start) / 1000 / travel, 1);
+        const line = (p < 0.5 ? 2 * p * p : 1 - 2 * (1 - p) ** 2) * (size + size * SWEEP_MIN_SPAN);
+        for (let t = 0; t < n; t++) {
+            const u = Math.min(Math.max((line - left[t]) / span[t], 0), 1);
+            const e = 1 - (1 - u) ** 2;
+            for (let k = 0; k < 6; k += 2) {
+                const next = left[t] + (final[t * 6 + k] - left[t]) * e;
+                pos[t * 6 + k] += next - home[t * 6 + k];
+                home[t * 6 + k] = next;
+            }
+        }
+        draw();
+        frame = p < 1 ? requestAnimationFrame(step) : 0;
+        if (p >= doneAt && onDone) {
+            const call = onDone;
+            onDone = undefined;
+            call();
+        }
     };
     frame = requestAnimationFrame(step);
     return () => cancelAnimationFrame(frame);

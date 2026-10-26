@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Quill font demo</title>
+  <style>body{margin:0;position:relative;background:#f4ecd8;font-family:sans-serif}canvas{display:block}</style>
+</head>
+<body>
+  <canvas id="c" width="1000" height="1020"></canvas>
+  <script type="module">
+    import { drawText, animateText, addTextLayer } from "../index.js";
+    const canvas = document.getElementById("c");
+    const ctx = canvas.getContext("2d");
+
+    // Draw (or animate) text and lay selectable, screen-reader-friendly text over it.
+    const write = (text, x, y, opts, animate = false) => {
+      (animate ? animateText : drawText)(ctx, text, x, y, opts);
+      addTextLayer(canvas, text, x, y, opts);
+    };
+
+    // Blackletter is the default style.
+    const gothic = { size: 34, color: "#7a1020", lineHeight: 3 };
+    write("abcdefghijklm\nnopqrstuvwxyz", 40, 70, gothic);
+    write("ABCDEFGHIJKLM\nNOPQRSTUVWXYZ", 40, 290, gothic);
+    write("The quick brown fox jumps over the lazy dog.", 40, 520, { ...gothic, maxWidth: 920, speed: 100 }, true);
+
+    // The round variant.
+    const round = { style: "round", size: 24, color: "#3b1f0a", slant: 0.15, speed: 100 };
+    write("The quick brown fox jumps over the lazy dog.", 40, 760, { ...round, maxWidth: 920 }, true);
+    write("abcdefghijklmnopqrstuvwxyz\nABCDEFGHIJKLMNOPQRSTUVWXYZ", 40, 900, round, true);
+  </script>
+</body>
+</html>

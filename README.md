@@ -17,6 +17,7 @@ The page reads its sitemap and story files with `fetch`, so it must be opened th
 | --- | --- |
 | `index.html` | The whole page: styles, markup and all the scripts |
 | `js/triangles.js` | Renderer for the triangle drawings, copied from the triangle-evolution project |
+| `rsc/quill/` | The quill font: its TypeScript source (`src/`, built with `npm run quill`), a demo page, and `word.js`, which draws the rest of each title as pen-written words, one canvas per word, with the real text over them. See its README |
 | `rsc/letters/A.bin` … `Z.bin` | The illuminated letters |
 | `rsc/tags/*.bin` | 182 more drawings, one per tag (witch, ghost-light, …). Shown at the top of the menu for a story |
 | `rsc/tags/index.txt` | The names of those drawings, one per line without `.bin`. **Keep it up to date** whenever a drawing is added, removed or renamed |

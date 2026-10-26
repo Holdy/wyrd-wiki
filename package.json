@@ -1,5 +1,10 @@
 {
   "scripts": {
-    "server": "python -m http.server --directory ."
+    "server": "python -m http.server --directory .",
+    "quill": "tsc -p rsc/quill/tsconfig.json",
+    "quill-demo": "tsc -p rsc/quill/tsconfig.json && python3 rsc/quill/demo/serve.py 8001"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
   }
 }
