@@ -1,4 +1,5 @@
-export { drawText, animateText } from "./render.js";
+export { drawText, animateText, makeDrawing } from "./render.js";
+export type { Drawing } from "./render.js";
 export { layoutText, measureText } from "./layout.js";
 export { GLYPHS } from "./glyphs.js";
 export { BLACKLETTER } from "./blackletter.js";

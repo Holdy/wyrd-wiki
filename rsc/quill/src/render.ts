@@ -167,6 +167,118 @@ export function drawText(
   ctx.restore();
 }
 
+/** Seconds for a point to move most of the way when pushed, and when drifting back (as the triangle drawings do). */
+const PUSH_TIME = 0.08;
+const RETURN_TIME = 0.8;
+/** How far from a point of influence the text is disturbed, and how far it is pushed at most, in sizes. */
+const BEND_REACH = 2.2;
+const BEND_PUSH = 0.65;
+
+/**
+ * Text kept as strokes, so it can be bent and repainted. Give `bend` up to two points of influence
+ * (a pointer, a flying thing). Only the two ends of each stroke are pushed, away from them (most
+ * strongly right under one); the rest of the stroke stretches between its ends, keeping its shape,
+ * so a stem leans or lengthens rather than bowing. The ends spring away fast and ease back slowly.
+ * The ink dropouts belong to the points, so a bent drawing keeps them where they were. Made with
+ * the same text, position and options as animateText, it looks the same.
+ */
+export interface Drawing {
+  /**
+   * Advance the bend by `dt` seconds. `influences` are up to two points in the same pixel space
+   * the drawing was laid out in, or null for none. Returns true while anything is still displaced
+   * or moving: repaint, and call again next frame; false means it is at rest.
+   */
+  bend(influences: (Point | null)[], dt: number): boolean;
+  /** Paint the drawing as it is now (it does not clear the canvas first). */
+  paint(ctx: CanvasRenderingContext2D): void;
+}
+
+export function makeDrawing(text: string, x: number, y: number, options?: QuillOptions): Drawing {
+  const o = resolveOptions(options);
+  const samples = buildSamples(text, x, y, o);
+  const rand = mulberry32(o.seed);
+  const inks = samples.map((s) => ({ left: edgeInk(s.length, o, rand), right: edgeInk(s.length, o, rand) }));
+  const reach = o.size * BEND_REACH;
+  const push = o.size * BEND_PUSH;
+
+  // Per stroke: where each point lies along it (0 at the start, 1 at the end, by length), and how
+  // far its two ends are currently pushed from home (dx, dy for the start, then for the end).
+  const along = samples.map((s) => {
+    const t = new Float32Array(s.length);
+    let len = 0;
+    for (let i = 1; i < s.length; i++) t[i] = len += Math.hypot(s[i][0] - s[i - 1][0], s[i][1] - s[i - 1][1]);
+    if (len > 0) for (let i = 0; i < s.length; i++) t[i] /= len;
+    return t;
+  });
+  const ends = samples.map(() => new Float32Array(4));
+  // a box round all the points, to skip the work when nothing is near
+  let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+  for (const s of samples) for (const [px, py] of s) {
+    x0 = Math.min(x0, px); x1 = Math.max(x1, px);
+    y0 = Math.min(y0, py); y1 = Math.max(y1, py);
+  }
+  let displaced = false;
+
+  /** Where an end of a stroke would be pushed to, as an offset from home. */
+  function goal(px: number, py: number, near: Point[]): Point {
+    let gx = 0, gy = 0;
+    for (const p of near) {
+      const dx = px - p[0], dy = py - p[1];
+      const d = Math.hypot(dx, dy);
+      if (d >= reach) continue;
+      const falloff = (1 - d / reach) ** 2;
+      // directly under it there is no direction: push straight up
+      gx += (d > 0.001 ? dx / d : 0) * push * falloff;
+      gy += (d > 0.001 ? dy / d : -1) * push * falloff;
+    }
+    return [gx, gy];
+  }
+
+  return {
+    bend(influences, dt) {
+      const near = influences.filter((p): p is Point =>
+        !!p && p[0] > x0 - reach && p[0] < x1 + reach && p[1] > y0 - reach && p[1] < y1 + reach);
+      if (!near.length && !displaced) return false;
+      const pushK = 1 - Math.exp(-dt / PUSH_TIME);
+      const returnK = 1 - Math.exp(-dt / RETURN_TIME);
+      let moving = false;
+      samples.forEach((s, si) => {
+        const e = ends[si];
+        for (let end = 0; end < 2; end++) {
+          const home = s[end ? s.length - 1 : 0];
+          const [gx, gy] = goal(home[0], home[1], near);
+          // moving further from home than now = being pushed (fast); otherwise drifting back (slow)
+          const k = Math.hypot(gx, gy) > Math.hypot(e[end * 2], e[end * 2 + 1]) ? pushK : returnK;
+          e[end * 2] += (gx - e[end * 2]) * k;
+          e[end * 2 + 1] += (gy - e[end * 2 + 1]) * k;
+          if (Math.abs(gx - e[end * 2]) > 0.05 || Math.abs(gy - e[end * 2 + 1]) > 0.05) moving = true;
+          else { e[end * 2] = gx; e[end * 2 + 1] = gy; }
+        }
+      });
+      displaced = moving || near.length > 0;
+      return displaced;
+    },
+    paint(ctx) {
+      const segs: Seg[] = [];
+      samples.forEach((s, si) => {
+        const { left, right } = inks[si];
+        const e = ends[si], t = along[si];
+        // each point sits at its home place plus the push of the two ends, shared out by how far along it is
+        const pt = (i: number): Point => [
+          s[i][0] + e[0] + (e[2] - e[0]) * t[i],
+          s[i][1] + e[1] + (e[3] - e[1]) * t[i],
+        ];
+        // as toSegments: a single-point stroke still leaves a nib mark
+        if (s.length === 1) segs.push({ a: pt(0), b: pt(0), left: left[0], right: right[0] });
+        for (let i = 1; i < s.length; i++) segs.push({ a: pt(i - 1), b: pt(i), left: left[i], right: right[i] });
+      });
+      ctx.save();
+      paintSegments(ctx, segs, o);
+      ctx.restore();
+    },
+  };
+}
+
 /** Steps of the previous batch repainted at the start of each animation batch. */
 const JOIN_OVERLAP = 4;
 

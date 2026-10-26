@@ -481,6 +481,8 @@
       // right-aligned. Lines are found by where each word lands, then each is wrapped in a
       // full-width inline-block, so the text still copies as one line.
       var quill = import("./rsc/quill/word.js");
+      var quillMod = null;
+      quill.then(function (m) { quillMod = m; }, function () {});
       var QUILL = { color: "#000", inkFadeRate: 0.06 };     // the library's default rate is 0.03
 
       function alignLines(rest) {
@@ -1360,8 +1362,12 @@
         window.addEventListener("pointermove", function (e) {
           if (e.pointerType !== "mouse") return;
           sprite.mouse = sprite.lastMouse = [e.clientX, e.clientY];
+          if (quillMod) quillMod.influence(0, e.clientX, e.clientY);       // the title's letters bend away from it
         }, { passive: true });
-        document.documentElement.addEventListener("mouseleave", function () { sprite.mouse = null; });
+        document.documentElement.addEventListener("mouseleave", function () {
+          sprite.mouse = null;
+          if (quillMod) quillMod.influence(0, null);
+        });
         sprite.el = el("div", null, "sprite");
         sprite.el.setAttribute("aria-hidden", "true");
         document.body.appendChild(sprite.el);
@@ -1379,6 +1385,11 @@
           stepSprite(now);
           nudgeLetters();
           if (window.dustFlyer) window.dustFlyer(sprite.x, sprite.y);
+          // the quill letters bend away from it, except when it sits at rest among the diamonds under the title
+          if (quillMod) {
+            var resting = sprite.mode === "rest" || sprite.mode === "hold";
+            quillMod.influence(1, resting ? null : sprite.x, sprite.y);
+          }
           sprite.el.style.transform = "translate(" + sprite.x.toFixed(1) + "px," + sprite.y.toFixed(1) + "px) rotate(" + sprite.angle.toFixed(3) + "rad)";
           requestAnimationFrame(tick);
         })(performance.now());

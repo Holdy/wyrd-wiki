@@ -3,7 +3,7 @@
 // glyph. So the browser wraps the words, and selecting, copying and finding work on real text.
 // The font needs no loading, so layout is known the moment this module is: nothing is shown
 // in another face first.
-import { animateText, drawText } from "./render.js";
+import { animateText, makeDrawing } from "./render.js";
 import { resolveOptions } from "./layout.js";
 import { getGlyph } from "./font.js";
 
@@ -16,6 +16,9 @@ const DESCENT = 0.7;
 const TRIM = 0.15;
 // The longest stretch of time one frame may advance the writing (the same cap the pens use).
 const MAX_FRAME_MS = 1000 / 60;
+
+// Titles that are fully written, and so can be bent.
+const live = new Set();
 
 function make(tag, cls, css) {
   var e = document.createElement(tag);
@@ -86,14 +89,21 @@ export function layoutQuill(box, text, options) {
     cell.dataset.word = word;
     cell.inkCentre = inkCentreOf(cell, word, o, pad, advance);
     box.appendChild(cell);
-    words.push({ text: word, canvas: canvas, pad: pad });
+    var letters = [], lx = pad;
+    Array.from(word).forEach(function (ch, j) {
+      letters.push({ ch: ch, x: lx, seed: (options.seed || 1) + (words.length) * 7 + j * 3 });
+      lx += advance(ch);
+    });
+    words.push({ text: word, canvas: canvas, pad: pad, cell: cell, letters: letters, bent: false });
   });
 
   var control = null;
+  var handle = null;
   // Writing: each letter of a word starts LETTER_GAP ms after the one before, so several pens
   // are on the go at once; the next word starts when the last letter of this one does.
   var LETTER_GAP = 150;     // letters take about 0.15 to 0.4s to draw, so this overlaps them
-  return {
+  handle = {
+    ready: false,
     // Draw every word at once, or write them with the pen.
     draw: function (animate, speed) {
       if (control) control.abort();
@@ -103,15 +113,19 @@ export function layoutQuill(box, text, options) {
       // lift the writing by that much so the lowest ink, not the nib's middle, sits on the baseline.
       var nibDrop = nibDropOf(o);
       var base = pad + ASCENT * o.size - nibDrop;
+      handle.ready = false;
+      live.delete(handle);
       words.forEach(function (w) {
+        w.drawings = null;
+        w.bent = false;
         var ctx = w.canvas.getContext("2d");
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         ctx.clearRect(0, 0, w.canvas.width, w.canvas.height);
       });
       if (!animate) {
-        words.forEach(function (w, i) {
-          drawText(w.canvas.getContext("2d"), w.text, w.pad, base, Object.assign({}, options, { seed: (options.seed || 1) + i * 7 }));
-        });
+        words.forEach(function (w) { paintWord(w, base, options); });
+        handle.ready = true;
+        live.add(handle);
         return Promise.resolve();
       }
       var running = [], start = 0, clock = makeClock(signal);
@@ -125,10 +139,20 @@ export function layoutQuill(box, text, options) {
         }
         start += (j - 1) * LETTER_GAP;
       });
-      return Promise.all(running).catch(function () {});       // aborted: another draw has taken over
+      return Promise.all(running).then(function () {
+        if (signal.aborted) return;
+        handle.ready = true;                   // written: from now on it can be bent
+        live.add(handle);
+      }).catch(function () {});       // aborted: another draw has taken over
     },
-    cancel: function () { if (control) control.abort(); }
+    cancel: function () { if (control) control.abort(); handle.ready = false; live.delete(handle); }
   };
+  var base0 = null;
+  handle.base = function () { return pad + ASCENT * o.size - nibDropOf(o); };
+  handle.options = options;
+  handle.size = o.size;
+  handle.words = words;
+  return handle;
 }
 
 // A clock for the writing: it advances by the real time between frames, but never more than one
@@ -161,4 +185,61 @@ function makeClock(signal) {
       });
     }
   };
+}
+
+// ---- Bending ----------------------------------------------------------------------------------
+// At most two points of influence (slot 0: the mouse, slot 1: the flyer), in window coordinates.
+// Each finished word's letters are pushed away from them (the library does the bending: see
+// makeDrawing's bend) and repainted while anything is moving.
+const influences = [null, null];
+var bendFrame = 0, bendLast = 0;
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// A word's letters as drawings, made when first needed, matching how the pen wrote them.
+function drawingsOf(w, base, options) {
+  if (!w.drawings) {
+    w.drawings = w.letters.map(function (l) {
+      return makeDrawing(l.ch, l.x, base, Object.assign({}, options, { seed: l.seed }));
+    });
+  }
+  return w.drawings;
+}
+
+// Clear a word's canvas and paint its letters as they are now.
+function paintWord(w, base, options) {
+  var dpr = window.devicePixelRatio || 1;
+  var ctx = w.canvas.getContext("2d");
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, w.canvas.width, w.canvas.height);
+  drawingsOf(w, base, options).forEach(function (d) { d.paint(ctx); });
+}
+
+// Set (x, y) as point of influence `slot`, or clear it with x = null.
+export function influence(slot, x, y) {
+  if (reducedMotion) return;
+  influences[slot] = x === null ? null : [x, y];
+  if (!bendFrame && live.size) bendFrame = requestAnimationFrame(bendStep);
+}
+
+function bendStep(now) {
+  var dt = Math.min(bendLast ? (now - bendLast) / 1000 : 1 / 60, 0.05);
+  bendLast = now;
+  var busy = influences.some(Boolean);
+  live.forEach(function (handle) {
+    if (!handle.words.length || !handle.words[0].cell.isConnected) { live.delete(handle); return; }
+    var base = handle.base(), reach = handle.size * 2.2 + 4;
+    handle.words.forEach(function (w) {
+      var r = w.canvas.getBoundingClientRect();
+      var local = influences.map(function (p) { return p && [p[0] - r.left, p[1] - r.top]; });
+      var near = local.some(function (p) { return p && p[0] > -reach && p[0] < r.width + reach && p[1] > -reach && p[1] < r.height + reach; });
+      if (!near && !w.bent) return;
+      var moving = false;
+      drawingsOf(w, base, handle.options).forEach(function (d) { if (d.bend(local, dt)) moving = true; });
+      if (moving || w.bent) paintWord(w, base, handle.options);
+      w.bent = moving;
+      if (moving) busy = true;
+    });
+  });
+  bendFrame = busy ? requestAnimationFrame(bendStep) : 0;
+  if (!bendFrame) bendLast = 0;
 }
