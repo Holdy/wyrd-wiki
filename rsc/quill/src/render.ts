@@ -176,9 +176,10 @@ const BEND_PUSH = 0.325;
 
 /**
  * Text kept as strokes, so it can be bent and repainted. Give `bend` up to two points of influence
- * (a pointer, a flying thing). Only the two ends of each stroke are pulled, towards them (most
- * strongly when close, never past one); the rest of the stroke stretches between its ends, keeping
- * its shape, so a stem leans or lengthens rather than bowing. The ends move over fast and ease back slowly.
+ * (a pointer, a flying thing). The two ends of each stroke stay pinned; only its middle point (or, for a loop such as an o, the
+ * middles of its two halves, which are also pinned at their lowest point) is
+ * pulled towards them (most strongly when close, never past one), so the stroke behaves as two
+ * shorter lines meeting at that point, and bows. The middle moves over fast and eases back slowly.
  * The ink dropouts belong to the points, so a bent drawing keeps them where they were. Made with
  * the same text, position and options as animateText, it looks the same.
  */
@@ -189,8 +190,13 @@ export interface Drawing {
    * or moving: repaint, and call again next frame; false means it is at rest.
    */
   bend(influences: (Point | null)[], dt: number): boolean;
-  /** Paint the drawing as it is now (it does not clear the canvas first). */
-  paint(ctx: CanvasRenderingContext2D): void;
+  /**
+   * Paint the drawing as it is now (it does not clear the canvas first). `to` and `from` (0-1; default
+   * the whole drawing) paint only the part of the pen's path between those shares of it: `to` alone is
+   * the drawing part-way through being written, `from` alone is it part-way through being drawn back
+   * up, the ink gone from the start of the path.
+   */
+  paint(ctx: CanvasRenderingContext2D, to?: number, from?: number): void;
 }
 
 export function makeDrawing(text: string, x: number, y: number, options?: QuillOptions): Drawing {
@@ -201,8 +207,8 @@ export function makeDrawing(text: string, x: number, y: number, options?: QuillO
   const reach = o.size * BEND_REACH;
   const push = o.size * BEND_PUSH;
 
-  // Per stroke: where each point lies along it (0 at the start, 1 at the end, by length), and how
-  // far its two ends are currently pushed from home (dx, dy for the start, then for the end).
+  // Per stroke: where each point lies along it (0 at the start, 1 at the end, by length), where its
+  // middle point is, and how far that is currently pushed from home (dx, dy). The ends never move.
   const along = samples.map((s) => {
     const t = new Float32Array(s.length);
     let len = 0;
@@ -210,7 +216,35 @@ export function makeDrawing(text: string, x: number, y: number, options?: QuillO
     if (len > 0) for (let i = 0; i < s.length; i++) t[i] /= len;
     return t;
   });
-  const ends = samples.map(() => new Float32Array(4));
+  // Each stroke is cut at its pinned points into pieces; a piece's middle is the point that moves, and
+  // `weight` is how much of that push each point takes (1 at the middle, 0 at the pins). A stroke
+  // that closes on itself (an o) is pinned at its lowest point too, so the loop sits on the baseline.
+  const pieceOf = samples.map((s) => new Uint8Array(s.length));
+  const weight = samples.map((s) => new Float32Array(s.length));
+  const mids: Point[][] = samples.map((s, si) => {
+    const t = along[si];
+    const cuts = [0, 1];
+    if (s.length > 3 && Math.hypot(s[0][0] - s[s.length - 1][0], s[0][1] - s[s.length - 1][1]) < o.size * 0.1) {
+      let low = 0;
+      for (let i = 1; i < s.length; i++) if (s[i][1] > s[low][1]) low = i;
+      if (t[low] > 0.1 && t[low] < 0.9) cuts.splice(1, 0, t[low]);
+    }
+    const mid: Point[] = [];
+    for (let c = 0; c + 1 < cuts.length; c++) {
+      const a = cuts[c], b = cuts[c + 1], centre = (a + b) / 2;
+      let best = 0;
+      for (let i = 0; i < s.length; i++) {
+        if (t[i] >= a && t[i] <= b) {
+          pieceOf[si][i] = c;
+          weight[si][i] = 1 - Math.abs(2 * (t[i] - a) / (b - a) - 1);
+        }
+        if (Math.abs(t[i] - centre) < Math.abs(t[best] - centre)) best = i;
+      }
+      mid.push(s[best]);
+    }
+    return mid;
+  });
+  const ends = mids.map((m) => new Float32Array(m.length * 2));
   // a box round all the points, to skip the work when nothing is near
   let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
   for (const s of samples) for (const [px, py] of s) {
@@ -244,36 +278,34 @@ export function makeDrawing(text: string, x: number, y: number, options?: QuillO
       let moving = false;
       samples.forEach((s, si) => {
         const e = ends[si];
-        for (let end = 0; end < 2; end++) {
-          const home = s[end ? s.length - 1 : 0];
+        mids[si].forEach((home, m) => {
           const [gx, gy] = goal(home[0], home[1], near);
           // moving further from home than now = being pulled (fast); otherwise drifting back (slow)
-          const k = Math.hypot(gx, gy) > Math.hypot(e[end * 2], e[end * 2 + 1]) ? pushK : returnK;
-          e[end * 2] += (gx - e[end * 2]) * k;
-          e[end * 2 + 1] += (gy - e[end * 2 + 1]) * k;
-          if (Math.abs(gx - e[end * 2]) > 0.05 || Math.abs(gy - e[end * 2 + 1]) > 0.05) moving = true;
-          else { e[end * 2] = gx; e[end * 2 + 1] = gy; }
-        }
+          const k = Math.hypot(gx, gy) > Math.hypot(e[m * 2], e[m * 2 + 1]) ? pushK : returnK;
+          e[m * 2] += (gx - e[m * 2]) * k;
+          e[m * 2 + 1] += (gy - e[m * 2 + 1]) * k;
+          if (Math.abs(gx - e[m * 2]) > 0.05 || Math.abs(gy - e[m * 2 + 1]) > 0.05) moving = true;
+          else { e[m * 2] = gx; e[m * 2 + 1] = gy; }
+        });
       });
       displaced = moving || near.length > 0;
       return displaced;
     },
-    paint(ctx) {
+    paint(ctx, to = 1, from = 0) {
       const segs: Seg[] = [];
       samples.forEach((s, si) => {
         const { left, right } = inks[si];
-        const e = ends[si], t = along[si];
-        // each point sits at its home place plus the push of the two ends, shared out by how far along it is
-        const pt = (i: number): Point => [
-          s[i][0] + e[0] + (e[2] - e[0]) * t[i],
-          s[i][1] + e[1] + (e[3] - e[1]) * t[i],
-        ];
+        const e = ends[si], pc = pieceOf[si], wt = weight[si];
+        // each point sits at its home place plus the push of its piece's middle, fading linearly to nothing at the pins
+        const pt = (i: number): Point => [s[i][0] + e[pc[i] * 2] * wt[i], s[i][1] + e[pc[i] * 2 + 1] * wt[i]];
         // as toSegments: a single-point stroke still leaves a nib mark
         if (s.length === 1) segs.push({ a: pt(0), b: pt(0), left: left[0], right: right[0] });
         for (let i = 1; i < s.length; i++) segs.push({ a: pt(i - 1), b: pt(i), left: left[i], right: right[i] });
       });
+      const shown = to >= 1 && from <= 0 ? segs : segs.slice(Math.floor(segs.length * Math.max(from, 0)), Math.floor(segs.length * Math.min(to, 1)));
+      if (!shown.length) return;
       ctx.save();
-      paintSegments(ctx, segs, o);
+      paintSegments(ctx, shown, o);
       ctx.restore();
     },
   };

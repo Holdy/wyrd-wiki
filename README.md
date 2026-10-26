@@ -85,7 +85,20 @@ A story that belongs to a river, rock formation or road rather than a settlement
 
 Stories tagged `skip` or `duplicate` are kept in the files but left out of the settlement's sitemap, so they don't appear on the site.
 
-The Norfolk stories were copied from the witch data in the local-llm-agent project. Four were filed in a different settlement from the one they were found under (the Boleyn bridges → `Norfolk.md`, the Hethel Thorn → `Hethel.md`, East Somerton, Great Yarmouth).
+### Importing stories
+
+`data/stories` is generated from the research data in the local-llm-agent project (`~/projects/local-llm-agent`, the `*-data-targets/` directories: ghost, witch, hound, devil, curse, …). Run
+
+```
+bun tools/import-stories.ts [--source <dir>] [--dry-run]
+```
+
+- **Source is the truth.** Every run rebuilds all the place files and sitemaps from the source; edit the source files there, not the generated ones. `--dry-run` prints the counts and warnings and writes nothing.
+- **Filing is by file name only** (the source directory layout differs between subjects and is ignored): `Afghanistan.md` is a country, `Aberdeenshire, UK.md` or `Alabama, USA.md` a region, `Acle,norfolk,uk.md` or `Airdrie, Alberta, Canada.md` a settlement. Region files for the UK are filed under England, Scotland, Wales or Northern Ireland (`UK_REGION_COUNTRY` in the script); countries go under their continent (`COUNTRY_CONTINENT`). A name the script doesn't know is reported as a warning and its stories are skipped, so add it to the lists.
+- **Several subjects, one place:** stories from every subject for the same place are merged into one file (sorted by title). Identical copies are dropped; two stories with the same title in a place are both kept but only listed once in the sitemap.
+- **Tags:** `skip` and `duplicate` stories are kept in the file but left out of the sitemap. Everything else (`private`, `pinless`, `approx`, …) is published.
+- **Stories filed at a country or region** (such as `Alabama, USA.md`) are written to `<Region>.md` but have no page yet, so they are not in any sitemap, and a country or region with nothing but such stories is not listed at all (about 990 of the 2,300 stories).
+- **A story filed in the wrong place** is fixed by moving it between files in local-llm-agent, not here. The Boleyn bridges, the Hethel Thorn and the Great Yarmouth execution were moved that way (the Boleyn bridges now sit in `Norfolk, UK.md`, listed in `witch-data-targets.progress` so the research run skips it).
 
 ## Look and behaviour
 
@@ -119,7 +132,7 @@ The rest of each title (everything after the illuminated letter, and the "yrd Wi
 - **Look:** black ink at 74% opacity multiplied onto the paper (`.qw canvas` in the CSS: opacity is on the whole canvas so overlapping strokes don't darken), nib glitches (ink dropouts) at twice the library's default rate (`inkFadeRate` in `QUILL`), size 0.62 of the h1's font size, drawn at the screen's pixel density.
 - **Baseline:** the strokes are centre lines and the slanted nib hangs below them by half its height, so the writing is lifted by that much and the lowest ink sits on the baseline. Word boxes give back `TRIM` (0.15 of the size) above and below, and the offset allows for it, so lines are about 2.1 × the size apart.
 - **Writing:** each letter takes the same time to write, 0.5 s (`LETTER_TIME`), so the pen moves fast over a long letter like "w" and slowly over a short one like "l". Each letter starts 0.15 s (`LETTER_GAP`) after the one before, so pens overlap, and the next word starts when the last letter of the previous word starts. All the timing runs on one clock that advances by real frame time but never more than a frame's worth, so under load everything slows together and nothing catches up. It begins when the illuminated letter's sweep is a third of the way in (`doneAt: 1 / 3` in `drawInitial`). Under reduced motion the title is drawn at once.
-- **Bending:** once a title is fully written, its letters are drawn towards at most two points of influence: slot 0 the mouse pointer, slot 1 the flyer (not while it rests among the diamonds). `index.html` just calls `influence(slot, x, y)` from `word.js` (`null` clears a slot); the bending itself is in the library (`makeDrawing(...).bend(points, dt)` in `rsc/quill/src/render.ts`). Only the two ends of each stroke move (towards a point of influence, more strongly the closer it is, by up to 0.325 of the size but never past it, for anything within 2.2 sizes); the rest of the stroke stretches between its ends and keeps its shape, so a stem leans or lengthens rather than bowing. The ends move over in about 0.08 s and drift back over about 0.8 s (as the triangle drawings do), and the ink glitches stay where they were. Only words near a point of influence, or still moving, are repainted. Not done under reduced motion.
+- **Bending:** once a title is fully written, its letters are drawn towards at most two points of influence: slot 0 the mouse pointer, slot 1 the flyer (not while it rests among the diamonds). `index.html` just calls `influence(slot, x, y)` from `word.js` (`null` clears a slot); the bending itself is in the library (`makeDrawing(...).bend(points, dt)` in `rsc/quill/src/render.ts`). The two ends of each stroke stay pinned; only its middle point moves (towards a point of influence, more strongly the closer it is, by up to 0.325 of the size but never past it, for anything within 2.2 sizes), and the rest of the stroke follows it in a straight ramp, so each stroke acts as two shorter lines meeting at that point. The middle moves over in about 0.08 s and drift back over about 0.8 s (as the triangle drawings do), and the ink glitches stay where they were. Only words near a point of influence, or still moving, are repainted. Not done under reduced motion.
 - **Debugging:** add `#quill-debug` to the address (or run `quillDebug()` in the console; `quillDebug(false)` turns it off) to draw a one-pixel red box round each glyph's cell: its advance width (the glyph's width plus the letter spacing) by the full height of the word box (1.7 above the baseline, 0.7 below).
 - **Resizing** redraws the words (without animation) only if the font size changed; the line grouping is redone either way.
 - **The flyer** flies through the middle of an "o" using `cell.inkCentre(k)` from `word.js`, which works out the centre of that glyph's strokes, not the transparent text box.
@@ -134,7 +147,7 @@ The rest of each title (everything after the illuminated letter, and the "yrd Wi
 
 ### Tag drawing in the menu
 
-- When a story opens, the page looks through its tags in order and uses the first one that has a drawing in `rsc/tags/`. A story with no matching tag shows no drawing.
+- When a story opens, the page looks through its tags in order and uses the first one that has a drawing in `rsc/tags/`. A story with no matching tag (or no tags) shows `rsc/tags/book.bin`.
 - Which tags have drawings comes from `rsc/tags/index.txt`, which is loaded in the background when the page starts. It must be kept up to date.
 - The drawing is 200 px, multiplied onto the paper like the letters, with the tag name as its tooltip. Its points flee the mouse and the flyer in the same way.
 - It builds up on screen: each triangle starts as a dot in the middle of the image and moves out to its position and size (see "Animating a drawing in" below).

@@ -163,11 +163,25 @@
     .story-title .lines { display: block; }
     /* Quill titles: the words are drawn on canvases with the real text laid transparently over them */
     h1.pending { visibility: hidden; }
+    /* Page content changes over by a soft-edged wipe running down the page: the old text fades out from the top
+       while the new fades in from the top. JS sets --wipe-end (the page's height plus the edge) and the timing. */
+    @property --wipe { syntax: "<length>"; inherits: false; initial-value: 0px; }
+    @keyframes wipe { from { --wipe: 0px; } to { --wipe: var(--wipe-end); } }
+    #view { position: relative; }
+    #view .body.wipe-in {
+      -webkit-mask-image: linear-gradient(to bottom, #000 calc(var(--wipe) - 3rem), transparent var(--wipe));
+      mask-image: linear-gradient(to bottom, #000 calc(var(--wipe) - 3rem), transparent var(--wipe));
+      animation: wipe var(--wipe-ms) linear both;
+    }
+    #view .body.wipe-out {
+      -webkit-mask-image: linear-gradient(to bottom, transparent calc(var(--wipe) - 3rem), #000 var(--wipe));
+      mask-image: linear-gradient(to bottom, transparent calc(var(--wipe) - 3rem), #000 var(--wipe));
+      animation: wipe var(--wipe-ms) linear both;
+    }
     /* the baseline of the quill is the bottom of the illuminated letter (the ink, once trimmed) */
     h1 .initial { vertical-align: baseline; margin-top: 0; }
     /* opacity is on the whole canvas, not the ink, so strokes that overlap don't show darker joins */
     .qw canvas { display: block; opacity: 0.74; mix-blend-mode: multiply; }
-    #home-rest { margin-left: calc(clamp(2.6rem, 8vw, 4.5rem) * 0.5); }     /* the box itself has font-size 0 */
     .qt { text-shadow: none; letter-spacing: 0; text-transform: none; font-variant: normal; }
     /* debugging: a one-pixel red box round each quill glyph's cell (its advance width by the full line box) */
     .quill-debug .qt span { outline: 1px solid red; outline-offset: -1px; }
@@ -299,6 +313,8 @@
       color: var(--rubric);
     }
 
+    .story .opening { display: flow-root; }     /* keeps a short paragraph's drop cap from reaching into the next section */
+
     a {
       color: var(--rubric);
       text-decoration-thickness: 1px;
@@ -381,13 +397,10 @@
     <div class="ending" id="pips" aria-hidden="true"><span class="gem" style="transform: translateX(0)"></span><span class="gem" style="transform: translateX(32px)"></span><span class="gem" style="transform: translateX(64px)"></span></div>
     <p class="subtitle">A gazetteer of folklore, filed by place</p>
 
-    <div class="flourish">✦ ✦ ✦</div>
-
     <p class="opening">Here are set down the tales of the land: of wells and hollow hills, of drowned bells and things that walk the old roads at dusk. Each story is filed by the place where it was told, from the whole world down to a single village.</p>
 
     <p>Choose a realm from the list to begin.</p>
 
-    <footer>Here endeth the index.</footer>
       </section>
       <article id="view" class="story" hidden></article>
       <div class="ending" aria-hidden="true"><span class="gem" style="transform: translateX(0)"></span><span class="gem" style="transform: translateX(32px)"></span><span class="gem" style="transform: translateX(64px)"></span></div>
@@ -436,13 +449,19 @@
       // A blank file counts as an empty list.
       async function fetchSitemap(url) {
         var text = await fetchText(url);
-        if (!text.trim()) return { kind: "index", locs: [] };
+        if (!text.trim()) return { kind: "index", locs: [], urls: [] };
         var doc = new DOMParser().parseFromString(text, "application/xml");
         if (doc.getElementsByTagName("parsererror").length) throw new Error("Bad XML in " + url);
-        var locs = [].map.call(doc.getElementsByTagName("loc"), function (el) {
-          return el.textContent.trim();
-        });
-        return { kind: doc.documentElement.localName === "urlset" ? "urlset" : "index", locs: locs };
+        if (doc.documentElement.localName === "urlset") {
+          return { kind: "urlset", locs: [].map.call(doc.getElementsByTagName("loc"), function (el) { return el.textContent.trim(); }), urls: [] };
+        }
+        // An index lists the sitemaps below it (<sitemap>) and may also list stories filed at its own level (<url>).
+        var locsOf = function (tag) {
+          return [].map.call(doc.getElementsByTagName(tag), function (node) {
+            return node.getElementsByTagName("loc")[0].textContent.trim();
+          });
+        };
+        return { kind: "index", locs: locsOf("sitemap"), urls: locsOf("url") };
       }
 
       // Settlement files hold stories as "# title" / "# summary" blocks.
@@ -555,22 +574,39 @@
 
       // Each letter has its own empty margin inside its square canvas. Find where
       // the dark ink starts and ends and pull the neighbours in to meet it.
-      function trimInitial(span, canvas, size) {
-        try {
-          var w = canvas.width, h = canvas.height;
-          var d = canvas.getContext("2d").getImageData(0, 0, w, h).data;
-          var min = w, max = -1, last = -1;
-          for (var y = 0; y < h; y++) {
-            for (var x = 0; x < w; x++) {
-              if (d[(y * w + x) * 4] < 160) {
-                if (x < min) min = x;
-                if (x > max) max = x;
-                last = y;
-              }
+      // Where the dark ink of a drawn letter lies in its canvas (device pixels): leftmost and rightmost
+      // columns and lowest row (max is -1 if there is none), with the pixels themselves.
+      function inkBounds(canvas) {
+        var w = canvas.width, h = canvas.height;
+        var d = canvas.getContext("2d").getImageData(0, 0, w, h).data;
+        var min = w, max = -1, last = -1;
+        for (var y = 0; y < h; y++) {
+          for (var x = 0; x < w; x++) {
+            if (d[(y * w + x) * 4] < 160) {
+              if (x < min) min = x;
+              if (x > max) max = x;
+              last = y;
             }
           }
+        }
+        return { w: w, h: h, d: d, min: min, max: max, last: last };
+      }
+
+      // Reading a letter's pixels back is slow, so each letter is measured once per size (a morph measures the
+      // next page's letter as the click is made, so the page swap itself doesn't stall on it).
+      var inkCache = {};
+      function letterInk(letter, genome, size) {
+        var key = letter + size;
+        if (!inkCache[key]) inkCache[key] = inkBounds(renderTriangles(document.createElement("div"), genome, size));
+        return inkCache[key];
+      }
+
+      function trimInitial(span, ink, size) {
+        try {
+          var w = ink.w, h = ink.h, d = ink.d, min = ink.min, max = ink.max, last = ink.last;
           if (max < 0) return;
           var scale = w / size;
+          span.ink = { min: min, last: last, scale: scale };
           var fontSize = parseFloat(getComputedStyle(span).fontSize);
           var rest = span.nextElementSibling;
           var right = max, pad = fontSize * 0.14;
@@ -585,23 +621,82 @@
               }
             }
             pad = fontSize * 0.08;
-            span.style.marginBottom = -((h - 1 - last) / scale) + "px";
+            var drop = (h - 1 - last) / scale;
+            span.style.marginBottom = -drop + "px";
+            // Letters end at different heights (an E sits higher than an O), which would change the
+            // title's height and shift the page when moving between pages: give back the difference
+            // from a typical letter, so everything below stays put.
+            if (span.parentNode && span.parentNode.classList.contains("story-title")) {
+              span.parentNode.style.marginBottom = "calc(0.6em + " + (drop - size * 0.138) + "px)";
+            }
             rest.style.maxWidth = "calc(100% - " + ((right - min + 1) / scale + pad) + "px)";
           }
           span.style.marginLeft = -(min / scale) + "px";
           span.style.marginRight = -((w - 1 - right) / scale) + pad + "px";
-          if (rest && rest.classList.contains("rest")) alignLines(rest);
+          if (rest && rest.classList.contains("rest")) {
+            alignLines(rest);
+            tuckIn(span, rest, d, w, h, min, last, scale);
+          }
+        } catch (e) {}
+      }
+
+      // Once the quill's geometry is known, replace that rough gap with a measured one: slide the
+      // title left until the first letter's ink (its strokes, spread by the nib) comes within
+      // CLEARANCE of the W's ink at every height where both have any, and no closer.
+      var CLEARANCE = 0.1;          // as a share of the quill size
+      var quillLayout = import("./rsc/quill/layout.js");
+      async function tuckIn(span, rest, d, w, h, min, last, scale) {
+        try {
+          var lay = await quillLayout;
+          var first = (rest.dataset.text || "").charAt(0);
+          if (!first || first === " ") return;
+          var size = parseFloat(getComputedStyle(span.parentNode).fontSize) * 0.62;
+          var o = lay.resolveOptions(Object.assign({ size: size }, QUILL));
+          var nibR = o.nibWidth / 2, drop = Math.sin(o.nibAngle * Math.PI / 180) * nibR;
+          // the W's right edge on each row (px from its left ink edge), rows counted up from its foot
+          var edge = [];
+          for (var r = 0; r <= last; r++) {
+            var e = -Infinity;
+            for (var x = w - 1; x >= min; x--) {
+              if (d[(r * w + x) * 4] < 160) { e = (x - min + 1) / scale; break; }
+            }
+            edge[last - r] = e;                      // index = rows above the foot
+          }
+          var rowsPerPx = scale, shift = -Infinity;
+          lay.layoutText(first, 0, 0, Object.assign({ size: size }, QUILL)).forEach(function (stroke) {
+            for (var i = 1; i < stroke.length; i++) {
+              var a = stroke[i - 1], b = stroke[i];
+              var steps = Math.max(1, Math.ceil(Math.hypot(b[0] - a[0], b[1] - a[1])));
+              for (var k = 0; k <= steps; k++) {
+                var px = a[0] + (b[0] - a[0]) * k / steps, up = -(a[1] + (b[1] - a[1]) * k / steps) + drop;
+                var lo = Math.max(0, Math.floor((up - nibR) * rowsPerPx)), hi = Math.min(edge.length - 1, Math.ceil((up + nibR) * rowsPerPx));
+                for (var q = lo; q <= hi; q++) shift = Math.max(shift, edge[q] - (px - nibR));
+              }
+            }
+          });
+          if (shift === -Infinity) return;           // the letters never share a height
+          var X = shift + CLEARANCE * size;
+          span.style.marginRight = (X - (w - min) / scale) + "px";
+          rest.style.maxWidth = "calc(100% - " + X + "px)";
+          alignLines(rest);
         } catch (e) {}
       }
 
       // A drawing file as the base64 text the renderer takes.
-      async function genomeBase64(url) {
-        var res = await fetch(url);
-        if (!res.ok) throw new Error(url + " (" + res.status + ")");
-        var bytes = new Uint8Array(await res.arrayBuffer());
-        var binary = "";
-        for (var i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
-        return btoa(binary);
+      var genomes = {};
+      function genomeBase64(url) {
+        if (!genomes[url]) {
+          genomes[url] = (async function () {
+            var res = await fetch(url);
+            if (!res.ok) throw new Error(url + " (" + res.status + ")");
+            var bytes = new Uint8Array(await res.arrayBuffer());
+            var binary = "";
+            for (var i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+            return btoa(binary);
+          })();
+          genomes[url].catch(function () { delete genomes[url]; });
+        }
+        return genomes[url];
       }
 
       // The spelling changes (data/spelling.txt, lines "from -> to"), fetched once, in the background.
@@ -633,24 +728,48 @@
       // The first of a story's tags that has a drawing, or null.
       async function firstTagWithImage(tags) {
         var have = await tagIndex();
-        return tags.filter(function (t) { return have.indexOf(t) >= 0; })[0] || null;
+        return tags.filter(function (t) { return have.indexOf(t) >= 0; })[0] || (have.indexOf("book") >= 0 ? "book" : null);   // a story with no drawing of its own gets the book
       }
 
       async function drawTag(box, tag) {
         try {
-          var canvas = renderTriangles(box, await genomeBase64("rsc/tags/" + tag + ".bin"), 200, { repel: true, animateIn: "from-center" });
+          var canvas = renderTriangles(box, await genomeBase64("rsc/tags/" + tag + ".bin"), 200, { repel: true, animateIn: "sweep-left", ink: RUBRIC });
           canvas.setAttribute("aria-hidden", "true");
           canvas.title = tag;
         } catch (e) {}
       }
 
       // `done` is called when the letter is a third of the way in (so the quill can start), or could not be drawn.
+      var RUBRIC = [110, 28, 18];   // a darker take on --rubric, the red of the illustrated letters
+
+      // Set when a morph has just turned the old title's letter into the one the next title starts with:
+      // that letter is then drawn finished, at once, instead of sweeping in.
+      var settledLetter = null;
+      // A letter still morphing as the next page is built: { letter, canvas, started }. The next title
+      // takes the canvas over and the morph carries on there.
+      var pending = null;
+
       async function drawInitial(span, letter, size, done) {
+        var settled = settledLetter === letter.toUpperCase();
+        settledLetter = null;
+        var adopt = pending && pending.started && pending.letter === letter.toUpperCase() && pending.canvas.style.width === size + "px" ? pending : null;
+        pending = null;
         try {
           var genome = await genomeBase64("rsc/letters/" + letter.toUpperCase() + ".bin");
+          span.dataset.letter = letter.toUpperCase();
           // trim from a finished copy drawn off the page: the real one starts out flat
-          trimInitial(span, renderTriangles(document.createElement("div"), genome, size), size);
-          var canvas = renderTriangles(span, genome, size, { repel: true, animateIn: "sweep-right", onDone: done, doneAt: 1 / 3 });
+          trimInitial(span, letterInk(letter.toUpperCase(), genome, size), size);
+          var canvas;
+          if (adopt) {
+            canvas = adopt.canvas;
+            span.appendChild(canvas);
+            canvas.reseat();
+            if (done) done();
+          } else {
+            canvas = renderTriangles(span, genome, size, settled
+              ? { repel: true, onDone: done, ink: RUBRIC }
+              : { repel: true, animateIn: "sweep-right", onDone: done, doneAt: 1 / 3, ink: RUBRIC });
+          }
           canvas.setAttribute("aria-hidden", "true");
         } catch (e) {
           var next = span.nextElementSibling;
@@ -710,8 +829,10 @@
       }
 
       // A paragraph; text between *asterisks* is shown in italics.
-      function paragraph(text) {
+      // `opening`: the first of a section, which gets the large red first letter.
+      function paragraph(text, opening) {
         var p = document.createElement("p");
+        if (opening) p.className = "opening";
         text.split(/\*([^*]+)\*/).forEach(function (part, i) {
           if (i % 2) {
             var em = document.createElement("em");
@@ -1481,7 +1602,9 @@
         }, 3000);
       }
 
-      function render(state) {
+      // The menu side: the breadcrumbs, the story's drawing and the list. It changes as soon as the
+      // page's data is in, while the title (see render) may still be changing over.
+      function renderSide(state) {
         crumbsEl.textContent = "";
         state.crumbs.forEach(function (c, i) {
           var li = document.createElement("li");
@@ -1510,36 +1633,170 @@
           li.textContent = "Nothing filed here yet.";
           optionsEl.appendChild(li);
         }
+      }
 
+      // Wipe a block of page content in or out, top to bottom (see .wipe-in in the styles).
+      var WIPE_MS = 1100;          // how long the wipe takes to cross the page
+      var WIPE_OUT_AFTER = 500;    // ms after the click that the old content starts to go: it is half gone when the new page arrives, which then follows close behind
+      // The closing diamonds fade out as the old page goes and back in as the new one finishes arriving, so they don't jump.
+      function fadeClosing(show) {
+        var end = document.querySelector("main > .ending");
+        if (!end) return;
+        var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        end.style.transition = still ? "none" : show ? "opacity 700ms ease " + Math.round(WIPE_MS * 0.7) + "ms" : "opacity 400ms ease";
+        end.style.opacity = show ? "1" : "0";
+      }
+
+      function wipe(block, how, delay) {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          if (how === "wipe-out" && block.parentNode) block.parentNode.removeChild(block);
+          return;
+        }
+        block.style.setProperty("--wipe-end", block.offsetHeight + 48 + 40 + "px");
+        block.style.setProperty("--wipe-ms", WIPE_MS + "ms");
+        block.style.animationDelay = delay + "ms";
+        block.classList.add(how);
+        block.addEventListener("animationend", function done(e) {
+          if (e.target !== block) return;
+          block.removeEventListener("animationend", done);
+          if (how === "wipe-out") { if (block.parentNode) block.parentNode.removeChild(block); }
+          else block.classList.remove(how);
+        });
+      }
+
+      // When the title changes height (a longer title wraps, a different letter sits lower) the diamonds
+      // under it and the content below them drift to their new place instead of jumping there.
+      var GLIDE_MS = 1400;
+      var glideTop = null, glideParent = null, glideWatch = null;
+      var frames = 0, glideFrame = -1, glideFrom = 0;
+      (function tick() { frames++; requestAnimationFrame(tick); })();
+      function watchTitle(title) {
+        if (!window.ResizeObserver) return;
+        if (!glideWatch) glideWatch = new ResizeObserver(function () { followTitle(); });
+        glideWatch.disconnect();
+        if (title) glideWatch.observe(title);
+      }
+      function followTitle() {
+        var pips = document.getElementById("pips");
+        if (!pips.getBoundingClientRect().height) return;
+        var movers = [pips].concat([].slice.call(document.querySelectorAll("#view .body:not(.wipe-out)")));
+        var ty = new DOMMatrix(getComputedStyle(pips).transform).m42;
+        var natural = pips.getBoundingClientRect().top + window.scrollY - ty;
+        var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        // The title may change height more than once before a frame is drawn (the empty h1, then its words laid out):
+        // the glide starts from where the diamonds were last seen, which is not where an unseen layout put them.
+        if (glideFrame !== frames) { glideFrame = frames; glideFrom = glideTop === null ? natural : glideTop + ty; }
+        if (glideTop !== null && !still && glideParent === pips.parentNode && Math.abs(natural - glideTop) > 0.5) {
+          var from = glideFrom - natural;
+          movers.forEach(function (m) { m.style.transition = "none"; m.style.transform = "translateY(" + from + "px)"; });
+          pips.offsetHeight;                          // let the start position take
+          movers.forEach(function (m) {
+            m.style.transition = "transform " + GLIDE_MS + "ms ease-in-out";
+            m.style.transform = "translateY(0)";
+          });
+        }
+        glideTop = natural;
+        glideParent = pips.parentNode;
+      }
+
+      function render(state) {
         document.documentElement.classList.remove("deep");     // from here the hidden attributes decide
+        // the old content may still be wiping out: it stays, lifted out of the flow, until it has gone
+        var old = viewEl.querySelector(".body.wipe-out");
+        if (old) {
+          old.style.cssText += ";position:absolute;left:0;right:0;top:" + old.offsetTop + "px;pointer-events:none";
+          old.setAttribute("aria-hidden", "true");
+        }
         var pips = document.getElementById("pips");
         document.querySelector("main").appendChild(pips);      // out of harm's way while the story is rebuilt
         var atHome = !state.path.length;
         homeEl.hidden = !atHome;
         viewEl.hidden = atHome;
-        viewEl.textContent = "";
+        [].slice.call(viewEl.childNodes).forEach(function (n) { if (n !== old) viewEl.removeChild(n); });
+        var body = el("div", null, "body");
         if (!atHome) {
           if (state.story) {
             var h1 = el("h1", null, "story-title");
             viewEl.appendChild(h1);
             addInitial(h1, state.story.title);
-            viewEl.appendChild(el("h2", "Summary"));
-            state.story.paragraphs.forEach(function (p) { viewEl.appendChild(paragraph(p)); });
+            body.appendChild(el("h2", "Summary"));
+            state.story.paragraphs.forEach(function (p, i) { body.appendChild(paragraph(p, i === 0)); });
             if (state.story.details.length) {
-              viewEl.appendChild(el("h2", "Details", "later-heading"));
-              state.story.details.forEach(function (p) { viewEl.appendChild(paragraph(p)); });
+              body.appendChild(el("h2", "Details", "later-heading"));
+              state.story.details.forEach(function (p, i) { body.appendChild(paragraph(p, i === 0)); });
             }
           } else {
             var h1 = el("h1", null, "story-title");
             viewEl.appendChild(h1);
             addInitial(h1, state.message || state.levelTitle);
-            if (state.hint) viewEl.appendChild(el("p", state.hint, "hint"));
+            if (state.hint) body.appendChild(el("p", state.hint, "hint"));
           }
+          viewEl.appendChild(body);
         }
         var title = (atHome ? homeEl : viewEl).querySelector("h1");
         if (title) title.after(pips);
-        handOff(state.story ? circleWords(viewEl).concat(respellTasks(viewEl)) : []);
+        if (!atHome) wipe(body, "wipe-in", 0);
+        fadeClosing(true);
+        watchTitle(title);
+        followTitle();
+        handOff(state.story ? circleWords(body).concat(respellTasks(body)) : []);
+        settledLetter = null;
+        pending = null;
         document.title = (state.story ? state.story.title + " — " : atHome ? "" : state.levelTitle + " — ") + "Wyrd Wiki";
+      }
+
+      // Leaving a title for another page: the old title un-writes while its letter morphs into the next
+      // one's (the destination's title is taken from the link's text), and the new page is not shown
+      // until a second after the click, when its title starts writing while the letter is still morphing. `leaving` is that wait, or null.
+      var leaving = null;
+
+      var SWAP_AFTER = 1000;       // ms from the click to the new page: its title starts writing then, while the letter is still morphing
+
+      async function morphInitial(span, canvas, letter, since, job) {
+        try {
+          var size = parseFloat(span.style.getPropertyValue("--size"));
+          var genome = await genomeBase64("rsc/letters/" + letter + ".bin");
+          // the two letters have different margins in their squares: slide the canvas so the new letter's ink lands where the next title will put it
+          var shift = [0, 0];
+          if (span.ink) {
+            var ink = letterInk(letter, genome, size);
+            if (ink.max >= 0) shift = [(span.ink.min - ink.min) / span.ink.scale, (span.ink.last - ink.last) / span.ink.scale];
+          }
+          job.started = true;
+          await canvas.morphTo(genome, { shift: shift, since: since });
+        } catch (e) {}
+      }
+
+      // Measuring the next page's letter is slow: do it as the pointer reaches the link, so the click doesn't stall.
+      document.addEventListener("pointerover", function (e) {
+        var a = e.target.closest && e.target.closest("a[data-nav]"), h1 = viewEl.querySelector("h1.story-title");
+        var letter = a && a.textContent.trim().charAt(0).toUpperCase();
+        if (!h1 || !/^[A-Z]$/.test(letter)) return;
+        var size = Math.round(parseFloat(getComputedStyle(h1).fontSize) * 2.75);
+        genomeBase64("rsc/letters/" + letter + ".bin").then(function (genome) {
+          setTimeout(function () { try { letterInk(letter, genome, size); } catch (err) {} }, 50);
+        }, function () {});
+      });
+
+      function leave(destTitle) {
+        if (leaving || viewEl.hidden) return;
+        var h1 = viewEl.querySelector("h1.story-title");
+        if (!h1) return;
+        var span = h1.querySelector(".initial"), canvas = span && span.querySelector("canvas"), rest = h1.querySelector(".rest");
+        var letter = (destTitle || "").trim().charAt(0).toUpperCase();
+        var oldBody = viewEl.querySelector(".body");
+        if (oldBody) wipe(oldBody, "wipe-out", WIPE_OUT_AFTER);
+        fadeClosing(false);
+        var jobs = [new Promise(function (resolve) { setTimeout(resolve, SWAP_AFTER); })];
+        if (rest && rest.quill && rest.quill.erase) jobs.push(rest.quill.erase(SWAP_AFTER));
+        if (span && canvas && canvas.morphTo && /^[A-Z]$/.test(letter) && span.dataset.letter) {
+          if (span.dataset.letter === letter) settledLetter = letter;
+          else {
+            pending = { letter: letter, canvas: canvas, started: false };
+            morphInitial(span, canvas, letter, performance.now(), pending);
+          }
+        }
+        leaving = Promise.all(jobs).catch(function () {}).then(function () { leaving = null; });
       }
 
       async function route() {
@@ -1559,6 +1816,7 @@
           // Follow the sitemap indexes down, one path segment at a time.
           for (; i < segs.length && sm.kind === "index"; i++) {
             var match = sm.locs.filter(function (loc) { return slugOf(nameOf(loc)) === segs[i]; })[0];
+            if (!match && sm.urls.length) break;          // what is left is one of this level's own stories
             if (!match) throw { notFound: true, depth: i };
             xmlUrl = new URL(match, xmlUrl).href;
             sm = await fetchSitemap(xmlUrl);
@@ -1568,20 +1826,24 @@
           }
 
           var stories = [];
-          if (sm.kind === "urlset") {
+          if (sm.kind === "urlset" || sm.urls.length) {
             try { stories = parseStories(await fetchText(xmlUrl.replace(/\.xml$/i, ".md"))); } catch (e) {}
           }
 
-          state.items = sm.locs.map(function (loc) {
-            if (sm.kind === "index") {
-              var name = nameOf(loc);
-              return { slug: slugOf(name), title: pretty(name), href: hrefFor(levelPath.concat(slugOf(name))) };
-            }
+          var storyItem = function (loc) {
             var q = loc.indexOf("?") >= 0 ? loc.slice(loc.indexOf("?") + 1) : loc;
             var slug = q.split("/").filter(Boolean).pop() || "";
             var known = stories.filter(function (st) { return st.slug === slug; })[0];
             return { slug: slug, title: known ? known.title : sentence(slug.replace(/-/g, " ")), href: hrefFor(levelPath.concat(slug)) };
-          });
+          };
+          if (sm.kind === "index") {
+            state.items = sm.locs.map(function (loc) {
+              var name = nameOf(loc);
+              return { slug: slugOf(name), title: pretty(name), href: hrefFor(levelPath.concat(slugOf(name))) };
+            }).concat(sm.urls.map(storyItem));
+          } else {
+            state.items = sm.locs.map(storyItem);
+          }
 
           if (i < segs.length) {
             // Whatever is left after the last sitemap is a story.
@@ -1593,7 +1855,7 @@
             state.tagImage = await firstTagWithImage(found.tags);
             state.crumbs.push({ title: found.title, href: hrefFor(levelPath.concat(slug)) });
           } else {
-            state.hint = sm.kind === "urlset" ? "Choose a story from the list." : state.items.length ? "Choose a place from the list." : "";
+            state.hint = sm.kind === "urlset" ? "Choose a story from the list." : sm.urls.length ? "Choose a place or a story from the list." : state.items.length ? "Choose a place from the list." : "";
           }
         } catch (err) {
           if (err && err.notFound) {
@@ -1605,6 +1867,8 @@
             state.levelTitle = "";
           }
         }
+        if (mine === token) renderSide(state);
+        if (mine === token && leaving) await leaving;
         if (mine === token) render(state);
       }
 
@@ -1612,7 +1876,10 @@
         var a = e.target.closest && e.target.closest("a[data-nav]");
         if (!a || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
         e.preventDefault();
-        if (a.href !== location.href) history.pushState(null, "", a.href);
+        if (a.href !== location.href) {
+          if (new URL(a.href).search.length > 2) leave(a.textContent);      // not for the home page, which has its own title
+          history.pushState(null, "", a.href);
+        }
         route();
         window.scrollTo(0, 0);
       });

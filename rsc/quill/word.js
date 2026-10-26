@@ -16,6 +16,9 @@ const DESCENT = 0.7;
 const TRIM = 0.15;
 // The longest stretch of time one frame may advance the writing (the same cap the pens use).
 const MAX_FRAME_MS = 1000 / 60;
+// Un-writing, paced like the writing: ms each letter takes to vanish, and ms between one letter starting and the next.
+const ERASE_TIME = 400;
+const ERASE_GAP = 150;
 
 // Titles that are fully written, and so can be bent.
 const live = new Set();
@@ -155,6 +158,53 @@ export function layoutQuill(box, text, options) {
         handle.ready = true;                   // written: from now on it can be bent
         live.add(handle);
       }).catch(function () {});       // aborted: another draw has taken over
+    },
+    // Un-write the title as if the pen were still writing forwards but drawing the ink back up: the
+    // letters go first to last, each from the start of its strokes to the end (and they overlap in
+    // time, as when writing), so it vanishes left to right. Resolves when it is gone. A title that is not fully written
+    // yet is just cleared, and so is any under reduced motion. Cancelled by the next draw().
+    erase: function (within) {
+      if (control) control.abort();
+      control = new AbortController();
+      var signal = control.signal;
+      var wasReady = handle.ready;
+      handle.ready = false;
+      live.delete(handle);
+      var base = pad + ASCENT * o.size - nibDropOf(o);
+      var clear = function () {
+        words.forEach(function (w) {
+          var ctx = w.canvas.getContext("2d");
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          ctx.clearRect(0, 0, w.canvas.width, w.canvas.height);
+        });
+      };
+      if (!wasReady || reducedMotion) { clear(); return Promise.resolve(); }
+      var order = [];
+      words.forEach(function (w) { drawingsOf(w, base, options).forEach(function (d) { order.push({ w: w, d: d }); }); });
+      // `within` (ms): squeeze the letters' start times so the last one has gone by then
+      var gap = within ? Math.min(ERASE_GAP, Math.max(within - ERASE_TIME, 0) / Math.max(order.length - 1, 1)) : ERASE_GAP;
+      return new Promise(function (resolve) {
+        var start = 0, frame = 0;
+        var step = function (now) {
+          if (signal.aborted) return resolve();
+          if (!start) start = now;
+          var t = now - start, done = true;
+          words.forEach(function (w) {
+            var ctx = w.canvas.getContext("2d");
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            ctx.clearRect(0, 0, w.canvas.width, w.canvas.height);
+          });
+          order.forEach(function (item, i) {
+            var u = Math.min(Math.max((t - i * gap) / ERASE_TIME, 0), 1);
+            if (u < 1) done = false;
+            if (u < 1) item.d.paint(item.w.canvas.getContext("2d"), 1, u);
+          });
+          if (done) { clear(); return resolve(); }
+          frame = requestAnimationFrame(step);
+        };
+        signal.addEventListener("abort", function () { cancelAnimationFrame(frame); resolve(); }, { once: true });
+        frame = requestAnimationFrame(step);
+      });
     },
     cancel: function () { if (control) control.abort(); handle.ready = false; live.delete(handle); }
   };
