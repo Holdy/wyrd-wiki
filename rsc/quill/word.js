@@ -4,7 +4,7 @@
 // The font needs no loading, so layout is known the moment this module is: nothing is shown
 // in another face first.
 import { animateText, makeDrawing } from "./render.js";
-import { resolveOptions } from "./layout.js";
+import { layoutText, resolveOptions } from "./layout.js";
 import { getGlyph } from "./font.js";
 
 // Glyph-space extent of a word box above and below the baseline (as in the quill-font library).
@@ -97,10 +97,21 @@ export function layoutQuill(box, text, options) {
     words.push({ text: word, canvas: canvas, pad: pad, cell: cell, letters: letters, bent: false });
   });
 
+  // Pen speed (px/s) that writes this letter in LETTER_TIME: its length of stroke over the time.
+  function penSpeed(ch) {
+    var len = 0;
+    layoutText(ch, 0, 0, options).forEach(function (s) {
+      for (var i = 1; i < s.length; i++) len += Math.hypot(s[i][0] - s[i - 1][0], s[i][1] - s[i - 1][1]);
+    });
+    return Math.max(len, 1) / (LETTER_TIME / 1000);
+  }
+
   var control = null;
   var handle = null;
   // Writing: each letter of a word starts LETTER_GAP ms after the one before, so several pens
   // are on the go at once; the next word starts when the last letter of this one does.
+  // Every letter takes the same time to write, so the pen moves fast over a "w" and slowly over an "l".
+  var LETTER_TIME = 500;    // ms
   var LETTER_GAP = 150;     // letters take about 0.15 to 0.4s to draw, so this overlaps them
   handle = {
     ready: false,
@@ -132,7 +143,7 @@ export function layoutQuill(box, text, options) {
       words.forEach(function (w, i) {
         var ctx = w.canvas.getContext("2d"), x = w.pad, j = 0;
         for (var ch of w.text) {
-          var opts = Object.assign({}, options, { seed: (options.seed || 1) + i * 7 + j * 3, speed: speed || 80, signal: signal });
+          var opts = Object.assign({}, options, { seed: (options.seed || 1) + i * 7 + j * 3, speed: speed || penSpeed(ch), signal: signal });
           running.push(clock.at(start + j * LETTER_GAP).then(animateText.bind(null, ctx, ch, x, base, opts)));
           x += advance(ch);
           j++;
