@@ -2,7 +2,7 @@
 //
 //   bun tools/import-stories.ts [--source ~/projects/local-llm-agent] [--dry-run]
 //
-// Every `<subject>-data-targets/**/*.md` there holding stories is read, filed
+// Every `<subject>-data-targets/**/*.md` (or `<subject>-targets/`, as weeping-statue is named) there holding stories is read, filed
 // by its file name (see parseName), and written under data/stories as place
 // files plus sitemaps. See "Importing stories" in README.md.
 import { existsSync } from "node:fs";
@@ -100,7 +100,7 @@ function parseStory(chunk: string, subject: string): Story | undefined {
   const sections: Record<string, string> = {};
   let current = "";
   for (const line of text.split("\n")) {
-    const m = line.match(/^#\s*([a-z-]+)\s*$/i);
+    const m = line.match(/^#+\s*([a-z-]+)\s*$/i);   // "#summary", or Markdown style "## Summary" (a few stories)
     if (m) {
       current = m[1].toLowerCase();
       sections[current] = "";
@@ -142,10 +142,13 @@ const child = (parent: Node, name: string, isPlace = false): Node => {
 const root: Node = { name: "", dir: outRoot, isPlace: false, children: new Map(), stories: [] };
 for (const c of CONTINENTS) child(root, c);
 
-const sourceDirs = (await readdir(sourceRoot)).filter((n) => n.endsWith("-data-targets")).sort();
+const sourceDirs = (await readdir(sourceRoot, { withFileTypes: true }))
+  .filter((e) => e.isDirectory() && e.name.endsWith("-targets"))
+  .map((e) => e.name)
+  .sort();
 let storyCount = 0;
 for (const sourceDir of sourceDirs) {
-  const subject = sourceDir.replace(/-data-targets$/, "");
+  const subject = sourceDir.replace(/(-data)?-targets$/, "");
   for (const file of await walk(path.join(sourceRoot, sourceDir))) {
     const stories = (await readFile(file, "utf8"))
       .split(/^---\s*$/m)

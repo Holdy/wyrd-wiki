@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>győr/Győr.xml</loc></sitemap>
+  <sitemap><loc>máriapócs/Máriapócs.xml</loc></sitemap>
+  <sitemap><loc>pásztó/Pásztó.xml</loc></sitemap>
   <url><loc>/index.html?/europe/hungary/the-cursed-maiden-of-m-r-castle</loc></url>
   <url><loc>/index.html?/europe/hungary/the-demonic-possession-of-cs-kszentgy-rgy</loc></url>
 </sitemapindex>

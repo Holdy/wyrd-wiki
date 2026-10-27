@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>apulia/Apulia.xml</loc></sitemap>
+  <sitemap><loc>sicily/Sicily.xml</loc></sitemap>
   <url><loc>/index.html?/europe/italy/the-anagrammatic-curse-of-ca-dario</loc></url>
   <url><loc>/index.html?/europe/italy/the-phantom-of-via-bagnera</loc></url>
   <url><loc>/index.html?/europe/italy/the-possessed-novices-of-lucedio</loc></url>

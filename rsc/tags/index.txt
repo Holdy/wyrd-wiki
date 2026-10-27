@@ -27,7 +27,6 @@ changeling
 coffin-rest
 crater
 crossroads-burial
-crying-statue
 cup-and-ring
 curse
 cyclopean
@@ -173,6 +172,7 @@ volcanic-columns
 vortex
 wayside-cross
 webcam
+weeping-statue
 weird
 wishing
 witch-hunt-memorial-plaque

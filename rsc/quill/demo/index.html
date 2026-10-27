@@ -6,7 +6,7 @@
   <style>body{margin:0;position:relative;background:#f4ecd8;font-family:sans-serif}canvas{display:block}</style>
 </head>
 <body>
-  <canvas id="c" width="1000" height="1020"></canvas>
+  <canvas id="c" width="1000" height="1140"></canvas>
   <script type="module">
     import { drawText, animateText, addTextLayer } from "../index.js";
     const canvas = document.getElementById("c");
@@ -24,10 +24,13 @@
     write("ABCDEFGHIJKLM\nNOPQRSTUVWXYZ", 40, 290, gothic);
     write("The quick brown fox jumps over the lazy dog.", 40, 520, { ...gothic, maxWidth: 920, speed: 100 }, true);
 
+    // Accented letters are the base letter with the mark added: Māori macrons, and the usual European accents.
+    write("Mākutu, Māui, whakapapa, Tāne Mahuta\nÀ é î ö ñ ç ž ü Â ë Ā Ō Ū", 40, 590, { ...gothic, maxWidth: 920 });
+
     // The round variant.
     const round = { style: "round", size: 24, color: "#3b1f0a", slant: 0.15, speed: 100 };
-    write("The quick brown fox jumps over the lazy dog.", 40, 760, { ...round, maxWidth: 920 }, true);
-    write("abcdefghijklmnopqrstuvwxyz\nABCDEFGHIJKLMNOPQRSTUVWXYZ", 40, 900, round, true);
+    write("The quick brown fox jumps over the lazy dog.", 40, 880, { ...round, maxWidth: 920 }, true);
+    write("abcdefghijklmnopqrstuvwxyz\nABCDEFGHIJKLMNOPQRSTUVWXYZ", 40, 1020, round, true);
   </script>
 </body>
 </html>

@@ -11,6 +11,15 @@
     // A page deep in the wiki shouldn't flash the home text while its content is still being fetched.
     if (location.search.length > 1) document.documentElement.className = "deep";
   </script>
+  <script>
+    // Saved options (js/options.js): a layer the visitor has switched off is hidden from the first paint.
+    try {
+      var saved = JSON.parse(localStorage.getItem("wyrd-options")) || {};
+      var visuals = saved.visuals || {};
+      if (visuals.grain === false) document.documentElement.classList.add("no-grain");
+      if (visuals.edges === false) document.documentElement.classList.add("no-edges");
+    } catch (e) {}
+  </script>
   <style>
     .deep #home { display: none; }
     :root {
@@ -31,7 +40,7 @@
 
     html { background: #fff; }
 
-    /* The sheet arrives in stages: white, then parchment colour, then the blotches, grain and scorched edges come in.
+    /* The sheet arrives in stages: white, then parchment colour, then the grain and scorched edges come in.
        Each stage is a layer that only changes opacity, which the browser does without repainting, so the
        fade stays cheap and doesn't slow the page's own animation. */
     @keyframes sheet-fade { from { opacity: 0; } }
@@ -46,7 +55,7 @@
       line-height: 1.6;
     }
 
-    /* The paper itself, behind everything: the parchment colour fades in over the white page... */
+    /* The paper itself, behind everything: the parchment colour fades in over the white page */
     #paper {
       position: absolute;
       inset: 0;
@@ -55,20 +64,6 @@
       background-color: var(--parchment);
       animation: sheet-fade 1.6s ease-in-out both;
     }
-    /* ...then the blotches: uneven ageing across the sheet */
-    #paper::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(ellipse at 20% 15%, rgba(255, 248, 225, 0.55), transparent 55%),
-        radial-gradient(ellipse at 80% 30%, rgba(201, 160, 90, 0.25), transparent 50%),
-        radial-gradient(ellipse at 35% 80%, rgba(180, 135, 70, 0.22), transparent 55%),
-        radial-gradient(ellipse at 75% 85%, rgba(255, 245, 215, 0.4), transparent 50%),
-        linear-gradient(170deg, var(--parchment-light), var(--parchment) 45%, var(--parchment-dark));
-      animation: sheet-fade 3.5s ease-in-out 1.6s both;
-    }
-
     /* Generated fibre / grain texture from SVG turbulence */
     body::before {
       content: "";
@@ -99,14 +94,38 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      #paper, #paper::before, body::before, body::after { animation: none; }
+      #paper, body::before, body::after { animation: none; }
     }
+
+    /* layers the visitor has switched off in the options panel */
+    .no-grain body::before { display: none; }
+    .no-edges body::after { display: none; }
+
+    /* the options button, bottom right; the panel itself is js/options.js, loaded when the button is first pressed */
+    #options-button {
+      position: fixed;
+      right: 12px;
+      bottom: 12px;
+      z-index: 10;
+      width: 2.2rem;
+      height: 2.2rem;
+      padding: 0;
+      font-size: 1.3rem;
+      line-height: 1;
+      color: var(--ink-faded);
+      background: none;
+      border: 0;
+      opacity: 0.45;
+      cursor: pointer;
+    }
+    #options-button:hover, #options-button:focus-visible { opacity: 1; color: var(--rubric); }
 
     /* Everything below is positioned so it paints above the grain layer */
     /* breadcrumb-panel: the trail of places the visitor has chosen, at the top of the left column; the page title
        beside it is the last breadcrumb. It is right aligned, so a long trail runs off the left edge of the page
        (clipped by the body) and the last crumbs stay in view. */
     .breadcrumb-panel { margin-bottom: 1.2rem; }
+    .breadcrumb-panel:has(ol:empty) { display: none; }     /* the home page: nothing above it */
     .breadcrumb-panel ol {
       list-style: none;
       margin: 0;
@@ -125,7 +144,6 @@
       color: var(--rubric);
       margin-left: 0.6rem;
     }
-    .breadcrumb-panel [aria-current] { color: var(--ink); }
 
     .layout {
       position: relative;
@@ -183,7 +201,7 @@
     /* the baseline of the quill is the bottom of the illuminated letter (the ink, once trimmed) */
     h1 .initial { vertical-align: baseline; margin-top: 0; }
     /* opacity is on the whole canvas, not the ink, so strokes that overlap don't show darker joins */
-    .qw canvas { display: block; opacity: 0.74; mix-blend-mode: multiply; }
+    .qw canvas { display: block; opacity: 0.82; mix-blend-mode: multiply; }
     .qt { text-shadow: none; letter-spacing: 0; text-transform: none; font-variant: normal; }
     /* debugging: a one-pixel red box round each quill glyph's cell (its advance width by the full line box) */
     .quill-debug .qt span { outline: 1px solid red; outline-offset: -1px; }
@@ -339,6 +357,11 @@
       color: var(--rubric);
     }
     .dropcap.drawn { position: relative; padding: 0; line-height: normal; }
+    .dropcap.illustrated { display: block; }
+    /* the white of the drawing is made transparent by a filter rather than by multiply, which a fade or a page wipe's mask would break.
+       The filter paints the ink as RUBRIC already multiplied by the parchment (rgb 102, 24, 13), so it matches the title's letter */
+    .dropcap.illustrated canvas { display: block; filter: url(#white-clear); }
+    .dropcap.illustrated .glyph { position: absolute; inset: 0; overflow: hidden; line-height: 1; text-align: center; color: transparent; pointer-events: none; }
     .story .opening { display: flow-root; }     /* keeps a short paragraph's drop cap from reaching into the next section */
 
     a {
@@ -409,6 +432,7 @@
   </style>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="white-clear" color-interpolation-filters="sRGB"><feFlood flood-color="#fff" result="white"/><feComposite in="SourceGraphic" in2="white" operator="over"/><feColorMatrix type="matrix" values="0 0 0 0 0.40  0 0 0 0 0.094  0 0 0 0 0.051  0 -1.1 0 0 1.1"/></filter></svg>
   <div id="paper" aria-hidden="true"></div>
   <canvas id="dust" aria-hidden="true"></canvas>
   <div class="layout">
@@ -421,17 +445,12 @@
       <section id="home">
     <h1 class="pending" aria-label="Wyrd Wiki"><span id="initial" class="initial" style="--size: 200px"><span class="glyph">W</span></span><span id="home-rest" class="rest" data-text="yrd Wiki"></span></h1>
     <div class="ending" id="pips" aria-hidden="true"><span class="gem" style="transform: translateX(0)"></span><span class="gem" style="transform: translateX(32px)"></span><span class="gem" style="transform: translateX(64px)"></span></div>
-    <p class="subtitle">A gazetteer of folklore, filed by place</p>
-
-    <p class="opening">Here are set down the tales of the land: of wells and hollow hills, of drowned bells and things that walk the old roads at dusk. Each story is filed by the place where it was told, from the whole world down to a single village.</p>
-
-    <p>Choose a realm from the list to begin.</p>
-
       </section>
       <article id="view" class="story" hidden></article>
       <div class="ending" aria-hidden="true"><span class="gem" style="transform: translateX(0)"></span><span class="gem" style="transform: translateX(32px)"></span><span class="gem" style="transform: translateX(64px)"></span></div>
     </main>
   </div>
+  <button id="options-button" type="button" aria-label="Options" title="Options">&#9881;&#xFE0E;</button>
   <script src="js/triangles.js"></script>
   <script>
     // Navigation is driven by the sitemap files under data/stories/.
@@ -439,6 +458,14 @@
     // and each segment is found by following the sitemaps down from sitemap.xml.
     (function () {
       var ROOT = "data/stories/sitemap.xml";
+      // The home page's text: "## " is the tagline under the title, and the first ordinary paragraph gets the illustrated first letter.
+      var HOME = [
+        "## A gazetteer of folklore, filed by place",
+        "",
+        "Here are set down the tales of the land: of wells and hollow hills, of drowned bells and things that walk the old roads at dusk. Each story is filed by the place where it was told, from the whole world down to a single village.",
+        "",
+        "Choose a realm from the list to begin."
+      ].join("\n");
       var breadcrumbPanelEl = document.getElementById("breadcrumb-panel-list");
       var optionsEl = document.getElementById("options");
       var tagImageEl = document.getElementById("tag-image");
@@ -459,11 +486,13 @@
         return loc.split("/").pop().replace(/\.xml$/i, "");
       }
 
-      function parsePath() {
-        var q = location.search.slice(1);
+      // The path segments in a query string ("?/europe/wales" gives ["europe", "wales"]); the inverse of hrefFor.
+      function segmentsOf(search) {
+        var q = search.replace(/^\?/, "");
         try { q = decodeURIComponent(q); } catch (e) {}
         return q.split("/").filter(Boolean);
       }
+      function parsePath() { return segmentsOf(location.search); }
 
       async function fetchText(url) {
         var res = await fetch(url);
@@ -494,7 +523,7 @@
       function parseStories(md) {
         var stories = [], cur = null, section = null;
         md.split(/\r?\n/).forEach(function (line) {
-          var h = line.match(/^#\s*(.*)$/);
+          var h = line.match(/^#+\s*(.*)$/);      // "#summary", or Markdown style "## Summary" (a few stories)
           if (h) {
             var name = h[1].trim().toLowerCase();
             if (name === "title") { cur = { title: "", lines: [], detailLines: [], tagLines: [] }; stories.push(cur); }
@@ -545,7 +574,7 @@
       if (location.hash === "#quill-debug") window.quillDebug(true);
       var quillMod = null;
       quill.then(function (m) { quillMod = m; }, function () {});
-      var QUILL = { color: "#000", inkFadeRate: 0.06 };     // the library's default rate is 0.03
+      var QUILL = { color: "#3e2b19", inkFadeRate: 0.06 };     // --ink-faded (the colour of the tagline) made a tenth darker, then a fifth darker twice; the library's default fade rate is 0.03
 
       function alignLines(rest) {
         var lines = rest.querySelector(".lines") || rest;
@@ -605,17 +634,18 @@
       function inkBounds(canvas) {
         var w = canvas.width, h = canvas.height;
         var d = canvas.getContext("2d").getImageData(0, 0, w, h).data;
-        var min = w, max = -1, last = -1;
+        var min = w, max = -1, last = -1, top = -1;
         for (var y = 0; y < h; y++) {
           for (var x = 0; x < w; x++) {
             if (d[(y * w + x) * 4] < 160) {
               if (x < min) min = x;
               if (x > max) max = x;
               last = y;
+              if (top < 0) top = y;
             }
           }
         }
-        return { w: w, h: h, d: d, min: min, max: max, last: last };
+        return { w: w, h: h, d: d, min: min, max: max, last: last, top: top };
       }
 
       // Reading a letter's pixels back is slow, so each letter is measured once per size (a morph measures the
@@ -725,15 +755,30 @@
         return genomes[url];
       }
 
-      // The spelling changes (data/spelling.txt, lines "from -> to"), fetched once, in the background.
+      // Is the visitor in the United States, going by their time zone? They get American spellings.
+      function inUS() {
+        try {
+          var zone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+          return /^US\//.test(zone) || zone === "Pacific/Honolulu" ||
+            /^America\/(New_York|Detroit|Kentucky\/|Indiana\/|Chicago|Menominee|North_Dakota\/|Denver|Boise|Phoenix|Los_Angeles|Anchorage|Juneau|Sitka|Metlakatla|Yakutat|Nome|Adak)/.test(zone);
+        } catch (e) {
+          return false;
+        }
+      }
+      // The spelling changes (data/spelling.txt, lines "american -> british"), fetched once, in the background.
+      // The stories are mostly in British spelling: visitors in the US get the list the other way round
+      // (British to American), everyone else gets it as written.
       var spellingPromise = null;
       var spelling = {};
       function spellingList() {
         if (!spellingPromise) {
+          var american = inUS();
           spellingPromise = fetchText("data/spelling.txt").then(function (text) {
             text.split(/\r?\n/).forEach(function (line) {
               var m = line.match(/^\s*([^#\s][^\s]*)\s*->\s*(\S+)\s*$/);
-              if (m) spelling[m[1].toLowerCase()] = m[2];
+              if (!m) return;
+              if (!american) spelling[m[1].toLowerCase()] = m[2];
+              else if (!spelling[m[2].toLowerCase()]) spelling[m[2].toLowerCase()] = m[1];
             });
           }).catch(function () {});
         }
@@ -839,7 +884,7 @@
       function fillText(box, text) {
         var last = 0, m;
         var words = Object.keys(spelling).sort(function (x, y) { return y.length - x.length; });
-        var re = new RegExp("\\b(witch(?:craft)?|magic|wizard|devils?)\\b" + (words.length ? "|\\b(" + words.join("|") + ")\\b" : ""), "gi");
+        var re = new RegExp("\\b(witch(?:craft)?|magic|wizard|devils?|ghosts?)\\b" + (words.length ? "|\\b(" + words.join("|") + ")\\b" : ""), "gi");
         while ((m = re.exec(text))) {
           box.appendChild(document.createTextNode(text.slice(last, m.index)));
           var mark = el("span", m[0], m[1] ? "pencil" : "respell");
@@ -854,29 +899,39 @@
         box.appendChild(document.createTextNode(text.slice(last)));
       }
 
-      // The large first letter of a section, written in quill in the red of the illuminated letters. It starts as
-      // a plain letter in the old drop cap's style, which the quill drawing replaces once the module has loaded
-      // (the real letter stays over the drawing, invisible, so copying gives the text).
+      // The large first letter of a section, as one of the illustrated letters (rsc/letters) used for titles.
+      // It starts as a plain letter in the old drop cap's style, which the drawing replaces once the genome has
+      // loaded (the real letter stays over the drawing, invisible, so copying gives the text).
       // `trail` is a space that follows a one-letter first word ("A story"): at the start of the line beside the
       // letter it would collapse and vanish from a selection, so it travels with the letter instead.
       function dropCap(letter, trail) {
         var span = el("span", letter + trail, "dropcap");
         span.style.whiteSpace = "pre";
-        quill.then(function (q) {
+        genomeBase64("rsc/letters/" + letter.toUpperCase() + ".bin").then(function (genome) {
+          // the paragraph may not be on the page yet: wait for it (a few frames), then give up
+          return new Promise(function (resolve) {
+            var tries = 0;
+            (function check() { if (span.isConnected || ++tries > 120) resolve(genome); else requestAnimationFrame(check); })();
+          });
+        }).then(function (genome) {
           if (!span.isConnected) return;
-          var size = parseFloat(getComputedStyle(span.parentNode).fontSize) * 2;     // a capital is 1.5 sizes tall
-          var o = { size: size, color: "#6e1c12", inkFadeRate: QUILL.inkFadeRate };
-          var drawing = q.layoutQuill(span, letter, o);
-          var cell = span.firstChild;
+          var size = Math.round(parseFloat(getComputedStyle(span.parentNode).fontSize) * 3.84);
+          var ink = letterInk(letter.toUpperCase(), genome, size), scale = ink.w / size;
+          span.textContent = "";
+          span.classList.add("drawn", "illustrated");
+          span.style.width = size + "px";
+          span.style.height = size + "px";
+          if (ink.max >= 0) {
+            span.style.marginLeft = -(ink.min / scale) + "px";
+            span.style.marginRight = -((ink.w - 1 - ink.max) / scale) + size * 0.06 + "px";
+            span.style.marginBottom = -((ink.h - 1 - ink.last) / scale) + "px";
+            // the top of the ink starts level with the tops of the first line's capitals, then is raised by an eighth of the letter's height
+            span.style.marginTop = -(ink.top / scale) + parseFloat(getComputedStyle(span.parentNode).fontSize) * 0.3 - (ink.last - ink.top) / scale / 8 + "px";
+          }
+          span.appendChild(el("span", letter, "glyph")).style.fontSize = size + "px";
           if (trail) span.appendChild(el("span", trail)).style.cssText = "position:absolute;left:100%;white-space:pre;color:transparent;font-size:1px";
-          span.classList.add("drawn");
-          span.style.width = cell.style.width;
-          span.style.height = size * 1.55 + "px";
-          span.style.marginRight = size * 0.12 + "px";
-          // the cell reaches 1.7 sizes above the baseline and a capital 1.5, so pull it up by the difference
-          cell.style.cssText += ";position:absolute;left:0;top:" + -size * 0.2 + "px;margin:0";
-          drawing.draw(false);
-        }).catch(function () {});
+          renderTriangles(span, genome, size, { repel: true, ink: RUBRIC }).setAttribute("aria-hidden", "true");
+        }).catch(function (e) { console.error("drop cap", e); });
         return span;
       }
 
@@ -1172,7 +1227,9 @@
         hurrySlide();     // coming back early: the other two diamonds finish sliding over so the place is free
         sprite.returning = true;
         startRail({
-          kind: "home", speed: CRUISE * 2.5, slowEnd: true, tol: 25, key: function () { return slotCentre(0); },
+          kind: "home", speed: CRUISE * 2.5, slowEnd: true,
+          tol: 1,     // tight: the row may be gliding to a new height, and it must not land off its place and then snap
+          key: function () { return slotCentre(0); },
           build: function () { var c = slotCentre(0); return dubins(sprite.x, sprite.y, sprite.heading, c[0], c[1], 0); },
           onDone: function () { sprite.mode = "hold"; }
         }, true);
@@ -1677,14 +1734,11 @@
       // page's data is in, while the title (see render) may still be changing over.
       function renderSide(state) {
         breadcrumbPanelEl.textContent = "";
-        state.crumbs.forEach(function (c, i) {
+        // the current place is the page's title, so the trail stops short of it (as it does before a story's title)
+        var trail = state.story ? state.crumbs : state.crumbs.slice(0, -1);
+        trail.forEach(function (c) {
           var li = document.createElement("li");
-          if (i === state.crumbs.length - 1 && !state.story) {
-            li.appendChild(el("span", c.title));
-            li.firstChild.setAttribute("aria-current", "page");
-          } else {
-            li.appendChild(link(c.title, c.href));
-          }
+          li.appendChild(link(c.title, c.href));
           breadcrumbPanelEl.appendChild(li);
         });
 
@@ -1698,7 +1752,7 @@
           li.appendChild(link(item.title, item.href));
           optionsEl.appendChild(li);
         });
-        if (!listed.length && !state.story) {
+        if (!listed.length && !state.story && !(state.levelStories && state.levelStories.length)) {
           var li = document.createElement("li");
           li.className = "empty";
           li.textContent = "Nothing filed here yet.";
@@ -1764,6 +1818,16 @@
           movers.forEach(function (m) {
             m.style.transition = "transform " + GLIDE_MS + "ms ease-in-out";
             m.style.transform = "translateY(0)";
+            // once there, drop the transform: even a do-nothing one isolates the content, so the drawn letters'
+            // multiply stops at it and their white shows instead of the parchment
+            if (!m.glideEnd) {
+              m.glideEnd = function (e) {
+                if (e.target !== m || e.propertyName !== "transform" || !/^translateY\(0(px)?\)$/.test(m.style.transform)) return;
+                m.style.transition = "";
+                m.style.transform = "";
+              };
+              m.addEventListener("transitionend", m.glideEnd);
+            }
           });
         }
         glideTop = natural;
@@ -1801,6 +1865,17 @@
             viewEl.appendChild(h1);
             addInitial(h1, state.message || state.levelTitle);
             if (state.hint) body.appendChild(el("p", state.hint, "hint"));
+            if (state.levelStories && state.levelStories.length) {
+              body.appendChild(el("h2", "Tales of " + state.levelTitle));
+              var tales = el("ul", null, "realms");
+              state.levelStories.forEach(function (item) {
+                var li = document.createElement("li");
+                var a = li.appendChild(link(null, item.href));
+                fillText(a, item.title);         // so the flyer can circle and correct words in the titles too
+                tales.appendChild(li);
+              });
+              body.appendChild(tales);
+            }
           }
           viewEl.appendChild(body);
         }
@@ -1810,7 +1885,7 @@
         fadeClosing(true);
         watchTitle(title);
         followTitle();
-        handOff(state.story ? circleWords(body).concat(respellTasks(body)) : []);
+        handOff(circleWords(body).concat(respellTasks(body)));
         settledLetter = null;
         pending = null;
         document.title = (state.story ? state.story.title + " — " : atHome ? "" : state.levelTitle + " — ") + "Wyrd Wiki";
@@ -1827,11 +1902,13 @@
         try {
           var size = parseFloat(span.style.getPropertyValue("--size"));
           var genome = await genomeBase64("rsc/letters/" + letter + ".bin");
-          // the two letters have different margins in their squares: slide the canvas so the new letter's ink lands where the next title will put it
+          // the two letters have different margins in their squares: slide the canvas so the new letter's ink lands where the next title will put it.
+          // Only sideways: the letter's square always sits at the top of the title (it is the tallest thing on the first
+          // line), and a lower or higher letter moves the title's baseline instead, so the square itself never moves up or down.
           var shift = [0, 0];
           if (span.ink) {
             var ink = letterInk(letter, genome, size);
-            if (ink.max >= 0) shift = [(span.ink.min - ink.min) / span.ink.scale, (span.ink.last - ink.last) / span.ink.scale];
+            if (ink.max >= 0) shift = [(span.ink.min - ink.min) / span.ink.scale, 0];
           }
           job.started = true;
           await canvas.morphTo(genome, { shift: shift, since: since });
@@ -1902,8 +1979,7 @@
           }
 
           var storyItem = function (loc) {
-            var q = loc.indexOf("?") >= 0 ? loc.slice(loc.indexOf("?") + 1) : loc;
-            var slug = q.split("/").filter(Boolean).pop() || "";
+            var slug = segmentsOf(loc.slice(loc.indexOf("?") + 1)).pop() || "";
             var known = stories.filter(function (st) { return st.slug === slug; })[0];
             return { slug: slug, title: known ? known.title : sentence(slug.replace(/-/g, " ")), href: hrefFor(levelPath.concat(slug)) };
           };
@@ -1911,7 +1987,11 @@
             state.items = sm.locs.map(function (loc) {
               var name = nameOf(loc);
               return { slug: slugOf(name), title: pretty(name), href: hrefFor(levelPath.concat(slugOf(name))) };
-            }).concat(sm.urls.map(storyItem));
+            });
+            // A country or region's own stories (not filed at any place in it) are listed in the main area of its
+            // page, which has nothing else to show; once one is open the others join the menu, as at a place.
+            state.levelStories = sm.urls.map(storyItem);
+            if (i < segs.length) state.items = state.items.concat(state.levelStories);
           } else {
             state.items = sm.locs.map(storyItem);
           }
@@ -1925,7 +2005,7 @@
             state.activeSlug = slug;
             state.tagImage = await firstTagWithImage(found.tags);
           } else {
-            state.hint = sm.kind === "urlset" ? "Choose a story from the list." : sm.urls.length ? "Choose a place or a story from the list." : state.items.length ? "Choose a place from the list." : "";
+            state.hint = sm.kind === "urlset" ? "Choose a story from the list." : sm.urls.length ? (state.items.length ? "Choose a place from the list, or one of the tales below." : "") : state.items.length ? "Choose a place from the list." : "";
           }
         } catch (err) {
           if (err && err.notFound) {
@@ -1947,7 +2027,7 @@
         if (!a || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
         e.preventDefault();
         if (a.href !== location.href) {
-          if (new URL(a.href).search.length > 2) leave(a.textContent);      // not for the home page, which has its own title
+          if (segmentsOf(a.search).length) leave(a.textContent);      // not for the home page, which has its own title
           history.pushState(null, "", a.href);
         }
         route();
@@ -1973,6 +2053,16 @@
         drawInitial(document.getElementById("initial"), "W", 200, arrive);
         writeTitle(rest.parentNode, rest, rest.dataset.text, true, arrived);
       })();
+      var firstBody = true;
+      HOME.split(/\n\s*\n/).forEach(function (block) {
+        var tagline = block.match(/^##\s+(.*)$/);
+        if (tagline) {
+          homeEl.appendChild(el("p", tagline[1], "subtitle"));
+        } else {
+          homeEl.appendChild(paragraph(block.trim(), firstBody));
+          firstBody = false;
+        }
+      });
       startSprite();
       route();
     })();
@@ -2190,6 +2280,11 @@
         requestAnimationFrame(frame);
       }
     })();
+  </script>
+  <script>
+    document.getElementById("options-button").addEventListener("click", function () {
+      import("./js/options.js").then(function (m) { m.openOptions(); });
+    });
   </script>
 </body>
 </html>

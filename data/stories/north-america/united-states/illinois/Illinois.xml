@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>Chicago.xml</loc></sitemap>
+  <sitemap><loc>Cicero.xml</loc></sitemap>
   <url><loc>/index.html?/north-america/united-states/illinois/resurrection-mary</loc></url>
   <url><loc>/index.html?/north-america/united-states/illinois/the-curse-of-blood-s-point</loc></url>
   <url><loc>/index.html?/north-america/united-states/illinois/the-madonna-of-bachelor-s-grove</loc></url>

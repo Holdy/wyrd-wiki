@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>batangas/Batangas.xml</loc></sitemap>
+  <sitemap><loc>camiguin/Camiguin.xml</loc></sitemap>
   <url><loc>/index.html?/asia/philippines/the-curse-of-the-manila-film-center</loc></url>
   <url><loc>/index.html?/asia/philippines/the-demonic-possession-of-clarita-villanueva</loc></url>
   <url><loc>/index.html?/asia/philippines/the-white-lady-of-balete-drive</loc></url>

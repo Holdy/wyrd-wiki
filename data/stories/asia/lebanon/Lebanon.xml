@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>ras-baalbek/Ras_Baalbek.xml</loc></sitemap>
+  <sitemap><loc>rmaish/Rmaish.xml</loc></sitemap>
   <url><loc>/index.html?/asia/lebanon/the-curse-of-king-ahiram-s-sarcophagus</loc></url>
   <url><loc>/index.html?/asia/lebanon/the-possession-at-the-sabath-of-tyre</loc></url>
 </sitemapindex>

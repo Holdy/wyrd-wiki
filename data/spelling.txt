@@ -1,4 +1,5 @@
-# Spelling changes the flyer makes to story text: American -> British.
+# Spelling changes the flyer makes to story text: American -> British. Visitors whose time zone is in the
+# United States get them the other way round (British -> American); see inUS() in index.html.
 # One per line, "from -> to". Matching is by whole word, ignoring case; a capital
 # letter at the start of the word is kept. Add the plural and other forms separately.
 neighbor -> neighbour
@@ -7,7 +8,6 @@ neighboring -> neighbouring
 neighborhood -> neighbourhood
 neighborhoods -> neighbourhoods
 humor -> humour
-humorous -> humourous
 rumor -> rumour
 rumors -> rumours
 rumored -> rumoured

@@ -5,6 +5,8 @@
   <sitemap><loc>manitoba/Manitoba.xml</loc></sitemap>
   <sitemap><loc>new-brunswick/New_Brunswick.xml</loc></sitemap>
   <sitemap><loc>newfoundland-and-labrador/Newfoundland_and_Labrador.xml</loc></sitemap>
+  <sitemap><loc>ontario/Ontario.xml</loc></sitemap>
+  <sitemap><loc>quebec/Quebec.xml</loc></sitemap>
   <url><loc>/index.html?/north-america/canada/the-haunting-of-buck-hill</loc></url>
   <url><loc>/index.html?/north-america/canada/the-possession-of-barbe-hallay</loc></url>
   <url><loc>/index.html?/north-america/canada/the-tuberculosis-curse-of-castle-kilbride</loc></url>
