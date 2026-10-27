@@ -267,6 +267,13 @@
       height: 22px;
       margin: -11px 0 0 -1.5px;
     }
+    /* ...and shrinks for a moment as it presses a link */
+    .sprite.press {
+      width: 7px;
+      height: 13px;
+      margin: -6.5px 0 0 -3.5px;
+      transition-duration: 0.12s;
+    }
 
     /* Words circled in pencil: the oval is an SVG laid over the word */
     .pencil { position: relative; }
@@ -1018,7 +1025,7 @@
         mode: "rest", t0: 0, restSlot: 2, restFor: 4000, edit: null, trace: null,
         rail: null, spec: null, wpNext: null, task: null,
         actsLeft: 0, nextAct: 0, slideEnd: 0, homeAt: 0, away: null, launchAt: 0, returning: false,
-        mouse: null, lastMouse: [0, 0], queue: [], drawTimer: 0
+        mouse: null, lastMouse: [0, 0], queue: [], drawTimer: 0, click: null, clickTimer: 0, press: null
       };
 
       function smooth(u) { return u * u * (3 - 2 * u); }
@@ -1255,6 +1262,12 @@
       var ACTIVITIES = ["edit", "circle", "mouse", "letter", "o"];
       function pickNext() {
         sprite.queue = sprite.queue.filter(taskAlive);
+        if (sprite.click && sprite.click.isConnected) return goClick();     // the page's only way on comes first
+        var first = sprite.queue.filter(function (t) { return t.first; })[0];
+        if (first) {                    // then the way towards the visitor's part of the world (see timezones.json)
+          sprite.queue.splice(sprite.queue.indexOf(first), 1);
+          return approach(first);
+        }
         if (sprite.clock >= sprite.homeAt) return goHome();
         if (sprite.actsLeft <= 0) return goHome();      // all its activities are done: back to the pips, seen or not
         var circle = sprite.queue.filter(function (t) { return t.kind !== "respell"; })[0];
@@ -1387,6 +1400,33 @@
         startRail(spec, true);
       }
 
+      // Where on a link to press: the middle of its first line.
+      function linkPoint(a) {
+        var q = a.isConnected && a.getClientRects()[0];
+        return q ? [q.left + Math.min(q.width / 2, 40), q.top + q.height / 2] : null;
+      }
+
+      // When a page offers only one way on, the flyer goes to that link and presses it.
+      function goClick() {
+        var a = sprite.click;
+        sprite.click = null;
+        console.log("flyer: only one way on, going to press \"" + a.textContent + "\"");
+        startRail({
+          kind: "click", speed: CRUISE * 1.8, slowEnd: true, tol: 20,
+          alive: function () { return a.isConnected; },
+          key: function () { return linkPoint(a); },
+          build: function () {
+            var m = linkPoint(a);
+            return dubins(sprite.x, sprite.y, sprite.heading, m[0], m[1], Math.atan2(m[1] - sprite.y, m[0] - sprite.x));
+          },
+          onDone: function () {
+            sprite.press = { a: a, t0: sprite.clock, done: false };
+            sprite.el.classList.add("press");
+            sprite.mode = "press";
+          }
+        }, true);
+      }
+
       function taskAlive(task) {
         return task.kind === "respell" ? task.span.isConnected : task.path.isConnected;
       }
@@ -1432,6 +1472,7 @@
         // to the start of the circle, arriving along the oval, going round whichever way is the shorter way in
         var spec = {
           kind: "approach", speed: CRUISE * 1.5, slowEnd: true, tol: 20, dir: 1, alive: alive,
+          follow: !!task.first,           // the visitor's menu link may be off the window: the page scrolls after the flyer
           key: function () { return circleStart(task); },
           build: function () {
             var st = circleStart(task), tan = startTangent(task.shape), h = Math.atan2(tan[1], tan[0]);
@@ -1491,6 +1532,7 @@
         // the mouse: getting within 3 cm is enough
         if (sp.kind === "mouse" && (Math.hypot(sprite.x - sprite.lastMouse[0], sprite.y - sprite.lastMouse[1]) < 3 * CM || now > sp.until)) { pickNext(); return; }
         moveRail(r, dt);
+        if (sp.follow) followFlyer(sp.key());
         // passing through an "o": eight motes fly out from it, one to each compass point
         if (sp.kind === "through" && sp.burst && !sp.fired && r.s >= (sp.fixAt || 0) - 5) {
           var c = sp.centre();
@@ -1500,6 +1542,17 @@
           }
         }
         if (r.s >= r.len) { sprite.rail = null; sp.onDone(); }
+      }
+
+      // On its way to a link above or below the window, the page scrolls as the flyer reaches the edge it
+      // is heading for, keeping it that far in, until the link comes into view.
+      var EDGE = 80;                    // px from the top or bottom of the window
+      function followFlyer(to) {
+        if (!to) return;
+        var h = window.innerHeight, by = 0;
+        if (to[1] > h - EDGE && sprite.y > h - EDGE) by = sprite.y - (h - EDGE);
+        else if (to[1] < EDGE && sprite.y < EDGE) by = sprite.y - EDGE;
+        if (by) window.scrollBy(0, by);     // the next frame moves the flyer and its rail with the page
       }
 
       // The tip leads: turn smoothly to face the way it is heading.
@@ -1515,7 +1568,8 @@
         sprite.clock = now;
 
         // no flight lasts more than 90s: by 75s, whatever it is doing, it turns for home
-        if (sprite.away && !sprite.returning && sprite.mode !== "rest" && sprite.mode !== "hold" && now - sprite.launchAt >= 75000) {
+        var clicking = sprite.mode === "press" || (sprite.mode === "rail" && sprite.spec.kind === "click");
+        if (sprite.away && !sprite.returning && !clicking && sprite.mode !== "rest" && sprite.mode !== "hold" && now - sprite.launchAt >= 75000) {
           if (sprite.mode === "trace") finishCircle(sprite.trace.task);
           if (sprite.mode === "edit") endEdit(true);
           goHome();
@@ -1538,6 +1592,12 @@
             return;
           }
           if (!sprite.t0) sprite.t0 = now;
+          if (sprite.click && sprite.click.isConnected) {     // a link to press: straight off to it
+            sprite.t0 = 0;
+            launch();
+            goClick();
+            return;
+          }
           if (now - sprite.t0 >= sprite.restFor) {
             sprite.t0 = 0;
             launch();
@@ -1548,6 +1608,16 @@
 
         if (mode === "rail") {
           stepRail(dt, now);
+        } else if (mode === "press") {
+          // sit on the link, shrunk, then let go: that is the click; a moment later fly on
+          var pr = sprite.press, at = linkPoint(pr.a);
+          if (at) { sprite.x = at[0]; sprite.y = at[1]; }
+          if (!pr.done && now - pr.t0 >= 220) {
+            pr.done = true;
+            sprite.el.classList.remove("press");
+            if (pr.a.isConnected) pr.a.click();
+          }
+          if (pr.done && now - pr.t0 >= 600) { sprite.press = null; pickNext(); return; }
         } else if (mode === "trace") {
           var tr = sprite.trace, t = tr.task;
           if (!t.path.isConnected) { pickNext(); return; }
@@ -1662,11 +1732,14 @@
       }
 
       // Marked words get a pencil oval (drawn by the diamond above) that then fades out.
+      // `root` is a block to look for .pencil marks in, or a list of the marks themselves.
+      var graphite = 0;
       function circleWords(root) {
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return [];
         var ns = "http://www.w3.org/2000/svg";
         var items = [];
-        [].forEach.call(root.querySelectorAll(".pencil"), function (mark, i) {
+        [].forEach.call(root.querySelectorAll ? root.querySelectorAll(".pencil") : root, function (mark) {
+          var i = graphite++;
           var box = mark.getBoundingClientRect();
           var mx = 12, my = 9;
           var svg = document.createElementNS(ns, "svg");
@@ -1728,6 +1801,41 @@
           sprite.queue = items;
           if (sprite.mode === "rail" && sprite.spec.kind === "wander") pickNext();      // break off a sweep to go and work
         }, 3000);
+      }
+
+      // The visitor's part of the world, from their time zone: a path in the hierarchy, such as
+      // ["europe", "england", "greater-london"] (data/timezones.json). Null until it is known, or if it is not.
+      var homePath = null;
+      fetch("data/timezones.json").then(function (res) { return res.json(); }).then(function (zones) {
+        var zone = Intl.DateTimeFormat().resolvedOptions().timeZone, path = zones[zone];
+        if (path) homePath = path.split("/");
+        console.log("flyer: time zone " + zone + (path ? " is " + path : " is not in timezones.json"));
+      }).catch(function () {});
+
+      // On the way down to the visitor's part of the world, the menu link that goes one step nearer to it
+      // (the continent at home, then the country, then the region...).
+      function homeward(state) {
+        if (!homePath || state.story || state.message || state.path.length >= homePath.length) return null;
+        var same = function (x, y) { return x.normalize("NFC") === y.normalize("NFC"); };     // accented names may be spelt either way
+        for (var i = 0; i < state.path.length; i++) if (!same(state.path[i], homePath[i])) return null;
+        var next = homePath[state.path.length];
+        return [].filter.call(optionsEl.querySelectorAll("a[data-nav]"), function (a) {
+          var segs = segmentsOf(a.search);
+          return segs.length === state.path.length + 1 && same(segs[segs.length - 1], next);
+        })[0] || null;
+      }
+
+      // When a country, region or place offers only one way on (one place and no tales, or one tale and
+      // no places), the flyer goes and presses that link a moment after the page arrives.
+      function handClick(link) {
+        clearTimeout(sprite.clickTimer);
+        sprite.click = null;
+        if (!link || !sprite.el) return;
+        sprite.clickTimer = setTimeout(function () {
+          if (!link.isConnected) return;
+          sprite.click = link;
+          if (sprite.mode === "rail" && (sprite.spec.kind === "wander" || sprite.spec.kind === "mouse")) pickNext();
+        }, 2500);
       }
 
       // The menu side: the breadcrumb-panel, the story's drawing and the list. It changes as soon as the
@@ -1885,7 +1993,15 @@
         fadeClosing(true);
         watchTitle(title);
         followTitle();
-        handOff(circleWords(body).concat(respellTasks(body)));
+        var near = homeward(state), tasks = [];
+        if (near) {
+          near.classList.add("pencil");
+          tasks = circleWords([near]);
+          tasks.forEach(function (t) { t.first = true; });
+        }
+        handOff(tasks.concat(circleWords(body), respellTasks(body)));
+        var ways = atHome || state.story || state.message ? [] : [].slice.call(optionsEl.querySelectorAll("a[data-nav]")).concat([].slice.call(body.querySelectorAll(".realms a[data-nav]")));
+        handClick(ways.length === 1 ? ways[0] : null);
         settledLetter = null;
         pending = null;
         document.title = (state.story ? state.story.title + " — " : atHome ? "" : state.levelTitle + " — ") + "Wyrd Wiki";
