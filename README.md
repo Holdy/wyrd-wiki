@@ -50,6 +50,7 @@ ls *.bin | sed 's/\.bin$//' > index.txt
 - **Left (below the breadcrumbs):** the options at the current level (no heading). When a story is open it is not listed again; instead the drawing for the first of its tags that has one (see below) is shown at the top of the column, and the menu lists the other stories at that level.
 - **Main (the full height of the page, starting at the top):** the home page text at the top level, otherwise the open story, or a short prompt if only a level is chosen.
 - Narrow screens (under 700 px) put the options above the main area.
+- **Taller than wide (a phone):** a single column in this order: the breadcrumb-panel (no dashed line under it) directly above the title, the story, the closing diamonds, then the tag drawing and the options. (`max-aspect-ratio: 1/1` in the CSS: the `aside` and `main` become `display: contents` so their parts can be ordered.)
 
 ### The address
 
