@@ -1417,7 +1417,7 @@
           key: function () { return linkPoint(a); },
           build: function () {
             var m = linkPoint(a);
-            return dubins(sprite.x, sprite.y, sprite.heading, m[0], m[1], Math.atan2(m[1] - sprite.y, m[0] - sprite.x));
+            return dubins(sprite.x, sprite.y, sprite.heading, m[0], m[1], 0);     // arriving heading right, in from the left of the text
           },
           onDone: function () {
             sprite.press = { a: a, t0: sprite.clock, done: false };
