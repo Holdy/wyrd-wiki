@@ -255,6 +255,7 @@ export function makeDrawing(text: string, x: number, y: number, options?: QuillO
     y0 = Math.min(y0, py); y1 = Math.max(y1, py);
   }
   let displaced = false;
+  let footprint: { key: string; layer: HTMLCanvasElement } | null = null;
 
   /** Where an end of a stroke would be pulled to, as an offset from home. */
   function goal(px: number, py: number, near: Point[]): Point {
@@ -312,11 +313,30 @@ export function makeDrawing(text: string, x: number, y: number, options?: QuillO
       const shown = cut(build(true));
       if (!shown.length) return;
       ctx.save();
+      const m0 = ctx.getTransform();
       // the letter's footprint: a sixth-strength copy at home, under the bent one, as strong as the push
       let pushed = 0;
       for (const e of ends) for (let m = 0; m < e.length; m += 2) pushed = Math.max(pushed, Math.hypot(e[m], e[m + 1]));
       const strength = Math.min(1, pushed / (push * 0.25));
-      if (strength > 0.01) paintSegments(ctx, cut(build(false)), o, 0, FOOTPRINT * strength);
+      if (strength > 0.01) {
+        // the footprint never changes, so it is painted once (on a layer the size of the canvas) and laid down at the push's strength
+        const m = ctx.getTransform(), c = ctx.canvas;
+        const key = [c.width, c.height, m.a, m.d, m.e, m.f, to, from].join();
+        if (!footprint || footprint.key !== key) {
+          const layer = document.createElement("canvas");
+          layer.width = c.width;
+          layer.height = c.height;
+          const lctx = layer.getContext("2d")!;
+          lctx.setTransform(m);
+          paintSegments(lctx, cut(build(false)), o, 0, FOOTPRINT);
+          footprint = { key, layer };
+        }
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.globalAlpha = strength;
+        ctx.drawImage(footprint.layer, 0, 0);
+      }
+      ctx.setTransform(m0);
+      ctx.globalAlpha = 1;
       paintSegments(ctx, shown, o);
       ctx.restore();
     },
