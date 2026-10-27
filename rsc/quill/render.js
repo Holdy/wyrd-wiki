@@ -98,8 +98,9 @@ function addQuad(ctx, seg, t0, t1, o) {
  * The first `overlap` segments repaint ink a previous batch already laid down
  * (core only), so the join between batches sits inside solid ink.
  */
-function paintSegments(ctx, segs, o, overlap = 0) {
+function paintSegments(ctx, segs, o, overlap = 0, scale = 1) {
     prepare(ctx, o);
+    ctx.globalAlpha = scale;
     const lo = -1 + 2 * EDGE_BAND;
     const hi = 1 - 2 * EDGE_BAND;
     const faded = [];
@@ -120,7 +121,7 @@ function paintSegments(ctx, segs, o, overlap = 0) {
     ctx.fill("nonzero");
     ctx.stroke(); // gives hairline strokes a minimum thickness
     for (const f of faded) {
-        ctx.globalAlpha = f.alpha;
+        ctx.globalAlpha = f.alpha * scale;
         ctx.beginPath();
         addQuad(ctx, f.seg, f.t0, f.t1, o);
         ctx.fill("nonzero");
@@ -154,6 +155,8 @@ const PUSH_TIME = 0.08;
 const RETURN_TIME = 0.8;
 /** How far from a point of influence the text is disturbed, and how far it is pushed at most, in sizes. */
 const BEND_REACH = 2.2;
+/** How strong the undistorted copy under a bent letter is, against the letter itself. */
+const FOOTPRINT = 1 / 6;
 const BEND_PUSH = 0.325;
 export function makeDrawing(text, x, y, options) {
     const o = resolveOptions(options);
@@ -260,22 +263,34 @@ export function makeDrawing(text, x, y, options) {
             return displaced;
         },
         paint(ctx, to = 1, from = 0) {
-            const segs = [];
-            samples.forEach((s, si) => {
-                const { left, right } = inks[si];
-                const e = ends[si], pc = pieceOf[si], wt = weight[si];
-                // each point sits at its home place plus the push of its piece's middle, fading linearly to nothing at the pins
-                const pt = (i) => [s[i][0] + e[pc[i] * 2] * wt[i], s[i][1] + e[pc[i] * 2 + 1] * wt[i]];
-                // as toSegments: a single-point stroke still leaves a nib mark
-                if (s.length === 1)
-                    segs.push({ a: pt(0), b: pt(0), left: left[0], right: right[0] });
-                for (let i = 1; i < s.length; i++)
-                    segs.push({ a: pt(i - 1), b: pt(i), left: left[i], right: right[i] });
-            });
-            const shown = to >= 1 && from <= 0 ? segs : segs.slice(Math.floor(segs.length * Math.max(from, 0)), Math.floor(segs.length * Math.min(to, 1)));
+            const build = (bent) => {
+                const segs = [];
+                samples.forEach((s, si) => {
+                    const { left, right } = inks[si];
+                    const e = ends[si], pc = pieceOf[si], wt = weight[si];
+                    // each point sits at its home place plus the push of its piece's middle, fading linearly to nothing at the pins
+                    const pt = (i) => bent ? [s[i][0] + e[pc[i] * 2] * wt[i], s[i][1] + e[pc[i] * 2 + 1] * wt[i]] : s[i];
+                    // as toSegments: a single-point stroke still leaves a nib mark
+                    if (s.length === 1)
+                        segs.push({ a: pt(0), b: pt(0), left: left[0], right: right[0] });
+                    for (let i = 1; i < s.length; i++)
+                        segs.push({ a: pt(i - 1), b: pt(i), left: left[i], right: right[i] });
+                });
+                return segs;
+            };
+            const cut = (segs) => to >= 1 && from <= 0 ? segs : segs.slice(Math.floor(segs.length * Math.max(from, 0)), Math.floor(segs.length * Math.min(to, 1)));
+            const shown = cut(build(true));
             if (!shown.length)
                 return;
             ctx.save();
+            // the letter's footprint: a quarter-strength copy at home, under the bent one, as strong as the push
+            let pushed = 0;
+            for (const e of ends)
+                for (let m = 0; m < e.length; m += 2)
+                    pushed = Math.max(pushed, Math.hypot(e[m], e[m + 1]));
+            const strength = Math.min(1, pushed / (push * 0.25));
+            if (strength > 0.01)
+                paintSegments(ctx, cut(build(false)), o, 0, FOOTPRINT * strength);
             paintSegments(ctx, shown, o);
             ctx.restore();
         },

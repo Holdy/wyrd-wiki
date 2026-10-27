@@ -38,6 +38,7 @@
 
     body {
       position: relative;
+      overflow-x: clip;
       min-height: 100vh;
       color: var(--ink);
       font-family: "IM Fell English", Georgia, "Times New Roman", serif;
@@ -102,28 +103,29 @@
     }
 
     /* Everything below is positioned so it paints above the grain layer */
-    .crumbs {
-      position: relative;
-      border-bottom: 1px dashed rgba(107, 74, 43, 0.45);
-    }
-    .crumbs ol {
+    /* breadcrumb-panel: the trail of places the visitor has chosen, at the top of the left column; the page title
+       beside it is the last breadcrumb. It is right aligned, so a long trail runs off the left edge of the page
+       (clipped by the body) and the last crumbs stay in view. */
+    .breadcrumb-panel { margin-bottom: 1.2rem; }
+    .breadcrumb-panel ol {
       list-style: none;
-      margin: 0 auto;
-      padding: 0.9rem 16px;
-      max-width: 62rem;
+      margin: 0;
+      padding: 0;
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      white-space: nowrap;
       gap: 0.25rem 0.6rem;
       font-family: "IM Fell English SC", Georgia, serif;
       font-size: 1.05rem;
       letter-spacing: 0.04em;
     }
-    .crumbs li + li::before {
+    .breadcrumb-panel li::after {
       content: "\203A";
       color: var(--rubric);
-      margin-right: 0.6rem;
+      margin-left: 0.6rem;
     }
-    .crumbs [aria-current] { color: var(--ink); }
+    .breadcrumb-panel [aria-current] { color: var(--ink); }
 
     .layout {
       position: relative;
@@ -216,7 +218,7 @@
       width: 11px;
       height: 20px;
       transition: width 0.5s, height 0.5s, margin 0.5s;
-      position: fixed;
+      position: absolute;
       left: 0;
       top: 0;
       margin: -10px 0 0 -5px;
@@ -385,9 +387,9 @@
 <body>
   <div id="paper" aria-hidden="true"></div>
   <canvas id="dust" aria-hidden="true"></canvas>
-  <nav class="crumbs" aria-label="Breadcrumb"><ol id="crumbs"></ol></nav>
   <div class="layout">
     <aside aria-label="Options at this level">
+    <nav class="breadcrumb-panel" aria-label="Breadcrumb"><ol id="breadcrumb-panel-list"></ol></nav>
       <div id="tag-image"></div>
       <ul class="realms" id="options"></ul>
     </aside>
@@ -413,7 +415,7 @@
     // and each segment is found by following the sitemaps down from sitemap.xml.
     (function () {
       var ROOT = "data/stories/sitemap.xml";
-      var crumbsEl = document.getElementById("crumbs");
+      var breadcrumbPanelEl = document.getElementById("breadcrumb-panel-list");
       var optionsEl = document.getElementById("options");
       var tagImageEl = document.getElementById("tag-image");
       var homeEl = document.getElementById("home");
@@ -813,7 +815,7 @@
       function fillText(box, text) {
         var last = 0, m;
         var words = Object.keys(spelling).sort(function (x, y) { return y.length - x.length; });
-        var re = new RegExp("\\b(witch(?:craft)?|magic|wizard)\\b" + (words.length ? "|\\b(" + words.join("|") + ")\\b" : ""), "gi");
+        var re = new RegExp("\\b(witch(?:craft)?|magic|wizard|devils?)\\b" + (words.length ? "|\\b(" + words.join("|") + ")\\b" : ""), "gi");
         while ((m = re.exec(text))) {
           box.appendChild(document.createTextNode(text.slice(last, m.index)));
           var mark = el("span", m[0], m[1] ? "pencil" : "respell");
@@ -1519,7 +1521,18 @@
         sprite.mode = "rest";
         sprite.restSlot = 2;
         sprite.restFor = 4000;
+        // The flyer lives in page coordinates: it is drawn at its position plus the scroll, and when the page
+        // scrolls, its (viewport-measured) position and flight path move with it, as the targets do.
+        var lastScroll = [window.scrollX, window.scrollY];
         (function tick(now) {
+          var sdx = window.scrollX - lastScroll[0], sdy = window.scrollY - lastScroll[1];
+          if (sdx || sdy) {
+            lastScroll = [window.scrollX, window.scrollY];
+            sprite.x -= sdx;
+            sprite.y -= sdy;
+            if (sprite.rail) sprite.rail.pts.forEach(function (p) { p[0] -= sdx; p[1] -= sdy; });
+            if (sprite.spec && sprite.spec.planned) { sprite.spec.planned[0] -= sdx; sprite.spec.planned[1] -= sdy; }
+          }
           stepSprite(now);
           nudgeLetters();
           if (window.dustFlyer) window.dustFlyer(sprite.x, sprite.y);
@@ -1528,7 +1541,7 @@
             var resting = sprite.mode === "rest" || sprite.mode === "hold";
             quillMod.influence(1, resting ? null : sprite.x, sprite.y);
           }
-          sprite.el.style.transform = "translate(" + sprite.x.toFixed(1) + "px," + sprite.y.toFixed(1) + "px) rotate(" + sprite.angle.toFixed(3) + "rad)";
+          sprite.el.style.transform = "translate(" + (sprite.x + window.scrollX).toFixed(1) + "px," + (sprite.y + window.scrollY).toFixed(1) + "px) rotate(" + sprite.angle.toFixed(3) + "rad)";
           requestAnimationFrame(tick);
         })(performance.now());
       }
@@ -1602,19 +1615,19 @@
         }, 3000);
       }
 
-      // The menu side: the breadcrumbs, the story's drawing and the list. It changes as soon as the
+      // The menu side: the breadcrumb-panel, the story's drawing and the list. It changes as soon as the
       // page's data is in, while the title (see render) may still be changing over.
       function renderSide(state) {
-        crumbsEl.textContent = "";
+        breadcrumbPanelEl.textContent = "";
         state.crumbs.forEach(function (c, i) {
           var li = document.createElement("li");
-          if (i === state.crumbs.length - 1) {
+          if (i === state.crumbs.length - 1 && !state.story) {
             li.appendChild(el("span", c.title));
             li.firstChild.setAttribute("aria-current", "page");
           } else {
             li.appendChild(link(c.title, c.href));
           }
-          crumbsEl.appendChild(li);
+          breadcrumbPanelEl.appendChild(li);
         });
 
         // the open story is not listed again: its first tag's drawing sits at the top instead
@@ -1853,7 +1866,6 @@
             state.story = found;
             state.activeSlug = slug;
             state.tagImage = await firstTagWithImage(found.tags);
-            state.crumbs.push({ title: found.title, href: hrefFor(levelPath.concat(slug)) });
           } else {
             state.hint = sm.kind === "urlset" ? "Choose a story from the list." : sm.urls.length ? "Choose a place or a story from the list." : state.items.length ? "Choose a place from the list." : "";
           }
@@ -2077,8 +2089,12 @@
 
       // Eight motes join the dust at (x, y), each thrown towards a compass point, then they
       // circle and drift like the rest. Only so many are kept; the oldest give way.
+      var BURST_DELAY = 333;           // ms after the flyer reaches the "o" that the motes appear
       window.dustBurst = function (x, y) {
         if (reduceMotion) return;
+        setTimeout(function () { burst(x, y); }, BURST_DELAY);
+      };
+      function burst(x, y) {
         for (var i = 0; i < 8; i++) {
           var a = i * Math.PI / 4;
           var m = makeMote(x, y);
@@ -2092,7 +2108,7 @@
         for (var j = 0; j < motes.length && over > 0; j++) {
           if (motes[j].burst) { motes.splice(j--, 1); over--; }
         }
-      };
+      }
 
       var prev = null;
       function frame(now) {

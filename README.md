@@ -46,9 +46,9 @@ ls *.bin | sed 's/\.bin$//' > index.txt
 
 ### Layout
 
-- **Top:** breadcrumbs for what the visitor has chosen, for example *Wyrd Wiki › Europe › England › Norfolk › Norwich › Peter the wild boy*. Every crumb but the last is a link.
-- **Left:** the options at the current level (no heading). When a story is open it is not listed again; instead the drawing for the first of its tags that has one (see below) is shown at the top of the column, and the menu lists the other stories at that level.
-- **Main:** the home page text at the top level, otherwise the open story, or a short prompt if only a level is chosen.
+- **Top of the left column:** the *breadcrumb-panel*: breadcrumbs for the places the visitor has chosen, for example *Wyrd Wiki › Europe › England › Norfolk › Norwich ›*. Each crumb is followed by a separator and the trail is right aligned, so a long one runs off the left edge of the page. The open story's title sits beside it as the last breadcrumb. Every crumb is a link, except the last when no story is open (it is the current place).
+- **Left (below the breadcrumbs):** the options at the current level (no heading). When a story is open it is not listed again; instead the drawing for the first of its tags that has one (see below) is shown at the top of the column, and the menu lists the other stories at that level.
+- **Main (the full height of the page, starting at the top):** the home page text at the top level, otherwise the open story, or a short prompt if only a level is chosen.
 - Narrow screens (under 700 px) put the options above the main area.
 
 ### The address
@@ -173,7 +173,7 @@ The flyer corrects spellings in the summary and details text of a story, by edit
 
 ### Pencil circles
 
-- In a story's summary and details, the words *witch*, *witchcraft*, *magic* and *wizard* (any capitalisation) are circled about 3 seconds after the story opens, when the flyer picks that activity. To add a word, edit the pattern in `fillText` in `index.html`.
+- In a story's summary and details, the words *witch*, *witchcraft*, *magic*, *wizard*, *devil* and *devils* (any capitalisation) are circled about 3 seconds after the story opens, when the flyer picks that activity. To add a word, edit the pattern in `fillText` in `index.html`.
 - The circle is a loose, open, hand-drawn loop: its ends miss each other and the shape is different each time.
 - The flyer draws it. It goes round whichever way carries on from how the flyer arrived.
 - Once drawn, the circle fades out evenly over 255 seconds.
