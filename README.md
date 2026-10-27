@@ -137,6 +137,8 @@ The rest of each title (everything after the illuminated letter, and the "yrd Wi
 - **Resizing** redraws the words (without animation) only if the font size changed; the line grouping is redone either way.
 - **The flyer** flies through the middle of an "o" using `cell.inkCentre(k)` from `word.js`, which works out the centre of that glyph's strokes, not the transparent text box.
 
+- **Drop caps:** the large red first letter of a story's summary and details is written in the same quill (`dropCap()` in `index.html`), in the illuminated letters' dark red, two sizes of the paragraph's text, with the real letter invisibly over it. It starts as a plain letter in the old drop-cap style until the quill module loads, and is drawn at once, not written with the pen. It is not bent by the mouse. The first letter is taken out of the text before circles and spelling corrections look at it, so those skip a first word ("Witches" at the start of a paragraph is not circled). The home page's drop cap is still the font's.
+
 ### Dust
 
 - Round motes, half a millimetre across, pale yellow, 70–90% opaque, about one per 10 cm × 10 cm of window.

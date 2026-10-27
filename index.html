@@ -306,7 +306,7 @@
     p { margin: 0 0 1em; }
 
     /* Illuminated drop cap */
-    .opening::first-letter {
+    .opening:not(.capped)::first-letter {
       float: left;
       font-family: "IM Fell English SC", Georgia, serif;
       font-size: 4.2em;
@@ -315,6 +315,16 @@
       color: var(--rubric);
     }
 
+    /* The same drop cap as a span, for paragraphs whose first letter is written in quill (see dropCap) */
+    .dropcap {
+      float: left;
+      font-family: "IM Fell English SC", Georgia, serif;
+      font-size: 4.2em;
+      line-height: 0.8;
+      padding: 0.08em 0.1em 0 0;
+      color: var(--rubric);
+    }
+    .dropcap.drawn { position: relative; padding: 0; line-height: normal; }
     .story .opening { display: flow-root; }     /* keeps a short paragraph's drop cap from reaching into the next section */
 
     a {
@@ -830,11 +840,45 @@
         box.appendChild(document.createTextNode(text.slice(last)));
       }
 
+      // The large first letter of a section, written in quill in the red of the illuminated letters. It starts as
+      // a plain letter in the old drop cap's style, which the quill drawing replaces once the module has loaded
+      // (the real letter stays over the drawing, invisible, so copying gives the text).
+      // `trail` is a space that follows a one-letter first word ("A story"): at the start of the line beside the
+      // letter it would collapse and vanish from a selection, so it travels with the letter instead.
+      function dropCap(letter, trail) {
+        var span = el("span", letter + trail, "dropcap");
+        span.style.whiteSpace = "pre";
+        quill.then(function (q) {
+          if (!span.isConnected) return;
+          var size = parseFloat(getComputedStyle(span.parentNode).fontSize) * 2;     // a capital is 1.5 sizes tall
+          var o = { size: size, color: "#6e1c12", inkFadeRate: QUILL.inkFadeRate };
+          var drawing = q.layoutQuill(span, letter, o);
+          var cell = span.firstChild;
+          if (trail) span.appendChild(el("span", trail)).style.cssText = "position:absolute;left:100%;white-space:pre;color:transparent;font-size:1px";
+          span.classList.add("drawn");
+          span.style.width = cell.style.width;
+          span.style.height = size * 1.55 + "px";
+          span.style.marginRight = size * 0.12 + "px";
+          // the cell reaches 1.7 sizes above the baseline and a capital 1.5, so pull it up by the difference
+          cell.style.cssText += ";position:absolute;left:0;top:" + -size * 0.2 + "px;margin:0";
+          drawing.draw(false);
+        }).catch(function () {});
+        return span;
+      }
+
       // A paragraph; text between *asterisks* is shown in italics.
       // `opening`: the first of a section, which gets the large red first letter.
       function paragraph(text, opening) {
         var p = document.createElement("p");
-        if (opening) p.className = "opening";
+        if (opening) {
+          p.className = "opening";
+          if (/^[a-z]/i.test(text)) {
+            p.classList.add("capped");
+            var trail = text.charAt(1) === " " ? " " : "";
+            p.appendChild(dropCap(text.charAt(0), trail));
+            text = text.slice(1 + trail.length);
+          }
+        }
         text.split(/\*([^*]+)\*/).forEach(function (part, i) {
           if (i % 2) {
             var em = document.createElement("em");
