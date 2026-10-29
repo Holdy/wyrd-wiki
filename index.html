@@ -813,7 +813,6 @@
         try {
           var canvas = renderTriangles(box, await genomeBase64("rsc/tags/" + tag + ".bin"), 200, { repel: true, animateIn: "sweep-left", ink: RUBRIC });
           canvas.setAttribute("aria-hidden", "true");
-          canvas.title = tag;
         } catch (e) {}
       }
 

@@ -152,7 +152,7 @@ The rest of each title (everything after the illuminated letter, and the "yrd Wi
 
 - When a story opens, the page looks through its tags in order and uses the first one that has a drawing in `rsc/tags/`. A story with no matching tag (or no tags) shows `rsc/tags/book.bin`.
 - Which tags have drawings comes from `rsc/tags/index.txt`, which is loaded in the background when the page starts. It must be kept up to date.
-- The drawing is 200 px, multiplied onto the paper like the letters, with the tag name as its tooltip. Its points flee the mouse and the flyer in the same way.
+- The drawing is 200 px, multiplied onto the paper like the letters, with no tooltip. Its points flee the mouse and the flyer in the same way.
 - It builds up on screen: each triangle starts as a dot in the middle of the image and moves out to its position and size (see "Animating a drawing in" below).
 
 ### Animating a drawing in
