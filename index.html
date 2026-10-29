@@ -891,7 +891,7 @@
       function fillText(box, text) {
         var last = 0, m;
         var words = Object.keys(spelling).sort(function (x, y) { return y.length - x.length; });
-        var re = new RegExp("\\b(witch(?:craft)?|magic|wizard|devils?|ghosts?)\\b" + (words.length ? "|\\b(" + words.join("|") + ")\\b" : ""), "gi");
+        var re = new RegExp("\\b(witch(?:craft)?|magic|wizard|devils?|ghosts?|curse)\\b" + (words.length ? "|\\b(" + words.join("|") + ")\\b" : ""), "gi");
         while ((m = re.exec(text))) {
           box.appendChild(document.createTextNode(text.slice(last, m.index)));
           var mark = el("span", m[0], m[1] ? "pencil" : "respell");
@@ -1148,13 +1148,13 @@
 
       function placeGem(g, slot, slide) {
         g.spot = slot;
-        g.style.transition = slide ? "transform 60s linear" : "none";
+        g.style.transition = slide ? "transform 40s linear" : "none";
         g.style.transform = "translateX(" + slot * 32 + "px)";
         if (!slide) void g.offsetWidth;
       }
 
       // The rightmost diamond becomes the flyer (the others slide one place right over
-      // a minute, leaving the left place free to land in). A diamond that has just
+      // 40 seconds, leaving the left place free to land in). A diamond that has just
       // landed is first shown in its place, so the row is whole again for an instant.
       function launch() {
         var landed = sprite.away;
@@ -1177,7 +1177,7 @@
         sprite.returning = false;
         sprite.actsLeft = 1 + Math.floor(Math.random() * 2);        // one or two activities per flight
         sprite.wpNext = null;
-        // back after the others have finished sliding (60s); if that is missed, stepSprite brings it home at 75s
+        // back after the others have finished sliding (40s); if that is missed, stepSprite brings it home at 75s
         sprite.homeAt = sprite.clock + 65000 + Math.random() * 5000;
         console.log("flyer: taking off, plans " + sprite.actsLeft + " activit" + (sprite.actsLeft === 1 ? "y" : "ies") +
           ", home in about " + Math.round((sprite.homeAt - sprite.clock) / 1000) + "s");
@@ -1213,8 +1213,8 @@
       }
 
       function hurrySlide() {
-        var left = 60000 - (sprite.clock - sprite.launchAt);
-        sprite.slideEnd = sprite.launchAt + 60000;
+        var left = 40000 - (sprite.clock - sprite.launchAt);
+        sprite.slideEnd = sprite.launchAt + 40000;
         if (left <= 7000) return;
         var secs = 6;
         gems().forEach(function (g) {
@@ -1471,7 +1471,7 @@
         }
         // to the start of the circle, arriving along the oval, going round whichever way is the shorter way in
         var spec = {
-          kind: "approach", speed: CRUISE * 1.5, slowEnd: true, tol: 20, dir: 1, alive: alive,
+          kind: "approach", speed: CRUISE * 1.5, tol: 20, dir: 1, alive: alive,
           follow: !!task.first,           // the visitor's menu link may be off the window: the page scrolls after the flyer
           key: function () { return circleStart(task); },
           build: function () {
@@ -1489,7 +1489,8 @@
       // The diamond is at the start of the circle: it goes round the oval, the stroke drawn behind it.
       function beginTrace(task, dir) {
         task.path.setAttribute("d", ovalPath(task.shape, dir));
-        sprite.trace = { task: task, t0: sprite.clock };
+        // at the same speed the flyer arrived at, so it goes round without slowing and leaves at the end heading on
+        sprite.trace = { task: task, t0: sprite.clock, dur: task.path.getTotalLength() / (CRUISE * 1.5) };
         sprite.mode = "trace";
       }
 
@@ -1621,7 +1622,7 @@
         } else if (mode === "trace") {
           var tr = sprite.trace, t = tr.task;
           if (!t.path.isConnected) { pickNext(); return; }
-          var u = Math.min((now - tr.t0) / (1700 * PACE), 1), e = smooth(u);
+          var u = Math.min((now - tr.t0) / tr.dur, 1), e = u;
           var rect = t.svg.getBoundingClientRect(), len = t.path.getTotalLength(), at = e * len;
           var pt = t.path.getPointAtLength(at), ahead = t.path.getPointAtLength(Math.min(len, at + 2));
           sprite.x = rect.left + pt.x;

@@ -223,6 +223,17 @@ const misc = {
     },
     "'": { width: 0.3, strokes: [line([0.1, 1.5], [0.05, 1.1])] },
     ":": { width: 0.3, strokes: [line([0.1, 0], [0.1, 0.07]), line([0.1, 0.8], [0.1, 0.87])] },
+    // Round digits, cap height (1.5) like the capitals. Blackletter falls back to these.
+    "0": { width: 0.9, strokes: [arc(0.45, 0.75, 0.4, 0.75, 90, 450)] },
+    "1": { width: 0.6, strokes: [line([0.15, 1.2], [0.5, 1.5], [0.5, 0])] },
+    "2": { width: 0.9, strokes: [path(arc(0.45, 1.1, 0.4, 0.4, 160, -60), [0.02, 0], [0.9, 0])] },
+    "3": { width: 0.9, strokes: [arc(0.42, 1.1, 0.38, 0.4, 150, -90), arc(0.42, 0.4, 0.42, 0.4, 90, -150)] },
+    "4": { width: 0.9, strokes: [line([0.7, 0], [0.7, 1.5], [0, 0.45], [0.9, 0.45])] },
+    "5": { width: 0.9, strokes: [path(line([0.85, 1.5], [0.12, 1.5], [0.1, 0.85]), arc(0.45, 0.5, 0.45, 0.5, 135, -225))] },
+    "6": { width: 0.9, strokes: [arc(0.45, 0.5, 0.42, 0.5, 90, 450), line([0.05, 0.5], [0.25, 1.2], [0.75, 1.5])] },
+    "7": { width: 0.9, strokes: [line([0, 1.5], [0.9, 1.5], [0.3, 0])] },
+    "8": { width: 0.9, strokes: [arc(0.45, 1.1, 0.36, 0.4, 90, 450), arc(0.45, 0.4, 0.42, 0.4, 90, 450)] },
+    "9": { width: 0.9, strokes: [arc(0.45, 1.0, 0.42, 0.5, 270, 630), line([0.85, 1.0], [0.65, 0.3], [0.15, 0])] },
 };
 /**
  * Long, near-vertical straight strokes are written top to bottom. Reverse any

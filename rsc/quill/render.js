@@ -285,7 +285,7 @@ export function makeDrawing(text, x, y, options) {
                 return;
             ctx.save();
             const m0 = ctx.getTransform();
-            // the letter's footprint: a quarter-strength copy at home, under the bent one, as strong as the push
+            // the letter's footprint: a sixth-strength copy at home, under the bent one, as strong as the push
             let pushed = 0;
             for (const e of ends)
                 for (let m = 0; m < e.length; m += 2)

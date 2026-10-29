@@ -178,7 +178,7 @@ The flyer corrects spellings in the summary and details text of a story, by edit
 
 ### Pencil circles
 
-- In a story's summary and details, and in the titles of the tales listed on a country or region's page, the words *witch*, *witchcraft*, *magic*, *wizard*, *devil*, *devils*, *ghost* and *ghosts* (any capitalisation) are circled about 3 seconds after the page opens, when the flyer picks that activity. To add a word, edit the pattern in `fillText` in `index.html`.
+- In a story's summary and details, and in the titles of the tales listed on a country or region's page, the words *witch*, *witchcraft*, *magic*, *wizard*, *devil*, *devils*, *ghost*, *ghosts* and *curse* (any capitalisation) are circled about 3 seconds after the page opens, when the flyer picks that activity. To add a word, edit the pattern in `fillText` in `index.html`.
 - The circle is a loose, open, hand-drawn loop: its ends miss each other and the shape is different each time.
 - The flyer draws it. It goes round whichever way carries on from how the flyer arrived.
 - Once drawn, the circle fades out evenly over 255 seconds.
@@ -194,7 +194,7 @@ If the thing it is heading for moves (the mouse, or a word or letter that has sc
 | rest | Sits in its place in the closing diamonds |
 | wander | Rails to random points around the window, each arriving already heading for the next so the legs join without a turn |
 | approach | Rails to the start of a word's circle, arriving along the oval (going round whichever way is the shorter way in), or to a point just below a word it will correct, arriving heading up |
-| trace | Goes round the oval itself, which is the rail; the stroke is drawn behind the diamond |
+| trace | Goes round the oval itself, which is the rail, at the same speed as the approach (no easing), so it arrives at the start heading along the oval and leaves at the end heading on; the stroke is drawn behind the diamond |
 | mouse | Rails towards the mouse, rewritten whenever the mouse moves about 35 px, until within 3 cm (it doesn't circle it) |
 | home | A rail to the free place at the left of the closing row, arriving heading right, then it rests there |
 
@@ -223,7 +223,7 @@ If the thing it is heading for moves (the mouse, or a word or letter that has sc
 
 - **The flyer's row** is directly under the title (`#pips`). `render()` moves it to follow whichever title is showing, so it is under "Wyrd Wiki" on the home page and under the story's title elsewhere. It is where the flyer starts, lands and rests, so the flyer flies back up to the top to land, even if the page is scrolled.
 - **The bottom row** (three diamonds ending the page content) is decoration only; the flyer ignores it.
-- The three diamonds lie on their sides. The flyer is always the rightmost one. While it is away the other two slide one place right over a minute. If the flyer comes back before that minute is up, they hurry the rest of the way (in about 6 seconds), and the flyer circles its waypoint until the place is free.
+- The three diamonds lie on their sides. The flyer is always the rightmost one. While it is away the other two slide one place right over 40 seconds. If the flyer comes back before that is up, they hurry the rest of the way (in about 6 seconds), and the flyer circles its waypoint until the place is free.
 - It lands in the free place at the left and rests for 10 seconds as that diamond. Then the rightmost diamond becomes the next flyer, and so on, so each takes a turn.
 - At the start the flyer rests 4 seconds before the first launch.
 
@@ -242,7 +242,7 @@ All are variables near the code they affect in `index.html`.
 | `PUSH_ASIDE`, `PUSH_ALONG`, `REACH`, `CURL`, `DAMPING` | dust script | How the dust reacts to a moving point |
 | `PACE` | flyer code | Overall slowdown (1 = original pace) |
 | `CRUISE`, `TURN_RADIUS` | flyer code | Speed, and the tightest curve a rail may make |
-| `1700 * PACE` | `trace` mode | How long a circle takes to draw |
+| `CRUISE * 1.5` | `beginTrace` | Speed of a circle, the same as the approach to it (its length divided by this gives the time) |
 | `EDIT_STEP`, `BELOW` | flyer code | Time per letter when correcting a spelling, and how far below the word it waits before sliding up |
 | `255000` | `finishCircle` | Fade time of a circle |
 | `65000`, `75000` | `launch`, `stepSprite` | When the flyer comes home |
