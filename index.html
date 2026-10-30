@@ -1734,11 +1734,15 @@
       // Marked words get a pencil oval (drawn by the diamond above) that then fades out.
       // `root` is a block to look for .pencil marks in, or a list of the marks themselves.
       var graphite = 0;
+      var circled = {};                 // the words already circled on this page: each is circled once
       function circleWords(root) {
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return [];
         var ns = "http://www.w3.org/2000/svg";
         var items = [];
         [].forEach.call(root.querySelectorAll ? root.querySelectorAll(".pencil") : root, function (mark) {
+          var word = mark.textContent.toLowerCase();
+          if (circled[word]) { mark.classList.remove("pencil"); return; }
+          circled[word] = true;
           var i = graphite++;
           var box = mark.getBoundingClientRect();
           var mx = 12, my = 9;
@@ -1993,6 +1997,7 @@
         fadeClosing(true);
         watchTitle(title);
         followTitle();
+        circled = {};                                           // a new page: its words may be circled again
         var near = homeward(state), tasks = [];
         if (near) {
           near.classList.add("pencil");

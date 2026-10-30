@@ -182,6 +182,7 @@ The flyer corrects spellings in the summary and details text of a story, by edit
 - The circle is a loose, open, hand-drawn loop: its ends miss each other and the shape is different each time.
 - The flyer draws it. It goes round whichever way carries on from how the flyer arrived.
 - Once drawn, the circle fades out evenly over 255 seconds.
+- Each word is circled once per page: later occurrences of the same word (any capitalisation) on the same page are not circled.
 
 ### The flyer
 
