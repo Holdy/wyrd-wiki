@@ -10,6 +10,9 @@ According to local tradition and accounts gathered from residents, a secret unde
 #location
 Between Oxnead Hall and the parish church in the village of Oxnead, Norfolk (TG229240).
 
+#proposed-coordinates
+52.767996, 1.303405
+
 #upstream-source
 Radio Norfolk broadcast (3/1/82), noted in *Lantern* 36, p.5.
 

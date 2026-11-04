@@ -10,6 +10,9 @@ During the cholera epidemic of 1867 at Fort Hays, Elizabeth Polly served as a ti
 #location
 A historic hill near Fort Hays in Hays, Kansas.
 
+#proposed-coordinates
+38.86166667, -99.34222222
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Since the 1970s, local legends surrounding the small town of Stull claimed that 
 
 #location
 Stull Cemetery on Emmanuel Hill in Stull, Kansas.
+
+#proposed-coordinates
+38.9716262, -95.4540202
 
 #upstream-source
 None.
@@ -102,11 +108,17 @@ Situated on North Second Street in Atchison, Kansas, a modest house once belongi
 #location
 The Sallie House is located at North Second Street in Atchison, Kansas.
 
+#proposed-coordinates
+39.566581, -95.1149518
+
 #upstream-source
 None.
 
 #reference
 https://www.legendsofamerica.com/ks-hauntedatchison/
+
+#tags
+ghost
 
 ---
 
@@ -121,6 +133,9 @@ Established in the mid-19th century in rural Kansas, Stull Cemetery became the c
 
 #location
 Stull Cemetery is situated off Route 1023 in the rural unincorporated community of Stull, Kansas, west-southwest of Lawrence.
+
+#proposed-coordinates
+38.9716262, -95.4540202
 
 #upstream-source
 None.
@@ -141,6 +156,9 @@ In the 1950s, a group of teenagers engaging in high-speed racing across a series
 
 #location
 South Donmyer Road, specifically across the three steep hills known as the "Devil's Washboard" located just south of Gypsum, Kansas.
+
+#proposed-coordinates
+38.7085241, -97.4089028
 
 #upstream-source
 None.
@@ -213,6 +231,9 @@ According to local folklore, the bridge—crossing Jester Creek near 109th Stree
 
 #location
 Theorosa's Bridge spans Jester Creek just west of 109th Street North and Meridian Street, located between Valley Center and Sedgwick in Sedgwick County, Kansas.
+
+#proposed-coordinates
+37.883124982941, -97.372041959615
 
 #upstream-source
 Haunted Kansas: Ghost Stories and Other Eerie Tales by Lisa Hefner Heitz (University Press of Kansas, 1997)

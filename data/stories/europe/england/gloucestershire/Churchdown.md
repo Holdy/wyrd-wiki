@@ -36,6 +36,9 @@ Perched high on the steep summit of Chosen Hill (also known as Churchdown Hill) 
 #location
 St Bartholomew's Church on the summit of Chosen Hill (Churchdown Hill) in Churchdown, Gloucestershire.
 
+#proposed-coordinates
+51.86720278, -2.17205278
+
 #upstream-source
 Samuel Rudder, *History of Gloucestershire* (1779); Thomas Firminger Thiselton Dyer, *Church-lore Gleanings* (1891).
 

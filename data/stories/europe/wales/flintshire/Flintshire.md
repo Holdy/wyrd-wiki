@@ -10,6 +10,9 @@ During the early 1970s, numerous motorists and commuters travelling along the ro
 #location
 The road connecting Pentre Halkyn and Milwr across Halkyn Mountain in Flintshire, Wales.
 
+#proposed-coordinates
+53.2381808, -3.2065368
+
 #upstream-source
 *Haunted Clwyd* by Richard Holland
 

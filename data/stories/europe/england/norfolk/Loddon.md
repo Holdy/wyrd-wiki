@@ -10,6 +10,9 @@ In Victorian times, Mother Chergrave (often pronounced 'Chegriff') operated in t
 #location
 Holy Trinity Church in Loddon, Norfolk.
 
+#proposed-coordinates
+52.5349806, 1.4817432
+
 #upstream-source
 Margaret Helen James, *Bogie Tales of East Anglia* (1891).
 

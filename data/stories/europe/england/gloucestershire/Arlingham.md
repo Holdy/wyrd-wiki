@@ -36,6 +36,9 @@ During the 1970s, the Lacey family moved into the rear wing of Slowwe House on S
 #location
 Slowwe House is a Grade II listed building located on Silver Street in the village of Arlingham, Gloucestershire.
 
+#proposed-coordinates
+51.8003974, -2.41743
+
 #upstream-source
 None.
 
@@ -56,6 +59,9 @@ On May 24, 1757, residents of Court House in Arlingham belonging to the Yate fam
 #location
 Court House is situated in the village of Arlingham, Gloucestershire.
 
+#proposed-coordinates
+51.7981781, -2.4182218
+
 #upstream-source
 Antiquities of Arlingham Parish by John Sayer.
 
@@ -75,6 +81,9 @@ In June 1902, Alice Godfrey entered St Mary the Virgin Church in Arlingham to ex
 
 #location
 St Mary the Virgin Church is located in the parish of Arlingham, Gloucestershire.
+
+#proposed-coordinates
+51.7981781, -2.4182218
 
 #upstream-source
 Antiquities of Arlingham Parish by John Sayer.

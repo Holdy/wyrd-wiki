@@ -10,6 +10,9 @@ In the late 19th century, Victorian journalist and writer Clement Scott visited 
 #location
 The clifftop site of the former St Michael and All Angels Church tower and graveyard in Sidestrand, Norfolk, overlooking the North Sea.
 
+#proposed-coordinates
+52.9548736, 0.8523175
+
 #upstream-source
 Clement Scott, "The Garden of Sleep" (poetry and Daily Telegraph dispatches).
 

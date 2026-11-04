@@ -10,6 +10,9 @@ In 1727, a shocking crime shook the small Gloucestershire parish of Doynton when
 #location
 Trunkhouse Barn is situated along the rural tracks just north of the village of Doynton in South Gloucestershire.
 
+#proposed-coordinates
+51.459869, -2.3973237
+
 #upstream-source
 At the Tree: Executions in Gloucestershire, 1722-1790 by Joel Morley
 

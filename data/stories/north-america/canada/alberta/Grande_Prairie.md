@@ -40,7 +40,7 @@ Housed in one of the oldest buildings in downtown Grande Prairie, Al's News has 
 Al's News is located in the historic downtown core of Grande Prairie, Alberta.
 
 #proposed-coordinates
-55.170833400000014, -118.79611109999999
+55.170904, -118.7971367
 
 #upstream-source
 Town & Country News (October 26, 2023 article "Ghost tales of Grande Prairie" by Jesse Boily).
@@ -63,7 +63,7 @@ Operating out of the space that once encompassed the 1929 Grande Prairie High Sc
 The Art Gallery of Grande Prairie is situated within the Montrose Cultural Centre at 9839 101 Avenue in Grande Prairie, Alberta.
 
 #proposed-coordinates
-55.170833400000014, -118.79611109999999
+55.173034, -118.7906817
 
 #upstream-source
 Town & Country News (October 26, 2023 article "Ghost tales of Grande Prairie" by Jesse Boily).

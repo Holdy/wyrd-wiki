@@ -10,6 +10,9 @@ According to local folklore and historical records in North Elmham, two secret u
 #location
 St. Mary’s Church and the Bishop’s Palace ruins in North Elmham, Norfolk.
 
+#proposed-coordinates
+52.7614104, 0.9262684
+
 #upstream-source
 Samuel Lewis's *A Topographical Dictionary of England* (1848); local folklore records compiled in East Anglian archive collections.
 

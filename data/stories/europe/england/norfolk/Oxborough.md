@@ -12,6 +12,9 @@ Generations of visitors and staff have reported eerie encounters within the hist
 #location
 Oxburgh Hall is a 15th-century moated manor house situated in the heart of the village of Oxborough, Norfolk.
 
+#proposed-coordinates
+52.5810441, 0.5707222
+
 #upstream-source
 None.
 

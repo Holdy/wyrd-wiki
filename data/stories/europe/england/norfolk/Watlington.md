@@ -10,6 +10,9 @@ According to local tradition and historical Tudor inventories, on 13 February 15
 #location
 Thieves' Bridge is located on Watlington Road on the Watlington and Tottenhill parish boundary in West Norfolk, crossing a small stream near grid reference TF636103.
 
+#proposed-coordinates
+52.666161, 0.418579
+
 #upstream-source
 Arthur Randell (ed. Enid Porter): ‘Sixty Years a Fenman’ (R & K P, 1966); John L’Estrange: ‘The Church Bells of Norfolk’ (1874).
 

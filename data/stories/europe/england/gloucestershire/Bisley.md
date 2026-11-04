@@ -36,6 +36,9 @@ Late one night, the parish priest of All Saints Church in Bisley was called upon
 #location
 All Saints Church is located on Parsons Lane in the village of Bisley, near Stroud, Gloucestershire.
 
+#proposed-coordinates
+51.7496745, -2.2096258
+
 #upstream-source
 None.
 

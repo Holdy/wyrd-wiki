@@ -36,6 +36,9 @@ At 5:30 am on 13 October 1928, a Leeds to Bristol express train crashed in Charf
 #location
 St James's Church graveyard in the village of Charfield, Gloucestershire.
 
+#proposed-coordinates
+51.6245477, -2.403495
+
 #upstream-source
 Modern Day Ghosts of England by Matthew Kenton
 

@@ -36,6 +36,9 @@ Set in the Norfolk village of Elsing, local tradition maintains that a secret un
 #location
 Elsing Hall is a 15th-century moated manor house located in the village of Elsing, Norfolk (grid reference TG039160).
 
+#proposed-coordinates
+52.703683, 1.017243
+
 #upstream-source
 None.
 

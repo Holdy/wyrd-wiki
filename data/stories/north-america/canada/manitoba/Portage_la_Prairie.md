@@ -34,7 +34,7 @@ Comprising 25 historic structures built between 1879 and 1940, the Fort la Reine
 Fort la Reine Museum, located on the outskirts of Portage la Prairie, Manitoba.
 
 #proposed-coordinates
-49.96977775527218, -98.29542542114874
+49.9742899, -98.2412379
 
 #upstream-source
 None.

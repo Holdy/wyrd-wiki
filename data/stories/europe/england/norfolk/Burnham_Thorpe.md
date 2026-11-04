@@ -10,6 +10,9 @@ In the small Norfolk village of Burnham Thorpe, All Saints' Church served as the
 #location
 All Saints' Church is located on Church Lane in the village of Burnham Thorpe, Norfolk.
 
+#proposed-coordinates
+52.9412194, 0.7549343
+
 #upstream-source
 None.
 

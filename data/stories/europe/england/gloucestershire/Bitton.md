@@ -36,6 +36,9 @@ The village church of St Mary in Bitton, Gloucestershire, alongside the neighbou
 #location
 St Mary's Church is located on Church Road in the village of Bitton, South Gloucestershire.
 
+#proposed-coordinates
+51.4221234, -2.4588536
+
 #upstream-source
 None.
 

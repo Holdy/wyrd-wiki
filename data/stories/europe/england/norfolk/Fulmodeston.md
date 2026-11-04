@@ -62,6 +62,9 @@ In August 2005, a group of walkers exploring the Norfolk countryside happened up
 #location
 The ruined remains of St Mary's Church are situated amidst vegetation and trees in the rural village of Fulmodeston, Norfolk, UK.
 
+#proposed-coordinates
+52.8387426, 0.9543288
+
 #upstream-source
 None.
 

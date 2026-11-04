@@ -10,6 +10,9 @@ In the 1970s, a bride traveling in a Ford Corcel along the Rhodia Road between C
 #location
 The Rhodia Road (Estrada da Rhodia), which connects Campinas to Paulínia via the Barão Geraldo district in the state of São Paulo, Brazil.
 
+#proposed-coordinates
+-23.5506507, -46.6333824
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Beginning in April 1973 in Guarulhos, São Paulo, 21-year-old Noêmia and her ex
 
 #location
 The events took place at a family property located in the Jardim Rosa de Franca neighborhood of Guarulhos, São Paulo, Brazil.
+
+#proposed-coordinates
+-23.5506507, -46.6333824
 
 #upstream-source
 None.
@@ -52,6 +58,9 @@ In a historic coastal town, a desperate mother carrying a baby born of a forbidd
 
 #location
 The Igreja Matriz de Nossa Senhora dos Remédios (Main Church of Our Lady of Remedies) located in the historic center of Paraty, Rio de Janeiro state, Brazil.
+
+#proposed-coordinates
+-22.9110137, -43.2093727
 
 #upstream-source
 None.

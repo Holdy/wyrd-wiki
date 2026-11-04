@@ -10,6 +10,9 @@ Across the 28 islands of the Ukerewe archipelago in Tanzania, witchcraft and cur
 #location
 The southern shore and surrounding hills of Ukerewe Island in Lake Victoria, Tanzania.
 
+#proposed-coordinates
+-1.2659378, 32.8685202
+
 #upstream-source
 None.
 
@@ -30,6 +33,9 @@ While traveling through Stone Town in Zanzibar, filmmaker Justin Fornal accompan
 #location
 The Royal Forodhani Baths are situated within the historic Stone Town district of Zanzibar City on Unguja Island, Tanzania.
 
+#proposed-coordinates
+-6.1624, 39.1913
+
 #upstream-source
 None.
 
@@ -49,6 +55,9 @@ Abbas Darjani encountered a spectral white lady while walking along Malindi Stre
 
 #location
 The sighting occurred on Malindi Street in Stone Town, Zanzibar, Tanzania.
+
+#proposed-coordinates
+-6.7866684, 39.2589687
 
 #upstream-source
 *Zanzibar Ghost Stories* by Mohammad A. Amir.

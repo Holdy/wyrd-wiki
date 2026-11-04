@@ -30,6 +30,9 @@ In 1540, a young woman from Lesní Hluboké was forced into an arranged marriage
 #location
 The Nine Crosses (Devět křížů) monument and historic crossroads stand immediately adjacent to Exit 168 of the D1 motorway near the village of Lesní Hluboké in the South Moravian Region of Czechia.
 
+#proposed-coordinates
+49.2662174, 16.294485
+
 #upstream-source
 None.
 

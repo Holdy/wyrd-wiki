@@ -11,7 +11,7 @@ Overlooking the rough waters of the Southern Shore near Cape Broyle Head, a shee
 Cape Broyle Head is a prominent cliffside headland located along the coast of Cape Broyle on the Southern Shore of Newfoundland.
 
 #proposed-coordinates
-47.0917634, -52.93507304999999
+47.0691982, -52.8509475
 
 #upstream-source
 The Barrelman Radio Broadcast Scripts, Memorial University of Newfoundland (MUN) Digital Archives.
@@ -32,6 +32,9 @@ Reverend Patrick Burke served as an assistant at Holy Trinity Parish in Ferrylan
 
 #location
 Immaculate Conception Cemetery is located along the Southern Shore Highway on a hill on the northern side of Cape Broyle, overlooking Cape Broyle Harbour.
+
+#proposed-coordinates
+47.0843922, -52.8840253
 
 #upstream-source
 Town of Cape Broyle Regular Council Meeting Motion 36/06 and Heritage Foundation of Newfoundland and Labrador.

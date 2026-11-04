@@ -10,6 +10,9 @@ Historical accounts document that to the west of St. Margaret's Church in Wereha
 #location
 St. Margaret's Church and the historic site of St. Margaret's Well located in the village of Wereham, West Norfolk.
 
+#proposed-coordinates
+52.9087997, 0.4810131
+
 #upstream-source
 T.K. Cromwell, *Excursions in the County of Norfolk* (1829) and John Chambers, *A General History of the County of Norfolk* (1830).
 

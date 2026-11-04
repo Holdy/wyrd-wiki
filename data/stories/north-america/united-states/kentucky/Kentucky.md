@@ -6,6 +6,9 @@ Kentucky's vast Mammoth Cave system and its surrounding trails are reputed to be
 With a recorded history spanning thousands of years of human exploration, Mammoth Cave and its surrounding landscape carry a heavy burden of tragedy, from prehistoric burials and a 19th-century tuberculosis experimental hospital to the fatal entrapment of local cave explorer Floyd Collins in Sand Cave. Visitors and researchers exploring the subterranean labyrinth and nearby surface trails—such as the Cedar Sink Trail—have frequently reported hearing phantom cries for help, phantom footsteps of early African American slave guides, and unexplained visual manifestations, including fleeting, vivid apparitions of nineteenth-century faces appearing in the wilderness.
 #location
 Mammoth Cave National Park is located in Edmonson County, Kentucky, encompassing the Mammoth Cave system and the Cedar Sink Trail.
+
+#proposed-coordinates
+37.1503318, -86.1546525
 #upstream-source
 None.
 #reference
@@ -24,6 +27,9 @@ Nestled in the Appalachian hollers of Breathitt County, Kentucky, Frozen Creek h
 
 #location
 Frozen Creek flows through Breathitt County in eastern Kentucky, passing the historic site of the former Frozen Inn along its banks.
+
+#proposed-coordinates
+37.5912003, -83.4218483
 
 #upstream-source
 None.
@@ -45,6 +51,9 @@ In August 1913, Lillie Harp passed away in the working-class pioneer settlement 
 #location
 The historic pioneer settlement of Leestown, located in northern Frankfort, Kentucky, near the Buffalo Trace Distillery campus.
 
+#proposed-coordinates
+38.2157433, -84.8690507
+
 #upstream-source
 The State Journal (Frankfort, Kentucky) archives from August 1913, as researched and reported by historian Eleanor Hasken-Wagner.
 
@@ -64,6 +73,9 @@ Local folklore surrounding the bridge tells of a young woman who, facing an unpl
 
 #location
 The Old Richardsville Road Bridge is a historic bowstring truss bridge located on Old Richardsville Road on the northern outskirts of Bowling Green, Kentucky.
+
+#proposed-coordinates
+37.0206866, -86.4449598
 
 #upstream-source
 None.
@@ -128,6 +140,9 @@ In 1918, a prominent young woman from Bardstown known as "Miss G" fell in love w
 #location
 The First Church of Christ Scientist at the corner of Third Street and Ormsby Avenue in Old Louisville, Louisville, Kentucky.
 
+#proposed-coordinates
+38.232727502177, -85.759329998018
+
 #upstream-source
 True Ghost Stories and Eerie Legends from America’s Most Haunted Neighborhood by David Dominé.
 
@@ -176,6 +191,9 @@ Carved through the rolling hills and dense hardwood forests near Prospect, Kentu
 
 #location
 Sleepy Hollow Road is a winding, tree-canopied two-lane road located in Prospect, Jefferson County, Kentucky, running near Harrods Creek.
+
+#proposed-coordinates
+38.3275686, -85.6277393
 
 #upstream-source
 None.

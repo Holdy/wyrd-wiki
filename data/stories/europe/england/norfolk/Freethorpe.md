@@ -12,6 +12,9 @@ Excitedly, they managed to hook the ring with their sticks and began heaving the
 #location
 Callow Pit, a deep pool situated at a crossroads on the boundary of Southwood and Moulton near Freethorpe, Norfolk.
 
+#proposed-coordinates
+52.5969918, 1.5328051
+
 #upstream-source
 None.
 

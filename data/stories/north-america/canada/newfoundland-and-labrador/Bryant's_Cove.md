@@ -10,6 +10,9 @@ Two workers were performing repairs in the basement of the church hall in Bryant
 #location
 The basement of St. Andrew's Church Hall located in Bryant's Cove, Newfoundland and Labrador.
 
+#proposed-coordinates
+47.6795073, -53.1880493
+
 #upstream-source
 Folk Belief & Legends of Bay Roberts & Area, edited by Lisa Wilson, foreword by Dale Jarvis (Heritage Foundation of Newfoundland and Labrador and Bay Roberts Cultural Foundation Inc., 2014).
 
@@ -29,6 +32,9 @@ According to local accounts, an old school building in Bryant's Cove that has st
 
 #location
 The century-old former school building situated in Bryant's Cove, Newfoundland and Labrador.
+
+#proposed-coordinates
+47.6795073, -53.1880493
 
 #upstream-source
 Folk Belief & Legends of Bay Roberts & Area, edited by Lisa Wilson, foreword by Dale Jarvis (Heritage Foundation of Newfoundland and Labrador and Bay Roberts Cultural Foundation Inc., 2014).

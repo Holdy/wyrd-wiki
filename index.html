@@ -18,6 +18,7 @@
       var visuals = saved.visuals || {};
       if (visuals.grain === false) document.documentElement.classList.add("no-grain");
       if (visuals.edges === false) document.documentElement.classList.add("no-edges");
+      if (visuals.chameleoff === true) document.documentElement.classList.add("chameleoff");
     } catch (e) {}
   </script>
   <style>
@@ -1261,7 +1262,12 @@
       var ACTIVITIES = ["edit", "circle", "mouse", "letter", "o"];
       function pickNext() {
         sprite.queue = sprite.queue.filter(taskAlive);
-        if (sprite.click && sprite.click.isConnected) return goClick();     // the page's only way on comes first
+        var repair = sprite.queue.filter(function (t) { return t.repair; })[0];
+        if (repair) {                   // a word someone asked to have put right (flyerrespell) comes first
+          sprite.queue.splice(sprite.queue.indexOf(repair), 1);
+          return approach(repair);
+        }
+        if (sprite.click && sprite.click.isConnected) return goClick();     // then the page's only way on
         var first = sprite.queue.filter(function (t) { return t.first; })[0];
         if (first) {                    // then the way towards the visitor's part of the world (see timezones.json)
           sprite.queue.splice(sprite.queue.indexOf(first), 1);
@@ -1664,7 +1670,7 @@
 
       // The renderer reacts to pointermove / pointerleave on its canvas, so the diamond
       // sends it those same events while it is over (and as it leaves) a letter.
-      function nudgeLetters() {
+      function nudgeTriangleDrawing() {
         [].forEach.call(document.querySelectorAll("canvas[data-triangles]"), function (c) {
           var r = c.getBoundingClientRect();
           var inside = sprite.x >= r.left && sprite.x <= r.right && sprite.y >= r.top && sprite.y <= r.bottom;
@@ -1709,6 +1715,7 @@
         // The flyer lives in page coordinates: it is drawn at its position plus the scroll, and when the page
         // scrolls, its (viewport-measured) position and flight path move with it, as the targets do.
         var lastScroll = [window.scrollX, window.scrollY];
+        var lastAt = null;      // where it was last announced, in page coordinates
         (function tick(now) {
           var sdx = window.scrollX - lastScroll[0], sdy = window.scrollY - lastScroll[1];
           if (sdx || sdy) {
@@ -1719,8 +1726,14 @@
             if (sprite.spec && sprite.spec.planned) { sprite.spec.planned[0] -= sdx; sprite.spec.planned[1] -= sdy; }
           }
           stepSprite(now);
-          nudgeLetters();
+          nudgeTriangleDrawing();
           if (window.dustFlyer) window.dustFlyer(sprite.x, sprite.y);
+          // anyone may listen for "flyermove" to know where it has moved to, in page coordinates
+          var at = [sprite.x + window.scrollX, sprite.y + window.scrollY];
+          if (!lastAt || at[0] !== lastAt[0] || at[1] !== lastAt[1]) {
+            lastAt = at;
+            window.dispatchEvent(new CustomEvent("flyermove", { detail: { x: at[0], y: at[1] } }));
+          }
           // the quill letters bend away from it, except when it sits at rest among the diamonds under the title
           if (quillMod) {
             var resting = sprite.mode === "rest" || sprite.mode === "hold";
@@ -1778,23 +1791,32 @@
 
       // Words to correct. Without the flyer (reduced motion) they are simply corrected.
       function respellTasks(root) {
-        var tasks = [];
-        [].forEach.call(root.querySelectorAll(".respell"), function (span) {
-          var from = span.textContent, to = span.dataset.to;
-          if (!to || from === to) return;
-          if (!sprite.el) { span.textContent = to; return; }
-          var p = 0;
-          while (p < from.length && p < to.length && from.charAt(p) === to.charAt(p)) p++;
-          var q = 0;
-          while (q < from.length - p && q < to.length - p && from.charAt(from.length - 1 - q) === to.charAt(to.length - 1 - q)) q++;
-          tasks.push({
-            kind: "respell", span: span, from: from, to: to,
-            prefix: from.slice(0, p), oldMid: from.slice(p, from.length - q),
-            newMid: to.slice(p, to.length - q), suffix: from.slice(from.length - q)
-          });
-        });
-        return tasks;
+        return [].map.call(root.querySelectorAll(".respell"), respellTask).filter(Boolean);
       }
+      // The job of turning a .respell span's text into its data-to, or null if there is nothing to do (or no flyer to do it).
+      function respellTask(span) {
+        var from = span.textContent, to = span.dataset.to;
+        if (!to || from === to) return null;
+        if (!sprite.el) { span.textContent = to; return null; }
+        var p = 0;
+        while (p < from.length && p < to.length && from.charAt(p) === to.charAt(p)) p++;
+        var q = 0;
+        while (q < from.length - p && q < to.length - p && from.charAt(from.length - 1 - q) === to.charAt(to.length - 1 - q)) q++;
+        return {
+          kind: "respell", span: span, from: from, to: to,
+          prefix: from.slice(0, p), oldMid: from.slice(p, from.length - q),
+          newMid: to.slice(p, to.length - q), suffix: from.slice(from.length - q)
+        };
+      }
+      // Anyone may ask for a word to be put right: a "flyerrespell" event with a .respell span in its detail. It is
+      // done before any other job, as soon as the flyer is next free (at the latest, first thing on its next flight).
+      window.addEventListener("flyerrespell", function (e) {
+        var task = respellTask(e.detail.span);
+        if (!task) return;
+        task.repair = true;
+        sprite.queue.push(task);
+        if (sprite.mode === "rail" && sprite.spec.kind === "wander") pickNext();      // break off a sweep to go and do it
+      });
 
       // A few seconds after a story opens, hand its jobs (circles, corrections) to the diamond.
       function handOff(items) {
@@ -1802,7 +1824,7 @@
         sprite.queue = [];
         if (!items.length) return;
         sprite.drawTimer = setTimeout(function () {
-          sprite.queue = items;
+          sprite.queue = sprite.queue.filter(taskAlive).concat(items);     // keeping any word put right since (flyerrespell)
           if (sprite.mode === "rail" && sprite.spec.kind === "wander") pickNext();      // break off a sweep to go and work
         }, 3000);
       }
@@ -2010,6 +2032,7 @@
         settledLetter = null;
         pending = null;
         document.title = (state.story ? state.story.title + " — " : atHome ? "" : state.levelTitle + " — ") + "Wyrd Wiki";
+        window.dispatchEvent(new Event("pagerendered"));     // anyone may listen to know a new page is showing
       }
 
       // Leaving a title for another page: the old title un-writes while its letter morphs into the next
@@ -2407,5 +2430,6 @@
       import("./js/options.js").then(function (m) { m.openOptions(); });
     });
   </script>
+  <script type="module" src="js/orchestrator.js"></script>
 </body>
 </html>

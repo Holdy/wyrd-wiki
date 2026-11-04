@@ -10,6 +10,9 @@ According to local legend, a hidden underground tunnel stretches for a mile and 
 #location
 Gimingham Hall is situated in the village of Gimingham, Norfolk (specifically at grid reference TG279365).
 
+#proposed-coordinates
+52.878083, 1.386100
+
 #upstream-source
 'Norfolk Fair', Vol.2, No.10 (February 1970), p.20.
 

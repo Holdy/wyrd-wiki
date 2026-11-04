@@ -59,6 +59,9 @@ Once a grand private residence and now part of St. Johnsbury Academy, Brantview 
 #location
 Brantview House is located on the campus of St. Johnsbury Academy in St. Johnsbury, Vermont.
 
+#proposed-coordinates
+44.48666667, -72.01111111
+
 #upstream-source
 Marianne L. Kelly for Vermont Living Magazine.
 
@@ -78,6 +81,9 @@ In the mid-19th century, a young woman named Emily was scheduled to meet her fia
 
 #location
 Gold Brook Covered Bridge (Emily's Bridge) crossing Gold Brook on Covered Bridge Road in Stowe, Vermont.
+
+#proposed-coordinates
+44.4404009, -72.6798624
 
 #upstream-source
 The New England Grimpendium by J.W. Ocker.
@@ -151,6 +157,9 @@ Constructed in 1885 by Dr. John Johnson and later purchased in 1939 by radio eng
 #location
 Wilson Castle is located at 297 West Proctor Road in Proctor, Vermont.
 
+#proposed-coordinates
+43.6132984, -73.0295182
+
 #upstream-source
 None.
 
@@ -170,6 +179,9 @@ Built in 1844, the Gold Brook Covered Bridge in Stowe Hollow spans Gold Brook an
 
 #location
 Gold Brook Covered Bridge (Emily's Bridge) on Covered Bridge Road in Stowe, Vermont.
+
+#proposed-coordinates
+44.4404009, -72.6798624
 
 #upstream-source
 None.
@@ -191,6 +203,9 @@ Built in 1844, the Gold Brook Covered Bridge in Stowe, Vermont, is famously haun
 #location
 Gold Brook Covered Bridge carries Covered Bridge Road over Gold Brook in Stowe, Vermont.
 
+#proposed-coordinates
+44.4404009, -72.6798624
+
 #upstream-source
 None.
 
@@ -210,6 +225,9 @@ Dr. Timothy Clark Smith (1821–1893) was a worldly physician who served as a su
 
 #location
 Evergreen Cemetery off Town Hill Road in New Haven, Vermont.
+
+#proposed-coordinates
+44.1160277, -73.1594666
 
 #upstream-source
 Citro, Joseph and Foulds, Natalie. Curious New England: The Unconventional Traveler’s Guide to Eccentric Destinations; Citro, Joseph. The New England Grimpendium.

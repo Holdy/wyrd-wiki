@@ -10,6 +10,9 @@ In the 1970s, two men were waiting to use a phone box on Station Road. They noti
 ## Location
 The key location is Station Road in Erdington, West Midlands.
 
+#proposed-coordinates
+52.5274074, -1.837722
+
 ## Upstream-source
 None
 

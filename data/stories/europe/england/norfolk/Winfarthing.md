@@ -10,6 +10,9 @@ In medieval times, a dispute between two knights over a woman resulted in one ki
 #location
 St Mary's Church, located on Church Lane in the village of Winfarthing, Norfolk.
 
+#proposed-coordinates
+52.4291608, 1.1020184
+
 #upstream-source
 Thomas Becon, Reliques of Rome (1563)
 

@@ -10,6 +10,9 @@ In about 1865, during a severe winter in Wiggenhall St. Mary Magdalen, two local
 #location
 A cottage in Magdalen Fen within the parish of Wiggenhall St. Mary Magdalen, Norfolk.
 
+#proposed-coordinates
+52.6547512, 0.33501
+
 #upstream-source
 Arthur Randell: 'Sixty Years a Fenman' (Routledge & Kegan Paul Ltd, 1966), p.100.
 
@@ -29,6 +32,9 @@ During a severe winter around 1865, two men walked out to the remote cottage of 
 
 #location
 Abe Mindham's cottage situated in Magdalen Fen within the parish of Wiggenhall St Mary Magdalen, Norfolk.
+
+#proposed-coordinates
+52.6547512, 0.33501
 
 #upstream-source
 Arthur Randell: 'Sixty Years a Fenman' (Routledge & Kegan Paul Ltd, 1966), p.100.

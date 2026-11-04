@@ -11,7 +11,7 @@ Construction on a massive pulp and paper mill began in Glovertown in 1921, but f
 The ruin of the old pulp and paper mill is located at the end of Angle Brook Road in Glovertown, Newfoundland and Labrador.
 
 #proposed-coordinates
-48.68796688094575, -54.01931203641103
+48.6520204, -54.0233324
 
 #upstream-source
 None.

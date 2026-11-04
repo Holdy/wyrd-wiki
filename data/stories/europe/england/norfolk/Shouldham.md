@@ -10,6 +10,9 @@ Located in the small woodland known as High Plantation on the south slope of the
 #location
 The Silver Well is situated in the High Plantation woodland on the south slope of the Nar valley in Shouldham, Norfolk (approximate OS Grid Reference TF 6753 0817).
 
+#proposed-coordinates
+52.645441, 0.474867
+
 #upstream-source
 W.B. Gerish, Norfolk Folklore Notes, 1892; Mary Manning, Taking the Waters in Norfolk, 1994; Francis White, Gazetteer and Directory of Norfolk, 1854.
 

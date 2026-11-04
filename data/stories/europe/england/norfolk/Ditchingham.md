@@ -10,6 +10,9 @@ According to local tradition, a series of secret subterranean tunnels were const
 #location
 St. Mary's Church, Ditchingham House, and Three Bells house in Ditchingham, Norfolk.
 
+#proposed-coordinates
+52.4794796, 1.4274102
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ Nestled near the foot of the Cotswold escarpment between Alderton Hill and Dixto
 #location
 Dixton Wood on the eastern slopes of Woolstone Hill, adjacent to the Alderton and Dixton parish boundary in Gloucestershire.
 
+#proposed-coordinates
+51.9806737, -2.0309838
+
 #upstream-source
 Victoria County History of Gloucestershire (Vol. 6).
 

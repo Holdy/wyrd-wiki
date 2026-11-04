@@ -30,6 +30,9 @@ In ancient Myanmar, a master blacksmith named Maung Tint De possessed such extra
 #location
 Mount Popa is a prominent, extinct volcanic mountain located in central Myanmar, rising above the Myingyan plain in the Mandalay Region.
 
+#proposed-coordinates
+20.9199617, 95.2533093
+
 #upstream-source
 None.
 

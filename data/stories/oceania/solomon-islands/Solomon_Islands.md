@@ -33,6 +33,9 @@ When a woman named Sauwete'au eloped from Ali'ite Island with another man named 
 #location
 The submerged island of Teonimenu (now known as Lark Shoal) is located at coordinates 9°59'36"S 161°59'10"E in the Pacific Ocean within the Solomon Islands.
 
+#proposed-coordinates
+-9.993333, 161.986111
+
 #upstream-source
 *Vanished Islands and Hidden Continents of the Pacific* by Patrick Nunn (incorporating manuscript records by Ulawan Zacchariah Haununumaesihaa'a).
 

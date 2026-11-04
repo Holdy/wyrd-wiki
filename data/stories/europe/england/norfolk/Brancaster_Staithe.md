@@ -10,6 +10,9 @@ Located in the coastal parish near Brancaster Staithe, the Ship Hotel has served
 #location
 The Ship Hotel is situated along the main coast road in the village of Brancaster, just west of Brancaster Staithe on the north Norfolk coast.
 
+#proposed-coordinates
+52.966142, 0.6703572
+
 #upstream-source
 None.
 

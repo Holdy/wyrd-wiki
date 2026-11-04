@@ -10,6 +10,9 @@ On May 26, 946 AD, King Edmund I and his court gathered at the royal hunting lod
 #location
 The site of the ancient royal villa and hunting lodge where King Edmund was murdered is located directly behind the former Star Inn in the village of Pucklechurch, South Gloucestershire.
 
+#proposed-coordinates
+51.3223419, -2.508737
+
 #upstream-source
 William of Malmesbury, *Gesta Regum Anglorum*; Kevin Halloran, *A Murder at Pucklechurch: The Death of King Edmund, 26 May 946* (Midland History).
 

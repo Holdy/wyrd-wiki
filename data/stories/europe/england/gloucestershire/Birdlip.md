@@ -12,6 +12,9 @@ The most prominent encounter happened when a young woman was walking along the p
 #location
 West Tump long barrow, situated within the woodland hills between Birdlip and Cranham in Gloucestershire.
 
+#proposed-coordinates
+51.8176031, -2.1298819
+
 #upstream-source
 Lesley Grinsell, "Gloucestershire Barrows" (Bristol and Gloucestershire Archaeological Society Journal, Volume 79)
 

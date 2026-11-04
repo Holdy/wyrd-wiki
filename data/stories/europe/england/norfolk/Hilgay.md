@@ -10,6 +10,9 @@ During the 1940s, a peculiar and chilling superstition persisted among the young
 #location
 All Saints Church is located in the village of Hilgay, Norfolk, positioned just east of the River Wissey and south of Downham Market.
 
+#proposed-coordinates
+52.5661, 0.3436
+
 #upstream-source
 None.
 

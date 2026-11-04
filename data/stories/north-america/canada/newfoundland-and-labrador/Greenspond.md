@@ -11,7 +11,7 @@ In local folklore from the historic outport of Greenspond, a particular house on
 An abandoned house on Ship Island, just off Greenspond in Bonavista Bay, Newfoundland and Labrador.
 
 #proposed-coordinates
-49.072628545349936, -53.57579457788946
+49.0655654, -53.5675118
 
 #upstream-source
 Memorial University of Newfoundland, Dictionary of Newfoundland English Word Form Slips (citing informant George Meadus of Greenspond, source reference C 361, 67-31).
@@ -34,7 +34,7 @@ According to local oral accounts recorded from Greenspond resident George Meadus
 The ferry wharf connecting Greenspond to Ship Island in Bonavista Bay, Newfoundland and Labrador.
 
 #proposed-coordinates
-49.072628545349936, -53.57579457788946
+49.0655654, -53.5675118
 
 #upstream-source
 Memorial University of Newfoundland, Dictionary of Newfoundland English Word Form Slips (citing informant George Meadus of Greenspond, source reference C 361, 67-31).

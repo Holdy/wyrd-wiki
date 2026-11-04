@@ -10,6 +10,9 @@ In 1932, a self-proclaimed ascetic and itinerant preacher known as the "Cristo d
 #location
 The hills overlooking the coastal city of Taltal in the Antofagasta Region of northern Chile, specifically descending into the historic urban grid of the town.
 
+#proposed-coordinates
+-25.4078293, -70.4858424
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Carmen Marín, an orphan girl living under the care of the Sisters of Charity at
 
 #location
 The events took place at the Hospicio de las Hermanas de la Caridad located on Calle de la Maestranza in Santiago, Chile.
+
+#proposed-coordinates
+-33.4376995, -70.6510671
 
 #upstream-source
 José Raimundo Zisternas, *La endemoniada de Santiago*

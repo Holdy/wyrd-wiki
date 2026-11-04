@@ -12,6 +12,9 @@ The knocking grew so violent and resonant that it could be heard clearly from ou
 #location
 A semi-detached council house at Meadow View in Tharston, near Long Stratton, Norfolk, UK.
 
+#proposed-coordinates
+52.4746614, 1.2297979
+
 #upstream-source
 The Eastern Daily Press (January–February 1937 reports, later featured in Weird Norfolk).
 

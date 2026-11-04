@@ -10,6 +10,9 @@ While traveling through the Fezzan region of the Libyan Sahara, journalist Kira 
 #location
 Kaf Ajnoun, also known as Idinen or the Mountain of Ghosts, is located in the southern region of Libya approximately 25 kilometers north of the town of Ghat.
 
+#proposed-coordinates
+25.2630355, 10.2560714
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ In the Fezzan region of southern Libya, the isolated sandstone massif of Kaf Ajn
 
 #location
 The events take place at the base of Kaf Ajnoun (Idinen), a prominent desert mountain located approximately 25 kilometers north of Ghat in southern Libya.
+
+#proposed-coordinates
+25.2630355, 10.2560714
 
 #upstream-source
 None.

@@ -12,6 +12,9 @@ Locals described the entity as appearing on misty nights around Heard's Hole, ri
 #location
 Alderfen Broad and Heard's Hole lie within the marshy wetlands of the parish of Irstead in Norfolk, England.
 
+#proposed-coordinates
+52.7226427, 1.4849291
+
 #upstream-source
 None.
 
@@ -31,6 +34,9 @@ In 19th-century Irstead, a local wise woman named Mrs Lubbock frequently witness
 
 #location
 Alderfen Broad is a wetland nature reserve located within the parish of Irstead in Norfolk, England.
+
+#proposed-coordinates
+52.7226427, 1.4849291
 
 #upstream-source
 None.

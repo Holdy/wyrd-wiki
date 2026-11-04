@@ -10,6 +10,9 @@ Local folklore tells of a 17-year-old village girl named Esmeralda who fell deep
 #location
 The Shrieking Pits located near Hungry Hill in the parish of Northrepps, Norfolk.
 
+#proposed-coordinates
+52.9047083, 1.3458047
+
 #upstream-source
 None.
 

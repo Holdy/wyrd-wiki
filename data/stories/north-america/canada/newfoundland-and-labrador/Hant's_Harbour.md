@@ -10,6 +10,9 @@ According to local folklore compiled from generational accounts, a family moved 
 #location
 An older residential house located within the coastal community of Hant's Harbour along Trinity Bay on the Baccalieu Trail in Newfoundland and Labrador.
 
+#proposed-coordinates
+48.3715012, -53.38197720000001
+
 #upstream-source
 Ghosts of Baccalieu, edited by Charis Cotter.
 

@@ -10,6 +10,9 @@ According to local folklore, a young woman was traveling in a car on Karsaz Road
 #location
 Karsaz Road is a major thoroughfare in Karachi, Pakistan, connecting the city's urban center and stadium area toward the airport.
 
+#proposed-coordinates
+24.8741278, 67.0971566
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ When eighteen-year-old Muhammed began suffering from severe, violent fits, his f
 
 #location
 The Abdullah Shah Ashabi shrine located in the historic town of Thatta in Sindh province, Pakistan.
+
+#proposed-coordinates
+33.4326873, 73.0343187
 
 #upstream-source
 None.

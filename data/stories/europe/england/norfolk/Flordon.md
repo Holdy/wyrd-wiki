@@ -10,6 +10,9 @@ Opened in December 1849 and later closed during the Beeching cuts in the 1960s, 
 #location
 The site of the former Flordon Railway Station and Station House situated along the historic railway line in Flordon, Norfolk.
 
+#proposed-coordinates
+52.5273, 1.2314
+
 #upstream-source
 None.
 

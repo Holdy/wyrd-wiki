@@ -10,6 +10,9 @@ Local tradition and historical accounts handed down from the era of horse-drawn 
 #location
 The historic coaching track ascending the top of Stinchcombe Hill from The Street in the parish of Stinchcombe, Gloucestershire.
 
+#proposed-coordinates
+51.6870712, -2.390526
+
 #upstream-source
 None.
 

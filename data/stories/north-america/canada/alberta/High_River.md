@@ -33,6 +33,9 @@ Operating out of a building on 4th Avenue SW that previously served as a dry cle
 #location
 The building is located at 117 4th Ave S.W. in High River, Alberta.
 
+#proposed-coordinates
+50.5797223, -113.87416670000002
+
 #upstream-source
 None.
 
@@ -53,6 +56,9 @@ Housed in an old Canadian Pacific Railway station where the bodies of victims of
 #location
 The Museum of the Highwood is located at 406 1st Street SW in High River, Alberta.
 
+#proposed-coordinates
+50.5797223, -113.87416670000002
+
 #upstream-source
 None.
 
@@ -72,6 +78,9 @@ Following weeks of intense domestic disputes and disagreements regarding propert
 
 #location
 Macleod Trail runs through the town of High River, Alberta, where the historic incident took place.
+
+#proposed-coordinates
+50.5801916, -113.8709332
 
 #upstream-source
 None.

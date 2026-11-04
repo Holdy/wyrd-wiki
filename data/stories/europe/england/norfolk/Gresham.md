@@ -10,6 +10,9 @@ Long ago in the parish of Gresham, a local legend took root regarding the origin
 #location
 The grassy fields and parish lands surrounding the village of Gresham in North Norfolk, where the infant was historically said to have been discovered.
 
+#proposed-coordinates
+52.9003592, 1.2192449
+
 #upstream-source
 None.
 

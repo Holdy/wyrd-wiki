@@ -10,6 +10,9 @@ Vaselina Hawreliak raised nine children and managed her pioneer household with s
 #location
 Hawreliak House at the Ukrainian Cultural Heritage Village in Lamont County, Alberta.
 
+#proposed-coordinates
+53.7411805, -112.4801291
+
 #upstream-source
 None.
 

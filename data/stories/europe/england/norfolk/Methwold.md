@@ -36,6 +36,9 @@ According to local tradition at St George's Church in Methwold, the parish suffe
 #location
 The north aisle of St George's Church on Crown Street in Methwold, Norfolk.
 
+#proposed-coordinates
+52.5232562, 0.5508744
+
 #upstream-source
 None.
 

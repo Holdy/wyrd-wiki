@@ -10,6 +10,9 @@ The church of St Peter and St Paul in Knapton features an astonishing double-ham
 #location
 St Peter and St Paul's Church is situated in the village of Knapton, located inland from Mundesley in northeast Norfolk.
 
+#proposed-coordinates
+52.8802662, 1.4262372
+
 #upstream-source
 None.
 

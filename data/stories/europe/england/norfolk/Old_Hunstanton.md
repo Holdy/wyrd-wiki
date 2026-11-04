@@ -10,6 +10,9 @@ Dame Armine le Strange, an 18th-century heiress and mistress of Hunstanton Hall,
 #location
 Hunstanton Hall is a historic country house situated in the village of Old Hunstanton, Norfolk.
 
+#proposed-coordinates
+52.947, 0.5167
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ In the autumn of 1971, writer and paranormal investigator Joan Forman and her fr
 #location
 Holy Trinity Church in the village of Great Hockham, Norfolk.
 
+#proposed-coordinates
+52.4919044, 0.8719297
+
 #upstream-source
 None.
 

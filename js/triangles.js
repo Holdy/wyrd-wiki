@@ -627,16 +627,20 @@ function startSweep(final, home, pos, size, travel, draw, onDone, doneAt, leftwa
     return () => cancelAnimationFrame(frame);
 }
 /**
- * Each frame, every vertex within `radius` of the cursor gets a goal offset
- * pointing away from it, largest under the cursor and fading smoothly to zero
- * at the edge of the radius. Vertices ease quickly towards a stronger push and
- * slowly back home, so they spring away and then drift back. The animation
- * only runs while the cursor is over the canvas or points are still settling.
+ * Each frame, every vertex within `radius` of a pointer gets a goal offset
+ * pointing away from it, largest under the pointer and fading smoothly to zero
+ * at the edge of the radius (the pushes of several pointers add up). Vertices
+ * ease quickly towards a stronger push and slowly back home, so they spring
+ * away and then drift back. The animation only runs while a pointer is over
+ * the canvas or points are still settling.
  */
 function startRepel(canvas, home, pos, radius, strength, draw) {
-    let mouse = null;
+    // where each pointer is over the canvas, by pointerId: the mouse, and anything else that sends pointer events
+    // with its own id (each pushes on its own)
+    const pushers = new Map();
     let frame = 0;
     let last = 0;
+    let wasMoving = false;
     const step = (now) => {
         // Exponential easing is stable for any dt, so slow or dropped frames just catch up.
         const dt = last ? (now - last) / 1000 : 1 / 60;
@@ -647,7 +651,7 @@ function startRepel(canvas, home, pos, radius, strength, draw) {
         for (let i = 0; i < home.length; i += 2) {
             let goalX = home[i];
             let goalY = home[i + 1];
-            if (mouse) {
+            for (const mouse of pushers.values()) {
                 const dx = home[i] - mouse.x;
                 const dy = home[i + 1] - mouse.y;
                 const d = Math.hypot(dx, dy);
@@ -673,8 +677,11 @@ function startRepel(canvas, home, pos, radius, strength, draw) {
                 pos[i + 1] = goalY;
             }
         }
-        draw();
-        frame = moving || mouse ? requestAnimationFrame(step) : 0;
+        // Only when something moved, and once more for the last small step onto the resting place.
+        if (moving || wasMoving)
+            draw();
+        wasMoving = moving;
+        frame = moving || pushers.size ? requestAnimationFrame(step) : 0;
         if (!frame)
             last = 0;
     };
@@ -684,11 +691,11 @@ function startRepel(canvas, home, pos, radius, strength, draw) {
     };
     const onMove = (e) => {
         const rect = canvas.getBoundingClientRect();
-        mouse = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+        pushers.set(e.pointerId, { x: e.clientX - rect.left, y: e.clientY - rect.top });
         wake();
     };
-    const onLeave = () => {
-        mouse = null;
+    const onLeave = (e) => {
+        pushers.delete(e.pointerId);
         wake();
     };
     canvas.addEventListener("pointermove", onMove);

@@ -10,6 +10,9 @@ Local tradition holds that during the height of England's witch trials, villager
 #location
 The ruins of St Mary's Church, located in the woodland near Burnley Hall Estate in East Somerton, Norfolk.
 
+#proposed-coordinates
+52.7155624, 1.6697932
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Deep in the woodlands of East Somerton lie the romantic ruins of the 15th-centur
 
 #location
 The ruins of St Mary's Church are situated in the woodlands of East Somerton, Norfolk.
+
+#proposed-coordinates
+52.7155624, 1.6697932
 
 #upstream-source
 None.
@@ -52,6 +58,9 @@ During the height of witch persecution in Norfolk, villagers dragged an accused 
 
 #location
 The ruins of St Mary's Church are located in a secluded woodland grove on the Burnley Hall Estate in East Somerton, Norfolk.
+
+#proposed-coordinates
+52.7155624, 1.6697932
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ In the town of Dogondoutchi, Niger, local residents and teachers bear witness to
 #location
 The key location is the secondary school courtyard featuring the sacred date tree in Dogondoutchi, Niger.
 
+#proposed-coordinates
+13.6411218, 4.0293627
+
 #upstream-source
 Masquelier, Adeline. Prayer Has Spoiled Everything: Possession, Power, and Identity in an Islamic Town of Niger (Duke University Press, 2001).
 

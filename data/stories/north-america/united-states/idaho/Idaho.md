@@ -85,6 +85,9 @@ Discovered by accident in the 1880s by a young boy searching for a lost goat, th
 #location
 The Shoshone Ice Caves are located at 1561 State Highway 75 near Shoshone, Idaho.
 
+#proposed-coordinates
+47.305486, -115.9583164
+
 #upstream-source
 None.
 
@@ -105,11 +108,17 @@ Originally constructed in 1902 as a women's dormitory on the University of Idaho
 #location
 Ridenbaugh Hall on the University of Idaho campus in Moscow, Idaho.
 
+#proposed-coordinates
+46.7244798, -117.0089805
+
 #upstream-source
 None.
 
 #reference
 https://harvester.lib.uidaho.edu/posts/2021/10/15/u-of-i-hauntings.html
+
+#tags
+ghost
 
 ---
 
@@ -148,6 +157,9 @@ Established during the gold and silver rushes of the 1860s, the Idaho Hotel in S
 #location
 The Idaho Hotel stands on Main Street in the historic ghost town of Silver City in the Owyhee Mountains of southwestern Idaho.
 
+#proposed-coordinates
+43.0170522, -116.7324664
+
 #upstream-source
 None.
 
@@ -167,6 +179,9 @@ Formed thousands of years ago within a volcanic lava field in southern Idaho, th
 
 #location
 The Shoshone Ice Caves are located off State Highway 75 near Shoshone, Idaho.
+
+#proposed-coordinates
+47.305486, -115.9583164
 
 #upstream-source
 None.
@@ -188,6 +203,9 @@ Local lore in Caldwell, Idaho, tells of a woman who met a tragic end after being
 #location
 The haunting centers on Canyon Hill Cemetery, situated at 2024 North Illinois Avenue in Caldwell, Idaho.
 
+#proposed-coordinates
+43.6883766, -116.67658
+
 #upstream-source
 None.
 
@@ -207,6 +225,9 @@ Originally constructed in Ruby City in 1863 before being dismantled and reassemb
 
 #location
 The Idaho Hotel stands on the historic dirt streets of the seasonal ghost town of Silver City in the Owyhee Mountains of southwestern Idaho.
+
+#proposed-coordinates
+43.0170522, -116.7324664
 
 #upstream-source
 Hart & Nelson, Owyhee Outpost (1995); Wells, Gold Camps and Silver Cities (1964).
@@ -228,8 +249,14 @@ Originally established in 1863 in the mining camp of Ruby City, the hotel's thre
 #location
 The Idaho Hotel located in the historic ghost town of Silver City in Owyhee County, Idaho.
 
+#proposed-coordinates
+43.0170522, -116.7324664
+
 #upstream-source
 None.
 
 #reference
 https://www.historicsilvercityidaho.com/idahohotel.html
+
+#tags
+ghost

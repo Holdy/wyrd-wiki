@@ -10,6 +10,9 @@ In 18th-century Amsterdam, two sisters named Helena and Dina lived with their fa
 #location
 Spooksteeg is a specific historic alley located in the Red Light District of Amsterdam, Netherlands.
 
+#proposed-coordinates
+52.3751424, 4.9008911
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ In 18th-century Amsterdam, a tanner named Schaap lived with his two daughters, H
 
 #location
 Spooksteeg is a historic alleyway located in the center of Amsterdam, Netherlands, connecting the Zeedijk to the Warmoesstraat.
+
+#proposed-coordinates
+52.3730796, 4.8924534
 
 #upstream-source
 None.

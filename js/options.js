@@ -5,7 +5,8 @@
 // The model: all options live in one JSON object in localStorage under KEY, grouped by section,
 //   { "visuals": { "grain": true, "edges": false } }
 // A missing value means the option's default. To add an option, add an item to a section below; to add a
-// section, add one to SECTIONS. An item's `cls` is put on <html> while the option is OFF, for the CSS to use.
+// section, add one to SECTIONS. An item's `cls` is put on <html> while the option is OFF, and its `clsOn` while it
+// is ON, for the CSS (or scripts) to use.
 const KEY = "wyrd-options";
 
 export const SECTIONS = [
@@ -15,6 +16,7 @@ export const SECTIONS = [
     items: [
       { id: "grain", label: "Grainy layer", hint: "The fine fibres and larger stains in the paper.", default: true, cls: "no-grain" },
       { id: "edges", label: "Dark edges", hint: "The scorched darkening round the window's edge.", default: true, cls: "no-edges" },
+      { id: "chameleoff", label: "Chameleoff", hint: "Keeps the chameleon off the page.", default: false, clsOn: "chameleoff" },
     ],
   },
 ];
@@ -50,6 +52,7 @@ export function set(section, item, value) {
 
 function apply(section, item, value) {
   if (item.cls) document.documentElement.classList.toggle(item.cls, !value);
+  if (item.clsOn) document.documentElement.classList.toggle(item.clsOn, value);
 }
 
 /** Apply every saved option to the page. */

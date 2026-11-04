@@ -10,6 +10,9 @@ According to local Norfolk legend, Langley Cross (dating back to the 15th centur
 #location
 Langley Cross stands near Langley in Norfolk (grid reference TG347006).
 
+#proposed-coordinates
+52.553029, 1.461334
+
 #upstream-source
 W. A. Dutt: 'The Norfolk Broads' (Methuen, 1903), p.333; 'The East Anglian, or Notes & Queries', 1st Series Vol.3 (Aug.1866-Oct.1868), p.18.
 

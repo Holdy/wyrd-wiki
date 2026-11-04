@@ -10,6 +10,9 @@ Cooper, a notorious 18th-century highwayman who robbed travelers along Buckingha
 #location
 The junction of a bridleway near Coopers Grave, marked by two stones, in Buckinghamshire (postcode HP27).
 
+#proposed-coordinates
+51.840894, -0.8998074
+
 #upstream-source
 None.
 

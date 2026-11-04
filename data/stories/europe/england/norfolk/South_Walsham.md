@@ -36,6 +36,9 @@ According to traditional accounts, the waters of South Walsham Broad are occasio
 #location
 South Walsham Broad is a picturesque inland lake located in the parish of South Walsham within the Norfolk Broads, England.
 
+#proposed-coordinates
+52.6731058, 1.5055322
+
 #upstream-source
 Antony D. Hippisley Coxe, *Haunted Britain*
 

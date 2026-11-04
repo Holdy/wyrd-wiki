@@ -10,6 +10,9 @@ According to local legend, Nan Tow was a powerful and feared witch operating in 
 #location
 Nan Tow's Tump is a Bronze Age round barrow located beside the A46 road in Oldbury-on-the-Hill, Gloucestershire.
 
+#proposed-coordinates
+50.942657, -0.9764706
+
 #upstream-source
 None.
 

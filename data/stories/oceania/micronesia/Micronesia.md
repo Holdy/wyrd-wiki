@@ -10,6 +10,9 @@ Nan Madol, an ancient megalithic city constructed on artificial islets off the e
 #location
 The royal tombs on the artificial islets of Nan Madol, located just off the eastern coast of Pohnpei in the Federated States of Micronesia.
 
+#proposed-coordinates
+6.8431516, 158.332759
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Documented in ethnographic records of Micronesian folklore and real-world accoun
 
 #location
 A residential family house in the village on Fefan Island within the Chuuk Lagoon, Federated States of Micronesia.
+
+#proposed-coordinates
+5.3542666, 162.9553379
 
 #upstream-source
 Francis X. Hezel and Jay D. Dobbin, "Spirit Possession in Chuuk" and "The Distribution of Spirit Possession and Trance in Micronesia" (*Pacific Studies*, Vol. 19, No. 2).

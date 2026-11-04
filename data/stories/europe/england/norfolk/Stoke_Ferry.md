@@ -10,6 +10,9 @@ Around 1756, William Kent, a money lender from Norfolk, married Elizabeth Lynes 
 #location
 The 16th-century building of the former Crown Inn situated at the corner of High Street and Lynn Road in Stoke Ferry, Norfolk.
 
+#proposed-coordinates
+52.5700562, 0.5151252
+
 #upstream-source
 None.
 

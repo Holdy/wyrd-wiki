@@ -10,6 +10,9 @@ On a Monday afternoon in June 1877, a group of men were gathered drinking at the
 #location
 The Anchor Inn is a historic public house situated on the eastern bank of the River Severn in the Gloucestershire hamlet of Epney.
 
+#proposed-coordinates
+51.7971976, -2.3474752
+
 #upstream-source
 None.
 

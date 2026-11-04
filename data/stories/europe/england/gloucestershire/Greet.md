@@ -10,6 +10,9 @@ In November 1949, a local resident named Mr. Bassett-Green returned to the area 
 #location
 Greet Road, near the cemetery in Greet, Gloucestershire.
 
+#proposed-coordinates
+51.9634403, -1.9650441
+
 #upstream-source
 None.
 

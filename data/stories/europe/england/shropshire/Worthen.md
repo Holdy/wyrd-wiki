@@ -10,6 +10,9 @@ As Old Scratch was traveling back through the hills of Shropshire after spending
 #location
 The Devil's Chair is the highest rocky outcrop located on the Stiperstones ridge within the parish of Worthen with Shelve, Shropshire.
 
+#proposed-coordinates
+52.5864146, -2.9337834
+
 #upstream-source
 None.
 

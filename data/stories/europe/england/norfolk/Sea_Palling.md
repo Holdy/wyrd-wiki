@@ -10,6 +10,9 @@ In the late 18th century, landowner Sir Berney Brograve constructed a drainage w
 #location
 Brograve Mill stands on the Brograve level in the parish of Sea Palling, Norfolk (Ordnance Survey grid reference TG448235).
 
+#proposed-coordinates
+52.754037, 1.626984
+
 #upstream-source
 Cheryl Nicol - Sir Berney Brograve: A Very Anxious Man
 

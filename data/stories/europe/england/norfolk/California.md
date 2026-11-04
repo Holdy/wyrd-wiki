@@ -10,6 +10,9 @@ During the height of the English witch trials, villagers in East Somerton accuse
 #location
 The ruined St Mary's Church located in the woodlands of East Somerton, Norfolk.
 
+#proposed-coordinates
+52.7155624, 1.6697932
+
 #upstream-source
 None.
 

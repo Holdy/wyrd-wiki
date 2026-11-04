@@ -10,6 +10,9 @@ In March 1646, the first English Civil War effectively ended with the crushing d
 #location
 St Michael's Church is situated on the edge of the village of Yanworth in Gloucestershire, looking out across the valley toward Stowell Park.
 
+#proposed-coordinates
+51.8157144, -1.8751439
+
 #upstream-source
 None.
 

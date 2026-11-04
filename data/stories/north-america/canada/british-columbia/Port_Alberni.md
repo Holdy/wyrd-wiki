@@ -11,7 +11,7 @@ Dating back at least to the late 1930s or early 1940s, residents of Port Alberni
 Paper Mill Dam Park along the Somass River in Port Alberni, British Columbia.
 
 #proposed-coordinates
-49.234443999999996, -124.80583299999999
+49.2749381, -124.85375
 
 #upstream-source
 The Haunting of Vancouver Island: Supernatural Encounters with the Other Side by Shanon Sinn (Touchwood Editions).
@@ -34,7 +34,7 @@ Nils Weiner and his wife Anna arrived in the Alberni Valley around 1913, homeste
 The former Weiner homestead site near Sproat Lake Landing in Port Alberni, British Columbia.
 
 #proposed-coordinates
-49.283333000000006, -124.91667
+49.2854117, -124.976154
 
 #upstream-source
 Twin Cities: Alberni—Port Alberni by Jan Peterson.

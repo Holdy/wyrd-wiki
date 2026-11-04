@@ -10,6 +10,9 @@ In 1797, a 46-year-old married man named William Suffolk engaged in an affair wi
 #location
 Gibbet Piece in Witton Woods (also known as Bacton Wood) near North Walsham in Norfolk.
 
+#proposed-coordinates
+52.8239451, 1.4111002
+
 #upstream-source
 The Gentleman's Magazine (1797).
 

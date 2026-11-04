@@ -10,6 +10,9 @@ According to the long-standing local legend surrounding St Mary the Virgin Churc
 #location
 St Mary the Virgin Church is located off The Green in the village of Martham, Norfolk.
 
+#proposed-coordinates
+52.7109439, 1.6221386
+
 #upstream-source
 None.
 

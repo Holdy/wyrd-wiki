@@ -47,3 +47,9 @@ Okanagan Historical Society’s 86th report *The Carlin House : A Gracious Old H
 
 #reference
 https://infonews.ca/news/7374986/the-story-behind-the-shuswaps-familiar-and-historic-trickle-inn/
+
+#coordinates
+50.7679184680058, -119.33817855696365
+
+#tags
+named-ghost

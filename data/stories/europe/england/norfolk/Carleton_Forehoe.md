@@ -10,6 +10,9 @@ For centuries, local tradition and historical accounts have associated the hamle
 #location
 The Forehoe Hills barrows are located in Forehoe Wood near Carleton Forehoe, Norfolk (National Grid Reference TG 081 054).
 
+#proposed-coordinates
+52.606932, 1.072626
+
 #upstream-source
 Blomefield, Francis, An Essay Towards a Topographical History of the County of Norfolk (1805-1810); Rye, Walter, Scandinavian Names in Norfolk (1920).
 

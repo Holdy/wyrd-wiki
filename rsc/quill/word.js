@@ -62,6 +62,7 @@ export function layoutQuill(box, text, options) {
   var pad = Math.ceil(o.size * 0.5);          // room for the nib's edge, the lead-in wedge and ink spread
   var advance = function (ch) { return (getGlyph(ch, o.style).width + o.letterSpacing) * o.size; };
 
+  reflowed.observe(box);      // the title can change shape without the page doing so
   box.textContent = "";
   box.style.fontSize = "0";
   box.style.wordSpacing = advance(" ") + "px";
@@ -131,7 +132,7 @@ export function layoutQuill(box, text, options) {
       live.delete(handle);
       words.forEach(function (w) {
         w.drawings = null;
-        w.bent = false;
+        w.bent = w.moving = false;
         var ctx = w.canvas.getContext("2d");
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         ctx.clearRect(0, 0, w.canvas.width, w.canvas.height);
@@ -251,7 +252,8 @@ function makeClock(signal) {
 // ---- Bending ----------------------------------------------------------------------------------
 // At most two points of influence (slot 0: the mouse, slot 1: the flyer), in window coordinates.
 // Each finished word's letters are pushed away from them (the library does the bending: see
-// makeDrawing's bend) and repainted while anything is moving.
+// makeDrawing's bend) and repainted while anything is moving. Nothing runs until a point comes
+// within a title's box, so a title with nothing near it costs one comparison per point.
 const influences = [null, null];
 var bendFrame = 0, bendLast = 0;
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -275,19 +277,56 @@ function paintWord(w, base, options) {
   drawingsOf(w, base, options).forEach(function (d) { d.paint(ctx); });
 }
 
+// Whether a point is close enough to a title to bend it. Its box is in page coordinates, so scrolling
+// leaves it good; it is measured when needed and dropped when the layout changes (see `reflowed`).
+function onRadar(handle) {
+  if (!handle.box) {
+    var reach = handle.size * 2.2 + 4, rects = handle.words.map(function (w) { return w.canvas.getBoundingClientRect(); });
+    handle.box = {
+      left: Math.min.apply(null, rects.map(function (r) { return r.left; })) + window.scrollX - reach,
+      right: Math.max.apply(null, rects.map(function (r) { return r.right; })) + window.scrollX + reach,
+      top: Math.min.apply(null, rects.map(function (r) { return r.top; })) + window.scrollY - reach,
+      bottom: Math.max.apply(null, rects.map(function (r) { return r.bottom; })) + window.scrollY + reach
+    };
+  }
+  var b = handle.box;
+  return influences.some(function (p) {
+    if (!p) return false;
+    var x = p[0] + window.scrollX, y = p[1] + window.scrollY;
+    return x > b.left && x < b.right && y > b.top && y < b.bottom;
+  });
+}
+const reflowed = new ResizeObserver(function () { live.forEach(function (handle) { handle.box = null; }); });
+reflowed.observe(document.body);
+
+function needsBending(handle) {
+  return onRadar(handle) || handle.words.some(function (w) { return w.bent; });
+}
+
+// Start the bending if a title needs it. Called whenever a point or the page moves.
+function wake() {
+  if (bendFrame) return;
+  live.forEach(function (handle) {
+    if (!handle.words.length || !handle.words[0].cell.isConnected) live.delete(handle);
+    else if (!bendFrame && needsBending(handle)) bendFrame = requestAnimationFrame(bendStep);
+  });
+}
+window.addEventListener("scroll", wake, { passive: true });   // a title can scroll under a point that keeps still
+
 // Set (x, y) as point of influence `slot`, or clear it with x = null.
 export function influence(slot, x, y) {
   if (reducedMotion) return;
   influences[slot] = x === null ? null : [x, y];
-  if (!bendFrame && live.size) bendFrame = requestAnimationFrame(bendStep);
+  wake();
 }
 
 function bendStep(now) {
   var dt = Math.min(bendLast ? (now - bendLast) / 1000 : 1 / 60, 0.05);
   bendLast = now;
-  var busy = influences.some(Boolean);
+  var busy = false;      // when nothing is moving this stops, and the next point or scroll wakes it
   live.forEach(function (handle) {
     if (!handle.words.length || !handle.words[0].cell.isConnected) { live.delete(handle); return; }
+    if (!needsBending(handle)) return;
     var base = handle.base(), reach = handle.size * 2.2 + 4;
     handle.words.forEach(function (w) {
       var r = w.canvas.getBoundingClientRect();
@@ -296,8 +335,10 @@ function bendStep(now) {
       if (!near && !w.bent) return;
       var moving = false;
       drawingsOf(w, base, handle.options).forEach(function (d) { if (d.bend(local, dt)) moving = true; });
-      if (moving || w.bent) paintWord(w, base, handle.options);
-      w.bent = moving;
+      // only when something moved (and once more, for the last small step onto the letters' resting place)
+      if (moving || w.moving) paintWord(w, base, handle.options);
+      w.moving = moving;
+      w.bent = moving || near;      // held by a point that keeps still: no painting, but it must ease back when that goes
       if (moving) busy = true;
     });
   });

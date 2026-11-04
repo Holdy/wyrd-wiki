@@ -10,6 +10,9 @@ In the village of West Walton, the 13th-century bell tower of St. Mary's Church 
 #location
 St. Mary's Church is located in West Walton, Norfolk (grid reference TF471133), where its detached bell tower stands over open arches at the churchyard entrance.
 
+#proposed-coordinates
+52.697836, 0.176122
+
 #upstream-source
 William Andrews (ed.): 'Antiquities & Curiosities of the Church' (Hull Press, 1896)
 

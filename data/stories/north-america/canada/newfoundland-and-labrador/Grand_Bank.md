@@ -11,7 +11,7 @@ Constructed around 1890 on College Street in Grand Bank and owned during the ear
 The house stands on College Street in Grand Bank, Newfoundland and Labrador.
 
 #proposed-coordinates
-47.09458622461412, -55.74800085354279
+47.1011161, -55.7588803
 
 #upstream-source
 Originally published as "Bewitched in Grand Bank" by Dale Jarvis in *Downhomer*, April 2004, Vol. 16(11), pp. BP21-BP24.
@@ -34,7 +34,7 @@ Built around 1906 on Evans Street in Grand Bank, another historic property revea
 The house is located on Evans Street in Grand Bank, Newfoundland and Labrador.
 
 #proposed-coordinates
-47.09458622461412, -55.74800085354279
+47.0996506, -55.7543401
 
 #upstream-source
 Originally published as "Bewitched in Grand Bank" by Dale Jarvis in *Downhomer*, April 2004, Vol. 16(11), pp. BP21-BP24.

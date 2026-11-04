@@ -15,7 +15,7 @@ Most notably, multiple residents reported seeing an apparition of a formally dre
 The former site of Sir Edward Walter's house near the intersection of No. 3 Road and Westminster Highway on Lulu Island in Richmond, British Columbia.
 
 #proposed-coordinates
-49.16333299999999, -123.163333
+49.169126, -123.1839943
 
 #upstream-source
 Archival records, oral histories, and photographs donated by Arnold Jones to the City of Richmond Archives.

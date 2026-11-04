@@ -36,6 +36,9 @@ Many years ago, a carriage drawn by a pair of horses started out from Scants Cor
 #location
 Holme Hale Dale and Top Cross in the village of Holme Hale, Norfolk, along the route towards Watton.
 
+#proposed-coordinates
+52.63019, 0.78264
+
 #upstream-source
 Alec Hunt's account of life in Holme Hale throughout the ages.
 

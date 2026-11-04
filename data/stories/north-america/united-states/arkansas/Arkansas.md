@@ -10,6 +10,9 @@ Lorance Creek in Saline County is associated with the legend of an unnamed girl 
 #location
 Lorance Creek is located in Saline County, Arkansas, near Cockman Cemetery.
 
+#proposed-coordinates
+37.750075, -88.5302584
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Beginning in the 1930s, residents and visitors near the town of Gurdon, Arkansas
 
 #location
 The light appears along a wooded stretch of railroad tracks just outside the city of Gurdon in Clark County, Arkansas.
+
+#proposed-coordinates
+33.9182285, -93.1488168
 
 #upstream-source
 None.
@@ -50,6 +56,9 @@ Beginning in the 1930s, residents and visitors near the small town of Gurdon hav
 #location
 The railroad tracks passing through the wooded area just outside of Gurdon in Clark County, Arkansas.
 
+#proposed-coordinates
+33.9182285, -93.1488168
+
 #upstream-source
 None.
 
@@ -69,6 +78,9 @@ Since the early 1930s, residents and visitors near Gurdon, Arkansas, have report
 
 #location
 Along the railroad tracks located just outside of Gurdon in Clark County, Arkansas.
+
+#proposed-coordinates
+33.9182285, -93.1488168
 
 #upstream-source
 Alan Brown, *Haunted Places in the American South*.
@@ -90,6 +102,9 @@ Since the 1930s, witnesses near Gurdon in Clark County have reported seeing a st
 #location
 The Gurdon Light appears along the railroad tracks about four miles north of Gurdon in Clark County, Arkansas.
 
+#proposed-coordinates
+33.952634, -93.1789905
+
 #upstream-source
 None.
 
@@ -109,6 +124,9 @@ The Allen House in Monticello was built in 1905 by Joe Lee Allen and lived in by
 
 #location
 The Allen House is located in Monticello, Drew County, Arkansas.
+
+#proposed-coordinates
+33.6345731, -91.7906892
 
 #upstream-source
 None.
@@ -130,11 +148,17 @@ Opened in May 1886 as an opulent resort in Eureka Springs, the stone-built Cresc
 #location
 The 1886 Crescent Hotel located at 75 Prospect St, Eureka Springs, Arkansas.
 
+#proposed-coordinates
+36.4083, -93.7374
+
 #upstream-source
 Alan Brown, *Haunted Places in the American South*.
 
 #reference
 https://encyclopediaofarkansas.net/entries/crescent-hotel-5271/
+
+#tags
+ghost,multiple-ghosts
 
 ---
 
@@ -149,6 +173,9 @@ On stormy nights along Arkansas Highway 365 between Woodson and Redfield, driver
 
 #location
 Arkansas Highway 365 between the communities of Woodson and Redfield, Arkansas.
+
+#proposed-coordinates
+34.4450465, -92.1842971
 
 #upstream-source
 None.
@@ -169,6 +196,9 @@ The 1886 Crescent Hotel in Eureka Springs was constructed by Irish stonemasons, 
 
 #location
 The 1886 Crescent Hotel & Spa is located atop West Mountain overlooking Eureka Springs in Carroll County, Arkansas.
+
+#proposed-coordinates
+36.4083, -93.7374
 
 #upstream-source
 None.
@@ -218,6 +248,9 @@ Dr. John Guenthner operated a hospital in Gasville, Arkansas, starting in the 19
 
 #location
 The former hospital building is located in Gasville, Baxter County, Arkansas.
+
+#proposed-coordinates
+36.2820691, -92.3445222
 
 #upstream-source
 None.

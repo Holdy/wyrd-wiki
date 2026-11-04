@@ -11,7 +11,7 @@ Chief Tzouhalem was a prominent and feared leader of the Cowichan people who spe
 Mount Tzouhalem rises above the Cowichan Valley near Duncan, British Columbia.
 
 #proposed-coordinates
-48.783055600000004, -123.65111110000001
+48.778464, -123.6134406
 
 #upstream-source
 None.

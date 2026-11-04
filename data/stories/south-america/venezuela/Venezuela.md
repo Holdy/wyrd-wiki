@@ -10,6 +10,9 @@ Originally commissioned in the 19th century by President Antonio Guzmán Blanco 
 #location
 The cursed clock is located in Plaza Bolívar / Plaza Ávila in front of the parish house in the city of Güigüe, Carlos Arvelo Municipality, Carabobo State, Venezuela.
 
+#proposed-coordinates
+10.0842357, -67.7762937
+
 #upstream-source
 None.
 
@@ -30,6 +33,9 @@ Documented within the traditional urban legends of the Táchira region in Venezu
 #location
 The events took place in the sacristy of the church located in the Barrancas sector of San Cristóbal, Táchira State, Venezuela.
 
+#proposed-coordinates
+7.7756663, -72.2214154
+
 #upstream-source
 José Antonio Pulido, *13 Leyendas Urbanas de San Cristóbal*.
 
@@ -49,6 +55,9 @@ Drivers traveling at night along the old Caracas-La Guaira road are warned never
 
 #location
 The legend takes place along the old Caracas-La Guaira road connecting Caracas to the coastal state of La Guaira in Venezuela.
+
+#proposed-coordinates
+10.505789, -66.8806265
 
 #upstream-source
 None.

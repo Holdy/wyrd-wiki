@@ -19,6 +19,12 @@ Charis Cotter (editor), *The Ghosts of Baccalieu* (Baccalieu Books, 2013), colle
 #reference
 http://www.dalejarvis.ca/2013/06/charis-cotter-and-ghosts-of-baccalieu.html
 
+#coordinates
+48.11678223891532, -52.83515855101359
+
+#tags
+ghost-ship,approx
+
 ---
 
 #title
@@ -41,3 +47,6 @@ Charis Cotter, *Footsteps in Bay de Verde: A Mysterious Tale* (Running the Goat,
 
 #reference
 https://canlitforlittlecanadians.blogspot.com/2020/07/footsteps-in-bay-de-verde-mysterious.html
+
+#tags
+pinless

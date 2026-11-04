@@ -10,6 +10,9 @@ Judith relocates to a remote rural community and becomes embroiled in a chilling
 #location
 Hevingham School is located in the village of Hevingham in Norfolk, England.
 
+#proposed-coordinates
+52.7467884, 1.2448496
+
 #upstream-source
 Author: Samuel J. White. Title: Maria's Photograph: Look out! she's always watching you!
 

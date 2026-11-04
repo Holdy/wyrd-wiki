@@ -12,6 +12,9 @@ Following the tragedy, the drowned brother's body was placed in a hearse to be t
 #location
 Urrist Moat is situated off Dark Lane near Little Shurdington in the parish of Badgeworth, Gloucestershire.
 
+#proposed-coordinates
+51.8520682, -2.1230982
+
 #upstream-source
 Cheltenham Examiner (1898), referencing G. Arthur Cardew's paper "The Moats or Waterforts of the Vale of the Severn" and the correspondence of local resident W.B.C.
 

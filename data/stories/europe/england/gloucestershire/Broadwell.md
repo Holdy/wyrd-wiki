@@ -10,6 +10,9 @@ Just outside the village of Broadwell, along the narrow wooded section of the Mo
 #location
 The Monarch's Way footpath running between Broadwell and Stow-on-the-Wold in Gloucestershire.
 
+#proposed-coordinates
+51.9303426, -1.7230154
+
 #upstream-source
 None.
 

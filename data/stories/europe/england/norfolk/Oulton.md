@@ -36,6 +36,9 @@ According to local tradition, several of Oliver Cromwell's men are interred with
 #location
 The graves are said to be located within the churchyard of St. Peter and St. Paul in Oulton, Norfolk (grid reference TG136285).
 
+#proposed-coordinates
+52.812143, 1.168719
+
 #upstream-source
 'Off the Beaten Track' - Blickling to Cawston cycle tour leaflet - Broadland District Council.
 

@@ -36,6 +36,9 @@ According to local folklore, a secret underground passage runs between St Mary's
 #location
 St Mary's Church in Tunstead, Norfolk.
 
+#proposed-coordinates
+52.7504999, 1.4036448
+
 #upstream-source
 Worstead Parish Council - Worstead Heritage Trails
 

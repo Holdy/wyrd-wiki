@@ -10,6 +10,9 @@ A wealthy shepherd named Segnes inherited a prosperous alpine pasture on the con
 #location
 The Sardona Glacier (Sardonagletscher) is located in the high Glarus Alps within the Tectonic Arena Sardona, situated in eastern Switzerland across the cantons of St. Gallen, Glarus, and Graubünden.
 
+#proposed-coordinates
+47.0422116, 9.0674041
+
 #upstream-source
 F. W. Sprecher, Yearbook, Alpine Club.
 
@@ -29,6 +32,9 @@ In 7th-century Switzerland, the noblewoman Fridiburga—who was betrothed to Kin
 
 #location
 The events are traditionally anchored in the town of Arbon, situated on the southern shore of Lake Constance in the canton of Thurgau, Switzerland.
+
+#proposed-coordinates
+47.5149257, 9.4304026
 
 #upstream-source
 None.
@@ -52,6 +58,9 @@ Beginning in the early 1980s, the Belchen Tunnel on the A2 motorway in Switzerla
 
 #location
 The Belchen Tunnel is located on the A2 motorway through the Jura Mountains on the boundary between the Solothurn and Basel-Landschaft cantons in Switzerland, near Eptingen.
+
+#proposed-coordinates
+47.36722222, 7.82444444
 
 #upstream-source
 None.

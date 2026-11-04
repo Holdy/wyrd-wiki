@@ -11,7 +11,7 @@ In October 1922, twenty-year-old Bennie Swim was condemned to death and hanged a
 The historic Carleton County Jail is located at 19 Court Street in Woodstock, New Brunswick.
 
 #proposed-coordinates
-46.14623265815492, -67.59702216814334
+46.1759488, -67.5744809
 
 #upstream-source
 None.

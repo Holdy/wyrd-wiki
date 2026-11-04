@@ -10,6 +10,9 @@ Inside a small concrete church in Kinshasa, Democratic Republic of the Congo, Pr
 #location
 The events take place inside Prophet Pierre Pinda Buana's revival church located in Kinshasa, the capital city of the Democratic Republic of the Congo.
 
+#proposed-coordinates
+-4.32171, 15.3122511
+
 #upstream-source
 None.
 

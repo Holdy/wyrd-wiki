@@ -10,6 +10,9 @@ Richard Sunieve, a herdsman serving a local knight in the village of Edgeworth, 
 #location
 St Mary’s Church in the village of Edgeworth, Gloucestershire, holds a medieval stained glass fragment and local heritage associations commemorating the miracle.
 
+#proposed-coordinates
+51.7537354, -2.0891119
+
 #upstream-source
 Benedict of Canterbury, chronicles of the miracles of St. Thomas Becket.
 

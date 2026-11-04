@@ -11,7 +11,7 @@ In 1726, on Christmas Eve, a man named Paddy Kelly set out late at night walking
 The St. Croix bend on the coastal road between King's Cove and Keels on the Bonavista Peninsula, Newfoundland and Labrador.
 
 #proposed-coordinates
-48.61298315, -53.39922669999999
+48.5703695, -53.3350642
 
 #upstream-source
 The 1926 Christmas edition of The Trinitarian.

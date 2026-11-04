@@ -11,7 +11,7 @@ Cranbrook City Hall, particularly its windowless basement that housed the munici
 Cranbrook City Hall is located at 40 Cranbrook Street North in Cranbrook, British Columbia.
 
 #proposed-coordinates
-49.50805599999999, -115.74694399999998
+49.5107477, -115.7672772
 
 #upstream-source
 None.

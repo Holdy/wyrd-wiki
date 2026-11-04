@@ -10,6 +10,9 @@ In the early 18th century, Pieter Gijsbert van Noodt served as the tyrannical go
 #location
 The Castle of Good Hope is located at Darling Street and Buitenkant Street, Cape Town, South Africa.
 
+#proposed-coordinates
+-33.9258513, 18.4267256
+
 #upstream-source
 None.
 
@@ -30,6 +33,9 @@ At St. Michael's Mission in Natal, South Africa, a teenage orphan named Clara Ge
 #location
 St. Michael's Mission, located approximately twenty miles from the magistracy of Umzinto in KwaZulu-Natal, South Africa.
 
+#proposed-coordinates
+-30.3136111, 30.6619444
+
 #upstream-source
 Fr. J. Godfrey Raupert, *Christ and the Powers of Darkness* (featuring an account communicated by Rt. Rev. Mgr. Delalle, Titular Bishop of Natal).
 
@@ -49,6 +55,9 @@ On Good Friday in 1968, 22-year-old Maria "Ria" Charlotte Roux died when the Vol
 
 #location
 The N9 highway between Uniondale and Willowmore, near the Barandas turnoff in the Western Cape of South Africa.
+
+#proposed-coordinates
+-33.290517, 23.4857161
 
 #upstream-source
 None.

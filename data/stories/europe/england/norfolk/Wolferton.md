@@ -10,6 +10,9 @@ Hugh Terne, a Ph.D. student researching the Throgmorton family, travels to Wolfe
 #location
 Wolferton Hall is the historic ancestral manor house situated within the village of Wolferton in Norfolk, England.
 
+#proposed-coordinates
+52.8293207, 0.4625821
+
 #upstream-source
 James Doig, Friends of the Dead (Sarob Press, 2015)
 

@@ -10,6 +10,9 @@ In the city of León, Nicaragua, construction on the Santiago Church faced inexp
 #location
 The ruins of Santiago Church are located in León, Nicaragua, situated one and a half blocks away from San Juan Bautista church.
 
+#proposed-coordinates
+12.3742785, -87.0370981
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ In February 2017, in the isolated jungle hamlet of El Cortezal near Rosita, Nica
 
 #location
 The Iglesia Visión Celestial (Celestial Vision Church) located in the remote jungle settlement of El Cortezal, near the town of Rosita in the North Caribbean Coast Autonomous Region of Nicaragua.
+
+#proposed-coordinates
+13.9415501, -84.2868438
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ Betty's Grave is a quiet rural crossroads located a quarter of a mile from the G
 #location
 Betty's Grave is a crossroads located a quarter of a mile outside Poulton, Gloucestershire, reached via Bell Lane.
 
+#proposed-coordinates
+51.5867453, -0.2176464
+
 #upstream-source
 None.
 

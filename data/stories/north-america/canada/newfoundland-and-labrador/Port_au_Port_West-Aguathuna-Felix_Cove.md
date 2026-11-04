@@ -11,7 +11,7 @@ In March, young Emile Benoit hitched up his one-horse sleigh to visit his brothe
 A path between Three Rock Cove and Black Duck Brook on the Port au Port Peninsula, Newfoundland and Labrador.
 
 #proposed-coordinates
-48.699999999999996, -58.89916700000001
+48.6341128, -59.0517126
 
 #upstream-source
 Thomas, Gerald. *The Two Traditions: The Art of Storytelling Acculturation Among French-speaking Newfoundlanders*.

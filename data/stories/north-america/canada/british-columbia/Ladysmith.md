@@ -39,6 +39,9 @@ For decades, travellers driving along Mount Sicker Road north of Ladysmith near 
 #location
 Mount Sicker Road, north of Ladysmith, British Columbia, near the historic Lenora town site.
 
+#proposed-coordinates
+48.8786681, -123.712765
+
 #upstream-source
 Shanon Sinn, *The Haunting of Vancouver Island: Supernatural Encounters with the Other Side* (TouchWood Editions).
 

@@ -10,11 +10,17 @@ Put into service in 1898 to protect vessels navigating the treacherous waters of
 #location
 North Head Lighthouse is situated at Cape Disappointment State Park near Ilwaco, Washington.
 
+#proposed-coordinates
+46.2989031, -124.077963
+
 #upstream-source
 None.
 
 #reference
 https://spookt.com/places/north-head-lighthouse
+
+#tags
+named-ghost
 
 ---
 
@@ -29,6 +35,9 @@ Commissioned by wealthy banker Chester Thorne and designed with his wife Anna, T
 
 #location
 Thornewood Castle is located on the eastern shore of American Lake in Lakewood, Washington.
+
+#proposed-coordinates
+47.1302393, -122.5515205
 
 #upstream-source
 None.
@@ -49,6 +58,9 @@ Commissioned by businessman Chester Thorne and completed in 1911, Thornewood Cas
 
 #location
 Thornewood Castle is located at 8601 Gravelly Lake Drive SW in Lakewood, Washington.
+
+#proposed-coordinates
+47.1302393, -122.5515205
 
 #upstream-source
 None.
@@ -98,6 +110,9 @@ In the wake of the devastating May 1980 eruption of Mount St. Helens, motorists 
 
 #location
 This paranormal encounter takes place along Highway 12, located roughly 80 miles north of Mount St. Helens near Castle Rock, Washington.
+
+#proposed-coordinates
+46.2739907, -122.904918
 
 #upstream-source
 None.
@@ -165,11 +180,17 @@ Built in 1886 at Roche Harbor Resort, the Hotel de Haro served visiting dignitar
 #location
 Hotel de Haro is located within the Roche Harbor Resort on San Juan Island, Washington.
 
+#proposed-coordinates
+48.6081285, -123.1517785
+
 #upstream-source
 None.
 
 #reference
 https://www.visitsanjuans.com/haunted-hotels-in-the-san-juan-islands
+
+#tags
+named-ghost
 
 ---
 
@@ -184,6 +205,9 @@ Built between 1908 and 1911 by industrialist Chester Thorne on the shores of Ame
 
 #location
 Thornewood Castle is located on the shores of American Lake in Lakewood, Pierce County, Washington.
+
+#proposed-coordinates
+47.1302393, -122.5515205
 
 #upstream-source
 None.

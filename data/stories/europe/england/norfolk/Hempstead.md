@@ -10,6 +10,9 @@ Local tradition in Hempstead preserves the dark tale of a huntsman whose cruelty
 #location
 The legend is centered around the village of Hempstead in North Norfolk, located near Holt.
 
+#proposed-coordinates
+52.93333333, 1.3
+
 #upstream-source
 Jennifer Westwood and Jacqueline Simpson, *Haunted England : The Penguin Book of Ghosts*.
 
@@ -32,6 +35,9 @@ In the rural parish of Hempstead, Norfolk, local folklore long preserved tales o
 
 #location
 Hempstead Hall Farm (grid reference TG09613727) in the parish of Hempstead, Norfolk.
+
+#proposed-coordinates
+52.8893384, 1.122953
 
 #upstream-source
 Hidden East Anglia and local historical documentation compiled for Hempstead, Norfolk.

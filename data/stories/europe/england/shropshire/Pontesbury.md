@@ -10,6 +10,9 @@ According to Shropshire folklore, the Devil—often called 'Owd Scratch'—was t
 #location
 The Devil's Chair rock formation on the Stiperstones ridge in the hills south of Pontesbury, Shropshire.
 
+#proposed-coordinates
+52.5864146, -2.9337834
+
 #upstream-source
 None.
 

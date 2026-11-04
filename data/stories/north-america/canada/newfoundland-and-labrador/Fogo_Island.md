@@ -11,7 +11,7 @@ In the early twentieth century, a girl and her aunt were walking along a path th
 Banks Meadow (also known as Second Field, located below Brimstone Head) on Fogo Island, Newfoundland and Labrador.
 
 #proposed-coordinates
-49.6766536025915, -54.17299413044957
+49.7114596, -54.3034693
 
 #upstream-source
 None.

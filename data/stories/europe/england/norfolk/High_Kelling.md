@@ -36,6 +36,9 @@ Sometime in the early 1930s, a man pushing his bicycle along the road leading fr
 #location
 The stretch of road running between Salthouse and Kelling, Norfolk, near a five-barred gate.
 
+#proposed-coordinates
+52.9346726, 1.1106314
+
 #upstream-source
 James Wentworth Day, 'Black Shuck', in East Anglian Magazine, Vol. 21, No. 11 (Sept. 1962), p. 640 (also cited in G. McEwan, Mystery Animals of Britain and Ireland, Hale, 1986).
 

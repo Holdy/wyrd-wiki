@@ -10,6 +10,9 @@ Beginning in the early 1930s, motorists driving along Archer Avenue in the south
 #location
 Resurrection Cemetery is located at 7200 S. Archer Road in Justice, Illinois.
 
+#proposed-coordinates
+41.76112114814, -87.826503155977
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ For nearly a century, motorists and dance hall patrons in the Chicago area have 
 
 #location
 Resurrection Cemetery is located on Archer Avenue in Justice, Illinois, about a 30-minute drive southwest of Chicago.
+
+#proposed-coordinates
+41.8755616, -87.6244212
 
 #upstream-source
 None.
@@ -50,11 +56,20 @@ According to local legend, a young woman named Mary attended a dance at a ballro
 #location
 Resurrection Cemetery is located at 7201 S. Archer Avenue in Justice, Illinois.
 
+#proposed-coordinates
+41.761051216408, -87.826381457536
+
 #upstream-source
 None.
 
 #reference
 https://www.chicagohistory.org/resurrection-mary/
+
+#coordinates
+41.76280, -87.82458
+
+#tags
+ghost
 
 ---
 
@@ -69,6 +84,9 @@ According to local lore dating back to the 1930s, a mysterious young woman known
 
 #location
 Resurrection Cemetery is located at 7200 S. Archer Road in the village of Justice, Illinois.
+
+#proposed-coordinates
+41.76112114814, -87.826503155977
 
 #upstream-source
 None.
@@ -116,11 +134,17 @@ Established in 1844, Bachelor's Grove Cemetery is widely regarded as one of the 
 #location
 Bachelor's Grove Cemetery is situated within the Rubio Woods Forest Preserve off the Midlothian Turnpike near Midlothian, Illinois.
 
+#proposed-coordinates
+41.63083333, -87.77083333
+
 #upstream-source
 None.
 
 #reference
 https://ghostcitytours.com/chicago/haunted-chicago/bachelors-grove-cemetery/
+
+#tags
+ghost
 
 ---
 
@@ -135,6 +159,9 @@ Cuba Road, a notoriously dark and twisting route nestled near Barrington, Illino
 
 #location
 Cuba Road is a winding rural route located in Barrington, Illinois, passing adjacent to White Cemetery near Old Barrington Road.
+
+#proposed-coordinates
+42.0716126, -88.1411059
 
 #upstream-source
 None.
@@ -178,6 +205,9 @@ The McPike Mansion was constructed in Alton, Illinois, in 1869 by horticulturist
 
 #location
 The McPike Mansion is situated on its historic estate property in Alton, Illinois.
+
+#proposed-coordinates
+38.9060594, -90.1836403
 
 #upstream-source
 None.

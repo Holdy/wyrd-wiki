@@ -12,6 +12,9 @@ Nearby, a 'haunted cottage' is said to be occupied by a headless woman who roams
 #location
 The weeping willow tree on the sharp bend of an unnamed road out of Barton-on-the-Heath in Warwickshire marks the spot where the phantom highwayman was hanged.
 
+#proposed-coordinates
+51.9921566, -1.6276015
+
 #upstream-source
 None
 

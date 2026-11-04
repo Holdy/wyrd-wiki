@@ -34,7 +34,7 @@ Dating back to the mid-18th century during the colonial conflicts in the region,
 French Fort Cove in Nordin, now part of the City of Miramichi, New Brunswick.
 
 #proposed-coordinates
-47.03848995324092, -65.4919560156298
+47.019008, -65.5498593
 
 #upstream-source
 Underhill, Doug (1999). *Miramichi Tales Tall & True*, Neptune Publishing.

@@ -19,6 +19,12 @@ None.
 #reference
 https://downhomelife.com/encounters-with-death-tokens/
 
+#coordinates
+47.45726, -53.22430
+
+#tags
+haunting,approx
+
 ---
 
 #title

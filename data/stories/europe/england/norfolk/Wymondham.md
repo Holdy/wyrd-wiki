@@ -10,6 +10,9 @@ Wymondham Abbey, founded as a Benedictine priory in 1107, and the 14th-century G
 #location
 Wymondham Abbey is located on Church Street in the market town of Wymondham, Norfolk (grid reference TG106015).
 
+#proposed-coordinates
+52.570961, 1.107010
+
 #upstream-source
 Barbara Vesey: 'The Hidden Places of East Anglia' (Travel Publishing Ltd, 7th edition, 2003), p.200.
 

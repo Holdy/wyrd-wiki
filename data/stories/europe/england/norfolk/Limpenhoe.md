@@ -10,6 +10,9 @@ According to local tradition, an iron chest filled with gold lay submerged at th
 #location
 St Botolph's Church is located in the village of Limpenhoe in the Broadland district of Norfolk, England.
 
+#proposed-coordinates
+52.5771505, 1.5423683
+
 #upstream-source
 Jennifer Westwood and Jacqueline Simpson, *The Lore of the Land: A Guide to England’s Legends* (2005); originally recorded in *Notes and Queries* (1855).
 

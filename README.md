@@ -6,7 +6,7 @@ It is a static site (plain HTML, CSS and JavaScript, no build step), meant for G
 ## Running it
 
 ```
-npm run server        # python -m http.server, then open http://localhost:8000/
+npm run server        # python's http.server without caching (tools/serve.py), then open http://localhost:8000/
 ```
 
 The page reads its sitemap and story files with `fetch`, so it must be opened through a server. Opened straight from disk it shows a message saying so. How the filing works is in [filing-scheme.md](filing-scheme.md).
@@ -84,11 +84,11 @@ A settlement file holds one or more stories, separated by a line containing only
 
 A story that belongs to a river, rock formation or road rather than a settlement goes in the file of the next level up, such as `Norfolk.md`. That file has no sitemap or page yet.
 
-Stories tagged `skip` or `duplicate` are kept in the files but left out of the settlement's sitemap, so they don't appear on the site.
+Stories tagged `skip`, `duplicate` or `invalid` are kept in the files but left out of the settlement's sitemap, so they don't appear on the site.
 
 ### Importing stories
 
-`data/stories` is generated from the research data in the local-llm-agent project (`~/projects/local-llm-agent`, the `*-data-targets/` directories: ghost, witch, hound, devil, curse, …, and `weeping-statue-targets/`, which is named without the `-data`; any directory ending `-targets` is read, and the subject is its name without `-data-targets` or `-targets`). Run
+`data/stories` is generated from the research data in the local-llm-agent project (`~/projects/local-llm-agent`, the `*-data-targets/` directories: ghost, witch, hound, devil, curse, …, and `weeping-statue-targets/`, which is named without the `-data`, and `screaming-skull-target-data/`; any directory ending `-targets` or `-target-data` is read, and the subject is its name without that ending). Run
 
 ```
 bun tools/import-stories.ts [--source <dir>] [--dry-run]
@@ -97,7 +97,7 @@ bun tools/import-stories.ts [--source <dir>] [--dry-run]
 - **Source is the truth.** Every run rebuilds all the place files and sitemaps from the source; edit the source files there, not the generated ones. `--dry-run` prints the counts and warnings and writes nothing.
 - **Filing is by file name only** (the source directory layout differs between subjects and is ignored): `Afghanistan.md` is a country, `Aberdeenshire, UK.md` or `Alabama, USA.md` a region, `Acle,norfolk,uk.md` or `Airdrie, Alberta, Canada.md` a settlement. Region files for the UK are filed under England, Scotland, Wales or Northern Ireland (`UK_REGION_COUNTRY` in the script); countries go under their continent (`COUNTRY_CONTINENT`). A name the script doesn't know is reported as a warning and its stories are skipped, so add it to the lists.
 - **Several subjects, one place:** stories from every subject for the same place are merged into one file (sorted by title). Identical copies are dropped; two stories with the same title in a place are both kept but only listed once in the sitemap.
-- **Tags:** `skip` and `duplicate` stories are kept in the file but left out of the sitemap. Everything else (`private`, `pinless`, `approx`, …) is published.
+- **Tags:** `skip`, `duplicate` and `invalid` stories are kept in the file but left out of the sitemap. Everything else (`private`, `pinless`, `approx`, …) is published.
 - **Stories filed at a country or region** (such as `Alabama, USA.md`) are written to `<Region>.md` and listed as `<url>` entries after the places in that level's sitemap index. The site shows them in the main area of the country or region's page, under "Tales of <name>" (the menu lists only its places until one of the tales is open, when the other tales join the menu as they do at a place).
 - **A story filed in the wrong place** is fixed by moving it between files in local-llm-agent, not here. The Boleyn bridges, the Hethel Thorn and the Great Yarmouth execution were moved that way (the Boleyn bridges now sit in `Norfolk, UK.md`, listed in `witch-data-targets.progress` so the research run skips it).
 

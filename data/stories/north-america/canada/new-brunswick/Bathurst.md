@@ -10,6 +10,9 @@ The Doucet Hennessy House, sitting on a hill along St. Peter Avenue overlooking 
 #location
 The Doucet Hennessy House, located at the top of a hill on St. Peter Avenue in Bathurst, New Brunswick, overlooking the Bay of Chaleur.
 
+#proposed-coordinates
+47.6208671, -65.6537546
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ For centuries, residents and sailors along the coast of Bathurst, New Brunswick,
 
 #location
 Chaleur Bay (Baie des Chaleurs), off the coast of Bathurst, New Brunswick, and Heron Island.
+
+#proposed-coordinates
+47.9956883, -66.144945
 
 #upstream-source
 Fonds Catherine-Jolicoeur, Université de Moncton; Bulletin of the Natural History Society of New Brunswick.

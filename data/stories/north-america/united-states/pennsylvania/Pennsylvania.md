@@ -60,6 +60,9 @@ However, despite the heavy application of fuel, the house and Rehmeyer's body mi
 #location
 Nelson Rehmeyer's farmhouse in Rehmeyer's Hollow near Winterstown, York County, Pennsylvania.
 
+#proposed-coordinates
+39.8085101, -76.6489741
+
 #upstream-source
 *Pow-Wows: Or, Long Lost Friend* by John George Hohman.
 
@@ -79,6 +82,9 @@ In late November 1928, John Blymire, struggling with a lifetime of poor health a
 
 #location
 The historic two-story farmhouse of Nelson Rehmeyer is located in Rehmeyer's Hollow near Winterstown in York County, Pennsylvania.
+
+#proposed-coordinates
+39.8085101, -76.6489741
 
 #upstream-source
 None.
@@ -126,6 +132,9 @@ Situated on Quaker Church Road just outside Perryopolis, the site features a sto
 #location
 The historic Providence Meeting House chapel and cemetery are located on Quaker Church Road just outside Perryopolis in Fayette County, Pennsylvania.
 
+#proposed-coordinates
+40.0861401, -79.7616223
+
 #upstream-source
 None.
 
@@ -145,6 +154,9 @@ Built in 1855 along Penns Creek and nicknamed "Swamp Church" due to its boggy su
 
 #location
 Bethesda Evangelical Church stands along a dirt road near Farmers Mills in Gregg Township, Centre County, Pennsylvania.
+
+#proposed-coordinates
+40.8572545, -77.5814042
 
 #upstream-source
 None.
@@ -194,6 +206,9 @@ For generations, motorists traveling along Suscon Road in Pittston Township have
 
 #location
 The haunting takes place along Suscon Road in Pittston Township, Luzerne County, Pennsylvania, specifically near the site of the former railroad underpass in the 1000 block of the road.
+
+#proposed-coordinates
+41.2953263, -75.7091856
 
 #upstream-source
 None.

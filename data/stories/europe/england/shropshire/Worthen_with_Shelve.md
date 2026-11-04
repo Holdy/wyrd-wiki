@@ -10,6 +10,9 @@ Long ago, the Devil was striding across Britain carrying thousands of stones in 
 #location
 The Devil's Chair is a prominent rocky outcrop located at the summit of the Stiperstones ridge in Shropshire.
 
+#proposed-coordinates
+52.5864146, -2.9337834
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ During the expansion of early colonial settlements in Sierra Leone, indigenous p
 #location
 State House (formerly Fort Thornton) on Tower Hill in Freetown, Sierra Leone.
 
+#proposed-coordinates
+8.4865367, -13.23419
+
 #upstream-source
 Mohamed Gibril Sesay (published in 2011).
 
@@ -30,6 +33,9 @@ According to local legend, Mama Lungi is a restless spirit trapped along Wilkins
 #location
 The haunting takes place along Wilkinson Road in Freetown, Sierra Leone.
 
+#proposed-coordinates
+8.4753111, -13.274516
+
 #upstream-source
 None.
 
@@ -49,6 +55,9 @@ Amadu, a young man residing in Freetown, Sierra Leone, became the center of a te
 
 #location
 A local hut on Banana Island, Sierra Leone.
+
+#proposed-coordinates
+8.1140695, -13.2166127
 
 #upstream-source
 Schneider, L. T. (2017). The ogbanje who wanted to stay: The occult, belonging, family and therapy in Sierra Leone. Ethnography, 18(2), 133–152.

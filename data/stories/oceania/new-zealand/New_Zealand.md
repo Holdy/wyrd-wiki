@@ -10,6 +10,9 @@ Te Waru, a prominent warrior and master carver of the Ngati-Whaoa tribe, set out
 #location
 The story is centered at the foot of Paeroa Mountain within the Paeroa Range in the central North Island of New Zealand, located between Rotorua and the Waikato River.
 
+#proposed-coordinates
+-38.136073, 176.2525434
+
 #upstream-source
 Hon. Sir Māui Pōmare and James Cowan, *Legends of the Maori*
 
@@ -29,6 +32,9 @@ In October 2007, 22-year-old Janet Moses began exhibiting erratic behavior follo
 
 #location
 The events took place at a residential flat in the Wellington suburb of Wainuiomata, New Zealand.
+
+#proposed-coordinates
+-41.2618075, 174.9480696
 
 #upstream-source
 None.

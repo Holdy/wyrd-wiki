@@ -10,6 +10,9 @@ Teresa had suffered under the severe torment of internal voices that commanded h
 #location
 The key event took place during an open-air evangelistic rally in the village of Gatamba, located within Karuzi Province, Burundi.
 
+#proposed-coordinates
+-3.1011687, 30.1647524
+
 #upstream-source
 None.
 

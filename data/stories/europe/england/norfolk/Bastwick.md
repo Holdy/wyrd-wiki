@@ -10,6 +10,9 @@ In 1741, Lady Evelyn married Sir Godfrey Haslitt, a union made possible by a lov
 #location
 Bastwick Hall in the Norfolk Broads and Potter Heigham Bridge spanning the River Thurne.
 
+#proposed-coordinates
+52.7131087, 1.593503
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Lady Carew enlisted a local witch to help her daughter, Evelyn, win the hand of 
 
 #location
 Potter Heigham bridge carries the A149 road across the River Thurne in Norfolk.
+
+#proposed-coordinates
+52.7131087, 1.593503
 
 #upstream-source
 None.

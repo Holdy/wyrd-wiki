@@ -10,6 +10,9 @@ On a long winter night around 1896, a stranger dressed in fine, eccentric clothi
 #location
 The Boat Inn is located in Jackfield on the southern bank of the River Severn within the Ironbridge Gorge in Telford, Shropshire.
 
+#proposed-coordinates
+52.6780532, -2.4514219
+
 #upstream-source
 None.
 

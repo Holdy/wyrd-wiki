@@ -10,6 +10,9 @@ After purchasing land and beginning construction on a three-bedroom house in the
 #location
 An unfinished three-bedroom house located in the residential hills of Bisee, Castries, Saint Lucia.
 
+#proposed-coordinates
+14.0095966, -60.9902359
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ According to local tradition recorded in the parish of Hoe, a field south of Hoe
 #location
 The site is located in a field south of Hoe Hall near the Lily Pond, at National Grid Reference TF 9992 1621 in the parish of Hoe, Norfolk.
 
+#proposed-coordinates
+52.706664, 0.957856
+
 #upstream-source
 None.
 

@@ -36,6 +36,9 @@ Long ago on Croxton Heath, a gamekeeper was set upon and killed by rabbit poache
 #location
 A sandpit on Croxton Heath near the Thetford road in Croxton, Norfolk.
 
+#proposed-coordinates
+52.4588678, 0.7701899
+
 #upstream-source
 Olive Cooke: 'Breckland' (Robert Hale, 2nd edition 1980; orig. 1956), p.73.
 
@@ -55,6 +58,9 @@ Long ago on the wild expanse of Croxton Heath, poachers caught by a gamekeeper m
 
 #location
 A sandpit adjacent to the Thetford road on Croxton Heath in the parish of Croxton, Norfolk.
+
+#proposed-coordinates
+52.4588678, 0.7701899
 
 #upstream-source
 Olive Cooke: 'Breckland' (Robert Hale, 2nd edition 1980; orig. 1956), p.73.

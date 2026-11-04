@@ -10,6 +10,9 @@ In the 1830s, the rural Gloucestershire village of Kingscote became the setting 
 #location
 The rural village and civil parish of Kingscote, situated on the uplands of the southern Cotswolds in Gloucestershire, England.
 
+#proposed-coordinates
+51.6586781, -2.2545404
+
 #upstream-source
 Cawte, E. C. (1978). *Ritual Animal Disguise: A Historical and Geographical Study of Animal Disguise in the British Isles*. Cambridge and Totowa: D.S. Brewer Ltd. and Rowman and Littlefield for the Folklore Society.
 

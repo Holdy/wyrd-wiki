@@ -38,6 +38,9 @@ Tom Long was a notorious highwayman who operated across the Cotswolds and ultima
 #location
 The Amberley Inn is located in the village of Amberley, near Stroud in Gloucestershire, overlooking Minchinhampton Common.
 
+#proposed-coordinates
+51.7090252, -2.2082765
+
 #upstream-source
 Matthew Kenton, *Modern Day Ghosts of England*
 

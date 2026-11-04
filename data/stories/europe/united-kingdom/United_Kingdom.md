@@ -10,6 +10,9 @@ Following the Dissolution of the Monasteries, Sir Anthony Browne took possession
 #location
 Cowdray House is located in Midhurst, West Sussex, where its striking Tudor ruins can still be visited today.
 
+#proposed-coordinates
+50.9875553, -0.7160834
+
 #upstream-source
 Mrs Charles Roundell, Cowdray: The History of a Great House
 
@@ -30,6 +33,9 @@ Linked to a real-life tragedy on November 19, 1965, when bride-to-be Suzanne Bro
 #location
 Blue Bell Hill is located on the A229 between Maidstone and Chatham in Kent.
 
+#proposed-coordinates
+51.33333333, 0.5
+
 #upstream-source
 None.
 
@@ -49,6 +55,9 @@ In 1989, Bill and Liz Rich moved into Heol Fanog, a converted stone farmhouse si
 
 #location
 Heol Fanog is a remote farmhouse located in the rural uplands of the Brecon Beacons in Powys, Wales.
+
+#proposed-coordinates
+51.8756413, -3.4017909
 
 #upstream-source
 None.

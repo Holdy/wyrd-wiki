@@ -11,7 +11,7 @@ Before the North-West Mounted Police brought order to the Canadian prairies, the
 The Oldman River, approximately 15 miles upstream from Fort Macleod, Alberta.
 
 #proposed-coordinates
-49.7230555, -113.40416669999999
+49.8168493, -113.2039293
 
 #upstream-source
 "The Riders of the Plains : A Reminiscence of the Early and Exciting Days in the North West" by Cecil Denny (1905).

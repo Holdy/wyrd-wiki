@@ -19,6 +19,12 @@ James McGrath, "The Black Stag -- A Ghost Story," Newfoundland Quarterly (Decemb
 #reference
 https://www.productofnewfoundland.ca/articles/black-stag
 
+#coordinates
+46.90848329498741, -54.114399091955335
+
+#tags
+approx,stag,omen,curse
+
 ---
 
 #title
@@ -41,3 +47,9 @@ None.
 
 #reference
 http://www.dalejarvis.ca/2015/01/the-white-woman-of-arnolds-cove.html
+
+#coordinates
+47.750307346398515, -53.99440890077805
+
+#tags
+approx,haunting,love

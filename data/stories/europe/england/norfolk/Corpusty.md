@@ -62,6 +62,9 @@ A macabre 19th-century tale from the village of Corpusty tells of a man who died
 #location
 St Peter's Church graveyard located in the village of Corpusty, Norfolk.
 
+#proposed-coordinates
+52.8273425, 1.1344793
+
 #upstream-source
 Enid Porter, *The Folklore of East Anglia* (1974).
 

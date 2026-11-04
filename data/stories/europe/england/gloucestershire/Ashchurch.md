@@ -10,6 +10,9 @@ Mr. Cortram investigates the unsettling haunting centered around the north-west 
 #location
 The north-west tower and adjacent churchyard in the parish of Ashchurch, Gloucestershire, UK.
 
+#proposed-coordinates
+51.9986019, -2.1068884
+
 #upstream-source
 Originally published anonymously in *The Argosy* (December 1893), and reprinted in *The Valancourt Book of Victorian Christmas Ghost Stories: Volume Three*, edited by Simon Stern (Valancourt Books, 2018).
 

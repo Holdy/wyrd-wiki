@@ -10,6 +10,9 @@ Built between 1909 and 1912 on the edge of Stave Lake, the Stave Falls Powerhous
 #location
 The Stave Falls Powerhouse is located north of Mission, British Columbia, situated along the edge of Stave Lake and the Stave River.
 
+#proposed-coordinates
+49.2286912, -122.3546186
+
 #upstream-source
 None.
 

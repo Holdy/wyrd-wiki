@@ -36,6 +36,9 @@ Long ago in Mile Gully, a Christian slave named James Knight from the Lyndhurst 
 #location
 The ruins of an old abandoned church situated at Skull Point in the district of Mile Gully, Jamaica.
 
+#proposed-coordinates
+18.1377158, -77.5465679
+
 #upstream-source
 None.
 

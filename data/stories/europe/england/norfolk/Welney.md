@@ -10,6 +10,9 @@ The tiny hamlet of Gold Hill, situated beside the B1411 just inside Welney paris
 #location
 Gold Hill is a small hamlet located beside the B1411 road in Welney parish, adjacent to the Hundred Foot Washes near the Norfolk-Cambridgeshire border.
 
+#proposed-coordinates
+52.4899947, 0.2323405
+
 #upstream-source
 W. H. Barrett: ‘Tales from the Fens’ (Routledge & Kegan Paul, 1963), p.133-5.
 

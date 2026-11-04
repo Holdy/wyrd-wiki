@@ -10,6 +10,9 @@ Located on the road leading towards Newland from Redbrook, Swan Pool has long ca
 #location
 Swan Pool is situated on the road between Redbrook and Newland in the Forest of Dean, Gloucestershire.
 
+#proposed-coordinates
+51.7694678, -2.6446029
+
 #upstream-source
 None.
 

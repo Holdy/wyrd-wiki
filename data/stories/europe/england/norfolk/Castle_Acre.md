@@ -10,6 +10,9 @@ Local tradition maintains that beneath the historic Ostrich pub in Castle Acre, 
 #location
 The cellar of the Ostrich pub is located at map reference TF81661514 in the village of Castle Acre, Norfolk.
 
+#proposed-coordinates
+52.7040458, 0.6879115
+
 #upstream-source
 Paul Lee: 'The Ghosts of King's Lynn and West Norfolk' (2nd ed, 2023), p.239.
 

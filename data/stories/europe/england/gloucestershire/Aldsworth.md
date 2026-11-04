@@ -10,6 +10,9 @@ Local legend in Aldsworth, Gloucestershire, tells of a phantom coach and etherea
 #location
 Lodge Park and Larkethill Wood are situated in Aldsworth, Gloucestershire, UK.
 
+#proposed-coordinates
+51.8126718, -1.8006463
+
 #upstream-source
 None.
 

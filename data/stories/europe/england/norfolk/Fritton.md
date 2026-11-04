@@ -10,6 +10,9 @@ In 1528, William Stapleton, a monk who had abandoned St. Benet's Abbey to pursue
 #location
 Bell Hill mound (TG466014) in the parish of Fritton and St Olaves, Norfolk.
 
+#proposed-coordinates
+52.554950, 1.637088
+
 #upstream-source
 L. V. Grinsell: 'Folklore of Prehistoric Sites in Britain' (David & Charles, 1976), p.137.
 

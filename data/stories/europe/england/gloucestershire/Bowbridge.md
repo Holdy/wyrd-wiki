@@ -10,6 +10,9 @@ Along the stretch of the canal passing through Bowbridge on the Stroudwater Navi
 #location
 The canal passing through Bowbridge, on the outskirts of Stroud, Gloucestershire.
 
+#proposed-coordinates
+51.7454766, -2.2180847
+
 #upstream-source
 None.
 

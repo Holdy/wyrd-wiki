@@ -10,6 +10,9 @@ The Martyrs' House, a Grade II* listed building located on the High Street in Li
 #location
 The Martyrs' House, High Street, Little Walsingham, Norfolk, located opposite the historic entrance to St Mary's Priory.
 
+#proposed-coordinates
+51.4441936, -0.556506
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ Outside the historic Iglesia y Convento de los Padres Dominicos in the Colonial 
 #location
 The Church and Convent of Dominican Fathers stands at the corner of Calle Padre Billini and Calle Hostos in the Colonial Zone of Santo Domingo.
 
+#proposed-coordinates
+18.4735361, -69.8853657
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ According to local accounts from the Villa Duarte sector, a woman who perished i
 
 #location
 Las Américas Avenue in Santo Domingo East, Dominican Republic, specifically along the section between the Darío Contreras hospital and the Juan Carlos bridge.
+
+#proposed-coordinates
+19.178345, -70.11158
 
 #upstream-source
 None.

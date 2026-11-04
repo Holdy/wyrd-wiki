@@ -10,6 +10,9 @@ In the village of Aldborough in Norfolk, local tradition maintains that smugglin
 #location
 The Watch Oak on Hall Lane in the village of Aldborough, Norfolk.
 
+#proposed-coordinates
+52.8620103, 1.2428681
+
 #upstream-source
 Federation of Essex Women’s Institutes: ‘The Norfolk Village Book’ (Countryside Books, 1990), p.12.
 

@@ -10,6 +10,9 @@ According to an account given by a local ploughman, mysterious "hollow hills" on
 #location
 A field located just north-east of St. Mary's Church (TF63301594) in West Winch, Norfolk.
 
+#proposed-coordinates
+52.7086615, 0.4076104
+
 #upstream-source
 Heritage Gateway (UID 616367).
 

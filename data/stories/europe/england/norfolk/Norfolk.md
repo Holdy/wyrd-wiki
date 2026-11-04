@@ -10,6 +10,9 @@ Sir Thomas Boleyn, father of the ill-fated Queen Anne Boleyn and Lord George Bol
 #location
 The road and bridges spanning between Wroxham and Blickling Hall in Norfolk, UK.
 
+#proposed-coordinates
+52.811735, 1.2317081
+
 #upstream-source
 Alison Weir, The Lady in the Tower (Random House, 2009).
 

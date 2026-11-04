@@ -10,6 +10,9 @@ First documented by the *Hay Springs News* in 1921, stories circulated among res
 #location
 Walgren Lake (formerly Alkali Lake), located just south of Hay Springs, Nebraska.
 
+#proposed-coordinates
+42.6377327, -102.6263081
+
 #upstream-source
 Mari Sandoz (*Old Jules*); Federal Writers' Project (1938).
 
@@ -29,6 +32,9 @@ According to local legend, a young man living on a farm southeast of Nebraska Ci
 
 #location
 Seven Sisters Road (L Street), located approximately five miles southeast of Nebraska City in Otoe County, Nebraska.
+
+#proposed-coordinates
+40.676526, -95.858694
 
 #upstream-source
 None.
@@ -50,6 +56,9 @@ According to local folklore in Otoe County, a local man flew into a rage and han
 #location
 Seven Sisters Road (now known as L Street) is located about five miles southeast of Nebraska City, Nebraska.
 
+#proposed-coordinates
+40.676526, -95.858694
+
 #upstream-source
 None.
 
@@ -69,6 +78,9 @@ According to local legend, a young man living on a farm southeast of Nebraska Ci
 
 #location
 Seven Sisters Road, also known as L Street, is located approximately five miles southeast of Nebraska City in Otoe County, Nebraska.
+
+#proposed-coordinates
+40.676526, -95.858694
 
 #upstream-source
 None.
@@ -90,11 +102,20 @@ The Captain Bailey House was originally built near the Missouri River by Civil W
 #location
 The Captain Bailey House Museum is located at 404 Main Street in Brownville, Nebraska.
 
+#proposed-coordinates
+40.397572391258, -95.660250740151
+
 #upstream-source
 None.
 
 #reference
 https://www.brownvillehistoricalsociety.org/captainbailey
+
+#coordinates
+40.39777, -95.66070
+
+#tags
+named-ghost
 
 ---
 
@@ -109,6 +130,9 @@ In 1849, a young woman living atop Blackbird Hill unexpectedly reunited with her
 
 #location
 Blackbird Hill is located eight miles north of Decatur, Nebraska, overlooking the Missouri River on the Omaha Indian Reservation.
+
+#proposed-coordinates
+39.8454163, -88.9524151
 
 #upstream-source
 None.
@@ -152,6 +176,9 @@ An Indian chief, grief-stricken over the death of his beloved wife, traveled far
 
 #location
 A pillar of salt located on the Nebraska plain, approximately 40 miles above the confluence of the Saline River and the Platte River.
+
+#proposed-coordinates
+40.9781115, -98.1511236
 
 #upstream-source
 Charles M. Skinner, Myths and Legends of Our Own Land (1896).

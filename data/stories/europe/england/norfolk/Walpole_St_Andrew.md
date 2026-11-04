@@ -10,6 +10,9 @@ According to local folklore, a treacherous pool on the southern side of the King
 #location
 King John's Hole, located on the southern side of the King's Lynn to Long Sutton Road in Walpole St. Andrew.
 
+#proposed-coordinates
+52.754, 0.398
+
 #upstream-source
 W. A. Dutt: 'The Norfolk & Suffolk Coast' (T. Fisher Unwin, 1909), p.400.
 

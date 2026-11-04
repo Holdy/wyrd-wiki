@@ -10,6 +10,9 @@ Hidden among the dusty rafters beneath the spire of Egeskov Castle on the island
 #location
 Egeskov Castle is situated on the island of Funen (Fyn) in southern Denmark, near the town of Kværndrup.
 
+#proposed-coordinates
+55.17638889, 10.48944444
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ In the historic district of Copenhagen near Amaliegade and Sankt Annæ Plads, pa
 
 #location
 The corner of Sankt Annæ Plads and Amaliegade in Copenhagen, Denmark.
+
+#proposed-coordinates
+55.6813921, 12.5920633
 
 #upstream-source
 None.

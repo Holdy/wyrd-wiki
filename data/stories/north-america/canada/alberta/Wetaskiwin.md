@@ -11,7 +11,7 @@ While cataloging paranormal hotspots throughout the region, researchers investig
 The Edmonton International Raceway is located in the County of Wetaskiwin, Alberta.
 
 #proposed-coordinates
-52.9691667, -113.37694439999999
+52.9879254, -113.4524873
 
 #upstream-source
 Wetaskiwin's Lost and Forgotten by Kevin Saucier.

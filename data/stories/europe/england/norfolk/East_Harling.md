@@ -10,6 +10,9 @@ In the Norfolk village of East Harling, traditional folklore preserves the legen
 #location
 Pilgrim's Meadow in East Harling, Norfolk, UK.
 
+#proposed-coordinates
+52.4392521, 0.9326761
+
 #upstream-source
 None.
 

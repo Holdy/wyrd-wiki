@@ -59,6 +59,9 @@ Built in 1811 and later embellished with grand white columns in the 1840s, Herit
 #location
 Heritage Hall is located along Main Street in Madison, Georgia.
 
+#proposed-coordinates
+33.451245, -82.2093704
+
 #upstream-source
 Morgan County Historical Society local archives and oral traditions.
 
@@ -78,6 +81,9 @@ During the Civil War, John J. Griffen, Jr. suffered a battle wound near Newnan, 
 
 #location
 Smith Hall stands on the campus of LaGrange College in LaGrange, Georgia.
+
+#proposed-coordinates
+33.0338111, -85.0467503
 
 #upstream-source
 None.
@@ -122,6 +128,9 @@ Nestled along Euharlee Creek, the rural town of Euharlee carries scars from the 
 #location
 Mount Zion Cemetery at Tilley Mill and the Euharlee Covered Bridge in Euharlee, Georgia.
 
+#proposed-coordinates
+34.1426874, -84.931087
+
 #upstream-source
 Haunted History: Atlanta and North Georgia by Corinna Underwood.
 
@@ -141,6 +150,9 @@ Situated in Savannah's historic district, the Pirate's House incorporates the He
 
 #location
 The Pirate's House is located at 20 E Broad St, Savannah, GA 31401.
+
+#proposed-coordinates
+32.0790074, -81.0921335
 
 #upstream-source
 None.
@@ -162,6 +174,9 @@ Chartered in 1850 and sprawling across nearly 50 acres, Oakland Cemetery is Atla
 #location
 Oakland Cemetery is located at 248 Oakland Ave SE, Atlanta, GA 30312.
 
+#proposed-coordinates
+33.7486896, -84.3721635
+
 #upstream-source
 None.
 
@@ -182,6 +197,9 @@ Old Ghost Road in Brooklet, Georgia, is a secluded dirt lane infamous for its ee
 #location
 Old Ghost Road is located in the rural town of Brooklet, Bulloch County, Georgia.
 
+#proposed-coordinates
+32.3796294, -81.6631659
+
 #upstream-source
 None.
 
@@ -201,6 +219,9 @@ Built in 1851 by Mary Magdalene Leaver Marshall, the Marshall House on East Brou
 
 #location
 The Marshall House is located at 123 E Broughton St, Savannah, GA 31401.
+
+#proposed-coordinates
+32.0783466, -81.0905621
 
 #upstream-source
 None.

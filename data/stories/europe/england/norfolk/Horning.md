@@ -10,6 +10,9 @@ At St. Benedict's church in Horning, four stone statues representing the Four Ev
 #location
 St. Benedict's Church stands in the Broadland village of Horning, Norfolk (grid reference TG355166).
 
+#proposed-coordinates
+52.696254, 1.484507
+
 #upstream-source
 W. B. Gerish: 'Norfolk Folklore Collections' (unpublished, 1916-18, compiled by William de Castre), Vol.4, p.100.
 

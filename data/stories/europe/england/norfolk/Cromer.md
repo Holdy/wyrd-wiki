@@ -10,6 +10,9 @@ During the period when the chancel of the church of St. Peter and St. Paul in Cr
 #location
 The churchyard of St. Peter and St. Paul (Cromer Parish Church) located on Church Street in Cromer, Norfolk.
 
+#proposed-coordinates
+52.9310174, 1.3011496
+
 #upstream-source
 Walter Rye, *Cromer Past and Present* (1889)
 
@@ -32,6 +35,9 @@ In the late 19th century, a workman hired to clear away rubbish from the ruined 
 
 #location
 The churchyard of St Peter and St Paul’s Church, situated on Church Street in the coastal town of Cromer, Norfolk.
+
+#proposed-coordinates
+52.9310174, 1.3011496
 
 #upstream-source
 Walter Rye, Cromer Past and Present (1899).

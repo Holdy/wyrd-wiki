@@ -10,6 +10,9 @@ In times long past, the vibrant and prosperous village of Chokhercamiri was home
 #location
 The ruined settlement of Chokhercamiri is located in the mountainous region of Bolivia, historically associated with Andean folklore collections from the La Paz Department.
 
+#proposed-coordinates
+-10.9690231, -66.8159059
+
 #upstream-source
 Antonio Paredes Candía, *Literatura Popular Boliviana* (or related folklore compilations of his works such as *Bernita de Chokhercamiri*).
 

@@ -10,6 +10,9 @@ In the village of Todan, a young mother was busy washing clothes while her baby 
 #location
 Todan Village in the Goranboy region of Azerbaijan.
 
+#proposed-coordinates
+40.6083463, 46.7877641
+
 #upstream-source
 Sadnik Pirsultanli, "Legends from Azerbaijan: Stone Bride", published in Azerbaijan International, Spring 2005 (Vol. 13.1).
 

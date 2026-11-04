@@ -10,6 +10,9 @@ In 1909, an elderly man from the neighbouring village of Thompson shared a local
 #location
 A pit located approximately half a mile southeast of the former Cock Inn site along the road toward Thetford within the deserted parish of Stanford, Norfolk (around grid reference TL855938).
 
+#proposed-coordinates
+52.510952, 0.732814
+
 #upstream-source
 W. G. Clarke: 'In Breckland Wilds' (Robert Scott, 1925), p.165.
 

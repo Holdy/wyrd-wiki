@@ -10,6 +10,9 @@ In the rugged and desolate expanse of the South Dakota Badlands, a ghostly bansh
 #location
 Watch Dog butte within the rugged landscape of the South Dakota Badlands.
 
+#proposed-coordinates
+45.2208205, -102.730996
+
 #upstream-source
 Charles M. Skinner, *Myths and Legends of Our Own Land* (1896); Jason Offutt, *Chasing American Monsters* (2019).
 
@@ -29,6 +32,9 @@ In the rugged, labyrinthine expanse of the South Dakota Badlands, near the geogr
 
 #location
 Watchdog Butte is located within the Badlands region of Pennington County, South Dakota.
+
+#proposed-coordinates
+43.9955746, -102.7854668
 
 #upstream-source
 Skinner, Charles M. *Myths and Legends of Our Own Land*. Philadelphia: J.B. Lippincott Company, 1896.
@@ -102,6 +108,9 @@ Sica Hollow State Park, whose name derives from the Dakota Sioux word *Sica* mea
 #location
 Sica Hollow State Park is located about 15 miles northeast of Sisseton in Roberts County, northeastern South Dakota.
 
+#proposed-coordinates
+45.7425654, -97.2326202
+
 #upstream-source
 Written by Wambdi Wicasa (Father Stanislaus Maudlin) from the American Indian Culture Research Center.
 
@@ -174,6 +183,9 @@ In 1876, Seth Bullock arrived in Deadwood, Dakota Territory, and was soon appoin
 #location
 The historic Bullock Hotel is located at 633 Main Street in downtown Deadwood, South Dakota.
 
+#proposed-coordinates
+44.377811040638, -103.729161261578
+
 #upstream-source
 None.
 
@@ -193,6 +205,9 @@ Spook Road, officially known as 264th Street, is a narrow, three-mile stretch of
 
 #location
 264th Street (commonly known as Spook Road), located just south of Brandon in Splitrock Township, South Dakota.
+
+#proposed-coordinates
+43.5909294, -96.5874544
 
 #upstream-source
 None.

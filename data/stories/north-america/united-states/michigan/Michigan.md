@@ -10,11 +10,17 @@ Constructed by Scottish immigrant John G. Bruce, the mansion famously survived a
 #location
 The Bruce Mansion is located in Brown City, Michigan.
 
+#proposed-coordinates
+43.2100157, -83.07803
+
 #upstream-source
 None.
 
 #reference
 https://deltacollegiate.org/a-night-in-michigans-haunted-mansion-the-bruce-mansion/
+
+#tags
+named-ghost
 
 ---
 
@@ -56,6 +62,9 @@ Since the 1960s, visitors and locals have gathered along a rural stretch of road
 #location
 The phenomenon is observed from a designated viewing area on Robbins Pond Road, located off US Highway 45 between Watersmeet and Paulding in Michigan's Upper Peninsula.
 
+#proposed-coordinates
+41.1381051, -84.5805082
+
 #upstream-source
 None.
 
@@ -76,6 +85,9 @@ Since the 1960s, visitors have gathered in a remote viewing area off Robbins Pon
 #location
 The observation area is located off Robbins Pond Road/Old US 45 in a valley near Paulding in the Upper Peninsula of Michigan.
 
+#proposed-coordinates
+46.4013349, -89.1798638
+
 #upstream-source
 None.
 
@@ -95,6 +107,9 @@ Originally constructed in 1886 as the Michigan Central Railroad Depot, the grand
 
 #location
 The Gandy Dancer restaurant is located at 401 Depot St, Ann Arbor, MI 48104, near the edge of downtown Ann Arbor.
+
+#proposed-coordinates
+42.287186, -83.7416864
 
 #upstream-source
 None.
@@ -139,11 +154,17 @@ Commissioned in 1886 and completed in 1895, the Seul Choix Point Lighthouse in G
 #location
 The Seul Choix Point Lighthouse is located on the Upper Peninsula shore of Lake Michigan near Gulliver, Michigan.
 
+#proposed-coordinates
+45.9213443, -85.9121859
+
 #upstream-source
 Haunted Travels of Michigan by Kat Tedsen.
 
 #reference
 https://news.jrn.msu.edu/2023/10/a-tale-of-a-haunted-lighthouse-seul-choix-points-spirits/
+
+#tags
+duplicate
 
 ---
 
@@ -158,6 +179,9 @@ The land has been farmed for two centuries, and its iconic Classical Revival cob
 
 #location
 Historic Cobblestone Farm is located at 2781 Packard St, Ann Arbor, MI 48108.
+
+#proposed-coordinates
+42.2657666, -83.735088
 
 #upstream-source
 Haunted Travels of Michigan by Beverlee J. Rydel and Kathleen R. Tedsen.
@@ -178,6 +202,9 @@ Over a hundred years ago, a newlywed couple in their twenties suffered a horrifi
 
 #location
 Milan-Oakville Road, located east of Milan, Michigan.
+
+#proposed-coordinates
+42.0848616, -83.6830279
 
 #upstream-source
 None.

@@ -33,6 +33,9 @@ Marguerite Dollar was originally from Bouctouche, New Brunswick, before her fami
 #location
 The town of Bouctouche, New Brunswick, where Marguerite Dollar and her father originally lived before moving to Tignish.
 
+#proposed-coordinates
+46.9504992, -64.0332525
+
 #upstream-source
 Acadian Legends, Folktales & Songs from Prince Edward Island by Georges Arsenault.
 

@@ -10,6 +10,9 @@ A shepherd walking back from Gloucester to Birdlip with medicine for a sick shee
 #location
 Rowland Badger’s Knap and Black Dog Lane along Birdlip Hill within the parish of Great Witcombe, Gloucestershire.
 
+#proposed-coordinates
+51.8257166, -2.1100026
+
 #upstream-source
 None.
 

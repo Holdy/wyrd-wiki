@@ -10,11 +10,17 @@ Built in the mid-19th century, the stately Anderson House became the focal point
 #location
 The Anderson House is located in Lexington, Missouri.
 
+#proposed-coordinates
+39.1908798, -93.880936
+
 #upstream-source
 Offutt, Jason. *Haunted Missouri: A Ghostly Guide to the Show-Me State’s Most Spirited Spots*.
 
 #reference
 https://www.sos.mo.gov/archives/presentations/ap_transcripts/haunted
+
+#tags
+ghost
 
 ---
 
@@ -53,6 +59,9 @@ Built between 1898 and 1900 by wealthy lumber baron John J. Cruikshank, Rockclif
 #location
 Rockcliffe Mansion is located on a rocky bluff overlooking the Mississippi River in Hannibal, Missouri.
 
+#proposed-coordinates
+39.7081117, -91.3658871
+
 #upstream-source
 None.
 
@@ -72,6 +81,9 @@ For more than a hundred years, an anomalous glowing sphere known as the Hornet S
 
 #location
 The four-mile gravel road known as Devil's Promenade, located southwest of Joplin, Missouri, near the hamlet of Hornet.
+
+#proposed-coordinates
+37.0841838, -94.5133385
 
 #upstream-source
 None.
@@ -93,6 +105,9 @@ Built during the 19th century as part of the University of Missouri's early hist
 #location
 Conley House is located on the campus of the University of Missouri in Columbia, Missouri.
 
+#proposed-coordinates
+38.9364147, -92.329703
+
 #upstream-source
 None.
 
@@ -112,6 +127,9 @@ In July 1972, a wave of bizarre encounters shook the small town of Louisiana, Mi
 
 #location
 Marzolf Hill on the outskirts of Louisiana, Missouri.
+
+#proposed-coordinates
+39.4492151, -91.0465742
 
 #upstream-source
 None.
@@ -133,11 +151,17 @@ Constructed at the turn of the 20th century by wealthy lumber baron John Cruicks
 #location
 Rockcliffe Mansion is located in Hannibal, Missouri.
 
+#proposed-coordinates
+39.7081117, -91.3658871
+
 #upstream-source
 Offutt, Jason. *Haunted Missouri: A Ghostly Guide to the Show-Me State’s Most Spirited Spots*.
 
 #reference
 https://www.sos.mo.gov/archives/presentations/ap_transcripts/haunted
+
+#tags
+named-ghost
 
 ---
 
@@ -152,6 +176,9 @@ Upper Blackwell Road, a 3.6-mile stretch leading to the small town of Blackwell,
 
 #location
 Upper Blackwell Road is a 3.6-mile stretch of road running directly into the town of Blackwell in Missouri.
+
+#proposed-coordinates
+38.0445791, -90.6210881
 
 #upstream-source
 None.
@@ -172,6 +199,9 @@ Opened initially in 1888 and rebuilt after devastating fires in 1898 and 1910, t
 
 #location
 The Elms Hotel is located at 401 Regent Street in Excelsior Springs, Missouri.
+
+#proposed-coordinates
+39.337390749818, -94.225670727394
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ At the crossroads historically situated on the boundary between Barnham Broom an
 #location
 Skipping Block Corner is located at grid reference TG074053 at the crossroads on the historic boundary between Barnham Broom and Kimberley in Norfolk.
 
+#proposed-coordinates
+52.606302, 1.062242
+
 #upstream-source
 W. A. Dutt, *The Ancient Mark-Stones of East Anglia* (Flood & Sons, 1926), pp. 23-4.
 

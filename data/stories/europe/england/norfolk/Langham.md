@@ -10,6 +10,9 @@ Long before modern times, the small agricultural parish of Langham was divided i
 #location
 The site of the vanished St Mary's church is located in a field north of the Binham Road in the village of Langham, Norfolk.
 
+#proposed-coordinates
+52.9269972, 0.9643896
+
 #upstream-source
 Michael Medlar, 'Early sixteenth century wills of Langham as indicators of religious change', The Glaven Historian 9; Peter Tolhurst, Norfolk Parish Treasures: North and West Norfolk, Black Dog Books (2014).
 

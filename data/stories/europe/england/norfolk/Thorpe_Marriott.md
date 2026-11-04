@@ -10,6 +10,9 @@ In 2004, a couple living in a 1980s three-bedroom house in Thorpe Marriott began
 #location
 A residential house situated on a quiet cul-de-sac within the Thorpe Marriott housing estate in Norfolk, UK.
 
+#proposed-coordinates
+52.6872905, 1.2088398
+
 #upstream-source
 None.
 

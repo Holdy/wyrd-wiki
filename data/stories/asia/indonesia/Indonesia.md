@@ -10,6 +10,9 @@ According to ancient lore, a prince and a princess belonging to the high Brahman
 #location
 Tanah Lot Temple is located on a large offshore rock formation in the Tabanan Regency, approximately 20 kilometers northwest of Denpasar, Bali, Indonesia.
 
+#proposed-coordinates
+-8.6212286, 115.0868849
+
 #upstream-source
 None.
 
@@ -30,6 +33,9 @@ Following an extended flag ceremony at a public high school in Banjarmasin, Sout
 #location
 The library of a public high school in Banjarmasin, South Kalimantan, Indonesia.
 
+#proposed-coordinates
+-3.3187496, 114.5925828
+
 #upstream-source
 None.
 
@@ -49,6 +55,9 @@ Decades ago, a young woman was reportedly kidnapped and murdered by a bandit, wh
 
 #location
 The story takes place at Ancol Bridge along Jalan RE Martadinata where it crosses the Ancol River in North Jakarta, Indonesia.
+
+#proposed-coordinates
+-6.1267961, 106.8494416
 
 #upstream-source
 Ridwan Saidi, *Ketoprak Betawi* (2001).

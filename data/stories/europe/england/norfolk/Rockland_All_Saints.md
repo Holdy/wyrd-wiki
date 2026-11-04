@@ -10,6 +10,9 @@ In the Norfolk parish encompassing Rockland All Saints, St Andrew's Church event
 #location
 The ruins of St Andrew's Church are located southeast of All Saints' Church in Rocklands (Rockland All Saints), Norfolk (NR17 1XN).
 
+#proposed-coordinates
+52.5308459, 0.9342125
+
 #upstream-source
 W.R. Lebbell & S. Fay, *A Little History of Great Ellingham*; Francis Blomefield, *An Essay Towards A Topographical History of the County of Norfolk*.
 

@@ -10,6 +10,9 @@ For generations, local lore surrounding the ancient Roman site of Venta Icenorum
 #location
 The secret tunnel and buried gates are said to be located at the site of Venta Icenorum (Caistor Roman Town / Caistor Camp) in Caistor St Edmund, Norfolk.
 
+#proposed-coordinates
+52.5797071, 1.2812797
+
 #upstream-source
 W. B. Gerish: 'Norfolk Folklore Collections' (unpublished, 1916-18), Vol.4, pp.57-8.
 

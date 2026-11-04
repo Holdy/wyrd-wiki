@@ -10,6 +10,9 @@ While truant from church on a Sunday morning, young John Lambton went fishing in
 #location
 Worm Hill is located near Fatfield, Washington, alongside the River Wear within the City of Sunderland, Tyne and Wear.
 
+#proposed-coordinates
+54.8805015, -1.5173651
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ In August 2015, Rob Davies and Chris Felton, radio presenters from Gateshead, ha
 
 #location
 The A696 near Belsay, Northumberland
+
+#proposed-coordinates
+55.1095005, -1.8664431
 
 #upstream-source
 None.

@@ -12,6 +12,9 @@ Known as Old Scarfe, the phantom hound was said to lope nightly between Great Ya
 #location
 The Roman fort and surrounding parish of Burgh Castle in Norfolk, situated near the confluence of the rivers Waveney and Yare.
 
+#proposed-coordinates
+52.5870906, 1.6598389
+
 #upstream-source
 None.
 
@@ -57,6 +60,9 @@ According to local folklore, Baron Rudolph Scarfe was a 13th-century mercenary k
 
 #location
 The ruins of the 3rd-century Roman fort located in the village of Burgh Castle, Norfolk, overlooking the Waveney valley.
+
+#proposed-coordinates
+52.5870906, 1.6598389
 
 #upstream-source
 None.

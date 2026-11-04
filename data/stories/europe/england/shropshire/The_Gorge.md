@@ -10,6 +10,9 @@ On a long winter night leading up to Christmas, a mysterious stranger dressed in
 #location
 The Boat Inn located in The Tuckies area of Jackfield, within The Gorge civil parish, Shropshire.
 
+#proposed-coordinates
+52.6240434, -2.4660099
+
 #upstream-source
 None.
 

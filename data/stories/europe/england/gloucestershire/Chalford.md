@@ -10,6 +10,9 @@ In February 1766, a Minchinhampton gentleman named Richard Parsons visited a fri
 #location
 The events took place at a private house in Chalford, Gloucestershire, and Richard Parsons was buried at the parish church of Bisley.
 
+#proposed-coordinates
+51.3234698, -0.6383949
+
 #upstream-source
 William Dallaway (High Sheriff of Gloucestershire) in the _Annual Register_ (1766), as cited in John Ashton's _The History of Gambling in England_ (1898), alongside the Bisley Parish Register (P47/IN1/2) held at the Gloucestershire Archives.
 
@@ -32,6 +35,9 @@ Sometime before the enclosure of the Bisley Commons in 1869, two men from Chalfo
 
 #location
 Money Tump is an ancient Bronze Age round barrow situated along the track between Nash End and France Lynch, near Chalford and Bisley in Gloucestershire, England.
+
+#proposed-coordinates
+51.7417828, -2.1419242
 
 #upstream-source
 None.

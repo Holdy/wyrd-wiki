@@ -39,6 +39,9 @@ Regional legend holds that during a flight from French warships, pirates buried 
 #location
 Shellbird Island in the Bay of Islands, Newfoundland and Labrador.
 
+#proposed-coordinates
+49.117676, -58.2908524
+
 #upstream-source
 Ghost Stories of Newfoundland and Labrador by Edward Butts
 

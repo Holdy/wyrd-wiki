@@ -10,6 +10,9 @@ Father Silverio was called to examine a twelve-year-old Shuar girl named Mik liv
 #location
 The events took place at the parish mission office and surrounding hills in the town of Limón Indanza within the Morona Santiago province of Ecuador.
 
+#proposed-coordinates
+-3.0524261, -78.3180008
+
 #upstream-source
 *Limón Indanza: Notes from My Land Compilation of Travelers' Stories, Interviews, Editorials and Writings from before its foundation in 1914* by Nardo Iñiguez Marín (incorporating the notes of Father Silverio Equisoain).
 
@@ -33,6 +36,9 @@ Dominating the historic skyline of Quito, the Basílica del Voto Nacional is the
 #location
 The Basílica del Voto Nacional is located in the historic center of Quito, Ecuador, bordered by Calle Carchi and Calle Venezuela.
 
+#proposed-coordinates
+-1.0249283, -79.4607975
+
 #upstream-source
 None.
 
@@ -52,6 +58,9 @@ In 2021 during the COVID-19 pandemic, Sintia Robles was traveling by car with fa
 
 #location
 The sighting occurred on the road adjacent to the El Ángel cemetery in the Espejo Canton of Carchi Province, Ecuador.
+
+#proposed-coordinates
+-0.202947, -78.4875087
 
 #upstream-source
 None.

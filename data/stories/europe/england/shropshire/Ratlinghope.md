@@ -10,6 +10,9 @@ According to Shropshire folklore, the Devil was once traveling across the land c
 #location
 The top of the Devil's Chair rock formation on the Stiperstones ridge in Ratlinghope, Shropshire.
 
+#proposed-coordinates
+52.5864146, -2.9337834
+
 #upstream-source
 None.
 

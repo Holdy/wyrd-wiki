@@ -10,6 +10,9 @@ For centuries, iron ore miners working the labyrinthine tunnels of Clearwell Cav
 #location
 Clearwell Caves are located off the B4228 road near the village of Clearwell in the Forest of Dean, Gloucestershire.
 
+#proposed-coordinates
+51.7712237, -2.6143451
+
 #upstream-source
 None.
 

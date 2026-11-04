@@ -11,7 +11,7 @@ Local legend holds that the downtown core of Corner Brook is traversed by variou
 West Street in downtown Corner Brook, Newfoundland and Labrador.
 
 #proposed-coordinates
-48.93589404759248, -57.90680187076465
+48.9514281, -57.9417919
 
 #upstream-source
 Local oral tradition and regional folklore journalism.

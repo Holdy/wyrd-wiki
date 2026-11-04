@@ -10,6 +10,9 @@ Long ago, a massive sea monster—suspected to be a knucker dragon—swam up the
 #location
 The riverbanks along the River Severn at Coombe Hill in the parish of Leigh, Gloucestershire.
 
+#proposed-coordinates
+51.942433, -2.1629971
+
 #upstream-source
 None.
 

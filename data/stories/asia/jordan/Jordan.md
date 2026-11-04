@@ -10,6 +10,9 @@ A local businessman in Zarqa, Jordan, became afflicted by spirit possession when
 #location
 A residence in the city of Zarqa, located just northeast of Amman, Jordan.
 
+#proposed-coordinates
+31.9710155, 35.8580467
+
 #upstream-source
 None.
 

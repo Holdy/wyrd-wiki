@@ -10,6 +10,9 @@ In the village of Ha Ratau, situated across the Qeme Plateau in Lesotho, a famil
 #location
 A residential home in the village of Ha Ratau, located across the Qeme Plateau in Lesotho.
 
+#proposed-coordinates
+-29.4765909, 27.3954821
+
 #upstream-source
 None.
 

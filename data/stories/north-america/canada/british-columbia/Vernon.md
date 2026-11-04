@@ -11,7 +11,7 @@ Founded in 1867, the Historic O'Keefe Ranch is regarded as one of the most haunt
 The Historic O'Keefe Ranch is situated at 9385 Highway 97 North just north of Vernon, British Columbia.
 
 #proposed-coordinates
-50.2655556, -119.2713889
+50.40611111, -119.32083333
 
 #upstream-source
 None.

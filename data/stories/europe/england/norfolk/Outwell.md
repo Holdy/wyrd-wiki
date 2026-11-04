@@ -10,6 +10,9 @@ The 16th-century country house known as Beaupré Hall once stood in Outwell, fea
 #location
 The site of the former Beaupré Hall is located at grid reference TF51510456 in Outwell, Norfolk, near the River Nene.
 
+#proposed-coordinates
+52.6172, 0.23343
+
 #upstream-source
 Eastern Daily Press, September 9th, 1939.
 

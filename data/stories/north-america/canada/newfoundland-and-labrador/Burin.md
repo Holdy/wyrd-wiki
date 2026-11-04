@@ -11,7 +11,7 @@ In the coastal town of St. Lawrence on the Burin Peninsula, a grieving widower n
 The events take place at a saltbox house situated near the churchyard and cemetery in St. Lawrence on the Burin Peninsula, Newfoundland.
 
 #proposed-coordinates
-47.08069918670843, -55.173494982325956
+47.1344405, -55.3053469
 
 #upstream-source
 P.J. Kinsella, Some Superstitions and Traditions of Newfoundland (1919).
@@ -34,7 +34,7 @@ In Fortune Bay, adjacent to the Burin Peninsula, a group of local fishermen sail
 The sightings occurred in the waters and coastal hills between Harbour Mille and Bay de L'Eau in Fortune Bay, near the Burin Peninsula, Newfoundland.
 
 #proposed-coordinates
-47.08069918670843, -55.173494982325956
+47.1344405, -55.3053469
 
 #upstream-source
 None.

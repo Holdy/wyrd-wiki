@@ -10,6 +10,9 @@ In the late 19th century, a destitute Spanish immigrant named Vicente Rodríguez
 #location
 The historic city of Baracoa, located in the easternmost province of Guantánamo, Cuba.
 
+#proposed-coordinates
+20.1431797, -75.2034783
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Along the Havana-Pinar del Río highway at kilometer 78 in the municipality of S
 
 #location
 The haunted house sits right next to the Havana-Pinar del Río highway at kilometer 78 in the municipality of San Cristóbal, Artemisa province, Cuba.
+
+#proposed-coordinates
+22.8127715, -82.7630555
 
 #upstream-source
 None.

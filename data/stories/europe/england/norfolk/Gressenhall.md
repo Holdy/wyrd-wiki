@@ -10,6 +10,9 @@ When the Norfolk Archaeological Unit moved into the east wing of the former Gres
 #location
 The Spong Room is located on the first floor of Union House at the former Gressenhall Farm and Workhouse in Gressenhall, Norfolk.
 
+#proposed-coordinates
+52.7149539, 0.9219826
+
 #upstream-source
 None.
 

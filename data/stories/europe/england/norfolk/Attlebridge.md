@@ -36,6 +36,9 @@ Referred to locally as Owd Rugman (or Owd Rugusan), this elusive regional hell h
 #location
 The dark country lanes and isolated field footpaths around the village of Attlebridge in Norfolk, UK.
 
+#proposed-coordinates
+52.7079487, 1.1507469
+
 #upstream-source
 William A. Dutt, *Highways and Byways in East Anglia* (1901) / *The Norfolk Broads* (1903).
 
@@ -58,6 +61,9 @@ As Oliver Cromwell's troops marched through Norfolk during the English Civil War
 
 #location
 St. Andrew's Church and the adjacent stretch of the River Wensum in Attlebridge, Norfolk.
+
+#proposed-coordinates
+52.6303005, 1.3075148
 
 #upstream-source
 None.

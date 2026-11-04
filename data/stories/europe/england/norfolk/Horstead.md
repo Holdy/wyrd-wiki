@@ -10,6 +10,9 @@ Horstead Mill, which dated back to the 18th century before burning down in 1963,
 #location
 The mill pond located at the former site of Horstead Mill in Horstead (grid reference TG267193).
 
+#proposed-coordinates
+52.724238, 1.356383
+
 #upstream-source
 Former webpage: http://www.broadland.gov.uk/leisure_and_tourism/1177.asp
 
@@ -29,6 +32,9 @@ Late one night between 1960 and 1962, two RAF officers were driving a Mini back 
 
 #location
 Coltishall Bridge and the adjacent High Street in Horstead, Norfolk.
+
+#proposed-coordinates
+55.9504203, -3.1856996
 
 #upstream-source
 None.
@@ -78,6 +84,9 @@ In his early 20th-century travels around Norfolk, writer Christopher Marlowe rec
 
 #location
 The site of the great tree in the centre of Heggatt Heath in Horstead (around grid reference TG277184).
+
+#proposed-coordinates
+52.715741, 1.370541
 
 #upstream-source
 Christopher Marlowe: 'People & Places in Marshland' (Cecil Palmer, 1927), p.237.

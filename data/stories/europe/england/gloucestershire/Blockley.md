@@ -36,6 +36,9 @@ In the medieval parish system, outlying hamlets such as Aston Magna possessed on
 #location
 The corpse road running between Aston Magna and St Peter and St Paul's Church in Blockley, Gloucestershire.
 
+#proposed-coordinates
+52.01944444, -1.71388889
+
 #upstream-source
 None.
 

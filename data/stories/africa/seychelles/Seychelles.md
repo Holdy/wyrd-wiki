@@ -10,6 +10,9 @@ A fisherman traveled to the isolated Aldabra Atoll seeking fortune and encounter
 #location
 Aldabra Atoll is a vast, remote ring-shaped coral atoll situated in the outer islands of the Seychelles in the Indian Ocean.
 
+#proposed-coordinates
+-9.4318693, 46.361217
+
 #upstream-source
 Aldabra Conservation Oral Heritage Records (2005).
 
@@ -29,6 +32,9 @@ Drawing from local accounts and investigations across the Seychelles archipelago
 
 #location
 Saint Paul's Cathedral is located in Victoria on Mahé Island in the Seychelles.
+
+#proposed-coordinates
+-4.6232085, 55.452359
 
 #upstream-source
 None.

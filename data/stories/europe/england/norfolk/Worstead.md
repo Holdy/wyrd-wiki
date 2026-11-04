@@ -36,6 +36,9 @@ According to local tradition, the White Lady haunts St Mary's Church in the Norf
 #location
 St Mary's Church in the village of Worstead, North Norfolk, England.
 
+#proposed-coordinates
+52.7876577, 1.4188314
+
 #upstream-source
 None.
 

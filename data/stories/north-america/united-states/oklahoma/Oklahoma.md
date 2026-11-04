@@ -10,11 +10,20 @@ Opened in 1911 by oilman W.B. Skirvin, the luxury hotel became a high-society hu
 #location
 The Skirvin Hotel is located at 1 Park Avenue in Oklahoma City, Oklahoma.
 
+#proposed-coordinates
+35.468803777803, -97.513794466254
+
 #upstream-source
 None.
 
 #reference
 https://www.legendsofamerica.com/ok-skirvinhotel/
+
+#coordinates
+35.46882, -97.51360
+
+#tags
+ghost
 
 ---
 
@@ -29,6 +38,9 @@ Constructed in 1842 by federal forces to protect the Chickasaw and Choctaw tribe
 
 #location
 The ruins of Fort Washita Historic Site and Museum are located near Durant, Oklahoma.
+
+#proposed-coordinates
+33.9919761, -96.3776762
 
 #upstream-source
 None.
@@ -50,11 +62,20 @@ Originally built as a lavish family home for merchant T.E. Houghton and his twel
 #location
 The Stone Lion Inn is located in historic Guthrie, Oklahoma.
 
+#proposed-coordinates
+35.8789231, -97.4252772
+
 #upstream-source
 None.
 
 #reference
 https://usghostadventures.com/haunted-places/stone-lion-inn/
+
+#coordinates
+35.881311076760625, -97.43746864015003
+
+#tags
+ghost
 
 ---
 
@@ -69,6 +90,9 @@ In 1944, police in Tulsa, Oklahoma, investigated a suspicious rationing fraud ca
 
 #location
 The original Hex House was located at a residential duplex in Tulsa, Oklahoma.
+
+#proposed-coordinates
+36.0819843, -96.0479307
 
 #upstream-source
 None.
@@ -113,6 +137,9 @@ In the winter of 1965, a woman named Mae Doria was driving along Highway 20 just
 #location
 The sighting occurred along Highway 20 on the stretch of road running east from Claremore toward Pryor in Oklahoma.
 
+#proposed-coordinates
+36.3084275, -95.3169136
+
 #upstream-source
 None.
 
@@ -132,6 +159,9 @@ Opened in 1911 by oilman W.B. Skirvin, the luxury hotel became a prominent fixtu
 
 #location
 The Skirvin Hotel is located at 1 Park Avenue in Oklahoma City, Oklahoma.
+
+#proposed-coordinates
+35.468803777803, -97.513794466254
 
 #upstream-source
 None.
@@ -153,11 +183,17 @@ Following the Civil War, a young woman named Vivia Thomas from Boston allegedly 
 #location
 The Fort Gibson National Cemetery is located in Fort Gibson, Oklahoma.
 
+#proposed-coordinates
+35.8046228, -95.2288619
+
 #upstream-source
 Adapted from materials preserved in the Fort Gibson National Cemetery Records and regional historical accounts.
 
 #reference
 https://usfolktales.com/the-legend-of-vivia-thomas/
+
+#tags
+named-ghost
 
 ---
 
@@ -172,6 +208,9 @@ Fort Reno served as a vital military post through the Indian Wars, the Land Run 
 
 #location
 Historic Fort Reno is located at 7107 W. Cheyenne Street just west of El Reno, Oklahoma.
+
+#proposed-coordinates
+35.56166667, -98.035
 
 #upstream-source
 None.

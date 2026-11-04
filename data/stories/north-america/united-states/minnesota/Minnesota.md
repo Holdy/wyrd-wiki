@@ -10,6 +10,9 @@ According to local folklore in Henderson, Minnesota, a woman named Annie lived i
 #location
 Crazy Annie's Bridge crossing the creek near Henderson, Minnesota.
 
+#proposed-coordinates
+44.5282283, -93.9077384
+
 #upstream-source
 None.
 
@@ -58,6 +61,9 @@ According to local folklore, a woman once returned to her home near Timber Lake 
 
 #location
 Timber Lake Road is located near New London, Minnesota, passing right by the Colfax Cemetery.
+
+#proposed-coordinates
+43.8049243, -83.020868
 
 #upstream-source
 None.

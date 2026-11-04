@@ -10,6 +10,9 @@ Long ago, upon the summit of Gradišče above Dobrova, a haughty and wealthy cou
 #location
 The story centers on Gradišče, a prominent forested hill and former castle site located just above Dobrova in Slovenia.
 
+#proposed-coordinates
+46.3250172, 14.8802787
+
 #upstream-source
 The Cursed Countess by Uroš Grilc and Maša Kozjek.
 

@@ -10,6 +10,9 @@ During Come Home Year in the tight-knit fishing community of Cook's Harbour, New
 #location
 The abandoned house of Big Nan, situated next door to her family's home in Cook's Harbour on the Great Northern Peninsula of Newfoundland and Labrador.
 
+#proposed-coordinates
+51.603519, -55.872345
+
 #upstream-source
 None.
 

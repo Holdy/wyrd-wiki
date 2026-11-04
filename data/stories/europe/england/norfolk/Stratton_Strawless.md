@@ -36,6 +36,9 @@ Local tradition maintains that a travelling musician, along with his cart, met h
 #location
 Fiddler's Hill is a tree-covered earthwork located at Ordnance Survey map reference TG22262005, situated on the Stratton Strawless side of the parish boundary with Hainford.
 
+#proposed-coordinates
+52.738867, 1.289338
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ Known as Ol' Smoker, the legend tells of the spirit of a solitary man condemned 
 #location
 The wilderness and interior trails of Labrador, with folklore traditions and accounts actively shared in Happy Valley-Goose Bay.
 
+#proposed-coordinates
+53.2964352, -60.3111895
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Around 1913, a young girl named Michelin playing near her family's cabin in Trav
 
 #location
 The settlement and river of Traverspine on the outskirts of Happy Valley-Goose Bay, Labrador.
+
+#proposed-coordinates
+53.2964352, -60.3111895
 
 #upstream-source
 True North: A Journey Into Unexplored Wilderness by Elliot Merrick (1933).

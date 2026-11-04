@@ -10,6 +10,9 @@ Nestled in the Cotswolds near Andoversford, The Frogmill Inn is a historic 16th-
 #location
 The Frogmill Inn is located in Shipton Oliffe, near Andoversford, Gloucestershire (GL54 4HT).
 
+#proposed-coordinates
+51.8637367, -1.9632727
+
 #upstream-source
 None.
 

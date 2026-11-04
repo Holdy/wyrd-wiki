@@ -10,6 +10,9 @@ In October 2011, students and teachers from St. Peter's Secondary School in Mbar
 #location
 Mutemwa Hill is a prominent prayer mountain located in Mutoko, Zimbabwe.
 
+#proposed-coordinates
+-17.4262394, 32.3581415
+
 #upstream-source
 None.
 
@@ -52,6 +55,9 @@ Late-night motorists in Bulawayo, Zimbabwe, have reported picking up a beautiful
 
 #location
 The intersection of Joshua Mqabuko Nkomo Street and Connaught Avenue in Bulawayo, Zimbabwe, serves as the primary spot where motorists encounter the phantom hitchhiker.
+
+#proposed-coordinates
+-20.1560599, 28.5887063
 
 #upstream-source
 None.

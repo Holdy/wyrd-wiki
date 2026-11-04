@@ -10,6 +10,9 @@ According to local tradition recorded in Thomas Quarles' historical accounts, Fo
 #location
 Foulsham Hall is located in the historic village of Foulsham in North Norfolk, England, situated approximately a quarter of a mile from the local parish church.
 
+#proposed-coordinates
+52.7826568, 1.0204806
+
 #upstream-source
 Thomas Quarles, The History and Antiquities of Foulsham, in Norfolk
 
@@ -32,6 +35,9 @@ Local legend holds that Foulsham Old Hall—historically associated with the Par
 
 #location
 Foulsham Old Hall is situated within its medieval moated enclosure located at grid reference TG035247 in the parish of Foulsham, Norfolk.
+
+#proposed-coordinates
+52.781934, 1.016724
 
 #upstream-source
 Rev. Thomas Quarles: The History & Antiquities of Foulsham (Joseph Cundall, 1842).

@@ -10,6 +10,9 @@ Long ago in Palau, two neighboring clans lived in deep hostility, divided by anc
 #location
 The jungle and coastal areas situated between the villages of Ngiwal and Ngkeklau on Babeldaob Island, Palau.
 
+#proposed-coordinates
+7.5926233, 134.6376288
+
 #upstream-source
 Palauan Storyboards: Art, Narrative, and Heritage by the Belau National Museum (2010).
 
@@ -29,6 +32,9 @@ In traditional Palauan folklore and historical accounts, certain individuals wer
 
 #location
 The traditional village meeting house (*bai*) and adjacent spirit shrine situated in a village settlement on Babeldaob Island in the Republic of Palau.
+
+#proposed-coordinates
+7.5399629, 134.5673965
 
 #upstream-source
 Jan Kubary, "Die Religion der Palauer" (1888); Karl Semper, *The Palau Islands in the Pacific Ocean* (1873); cited in Jay D. Dobbin and Francis X. Hezel, "Distribution of Spirit Possession and Trance in Micronesia" (1996).

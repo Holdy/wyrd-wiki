@@ -11,7 +11,7 @@ In November 1960, shortly after the completion of the Dunvegan Bridge, two men w
 The Dunvegan Suspension Bridge spanning the Peace River in Dunvegan Provincial Park, Alberta.
 
 #proposed-coordinates
-55.92282384999999, -118.5957213
+55.921034, -118.604768
 
 #upstream-source
 None.

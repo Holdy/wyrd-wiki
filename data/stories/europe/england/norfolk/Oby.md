@@ -10,6 +10,9 @@ While 19th-century county histories noted that the parish church of Oby stood be
 #location
 The site of the vanished medieval church is located within the lost village of Oby in the Norfolk Broads, situated north of Acle near the road toward Thurne.
 
+#proposed-coordinates
+52.686162, 1.554588
+
 #upstream-source
 W. B. Gerish: *Norfolk Legends* (unpublished notes, c.1914).
 

@@ -10,6 +10,9 @@ In the ancient caravan city of Hegra (also known as Mada'in Saleh) in northweste
 #location
 Tomb 41 is located within the ancient archaeological site of Hegra (Mada'in Saleh) in the AlUla region of northwestern Saudi Arabia.
 
+#proposed-coordinates
+26.8065407, 37.9476487
+
 #upstream-source
 None.
 

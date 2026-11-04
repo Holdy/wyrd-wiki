@@ -10,6 +10,9 @@ In 1992, two men had an unusual experience while driving on the A70 road near Ha
 #location
 The A70 road near Harperrig Reservoir is a key location for this story.
 
+#proposed-coordinates
+55.8338258, -3.4417252
+
 #upstream-source
 None.
 

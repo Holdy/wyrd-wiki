@@ -40,6 +40,9 @@ In the seventeenth century, when Dutch engineers led by Cornelius Vermuyden bega
 #location
 The Ancholme Valley in North Lincolnshire, where the wetlands were drained by seventeenth-century engineers.
 
+#proposed-coordinates
+53.5897441, -0.602323
+
 #upstream-source
 M. C. Balfour, "Legends Of The Cars", published in the journal *Folk-Lore* (Vol. 2, No. 2, June 1891).
 

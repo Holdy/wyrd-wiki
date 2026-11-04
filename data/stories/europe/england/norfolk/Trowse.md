@@ -36,6 +36,9 @@ According to local folklore, a tragedy unfolded one winter when a woman slipped 
 #location
 The village of Trowse and the adjacent banks of the River Yare in Norfolk, located just south-east of Norwich.
 
+#proposed-coordinates
+52.6135402, 1.3128466
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ For centuries, Spixworth Hall in Norfolk—home to the Longe family from 1693 un
 #location
 Spixworth Hall was formerly located in Spixworth Park, north of Norwich in Norfolk, England.
 
+#proposed-coordinates
+52.6873934, 1.3316549
+
 #upstream-source
 Arthur Longe, *The Old Night-Watchman - The Ghost of Spixworth Hall: A Norfolk Ghost Story and other Anecdotes* (Ipswich: W. S. Cowell, 1950).
 

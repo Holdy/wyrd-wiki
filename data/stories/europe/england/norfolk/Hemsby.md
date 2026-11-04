@@ -10,6 +10,9 @@ In the summer of 1996 at around midnight, a couple and their teenage daughter we
 #location
 The encounter took place along an unlit lane leading to a caravan park near the amusement arcades in Hemsby, Norfolk.
 
+#proposed-coordinates
+52.6940106, 1.6831985
+
 #upstream-source
 None.
 

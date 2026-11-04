@@ -10,6 +10,9 @@ St. Mary's Church features a striking 13th-century bell tower standing completel
 #location
 St. Mary's Church is situated on Church End in West Walton, Norfolk (grid reference TF471133).
 
+#proposed-coordinates
+52.697836, 0.176122
+
 #upstream-source
 William Andrews (ed.): 'Antiquities & Curiosities of the Church' (Hull Press, 1896), p.17.
 

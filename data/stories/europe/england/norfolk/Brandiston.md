@@ -10,6 +10,9 @@ When folklorist Mark Taylor conducted field investigations into traditional cust
 #location
 Brandiston village, Norfolk, UK.
 
+#proposed-coordinates
+52.7464521, 1.1626471
+
 #upstream-source
 M.R. Taylor, "Norfolk Folklore", *Folklore* 40, no. 2 (1929): 113–133.
 

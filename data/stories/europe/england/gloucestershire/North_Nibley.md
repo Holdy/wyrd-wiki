@@ -10,6 +10,9 @@ In March 1470, a bitter and long-running territorial dispute over the manor of W
 #location
 Nibley Green and St Martin's Church in the parish of North Nibley, Gloucestershire.
 
+#proposed-coordinates
+51.7173441, -2.5247384
+
 #upstream-source
 Gloucestershire's Forgotten Battle, Nibley Green 1470 by Peter Fleming and Michael Wood (Tempus Publishing Ltd, Stroud 2003), incorporating historical traditions recorded by John Smyth of Nibley.
 

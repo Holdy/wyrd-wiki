@@ -10,6 +10,9 @@ In February 1891, Bostock and Wombwell's Grand Star Menagerie arrived in the are
 #location
 The legendary burial site of the elephant is said to be located near Holy Trinity Church in Kingswood, South Gloucestershire.
 
+#proposed-coordinates
+51.462107, -2.5038184
+
 #upstream-source
 None.
 

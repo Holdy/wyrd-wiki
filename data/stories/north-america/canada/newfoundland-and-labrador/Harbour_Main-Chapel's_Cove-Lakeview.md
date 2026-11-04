@@ -10,6 +10,9 @@ In the center of Chapel's Cove stood an old community cemetery where burials had
 #location
 The old cemetery site located in the center of Chapel's Cove, Newfoundland and Labrador.
 
+#proposed-coordinates
+47.4357424, -53.1434727
+
 #upstream-source
 Stories from Chapel's Cove by Patrick Whelan, published via ICH Blog by Terra Barrett and Dale Jarvis.
 
@@ -31,10 +34,13 @@ Around midnight in the summer of 1960, Patrick Whelan and his friend Harold were
 Second Pond located alongside the road in Lakeview, Newfoundland and Labrador.
 
 #proposed-coordinates
-47.4073847, -53.1848161
+47.4253194, -53.1456778
 
 #upstream-source
 Stories from Chapel's Cove by Patrick Whelan, excerpted from the Encyclopedia of Newfoundland and Labrador, Volume 2.
 
 #reference
 http://www.ichblog.ca/2025/02/stories-from-chapels-cove-by-patrick.html
+
+#tags
+duplicate

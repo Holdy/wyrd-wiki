@@ -10,6 +10,9 @@ Sir Clement Spelman, the Recorder of Nottingham who died in 1670 at the age of 7
 #location
 All Saints' Church, situated on Main Road in the village of Narborough, Norfolk (PE32 1TE).
 
+#proposed-coordinates
+52.6862093, 0.5825621
+
 #upstream-source
 None.
 

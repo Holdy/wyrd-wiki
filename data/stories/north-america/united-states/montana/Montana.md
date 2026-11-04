@@ -36,6 +36,9 @@ Originally constructed in 1875 as the Beaverhead County Courthouse before being 
 #location
 The Hotel Meade is located within the historic ghost town of Bannack, Montana, situated along Grasshopper Creek.
 
+#proposed-coordinates
+45.1618661, -112.9969752
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ Travelers driving along US Highway 87 in Cascade County between Great Falls and 
 
 #location
 The haunting takes place along a stretch of US Highway 87 in Cascade County, Montana, situated between Great Falls and Fort Benton near Black Horse Lake.
+
+#proposed-coordinates
+47.6038772, -111.216618
 
 #upstream-source
 None.
@@ -76,6 +82,9 @@ During the late 19th-century gold rush, Garnet flourished as a bustling mountain
 #location
 The Kelly Saloon is located in the historic ghost town of Garnet within the Garnet Mountain Range of western Montana.
 
+#proposed-coordinates
+46.8252097, -113.338964
+
 #upstream-source
 Ellen Baumler, Montana Moments: History on the Go and Spirit Tailings: Ghost Tales from Virginia City, Butte, and Helena; Troy Taylor, Haunted Montana: Ghosts and Strange Phenomena of the Treasure State; Philip Varney, Ghost Towns of Montana: A Classic Tour Through The Treasure State's Historical Sites.
 
@@ -95,6 +104,9 @@ Established during the 1862 gold rush, Bannack eventually became a deserted ghos
 
 #location
 The Hotel Meade is located within the historic ghost town of Bannack State Park, situated southwest of Dillon in Beaverhead County, Montana.
+
+#proposed-coordinates
+45.2141249, -112.6346079
 
 #upstream-source
 None.
@@ -145,6 +157,9 @@ Constructed initially as a courthouse in 1875 before being converted into a hote
 #location
 The Hotel Meade is located on the main street within Bannack State Park along Grasshopper Creek in Beaverhead County, southwestern Montana.
 
+#proposed-coordinates
+45.1618661, -112.9969752
+
 #upstream-source
 None.
 
@@ -164,6 +179,9 @@ Built in 1882, the Grand Union Hotel in Fort Benton stands as Montana's oldest o
 
 #location
 The Grand Union Hotel is located in Fort Benton, Montana.
+
+#proposed-coordinates
+47.8161876, -110.6682218
 
 #upstream-source
 None.

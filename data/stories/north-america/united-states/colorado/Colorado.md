@@ -105,6 +105,9 @@ According to local folklore recorded in the 19th century by early pioneer Joseph
 #location
 Grand Lake, located in Grand County, Colorado, at the western edge of Rocky Mountain National Park.
 
+#proposed-coordinates
+40.2522073, -105.823067
+
 #upstream-source
 Joseph L. Wescott and Fred H. Quincy (pamphlet published January 26, 1926, reprinted from the Grand Lake Prospector, July 29, 1882).
 
@@ -147,6 +150,9 @@ During the 1890s, when the narrow-gauge Florence and Cripple Creek Railroad was 
 
 #location
 Phantom Canyon Road runs for 30 miles between Cañon City and Victor in Colorado, following the path of the historic Florence and Cripple Creek Railroad.
+
+#proposed-coordinates
+34.79981, -87.677251
 
 #upstream-source
 None.

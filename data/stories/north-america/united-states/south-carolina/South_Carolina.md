@@ -10,6 +10,9 @@ Dating back to the 1840s, the legend of Alice Flagg tells of a young woman from 
 #location
 All Saints Cemetery and the grounds of The Hermitage in Pawleys Island, South Carolina.
 
+#proposed-coordinates
+33.4672589, -79.140171
+
 #upstream-source
 None.
 
@@ -52,6 +55,9 @@ In 1849, Alice Belin Flagg lived at her family's coastal estate, The Hermitage, 
 
 #location
 All Saints' Waccamaw Episcopal Church is located along Ocean Highway (U.S. Route 17) in Pawleys Island, Georgetown County, South Carolina.
+
+#proposed-coordinates
+33.4672314, -79.1078937
 
 #upstream-source
 None.
@@ -96,6 +102,9 @@ According to local coastal lore dating back to the 19th century, the Gray Man is
 #location
 The sandy beaches and dunes of Pawleys Island, located along the Atlantic coast of Georgetown County, South Carolina.
 
+#proposed-coordinates
+33.802564, -78.7167719
+
 #upstream-source
 None.
 
@@ -115,6 +124,9 @@ In the mid-1800s, Julia Legare fell severely ill while visiting family on Edisto
 
 #location
 The J.B. Legare mausoleum at the Edisto Island Presbyterian Church graveyard on Edisto Island, South Carolina.
+
+#proposed-coordinates
+32.57888889, -80.29694444
 
 #upstream-source
 None.
@@ -188,6 +200,9 @@ In 1849, Alice Flagg lived with her family at The Hermitage in Murrells Inlet, S
 #location
 All Saints’ Waccamaw Episcopal Church graveyard is located off Kings River Road near Pawleys Island in Georgetown County, South Carolina.
 
+#proposed-coordinates
+33.4891675, -79.1200881
+
 #upstream-source
 None.
 
@@ -207,6 +222,9 @@ Built around 1740, the Chapel of Ease on St. Helena Island was abandoned when Un
 
 #location
 The Chapel of Ease ruins and graveyard are located off Lands End Road on St. Helena Island in Beaufort County, South Carolina.
+
+#proposed-coordinates
+32.3312306, -80.6279473
 
 #upstream-source
 None.

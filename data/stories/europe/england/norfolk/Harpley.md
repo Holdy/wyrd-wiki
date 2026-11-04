@@ -10,6 +10,9 @@ According to local tradition, the crossroads where the parishes of Harpley and W
 #location
 The crossroads known as Cross's Grave where the parishes of Harpley and West Rudham meet at grid reference TF803253.
 
+#proposed-coordinates
+52.795565, 0.673487
+
 #upstream-source
 Norfolk Heritage Explorer (Norfolk Historic Environment Record MNF3648).
 

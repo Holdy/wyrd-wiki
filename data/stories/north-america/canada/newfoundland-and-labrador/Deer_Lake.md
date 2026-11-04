@@ -11,7 +11,7 @@ Built between 1922 and 1925 as part of the massive hydroelectric project supplyi
 The Main Dam structure retaining Grand Lake, located off the Newfoundland T'Railway between Deer Lake and Howley, Newfoundland and Labrador.
 
 #proposed-coordinates
-49.157121000000004, -57.108975
+49.0963992, -57.2367012
 
 #upstream-source
 Jarvis, Dale. *Haunted Waters: More True Ghost Stories of Newfoundland and Labrador*. Flanker Press.

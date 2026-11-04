@@ -10,6 +10,9 @@ In medieval Kunya-Urgench, the capital of the Khwarazm Empire, the esteemed phil
 #location
 The Najmaddin al-Kubra Mausoleum is situated in the northern part of Kunya-Urgench, Turkmenistan.
 
+#proposed-coordinates
+38.172575, 57.9725186
+
 #upstream-source
 None.
 

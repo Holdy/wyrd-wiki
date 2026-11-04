@@ -11,7 +11,7 @@ Acquired by the Quesnel and District Museum and Archives in British Columbia in 
 Quesnel and District Museum and Archives, located at 705 Front Street in Quesnel, British Columbia.
 
 #proposed-coordinates
-52.979721999999995, -122.49361100000002
+52.9858608, -122.4998268
 
 #upstream-source
 None.

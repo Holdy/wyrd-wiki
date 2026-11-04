@@ -10,6 +10,9 @@ In the summer of 1381, as the Peasants' Revolt swept across England, a dyer name
 #location
 Jack Litester's former house site in the village of Felmingham, Norfolk, UK.
 
+#proposed-coordinates
+52.8115634, 1.3305564
+
 #upstream-source
 None.
 

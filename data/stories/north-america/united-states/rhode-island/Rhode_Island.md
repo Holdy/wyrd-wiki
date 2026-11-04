@@ -33,6 +33,9 @@ According to colonial-era legend in North Kingstown, Rhode Island, the Devil pur
 #location
 Devil's Foot Road is situated off Post Road in North Kingstown, Rhode Island, where the granite ledge known as Devil's Foot Rock rests near the Quonset area.
 
+#proposed-coordinates
+41.6124975, -71.4574179
+
 #upstream-source
 None.
 
@@ -53,11 +56,20 @@ In 1848, the atmospheric Providence Athenæum served as the backdrop for a poign
 #location
 The Providence Athenæum on Benefit Street in Providence, Rhode Island.
 
+#proposed-coordinates
+41.823096, -71.4041434
+
 #upstream-source
 None.
 
 #reference
 https://www.atlasobscura.com/articles/posts/the-providence-athenaeum
+
+#coordinates
+41.82578, -71.40647
+
+#tags
+named-ghost,famous
 
 ---
 
@@ -72,6 +84,9 @@ During a devastating outbreak of tuberculosis—then widely known as "consumptio
 
 #location
 The cemetery of the Baptist Church in Exeter, Rhode Island.
+
+#proposed-coordinates
+41.5774793, -71.5376881
 
 #upstream-source
 Michael E. Bell, *Food for the Dead - On the Trail of New England's Vampires*.
@@ -92,6 +107,9 @@ Tower Hill Road in Cumberland, Rhode Island, is a secluded, tree-lined country r
 
 #location
 Tower Hill Road, running between Diamond Hill Road and Wrentham Road in Cumberland, Rhode Island.
+
+#proposed-coordinates
+41.9947822, -71.4358571
 
 #upstream-source
 None.
@@ -149,6 +167,9 @@ Built in the late 19th century in Newport, Rhode Island, the 60-room Belcourt Ca
 #location
 Belcourt Castle on Bellevue Avenue in Newport, Rhode Island.
 
+#proposed-coordinates
+41.4606301, -71.3064266
+
 #upstream-source
 Harle Tinney, *The Ghosts of Belcourt Castle*.
 
@@ -169,6 +190,9 @@ In 1892, George Brown of Exeter, Rhode Island, suffered a tragic series of death
 #location
 Chestnut Hill Cemetery is located off Chestnut Hill Road in Exeter, Rhode Island.
 
+#proposed-coordinates
+41.5818297, -71.5582511
+
 #upstream-source
 "The Words on Nelly’s Tombstone" in Yankee Magazine, January 1994.
 
@@ -185,6 +209,9 @@ A late-night custodian working alone in a historic Providence mansion was startl
 Built in 1792 by merchant Captain John Nightingale on Benefit Street in Providence, Rhode Island, the Nightingale-Brown House has long been associated with dark histories and eerie sensations. According to local folklore compiled by Rory Raven, a new custodial worker cleaning the sprawling building late at night experienced an intense feeling of being watched while working in a room dominated by a large, grim portrait. The moment he finished vacuuming and switched off the wall switch, a sepulchral voice out of the darkness commanded, "DON'T TURN THAT LIGHT OUT." When the shaken custodian reported the encounter to his veteran co-worker, the older man casually confirmed that strange occurrences haunted that specific room and advised him never to turn off the light again.
 #location
 The Nightingale-Brown House is located on Benefit Street in Providence, Rhode Island.
+
+#proposed-coordinates
+41.823096, -71.4041434
 #upstream-source
 Haunted Providence: Strange Tales from the Smallest State by Rory Raven.
 #reference

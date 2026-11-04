@@ -10,6 +10,9 @@ According to centuries-old East Anglian folklore, Tom Hickathrift was born in th
 #location
 The giant's grave marker and stone coffin are located in the churchyard of All Saints at Tilney All Saints, near Walsoken in West Norfolk.
 
+#proposed-coordinates
+52.9087997, 0.4810131
+
 #upstream-source
 John Weever, *Ancient Funerall Monuments* (1631); *The History of Thomas Hickathrift* (Pepysian Library chapbook, c. 1660–1690).
 

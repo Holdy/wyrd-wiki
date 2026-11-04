@@ -10,6 +10,9 @@ Constructed originally in the seventeenth century as a farmhouse belonging to th
 #location
 The Apple Tree Inn stands prominently alongside the A48 road in the village of Minsterworth, Gloucestershire.
 
+#proposed-coordinates
+51.8591676, -2.304988
+
 #upstream-source
 None.
 

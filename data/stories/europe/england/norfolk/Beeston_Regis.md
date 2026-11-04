@@ -36,6 +36,9 @@ According to local folklore in Beeston Regis, Norfolk, a farmer named James Reyn
 #location
 The churchyard of All Saints Church in Beeston Regis, Norfolk.
 
+#proposed-coordinates
+52.9409967, 1.234468
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ According to long-standing East Anglian folklore, a monstrous, coal-black hellho
 
 #location
 Beeston Bump is a prominent glacial hill rising above the coast of Beeston Regis, Norfolk.
+
+#proposed-coordinates
+52.9430914, 1.2266729
 
 #upstream-source
 James Hooper: 'Demon Dogs of Norfolk & Suffolk', in the 'Eastern Daily Press' (1894); R. Chambers (ed.): 'The Book of Days' (W. & R. Chambers, 1864).

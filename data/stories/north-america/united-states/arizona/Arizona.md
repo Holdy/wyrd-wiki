@@ -134,6 +134,9 @@ In 1927, a young woman named Faith and her much older husband checked into the h
 #location
 The Hassayampa Inn is located at 122 East Gurley Street in Prescott, Arizona.
 
+#proposed-coordinates
+34.5421769, -112.4678091
+
 #upstream-source
 Haunted Prescott by Parker Anderson and Darlene Wilson.
 
@@ -263,6 +266,9 @@ Late one winter night, a long-haul truck driver traveling along the Arizona stre
 
 #location
 The Arizona stretch of U.S. Route 66 between the towns of Seligman and Kingman.
+
+#proposed-coordinates
+35.1895921, -114.0532996
 
 #upstream-source
 None.

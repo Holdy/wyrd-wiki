@@ -10,6 +10,9 @@ In 1921, Robert Laurent-Vibert, an industrialist from Lyon, purchased the dilapi
 #location
 The Château de Lourmarin is situated at the foot of the Luberon mountains in the village of Lourmarin within the Vaucluse department of the Provence-Alpes-Côte d'Azur region in southeastern France.
 
+#proposed-coordinates
+43.7644282, 5.3592338
+
 #upstream-source
 Sophie Bergaglio and research published in the Bulletin archéologique de Provence.
 
@@ -55,6 +58,9 @@ On May 20, 1981, four young friends drove to the coastal town of Palavas-les-Flo
 
 #location
 The encounter occurred on the roadway just before the Pont des Quatre Canals in the coastal commune of Palavas-les-Flots in southern France.
+
+#proposed-coordinates
+43.5278137, 3.9315347
 
 #upstream-source
 None.

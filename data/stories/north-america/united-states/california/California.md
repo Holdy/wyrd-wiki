@@ -105,6 +105,9 @@ Opened in 1894 in Ione, California, the Preston School of Industry was designed 
 #location
 Preston Castle is located at 915 Ione Sutter Road in Ione, California.
 
+#proposed-coordinates
+38.3611113, -120.936927
+
 #upstream-source
 None.
 
@@ -171,6 +174,9 @@ Following a wild gold rush starting in the late 1850s, Bodie grew into a notorio
 #location
 Bodie State Historic Park is located off Highway 270 in Mono County, California, east of the Sierra Nevada range.
 
+#proposed-coordinates
+36.58, -118.3
+
 #upstream-source
 None.
 
@@ -213,6 +219,9 @@ Originally opened in 1894 as the Preston School of Industry, the grand Romanesqu
 
 #location
 Preston Castle is situated in Ione, Amador County, Northern California.
+
+#proposed-coordinates
+38.3611113, -120.936927
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ According to local folklore surrounding The Boat Inn at Ashleworth Quay, the his
 #location
 The Boat Inn stands on the west bank of the River Severn at Ashleworth Quay in Gloucestershire.
 
+#proposed-coordinates
+53.5069024, -1.1922277
+
 #upstream-source
 None.
 

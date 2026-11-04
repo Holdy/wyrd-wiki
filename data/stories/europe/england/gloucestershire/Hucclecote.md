@@ -10,6 +10,9 @@ According to local tradition recorded in nineteenth-century folklore collections
 #location
 Churchdown Church is located on the summit of Churchdown Hill, near Gloucester and Cheltenham in Gloucestershire.
 
+#proposed-coordinates
+51.8680489, -2.1758536
+
 #upstream-source
 County Folk-lore, Part I.—Gloucestershire, edited by Edwin Sidney Hartland (Published for the Folk-Lore Society by D. Nutt, 1892), citing Gloucestershire Notes and Queries, vol. ii (1884), p. 222.
 

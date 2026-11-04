@@ -10,6 +10,9 @@ Overlooking the village of South Creake, the ancient earthwork fort on Bloodgate
 #location
 Bloodgate Hill is situated just southwest of the village of South Creake in North Norfolk, marking the site of the ancient Iron Age hillfort.
 
+#proposed-coordinates
+52.8846355, 0.7500832
+
 #upstream-source
 None.
 

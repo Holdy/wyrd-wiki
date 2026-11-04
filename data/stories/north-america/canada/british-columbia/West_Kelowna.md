@@ -11,7 +11,7 @@ Named after early French-Canadian rancher Isidore Boucherie, Mount Boucherie is 
 The slopes of Mount Boucherie and the surrounding historical ranch lands in West Kelowna, British Columbia.
 
 #proposed-coordinates
-49.888056000000006, -119.495556
+49.8551129, -119.572946
 
 #upstream-source
 None.

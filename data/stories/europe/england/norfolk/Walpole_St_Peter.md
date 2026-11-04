@@ -10,6 +10,9 @@ Embedded in the exterior corner between the north aisle and the chancel of St Pe
 #location
 St Peter's Church stands in the village of Walpole St Peter in Norfolk (grid reference TF502168).
 
+#proposed-coordinates
+52.728426, 0.223558
+
 #upstream-source
 None.
 

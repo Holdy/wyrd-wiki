@@ -34,7 +34,7 @@ The Samson V is a historic snag boat that served on the Fraser River removing lo
 The Samson V Museum is moored at Westminster Pier Park along the Fraser River waterfront in New Westminster, British Columbia.
 
 #proposed-coordinates
-49.20723005, -122.91848679999998
+49.2031927, -122.9054649
 
 #upstream-source
 Ghosts of Vancouver: 41 Haunted Places by Greg Mansfield.
@@ -57,7 +57,7 @@ Captain William Irving, known as "The King of the River," had Irving House built
 Irving House is located at 302 Royal Avenue in New Westminster, British Columbia.
 
 #proposed-coordinates
-49.20723005, -122.91848679999998
+49.2077876, -122.9062858
 
 #upstream-source
 At Home with History: The Secrets of Greater Vancouver’s Heritage Homes by Eve Lazarus.

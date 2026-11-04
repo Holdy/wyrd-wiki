@@ -10,6 +10,9 @@ Established in the early 20th century as a company town for workers at the local
 #location
 The historic Ioco townsite is situated in the northern section of Port Moody, British Columbia, along the Burrard Inlet.
 
+#proposed-coordinates
+49.2821981, -122.8293554
+
 #upstream-source
 None.
 
@@ -31,7 +34,7 @@ Built in 1908, the historic Port Moody Station building and its adjacent retired
 The Port Moody Station Museum is located at 2734 Murray Street in Port Moody, British Columbia.
 
 #proposed-coordinates
-49.300206599999996, -122.88258065
+49.2792385, -122.8507261
 
 #upstream-source
 None.

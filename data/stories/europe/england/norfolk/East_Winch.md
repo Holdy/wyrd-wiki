@@ -10,6 +10,9 @@ Recorded in the early 19th century, several natural springs were noted within th
 #location
 Mineral Plantation, located north-west of the village of East Winch in Norfolk (around grid reference TF679170).
 
+#proposed-coordinates
+52.725021, 0.485519
+
 #upstream-source
 William Richards: 'The History of Lynn' (1812), Vol.1, p.174.
 

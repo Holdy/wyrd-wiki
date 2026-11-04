@@ -36,6 +36,9 @@ In October 1833, Trooper Joe McGurk of the Eighth Lancers was travelling from Ab
 #location
 The former site of the George Hotel in the conservation zone opposite the parish church in Mitcheldean, Gloucestershire.
 
+#proposed-coordinates
+51.8631388, -2.4923773
+
 #upstream-source
 None.
 

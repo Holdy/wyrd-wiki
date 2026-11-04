@@ -36,6 +36,9 @@ According to longstanding Istanbul folklore, a Byzantine ruler was devastated wh
 #location
 Maiden's Tower (Kız Kulesi) is situated on a small rocky islet in the Bosphorus strait just off the coast of Üsküdar in Istanbul, Turkey.
 
+#proposed-coordinates
+41.02116667, 29.00425
+
 #upstream-source
 None.
 

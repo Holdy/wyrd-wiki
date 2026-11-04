@@ -10,6 +10,9 @@ According to the 13th-century border chronicle *The History of the Fitz-Warines*
 #location
 The highest palace within the ruined Roman city of Uriconium (modern Wroxeter) in Shropshire, England.
 
+#proposed-coordinates
+52.6713355, -2.6466273
+
 #upstream-source
 The 13th-century Anglo-Norman chronicle *The History of the Fitz-Warines*.
 

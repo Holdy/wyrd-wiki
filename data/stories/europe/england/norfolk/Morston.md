@@ -10,6 +10,9 @@ During the 1880s, Charles George Wood (known as C.G.) lived in Morston and reach
 #location
 All Saints Parish Church overlooks the village of Morston, adjacent to the marsh footpaths stretching towards Stiffkey along the North Norfolk coast.
 
+#proposed-coordinates
+52.9562218, 0.9366059
+
 #upstream-source
 None.
 

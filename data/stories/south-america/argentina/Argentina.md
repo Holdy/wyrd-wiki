@@ -10,6 +10,9 @@ According to local folklore along Provincial Route 11 in Buenos Aires Province, 
 #location
 The stretch of Provincial Route 11 located between Mar del Plata and Miramar in the Buenos Aires Province of Argentina.
 
+#proposed-coordinates
+-38.2704349, -57.8387997
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ On October 31, 1993, Father Spahn and parish priest Máximo Hergenreder were cal
 
 #location
 The family home of María Laura located in Villaguay, Entre Ríos Province, Argentina.
+
+#proposed-coordinates
+-31.8676271, -59.0270174
 
 #upstream-source
 None.

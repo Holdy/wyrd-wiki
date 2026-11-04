@@ -10,6 +10,9 @@ According to local historical accounts, the household at Spillman's Court left t
 #location
 Spillman's Court was situated between Lower and Middle Spillmans, bordered by Rodborough Hill in the parish of Rodborough, Gloucestershire.
 
+#proposed-coordinates
+51.7411893, -2.2259602
+
 #upstream-source
 Notes and Recollections of Stroud by Paul Hawkins Fisher (1871)
 

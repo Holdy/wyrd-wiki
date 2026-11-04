@@ -10,6 +10,9 @@ Centuries ago, a legend arose of a secret underground passage connecting Walsing
 #location
 Fiddler's Hill is located at the crossroads where the Wighton to Stiffkey road intersects with the Binham to Warham road in Norfolk.
 
+#proposed-coordinates
+52.9562469, 0.8907972
+
 #upstream-source
 None.
 

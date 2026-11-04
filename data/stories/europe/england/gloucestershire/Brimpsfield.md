@@ -10,6 +10,9 @@ In July 1880, archaeologist G.B. Witts investigated Buck Barrow in Brimpsfield a
 #location
 West Tump long barrow in Buckholt Wood, Brimpsfield, Gloucestershire.
 
+#proposed-coordinates
+51.8176031, -2.1298819
+
 #upstream-source
 None.
 

@@ -12,6 +12,9 @@ Just a short distance away near Darrow Wood and Castle Hill lies Hangman's Hill,
 #location
 Misery Corner is located at the junction of Manor Farm Road and Darrow Green Road (Grid Reference TM269898) in Denton, Norfolk, adjacent to Hangman's Hill.
 
+#proposed-coordinates
+52.459409, 1.339133
+
 #upstream-source
 None.
 

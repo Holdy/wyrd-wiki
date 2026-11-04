@@ -10,6 +10,9 @@ In the early 20th century, local blacksmith and resident William R. Lebbell reca
 #location
 The wooden hut stood on the south side of Penhill Road, just off the track leading to Homelea Farm in Great Ellingham, Norfolk.
 
+#proposed-coordinates
+52.5254103, 0.9669571
+
 #upstream-source
 Lebbell, W R & Fay, S. *A Little History of Great Ellingham*; Lee, Robert. 2005. ‘The Banningham Witchcraft Letters’. *Voices of the Rural Poor, 1820-1880*. Windgather Press Limited.
 

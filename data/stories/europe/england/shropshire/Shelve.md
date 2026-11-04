@@ -10,6 +10,9 @@ According to local legend, the Devil was travelling across Britain from Ireland 
 #location
 The Devil's Chair is the highest rocky outcrop on the Stiperstones ridge within the parish of Worthen with Shelve in Shropshire.
 
+#proposed-coordinates
+52.5864146, -2.9337834
+
 #upstream-source
 None.
 

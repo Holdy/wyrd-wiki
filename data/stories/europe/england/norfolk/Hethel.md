@@ -10,6 +10,9 @@ Standing in a meadow north-west of All Saints Church in the village of Hethel, t
 #location
 The Hethel Thorn stands in a meadow north-west of All Saints Church in the Norfolk village of Hethel (grid reference TG171006).
 
+#proposed-coordinates
+52.560329, 1.202177
+
 #upstream-source
 James Grigor: 'The Eastern Arboretum' (Longman, Brown, Green & Longmans, 1841), pp.282-4.
 

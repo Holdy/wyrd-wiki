@@ -10,6 +10,9 @@ Situated in a meadow on a flood bank of the River Tas in Arminghall, Norfolk, Ar
 #location
 Arminghall Henge, located in a meadow near White Horse Lane and the River Tas in the parish of Arminghall, Norfolk.
 
+#proposed-coordinates
+52.605761, 1.3063255
+
 #upstream-source
 None.
 

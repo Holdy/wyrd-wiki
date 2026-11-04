@@ -10,6 +10,9 @@ In rural Lauderdale County just outside Meridian, Mississippi, an old truss brid
 #location
 Stuckey's Bridge spans the Chunky River on a rural road outside Meridian in Lauderdale County, Mississippi.
 
+#proposed-coordinates
+32.2557891, -88.8552563
+
 #upstream-source
 Robert B. Alexander, Ghosts & Legends Along the Chickasawhay River
 
@@ -99,6 +102,9 @@ Franklin Cemetery, also known as the Garden of Hope Cemetery, is nestled among a
 #location
 Franklin Cemetery is situated just off Chamberlain Road in Gautier, Jackson County, Mississippi.
 
+#proposed-coordinates
+30.3824693, -88.6233263
+
 #upstream-source
 None.
 
@@ -170,6 +176,9 @@ Built in the 1760s using wood from flatboats along the Mississippi River, King's
 
 #location
 King's Tavern is located in Natchez, Mississippi.
+
+#proposed-coordinates
+31.5602, -91.3992
 
 #upstream-source
 None.

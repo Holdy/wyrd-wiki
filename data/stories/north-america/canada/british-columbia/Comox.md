@@ -11,7 +11,7 @@ Local legend tells of a woman who was murdered by her husband, her spirit remain
 Comox Hill along Comox Road in Comox, British Columbia.
 
 #proposed-coordinates
-49.69725205, -124.908975
+49.6845869, -124.9831194
 
 #upstream-source
 None.

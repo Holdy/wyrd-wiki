@@ -38,6 +38,9 @@ In 11th-century Berkeley, a wealthy woman known for her indulgence in witchcraft
 #location
 St Mary's Church in the town of Berkeley, Gloucestershire, is the historic site where the woman's body was entombed and ultimately snatched away by demons.
 
+#proposed-coordinates
+51.6892, -2.4577
+
 #upstream-source
 *Gesta Regum Anglorum* (Deeds of the Kings of England) by William of Malmesbury (c. 1125).
 

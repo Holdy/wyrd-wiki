@@ -36,6 +36,9 @@ In 1590, a local woman named Margaret Read was accused and convicted of witchcra
 #location
 The exterior brickwork of buildings 15 and 16 on the north side of the Tuesday Market Place in King's Lynn, Norfolk.
 
+#proposed-coordinates
+52.7567976, 0.3942977
+
 #upstream-source
 Enid Porter: 'The Folklore of East Anglia' (Batsford, 1974), pp. 137-8.
 

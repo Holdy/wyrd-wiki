@@ -10,6 +10,9 @@ Historical records and regional road surveys highlight a grim piece of folklore 
 #location
 The location is centered at the historic three-way crossroads within the parish of Litcham, Norfolk.
 
+#proposed-coordinates
+52.7322594, 0.7828725
+
 #upstream-source
 Robert Halliday: 'The Roadside Burial of Suicides: An East Anglian Study' in 'Folklore' Vol.121, No.1 (2010), p.86 (referencing an 1815 road survey of Litcham parish).
 
@@ -29,6 +32,9 @@ Recorded in an 1815 road survey of Litcham and discussed in historical studies o
 
 #location
 The three-way crossroads located within the parish of Litcham, Norfolk.
+
+#proposed-coordinates
+52.7322594, 0.7828725
 
 #upstream-source
 Robert Halliday, 'The Roadside Burial of Suicides: An East Anglian Study' (Folklore, Vol. 121, No. 1, 2010)

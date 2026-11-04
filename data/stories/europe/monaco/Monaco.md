@@ -10,6 +10,9 @@ In the late 13th or early 14th century, Prince Rainier I—the foundational figu
 #location
 The Prince's Palace of Monaco (Palais Princier de Monaco) is situated atop the Rock of Monaco overlooking the Mediterranean Sea.
 
+#proposed-coordinates
+43.7312602, 7.4198234
+
 #upstream-source
 None.
 

@@ -34,7 +34,7 @@ Operating for over a century, the North Pacific Cannery has accumulated local le
 The North Pacific Cannery National Historic Site is located in Port Edward, just outside Prince Rupert, British Columbia.
 
 #proposed-coordinates
-54.312777999999994, -130.325278
+54.1944, -130.2248
 
 #upstream-source
 None.

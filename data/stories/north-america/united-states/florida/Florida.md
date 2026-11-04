@@ -10,11 +10,17 @@ In 1904, four-year-old Robert Eugene "Gene" Otto received a life-sized, sailor-s
 #location
 The Fort East Martello Museum located at 3501 South Roosevelt Boulevard in Key West, Florida, where Robert the Doll is permanently housed.
 
+#proposed-coordinates
+24.5523168, -81.7551138
+
 #upstream-source
 None.
 
 #reference
 https://www.kwahs.org/exhibit/robert-the-doll/
+
+#tags
+haunted-doll
 
 ---
 
@@ -58,6 +64,9 @@ In the late 19th century, a group of German immigrants established St. Joseph’
 
 #location
 The quarter-mile stretch of Interstate 4 where the highway crosses the St. John's River in Seminole County, Florida.
+
+#proposed-coordinates
+28.7225829, -81.2353683
 
 #upstream-source
 None.
@@ -176,6 +185,9 @@ Authorized by Congress and completed in 1858, the Pensacola Lighthouse weathered
 
 #location
 The Pensacola Lighthouse is located on the Pensacola Naval Air Station in Pensacola, Florida.
+
+#proposed-coordinates
+30.3461318, -87.3080929
 
 #upstream-source
 None.

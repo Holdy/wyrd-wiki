@@ -10,6 +10,9 @@ During a 1933 BBC radio broadcast titled *The Dark Shore*, listeners were presen
 #location
 A country road on the outskirts of Sheringham, Norfolk, marked by a traditional five-barred field gate.
 
+#proposed-coordinates
+52.9438831, 1.21262
+
 #upstream-source
 G. McEwan: 'Mystery Animals of Britain and Ireland' (Hale, 1986); James Wentworth Day: 'Black Shuck', in East Anglian Magazine, Vol. 21, No. 11 (Sept. 1962).
 
@@ -32,6 +35,9 @@ Legend has it that a mermaid was drawn from the sea at Lower Sheringham, traveli
 
 #location
 All Saints Church in Upper Sheringham, Norfolk, UK.
+
+#proposed-coordinates
+52.9312688, 1.1889575
 
 #upstream-source
 None.

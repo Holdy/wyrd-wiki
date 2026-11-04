@@ -10,6 +10,9 @@ In the early 1800s, the frontier town of Jacksonboro, Georgia, was a rough, lawl
 #location
 The historic Seaborn Goodall House and the ghost town site of Jacksonboro are located at the end of Dell Goodall Road, approximately 5 miles northwest of Sylvania in Screven County, Georgia.
 
+#proposed-coordinates
+32.82686, -81.62472
+
 #upstream-source
 C. D. Hollingsworth, Sr., A Worthy House.
 
@@ -29,6 +32,9 @@ Drivers venturing after dark down Robertson Road, commonly known as Old Ghost Ro
 
 #location
 Robertson Road, also known as Old Ghost Road, is a rural road situated in Brooklet within Bulloch County, Georgia.
+
+#proposed-coordinates
+32.3500933, -81.6365618
 
 #upstream-source
 None.

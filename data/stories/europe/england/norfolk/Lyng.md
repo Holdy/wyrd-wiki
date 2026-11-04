@@ -10,6 +10,9 @@ The Great Stone of Lyng is a large glacial erratic resting in a secluded woodlan
 #location
 The Great Stone of Lyng is located in the wooded King's Grove near Lyng Easthaugh and Hogsback Hill in the parish of Lyng, Norfolk.
 
+#proposed-coordinates
+52.71085, 1.07745
+
 #upstream-source
 A March 13, 1939 newspaper article detailing accounts given by Reverend E. C. Weddall, the Rector of Lyng.
 

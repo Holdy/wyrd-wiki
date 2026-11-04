@@ -10,6 +10,9 @@ In May 1889, a farmer living near Ashburton, Devon, received an anonymous writte
 #location
 The farm where the cursed farmer lived was called Furzdon near Ashburton.
 
+#proposed-coordinates
+50.5267352, -3.755985
+
 #upstream-source
 None
 

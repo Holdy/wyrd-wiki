@@ -36,6 +36,9 @@ According to local tradition, the historic Waxham Hall in Norfolk is haunted by 
 #location
 Waxham Hall is a historic manorial building located in the village of Waxham on the north-east coast of Norfolk (Grid reference TG439262).
 
+#proposed-coordinates
+52.778667, 1.615685
+
 #upstream-source
 Jennifer Westwood and Jacqueline Simpson, Haunted England: The Penguin Book of Ghosts (also noted in Russell Ash, Folklore, Myths and Legends of Britain).
 

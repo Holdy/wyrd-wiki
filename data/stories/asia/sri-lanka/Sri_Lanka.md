@@ -10,6 +10,9 @@ According to Sri Lankan folklore, Devol Deviyo was an exiled prince who survived
 #location
 Seenigama Devalaya is located on a small island just off the southwestern coast of Sri Lanka, near Hikkaduwa.
 
+#proposed-coordinates
+6.140753, 80.1028181
+
 #upstream-source
 Journal of Asian and African Studies Vol. 32 No. 3-4 (1997), "The Cursing Practice in Sri Lanka as a Religious Channel for Keeping Physical Violence in Control: The Case of Seenigama" by Dr. J. P. Feddema.
 
@@ -29,6 +32,9 @@ In a rural area of North Central Province, Sri Lanka, a day labourer named Dines
 
 #location
 A small red-brick house situated along a dusty rural road in the North Central Province of Sri Lanka, locally known as the "Ghost House."
+
+#proposed-coordinates
+9.3803716, 80.3759057
 
 #upstream-source
 None.
@@ -52,6 +58,9 @@ Motorists driving along Anderson Road between Kalutara and Colombo after dark ha
 
 #location
 Anderson Road, situated along the route between Kalutara and Colombo in Sri Lanka.
+
+#proposed-coordinates
+6.8892983, 79.862797
 
 #upstream-source
 None.

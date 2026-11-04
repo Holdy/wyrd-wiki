@@ -10,6 +10,9 @@ Around 3:00 AM on the Libreville-Ntoum road, a motorist noticed a woman hitchhik
 #location
 The exit of Okolassi along the Libreville-Ntoum highway in Gabon.
 
+#proposed-coordinates
+0.3636029, 9.7061117
+
 #upstream-source
 None.
 

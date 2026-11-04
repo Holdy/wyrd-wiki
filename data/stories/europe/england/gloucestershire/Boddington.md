@@ -10,6 +10,9 @@ For generations, the grounds of Boddington Manor in Gloucestershire harbored a n
 #location
 The site of the ancient Boddington Oak is located within the grounds of Boddington Manor in the parish of Boddington, Gloucestershire.
 
+#proposed-coordinates
+51.9291421, -2.1540584
+
 #upstream-source
 None.
 

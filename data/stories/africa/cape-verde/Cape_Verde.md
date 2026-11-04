@@ -10,6 +10,9 @@ At the stroke of midnight in the historic town of Cidade Velha, a chilling ghost
 #location
 The historic cobblestone streets of Cidade Velha on the southern coast of Santiago Island, Cabo Verde.
 
+#proposed-coordinates
+14.914881, -23.6047659
+
 #upstream-source
 Elsie Clews Parsons, Folk-lore from the Cape Verde Islands (1923); Manuel Bonaparte Figueira, Contos e Lendas de Cabo Verde (1963).
 

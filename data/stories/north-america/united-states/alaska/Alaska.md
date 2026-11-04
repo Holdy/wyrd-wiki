@@ -56,6 +56,9 @@ Following the transfer of Alaska to the United States in 1867, a persistent ghos
 #location
 Baranof Castle State Historical Site (Castle Hill) overlooking Sitka Harbor in Sitka, Alaska.
 
+#proposed-coordinates
+57.4086082, -135.4596206
+
 #upstream-source
 Eliza Ruhamah Scidmore’s *Alaska: Its Southern Coast and the Sitkan Archipelago* (1885) and John W. Arctander's *The Lady in Blue: A Sitka Romance* (1911).
 
@@ -101,6 +104,9 @@ After the shutdown of the historic Kennecott copper mines and the Copper River &
 
 #location
 The hauntings occur along the McCarthy Road near Chitina, Alaska, specifically where the dirt route parallels the abandoned Copper River & Northwestern Railway grade.
+
+#proposed-coordinates
+61.704125, -144.7072998
 
 #upstream-source
 None.
@@ -167,6 +173,9 @@ Opening its doors in 1898 to serve miners during the gold rush, the Red Onion Sa
 
 #location
 The Red Onion Saloon at 201 Broadway in Skagway, Alaska.
+
+#proposed-coordinates
+59.4539521, -135.318502
 
 #upstream-source
 None.

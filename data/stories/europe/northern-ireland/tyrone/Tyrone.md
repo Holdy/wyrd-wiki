@@ -10,6 +10,9 @@ In local folklore popularized by author William Carleton, the giant Fin M'Coul a
 #location
 Knockmany Hill and the Clogher Valley near the village of Augher in County Tyrone, Northern Ireland.
 
+#proposed-coordinates
+54.4283084, -7.1320426
+
 #upstream-source
 Traits and Stories of the Irish Peasantry by William Carleton.
 

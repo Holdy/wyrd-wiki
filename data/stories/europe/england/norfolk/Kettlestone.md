@@ -10,6 +10,9 @@ In January 1792, Sarah Cusher of Kettlestone fell gravely ill and died after bei
 #location
 Kettlestone Common is situated within the rural parish of Kettlestone in North Norfolk, England.
 
+#proposed-coordinates
+52.8404413, 0.9151717
+
 #upstream-source
 None.
 

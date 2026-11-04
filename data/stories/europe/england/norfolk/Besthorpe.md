@@ -10,6 +10,9 @@ Local legend maintains that an underground tunnel runs across the fields between
 #location
 Besthorpe Hall, located at grid reference TM068955, and All Saints Church situated just across the fields in the parish of Besthorpe, Norfolk.
 
+#proposed-coordinates
+52.518555, 1.047287
+
 #upstream-source
 None.
 

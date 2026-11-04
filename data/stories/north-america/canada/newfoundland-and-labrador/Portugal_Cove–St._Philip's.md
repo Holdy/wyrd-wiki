@@ -10,6 +10,9 @@ Tryphena "Fanny" Goff was celebrated across Newfoundland in the early 19th centu
 #location
 The former site of Goff's Inn garden (under the historic apple tree burial site) in Portugal Cove, Newfoundland and Labrador.
 
+#proposed-coordinates
+47.6259085, -52.8599882
+
 #upstream-source
 The Treasury of Newfoundland Stories, published by Maple Leaf Mills Limited (1961).
 
@@ -31,7 +34,7 @@ According to local oral tradition shared in Portugal Cove–St. Philip's, parish
 The footbridge near the monument by the old Anglican church in Portugal Cove–St. Philip's, Newfoundland and Labrador.
 
 #proposed-coordinates
-47.61605068951214, -52.836407631689816
+47.62722222, -52.85055556
 
 #upstream-source
 None.
@@ -54,7 +57,7 @@ According to oral history recorded from long-time resident Ruth Bugden, the area
 Goat Cove, located near Beachy Cove School in Portugal Cove–St. Philip's, Newfoundland and Labrador.
 
 #proposed-coordinates
-47.61605068951214, -52.836407631689816
+47.6063559, -52.8800573
 
 #upstream-source
 None.

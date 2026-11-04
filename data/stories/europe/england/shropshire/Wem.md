@@ -10,6 +10,9 @@ Around the start of the 18th century, a group of restless young men drinking in 
 #location
 A pub located on New Street in the town of Wem, Shropshire.
 
+#proposed-coordinates
+52.858462, -2.7230254
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ According to local tradition, an old woman was driving a flock of geese across A
 #location
 Adlestrop Hill rises in the Cotswold district of Gloucestershire, directly adjacent to the village of Adlestrop and the Daylesford estate.
 
+#proposed-coordinates
+51.9311658, -1.6467043
+
 #upstream-source
 A humorous ballad published in 1808 in the Gentleman's Magazine.
 

@@ -30,6 +30,9 @@ In the 19th century, a young widow was picnicking with her two children in the w
 #location
 Le Ravin de la Femme Sauvage is a specific ravine and roadway passage located between Bir Mourad Raïs and Oued Kniss in Algiers, Algeria.
 
+#proposed-coordinates
+36.7412743, 3.081048
+
 #upstream-source
 None.
 

@@ -11,7 +11,7 @@ Built between 1911 and 1913, the Revelstoke Courthouse is a majestic heritage la
 The Revelstoke Courthouse, situated between Douglas Street and Courthouse Square in Revelstoke, British Columbia.
 
 #proposed-coordinates
-50.998889000000005, -118.19583300000001
+51.0045829, -118.2076894
 
 #upstream-source
 A Strange Little Place: The Hauntings & Unexplained Events of One Small Town by Brennan Storr.
@@ -57,7 +57,7 @@ From 2000 to 2006, Brennan Storr worked at Bocci's Groceteria at the corner of F
 The historic building formerly housing Bocci's Groceteria at the corner of Fourth Street and Victoria Road in Revelstoke, British Columbia.
 
 #proposed-coordinates
-50.998889000000005, -118.19583300000001
+51.0038515, -118.2015206
 
 #upstream-source
 Researched and recorded by Brennan Storr in the Revelstoke Current.
@@ -80,7 +80,7 @@ Growing up in a two-storey clapboard farmhouse in the rural Big Eddy community o
 The historic farmhouse site in the Big Eddy community along Highway 23 on the west bank of the Columbia River in Revelstoke, British Columbia.
 
 #proposed-coordinates
-50.998889000000005, -118.19583300000001
+51.0003133, -118.2316755
 
 #upstream-source
 Researched and recorded by Brennan Storr in the Revelstoke Current.

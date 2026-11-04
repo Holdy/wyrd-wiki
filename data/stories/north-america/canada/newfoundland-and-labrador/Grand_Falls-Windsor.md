@@ -11,7 +11,7 @@ Growing up in Grand Falls, local residents and children often whispered about a 
 The historic house situated on Dunn Place, just off Goodyear Avenue in Grand Falls-Windsor, Newfoundland and Labrador.
 
 #proposed-coordinates
-48.96263195, -55.65619064999999
+48.9360435, -55.633755
 
 #upstream-source
 None.
@@ -34,7 +34,7 @@ When Terry was approximately ten or twelve years old, he was riding in the backs
 The old cemetery located along the road connecting Grand Falls and Bishop's Falls in Grand Falls-Windsor, Newfoundland and Labrador.
 
 #proposed-coordinates
-48.96263195, -55.65619064999999
+48.9391337, -55.6743529
 
 #upstream-source
 Haunted Waters by Dale Jarvis (Flanker Press).

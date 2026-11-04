@@ -10,6 +10,9 @@ In regional folklore, Gotherington is featured among the communities associated 
 #location
 The village pond situated in Gotherington, Gloucestershire.
 
+#proposed-coordinates
+51.7643786, -2.1880662
+
 #upstream-source
 Kirsty Hartsiotis and Anthony Nanson (drawing upon traditional British folklore compilations regarding local simpleton taunts).
 

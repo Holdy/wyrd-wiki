@@ -10,6 +10,9 @@ In early 2014, a charismatic Christian revival swept through the Presbyterian is
 #location
 The events centered around the Ahamb Presbyterian Community Church and the adjacent community hall on Ahamb Island, located just off the southern coast of Malekula Island in Vanuatu.
 
+#proposed-coordinates
+-16.2343919, 167.4991724
+
 #upstream-source
 None.
 

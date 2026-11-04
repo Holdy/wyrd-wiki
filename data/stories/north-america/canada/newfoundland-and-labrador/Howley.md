@@ -11,7 +11,7 @@ In the 1920s, thousands of workers labored to construct the massive Main Dam at 
 The Main Dam is located on Grand Lake, near the town of Howley, Newfoundland and Labrador, Canada.
 
 #proposed-coordinates
-49.157121000000004, -57.108975
+49.0963992, -57.2367012
 
 #upstream-source
 Dale Gilbert Jarvis, *Haunted Waters*

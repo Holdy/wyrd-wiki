@@ -40,7 +40,7 @@ Jack Beaton worked as an engineer for the Kettle Valley Railway and lived in a h
 A historic house built in 1921 located near the Fairview Cemetery in Penticton, British Columbia.
 
 #proposed-coordinates
-49.500833, -119.593889
+49.4866295, -119.5909115
 
 #upstream-source
 None.
@@ -63,7 +63,7 @@ The S.S. Sicamous, a historic paddlewheeler moored on the shores of Okanagan Lak
 The S.S. Sicamous, moored at the S.S. Sicamous Marine Heritage Park on Okanagan Lake in Penticton, British Columbia.
 
 #proposed-coordinates
-49.95726048420073, -119.56290954941296
+49.500833, -119.593889
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ Owlpen Manor, a historic Tudor manor house located in the parish of Uley, Glouce
 #location
 Owlpen Manor is located in the parish of Uley, near Dursley, Gloucestershire (GL11 5BZ).
 
+#proposed-coordinates
+51.6837715, -2.2905875
+
 #upstream-source
 None.
 

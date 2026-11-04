@@ -12,6 +12,9 @@ One evening, insisting that the snow had stopped and the moonlight would guide h
 #location
 Mulbarton Common and The World's End public house in Mulbarton, Norfolk.
 
+#proposed-coordinates
+52.5604787, 1.2423073
+
 #upstream-source
 Written by Ella Collier, as related by the Rev. Richard Spurgeon, Rector of Mulbarton 1812-1843, and preserved among the Rich's Charity papers.
 

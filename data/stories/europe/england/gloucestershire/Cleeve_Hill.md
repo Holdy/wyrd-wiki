@@ -10,6 +10,9 @@ A teacher driving down from Cleeve Hill in Gloucestershire noticed an unusual fu
 #location
 The road descending from Cleeve Hill near Cheltenham, Gloucestershire, passing near St Peter's Church.
 
+#proposed-coordinates
+54.0474389, -2.9018933
+
 #upstream-source
 White, D. Haunted Cheltenham, History Press, 2010.
 
@@ -29,6 +32,9 @@ While driving down the slopes of Cleeve Hill, a teacher noticed a funeral proces
 
 #location
 The haunting occurred on the slopes of Cleeve Hill, near St Peter's Church overlooking Cheltenham in Gloucestershire.
+
+#proposed-coordinates
+51.9198638, -2.0058611
 
 #upstream-source
 Peter Ackroyd, *The English Ghost* (Vintage, 2011) and David White, *Haunted Cheltenham* (History Press, 2010).

@@ -10,6 +10,9 @@ Built in the mid-19th century to protect the Penobscot River Valley, Fort Knox i
 #location
 Fort Knox is located at 740 Fort Knox Road in Prospect, Maine, overlooking the Penobscot River.
 
+#proposed-coordinates
+38.3460013, -85.6046706
+
 #upstream-source
 None.
 
@@ -53,6 +56,9 @@ Colonel Jonathan Buck, founder of Bucksport, Maine, passed away in 1795 and was 
 #location
 The Colonel Jonathan Buck monument stands in the Buck family cemetery adjacent to Route 1 in Bucksport, Maine.
 
+#proposed-coordinates
+44.5694087, -68.7720331
+
 #upstream-source
 None.
 
@@ -72,6 +78,9 @@ John Cling, nicknamed "Cling Clang" for the loud ringing noise his tin pots and 
 
 #location
 The Old Stone Store, located in Sullivan Harbor, Maine.
+
+#proposed-coordinates
+44.4895225, -68.2086245
 
 #upstream-source
 "Cling Clang" by Chief Stanwood, October 1, 1947, included in Sullivan and Sorrento Since 1760 by Lelia Clark Johnson, 1953.
@@ -93,6 +102,9 @@ Wood Island Light in Saco Bay became the site of a tragedy in 1896 when a violen
 #location
 Wood Island Light is situated on Wood Island in Saco Bay, off the coast of Biddeford, Maine.
 
+#proposed-coordinates
+43.45686111, -70.32905556
+
 #upstream-source
 None.
 
@@ -112,6 +124,9 @@ According to local folklore in Down East Maine, a young woman named Catherine pe
 
 #location
 The haunting takes place along Route 182 (Black's Woods Road) between the towns of Franklin and Cherryfield in Maine, specifically passing near Fox Pond and Catherine Mountain.
+
+#proposed-coordinates
+44.6164653, -68.0877872
 
 #upstream-source
 “Dark Woods, Chill Waters: Ghost Tales From Down East Maine” by Marcus LiBrizzi.
@@ -133,6 +148,9 @@ Built in 1857, Seguin Light Station on Seguin Island has accumulated numerous gh
 #location
 Seguin Island Light Station is located on Seguin Island, approximately 3 miles off the coast of Georgetown, Maine.
 
+#proposed-coordinates
+43.7075128, -69.7579638
+
 #upstream-source
 None.
 
@@ -153,6 +171,9 @@ In the 19th century, a mysterious man known as "Cling Clang" or John Cling arriv
 #location
 The Old Stone Store is located in Sullivan Harbor, Maine.
 
+#proposed-coordinates
+44.4895225, -68.2086245
+
 #upstream-source
 “Cling Clang” by Chief Stanwood, October 1, 1947, included in *Sullivan and Sorrento Since 1760* by Lelia Clark Johnson, 1953.
 
@@ -172,6 +193,9 @@ On June 1, 1896, a tragic dispute on Wood Island culminated when a local fisherm
 
 #location
 The Wood Island Lighthouse is situated on Wood Island in Saco Bay, just over a mile off the coast of Biddeford, Maine.
+
+#proposed-coordinates
+43.4567082, -70.3332725
 
 #upstream-source
 None.

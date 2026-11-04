@@ -10,6 +10,9 @@ When investigators from Paranormal Investigation CR and author Sussy Carballo vi
 #location
 The key location is the Valverde family residence located in the canton of Escazú, Costa Rica.
 
+#proposed-coordinates
+10.0777188, -84.5084883
+
 #upstream-source
 “The Huntress. Real Cases and Evidence of Paranormal Investigation CR” by Sussy Carballo.
 
@@ -32,6 +35,9 @@ Following a devastating betrayal on her wedding day, a young bride walked to the
 
 #location
 The spirit haunts the platform of the historic old train station situated in downtown San José, Costa Rica.
+
+#proposed-coordinates
+9.9357556, -84.0920196
 
 #upstream-source
 None.

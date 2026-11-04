@@ -10,6 +10,9 @@ On the afternoon of October 21, 1952, Flight Lieutenant Michael Swiney and Royal
 #location
 The skies above the former RAF Little Rissington airfield (now the village of Upper Rissington) in the Cotswold District of eastern Gloucestershire, situated just west of the A424 road.
 
+#proposed-coordinates
+51.8636931, -1.6910488
+
 #upstream-source
 David Clarke and Andy Roberts, Out of the Shadows: UFOs, the Establishment and the Official Cover-up (London: Piatkus, 2002).
 

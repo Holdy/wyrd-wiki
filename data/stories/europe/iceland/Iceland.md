@@ -10,6 +10,9 @@ A deacon living at the Myrká farm in Iceland's Hörgárdalur valley was deeply 
 #location
 The story centers around the Myrká graveyard and the church at Ytri-Bægisá in the Hörgárdalur valley of northern Iceland.
 
+#proposed-coordinates
+65.671439, -18.4007814
+
 #upstream-source
 Jón Árnason, Þjóðsögur Jóns Árnasonar
 

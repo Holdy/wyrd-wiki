@@ -10,6 +10,9 @@ In the Norfolk Broads parish of Ashby with Oby, local tradition long held that t
 #location
 The site is located in the hamlet of Oby, within the parish of Ashby with Oby in the Norfolk Broads, north of Acle.
 
+#proposed-coordinates
+52.6392358, 1.5481293
+
 #upstream-source
 W. B. Gerish: 'Norfolk Legends' (unpublished notes, c.1914), citing 'A General History of the County of Norfolk' (1829).
 

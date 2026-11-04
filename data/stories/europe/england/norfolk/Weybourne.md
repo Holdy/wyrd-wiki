@@ -10,6 +10,9 @@ According to local folklore, a smuggler named John Smythe frequented the shores 
 #location
 Weybourne pebble beach, situated on the North Norfolk coast in the village of Weybourne.
 
+#proposed-coordinates
+52.9371853, 1.1478227
+
 #upstream-source
 None.
 

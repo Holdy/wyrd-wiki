@@ -10,6 +10,9 @@ At the intersection of Lime Kiln Road and Lynn Road in Gayton once stood the anc
 #location
 At the junction of Lime Kiln Road and Lynn Road in Gayton, Norfolk.
 
+#proposed-coordinates
+52.7461148, 0.5581119
+
 #upstream-source
 William A. Cutting: 'Gleanings about Gayton (Norfolk) in the olden time' (Agas Goose, 1889), p.125-7.
 

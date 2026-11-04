@@ -48,6 +48,12 @@ None.
 #reference
 https://604now.com/historic-craigdarroch-castle-victoria-haunted-bc/
 
+#coordinates
+48.42269, -123.34374
+
+#tags
+ghost,white-lady
+
 ---
 
 #title

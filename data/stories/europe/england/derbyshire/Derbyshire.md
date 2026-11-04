@@ -10,6 +10,9 @@ One winter's evening, a young couple riding a motorcycle with a sidecar near the
 #location
 The Fox House Inn is situated beside the A6187 near Hathersage in Derbyshire.
 
+#proposed-coordinates
+53.3186705, -1.601915
+
 #upstream-source
 None.
 

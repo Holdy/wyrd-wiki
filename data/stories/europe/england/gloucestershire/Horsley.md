@@ -10,6 +10,9 @@ During the English Civil War, Colonel Nathaniel Stephens, Lord of the Manor of C
 #location
 Chavenage Manor is situated in the parish of Horsley, Gloucestershire, lying approximately two miles north-west of Tetbury.
 
+#proposed-coordinates
+51.639272, -2.1594783
+
 #upstream-source
 Rev. R. W. Huntley, *Chavenage* (1845)
 

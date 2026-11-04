@@ -10,6 +10,9 @@ In the late 19th century, the Dowdeswell Reservoir near Cheltenham was strictly 
 #location
 Dowdeswell Reservoir, situated on the western edge of the parish of Dowdeswell near Cheltenham, Gloucestershire.
 
+#proposed-coordinates
+51.8763134, -2.0155818
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ In the year 1814, a prisoner named McCabe was held in Nassau, New Providence. De
 #location
 Nassau, New Providence Island, The Bahamas.
 
+#proposed-coordinates
+25.0782266, -77.3383438
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ In the early 1960s in Rock Sound, Eleuthera, a hardworking young woman became pr
 
 #location
 The haunting takes place along the road near the old silk cotton tree between the first and second speed bumps in Rock Sound, Eleuthera, The Bahamas.
+
+#proposed-coordinates
+24.8644542, -76.1584835
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ When Queen Mary restored Catholicism in England, two men of Taynton named Home a
 #location
 Rocks Wood is situated in the north-western part of the parish of Taynton, near Newent in Gloucestershire.
 
+#proposed-coordinates
+51.9236598, -2.3921182
+
 #upstream-source
 Douglas J. Parker, "Taynton Gloucestershire A Story of Two Churches" (Court Publications).
 

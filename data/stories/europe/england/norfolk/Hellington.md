@@ -36,6 +36,9 @@ For generations, residents of the quiet Norfolk hamlet of Hellington have shared
 #location
 Hellington Common in the parish of Hellington, South Norfolk, situated approximately six miles south-east of Norwich.
 
+#proposed-coordinates
+52.6285576, 1.2923954
+
 #upstream-source
 None.
 

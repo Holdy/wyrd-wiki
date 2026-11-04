@@ -10,6 +10,9 @@ Established in 1916 as a training base for the Royal Flying Corps, RAF Bircham N
 #location
 The disused squash courts located within the grounds of the former RAF Bircham Newton airfield (now the National Construction College) in Bircham Newton, Norfolk.
 
+#proposed-coordinates
+52.87694444, 0.6525
+
 #upstream-source
 None.
 

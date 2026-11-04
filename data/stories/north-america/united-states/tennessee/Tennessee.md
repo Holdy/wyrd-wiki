@@ -10,6 +10,9 @@ Starting in 1817 on the Bell family farm near the Red River in Adams, Tennessee,
 #location
 The historic Bell family farm and cave property located along the Red River in Adams, Robertson County, Tennessee.
 
+#proposed-coordinates
+36.637796, -86.9693693
+
 #upstream-source
 An Authenticated History of the Famous Bell Witch by Martin V. Ingram (1894).
 
@@ -29,6 +32,9 @@ From 1817 to 1821, the Bell family farm in Adams, Tennessee, became the center o
 
 #location
 The historic Bell Witch property is located along the Red River in the town of Adams, Robertson County, Tennessee.
+
+#proposed-coordinates
+36.637796, -86.9693693
 
 #upstream-source
 Martin V. Ingram, An Authenticated History of the Famous Bell Witch
@@ -51,6 +57,9 @@ The spirit demonstrated uncanny abilities, such as perfectly reciting two differ
 
 #location
 The historic site of the Bell family farm and the Bell Witch Cave are located near the town of Adams along the Red River in Robertson County, Tennessee.
+
+#proposed-coordinates
+36.59138889, -87.05555556
 
 #upstream-source
 *An Authenticated History of the Famous Bell Witch: The Wonder of the 19th Century, and Unexplained Phenomenon of the Christian Era* by M. V. Ingram (1894) and *A Mysterious Spirit: The Bell Witch of Tennessee* by Charles Bailey Bell.
@@ -95,6 +104,9 @@ In 1804, John Bell moved his family from North Carolina to a 320-acre farm along
 #location
 The Bell Witch Cave and Farm is located at 430 Keysburg Road in Adams, Robertson County, Tennessee.
 
+#proposed-coordinates
+36.59138889, -87.05555556
+
 #upstream-source
 None.
 
@@ -114,6 +126,9 @@ Rotherwood Mansion was built in Kingsport, Tennessee, in 1818 by Frederick Ross.
 
 #location
 Rotherwood Mansion sits near the Holston River in Kingsport, Sullivan County, Tennessee.
+
+#proposed-coordinates
+36.4969129, -82.689192
 
 #upstream-source
 Charles Edwin Price, Haints, Witches, and Boogers: Tales from Upper East Tennessee
@@ -135,6 +150,9 @@ According to local lore, in 1927, a woman named Annalisa Netherly checked into R
 #location
 The Read House Hotel is located at 107 W. Martin Luther King Jr. Boulevard in Chattanooga, Tennessee.
 
+#proposed-coordinates
+35.0457219, -85.3094883
+
 #upstream-source
 None.
 
@@ -155,6 +173,9 @@ Beginning in 1817 on a farm along the Red River in Robertson County, Tennessee, 
 #location
 The historic Bell Witch Cave and former homestead property are located along the Red River in Adams, Tennessee.
 
+#proposed-coordinates
+36.59138889, -87.05555556
+
 #upstream-source
 M. V. Ingram - An Authenticated History of the Famous Bell Witch: The Wonder of the 19th Century, and Unexplained Phenomenon of the Christian Era
 
@@ -174,6 +195,9 @@ Hugh Hamblen tragically lost his life in a car accident while crossing Netherlan
 
 #location
 Netherland Inn Road in Kingsport, Tennessee, runs near the historic Netherland Inn and Rotherwood Mansion.
+
+#proposed-coordinates
+36.5511416, -82.5946653
 
 #upstream-source
 None.

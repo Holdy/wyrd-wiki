@@ -63,7 +63,7 @@ During the 1800s, a First Nations man named Louis Satakarata dit Rabaska worked 
 The Fort Langley waterfront and McMillan Island sit along the Fraser River in Langley, British Columbia.
 
 #proposed-coordinates
-49.09869282483735, -122.65892908991573
+49.16855, -122.57976389
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ As a classroom experiment to test how legends are born, a Norfolk schoolteacher 
 #location
 The ghost haunts a half-derelict ruined cottage situated up a road near the school in the village of Brumstead, Norfolk.
 
+#proposed-coordinates
+52.7875559, 1.5116998
+
 #upstream-source
 None.
 

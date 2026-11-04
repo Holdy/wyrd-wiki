@@ -10,6 +10,9 @@ According to eastern Bhutanese folklore, the magnificent fortress of Zhongar Dzo
 #location
 The ruins of Zhongar Dzong are located on a hill in Saling Gewog, within the Mongar District of eastern Bhutan.
 
+#proposed-coordinates
+27.2580822, 91.1045139
+
 #upstream-source
 None.
 

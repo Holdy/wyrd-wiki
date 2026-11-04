@@ -10,6 +10,9 @@ Local tradition maintains that the Devil once sought to dam the Severn Estuary o
 #location
 Cam Peak is a prominent, pointed hill located within the parish of Cam in Gloucestershire, England.
 
+#proposed-coordinates
+51.6906604, -2.3371655
+
 #upstream-source
 None.
 

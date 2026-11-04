@@ -11,7 +11,7 @@ According to an account collected in P. J. Kinsella's 1919 folklore compilation 
 Point-au-Gaul on the Burin Peninsula, Newfoundland and Labrador, Canada.
 
 #proposed-coordinates
-47.08069918670843, -55.173494982325956
+47.1344405, -55.3053469
 
 #upstream-source
 P. J. Kinsella, *Some Superstitions and Traditions of Newfoundland: A Collection of Superstitions, Traditions, Folk-Lore, Ghost Stories, etc.* (St. John's, Nfld.: Union Pub. Co., [1919?]), pp. 37–38.

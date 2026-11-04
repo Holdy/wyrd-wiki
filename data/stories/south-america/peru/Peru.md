@@ -10,6 +10,9 @@ Standing at a busy intersection in the historic center of Lima, Casa Matusita ha
 #location
 Casa Matusita is located at the intersection of Avenida Inca Garcilaso de la Vega and Avenida España in the Historic Centre of Lima, Peru.
 
+#proposed-coordinates
+-12.0580715, -77.0399208
+
 #upstream-source
 José María Ibáñez, *Enigmas y misterios. 13 lugares malditos* (2009)
 
@@ -55,6 +58,9 @@ In colonial Cajamarca around 1620, an inquisitive and gossipy widow named Doña 
 
 #location
 The historic streets of Cajamarca in northern Peru.
+
+#proposed-coordinates
+-7.1566682, -78.517306
 
 #upstream-source
 Horacio H. Urteaga, Peru: Historical Sketches; Archaeological, Traditional, and Historical-Critical Studies (1919).

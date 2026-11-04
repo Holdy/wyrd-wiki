@@ -40,7 +40,7 @@ Built in the 1930s by business mogul and future B.C. Lieutenant Governor Eric Ha
 Minnekhada Lodge is situated at the northern end of Minnekhada Regional Park in Coquitlam, British Columbia.
 
 #proposed-coordinates
-49.284167, -122.79361100000001
+49.2949218, -122.7007928
 
 #upstream-source
 None.

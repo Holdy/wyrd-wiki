@@ -33,6 +33,9 @@ According to local folklore and contemporary legend on the west coast of Newfoun
 #location
 The trail network of West Haven Camp, located just outside Pasadena in the Humber Valley region of Newfoundland.
 
+#proposed-coordinates
+49.0139234, -57.5986531
+
 #upstream-source
 None.
 

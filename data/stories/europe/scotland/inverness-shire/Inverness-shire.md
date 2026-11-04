@@ -10,6 +10,9 @@ Deep within the Rothiemurchus estate in Inverness-shire lies the historic kirkya
 #location
 The grave of Seath Mòr is located within the old kirkyard of Saint Kaldas on the Rothiemurchus estate near Aviemore in Inverness-shire.
 
+#proposed-coordinates
+57.1937471, -3.8289348
+
 #upstream-source
 None.
 

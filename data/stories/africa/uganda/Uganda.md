@@ -36,6 +36,9 @@ Constructed in 1963, Karuma Bridge spans the roaring rapids of the River Nile on
 #location
 Karuma Bridge spans the River Nile along the highway connecting Masindi and Gulu districts in Uganda.
 
+#proposed-coordinates
+2.79863, 31.3503283
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ Along the stretches of the waterway near Smallburgh, travelers and locals have o
 #location
 The North Walsham & Dilham Canal where it passes near the village of Smallburgh in Norfolk, England.
 
+#proposed-coordinates
+52.8168645, 1.3845702
+
 #upstream-source
 None.
 

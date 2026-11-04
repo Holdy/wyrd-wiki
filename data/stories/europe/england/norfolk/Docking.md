@@ -10,6 +10,9 @@ During World War II, the military installations around Docking and RAF Bircham N
 #location
 The historic squash courts are situated at the former RAF Bircham Newton site, located just south of Docking in Norfolk.
 
+#proposed-coordinates
+52.87694444, 0.6525
+
 #upstream-source
 None.
 

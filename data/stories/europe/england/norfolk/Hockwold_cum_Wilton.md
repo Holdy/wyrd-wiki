@@ -10,6 +10,9 @@ Long before archaeological excavations uncovered ancient Roman pewter hoards in 
 #location
 The Hockwold Fens, located within the civil parish of Hockwold cum Wilton in Norfolk, mark the wetland area where the ghostly battle cries resonate.
 
+#proposed-coordinates
+51.0805315, -1.8607051
+
 #upstream-source
 Polly Howat - Norfolk Ghosts & Legends
 Polly Howat - Tales of Old Norfolk
@@ -34,6 +37,9 @@ Long before archaeological excavations uncovered Roman-era pewter hoards buried 
 
 #location
 The fenlands surrounding the village of Hockwold cum Wilton in southwest Norfolk.
+
+#proposed-coordinates
+51.0805315, -1.8607051
 
 #upstream-source
 None.

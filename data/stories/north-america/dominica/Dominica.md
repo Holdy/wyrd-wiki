@@ -36,6 +36,9 @@ A 45-year-old man from St. Joseph was forced to alter his routine, abandoning hi
 #location
 The section of road passing through the Layou estate near the Layou River in Dominica.
 
+#proposed-coordinates
+15.3972216, -61.4251937
+
 #upstream-source
 None.
 

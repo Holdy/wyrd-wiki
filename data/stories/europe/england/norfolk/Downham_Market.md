@@ -10,6 +10,9 @@ In late April and early May of 1646, as the English Civil War drew to a desperat
 #location
 The site of the Swan Inn located within the market town of Downham Market, Norfolk.
 
+#proposed-coordinates
+52.6025943, 0.3772655
+
 #upstream-source
 None.
 

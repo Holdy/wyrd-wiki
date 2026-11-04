@@ -10,6 +10,9 @@ Local tradition maintained that a pirate named Chunk Harvey had been betrayed by
 #location
 The crossroads where the old road from Thetford to Euston crossed the Icknield Way, situated just east of Mill Road in Thetford.
 
+#proposed-coordinates
+52.4100907, 0.7408591
+
 #upstream-source
 W. G. Clarke: 'In Breckland Wilds' (Robert Scott, 1925)
 
@@ -55,6 +58,9 @@ Growing up in a small, white-fronted house on Station Road in Thetford, two youn
 
 #location
 The key location is the semi-detached house on Station Road in Thetford, Norfolk.
+
+#proposed-coordinates
+52.4175036, 0.7462167
 
 #upstream-source
 None.

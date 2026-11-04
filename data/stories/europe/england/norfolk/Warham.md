@@ -10,6 +10,9 @@ According to local tradition, a fiddler and his canine companion attempted to ex
 #location
 Fiddler's Hill is a round barrow located at the crossroads of the Wighton and Stiffkey road and the Binham and Warham road near Warham, Norfolk.
 
+#proposed-coordinates
+52.9562469, 0.8907972
+
 #upstream-source
 History of the Borough of King's Lynn, volume 1 by Henry J. Hillen (1907).
 

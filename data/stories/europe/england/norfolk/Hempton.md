@@ -10,6 +10,9 @@ Passed down through family memory, local lore tells of a ghost dog that haunts t
 #location
 The haunting takes place at the old Midland and Great Northern railway crossing (grid reference TF917292) located next to the railway station in Hempton, Norfolk.
 
+#proposed-coordinates
+52.826653, 0.844637
+
 #upstream-source
 None.
 

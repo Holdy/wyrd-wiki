@@ -10,6 +10,9 @@ According to regional folklore recorded by archaeologists, local tradition maint
 #location
 Mill Hill is a prehistoric round barrow located in the parish of Belton, Norfolk, at grid reference TG478018.
 
+#proposed-coordinates
+52.557994, 1.655050
+
 #upstream-source
 Leslie Grinsell, 'Barrow Treasure in Fact, Tradition & Legislation' in *Folklore* (Vol. 78, 1967).
 

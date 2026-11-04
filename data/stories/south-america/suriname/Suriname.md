@@ -10,6 +10,9 @@ In 1902, the massive Mariënburg sugar plantation in Suriname became the site of
 #location
 The historic Mariënburg sugar plantation and former factory site located in the Commewijne District of Suriname.
 
+#proposed-coordinates
+5.8780943, -55.0441162
+
 #upstream-source
 Cynthia McLeod, "Tweemaal Mariënburg"
 
@@ -55,6 +58,9 @@ Late one night at eleven o'clock, a taxi driver in Paramaribo was parked near a 
 
 #location
 The road leading past the cemetery in Paramaribo, Suriname.
+
+#proposed-coordinates
+5.8247628, -55.1703941
 
 #upstream-source
 Melville J. Herskovits and Frances S. Herskovits, *Suriname Folk-Lore* (1936).

@@ -10,6 +10,9 @@ In the village of Mileham, within the historic homestead associated with the Bur
 #location
 The site of the old house and birthplace associated with the Burghwood manor stands near the remains of Mileham Castle and the B1145 road in Mileham, Norfolk.
 
+#proposed-coordinates
+52.7373352, 0.8370714
+
 #upstream-source
 None.
 

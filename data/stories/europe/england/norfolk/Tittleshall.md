@@ -10,6 +10,9 @@ On November 18, 1853, Lorenzo Beha, a Norwich watchmaker and jeweller who travel
 #location
 The incident took place along the road and adjacent ditch situated between the villages of Wellingham and Tittleshall in Norfolk, England.
 
+#proposed-coordinates
+52.75716, 0.8116262
+
 #upstream-source
 The Household Narrative (1853)
 

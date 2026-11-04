@@ -10,6 +10,9 @@ In 1604, a fierce storm swept across Gloucestershire, bringing torrential rain a
 #location
 St Mary the Virgin Church is situated at the heart of Olveston village in South Gloucestershire, sharing the main crossroads with Church Hill and The Green.
 
+#proposed-coordinates
+51.6358477, -0.1062472
+
 #upstream-source
 *Fearful Newes* (contemporary pamphlet/account), referenced in the Olveston Parish Historical Society publication *Yesteryear*.
 

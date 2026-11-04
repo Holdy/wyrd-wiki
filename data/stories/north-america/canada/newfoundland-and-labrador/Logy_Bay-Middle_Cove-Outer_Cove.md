@@ -11,7 +11,7 @@ According to local oral history collected in the area, a young girl and her brot
 Roche's Meadow on Barnes Road, Outer Cove, Newfoundland and Labrador.
 
 #proposed-coordinates
-47.635266877217134, -52.688983890209265
+47.649779, -52.6890646
 
 #upstream-source
 Oral history collections of the Logy Bay-Middle Cove-Outer Cove Museum.
@@ -34,7 +34,7 @@ In the winter of 1918, Jimmy Carroll, a young planter from Outer Cove, was thril
 A residence in Outer Cove, Newfoundland and Labrador.
 
 #proposed-coordinates
-47.635266877217134, -52.688983890209265
+47.6525884, -52.6825607
 
 #upstream-source
 Correspondence between "Big Willie" Croke and Martin Boland, via the Digital Archives Initiative at Memorial University.

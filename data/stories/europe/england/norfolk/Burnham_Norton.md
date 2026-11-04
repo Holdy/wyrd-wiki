@@ -10,6 +10,9 @@ Founded in 1241, the Carmelite friary at Burnham Norton was home to friars who r
 #location
 Our Lady's Well is located near a small stream just north of the Carmelite Friary ruins in Burnham Norton, Norfolk (TF838428).
 
+#proposed-coordinates
+52.951520, 0.735209
+
 #upstream-source
 'Norfolk Archaeology: Proceedings', (1933), Vol.25, p. lxx.
 

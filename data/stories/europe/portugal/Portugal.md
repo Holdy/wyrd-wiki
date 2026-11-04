@@ -10,6 +10,9 @@ In 1630, after the interior of the Church of Santa Engrácia was desecrated, the
 #location
 The Church of Santa Engrácia (National Pantheon) is located in the historic Alfama neighborhood of Lisbon, Portugal.
 
+#proposed-coordinates
+38.715, -9.125
+
 #upstream-source
 None.
 
@@ -30,6 +33,9 @@ Motorists driving along the dark, forested roads of the Sintra mountains in Port
 #location
 The events take place along Estrada do Vale dos Anjos in Colares, situated within the Sintra mountain range in Portugal.
 
+#proposed-coordinates
+38.8355446, -9.3522371
+
 #upstream-source
 None.
 
@@ -49,6 +55,9 @@ In the winter of 1933, within the remote hamlet of Oliveira in the parish of Soa
 
 #location
 The events took place in the hamlet of Oliveira, within the civil parish of Soalhães in the municipality of Marco de Canaveses, Portugal.
+
+#proposed-coordinates
+41.1616546, -8.127792
 
 #upstream-source
 _O Crime da Queimada-Viva de Soalhães_ by A. Pereira Coutinho and Guilherme Pinto (published by the Câmara Municipal de Marco de Canaveses in 1987).

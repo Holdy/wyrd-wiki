@@ -10,6 +10,9 @@ In ancient times, the southern border pass of Andorra was guarded by a mysteriou
 #location
 The events center around the waterfall of Auvinyà (Cascada d'Auvinyà) in the parish of Sant Julià de Lòria, Andorra.
 
+#proposed-coordinates
+42.466717, 1.4967329
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ In 1865, a violent storm lashed the Pyrenees, triggering a massive landslide abo
 
 #location
 The hamlet of Fener lies in the valley near Les Escaldes in the Principality of Andorra.
+
+#proposed-coordinates
+42.5090019, 1.5404067
 
 #upstream-source
 Valls, À., & Carol, R. Llegendes d’Andorra.

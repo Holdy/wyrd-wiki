@@ -19,6 +19,12 @@ Robert C. Belyk's Ghosts: More Eerie Encounters (Touchwood Editions, 2006).
 #reference
 https://coastalshadows.ca/2025/02/04/patricia-theatre/
 
+#coordinates
+49.87473, -124.55069
+
+#tags
+named-ghost
+
 ---
 
 #title

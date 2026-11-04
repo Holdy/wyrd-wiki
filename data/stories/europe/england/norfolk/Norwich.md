@@ -10,6 +10,9 @@ Alice, the daughter of a local tradesman, gave birth and abandoned her newborn b
 #location
 Norwich Cathedral is situated within The Close in the historic center of Norwich, Norfolk.
 
+#proposed-coordinates
+52.6319818, 1.3011455
+
 #upstream-source
 None.
 

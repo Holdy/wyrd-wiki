@@ -10,6 +10,9 @@ Folklore tells of a 30-yard stretch of cobblestone road known as the Devil's Cau
 #location
 The Devil's Causeway is a historic stretch of road branching off the south-western arm of Watling Street (at National Grid Reference NGR 530 033) running towards Acton Burnell and Cardington in Shropshire.
 
+#proposed-coordinates
+52.5526556, -2.7309517
+
 #upstream-source
 None.
 

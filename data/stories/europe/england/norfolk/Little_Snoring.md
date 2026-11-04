@@ -10,6 +10,9 @@ Before the outbreak of World War II, travelers along the country road linking Gr
 #location
 The road linking the Norfolk villages of Great and Little Snoring.
 
+#proposed-coordinates
+52.8535818, 0.9054626
+
 #upstream-source
 None.
 

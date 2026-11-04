@@ -36,6 +36,9 @@ Established during the Second World War as Station 114, RAF Tibenham served as a
 #location
 The former RAF Tibenham airfield and control tower site located in Tibenham, South Norfolk.
 
+#proposed-coordinates
+52.4651835, 1.1421183
+
 #upstream-source
 None.
 

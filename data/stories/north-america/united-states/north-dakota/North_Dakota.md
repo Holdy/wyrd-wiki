@@ -62,6 +62,9 @@ At the reconstructed mansion of General George and Libbie Custer—located on th
 #location
 The reconstructed Custer House at Fort Abraham Lincoln State Park, situated on the Missouri River bluffs just south of Mandan, North Dakota.
 
+#proposed-coordinates
+46.7591494, -100.8471209
+
 #upstream-source
 None.
 
@@ -81,6 +84,9 @@ Bertha Dordal moved to Sims, North Dakota, in 1916 with her husband, Reverend La
 
 #location
 The Scandinavian Evangelical Lutheran Church and parsonage are located in the historic ghost town of Sims, North Dakota, situated approximately 47 miles southwest of Bismarck.
+
+#proposed-coordinates
+46.808327, -100.783739
 
 #upstream-source
 William Jackson, *More Dakota Mysteries and Oddities*.
@@ -102,6 +108,9 @@ Constructed in 1883 by French diplomat and entrepreneur Marquis de Mores for his
 #location
 Chateau de Mores is located atop a bluff overlooking the town of Medora and Theodore Roosevelt National Park in western North Dakota.
 
+#proposed-coordinates
+46.9124256, -103.5347822
+
 #upstream-source
 None.
 
@@ -122,11 +131,20 @@ Located at Fort Abraham Lincoln, the Custer House is a reconstructed replica of 
 #location
 The Custer House at Fort Abraham Lincoln State Park near Mandan, North Dakota.
 
+#proposed-coordinates
+46.7591494, -100.8471209
+
 #upstream-source
 Park historical records and local interviews reported via KX News.
 
 #reference
 https://www.kxnet.com/news/top-stories/the-haunted-history-of-the-custer-house/
+
+#coordinates
+46.75918, -100.84695
+
+#tags
+ghost
 
 ---
 
@@ -141,6 +159,9 @@ Long ago near Leyden and Walhalla, North Dakota, a young woman named Anna Story 
 
 #location
 The hauntings occur along White Lady's Lane near Eddie's Bridge in Walhalla, North Dakota.
+
+#proposed-coordinates
+48.923328, -97.918148
 
 #upstream-source
 None.
@@ -162,6 +183,9 @@ Designed in the Art Deco style and opened on March 15, 1926, the Fargo Theatre s
 #location
 The Fargo Theatre is located on Broadway Street in downtown Fargo, North Dakota.
 
+#proposed-coordinates
+46.8796193, -96.7881454
+
 #upstream-source
 None.
 
@@ -182,6 +206,9 @@ Located near Mandan, North Dakota, Fort Abraham Lincoln served as a major milita
 #location
 Fort Abraham Lincoln State Park is situated on bluffs overlooking the Missouri River just south of Mandan, North Dakota.
 
+#proposed-coordinates
+46.7610072, -100.8501802
+
 #upstream-source
 None.
 
@@ -201,6 +228,9 @@ During the late 1960s and early 1970s, staff members working in the State Histor
 
 #location
 The Liberty Memorial Building on the grounds of the State Capitol in Bismarck, North Dakota.
+
+#proposed-coordinates
+46.81916667, -100.78138889
 
 #upstream-source
 Bismarck Tribune; State Historical Society of North Dakota records; Dakota Datebook by Sarah Walker.

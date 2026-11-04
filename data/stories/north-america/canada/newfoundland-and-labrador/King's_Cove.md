@@ -34,7 +34,7 @@ In 1726, Paddy Kelly set out late on Christmas Eve from King's Cove to return ho
 The road between King's Cove and Keels, near St. Croix, Bonavista Bay, Newfoundland and Labrador, Canada.
 
 #proposed-coordinates
-48.61298315, -53.39922669999999
+48.5703695, -53.3350642
 
 #upstream-source
 The 1926 Christmas edition of The Trinitarian ("Bonavista South").

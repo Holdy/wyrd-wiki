@@ -10,6 +10,9 @@ According to local Norfolk folklore, two young orphaned children—a brother and
 #location
 Wayland Wood, located just south-east of Watton in Norfolk, England, directly off the A1075.
 
+#proposed-coordinates
+52.5599125, 0.8392182
+
 #upstream-source
 Thomas Millington, *The Norfolk gent his will and Testament* (1595).
 

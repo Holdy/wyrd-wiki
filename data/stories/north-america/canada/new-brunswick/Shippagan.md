@@ -10,6 +10,9 @@ For over two centuries, coastal residents and fishermen around Shippagan Island 
 #location
 The coastal waters surrounding Shippagan Island in northeastern New Brunswick, where Chaleur Bay meets the Gulf of St. Lawrence.
 
+#proposed-coordinates
+47.6148518, -56.7456751
+
 #upstream-source
 None.
 

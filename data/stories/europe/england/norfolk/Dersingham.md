@@ -10,6 +10,9 @@ Situated on Manor Road in the Norfolk village of Dersingham, The Feathers is an 
 #location
 The Feathers is located at 71 Manor Road in Dersingham, Norfolk.
 
+#proposed-coordinates
+52.8441358, 0.5099797
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ At Boghall Farm, a diligent brownie worked tirelessly every night, cleaning and 
 #location
 Boghall Farm is located near the town of Biggar in South Lanarkshire, Scotland.
 
+#proposed-coordinates
+55.6174439, -3.5272076
+
 #upstream-source
 George Douglas, Scottish Fairy and Folk Tales (1892)
 

@@ -34,7 +34,7 @@ Built in 1891, Guisachan House served as the summer residence for Lord and Lady 
 1060 Cameron Ave., Kelowna, British Columbia
 
 #proposed-coordinates
-49.888056000000006, -119.495556
+49.8701198, -119.4764503
 
 #upstream-source
 British Columbia Magazine citing the Okanagan Heritage Society archives.

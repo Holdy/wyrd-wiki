@@ -11,7 +11,7 @@ Established in 1875 as the second fort constructed by the North West Mounted Pol
 The Fort Heritage Precinct, situated along the North Saskatchewan River in Fort Saskatchewan, Alberta.
 
 #proposed-coordinates
-53.71111109999999, -113.21777779999998
+53.7124199, -113.2171069
 
 #upstream-source
 Barbara Smith, *Ghost Stories of Alberta*, *More Ghost Stories of Alberta*, and *Even More Ghost Stories of Alberta*.

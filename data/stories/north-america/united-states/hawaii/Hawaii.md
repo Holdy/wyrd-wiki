@@ -33,6 +33,9 @@ According to historical accounts from April 1947, a group of five men and women 
 #location
 The Nuuanu Pali Lookout off the Pali Highway on the island of Oahu, Hawaii.
 
+#proposed-coordinates
+21.3331549, -157.8419099
+
 #upstream-source
 Adapted from 1947 newspaper reports and historical archives of Honolulu police records.
 
@@ -52,6 +55,9 @@ While leading a ghost tour along the deserted stretch of Kiona‘ole Road (forme
 
 #location
 Along Kiona‘ole Road (formerly Old Pali Road) near the stunted banyan tree and Pali Golf Course on the island of Oahu, Hawaii.
+
+#proposed-coordinates
+21.3463494, -157.826309
 
 #upstream-source
 None.
@@ -109,6 +115,9 @@ The winding pass of Nu'uanu Pali on Oahu was the site of the brutal 1795 Battle 
 #location
 Nu'uanu Pali Drive and the Pali Highway winding through the Ko'olau mountain range on Oahu, Hawaii.
 
+#proposed-coordinates
+22.2069153, -159.3560813
+
 #upstream-source
 None.
 
@@ -128,6 +137,9 @@ Morgan's Corner is a sharp hairpin turn on Nuʻuanu Pali Drive in Honolulu, name
 
 #location
 Morgan's Corner is located at the prominent hairpin turn on Nuʻuanu Pali Drive in Honolulu, Oahu, Hawaii.
+
+#proposed-coordinates
+21.304547, -157.855676
 
 #upstream-source
 None.
@@ -192,6 +204,9 @@ The historic Nuʻuanu Pali Lookout is plagued by the ghosts of ancient warriors,
 Following the bloody 1795 Battle of Nuʻuanu where hundreds of warriors were driven off the sheer cliffs by King Kamehameha I, the Pali Lookout became notorious for supernatural encounters. Visitors and ghost tour groups frequently report ghostly apparitions, disembodied voices, and a tragic spirit of a high school girl who allegedly died by suicide and now calls out the names of unfaithful men near the edge of the cliff. Additionally, local legend warns against carrying pork products across the pass between the windward and leeward sides, as it is believed to anger the pig god Kamapuaʻa and volcano goddess Pele, frequently resulting in mysterious car stalls and inexplicable phenomena.
 #location
 The Nuʻuanu Pali State Wayside along the Pali Highway on the island of Oahu, Hawaii.
+
+#proposed-coordinates
+21.3668482, -157.7933264
 #upstream-source
 Glen Grant's Chicken Skin Tales
 #reference
@@ -211,8 +226,17 @@ Opened in 1901 as Waikiki's first grand resort, the Moana Hotel (now the Moana S
 #location
 The Moana Surfrider Hotel located on Kalakaua Avenue in Waikiki Beach, Honolulu, Oahu, Hawaii.
 
+#proposed-coordinates
+21.276499, -157.8268852
+
 #upstream-source
 None.
 
 #reference
 https://honoluluhaunts.com/the-haunted-moana-surfrider/
+
+#coordinates
+21.27650, -157.82686
+
+#tags
+named-ghost

@@ -11,7 +11,7 @@ According to local folklore in Western Newfoundland, the notorious 17th-century 
 Shellbird Island and Hughes Brook along the Humber River near Corner Brook, Newfoundland and Labrador.
 
 #proposed-coordinates
-48.93589404759248, -57.90680187076465
+48.9475713, -57.8678137
 
 #upstream-source
 Frank Galgay and Michael McCarthy, Buried Treasures of Newfoundland and Labrador.

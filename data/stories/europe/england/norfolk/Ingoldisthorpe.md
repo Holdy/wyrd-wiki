@@ -10,6 +10,9 @@ Ingoldisthorpe Manor, which stood opposite the top end of Hill Road on St. Thoma
 #location
 The site of the former Ingoldisthorpe Manor, located opposite the top end of Hill Road on St. Thomas's Lane (now Manor Close) in Ingoldisthorpe, Norfolk.
 
+#proposed-coordinates
+52.8659467, 0.5036437
+
 #upstream-source
 None.
 

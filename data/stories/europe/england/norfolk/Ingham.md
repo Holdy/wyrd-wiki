@@ -10,6 +10,9 @@ According to local tradition and 19th-century accounts recorded by Ernest R. Suf
 #location
 Holy Trinity Church is situated in the village of Ingham, Norfolk, located directly next to The Swan public house.
 
+#proposed-coordinates
+52.7787462, 1.5438262
+
 #upstream-source
 Ernest R. Suffling, *History and Legends of the Broads District* (Jarrold and Sons, 1891).
 

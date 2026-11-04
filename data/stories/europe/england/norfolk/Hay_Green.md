@@ -10,6 +10,9 @@ Terrington St Clement traces its earliest Saxon origins to Hay Green before sett
 #location
 St Clement's Church in the village of Terrington St Clement, Norfolk.
 
+#proposed-coordinates
+52.8088521, 0.3090975
+
 #upstream-source
 The East Anglian Magazine (1946) and the 1830s poem by Thomas Haynes Bayly.
 

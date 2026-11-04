@@ -10,6 +10,9 @@ For centuries, the royal Kingswood Forest dominated the landscape of South Glouc
 #location
 The Ridgewood Centre, located on the boundary between Yate and Chipping Sodbury, South Gloucestershire.
 
+#proposed-coordinates
+51.5382179, -2.392653
+
 #upstream-source
 None.
 

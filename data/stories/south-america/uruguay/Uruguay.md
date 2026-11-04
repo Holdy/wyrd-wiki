@@ -10,6 +10,9 @@ Juan Bautista Idiarte Borda, the President of Uruguay from 1894 to 1897, ordered
 #location
 Castillo Idiarte Borda is located at Avenida Lezica 5912 in the Colón neighborhood of Montevideo, Uruguay.
 
+#proposed-coordinates
+-34.8021164, -56.2320704
+
 #upstream-source
 None.
 
@@ -30,6 +33,9 @@ Father Julio César Elizaga, a prominent Uruguayan priest and demonologist known
 #location
 The Parroquia de Belén (Bethlehem Parish), located in the Malvín neighborhood of Montevideo, Uruguay.
 
+#proposed-coordinates
+-34.9058916, -56.1913095
+
 #upstream-source
 *Memorias de un Cura* by Julio César Elizaga (also documented in *El exorcista de Malvín* by Luis Alberto Brenner).
 
@@ -49,6 +55,9 @@ Near the city of Bella Unión in the department of Artigas, a dangerous curve on
 
 #location
 The access road to the former CALNU sugar mill on the outskirts of Bella Unión in the department of Artigas, Uruguay.
+
+#proposed-coordinates
+-30.3984136, -56.4638078
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ St Gwynllyw, a former warrior king who repented and founded a church on a hill f
 #location
 St Woolos Cathedral (St Gwynllyw's Church) is located on Stow Hill in Newport, South Wales.
 
+#proposed-coordinates
+52.3645762, -3.0036632
+
 #upstream-source
 None.
 

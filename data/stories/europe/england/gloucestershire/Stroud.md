@@ -10,6 +10,9 @@ In December 1760, Bill Clavers, the landlord of the Ragged Cot coaching inn near
 #location
 The Ragged Cot is an historic coaching inn located in Hyde, near Minchinhampton and Stroud in Gloucestershire.
 
+#proposed-coordinates
+51.7092186, -2.1650078
+
 #upstream-source
 Pall Mall Magazine (1907) by W. Smade; also recorded in Gloucestershire Ghost Tales by Anthony Nanson and Kirsty Hartsiotis.
 

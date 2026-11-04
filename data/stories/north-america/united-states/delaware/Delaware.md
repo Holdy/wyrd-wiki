@@ -10,6 +10,9 @@ In the late 19th century, a young woman named Maggie Bloxom suffered a tragic ac
 #location
 Maggie's Bridge crosses a small creek on Woodland Church Road (Route 78) in Seaford, Delaware.
 
+#proposed-coordinates
+38.593889, -75.6664636
+
 #upstream-source
 None.
 
@@ -59,6 +62,9 @@ Sometime in the late 1800s, a young woman named Maggie Bloxom was driving her ho
 #location
 Maggie's Bridge spans a branch of the Nanticoke River on Woodland Church Road, approximately one mile south of the Woodland Ferry landing near the village of Woodland, west of Seaford, Delaware.
 
+#proposed-coordinates
+38.593889, -75.6664636
+
 #upstream-source
 Kelly Lidji, *Maggie, I Have Your Baby: The Haunting Of Maggie’s Bridge*.
 
@@ -78,6 +84,9 @@ On September 3, 1777, Cooch’s Bridge was the site of the only major Revolution
 
 #location
 Cooch’s Bridge crossing in Newark, Delaware.
+
+#proposed-coordinates
+39.640073, -75.736409
 
 #upstream-source
 None.
@@ -99,6 +108,9 @@ Serving as a coastal defense fortress and later a massive prison camp housing ne
 #location
 Fort Delaware State Park on Pea Patch Island in the Delaware River.
 
+#proposed-coordinates
+39.5921687, -75.572855
+
 #upstream-source
 None.
 
@@ -119,6 +131,9 @@ Built in the late 18th century, Woodburn has served as the home for Delaware's g
 #location
 Woodburn, the governor's mansion located on Kings Highway in Dover, Delaware.
 
+#proposed-coordinates
+39.1593366, -75.5242424
+
 #upstream-source
 None.
 
@@ -138,6 +153,9 @@ Constructed in the 19th century to guard the ports of Wilmington and Philadelphi
 
 #location
 Fort Delaware State Park on Pea Patch Island in the Delaware River.
+
+#proposed-coordinates
+39.5921687, -75.572855
 
 #upstream-source
 None.

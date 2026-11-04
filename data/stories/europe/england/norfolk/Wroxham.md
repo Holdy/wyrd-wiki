@@ -10,6 +10,9 @@ According to local Norfolk folklore, Sir Thomas Boleyn—father of the ill-fated
 #location
 Wroxham Bridge spans the River Bure on the A1151 road in the Norfolk village of Wroxham.
 
+#proposed-coordinates
+52.7117324, 1.4081761
+
 #upstream-source
 None.
 

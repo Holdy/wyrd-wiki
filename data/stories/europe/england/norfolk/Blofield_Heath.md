@@ -10,6 +10,9 @@ According to local Norfolk legend, the ghosts of Sir Thomas Boleyn—father of A
 #location
 The rural path leading from Blofield church (St Andrew and St Peter) in Blofield to St Michael's Church at Braydeston in Norfolk.
 
+#proposed-coordinates
+53.3712272, -2.7758136
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ In an oral history interview recorded for the Baccalieu Trail Heritage Corporati
 #location
 A specific rock along the coastline of Bishop's Cove, Conception Bay, Newfoundland and Labrador.
 
+#proposed-coordinates
+47.6359376, -53.2310694
+
 #upstream-source
 Oral history interview by Linda Cooper, collected by the Baccalieu Trail Heritage Corporation (archived in the Memorial University of Newfoundland Folklore and Language Archive).
 

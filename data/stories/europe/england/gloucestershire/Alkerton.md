@@ -10,6 +10,9 @@ At the rear of the garden belonging to Alkerton Grange in the Gloucestershire ha
 #location
 Alkerton Grange, located in the hamlet of Alkerton, Gloucestershire.
 
+#proposed-coordinates
+51.7475988, -2.3302616
+
 #upstream-source
 A History of the County of Gloucester: Volume 10, edited by C. R. Elrington, N. M. Herbert, and R. B. Pugh (Victoria County History).
 

@@ -10,6 +10,9 @@ After moving into what appeared to be a normal countryside home in Tivetshall St
 #location
 A residential property located within the village of Tivetshall St Mary, Norfolk.
 
+#proposed-coordinates
+52.426456, 1.1959907
+
 #upstream-source
 None.
 
@@ -58,6 +61,9 @@ St Mary's Church in Tivetshall St Mary is a largely abandoned and roofless medie
 
 #location
 The ruins of St Mary's Church are located off a narrow country lane in Tivetshall St Mary, South Norfolk, at grid reference TM 1662 8580.
+
+#proposed-coordinates
+52.427290, 1.184795
 
 #upstream-source
 None.

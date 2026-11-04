@@ -10,6 +10,9 @@ Jinack Island, located at the mouth of the River Gambia, has long been shrouded 
 #location
 Jinack Island is situated off the coast of the North Bank Region of The Gambia, precisely where the River Gambia meets the Atlantic Ocean.
 
+#proposed-coordinates
+13.54574, -16.5225151
+
 #upstream-source
 None.
 

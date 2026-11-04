@@ -14,6 +14,9 @@ In February 1972, Walpole weighted the head down and threw it into the River Yar
 #location
 The Goat Inn (now operating as The Huntsman), located in Strumpshaw, Norfolk.
 
+#proposed-coordinates
+52.7696383, 1.3328082
+
 #upstream-source
 None.
 

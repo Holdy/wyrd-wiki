@@ -10,6 +10,9 @@ June 20th, 1641, marked Trinity Sunday in Long Newnton, where villagers maintain
 #location
 The village of Long Newnton, situated near Tetbury on the Gloucestershire-Wiltshire border.
 
+#proposed-coordinates
+51.626, -2.133
+
 #upstream-source
 Wiltshire Quarter Sessions Records (Trinity Session 1641), Cunnington’s *Records of Wiltshire*, and the topographical collections of John Aubrey (1659–1670).
 

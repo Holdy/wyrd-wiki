@@ -10,6 +10,9 @@ Local folklore collected from West Norfolk recounts the curious behavior of a fa
 #location
 The agricultural parish and village of Middleton, situated near King's Lynn in West Norfolk.
 
+#proposed-coordinates
+52.9087997, 0.4810131
+
 #upstream-source
 E. G. Bales, "Folklore from West Norfolk", *Folk-Lore*, Vol. 50, No. 1 (1939).
 

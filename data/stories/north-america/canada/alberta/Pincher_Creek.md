@@ -11,7 +11,7 @@ Commissioned in 1887, the A.E. & Mary Cox farmhouse was relocated to the Kootena
 The Cox House at the Kootenai Brown Historical Park at 1037 Bev McLachlin Drive in Pincher Creek, Alberta.
 
 #proposed-coordinates
-49.485277800000006, -113.94749999999996
+49.4905079, -113.9457266
 
 #upstream-source
 None.
@@ -34,7 +34,7 @@ Positioned outside the North West Mounted Police Outpost exhibit is the original
 The North West Mounted Police Outpost exhibit at the Kootenai Brown Historical Park at 1037 Bev McLachlin Drive in Pincher Creek, Alberta.
 
 #proposed-coordinates
-49.485277800000006, -113.94749999999996
+49.4905079, -113.9457266
 
 #upstream-source
 None.
@@ -57,7 +57,7 @@ Built in 1897 as the first rural one-room schoolhouse in the area, the Fishburn 
 The Fishburn School House at the Kootenai Brown Historical Park at 1037 Bev McLachlin Drive in Pincher Creek, Alberta.
 
 #proposed-coordinates
-49.485277800000006, -113.94749999999996
+49.4905079, -113.9457266
 
 #upstream-source
 None.

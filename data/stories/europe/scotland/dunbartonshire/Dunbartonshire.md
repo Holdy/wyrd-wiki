@@ -10,6 +10,9 @@ The stone bridge situated on the approach road to Overtoun House in West Dunbart
 #location
 Overtoun Bridge is located on the estate road leading to Overtoun House just north of Dumbarton in West Dunbartonshire.
 
+#proposed-coordinates
+55.9526831, -4.5253179
+
 #upstream-source
 None.
 

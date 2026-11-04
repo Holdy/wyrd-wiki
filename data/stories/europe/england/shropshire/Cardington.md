@@ -10,6 +10,9 @@ According to local folklore, the Devil created a 200 to 300-yard stretch of rude
 #location
 The Devil's Causeway is an ancient stretch of road located between Acton Burnell and Cardington in south Shropshire.
 
+#proposed-coordinates
+52.5526556, -2.7309517
+
 #upstream-source
 *Shropshire Folk-Lore* by Charlotte S. Burne (1883)
 

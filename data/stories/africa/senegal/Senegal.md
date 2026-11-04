@@ -10,6 +10,9 @@ In August 2014, medical anthropologist Angelo Miramonti traveled to Dakar, Seneg
 #location
 The enclosed sandy courtyard within the traditional Lebu fishing village in Yoff, Dakar, Senegal, where the Ndöp possession ceremonies take place.
 
+#proposed-coordinates
+14.693425, -17.447938
+
 #upstream-source
 _Amina. Portrait of a Woman Inhabited by Ancestral Spirits_ by Angelo Miramonti.
 
@@ -29,6 +32,9 @@ Deep in the Senegambian region, ancient megalithic monuments—such as the massi
 
 #location
 The Sine Ngayene megalithic stone circle complex is located in central Senegal, approximately 100 kilometers east of Kaolack.
+
+#proposed-coordinates
+14.138815, -16.076391
 
 #upstream-source
 Henry Parker, "Stone Circles in Gambia," Journal of the Royal Anthropological Institute of Great Britain and Ireland 53 (1923); Geoffrey Gorer, Africa Dances (Faber & Faber, 1935).

@@ -10,6 +10,9 @@ On September 24, 1936, a young woman named Margareta Ștefănescu tragically die
 #location
 The Bride's Trinity is located alongside national road DN7 just outside the town of Găești in Dâmbovița County, Romania.
 
+#proposed-coordinates
+44.7296984, 25.2987564
+
 #upstream-source
 None.
 

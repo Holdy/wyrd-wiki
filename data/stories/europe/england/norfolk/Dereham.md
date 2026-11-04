@@ -36,6 +36,9 @@ In November 1945, John Harries was cycling through the Norfolk countryside towar
 #location
 The road leading towards the former RAF Swanton Morley near East Dereham, Norfolk.
 
+#proposed-coordinates
+52.70864, 0.98131
+
 #upstream-source
 None.
 
@@ -58,6 +61,9 @@ In the 7th century, St. Withburga, daughter of King Anna of East Anglia, founded
 
 #location
 St. Nicholas Church in East Dereham, Norfolk, where the historical holy well and old bath site lie just outside the west door of the church.
+
+#proposed-coordinates
+52.6802052, 0.9386329
 
 #upstream-source
 John Capgrave's *Nova Legenda Anglie* (1516), Henry Wharton's *Anglia Sacra* (vol. 1, 1691), Thomas Tanner's *Notitia Monastica* (1744), Alban Butler's *Lives of the Primitive Fathers, Martyrs, and Other Principal Saints* (1757), Francis Blomefield's *An Essay Towards a Topographical History of the County of Norfolk* (1775), John Chambers's *A General History of the County of Norfolk* (vol. 2, 1829), and R. C. Hope's *The Legendary Lore of the Holy Wells of England* (1893).

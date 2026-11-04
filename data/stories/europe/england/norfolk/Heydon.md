@@ -10,6 +10,9 @@ According to local legend, during a visit to Heydon Hall—then the home of his 
 #location
 Cromwell's Oak stands in the parkland surrounding Heydon Hall in the village of Heydon, Norfolk.
 
+#proposed-coordinates
+52.8052797, 1.1384216
+
 #upstream-source
 None.
 

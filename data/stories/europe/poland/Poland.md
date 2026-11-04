@@ -36,6 +36,9 @@ Centuries ago, the village of Małachowo was ruled by a tyrannical and exploitat
 #location
 The village of Małachowo-Złych Miejsc is located in west-central Poland near the city of Gniezno.
 
+#proposed-coordinates
+52.4525, 17.73555556
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ In the 15th century, Czocha Castle was home to a brother and sister named Gertru
 
 #location
 Czocha Castle is located in the village of Sucha, near Leśniańskie Lake in southwestern Poland.
+
+#proposed-coordinates
+53.7558605, 15.9706013
 
 #upstream-source
 None.

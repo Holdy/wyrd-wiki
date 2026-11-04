@@ -10,6 +10,9 @@ After purchasing a two-storey turquoise house sight unseen in downtown Carbonear
 #location
 A two-storey turquoise house situated in a laneway on a hill in downtown Carbonear, backed by an open field and featuring a giant tree in the front yard.
 
+#proposed-coordinates
+47.733123, -53.2366225
+
 #upstream-source
 None.
 

@@ -48,6 +48,12 @@ Ghosts of Vancouver: 43 Haunted Places by Greg Mansfield.
 #reference
 https://www.ghostsofvancouver.com/haunted-locations/gaolers-mews/
 
+#coordinates
+49.28320, -123.10471
+
+#tags
+haunting
+
 ---
 
 #title

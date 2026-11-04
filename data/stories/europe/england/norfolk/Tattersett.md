@@ -10,6 +10,9 @@ According to local folklore associated with Wicken Pond in Tattersett, the water
 #location
 Wicken Pond is located at grid reference TF836314 in the parish of Tattersett, Norfolk.
 
+#proposed-coordinates
+52.849226, 0.725800
+
 #upstream-source
 'Norfolk & Norwich Notes & Queries', Note 439 (29/3/1902).
 

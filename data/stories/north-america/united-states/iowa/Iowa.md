@@ -10,6 +10,9 @@ Commissioned in 1913 by Teresa Feldevert to honor her late son and husband, a to
 #location
 The statue stands over a gravesite on the north side of Oakland Cemetery in Iowa City, Iowa.
 
+#proposed-coordinates
+41.6694192, -91.5207222
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ In 1912, Teresa Dolezal Feldevert commissioned a monumental bronze angel from ar
 
 #location
 Oakland Cemetery is located at 1000 Brown Street in Iowa City, Iowa, where the Black Angel monument stands atop the Feldevert family gravesite.
+
+#proposed-coordinates
+32.8676609, -96.772437
 
 #upstream-source
 *The Black Angel Monument* (www.iowa-city.org pamphlet); Mark Moran and Mark Sceurman, *Weird U.S.: Your Travel Guide to America’s Local Legends and Best Kept Secrets* (Sterling Publishing Company, Inc., 2009).
@@ -50,6 +56,9 @@ The nine-foot-tall bronze statue was commissioned by Theresa Feldevert to stand 
 #location
 Oakland Cemetery in Iowa City, Iowa.
 
+#proposed-coordinates
+41.6694192, -91.5207222
+
 #upstream-source
 None.
 
@@ -70,11 +79,17 @@ Commissioned in 1913 by Teresa Dolezal Feldevert to honor her late son and husba
 #location
 The Black Angel statue stands in Oakland Cemetery in Iowa City, Iowa.
 
+#proposed-coordinates
+41.6694192, -91.5207222
+
 #upstream-source
 Moran, Mark and Mark Sceurman. *Weird U.S.: Your Travel Guide to America’s Local Legends and Best Kept Secrets.*
 
 #reference
 https://notebookofghosts.com/2023/07/08/the-black-angel-of-iowa-fact-fiction/
+
+#tags
+curse,approx
 
 ---
 
@@ -90,11 +105,17 @@ Spanning the North Raccoon River, the Marsh Rainbow Arch Bridge dates back to 19
 #location
 The Marsh Rainbow Arch Bridge spans the North Raccoon River just south of Lake City, Iowa.
 
+#proposed-coordinates
+42.22955, -94.75459
+
 #upstream-source
 None.
 
 #reference
 https://www.iowapbs.org/article/8600/local-legends-around-iowas-haunted-locations
+
+#tags
+ghost
 
 ---
 
@@ -109,6 +130,9 @@ In the 1800s, a young woman named Lucinda arranged to meet her lover on Stony Ho
 
 #location
 Stony Hollow Road is a rural road located approximately eight miles north of Burlington, Iowa, featuring a steep cliff bordering the roadway.
+
+#proposed-coordinates
+40.8126922, -91.1020205
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ Commissioned in 1479 by diplomat Giovanni Dario as a tribute to Venice, the pala
 #location
 Ca’ Dario is located at number 353 in the Dorsoduro district of Venice, facing the Grand Canal near the Church of Santa Maria della Salute.
 
+#proposed-coordinates
+45.4308731, 12.3322218
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ During the 19th century, Antonio Boggia—historically recognized as Italy's fir
 
 #location
 Via Bagnera is a narrow street located in central Milan, situated between Via Torino, the Basilica of Sant'Ambrogio, and the Duomo.
+
+#proposed-coordinates
+45.5321991, 10.0214951
 
 #upstream-source
 None.

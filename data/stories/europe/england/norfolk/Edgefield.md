@@ -10,6 +10,9 @@ In the village of Edgefield, local legend tells of a violent incident where a yo
 #location
 A hedgerow at Cross Green on the corner of Briston Road and Ramsgate Street in Edgefield, Norfolk.
 
+#proposed-coordinates
+52.8620178, 1.0963177
+
 #upstream-source
 Maurice Morson: 'Norfolk Mayhem & Murder: Classic Cases Revisited' (Pen & Sword Books, 2008).
 

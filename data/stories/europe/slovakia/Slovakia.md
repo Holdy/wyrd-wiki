@@ -10,6 +10,9 @@ In the Pieniny Mountains of northern Slovakia, seven monks from the Red Cloister
 #location
 The Red Cloister (Červený Kláštor) is a historic monastery complex located in the St. Anton Valley along the Dunajec River in northern Slovakia, near the village of Lechnica.
 
+#proposed-coordinates
+49.3811048, 20.4088983
+
 #upstream-source
 None.
 

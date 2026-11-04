@@ -10,6 +10,9 @@ Local folklore long held that the road between Avening and Minchinhampton was ha
 #location
 The road between Avening and Minchinhampton, specifically near the Minchinhampton Golf Club in Gloucestershire.
 
+#proposed-coordinates
+51.6888346, -2.1615952
+
 #upstream-source
 Ruth Roper Wylde, *These Haunted Times Volume Two*
 

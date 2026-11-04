@@ -10,6 +10,9 @@ According to local folklore, the Devil chose a prominent limestone pillar high a
 #location
 The Devil's Pulpit is a limestone rock outcrop perched high above the River Wye in Tidenham parish near Sedbury, Gloucestershire.
 
+#proposed-coordinates
+51.6925543, -2.6627893
+
 #upstream-source
 None.
 

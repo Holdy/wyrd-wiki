@@ -33,6 +33,9 @@ In the late 1770s, a young woman named Nancy Barton was employed as a servant in
 #location
 Nancy's Grave and Nancy's Brook are situated in Crawford Notch near the Notchland Inn in Hart's Location, New Hampshire.
 
+#proposed-coordinates
+44.2134961, -71.407057
+
 #upstream-source
 None.
 
@@ -82,6 +85,9 @@ Mary Wallace was born aboard a ship carrying Scotch-Irish immigrants to America 
 #location
 The Ocean-Born Mary House is located on Bear Road just outside of Henniker, New Hampshire.
 
+#proposed-coordinates
+43.1797486, -71.8225254
+
 #upstream-source
 None.
 
@@ -101,6 +107,9 @@ In 1720, a baby girl named Mary Wallace was born on a ship captured by the notor
 
 #location
 The Ocean-Born Mary House stands on a hillside overlooking the town of Henniker, New Hampshire.
+
+#proposed-coordinates
+43.1797486, -71.8225254
 
 #upstream-source
 None.
@@ -122,6 +131,9 @@ In the spring, an AMC crew member named George was sent up to the Lakes of the C
 #location
 Lakes of the Clouds Hut, located near the summit of Mount Washington in New Hampshire.
 
+#proposed-coordinates
+44.2704946, -71.3033045
+
 #upstream-source
 Marianne O'Connor, *Haunted Hikes in New Hampshire*.
 
@@ -142,6 +154,9 @@ Beginning in the early 1970s, locals and ghost enthusiasts in Manchester, New Ha
 #location
 River Road runs alongside the Merrimack River in Manchester, New Hampshire.
 
+#proposed-coordinates
+43.0320571, -71.4673876
+
 #upstream-source
 *Manchester Ghosts, New Hampshire’s Haunted City* by Renee Mallett.
 
@@ -161,6 +176,9 @@ In the early spring before the Lakes of the Clouds hut opened for the season, an
 
 #location
 The Lakes of the Clouds Hut is located in the alpine saddle between Mount Monroe and Mount Washington in the White Mountains of New Hampshire.
+
+#proposed-coordinates
+44.5035101, -71.1585465
 
 #upstream-source
 Haunted Hikes of New Hampshire by Marianne O’Connor.

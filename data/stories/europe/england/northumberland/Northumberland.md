@@ -35,6 +35,9 @@ His corpse was eventually moved to a gibbet located two and a half miles from El
 #location
 The key location is the gibbet located two and a half miles from Elsdon in Northumberland National Park.
 
+#proposed-coordinates
+55.233849, -2.0990812
+
 #upstream-source
 None
 

@@ -10,6 +10,9 @@ In the winter of 1815, a drummer boy home on leave fell in love with a local vil
 #location
 Potter Heigham Bridge crosses the River Thurne in the village of Potter Heigham, Norfolk.
 
+#proposed-coordinates
+52.7098036, 1.5810917
+
 #upstream-source
 *History and Legends of the Broad District* by Ernest Suffling (1890).
 

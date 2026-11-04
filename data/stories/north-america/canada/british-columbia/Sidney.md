@@ -19,6 +19,9 @@ None.
 #reference
 https://vancouverislandfreedaily.com/2024/10/19/saanich-peninsula-home-to-some-spooky-stories-and-haunted-habitat/
 
+#tags
+pinless
+
 ---
 
 #title
@@ -42,6 +45,12 @@ None.
 #reference
 https://vancouverislandfreedaily.com/2024/10/19/saanich-peninsula-home-to-some-spooky-stories-and-haunted-habitat/
 
+#coordinates
+48.57959, -123.43504
+
+#tags
+ghost,approx
+
 ---
 
 #title
@@ -64,3 +73,9 @@ None.
 
 #reference
 https://vancouverislandfreedaily.com/2024/10/19/saanich-peninsula-home-to-some-spooky-stories-and-haunted-habitat/
+
+#coordinates
+48.68273, -123.40696
+
+#tags
+ghost,child

@@ -10,6 +10,9 @@ In the wooded slopes close to Gresham Cross in Aylmerton, five shallow pits—or
 #location
 Five shallow medieval iron ore pits located in the wooded slopes near Gresham Cross in Aylmerton, Norfolk.
 
+#proposed-coordinates
+52.9105827, 1.239289
+
 #upstream-source
 None.
 

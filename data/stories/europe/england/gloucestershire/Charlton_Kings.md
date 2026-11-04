@@ -10,6 +10,9 @@ Until the mid-20th century, the New Year in Charlton Kings was marked by specifi
 #location
 The historic parish and village of Charlton Kings, located just southeast of Cheltenham in Gloucestershire.
 
+#proposed-coordinates
+51.8877, -2.0413
+
 #upstream-source
 Kirsty Hartsiotis citing Ronald Hutton (*Stations of the Sun*), Steve Roud (*The English Year*), and Anthony Nanson and Kirsty Hartsiotis (*Gloucestershire Folk Tales for Children*).
 

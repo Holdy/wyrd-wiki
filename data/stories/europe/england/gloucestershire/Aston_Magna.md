@@ -10,6 +10,9 @@ During the medieval period and continuing into the nineteenth century, the chape
 #location
 The historic corpse road running from Aston Magna to St Peter & St Paul's Church in Blockley, Gloucestershire.
 
+#proposed-coordinates
+52.01944444, -1.71388889
+
 #upstream-source
 None.
 

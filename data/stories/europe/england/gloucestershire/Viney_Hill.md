@@ -12,6 +12,9 @@ As the officers confronted the rowdy group, a violent scuffle erupted. The intox
 #location
 The rural lanes and pathways of Viney Hill in the Forest of Dean, Gloucestershire, where the officers were ambushed during their patrol.
 
+#proposed-coordinates
+51.7573511, -2.4955204
+
 #upstream-source
 None.
 

@@ -30,6 +30,9 @@ While visiting a church ministry in the Williamsville neighborhood of Abidjan, C
 #location
 A tree outside the church in the Williamsville neighborhood of Abidjan, Côte d'Ivoire.
 
+#proposed-coordinates
+5.320357, -4.016107
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ In the rural Gloucestershire parish of Ham, near Berkeley, cider production was 
 #location
 The orchards and rural lanes surrounding the village of Ham, near Berkeley in Gloucestershire.
 
+#proposed-coordinates
+51.6913643, -2.4585247
+
 #upstream-source
 None.
 

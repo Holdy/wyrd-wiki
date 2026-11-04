@@ -10,6 +10,9 @@ Following the post-war destruction of Tollymore House, the historic seat of the 
 #location
 The tree-lined avenue within Tollymore Forest Park near Bryansford in County Down.
 
+#proposed-coordinates
+54.2259219, -5.9399371
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Local folklore surrounding the standing stone in Dundrum warns that the monolith
 
 #location
 The cursed standing stone is located in the village of Dundrum, County Down.
+
+#proposed-coordinates
+54.2581955, -5.8426084
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ At the close of the 19th century, Bumbler's Farm in Shelfanger became the center
 #location
 Bumbler's Farm was located in the rural village of Shelfanger, near the town of Diss in Norfolk.
 
+#proposed-coordinates
+52.3769148, 1.1088804
+
 #upstream-source
 None.
 

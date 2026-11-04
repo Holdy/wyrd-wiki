@@ -10,6 +10,9 @@ According to historical accounts and medieval monastic records, including Franci
 #location
 The Little Wood in the parish of Hoveton St John, Norfolk.
 
+#proposed-coordinates
+51.414322, 0.1018714
+
 #upstream-source
 Francis Blomefield, *An Essay Towards a Topographical History of the County of Norfolk*, Volume 11 (referencing medieval records from St Benet's Abbey and the chronicle of John of Oxnead).
 

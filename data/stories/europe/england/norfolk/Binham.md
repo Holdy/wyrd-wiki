@@ -10,6 +10,9 @@ Local accounts in Binham tell of eerie paranormal encounters centered around Bin
 #location
 Binham Priory and Parish Church is situated on Priory Lane in the village of Binham, Norfolk, England.
 
+#proposed-coordinates
+52.9198588, 0.9461616
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ Local folklore long whispered of a mysterious subterranean tunnel running from B
 
 #location
 Fiddler's Hill is an archaeological mound located at a crossroads on the North Norfolk coast between Blakeney and Binham Priory.
+
+#proposed-coordinates
+52.9198588, 0.9461616
 
 #upstream-source
 None.

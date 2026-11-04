@@ -36,6 +36,9 @@ For generations, local folklore in Hethersett has spoken of strange phantom crea
 #location
 Mill Road and Gravel Pit Lane in Hethersett, Norfolk.
 
+#proposed-coordinates
+52.5986027, 1.1698529
+
 #upstream-source
 Walter Rye, Recreations of a Norfolk Antiquary (1920).
 

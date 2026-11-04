@@ -10,6 +10,9 @@ St. German's Parish Church in Wiggenhall St Germans contains a collection of anc
 #location
 St. German's Parish Church stands in the village of Wiggenhall St Germans in West Norfolk, near the banks of the Great Ouse.
 
+#proposed-coordinates
+52.9087997, 0.4810131
+
 #upstream-source
 None.
 

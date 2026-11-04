@@ -10,6 +10,9 @@ Lady Dorothy Walpole, sister of Great Britain's first Prime Minister Robert Walp
 #location
 Raynham Hall, situated in the village of East Raynham, Norfolk, England.
 
+#proposed-coordinates
+52.7965647, 0.7902134
+
 #upstream-source
 Florence Marryat, *There Is No Death* (1891).
 
@@ -29,6 +32,9 @@ Lady Dorothy Walpole married Charles Townshend in 1713, but rumor and suspicion 
 
 #location
 Raynham Hall is a historic country house situated in the village of East Raynham, near Fakenham in Norfolk, England.
+
+#proposed-coordinates
+52.7965647, 0.7902134
 
 #upstream-source
 None.

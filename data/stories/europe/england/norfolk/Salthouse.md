@@ -10,6 +10,9 @@ On a clear night lit by a full moon, a resident named Tom Stirling was pushing h
 #location
 The sighting took place along the stretch of road connecting Salthouse and Kelling in North Norfolk.
 
+#proposed-coordinates
+52.9346726, 1.1106314
+
 #upstream-source
 James Wentworth Day: 'Black Shuck', in East Anglian Magazine, Vol. 21, No. 11 (Sept. 1962), p. 640; also cited in G. McEwan: 'Mystery Animals of Britain and Ireland' (Hale, 1986).
 
@@ -29,6 +32,9 @@ On a bright moonlit night, a local man was pushing his bicycle along the road le
 
 #location
 The coastal road running between Salthouse and Kelling in North Norfolk, UK.
+
+#proposed-coordinates
+52.9346726, 1.1106314
 
 #upstream-source
 James Wentworth Day, 'Black Shuck', in East Anglian Magazine, Vol. 21, No. 11 (Sept. 1962), p. 640; G. McEwan, 'Mystery Animals of Britain and Ireland' (Hale, 1986), p. 126.

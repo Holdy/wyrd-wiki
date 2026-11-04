@@ -10,6 +10,9 @@ According to local tradition, a network of underground smugglers' tunnels once c
 #location
 Blakeney Guildhall is situated near the quayside in the coastal village of Blakeney in North Norfolk, England.
 
+#proposed-coordinates
+52.9557, 1.0179289
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ In the coastal village of Blakeney, witnesses have long reported harrowing encou
 
 #location
 Back Lane in the coastal village of Blakeney, Norfolk.
+
+#proposed-coordinates
+52.9539975, 1.0210063
 
 #upstream-source
 None.

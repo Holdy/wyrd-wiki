@@ -18,3 +18,9 @@ Earl Pilgrim, *The Ghost of Ellen Dower* (Flanker Press, 2002); J.W. Kinsella's 
 
 #reference
 https://www.productofnewfoundland.ca/articles/ellen-dower
+
+#coordinates
+50.885469317009715, -55.895804230085766
+
+#tags
+fetch,approx,revisit

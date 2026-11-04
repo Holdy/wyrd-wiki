@@ -10,6 +10,9 @@ In the quiet North Norfolk village of Honing, local legend speaks of an unusual 
 #location
 St Peter and St Paul's Church and its approach road in the village of Honing, Norfolk.
 
+#proposed-coordinates
+52.805522, 1.4478119
+
 #upstream-source
 Weird Norfolk by Stacia Briggs and Siofra Connor (originally published in the Eastern Daily Press).
 

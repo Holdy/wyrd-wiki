@@ -10,6 +10,9 @@ For generations, outport families passed down frightening warnings about rural l
 #location
 Springfield Road and the adjacent old railway track path in North River, Newfoundland and Labrador.
 
+#proposed-coordinates
+47.5272126, -53.2776511
+
 #upstream-source
 Edited by Lisa Wilson, Foreword by Dale Jarvis, "Folk Beliefs & Legends of Bay Roberts & Area" (Bay Roberts Cultural Foundation and Heritage Foundation of Newfoundland and Labrador, 2014).
 
@@ -30,6 +33,9 @@ Local lore surrounding the old railway trestle crossing in North River warns vis
 #location
 The old railway trestle bridge crossing the river in North River, Newfoundland and Labrador.
 
+#proposed-coordinates
+47.5438167, -53.3122422
+
 #upstream-source
 Edited by Lisa Wilson, Foreword by Dale Jarvis, "Folk Beliefs & Legends of Bay Roberts & Area" (Bay Roberts Cultural Foundation and Heritage Foundation of Newfoundland and Labrador, 2014).
 
@@ -49,6 +55,9 @@ In the mid-1920s, a teenager walking home alone around midnight took a shortcut 
 
 #location
 The road passing through North River near the Roman Catholic cemetery by the Birch Hills, Newfoundland and Labrador.
+
+#proposed-coordinates
+47.5311761, -53.3247521
 
 #upstream-source
 None.

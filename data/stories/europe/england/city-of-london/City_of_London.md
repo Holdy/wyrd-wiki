@@ -10,6 +10,9 @@ Believed by some to be a Roman relic or a sacred foundation marker, the London S
 #location
 The London Stone is embedded in a protective grille on the wall of 111 Cannon Street in the City of London.
 
+#proposed-coordinates
+51.511556, -0.0894634
+
 #upstream-source
 None.
 

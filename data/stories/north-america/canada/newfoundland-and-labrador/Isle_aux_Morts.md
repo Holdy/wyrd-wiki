@@ -34,7 +34,7 @@ Local folklore on the southwest coast of Newfoundland preserves eerie accounts t
 Deadman's Island, located just offshore in Isle aux Morts Harbour, Newfoundland and Labrador.
 
 #proposed-coordinates
-47.59378665402787, -58.959805275205696
+47.5876754, -58.981008
 
 #upstream-source
 Jarvis, Dale. "The haunted house of Deadman's Island." *Downhomer*, February 2003, Vol. 15(9), pp. 64-65.

@@ -10,6 +10,9 @@ In January 1941, a group of friends took an evening drive to investigate the not
 #location
 The former site of the Morne Jaloux Great House is located along the ridge of Morne Jaloux overlooking St. George's on the island of Grenada.
 
+#proposed-coordinates
+12.0356896, -61.7330187
+
 #upstream-source
 None.
 

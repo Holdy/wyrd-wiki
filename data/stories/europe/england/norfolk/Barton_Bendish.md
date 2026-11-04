@@ -36,6 +36,9 @@ Village life in Barton Bendish was frequently disrupted by severe interpersonal 
 #location
 The historic parish of Barton Bendish is situated in the West Norfolk district of Norfolk, England.
 
+#proposed-coordinates
+52.9087997, 0.4810131
+
 #upstream-source
 Cambridge University Press, *Faith, Hope, and Charity* (Chapter 4, "The Tongues of Men and Angels").
 

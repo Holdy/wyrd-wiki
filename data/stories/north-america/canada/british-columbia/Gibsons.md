@@ -57,7 +57,7 @@ Nestled at the base of Mount Elphinstone in an isolated mountainside forest, the
 Gibsons Pioneer Cemetery (Mount Elphinstone Pioneer Cemetery) located in the mountainside forest at the base of Mount Elphinstone in Gibsons, British Columbia.
 
 #proposed-coordinates
-49.400278, -123.508889
+49.4633174, -123.5302155
 
 #upstream-source
 Coastal Shadows (written by Chris Slater).

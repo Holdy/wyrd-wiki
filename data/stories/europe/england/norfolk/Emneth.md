@@ -10,6 +10,9 @@ According to local folklore across the Norfolk Marshland, Tom Hickathrift was bo
 #location
 The historical site of Hickathrift's Field and the former Giant's Grave mound is located near Smeeth Road in the parish of Emneth, Norfolk.
 
+#proposed-coordinates
+52.649024, 0.2268324
+
 #upstream-source
 John Weever, *Ancient Funerall Monuments* (1631); *The History of Thomas Hickathrift* (Pepysian Library chapbook, c. 1660–1690).
 
@@ -29,6 +32,9 @@ In the 1960s, the Lonely Cottage in Emneth, Norfolk, became the center of a seve
 
 #location
 The haunting took place at the Lonely Cottage situated within the village of Emneth, Norfolk.
+
+#proposed-coordinates
+52.6388291, 0.2180009
 
 #upstream-source
 None.

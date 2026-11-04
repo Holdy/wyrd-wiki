@@ -10,6 +10,9 @@ In late 1944 or 1945, shortly before midnight, a member of the Thurton George & 
 #location
 The pond opposite Washingford House on Cooke's Lane (the Thurton to Bergh Apton road) in Bergh Apton, Norfolk (grid reference TG31100128).
 
+#proposed-coordinates
+52.5609944, 1.4080096
+
 #upstream-source
 None.
 
@@ -81,6 +84,9 @@ Late at night, a cyclist riding along Cooke's Lane—the road connecting Thurton
 
 #location
 The encounter took place on Cooke's Lane (the Thurton to Bergh Apton road), specifically near the pond opposite Washingford House at grid reference TG31100128.
+
+#proposed-coordinates
+52.5609944, 1.4080096
 
 #upstream-source
 None.

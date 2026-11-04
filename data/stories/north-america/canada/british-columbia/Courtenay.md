@@ -11,7 +11,7 @@ Local folklore tells the tragic story of a young K'ómoks First Nation woman—n
 Comox Road, along Comox Hill between Courtenay and Comox, British Columbia.
 
 #proposed-coordinates
-49.68944399999999, -124.99583299999999
+49.6876827, -124.9898496
 
 #upstream-source
 None.
@@ -34,7 +34,7 @@ Stately Sandwick Manor, recognized as the oldest residential structure east of t
 Sandwick Manor, located east of the Courtenay River in Courtenay, British Columbia.
 
 #proposed-coordinates
-49.68944399999999, -124.99583299999999
+49.6858385, -124.989213
 
 #upstream-source
 None.

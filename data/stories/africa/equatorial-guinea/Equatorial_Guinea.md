@@ -10,6 +10,9 @@ According to the traditional folklore and beliefs of the indigenous Bubi people 
 #location
 Batete village in the mountain highlands of Bioko Island, Equatorial Guinea.
 
+#proposed-coordinates
+3.4459571, 8.5056298
+
 #upstream-source
 Father Antonio Aymemí, *Los Bubis en Fernando Poo* (Imprenta de Galo Saez, Madrid, 1942).
 

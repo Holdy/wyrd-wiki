@@ -36,6 +36,9 @@ Local tradition held within the parish of Aslacton tells the tale of a helpless 
 #location
 St Michael's Church, situated in the village of Aslacton in South Norfolk, England.
 
+#proposed-coordinates
+52.4670714, 1.169394
+
 #upstream-source
 Francis Blomefield, *An Essay Towards a Topographical History of the County of Norfolk*, Vol. 5.
 

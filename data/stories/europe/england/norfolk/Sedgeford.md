@@ -10,6 +10,9 @@ Local legend tells of two secret underground passages connected to Magazine Cott
 #location
 St Mary's Church is situated in the village of Sedgeford, Norfolk (TF707354), and Magazine Cottage is located at TF722369.
 
+#proposed-coordinates
+52.889390, 0.536540
+
 #upstream-source
 None.
 

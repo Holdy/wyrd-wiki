@@ -19,6 +19,12 @@ None.
 #reference
 https://theflatlander.ca/haunted-tales-from-saskatchewan-and-manitoba/
 
+#coordinates
+50.06667, -96.97643
+
+#tags
+haunting
+
 ---
 
 #title
@@ -41,3 +47,9 @@ None.
 
 #reference
 https://selkirkmuseum.ca/news/the-ghost-stories-of-selkirk/
+
+#coordinates
+50.14605, -96.86517
+
+#tags
+haunting

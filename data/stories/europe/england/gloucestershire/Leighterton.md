@@ -10,6 +10,9 @@ In the rural villages of the southern Cotswolds, including Leighterton and Hawke
 #location
 The village of Leighterton, situated in rural Gloucestershire within the civil parish of Boxwell with Leighterton.
 
+#proposed-coordinates
+51.6191361, -2.2562662
+
 #upstream-source
 Cawte, E. C. (1978). *Ritual Animal Disguise: A Historical and Geographical Study of Animal Disguise in the British Isles*. Cambridge and Totowa: D.S. Brewer Ltd. and Rowman and Littlefield for the Folklore Society.
 

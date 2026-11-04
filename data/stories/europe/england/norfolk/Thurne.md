@@ -10,6 +10,9 @@ Local tradition in the Norfolk village of Thurne maintains that on very dark, mo
 #location
 St Edmund's Church stands in the village of Thurne, Norfolk, near the banks of the River Thurne in the Broads.
 
+#proposed-coordinates
+52.7131087, 1.593503
+
 #upstream-source
 Weird Norfolk (Eastern Daily Press).
 

@@ -10,6 +10,9 @@ In the summer around 1968, a woman was walking home from Cley toward Blakeney al
 #location
 The A149 road ascending from Cley next the Sea toward Cley Hill and Back Lane in north Norfolk.
 
+#proposed-coordinates
+52.5578247, 1.6512449
+
 #upstream-source
 None.
 
@@ -56,6 +59,9 @@ In the summer of around 1968, a woman walking home from Cley to Blakeney along t
 #location
 The encounter took place along the A149 road at the foot of Cley Hill and the crossroads leading to Back Lane in Cley next the Sea, Norfolk.
 
+#proposed-coordinates
+51.9548168, -1.9710412
+
 #upstream-source
 None.
 
@@ -78,6 +84,9 @@ Around midnight during the summer of 1968, a woman walking home from Cley to Bla
 
 #location
 The encounter took place along the A149 road leading from Cley next the Sea up Cley Hill toward the crossroads and Back Lane.
+
+#proposed-coordinates
+51.9548168, -1.9710412
 
 #upstream-source
 None.

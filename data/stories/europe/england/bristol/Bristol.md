@@ -33,6 +33,9 @@ During the 18th century, a ruthless highwayman named Jenkins Protheroe plagued t
 #location
 The key location is the grassy junction at the top of Pembroke Road where it intersects with Clifton Down in Clifton, Bristol.
 
+#proposed-coordinates
+51.48872, -2.6761661
+
 #upstream-source
 None.
 

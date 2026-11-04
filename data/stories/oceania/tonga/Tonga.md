@@ -10,6 +10,9 @@ While driving along an isolated road in Tonga, a man regularly stopped over the 
 #location
 A roadside stretch near the village of Houma on Tongatapu island in Tonga.
 
+#proposed-coordinates
+-21.1689039, -175.3033574
+
 #upstream-source
 None.
 

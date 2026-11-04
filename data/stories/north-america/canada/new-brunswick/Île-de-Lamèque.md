@@ -10,6 +10,9 @@ For over two centuries, residents and fishermen around Lamèque Island and Misco
 #location
 The coastal waters surrounding Lamèque Island and Miscou Island in the Baie des Chaleurs, New Brunswick.
 
+#proposed-coordinates
+48.0867785, -64.755948
+
 #upstream-source
 The Northern Light (January 14, 1981) and archival documentation on the Baie des Chaleurs phantom ship legend.
 
@@ -31,7 +34,7 @@ In the traditional oral folklore of Lamèque Island, locals have long whispered 
 The rural roads of Lamèque Island (Île-de-Lamèque), New Brunswick.
 
 #proposed-coordinates
-47.83494564879966, -64.59514071721173
+47.81305556, -64.62361111
 
 #upstream-source
 Port Acadie, numéro 13-14-15 (2008), article "Une charrette qui a traversé l’océan? Les reflets de l’Ankou breton en Acadie" by Ronald Labelle, citing collections from the Centre d'études acadiennes at the Université de Moncton.

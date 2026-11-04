@@ -10,6 +10,9 @@ Tradition maintains that in former times, a poor pedlar named John Chapman lived
 #location
 St Peter and St Paul's Church is located in the center of Swaffham, Norfolk (PE37 7LJ).
 
+#proposed-coordinates
+52.6481171, 0.6909259
+
 #upstream-source
 Diary of Abraham de la Pryme (1699), as reproduced in *English Fairy and Other Folk Tales* (1906) by Edwin Sidney Hartland.
 

@@ -10,6 +10,9 @@ At kilometer 165.5 of Route 2 in Caaguazú, Paraguay, numerous motorists have re
 #location
 The haunting centers around kilometer 165.5 of Route 2 in Caaguazú, Paraguay, next to an old roadside water well and cemetery.
 
+#proposed-coordinates
+-25.4661756, -56.0181685
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Micaela Yaharí was a legendary payesera (sorceress) who lived in the rural Sagu
 
 #location
 The Castillo de Saguazú is located in the Saguazú district of Yaguarón, approximately 50 kilometers southeast of Asunción, Paraguay.
+
+#proposed-coordinates
+-25.2800459, -57.6343814
 
 #upstream-source
 *Yaguarón. Historia, mitos y leyendas* by Dante Pino and Alcides Talavera (Editorial Ra, 2019).

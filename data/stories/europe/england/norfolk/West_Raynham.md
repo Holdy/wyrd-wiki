@@ -10,6 +10,9 @@ According to local legend, Lady Dorothy Walpole lived during the 18th century as
 #location
 Raynham Hall is a historic country house situated in the civil parish of Raynham in Norfolk, England, located south of Fakenham.
 
+#proposed-coordinates
+52.7965647, 0.7902134
+
 #upstream-source
 Florence Marryat, *There Is No Death* (1891).
 

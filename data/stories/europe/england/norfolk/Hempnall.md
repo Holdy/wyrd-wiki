@@ -36,6 +36,9 @@ In 1785, the grim discovery of a young man's skeletal remains half-buried in a d
 #location
 Nobb's Corner is a staggered crossroads located at grid reference TM264939 where the parishes of Hempnall, Topcroft, and Woodton meet.
 
+#proposed-coordinates
+52.496412, 1.334570
+
 #upstream-source
 The Norwich Mercury (June 4, 1785) and the Norfolk Historic Environment Record.
 

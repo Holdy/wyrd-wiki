@@ -10,6 +10,9 @@ In 1627, tensions in the Norfolk village of Grimston reached a boiling point whe
 #location
 The village of Grimston, located in West Norfolk approximately six miles northeast of King's Lynn.
 
+#proposed-coordinates
+52.9087997, 0.4810131
+
 #upstream-source
 Norfolk Record Office quarter sessions records (specifically catalogued as C/S3/26, articles against Amea Winter), as cited in historical research by Keith Parry.
 

@@ -10,6 +10,9 @@ In the 1830s in the north Norfolk village of Burnham Market, neighbors Frances "
 #location
 North Street in the village of Burnham Market, Norfolk, marks the former neighborhood setting where the conspirators lived and carried out their crimes.
 
+#proposed-coordinates
+52.9463602, 0.7290326
+
 #upstream-source
 None.
 
@@ -58,6 +61,9 @@ During the 1830s in the north Norfolk village of Burnham Market (then called Bur
 
 #location
 North Street in the village of Burnham Market, Norfolk, is said to be haunted by the spirits of the two executed women.
+
+#proposed-coordinates
+52.9463602, 0.7290326
 
 #upstream-source
 None.

@@ -36,6 +36,9 @@ According to local tradition recorded in the late nineteenth century, a phantom 
 #location
 The road leading from Cranworth toward Letton Hall in Norfolk.
 
+#proposed-coordinates
+52.6150387, 0.9103337
+
 #upstream-source
 W. B. Gerish: 'Norfolk Folklore Notes' (unpublished, 1890-93), p.26.
 

@@ -10,6 +10,9 @@ Born in West Somerton in 1820, Robert Hales grew to an astonishing height of sev
 #location
 The churchyard of St Mary's Church in West Somerton, Norfolk, UK.
 
+#proposed-coordinates
+52.7194578, 1.6543526
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ Outside the North Cotswolds village of Stanton, a stretch of road historically t
 #location
 A stretch of road just outside Stanton, Gloucestershire, associated with a Civil War skirmish from 1644.
 
+#proposed-coordinates
+50.3783673, -4.1266347
+
 #upstream-source
 None.
 

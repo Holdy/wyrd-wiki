@@ -11,7 +11,7 @@ On October 18, 1947, a Royal Canadian Air Force B-25 Mitchell bomber carrying ni
 Plewman Basin is a horseshoe-shaped alpine basin located at the foot of Mount Plewman in the Rossland Range, just west of Rossland, British Columbia.
 
 #proposed-coordinates
-49.076944000000005, -117.80222200000001
+49.1615424, -117.8945958
 
 #upstream-source
 Wayne Krewski's Ridge Records folklore and song collection.

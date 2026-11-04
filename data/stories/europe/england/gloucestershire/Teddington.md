@@ -10,6 +10,9 @@ According to local folklore, a giant living on Dixton Hill sought to attack pira
 #location
 The Tibblestone stands on a garage forecourt off the A46 near the Teddington roundabout in Gloucestershire.
 
+#proposed-coordinates
+52.0048948, -2.0521105
+
 #upstream-source
 Samuel Rudder, *New History of Gloucestershire*.
 

@@ -10,6 +10,9 @@ Along the course of the Río Perales as it flows from the Canajagua heights towa
 #location
 Salto del Pilón is located on the Río Perales in Perales, Guararé District, Los Santos Province, Panama.
 
+#proposed-coordinates
+7.7731249, -80.3197799
+
 #upstream-source
 Sergio González Ruíz, *Narraciones Panameñas*
 

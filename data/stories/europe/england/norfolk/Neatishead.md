@@ -10,6 +10,9 @@ On the Neatishead side of Alderfen Broad, a watery spot known as Heard's Hole wa
 #location
 Heard's Hole is situated on the Neatishead side of Alderfen Broad in Norfolk.
 
+#proposed-coordinates
+52.7226427, 1.4849291
+
 #upstream-source
 Rev. John Gunn: 'Proverbs etc...in...Irstead', in 'Norfolk Archaeology', Vol. 2 (1849), p. 299.
 

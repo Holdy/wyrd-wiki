@@ -10,6 +10,9 @@ According to regional legend, Viking longships navigated the waterway and arrive
 #location
 Woods End Common and St Peter's Church in the parish of Bramerton, Norfolk.
 
+#proposed-coordinates
+52.5941302, 1.3879452
+
 #upstream-source
 None.
 

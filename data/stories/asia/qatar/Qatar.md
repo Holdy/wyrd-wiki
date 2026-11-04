@@ -10,6 +10,9 @@ Long ago in the old quarters of Doha, a specific narrow alley within the *fereej
 #location
 Ghoul Alley is located within the historic neighborhood of Barahat Al Jufairi in central Doha, Qatar.
 
+#proposed-coordinates
+25.285705, 51.5343334
+
 #upstream-source
 None.
 

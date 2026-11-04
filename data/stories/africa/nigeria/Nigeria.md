@@ -10,6 +10,9 @@ Working late on a cold December night in Abuja, an okada rider named Ibrahim par
 #location
 The encounter begins at NNPC Junction in Abuja, Nigeria, and proceeds toward Wuse Market.
 
+#proposed-coordinates
+9.0685552, 7.4659377
+
 #upstream-source
 None.
 

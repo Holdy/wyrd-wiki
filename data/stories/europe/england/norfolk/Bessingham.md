@@ -10,6 +10,9 @@ Following the death of his father in 1906, Edmund Denham Spurrell returned from 
 #location
 Bessingham Manor, situated on the edge of the village of Bessingham in North Norfolk, UK.
 
+#proposed-coordinates
+52.8864782, 1.2182863
+
 #upstream-source
 None.
 

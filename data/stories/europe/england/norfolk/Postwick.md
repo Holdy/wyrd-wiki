@@ -10,6 +10,9 @@ Postwick Lodge is a complex historic building featuring late medieval and 16th-c
 #location
 Postwick Lodge is located at grid reference TG 2955 0798 in the parish of Postwick with Witton, Norfolk.
 
+#proposed-coordinates
+52.621068, 1.389931
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ While traveling through the town of Strood in Kent, the Archbishop Thomas Becket
 #location
 The town of Strood in Kent, situated along the historic route near Rochester.
 
+#proposed-coordinates
+51.3883811, 0.504925
+
 #upstream-source
 None.
 

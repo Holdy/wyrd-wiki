@@ -10,6 +10,9 @@ In ancient times, the nomadic Bukumiri tribe inhabited the shores of a high moun
 #location
 Bukumir Lake (Bukumirsko Jezero) is situated at the foot of the Kučka Mountains, roughly fifty kilometers north of Podgorica, Montenegro.
 
+#proposed-coordinates
+42.4415238, 19.2621081
+
 #upstream-source
 None.
 

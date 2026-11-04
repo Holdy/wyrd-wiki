@@ -14,6 +14,9 @@ The legend became deeply rooted in the local geography of Marshland St James. In
 #location
 Hickathrift's Field and the crossroads of Smeeth Road and School Road in Marshland St James, Norfolk.
 
+#proposed-coordinates
+52.6611409, 0.246475
+
 #upstream-source
 John Weever's *Ancient Funerall Monuments* (1631) and traditional chapbooks such as *The History of Thomas Hickathrift*.
 

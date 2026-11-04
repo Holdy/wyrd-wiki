@@ -10,6 +10,9 @@ After returning from a pilgrimage to Rome, Norman nobleman Robert Fitzwalter and
 #location
 The historic site of Kirkescrofte located near the village of Horsford in Norfolk.
 
+#proposed-coordinates
+52.6995794, 1.2430052
+
 #upstream-source
 Sir William Dugdale: 'Monasticon Anglicanum' (Longman, Hurst, Rees, Orme & Brown, 1817-30), Vol.3, p.636; Pamela Brooks: 'Norfolk Ghosts & Legends' (Halsgrove, 2008), p.69.
 
@@ -29,6 +32,9 @@ After believing they were miraculously saved from robbers by St. Faith while ret
 
 #location
 The historic site of Kirkescrofte in Horsford, Norfolk.
+
+#proposed-coordinates
+52.6995794, 1.2430052
 
 #upstream-source
 Sir William Dugdale: 'Monasticon Anglicanum' (Longman, Hurst, Rees, Orme & Brown, 1817-30), Vol.3, p.636; Pamela Brooks: 'Norfolk Ghosts & Legends' (Halsgrove, 2008), p.69.

@@ -10,6 +10,9 @@ Local folklore in the parish of Dilham tells of a lost church that once stood in
 #location
 The churchyard of St Nicholas Church in the village of Dilham, North Norfolk, near where the depression known as Seager-ma-hole is situated.
 
+#proposed-coordinates
+52.8216, 1.3874
+
 #upstream-source
 None.
 

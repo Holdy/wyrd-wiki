@@ -10,6 +10,9 @@ In the early 1700s, Sir William Keyt, master of Norton House in Aston Subedge, G
 #location
 Burnt Norton estate, located in the civil parish of Aston Subedge, Gloucestershire.
 
+#proposed-coordinates
+52.0717777, -1.7880971
+
 #upstream-source
 Burnt Norton by Caroline Sandon.
 

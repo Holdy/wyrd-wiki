@@ -10,6 +10,9 @@ After finishing a long shift at the St. James Club Resort and taking the late-ni
 #location
 The crossroads featuring a lamppost near the unpaved approach to Donovan's home in Antigua, located shortly after stepping off the bus near an old tamarind tree.
 
+#proposed-coordinates
+17.0855891, -61.7945603
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Darla, a young girl from Swetes Village in Antigua, traveled to the St. John’s
 
 #location
 The top of the sugar mill tower in Swetes Village, Antigua.
+
+#proposed-coordinates
+17.0513944, -61.803968
 
 #upstream-source
 Friends of the Antigua Public Library 2010 Short Story Competition by Terrikia Benjamin.

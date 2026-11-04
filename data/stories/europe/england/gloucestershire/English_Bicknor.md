@@ -12,6 +12,9 @@ His physical fearlessness extended to his maintenance of the village church. Eve
 #location
 St Mary's Church and the historic rectory site located in the village of English Bicknor, Gloucestershire.
 
+#proposed-coordinates
+51.8388941, -2.6077813
+
 #upstream-source
 None.
 

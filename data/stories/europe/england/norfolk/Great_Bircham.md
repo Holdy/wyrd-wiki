@@ -36,6 +36,9 @@ Local tradition long maintained that the distinctive earthen mounds on Great Bir
 #location
 The key location consists of the group of Bronze Age barrows located on Great Bircham Common around map reference TF775310 in Norfolk.
 
+#proposed-coordinates
+52.847678, 0.635103
+
 #upstream-source
 L. V. Grinsell: 'Folklore of Prehistoric Sites in Britain' (David & Charles, 1976), p. 133.
 

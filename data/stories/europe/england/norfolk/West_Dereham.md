@@ -10,6 +10,9 @@ Local folklore in West Dereham tells of a subterranean passage constructed betwe
 #location
 St. Andrew's church (TF66740210) stands in the village of West Dereham, Norfolk, approximately a mile north of the site of the 12th-century West Dereham Abbey.
 
+#proposed-coordinates
+52.5811707, 0.4461437
+
 #upstream-source
 Paul Lee: 'The Ghosts of King's Lynn and West Norfolk' (2nd ed, 2023) and the West Dereham Heritage Group report (April 2012).
 

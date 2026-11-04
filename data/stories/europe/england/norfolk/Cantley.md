@@ -36,6 +36,9 @@ Many years ago, two adventurous men took advantage of unusually low water levels
 #location
 Callow Pit is situated on the parish boundaries near Southwood, Moulton, and Cantley in Norfolk.
 
+#proposed-coordinates
+54.4294607, -1.6386458
+
 #upstream-source
 R. C. Hope, *Legendary Lore of the Holy Wells of England* (referencing *Notes and Queries*, 1 S. xii. 487).
 
@@ -60,6 +63,9 @@ In a moment of supreme hubris, one of the men shouted triumphantly, "We've got i
 
 #location
 Callow Pit, situated on the parish boundary between Southwood and Moulton near Cantley, Norfolk, UK.
+
+#proposed-coordinates
+54.4294607, -1.6386458
 
 #upstream-source
 Notes and Queries (1 S. xii. 487), as featured in Robert Charles Hope's *Legendary Lore*.

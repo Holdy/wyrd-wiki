@@ -10,6 +10,9 @@ Nakhoda Manis grew up in poverty in Kampong Ayer before leaving to seek his fort
 #location
 Jong Batu is a rocky outcropping situated in the Brunei River, located to the east of Istana Nurul Iman in the Brunei-Muara District.
 
+#proposed-coordinates
+4.8715188, 114.9211102
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Late one night, an aunt, uncle, and their family were traveling back to Seria al
 
 #location
 The old road to Belait passing through the Pasir Puteh area in Brunei.
+
+#proposed-coordinates
+4.4349939, 114.4946524
 
 #upstream-source
 None.

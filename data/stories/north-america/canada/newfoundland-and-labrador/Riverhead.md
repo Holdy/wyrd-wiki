@@ -19,6 +19,12 @@ None.
 #reference
 https://www.communitystories.ca/v1/pm_v2.php?id=story_line_child&fl=0&lg=English&ex=00000648&sl=5253&pos=1
 
+#coordinates
+47.53345839248064, -53.20997284501899
+
+#tags
+haunting,private
+
 ---
 
 #title
@@ -32,6 +38,9 @@ Built in Newcastle-on-Tyne in 1913, the SS Kyle served as Newfoundland's first s
 
 #location
 The Riverhead area of Harbour Grace, Newfoundland and Labrador, where the beached hull of the SS Kyle rests.
+
+#proposed-coordinates
+47.6705084, -53.2537175
 
 #upstream-source
 None.

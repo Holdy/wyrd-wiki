@@ -11,7 +11,7 @@ Staff and visitors at the Oromocto Hospital have shared numerous accounts of par
 The Oromocto Public Hospital located in Oromocto, New Brunswick.
 
 #proposed-coordinates
-45.83533652691429, -66.48705888412621
+45.8487468, -66.4733278
 
 #upstream-source
 None.

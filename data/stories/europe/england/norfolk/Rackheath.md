@@ -10,6 +10,9 @@ Local legend and traditional prophecy long foretold that a great and bloody batt
 #location
 Stone Hill (TG277143 area) in Rackheath, Norfolk.
 
+#proposed-coordinates
+52.678948, 1.367705
+
 #upstream-source
 'Norfolk Archaeology', Vol. 2 (1849), p. 300; Christopher Marlowe, 'People & Places in Marshland' (Cecil Palmer, 1927), p. 237.
 

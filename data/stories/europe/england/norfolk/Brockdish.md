@@ -36,6 +36,9 @@ On her midwinter wedding day, the newlywed bride at Brockdish Hall celebrated wi
 #location
 Brockdish Hall is located in the parish of Brockdish, near Diss, in Norfolk, England.
 
+#proposed-coordinates
+52.3770916, 1.2480513
+
 #upstream-source
 Hugh Lupton, *Norfolk Folk Tales*, published by The History Press.
 

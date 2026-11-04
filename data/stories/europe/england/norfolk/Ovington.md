@@ -10,6 +10,9 @@ On the morning of February 18, 1941, a Heinkel He 111 bomber of the German Luftw
 #location
 The incident centered around a wheat field in Ovington, Norfolk, located near the southern boundary of RAF Watton.
 
+#proposed-coordinates
+52.5848421, 0.8397126
+
 #upstream-source
 Robin Brown, *Saham Saga*.
 

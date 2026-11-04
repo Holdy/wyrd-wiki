@@ -10,6 +10,9 @@ The legend tells of a lavish wedding celebration where the young bride decided t
 #location
 St Clement's Church, Church Street, Terrington St Clement, King's Lynn, Norfolk, PE34 4HX.
 
+#proposed-coordinates
+52.7511493, 0.3963285
+
 #upstream-source
 Thomas Haynes Bayly, *The Mistletoe Bough*; *The East Anglian Magazine* (1946).
 

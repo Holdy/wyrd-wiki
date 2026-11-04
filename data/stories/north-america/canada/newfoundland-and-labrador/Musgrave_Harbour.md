@@ -34,7 +34,7 @@ According to coastal folklore collected along the northeast coast of Newfoundlan
 Shalloway Brook, located between Deadman's Bay and Musgrave Harbour, Newfoundland and Labrador.
 
 #proposed-coordinates
-49.42624145, -53.97044295
+49.3788469, -53.8342273
 
 #upstream-source
 The Legend of Old Man Shalloway: A Recorded Coastal Folklore Account from Musgrave Harbour, Newfoundland and Labrador by Grant Abbott (MUNFLA Accession 2026-001) and published commentary by folklorist Dale Jarvis.

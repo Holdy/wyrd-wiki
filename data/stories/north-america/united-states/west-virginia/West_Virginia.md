@@ -91,6 +91,9 @@ In June 1932, 31-year-old Mamie Thurman was found murdered with her throat slash
 #location
 22 Mine Road is located near Holden along the Logan-Mingo county line in southern West Virginia.
 
+#proposed-coordinates
+39.6784134, -80.6698117
+
 #upstream-source
 Keith Davis, *The Secret Life and Brutal Death of Mamie Thurman*
 
@@ -113,6 +116,9 @@ Left a wealthy young widow, Rosa spent the next three decades hosting legendary,
 #location
 Berkeley Springs Castle (Samuel Taylor Suit Cottage) overlooks the town of Berkeley Springs in Morgan County, West Virginia.
 
+#proposed-coordinates
+39.6784134, -80.6698117
+
 #upstream-source
 Berkeley Castle: its People and Town by Don Mason and the pamphlet "Berkeley Castle" by Frederick T. Newbraugh.
 
@@ -132,6 +138,9 @@ In October 1896, Elva Zona Heaster married a local blacksmith named Edward Shue 
 
 #location
 Soule Chapel Methodist Cemetery is located near Smoot in Greenbrier County, West Virginia, where Zona Heaster Shue is interred.
+
+#proposed-coordinates
+42.6196048, -110.9176639
 
 #upstream-source
 Katie Letcher Lyle, *The Man Who Wanted Seven Wives: The Greenbrier Ghost and the Famous Murder Mystery of 1897*.
@@ -154,6 +163,9 @@ Driven by the apparition's claims, Mary Jane successfully convinced the local pr
 
 #location
 Soule Chapel Methodist Cemetery in Smoot, Greenbrier County, West Virginia, where Zona Heaster Shue is buried.
+
+#proposed-coordinates
+42.6196048, -110.9176639
 
 #upstream-source
 None.

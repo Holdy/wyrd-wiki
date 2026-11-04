@@ -10,6 +10,9 @@ Jo Pockett took part in an overnight paranormal investigation at the historic Ne
 #location
 The New Olympus Theatre on Barton Street in Gloucester, Gloucestershire.
 
+#proposed-coordinates
+51.859039, -2.2336891
+
 #upstream-source
 BBC Gloucestershire.
 

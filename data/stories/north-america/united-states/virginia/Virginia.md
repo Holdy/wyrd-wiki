@@ -56,6 +56,9 @@ Crawford Road in Yorktown, Virginia, is notorious for a chilling legend involvin
 #location
 The Historical Tour Road overpass bridging across Crawford Road in Yorktown, Virginia.
 
+#proposed-coordinates
+37.2104664, -76.4924186
+
 #upstream-source
 None.
 
@@ -76,11 +79,20 @@ Historic Tuckahoe, located outside Richmond, Virginia, is haunted by the ghost o
 #location
 Historic Tuckahoe is located at 12101 Tuckahoe Plantation Lane in Richmond, Virginia.
 
+#proposed-coordinates
+37.5385087, -77.43428
+
 #upstream-source
 None.
 
 #reference
 https://virginialiving.com/culture/the-ghosts-of-virginia/
+
+#coordinates
+37.571102291006746, -77.65281806068404
+
+#tags
+named-ghost
 
 ---
 
@@ -95,6 +107,9 @@ In the late 18th century, a wealthy English girl was sent by her disapproving fa
 
 #location
 Chatham Manor is located at 120 Chatham Lane in Fredericksburg, Virginia, situated along the Rappahannock River.
+
+#proposed-coordinates
+38.308582, -77.4556933
 
 #upstream-source
 None.
@@ -168,6 +183,9 @@ For generations, residents in Widewater, Virginia, have whispered about Witches 
 #location
 Witches Pond is located in the wooded area behind the Brent Family Cemetery off U.S. 1 and Telegraph Road in Widewater, Stafford County, Virginia.
 
+#proposed-coordinates
+38.4706784, -77.3384814
+
 #upstream-source
 None.
 
@@ -187,6 +205,9 @@ The legend of the Richmond Vampire is rooted in the tragic Church Hill Tunnel co
 
 #location
 The Church Hill Tunnel is situated beneath Church Hill in Richmond, Virginia, near Hollywood Cemetery.
+
+#proposed-coordinates
+37.5365903, -77.4551571
 
 #upstream-source
 None.
@@ -208,8 +229,17 @@ The Essex Inn in Tappahannock, Virginia, built in 1850, is famously haunted by V
 #location
 The Essex Inn is located at 203 Water Lane in Tappahannock, Virginia.
 
+#proposed-coordinates
+37.929714042875, -76.858985651052
+
 #upstream-source
 None.
 
 #reference
 https://virginialiving.com/culture/the-ghosts-of-virginia/
+
+#coordinates
+37.928108219819215, -76.85823400685342
+
+#tags
+named-ghost

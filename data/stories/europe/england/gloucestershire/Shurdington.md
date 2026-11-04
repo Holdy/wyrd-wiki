@@ -10,6 +10,9 @@ Standing prominently on Leckhampton Hill near Shurdington, the bizarre limestone
 #location
 The Devil's Chimney is located on the western edge of Leckhampton Hill, immediately south of Cheltenham and overlooking Shurdington in Gloucestershire.
 
+#proposed-coordinates
+51.8641857, -2.0792903
+
 #upstream-source
 H. Ruff and Thomas Frognall Dibdin, History of Cheltenham (1803); D.E. Bick, Old Leckhampton (1971).
 

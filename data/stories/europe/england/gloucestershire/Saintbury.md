@@ -10,6 +10,9 @@ In the shadow of the Cotswold escarpment, the tiny hamlet of Saintbury is linked
 #location
 St Nicholas' Church, perched on the edge of the Cotswold escarpment above Saintbury, Gloucestershire.
 
+#proposed-coordinates
+52.0542553, -1.8285032
+
 #upstream-source
 White Dragon Magazine ("The Enchanted Crossroads" by Liam Rogers, citing Paul Devereux and Ian Thompson's *The Ley Hunter's Companion* and Paul Devereux's 'Raves from the Grave').
 

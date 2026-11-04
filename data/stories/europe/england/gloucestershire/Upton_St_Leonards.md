@@ -10,6 +10,9 @@ In years past, a local resident known as Miss Nicholls tragically took her own l
 #location
 The haunting occurred at Miss Nicholls' house in the village of Upton St Leonards, Gloucestershire.
 
+#proposed-coordinates
+51.8347252, -2.1975611
+
 #upstream-source
 None.
 

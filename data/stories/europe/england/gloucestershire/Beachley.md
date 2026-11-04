@@ -10,6 +10,9 @@ In the 4th or 5th century, a princess from Gwynedd named Tecla abandoned her fat
 #location
 Chapel Rock, a tiny tidal island in the Severn Estuary approximately half a mile south-west of Beachley Point, Gloucestershire (OS Grid Reference ST5484 9002).
 
+#proposed-coordinates
+51.607238, -2.653440
+
 #upstream-source
 Barber, Chris., *Mysterious Wales*, Paladin, London, 1987; Barber, Chris., *More Mysterious Wales*, Paladin, London, 1987; Walters, Bryan., *The Archaeology And History Of Ancient Dean And The Wye Valley*, Thornhill Press, Cheltenham, Gloucestershire, 1992.
 

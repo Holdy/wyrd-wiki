@@ -10,6 +10,9 @@ In 1061, a virtuous Saxon lady of the manor named Richeldis de Faverches prayed 
 #location
 The Slipper Chapel stands in the hamlet of Houghton St Giles, Norfolk, marking the start of the final mile of pilgrimage to Walsingham.
 
+#proposed-coordinates
+52.885, 0.858
+
 #upstream-source
 The Pynson Ballad (c. 1485)
 

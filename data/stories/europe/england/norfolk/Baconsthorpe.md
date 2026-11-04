@@ -10,6 +10,9 @@ Built by the opportunistic and wealthy Heydon family starting in 1450, Baconstho
 #location
 The ruins and moat of Baconsthorpe Castle, situated just off the Holt Road in the village of Baconsthorpe, Norfolk.
 
+#proposed-coordinates
+52.8991321, 1.1521577
+
 #upstream-source
 None.
 

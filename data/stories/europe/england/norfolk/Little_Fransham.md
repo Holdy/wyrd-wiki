@@ -10,6 +10,9 @@ Little Fransham Old Hall is a 16th-century farmhouse in Norfolk that local tradi
 #location
 Little Fransham Old Hall is a 16th-century farmhouse situated at Ordnance Survey grid reference TF902118 in the parish of Little Fransham, Norfolk.
 
+#proposed-coordinates
+52.670956, 0.812318
+
 #upstream-source
 None.
 

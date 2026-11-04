@@ -10,6 +10,9 @@ During the Middle Ages, Trasmoz was a thriving, secular fiefdom independent of t
 #location
 Trasmoz Castle and village, situated in the foothills of the Moncayo mountain range in the province of Zaragoza, Aragon, Spain.
 
+#proposed-coordinates
+41.6915847, -0.9101268
+
 #upstream-source
 None.
 
@@ -30,6 +33,9 @@ Drivers navigating the winding Arrabassada Road in Barcelona have long reported 
 #location
 The haunting takes place at the *Revolt de la Paella* sharp bend on the Carretera de l'Arrabassada (BP-1417) connecting Barcelona and Sant Cugat del Vallès in Spain.
 
+#proposed-coordinates
+41.4707933, 2.0848815
+
 #upstream-source
 Joan de Déu Prats, *Llegendes de Barcelona*.
 
@@ -49,6 +55,9 @@ In 1990, eighteen-year-old Estefanía Gutiérrez Lázaro participated in a schoo
 
 #location
 The events took place inside an apartment located at Calle Luis Marín No. 8 in the Vallecas district of Madrid, Spain.
+
+#proposed-coordinates
+40.416782, -3.703507
 
 #upstream-source
 None.

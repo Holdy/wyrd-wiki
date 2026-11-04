@@ -10,6 +10,9 @@ At the heart of the royal estate village of West Newton, St Peter and St Paul's 
 #location
 St Peter and St Paul's Church is situated on a high mound at the heart of the village of West Newton on the Sandringham Estate in Norfolk.
 
+#proposed-coordinates
+52.812954, 0.493176
+
 #upstream-source
 None.
 

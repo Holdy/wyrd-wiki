@@ -36,6 +36,9 @@ On the evening of August 27, 1971, a motorist named Mr. Arthur was driving home 
 #location
 The sighting occurred along the Cromer New Road near Norwich Airport and the fields of New Hainford in Norfolk.
 
+#proposed-coordinates
+52.67646, 1.2818157
+
 #upstream-source
 Borderline Science Investigation Group newsletter *Lantern*.
 

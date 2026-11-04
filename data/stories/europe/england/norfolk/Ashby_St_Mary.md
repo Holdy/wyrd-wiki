@@ -12,6 +12,9 @@ These carvings preserve a remarkable piece of local folk history and rural tradi
 #location
 The churchyard of St Mary the Virgin Church on the village street in Ashby St Mary, Norfolk, UK.
 
+#proposed-coordinates
+52.5680106, 1.4416827
+
 #upstream-source
 None.
 

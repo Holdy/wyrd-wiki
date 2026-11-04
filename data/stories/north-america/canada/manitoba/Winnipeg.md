@@ -40,7 +40,7 @@ Opened in 1913, the luxury Fort Garry Hotel in downtown Winnipeg is widely regar
 The Fort Garry Hotel is located at 222 Broadway in Winnipeg, Manitoba.
 
 #proposed-coordinates
-49.84138900000001, -97.15
+49.88777778, -97.13666667
 
 #upstream-source
 Matthew Komus, *Haunted Winnipeg: Ghost Stories from the Heart of the Continent*

@@ -10,6 +10,9 @@ Local folklore in the Norfolk village of Spooner Row tells the grim tale of Dina
 #location
 Dinah's Lane, running near the site of Wick Hall in Spooner Row, Norfolk.
 
+#proposed-coordinates
+52.5349209, 1.0859995
+
 #upstream-source
 Information supplied by Wymondham Heritage Society.
 

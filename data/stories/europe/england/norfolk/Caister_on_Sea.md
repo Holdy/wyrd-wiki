@@ -36,6 +36,9 @@ Local legend holds that a spectral carriage drawn by four headless horses materi
 #location
 The courtyard of Caister Castle, situated one mile west of Caister-on-Sea, Norfolk, UK.
 
+#proposed-coordinates
+52.6504043, 1.7016032
+
 #upstream-source
 Rye, W., ed. (1877). *The Norfolk Antiquarian Miscellany*. Vol. 2. Norwich: Samuel Miller and Co., p. 289.
 
@@ -55,6 +58,9 @@ The legend concerns a large black dog that once belonged to an elderly man livin
 
 #location
 Along Yarmouth Road (the A149) running from Caister-on-Sea toward Great Yarmouth.
+
+#proposed-coordinates
+52.6071742, 1.7314845
 
 #upstream-source
 None.
@@ -78,6 +84,9 @@ In local folklore, the phantom black dog known as Black Shuck is said to have or
 
 #location
 The spirit of the hound haunts Yarmouth Road (now the A149) and the coastal cliffs running between Caister-on-Sea and Great Yarmouth.
+
+#proposed-coordinates
+52.6706613, 1.6944526
 
 #upstream-source
 None.

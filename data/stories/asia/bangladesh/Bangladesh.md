@@ -10,6 +10,9 @@ Centuries ago, the indigenous inhabitants of a hill settlement in the region enc
 #location
 Boga Lake is situated atop the hills approximately 60 kilometers from Bandarban town in the Bandarban Hill District of southeastern Bangladesh.
 
+#proposed-coordinates
+21.9803262, 92.4701232
+
 #upstream-source
 None.
 

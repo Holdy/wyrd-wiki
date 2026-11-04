@@ -10,6 +10,9 @@ Pitham Bottom is an atmospheric hollow located between the market town of Fairfo
 #location
 Pitham Bottom is a hollow located on the road between Fairford and Quenington in Gloucestershire.
 
+#proposed-coordinates
+51.7339967, -1.8045718
+
 #upstream-source
 None.
 

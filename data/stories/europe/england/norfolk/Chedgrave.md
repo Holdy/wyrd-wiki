@@ -36,6 +36,9 @@ In the 19th century, Mother Chergrave operated as a renowned wise woman in the C
 #location
 Mother Chergrave's former cottage situated near the border of Chedgrave and Loddon along the River Chet in south Norfolk.
 
+#proposed-coordinates
+52.538684, 1.465846
+
 #upstream-source
 Margaret Helen James, Bogie Tales of East Anglia (1891).
 

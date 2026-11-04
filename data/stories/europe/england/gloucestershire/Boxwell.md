@@ -10,6 +10,9 @@ At Boxwell Court, an ancient and secluded country estate in Gloucestershire wher
 #location
 Boxwell Court is a historic country house located near the village of Leighterton in South Gloucestershire, approximately 3 miles east of Wotton-under-Edge.
 
+#proposed-coordinates
+51.6329149, -2.2729606
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ In the tumultuous years of the English Civil War, Boxwell Court served as a sanc
 
 #location
 Boxwell Court is a historic manor house situated in the secluded village of Boxwell, near Leighterton in the South Gloucestershire Cotswolds, standing directly adjacent to St. Mary's Church.
+
+#proposed-coordinates
+52.9511869, -1.1430479
 
 #upstream-source
 *Proceedings of the Bath Natural History and Antiquarian Field Club, Volume 7* (abstracted from a manuscript family memoir written by the Rev. Richard Webster Huntley, late Rector of Boxwell).

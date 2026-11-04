@@ -10,6 +10,9 @@ According to oral tradition passed down through generations in the Norfolk count
 #location
 The medieval moat and fish ponds located in Reymerston parish at grid reference TG007056.
 
+#proposed-coordinates
+52.611510, 0.963623
+
 #upstream-source
 *The East Anglian, or Notes & Queries*, New Series Vol. 4 (1891-2), pp. 332, 363.
 

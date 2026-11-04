@@ -10,6 +10,9 @@ Long before the village of Kenninghall became associated with Anglo-Saxon royalt
 #location
 The moated site of Candleyards, located just west of Kenninghall Place (grid reference TM065855) in Kenninghall, Norfolk.
 
+#proposed-coordinates
+52.428896, 1.036681
+
 #upstream-source
 Arthur Mee (ed.) : 'The King's England - Norfolk' (Hodder & Stoughton, 1940), p.205.
 

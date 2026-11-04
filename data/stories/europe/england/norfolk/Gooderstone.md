@@ -10,6 +10,9 @@ Generations of children growing up near Gooderstone were taught to fear a specif
 #location
 A roadside milestone located along the road connecting Gooderstone and Cockley Cley in southwest Norfolk.
 
+#proposed-coordinates
+52.6065631, 0.6464796
+
 #upstream-source
 Letter in the 'East Anglian Magazine', Vol.8, No.8 (April 1949), p.427.
 

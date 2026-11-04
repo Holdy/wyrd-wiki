@@ -10,6 +10,9 @@ In November 1981, construction workers labored around the clock under extreme pr
 #location
 The Manila Film Center is situated within the Cultural Center of the Philippines Complex along Roxas Boulevard in Pasay City, Metro Manila, Philippines.
 
+#proposed-coordinates
+14.550604, 120.9820204
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ Driving alone at night, a motorist encounters a beautiful woman dressed in a flo
 
 #location
 The haunting takes place along Balete Drive located in Quezon City, Metro Manila, Philippines.
+
+#proposed-coordinates
+14.6207669, 121.0371986
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ In the hamlet of Oeil, near Tintange in the Belgian Ardennes, an old mill and a 
 #location
 The hamlet of Oeil is located near Tintange in the municipality of Fauvillers in the Belgian province of Luxembourg, close to the border with Luxembourg and the Sûre river.
 
+#proposed-coordinates
+49.905625, 5.595839
+
 #upstream-source
 Walloon folklore, collected as part of the legends circuit of the Anlier Forest, Fauvillers.
 

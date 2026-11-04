@@ -10,6 +10,9 @@ Elizabeth Fyson lived in Holme Hale, just two miles north of Ashill, Norfolk. Ce
 #location
 The villages of Ashill and Holme Hale in Norfolk, United Kingdom, where Elizabeth Fyson lived and her husband Richard Parfrey was born and baptized.
 
+#proposed-coordinates
+52.63019, 0.78264
+
 #upstream-source
 Notes and Queries (1858) and contemporary Norfolk parish registers and newspapers.
 

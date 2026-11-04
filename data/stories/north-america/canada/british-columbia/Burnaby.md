@@ -40,7 +40,7 @@ Constructed in 1912 as an opulent model estate in Vancouver Heights, Overlynn la
 Overlynn Mansion is located in the Vancouver Heights neighborhood of North Burnaby, British Columbia.
 
 #proposed-coordinates
-49.242778, -122.97277799999999
+49.2889535, -123.0212466
 
 #upstream-source
 None.

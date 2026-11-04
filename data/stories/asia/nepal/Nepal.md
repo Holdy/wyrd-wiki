@@ -10,6 +10,9 @@ In the seventeenth century, King Pratap Malla experienced a terrifying prophetic
 #location
 The Budhanilkantha Temple is located at the northern end of the Kathmandu Valley, situated below Shivapuri Hill along Golfutar Main Road in Budhanilkantha, Nepal.
 
+#proposed-coordinates
+27.7751113, 85.3611981
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ Late one night, a driver from Bhaktapur and his friend were returning home from 
 
 #location
 The encounter takes place on the highway passing through Thimi (Madhyapur Thimi) in the Bhaktapur District of the Kathmandu Valley, Nepal.
+
+#proposed-coordinates
+27.68055556, 85.38194444
 
 #upstream-source
 None.

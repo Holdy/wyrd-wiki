@@ -10,6 +10,9 @@ In January 1993, pig farmer Ralph Vollmer became convinced that his 49-year-old 
 #location
 The remote farmhouse located in the rural township of Antwerp in the Wimmera district of Victoria, Australia.
 
+#proposed-coordinates
+-36.269504, 141.9754401
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ Family members visiting a house along Piccadilly Road recounted a series of unne
 #location
 A residential property situated along Piccadilly Road in Piccadilly, New Brunswick, just outside of Sussex.
 
+#proposed-coordinates
+43.8436882, -79.398323
+
 #upstream-source
 None.
 

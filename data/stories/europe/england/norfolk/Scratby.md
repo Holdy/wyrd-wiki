@@ -10,6 +10,9 @@ Dating back to the 15th century, St Mary’s Church fell into disuse in the 17th
 #location
 The ruins of St Mary's Church are located in the rural woodland of East Somerton, just northwest of Scratby in Norfolk, England.
 
+#proposed-coordinates
+52.6792799, 1.7137473
+
 #upstream-source
 None.
 

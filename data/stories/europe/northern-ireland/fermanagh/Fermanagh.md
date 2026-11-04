@@ -33,6 +33,9 @@ While riding a motorcycle on a narrow road above Brookeborough in broad daylight
 #location
 The encounter took place on a narrow road located in the hills just above the village of Brookeborough in County Fermanagh.
 
+#proposed-coordinates
+54.3151816, -7.4066823
+
 #upstream-source
 None.
 

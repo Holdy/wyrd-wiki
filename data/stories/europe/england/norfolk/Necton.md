@@ -10,6 +10,9 @@ Elizabeth Robinson, born in 1717, settled in Holme Hale after marrying Thomas Fy
 #location
 The Jolly Farmers Inn was situated on the parish boundary between Holme Hale and Necton in Norfolk.
 
+#proposed-coordinates
+52.63019, 0.78264
+
 #upstream-source
 Notes and Queries (2nd series, vol. V, p. 315) and Alec Hunt's "The Holme Hale Story".
 

@@ -10,6 +10,9 @@ In the Central African Republic, a mother eagerly awaits the return of her son f
 #location
 The Lake of Sorcerers, located near Damara in the Central African Republic.
 
+#proposed-coordinates
+4.9561279, 18.6977075
+
 #upstream-source
 Culture and Customs of the Central African Republic by Jacqueline Woodfork (pp. 49–54).
 

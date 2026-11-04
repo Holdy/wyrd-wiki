@@ -10,6 +10,9 @@ Local folklore in the Norfolk market town of Stalham maintains that a concealed 
 #location
 St Mary's Church and the former Maids Head Inn stand opposite each other on the High Street in Stalham, Norfolk (NR12 9AU).
 
+#proposed-coordinates
+52.8037, 1.5061
+
 #upstream-source
 None.
 

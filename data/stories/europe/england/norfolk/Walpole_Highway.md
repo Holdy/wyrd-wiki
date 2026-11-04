@@ -10,6 +10,9 @@ Local tradition in the Fenland and Marshland villages attributes several extraor
 #location
 The exterior wall of St. Peter's Church in Walpole St. Peter, Norfolk (grid reference TF502168).
 
+#proposed-coordinates
+52.728426, 0.223558
+
 #upstream-source
 W. A. Dutt, Murray (1892), and local histories compiled in "The Quest for Tom Hickathrift".
 

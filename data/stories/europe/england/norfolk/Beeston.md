@@ -10,6 +10,9 @@ At Beeston Regis, farmer James Reynolds frequently drove his horse and cart past
 #location
 All Saints Church in Beeston Regis, Norfolk.
 
+#proposed-coordinates
+52.9409967, 1.234468
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ Farmer James Reynolds regularly drove his horses past the historic gateway of Be
 
 #location
 All Saints' Church in Beeston Regis, Norfolk, houses the grave of James Reynolds beneath a large glacial stone in its churchyard.
+
+#proposed-coordinates
+52.9409967, 1.234468
 
 #upstream-source
 None.

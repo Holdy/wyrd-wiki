@@ -12,6 +12,9 @@ Superstition dictated that travellers must extinguish their own lanterns when th
 #location
 Heard's Holde is located in Alder Carr Fen Broad within the parish of Irstead in Norfolk.
 
+#proposed-coordinates
+52.7306796, 1.5011871
+
 #upstream-source
 Rev John Gunn, *Norfolk Archaeology*, Vol. 2 (1849).
 

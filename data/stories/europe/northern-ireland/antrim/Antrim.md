@@ -35,6 +35,9 @@ One notable example is the old Hellfire Club in County Antrim, built on the site
 #location
 The Hellfire Club, located near Dublin, is one of the key locations associated with the Mallaithe curses in Ireland.
 
+#proposed-coordinates
+52.0600343, -0.347478
+
 #upstream-source
 None
 

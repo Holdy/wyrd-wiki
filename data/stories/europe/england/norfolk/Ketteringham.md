@@ -10,6 +10,9 @@ In the quiet Norfolk village of Ketteringham, a deep animosity simmered for year
 #location
 St Peter's Church and Ketteringham Hall stand adjacent to one another in the village of Ketteringham, located in South Norfolk.
 
+#proposed-coordinates
+52.49055556, 1.1875
+
 #upstream-source
 Chadwick, Owen. *Victorian Miniature*, Cambridge University Press (1960).
 

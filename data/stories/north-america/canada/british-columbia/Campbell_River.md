@@ -11,7 +11,7 @@ For years, rumours circulated among teenagers and residents in Campbell River ab
 The Discovery Pier extending into the Discovery Passage in Campbell River, British Columbia.
 
 #proposed-coordinates
-50.023056000000004, -125.24361099999999
+50.0212434, -125.2356917
 
 #upstream-source
 None.
@@ -32,6 +32,9 @@ Built over a century ago and carrying a colorful history of early pioneers, fina
 
 #location
 The Heriot Bay Inn located on Heriot Bay Road on Quadra Island, British Columbia, just across the strait from Campbell River.
+
+#proposed-coordinates
+50.1021731, -125.2104165
 
 #upstream-source
 Shanon Sinn's book "The Haunting of Vancouver Island" and Jeanette Taylor's book "The Quadra Story".

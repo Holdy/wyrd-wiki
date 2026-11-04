@@ -10,6 +10,9 @@ Snore Hall, a historic brick and timber-framed manor house situated in the Norfo
 #location
 Snore Hall stands on the fen edge in the western parish of Fordham, Norfolk (grid reference TL 6243 9932).
 
+#proposed-coordinates
+52.567501, 0.395216
+
 #upstream-source
 Pevsner, Nikolaus and Wilson, W. (1999). *The Buildings of England: Norfolk 2: North-West and South*.
 

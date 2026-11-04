@@ -10,6 +10,9 @@ In November 1833, Mrs. Caroline Walrond, the widow of the late Joseph Lyons Walr
 #location
 The library inside Lasborough Park (Lasborough House), a historic country house located in the parish of Westonbirt with Lasborough, near Tetbury, Gloucestershire.
 
+#proposed-coordinates
+51.6423402, -2.2637114
+
 #upstream-source
 None.
 

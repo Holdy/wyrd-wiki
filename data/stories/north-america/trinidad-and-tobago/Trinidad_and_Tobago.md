@@ -10,6 +10,9 @@ In 1909, a young Spanish woman named Maria fell in love with an Indian labourer 
 #location
 The haunting takes place along the Solomon Hochoy Highway near the Claxton Bay turnoff and the former Forres Park Sugar Estate in Trinidad and Tobago.
 
+#proposed-coordinates
+10.3660656, -61.4222731
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ In 2010, an unprecedented series of events unfolded at the Moruga Composite Scho
 
 #location
 Moruga Composite School is situated in the rural southern coastal region of Trinidad and Tobago.
+
+#proposed-coordinates
+10.1282665, -61.2971065
 
 #upstream-source
 None.

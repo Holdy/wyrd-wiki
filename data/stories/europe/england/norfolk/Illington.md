@@ -10,6 +10,9 @@ According to local tradition, three conspicuous hollows or pits lay beside Pedda
 #location
 Thieves' Pit is situated in one of the hollows beside Peddar's Way on Roudham Heath, near the hamlet of Illington in Norfolk.
 
+#proposed-coordinates
+52.4601786, 0.8420179
+
 #upstream-source
 W. G. Clarke: 'In Breckland Wilds' (Robert Scott, 1925)
 

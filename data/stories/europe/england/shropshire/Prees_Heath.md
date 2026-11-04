@@ -10,6 +10,9 @@ In 1915, a group of women from Prees and Whitchurch recounted a chilling account
 #location
 The road in the village of Ightfield, Shropshire, where the rector confronted the garden boy and the shadow appeared.
 
+#proposed-coordinates
+52.942424, -2.6066573
+
 #upstream-source
 Edmund Vale
 

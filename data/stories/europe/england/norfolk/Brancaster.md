@@ -10,6 +10,9 @@ Situated in the historic coastal village of Brancaster—close to the Norfolk ro
 #location
 The Ship Hotel is located on the main coast road (A149) in the village of Brancaster, Norfolk, PE31 8AZ.
 
+#proposed-coordinates
+52.9634407, 0.6395494
+
 #upstream-source
 None.
 

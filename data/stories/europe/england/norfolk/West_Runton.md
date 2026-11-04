@@ -36,6 +36,9 @@ Between the 9th and 12th centuries, extensive iron-working activity across the w
 #location
 The shallow iron-working hollows known as the Shrieking Pits, situated on the wooded slopes between Aylmerton and West Runton Heath in Norfolk.
 
+#proposed-coordinates
+52.9105827, 1.239289
+
 #upstream-source
 None.
 

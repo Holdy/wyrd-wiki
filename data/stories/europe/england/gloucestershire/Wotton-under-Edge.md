@@ -10,6 +10,9 @@ Dating back to the 12th century, the Ancient Ram Inn in Wotton-under-Edge has lo
 #location
 The Ancient Ram Inn is located on Church Street in Wotton-under-Edge, Gloucestershire.
 
+#proposed-coordinates
+51.63797, -2.34805
+
 #upstream-source
 None.
 

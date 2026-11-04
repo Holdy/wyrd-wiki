@@ -10,6 +10,9 @@ Starting in 1993, the Scole Experiment Group—comprising local couples and medi
 #location
 The cellar of Street Farmhouse is located in the village of Scole, Norfolk.
 
+#proposed-coordinates
+52.3779504, 1.1699453
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Dating back to 1655, the Scole Inn was built as a grand coaching inn on the Norf
 
 #location
 The Scole Inn is located in the village of Scole on the Norfolk and Suffolk border.
+
+#proposed-coordinates
+52.3779504, 1.1699453
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ Costessey Hall was a magnificent Gothic mansion built by the Jerningham family, 
 #location
 The remaining ivy-clad ruins of Costessey Hall and the former site of Thornbury Tower stand near the 18th fairway of Costessey Park Golf Course in Costessey, Norfolk.
 
+#proposed-coordinates
+52.6565, 1.197
+
 #upstream-source
 Ernest Gage, *Costessey Hall: A Retrospect of the Jernegans, Jeringhams and Stafford Jerninghams of Costessey Hall, Norfolk* (1991).
 
@@ -29,6 +32,9 @@ Costessey Hall, a magnificent Gothic mansion built by the Jerningham family, met
 
 #location
 The ivy-clad ruins and belfry block of Costessey Hall, situated near Costessey Park Golf Course in Costessey, Norfolk.
+
+#proposed-coordinates
+52.6565, 1.197
 
 #upstream-source
 *Costessey Hall: A Retrospect of the Jernegans, Jeringhams and Stafford Jerninghams of Costessey Hall, Norfolk* by Ernest Gage (1991).

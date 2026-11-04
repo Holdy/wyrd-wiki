@@ -10,6 +10,9 @@ According to Bajan folklore, a woman named Doris residing in Paynes Bay, Saint J
 #location
 Doris's home was situated in Paynes Bay in the parish of Saint James, Barbados.
 
+#proposed-coordinates
+13.1655349, -59.6362336
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Constructed in the early 18th century and later acquired by the wealthy and form
 
 #location
 The Chase Vault is located in the cemetery of the Christ Church Parish Church in Oistins, Christ Church, Barbados.
+
+#proposed-coordinates
+13.0653, -59.5382
 
 #upstream-source
 Sir James Edward Alexander, Transatlantic Sketches (1833)

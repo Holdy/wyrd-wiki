@@ -10,6 +10,9 @@ In January 1829, while staying nearby at Northrepps Cottage, writer Amelia Opie 
 #location
 The events and sightings take place around the churchyard wall of St. Martin's Church and Shuck's Lane in the coastal parish of Overstrand, Norfolk.
 
+#proposed-coordinates
+52.9188635, 1.3347167
+
 #upstream-source
 James Hooper: 'Demon Dogs of Norfolk & Suffolk' (Eastern Daily Press, 1894); Rev. J. Gunn: 'Proverbs etc...in...Irstead' (Norfolk Archaeology, Vol. 2, 1849); R. Chambers (ed.): *The Book of Days* (W. & R. Chambers, 1864); M. E. Walcott: *Guide to Coasts of Essex, Suffolk & Norfolk* (1860); T. D. P.: 'Norfolk Folklore' (Notes & Queries, 3rd Series, Vol. 5, 1864).
 

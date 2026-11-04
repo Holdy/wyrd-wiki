@@ -10,6 +10,9 @@ Dating back to the Elizabethan era when it was built by the Lygon family, Arle C
 #location
 Arle Court House is situated on Kingsmead Road in the district of Arle, Cheltenham, Gloucestershire.
 
+#proposed-coordinates
+51.9120983, -2.1042424
+
 #upstream-source
 Chris Green, *The History of Hesters Way* (Volume 1).
 
@@ -29,6 +32,9 @@ Built in the reign of Queen Elizabeth I, Arle Court House has long been regarded
 
 #location
 Arle Court House is located on Kingsmead Road in the district of Arle, Cheltenham, Gloucestershire.
+
+#proposed-coordinates
+51.9120983, -2.1042424
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ Long before modern commercialized Valentine's Day cards, the county of Norfolk c
 #location
 Topcroft Hall is a historic estate situated in the rural village of Topcroft in South Norfolk, England.
 
+#proposed-coordinates
+52.4792733, 1.3391406
+
 #upstream-source
 None.
 

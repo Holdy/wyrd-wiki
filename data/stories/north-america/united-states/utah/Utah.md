@@ -10,6 +10,9 @@ Constructed in the mid-twentieth century, Kay's Cross in Kaysville, Utah, became
 #location
 Kay's Cross is located in a secluded hollow off US-89 in Kaysville, Davis County, Utah.
 
+#proposed-coordinates
+41.05074167, -111.92534722
+
 #upstream-source
 None.
 
@@ -30,6 +33,9 @@ Established in 1854 under the direction of LDS leader Ezra Taft Benson, the Bens
 #location
 The Benson Grist Mill is located at 3258 Stansbury Road in Stansbury Park, Tooele County, Utah.
 
+#proposed-coordinates
+40.4062872, -113.1966394
+
 #upstream-source
 None.
 
@@ -49,6 +55,9 @@ Constructed in 1927 along Washington Boulevard in downtown Ogden, the grand Ben 
 
 #location
 The Ben Lomond Hotel is located along Washington Boulevard in downtown Ogden, Utah.
+
+#proposed-coordinates
+41.2389771, -111.9700674
 
 #upstream-source
 None.
@@ -72,6 +81,9 @@ For decades, the true origins of the cross remained shrouded in secrecy. However
 #location
 Kay's Cross stood in a secluded wooded ravine on the northern outskirts of Kaysville, Utah.
 
+#proposed-coordinates
+41.05074167, -111.92534722
+
 #upstream-source
 None.
 
@@ -92,6 +104,9 @@ Deep in Logan Canyon, the former retreat property known as St. Anne's Retreat be
 #location
 St. Anne's Retreat is located off Logan Canyon (State Route 89) east of Logan, Utah.
 
+#proposed-coordinates
+41.78, -111.644
+
 #upstream-source
 None.
 
@@ -111,6 +126,9 @@ Stretching roughly 15 miles from the canyon's mouth, Big Cottonwood Canyon Road 
 
 #location
 Big Cottonwood Canyon Road begins at the mouth of the canyon in Salt Lake County, Utah.
+
+#proposed-coordinates
+40.6421431, -111.6856823
 
 #upstream-source
 None.

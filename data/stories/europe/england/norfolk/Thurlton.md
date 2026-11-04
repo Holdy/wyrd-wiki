@@ -10,6 +10,9 @@ On the night of August 11, 1809, Joseph Bexfield, a wherryman who sailed his bar
 #location
 The White Horse Inn at Thurlton Staithe and All Saints' Churchyard in the village of Thurlton, Norfolk.
 
+#proposed-coordinates
+52.4813069, 1.6669198
+
 #upstream-source
 Peter Tolhurst, *This Hollow Land (Aspects of Norfolk Folklore)*
 
@@ -29,6 +32,9 @@ In August 1809, a wherryman named Joseph Bexfield moored his cargo boat at Thurl
 
 #location
 Thurlton Staithe is situated on the River Yare within Thurlton Marsh in the Norfolk Broads, where the wherryman met his fate.
+
+#proposed-coordinates
+52.4813069, 1.6669198
 
 #upstream-source
 None.

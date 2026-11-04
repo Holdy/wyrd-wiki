@@ -10,6 +10,9 @@ According to local legend recorded as early as 1736 by historian Francis Blomefi
 #location
 The former site of Oxfootstone Farm in South Lopham, Norfolk.
 
+#proposed-coordinates
+52.3845876, 1.0014046
+
 #upstream-source
 Francis Blomefield, *History of Norfolk* (1736); W.A. Dutt, *The Ancient Mark-Stones of East Anglia* (1926); Michael W. Burgess, *The Standing Stones of Norfolk and Suffolk* (1978).
 
@@ -29,6 +32,9 @@ The Ox-Foot Stone is an oblong slab of weathered sandstone situated in South Lop
 
 #location
 The Ox-Foot Stone is located at Oxfootstone House on Brickkiln Lane in South Lopham (Grid Reference TM05178098).
+
+#proposed-coordinates
+52.3883771, 1.0138117
 
 #upstream-source
 W. A. Dutt: 'The Ancient Mark-Stones of East Anglia' (Flood & Sons, 1926); H. P. Styles in 'East Anglian Miscellany' (1921); 'South Norfolk News' (June 27, 1975).

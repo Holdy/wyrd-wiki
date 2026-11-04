@@ -10,6 +10,9 @@ In the Agnus family plot at Druid Ridge Cemetery in Pikesville, Maryland, a mela
 #location
 Druid Ridge Cemetery located in Pikesville, Maryland.
 
+#proposed-coordinates
+39.3825221, -76.7233604
+
 #upstream-source
 Spooky Maryland by S.E. Schlosser.
 
@@ -29,6 +32,9 @@ Rackliffe House was built in the 1700s on Sinepuxent Neck in Worcester County. A
 
 #location
 Rackliffe House is located at 11700 Tom Patton Lane in Berlin, Maryland, situated on Sinepuxent Neck behind the Assateague Island visitors center.
+
+#proposed-coordinates
+44.4696602, -71.1810703
 
 #upstream-source
 "Ghosts of the Eastern Shore" by Andy Nunez.
@@ -119,6 +125,9 @@ In 1763, a poor peddler traversing the Dublin-Stafford Road (now designated as M
 #location
 Along MD-440 (formerly the Dublin-Stafford Road) near Rocky Run in Dublin, Maryland.
 
+#proposed-coordinates
+39.6509865, -76.2666245
+
 #upstream-source
 Dennis William Hauck, *Haunted Places: The National Directory*; Michael J. Varhola and Michael H. Varhola, *Ghosthunting Maryland*.
 
@@ -138,6 +147,9 @@ In the late 17th century, a severe influenza epidemic and brutal winter weather 
 
 #location
 The Moll Dyer Rock is located on the grounds of the Tudor Hall Mansion in Leonardtown, Maryland, near Moll Dyer Road.
+
+#proposed-coordinates
+38.2622373, -76.5920233
 
 #upstream-source
 Lynn Buonviri, *The Legend of Molly Dyer and Other Witch Tales of Southern Maryland*.
@@ -159,11 +171,20 @@ Built in 1830 at the confluence of the Potomac River and the Chesapeake Bay, the
 #location
 Point Lookout Lighthouse is situated at the southern tip of St. Mary's County at Point Lookout State Park in Scotland, Maryland.
 
+#proposed-coordinates
+38.0580197, -76.3348567
+
 #upstream-source
 None.
 
 #reference
 https://www.ptlookoutlighthouse.com/overview.shtml
+
+#coordinates
+38.03877, -76.32208
+
+#tags
+ghost
 
 ---
 

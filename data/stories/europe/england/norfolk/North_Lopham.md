@@ -10,6 +10,9 @@ In the Norfolk village of North Lopham, Letchmere Pond was historically vital to
 #location
 Letchmere Pond, situated near North Lopham Street in North Lopham, Norfolk.
 
+#proposed-coordinates
+52.4059161, 0.9952367
+
 #upstream-source
 DFHG Wonders of Lopham project
 

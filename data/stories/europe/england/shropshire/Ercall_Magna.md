@@ -10,6 +10,9 @@ Thomas Light, widely known as "Tommy Light the Conjuror," ran a thriving practic
 #location
 The half-timbered cottage in the village of Walton, located within the parish of Ercall Magna in Shropshire.
 
+#proposed-coordinates
+52.7688285, -2.5905769
+
 #upstream-source
 Charlotte Sophia Burne (editor) and Georgina Frederica Jackson, *Shropshire Folk-lore: A Sheaf of Gleanings* (citing an account from *Shropshire Notes and Queries*, 13 February 1885).
 

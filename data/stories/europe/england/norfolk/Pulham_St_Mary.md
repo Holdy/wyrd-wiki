@@ -10,6 +10,9 @@ In the Norfolk village of Pulham St Mary, local tradition and rumor have long sp
 #location
 The reputed subterranean passage connects the Middle Rectory in Church Close to the 15th-century Guild Chapel (Pennoyer Centre) in Pulham St Mary, Norfolk.
 
+#proposed-coordinates
+52.4209954, 1.2506553
+
 #upstream-source
 None.
 

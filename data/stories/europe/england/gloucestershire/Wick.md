@@ -10,6 +10,9 @@ In the village of Wick, a field historically known as "Chestles" or "Castles" ne
 #location
 The Chestles field and megalithic burial chamber are located near Coldharbour Farm in the village of Wick, South Gloucestershire.
 
+#proposed-coordinates
+51.4536326, -2.4303822
+
 #upstream-source
 ‘Cross Country’ by Walter Thornbury (1861).
 

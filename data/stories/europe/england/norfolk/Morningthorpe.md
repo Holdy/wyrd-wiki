@@ -10,6 +10,9 @@ Boyland Hall, a grand Elizabethan country house situated to the north of Morning
 #location
 The site of Boyland Hall, located to the north of the village of Morningthorpe in Norfolk, England.
 
+#proposed-coordinates
+52.4858363, 1.2644318
+
 #upstream-source
 None.
 

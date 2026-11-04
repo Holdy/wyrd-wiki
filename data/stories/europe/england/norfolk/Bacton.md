@@ -10,6 +10,9 @@ In 1797, William Suffolk, a married father from North Walsham, had an affair wit
 #location
 Bacton Wood (also known as Witton Wood), located near Bacton and North Walsham in Norfolk, England.
 
+#proposed-coordinates
+52.8239451, 1.4111002
+
 #upstream-source
 The Gentleman's Magazine (1797)
 

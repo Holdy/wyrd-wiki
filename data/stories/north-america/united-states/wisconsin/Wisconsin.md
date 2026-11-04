@@ -10,6 +10,9 @@ Stretching about 2,500 feet between Cemetery Road and Little Chicago Road in the
 #location
 Boy Scout Lane is located in the Town of Linwood near Stevens Point, Wisconsin, stretching between Cemetery Road and Little Chicago Road.
 
+#proposed-coordinates
+40.0581625, -86.0713825
+
 #upstream-source
 None.
 
@@ -56,6 +59,9 @@ The Mabel Tainter Memorial Theater was built in 1889 on Main Street in Menomonie
 #location
 The Mabel Tainter Theater situated on Main Street in Menomonie, Wisconsin.
 
+#proposed-coordinates
+44.8765289, -91.9278716
+
 #upstream-source
 None.
 
@@ -75,6 +81,9 @@ According to local legend, the northern unpaved end of Buffalo Ridge Road is hau
 
 #location
 The hauntings take place along the northern dirt-road section of Buffalo Ridge Road in Wisconsin.
+
+#proposed-coordinates
+44.8081766, -87.3109612
 
 #upstream-source
 None.
@@ -96,6 +105,9 @@ In February 1987, Allen and Debbie Tallman purchased second-hand bunk beds for t
 #location
 A residential house located in Horicon, Wisconsin.
 
+#proposed-coordinates
+43.4513819, -88.6312139
+
 #upstream-source
 None.
 
@@ -116,6 +128,9 @@ Originally constructed in the early 20th century, the grand home—later known a
 #location
 The ruins of Summerwind Mansion are located on the shores of West Bay Lake in the Town of Land O' Lakes, Vilas County, Wisconsin.
 
+#proposed-coordinates
+46.1986189, -89.4217333
+
 #upstream-source
 Wolfgang Von Bober, The Carver Effect: A Paranormal Experience (1979).
 
@@ -135,6 +150,9 @@ Located in Linwood Township near Stevens Point, Boy Scout Lane is a remote, unpa
 
 #location
 Boy Scout Lane is an isolated 2,500-foot unpaved road located in Linwood Township near Stevens Point, Portage County, Wisconsin.
+
+#proposed-coordinates
+44.4703586, -89.6087625
 
 #upstream-source
 Chad Lewis and Terry Fisk, *The Wisconsin Road Guide to Haunted Locations* (Unexplained Research Publishing Company, 2004).
@@ -184,6 +202,9 @@ Constructed in 1856 by Isaac Brown, the eight-sided home was given to his son Ed
 
 #location
 The historic Octagon House located in the historic district of Fond du Lac, Wisconsin.
+
+#proposed-coordinates
+43.77111111, -88.44833333
 
 #upstream-source
 None.

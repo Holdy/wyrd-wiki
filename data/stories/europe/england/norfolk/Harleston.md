@@ -10,6 +10,9 @@ In June 1983, six-year-old Gemma Wiles and her family living in a centuries-old 
 #location
 The events took place in a centuries-old residential house situated close to the town centre of Harleston, Norfolk.
 
+#proposed-coordinates
+52.4017973, 1.2990762
+
 #upstream-source
 None.
 
@@ -32,6 +35,9 @@ Tucked inside a short alley called Stone Court just off the east side of The Tho
 
 #location
 The granite block known as Herolf's Stone is located in Stone Court, just off the east side of The Thoroughfare in Harleston, Norfolk.
+
+#proposed-coordinates
+52.4022928, 1.299654
 
 #upstream-source
 Letter in the 'East Anglian Magazine', Vol.8, No.8 (April 1949); S. E. Dixon in 'Proceedings of the Prehistoric Society of East Anglia', Vol.2; Harleston Town Guide, 1977.

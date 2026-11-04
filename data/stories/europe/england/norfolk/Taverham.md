@@ -36,6 +36,9 @@ Ghosthill Wood, stretching between Shakespeare Way and Eastfield in Taverham, ha
 #location
 Ghosthill Wood is located in Taverham, Norfolk, stretching between Shakespeare Way and Eastfield.
 
+#proposed-coordinates
+54.2454873, -0.4001926
+
 #upstream-source
 None.
 

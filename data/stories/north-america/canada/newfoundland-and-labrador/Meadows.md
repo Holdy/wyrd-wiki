@@ -10,6 +10,9 @@ Local oral tradition maintains that the historical legacy of North America's ear
 #location
 This annual haunting is reported along the coastal terrace and Epaves Bay shoreline surrounding the L'Anse aux Meadows National Historic Site on the northern tip of Newfoundland.
 
+#proposed-coordinates
+51.6054041, -55.5702812
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ According to local folklore rooted in the historic Norse settlement site, a phan
 
 #location
 The haunting takes place along the coastal waters and shores adjacent to the L'Anse aux Meadows National Historic Site at the northernmost tip of Newfoundland's Great Northern Peninsula.
+
+#proposed-coordinates
+51.6054041, -55.5702812
 
 #upstream-source
 Haunted Canada 5: Terrifying True Stories by Joel A Sutherland

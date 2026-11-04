@@ -261,7 +261,7 @@ export function makeDrawing(text, x, y, options) {
                 });
             });
             displaced = moving || near.length > 0;
-            return displaced;
+            return moving;
         },
         paint(ctx, to = 1, from = 0) {
             const build = (bent) => {

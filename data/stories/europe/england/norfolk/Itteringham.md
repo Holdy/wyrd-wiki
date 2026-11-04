@@ -36,6 +36,9 @@ In 1938, seventy-one-year-old Ernest Edward Smith wandered alone by moonlight in
 #location
 Itteringham Mill is located on the River Bure within the village of Itteringham in North Norfolk.
 
+#proposed-coordinates
+52.8481235, 1.061914
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ Around the start of the 1700s, a group of unruly young men in Wem gathered at th
 #location
 The main events take place inside a local public house situated on New Street in the town of Wem, Shropshire.
 
+#proposed-coordinates
+52.858462, -2.7230254
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ Within the Norfolk village of Brooke, remnants of an ancient forest stretch towa
 #location
 Shrieking Woman Grove is situated along the woodland footpath in Brooke, Norfolk, which extends toward Bergh Apton.
 
+#proposed-coordinates
+52.5545018, 1.4031306
+
 #upstream-source
 None.
 
@@ -32,6 +35,9 @@ East of the village of Brooke, stretching along the parish boundary toward Bergh
 
 #location
 Shrieking Woman's Grove is situated in a wooded area just east of Brooke village along the parish boundary with Bergh Apton (centred around OS grid reference TM304992).
+
+#proposed-coordinates
+52.542301, 1.397056
 
 #upstream-source
 Norfolk Federation of Women’s Institutes: ‘The Norfolk Village Book’ (Countryside Books, 1990).

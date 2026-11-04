@@ -10,6 +10,9 @@ According to local Belizean folklore, the ancient Maya city of Xunantunich is ha
 #location
 El Castillo pyramid at the Xunantunich Archaeological Site located on a ridge above the Mopan River in the Cayo District of western Belize.
 
+#proposed-coordinates
+17.1692998, -89.1230906
+
 #upstream-source
 None.
 

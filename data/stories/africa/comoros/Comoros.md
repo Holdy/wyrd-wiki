@@ -10,6 +10,9 @@ According to Comorian folklore, the northern tip of Grande Comore once held a th
 #location
 Lac Salé (also known as Lac Niamawi), situated in a volcanic crater next to the village of Mitsamiouli on the northern tip of Grande Comore.
 
+#proposed-coordinates
+-11.3786376, 43.3733742
+
 #upstream-source
 None.
 

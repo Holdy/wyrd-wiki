@@ -11,7 +11,7 @@ According to local folklore gathered from long-time residents of Marystown, phan
 Mortier Bay is a large natural coastal inlet located in Marystown on the Burin Peninsula of Newfoundland and Labrador.
 
 #proposed-coordinates
-47.1025971, -55.10404685
+47.1685301, -55.0869243
 
 #upstream-source
 Memorial University of Newfoundland Folklore and Language Archive (MUNFLA), Accession No. 97-375, "An Analysis of Local Legends Collected at Marystown, Placentia Bay" by William Butt.
@@ -34,7 +34,7 @@ Preserved through oral history and local memorates collected in Marystown, tradi
 Drake's Cove is a coastal inlet situated within the Marystown area on the Burin Peninsula of Newfoundland and Labrador.
 
 #proposed-coordinates
-47.1547626, -55.16554975
+47.1344405, -55.3053469
 
 #upstream-source
 Memorial University of Newfoundland Folklore and Language Archive (MUNFLA), Accession No. 97-375, "An Analysis of Local Legends Collected at Marystown, Placentia Bay" by William Butt.

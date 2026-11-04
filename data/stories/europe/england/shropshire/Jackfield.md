@@ -10,6 +10,9 @@ Many years ago, shortly before Christmas, a mysterious stranger visited the Boat
 #location
 The Boat Inn was a historic public house located in Jackfield, Shropshire, alongside the River Severn.
 
+#proposed-coordinates
+52.6240434, -2.4660099
+
 #upstream-source
 None.
 

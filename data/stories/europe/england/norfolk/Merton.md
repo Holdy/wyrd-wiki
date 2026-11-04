@@ -10,6 +10,9 @@ The Merton Stone is a massive boulder of Neocomian sandstone resting in a marl p
 #location
 The Merton Stone is located in a marl pit near the western boundary of Merton parish with Threxton, just off Peddar's Way near Capp's Bush.
 
+#proposed-coordinates
+52.5647684, 0.7774108
+
 #upstream-source
 W. G. Clarke: 'In Breckland Wilds' (Robert Scott, 1925); oral tradition and information recorded from the Hon. Richard de Grey of Merton.
 

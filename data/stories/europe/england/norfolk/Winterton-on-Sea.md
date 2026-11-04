@@ -10,6 +10,9 @@ In the woodland near Winterton-on-Sea at East Somerton stand the atmospheric, ro
 #location
 The ruined St Mary's Church is located in a wooded grove near Burnley Hall in East Somerton, accessible via walking routes leading from Winterton-on-Sea, Norfolk.
 
+#proposed-coordinates
+52.7209419, 1.6901613
+
 #upstream-source
 None.
 

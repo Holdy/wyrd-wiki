@@ -10,6 +10,9 @@ In the early 1900s in Owl's Valley near Lookout Mountain, Alabama, a four-year-o
 #location
 Owl's Valley (Owl's Hollow), situated along the southeastern edge of Lookout Mountain near Turkeytown in Etowah County, Alabama.
 
+#proposed-coordinates
+34.0931524, -85.8983029
+
 #upstream-source
 None.
 
@@ -59,6 +62,9 @@ Founded in 1830 following the removal of the Choctaw Indians, the rough-and-tumb
 #location
 Gaston's Gully is located in Sumter County, Alabama, at the site of the former town of Gaston near present-day Ward.
 
+#proposed-coordinates
+40.0722604, -105.5079178
+
 #upstream-source
 None.
 
@@ -79,6 +85,9 @@ Nestled against the limestone caves and plots of Huntsville's historic Maple Hil
 #location
 The Dead Children's Playground is located at Maple Hill Park adjacent to Maple Hill Cemetery off McClung Avenue SE in Huntsville, Alabama.
 
+#proposed-coordinates
+34.7308548, -86.565008
+
 #upstream-source
 None.
 
@@ -98,6 +107,9 @@ The legend dates back to the late 19th century in Carrollton, Alabama, following
 
 #location
 The Pickens County Courthouse located in Carrollton, Alabama.
+
+#proposed-coordinates
+33.2619328, -88.095086
 
 #upstream-source
 13 Alabama Ghosts and Jeffrey by Kathryn Tucker Windham and Margaret Gillis Figh.
@@ -168,6 +180,9 @@ Built in the 1830s by Dr. John R. Drish and his wife Sarah, the Tuscaloosa mansi
 #location
 The Historic Drish House is located in Tuscaloosa, Alabama.
 
+#proposed-coordinates
+33.2095614, -87.5675258
+
 #upstream-source
 Kathryn Tucker Windham, 13 Alabama Ghosts and Jeffrey.
 
@@ -188,11 +203,20 @@ Martha, a young woman from New York, was unwillingly sent by her parents to Hunt
 #location
 Pratt Hall at Huntingdon College in Montgomery, Alabama.
 
+#proposed-coordinates
+32.3500704, -86.2853457
+
 #upstream-source
 Kathryn Tucker Windham and Margaret Figh, 13 Alabama Ghosts and Jeffrey
 
 #reference
 https://www.al.com/life-and-culture/erry-2018/10/4e9023658d7208/lets-look-at-the-real-sites-fr.html
+
+#coordinates
+32.35033, -86.28623
+
+#tags
+ghost,red-lady
 
 ---
 
@@ -207,6 +231,9 @@ In the mid-19th century, General Nathan Bryan Whitfield constructed the grand Gr
 
 #location
 Gaineswood is located in Demopolis, Alabama.
+
+#proposed-coordinates
+32.5178284, -87.8368201
 
 #upstream-source
 Kathryn Tucker Windham and Margaret Gillis Figh, Thirteen Alabama Ghosts and Jeffrey.

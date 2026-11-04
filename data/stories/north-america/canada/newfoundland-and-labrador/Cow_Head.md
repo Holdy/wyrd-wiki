@@ -11,7 +11,7 @@ In April 1809, Sarah Singleton grew alarmed when her brother, trapper Richard Cr
 Shallow Bay and the Dr. Henry N. Payne Community Museum in Cow Head, Newfoundland and Labrador.
 
 #proposed-coordinates
-49.9190065, -57.77644725
+49.9469622, -57.7662578
 
 #upstream-source
 Early Settlers on the Southwestern Shore of Newfoundland's Northern Peninsula by Jane Hutchings, and newspaper columns by Rev. John H. Moss ("The Voice of Don").

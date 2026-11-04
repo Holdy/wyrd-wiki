@@ -34,7 +34,7 @@ Peter's Finger is a large rock outcrop in New Perlican with a cliff pointing tow
 Peter's Finger outcrop, located in the southwestern corner of New Perlican, west of Route 80 and south of Vitter's Cove Road, Newfoundland and Labrador.
 
 #proposed-coordinates
-47.90716775, -53.32835325
+47.9059925, -53.3671523
 
 #upstream-source
 Town of New Perlican Municipal Heritage Site documentation and oral tradition recorded on the Canadian Register of Historic Places.

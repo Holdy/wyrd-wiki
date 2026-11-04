@@ -10,6 +10,9 @@ Garboldisham Heath is covered with prehistoric earthworks dating back to the Bro
 #location
 Soldier's Hill is a Bronze Age round barrow located on Garboldisham Heath in Norfolk (grid reference TL991818).
 
+#proposed-coordinates
+52.398419, 0.925792
+
 #upstream-source
 L.V. Grinsell: 'Folklore of Prehistoric Sites in Britain' (David & Charles, 1976); W. G. Clarke: 'In Breckland Wilds' (Robert Scott, 1925).
 

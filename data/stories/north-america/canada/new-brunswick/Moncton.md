@@ -11,7 +11,7 @@ Located along Gorge Road near an old quarry and cement factory, a small patch of
 The Lutes family gravesite located along Gorge Road in Moncton, New Brunswick.
 
 #proposed-coordinates
-46.125341251605775, -64.80319813171556
+46.1464314, -64.8657298
 
 #upstream-source
 None.

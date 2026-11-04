@@ -10,6 +10,9 @@ According to Norfolk folklore, Sir Thomas Boleyn was cursed after the executions
 #location
 Blickling Hall and its surrounding historic estate are situated just northwest of the market town of Aylsham in Norfolk, England.
 
+#proposed-coordinates
+52.811735, 1.2317081
+
 #upstream-source
 Thomas Firminger Thiselton-Dyer, The Ghost World
 

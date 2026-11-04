@@ -36,6 +36,9 @@ In the parish of Beachamwell, Norfolk, a long prehistoric or early Saxon linear 
 #location
 Hangour Hill is a round barrow located at grid reference TF752087 in the parish of Beachamwell, Norfolk.
 
+#proposed-coordinates
+52.648170, 0.589082
+
 #upstream-source
 L. V. Grinsell: 'The Ancient Burial Mounds of England' (Methuen, 1953), p.79; L. V. Grinsell: 'Folklore of Prehistoric Sites in Britain' (David & Charles, 1976), p.134.
 

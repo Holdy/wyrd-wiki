@@ -10,6 +10,9 @@ In October 1216, amid the turmoil of the First Barons' War, King John traveled t
 #location
 The historical crossing point across the tidal estuary and marshlands between Walpole Cross Keys and Sutton Bridge.
 
+#proposed-coordinates
+53.9203178, -0.9281904
+
 #upstream-source
 None.
 

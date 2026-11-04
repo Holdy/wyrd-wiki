@@ -36,6 +36,9 @@ Around 1870, the parish clerk of Bexwell was traveling along the road between Do
 #location
 The encounter took place along the A1122 road running between Downham Market and Bexwell in Norfolk.
 
+#proposed-coordinates
+52.6041596, 0.3656086
+
 #upstream-source
 Rector E. J. H. of Bexwell, in *Eastern Counties Collectanea*, Vol. 1, No. 1 (1872-3), p. 36.
 
@@ -55,6 +58,9 @@ In approximately 1870, the parish clerk of Bexwell encountered a spectral black 
 
 #location
 The encounter took place along the A1122 road between Downham Market and Bexwell in Norfolk.
+
+#proposed-coordinates
+52.6041596, 0.3656086
 
 #upstream-source
 Rector E. J. H. of Bexwell, *Eastern Counties Collectanea*, Vol. 1, No. 1 (1872-3), p. 36.
@@ -78,6 +84,9 @@ Around 1870, the parish clerk of Bexwell was traveling along the A1122 road betw
 
 #location
 The encounter took place along the A1122 road situated between Downham Market and the village of Bexwell in Norfolk.
+
+#proposed-coordinates
+52.6041596, 0.3656086
 
 #upstream-source
 Rector E. J. H. of Bexwell, 'Eastern Counties Collectanea', Vol. 1, No. 1 (1872-3), p. 36.

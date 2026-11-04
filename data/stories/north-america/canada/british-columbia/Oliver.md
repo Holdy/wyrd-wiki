@@ -11,7 +11,7 @@ Rising dramatically above the South Okanagan valley, McIntyre Bluff carries long
 McIntyre Bluff is a prominent limestone cliffside landmark located just north of Oliver, British Columbia.
 
 #proposed-coordinates
-49.182500000000005, -119.550833
+49.251918, -119.5311062
 
 #upstream-source
 Robert C. Belyk, Ghosts II: More True Stories from British Columbia.
@@ -32,6 +32,9 @@ Established in the 1890s during the South Okanagan gold rush, Fairview grew into
 
 #location
 Fairview Cemetery and the historic townsite are situated just west of the modern-day town of Oliver, British Columbia, off Rockcliffe Road.
+
+#proposed-coordinates
+45.4546843, -75.6863263
 
 #upstream-source
 None.

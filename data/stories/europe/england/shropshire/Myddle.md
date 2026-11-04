@@ -10,6 +10,9 @@ After inheriting the crumbling ruins of Myddle Castle and running up severe debt
 #location
 Myddle Castle ruins are located in the village of Myddle in Shropshire, England.
 
+#proposed-coordinates
+52.8088157, -2.7883174
+
 #upstream-source
 Charlotte Sophia Burne and Georgina Frederica Jackson, 1883, *A Sheaf of Gleanings*, Trübner and Co.
 

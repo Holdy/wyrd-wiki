@@ -36,6 +36,9 @@ In the town of Vaduz, a greedy farmer known for stealing property and livestock 
 #location
 Schimmelgasse (formerly Lochgass) in Vaduz, Liechtenstein.
 
+#proposed-coordinates
+47.1392862, 9.5227962
+
 #upstream-source
 Otto Seger's collection of Liechtenstein legends.
 

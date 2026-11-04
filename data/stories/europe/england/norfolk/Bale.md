@@ -10,6 +10,9 @@ Located in the North Norfolk village of Bale, immediately west of All Saints Chu
 #location
 The site of the ancient Bale Oak is located immediately west of All Saints Church in the village of Bale, North Norfolk.
 
+#proposed-coordinates
+52.8907, 0.9873
+
 #upstream-source
 Archie Miles, *Hidden Trees of Britain*, and the historical accounts of Rev. Blomfield.
 

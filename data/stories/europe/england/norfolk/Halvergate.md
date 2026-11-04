@@ -10,6 +10,9 @@ In November 2000, a driver heading home from Great Yarmouth during a heavy storm
 #location
 Halvergate Marshes, situated alongside the Acle Straight in Norfolk, UK.
 
+#proposed-coordinates
+52.666667, 1
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ While driving past the Halvergate turn-off on the Acle Straight, a motorist watc
 
 #location
 The junction where the Halvergate branch road meets the Acle Straight (A47) near Halvergate, Norfolk.
+
+#proposed-coordinates
+52.6059646, 1.5735582
 
 #upstream-source
 None.

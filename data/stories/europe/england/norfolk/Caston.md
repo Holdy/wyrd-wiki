@@ -10,6 +10,9 @@ Local folklore in the Norfolk village of Caston holds that a subterranean passag
 #location
 The 15th-century village cross and Holy Cross Church situated on the village green in the parish of Caston, Norfolk.
 
+#proposed-coordinates
+52.5422374, 0.8862853
+
 #upstream-source
 John S. Barnes: 'A History of Caston, Norfolk' (private, 1974) and 'The Mystery of Caston's Cross' (unpublished, 1978).
 

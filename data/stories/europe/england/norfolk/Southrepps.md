@@ -36,6 +36,9 @@ In the lead-up to and during the Second World War, as East Anglia became a front
 #location
 The rural fields and landscape surrounding the village of Southrepps, Norfolk.
 
+#proposed-coordinates
+52.8736868, 1.3528657
+
 #upstream-source
 Peter Meston's Wartime Accounts and BBC WW2 People's War
 

@@ -18,3 +18,9 @@ Barbara Rieti, *Strange Terrain: The Fairy World in Newfoundland* (1991).
 
 #reference
 https://mysteriesofcanada.com/bc/strange-tales-of-the-cpr-exploratory-survey/
+
+#coordinates
+47.08959, -55.21046
+
+#tags
+approx,fairy

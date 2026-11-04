@@ -10,6 +10,9 @@ According to local tradition, a monk named Benedict robbed the helpless and comm
 #location
 Benedict's Pool in the hamlet of Grafton, near Ashton under Hill at the foot of Bredon Hill.
 
+#proposed-coordinates
+51.6631225, -2.514446
+
 #upstream-source
 The Cheltenham Looker On (August 6, 1910), with later recounting in Fred Archer's *Benedict's Pool*.
 

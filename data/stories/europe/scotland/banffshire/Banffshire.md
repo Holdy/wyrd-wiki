@@ -10,6 +10,9 @@ In parts of Banffshire, the aspen tree is known as "quackin' aish," or quaking a
 #location
 The story refers to parts of Banffshire where the aspen tree can be found.
 
+#proposed-coordinates
+57.5, -3.083333
+
 #upstream-source
 None.
 

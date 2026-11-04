@@ -10,6 +10,9 @@ In August 1964, Anglia Television broadcast a documentary titled *The Unknown*, 
 #location
 Morley Old Hall is a 16th-century moated manor house situated in the village of Morley Saint Peter, approximately twelve miles southwest of Norwich in South Norfolk, England (52°32′40″N 1°01′49″E).
 
+#proposed-coordinates
+52.544444, 1.030278
+
 #upstream-source
 Tony Cornell and Alastair Gauld, "A 'Ghost' on Television", Journal of the Society for Psychical Research (March 1969).
 

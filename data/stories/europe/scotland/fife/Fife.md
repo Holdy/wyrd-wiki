@@ -33,6 +33,9 @@ In the ancient coastal town of St Andrews in Fife, hidden pathways and medieval 
 #location
 Nun's Walk is a historic lane situated in the coastal town of St Andrews in Fife, Scotland.
 
+#proposed-coordinates
+56.3403678, -2.795044
+
 #upstream-source
 None.
 

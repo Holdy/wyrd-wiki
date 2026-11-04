@@ -10,6 +10,9 @@ Built in the 1700s and expanded in 1807, Ringwood Manor was home to General Robe
 #location
 Ringwood Manor is situated within Ringwood State Park in the borough of Ringwood, Passaic County, New Jersey.
 
+#proposed-coordinates
+41.1389641, -74.2554278
+
 #upstream-source
 Spooky New Jersey by S.E. Schlosser
 
@@ -55,6 +58,9 @@ Winding through the isolated wilderness of West Milford, New Jersey, Clinton Roa
 #location
 The bridge at Dead Man’s Curve on Clinton Road in West Milford, Passaic County, New Jersey.
 
+#proposed-coordinates
+41.0907433, -74.4410997
+
 #upstream-source
 None.
 
@@ -74,6 +80,9 @@ According to local legend, a young boy tragically died near the bridge on Clinto
 
 #location
 The bridge at Dead Man's Curve on Clinton Road in West Milford, Passaic County, New Jersey.
+
+#proposed-coordinates
+41.0907433, -74.4410997
 
 #upstream-source
 None.
@@ -95,11 +104,20 @@ Built in 1811 by architect Robert Mills and operating until 1966, the Burlington
 #location
 The Historic Burlington County Prison Museum is located on High Street in Mount Holly, New Jersey.
 
+#proposed-coordinates
+39.9965, -74.78973056
+
 #upstream-source
 None.
 
 #reference
 https://weirdnj.com/stories/garden-state-ghosts/burlington-prison/
+
+#coordinates
+39.99666, -74.78926
+
+#tags
+ghost
 
 ---
 
@@ -111,6 +129,9 @@ The historic 1811 prison in Mount Holly, New Jersey, is said to be haunted by th
 Built in 1811 by architect Robert Mills, the Burlington County Prison in Mount Holly served as a correctional facility until 1966, making it the oldest continually operating prison in the United States at the time of its closure. Throughout its history, it was the site of numerous hangings and violent incidents, including the imprisonment and execution of Joel Clough, a man convicted of murdering his former fiancée in the 1830s. Clough spent his final days chained in the maximum-security "death cell" on the top floor before being executed, and his body was reportedly buried in the prison yard near a large tree. Today, staff, visitors, and paranormal investigators report chilling phenomena, including disembodied moans in the death cell, electromagnetic meter spikes, and inexplicable mechanical failures on recording equipment left near Clough's suspected burial site on the anniversary of his execution.
 #location
 Burlington County Prison Museum, located on High Street in Mount Holly, New Jersey.
+
+#proposed-coordinates
+39.9965894, -74.7892595
 #upstream-source
 None.
 #reference
@@ -126,6 +147,9 @@ Perth Amboy's historic colonial mansion, once home to New Jersey's last royal go
 Constructed in 1762, the Proprietary House in Perth Amboy served as the official residence for New Jersey’s royal governors under British rule, housing colonial governor William Franklin—the illegitimate son of Benjamin Franklin—until his arrest by American revolutionaries in 1776. Over the centuries, the grand Georgian mansion experienced fires, served as a hotel, and underwent various renovations, accumulating a heavy atmosphere of historical trauma. Today, visitors and paranormal investigators report frequent supernatural occurrences, such as a mysterious "woman in white" wandering second-floor chambers, the phantom presence and measured footsteps of Governor Franklin in his former quarters, doors unbolting themselves, and shadows darting across the colonial-era cellar.
 #location
 The Proprietary House, located in Perth Amboy, New Jersey.
+
+#proposed-coordinates
+40.5034163, -74.2692933
 #upstream-source
 None.
 #reference
@@ -144,6 +168,9 @@ The Seabrook-Wilson Homestead, widely known as the Spy House, is a weather-beate
 
 #location
 The Seabrook-Wilson Homestead (Spy House) is located at 119 Port Monmouth Road in the Port Monmouth section of Middletown, New Jersey.
+
+#proposed-coordinates
+40.436673, -74.098641
 
 #upstream-source
 None.

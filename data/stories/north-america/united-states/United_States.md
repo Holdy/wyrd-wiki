@@ -10,6 +10,9 @@ According to lore, when Edmund Dudley was beheaded in England in 1510 for plotti
 #location
 Dudleytown is an abandoned historical settlement located within the Dark Entry Forest in the town of Cornwall, Litchfield County, Connecticut.
 
+#proposed-coordinates
+41.8437058, -73.3292848
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Beginning in her youth, Emma Schmidt exhibited a severe physical and psychologic
 
 #location
 The Franciscan convent located in the small town of Earling, Iowa.
+
+#proposed-coordinates
+41.7752001, -95.4175851
 
 #upstream-source
 Carl Vogl, *Begone, Satan!*

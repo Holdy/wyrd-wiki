@@ -10,6 +10,9 @@ Long ago, the thriving community of Saxlingham Thorpe stood surrounding its medi
 #location
 The ruined church of St Mary in the historic parish of Saxlingham Thorpe, situated just south of Saxlingham Nethergate in Norfolk.
 
+#proposed-coordinates
+52.5272952, 1.2882856
+
 #upstream-source
 None.
 

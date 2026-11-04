@@ -10,6 +10,9 @@ Mary Barley lived in a house in Short Beck, Feltwell, and died in 1875 at the ag
 #location
 The Borough, a triangular patch of land between the left and right forks of Short Beck in Feltwell, Norfolk.
 
+#proposed-coordinates
+52.4870328, 0.520183
+
 #upstream-source
 An old Feltwell pamphlet by the Rev. Daubeney from 1954 (citing an account from the Thetford and Watton Times).
 

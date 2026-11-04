@@ -10,6 +10,9 @@ In April 1750, fifteen-year-old Thomas Roberts, son of Isaac and Mary Roberts fr
 #location
 The memorial tombstone can be found inside St Michael's Church in the village of Buckland, Gloucestershire (grid reference SP081361), just north of Laverton.
 
+#proposed-coordinates
+52.023709, -1.882635
+
 #upstream-source
 None.
 

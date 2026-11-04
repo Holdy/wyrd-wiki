@@ -33,6 +33,9 @@ The Barcrofts were a long-standing and respected Lancashire family who owned Bar
 #location
 Barcroft Hall is situated approximately one mile from Towneley in Lancashire.
 
+#proposed-coordinates
+50.9564532, -2.8126454
+
 #upstream-source
 Harland, John and Wilkinson, T.T., Lancashire Legends, Traditions, Pageants, Sports, &c. (1873)
 

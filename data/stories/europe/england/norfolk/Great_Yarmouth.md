@@ -62,6 +62,9 @@ In September 1645, amidst the turmoil of the English Civil War and the witch-hun
 #location
 St Nicholas Churchyard and the Jellicoe Road on the Yarmouth-Caister border, Great Yarmouth, Norfolk.
 
+#proposed-coordinates
+52.627649, 1.7319461
+
 #upstream-source
 Lord Chief Justice Hale's *A Collection of modern relations of matter of fact concerning witches & witchcraft* (1693) and John Stearne's *A Confirmation and Discovery of Witchcraft* (1648).
 
@@ -84,6 +87,9 @@ In October 1922, a wave of eerie fascination gripped Great Yarmouth following a 
 
 #location
 St Nicholas Church graveyard, Church Plain, Great Yarmouth, Norfolk.
+
+#proposed-coordinates
+52.610906, 1.7264905
 
 #upstream-source
 None.

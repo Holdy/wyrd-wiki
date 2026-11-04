@@ -12,6 +12,9 @@ However, suspicious monks from Pentney Abbey across the fen kept watch and event
 #location
 Vinegar Hill in Marham, Norfolk, running near the ruins of Marham Abbey opposite Holy Trinity Church.
 
+#proposed-coordinates
+54.1028011, -2.7917346
+
 #upstream-source
 None.
 

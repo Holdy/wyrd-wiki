@@ -189,8 +189,9 @@ const BEND_PUSH = 0.325;
 export interface Drawing {
   /**
    * Advance the bend by `dt` seconds. `influences` are up to two points in the same pixel space
-   * the drawing was laid out in, or null for none. Returns true while anything is still displaced
-   * or moving: repaint, and call again next frame; false means it is at rest.
+   * the drawing was laid out in, or null for none. Returns true while anything is moving: repaint.
+   * False means nothing moved, so there is no need to repaint, though it may be held bent by a point
+   * that is keeping still: call again when the points change, so it can ease back once they go.
    */
   bend(influences: (Point | null)[], dt: number): boolean;
   /**
@@ -293,7 +294,7 @@ export function makeDrawing(text: string, x: number, y: number, options?: QuillO
         });
       });
       displaced = moving || near.length > 0;
-      return displaced;
+      return moving;
     },
     paint(ctx, to = 1, from = 0) {
       const build = (bent: boolean) => {

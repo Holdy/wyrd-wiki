@@ -10,6 +10,9 @@ Rich Heileman, a Cleveland-area newspaper reporter, was driving home to Berea fr
 #location
 The encounter took place along the northbound shoulder of Interstate 71, north of Medina, Ohio.
 
+#proposed-coordinates
+41.1000764, -81.9382517
+
 #upstream-source
 Chris Woodyard, *Haunted Ohio III: Still More Ghostly Tales from the Buckeye State*
 
@@ -29,6 +32,9 @@ For over a century, travelers and teenagers visiting Gore Orphanage Road in Verm
 
 #location
 The ruins of the Swift Mansion and the infamous Gore Orphanage Road are located just south of Vermilion, Ohio, near Sperry Road and the Vermilion River in Lorain County.
+
+#proposed-coordinates
+41.4062083, -72.9786797
 
 #upstream-source
 None.
@@ -50,6 +56,9 @@ Local folklore tells of a horrific nineteenth-century fire that purportedly engu
 #location
 Gore Orphanage Road is located approximately a quarter-mile north of Rosedale near the Sperry Road intersection in Vermilion, Ohio.
 
+#proposed-coordinates
+41.363241, -82.331984
+
 #upstream-source
 None.
 
@@ -69,6 +78,9 @@ For decades, local folklore in Northeast Ohio has spoken of the "Melonheads"—s
 
 #location
 Wisner Road winds through a densely wooded portion of Kirtland and Chardon Township in Northeast Ohio, running alongside the East Branch of the Chagrin River.
+
+#proposed-coordinates
+42.1583812, -71.1583239
 
 #upstream-source
 None.
@@ -90,11 +102,17 @@ Located in the dense woods of Vinton County, the Moonville Tunnel was part of th
 #location
 Moonville Tunnel is located along the multi-use trail in Zaleski State Forest in Vinton County, Ohio.
 
+#proposed-coordinates
+39.3070001, -82.3215323
+
 #upstream-source
 None.
 
 #reference
 https://www.ravenwoodcastle.com/2015/07/14/legends-lore-moonville-tunnel/
+
+#tags
+ghost
 
 ---
 
@@ -109,6 +127,9 @@ Built in 1856 as part of the Marietta and Cincinnati Railroad, the Moonville Tun
 
 #location
 Moonville Tunnel is located along the former rail trail off Hope-Moonville Road in Vinton County, Ohio.
+
+#proposed-coordinates
+39.3070001, -82.3215323
 
 #upstream-source
 None.
@@ -152,6 +173,9 @@ Constructed by town founder John Pray along North River Road, the prominent yell
 
 #location
 The Columbian House is located at 4302 River Road in Waterville, Ohio.
+
+#proposed-coordinates
+41.5008859, -83.7182701
 
 #upstream-source
 None.

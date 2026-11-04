@@ -19,6 +19,9 @@ None.
 #reference
 https://capelin.library.mun.ca/v/folklore/13437
 
+#tags
+haunting,pinless
+
 ---
 
 #title
@@ -41,3 +44,9 @@ None.
 
 #reference
 https://capelin.library.mun.ca/v/folklore/797
+
+#coordinates
+50.69840, -57.41037
+
+#tags
+haunting

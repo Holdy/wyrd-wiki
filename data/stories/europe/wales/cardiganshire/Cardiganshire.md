@@ -10,6 +10,9 @@ On July 23rd, 1971, Phil Bishop and his wife were staying at a hotel overlooking
 #location
 The North Promenade in Aberystwyth, Cardiganshire, running along the seafront towards the base of Constitution Hill.
 
+#proposed-coordinates
+51.5023288, -0.1453761
+
 #upstream-source
 None.
 

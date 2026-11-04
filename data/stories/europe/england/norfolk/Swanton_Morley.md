@@ -10,6 +10,9 @@ Recorded by folklorist Leslie Valentine Grinsell after speaking with villager Ch
 #location
 All Saints Church is located in the village of Swanton Morley in Norfolk, UK.
 
+#proposed-coordinates
+52.7161753, 0.9886732
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ During the winter of 1939, a young Territorial soldier was cycling back late at 
 
 #location
 The encounter took place along a narrow green lane running east-west between the former B1147 and Woodgate Lane near Swanton Morley church (around grid reference TG015164).
+
+#proposed-coordinates
+52.708172, 0.982018
 
 #upstream-source
 None.

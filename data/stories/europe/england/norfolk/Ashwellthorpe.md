@@ -10,6 +10,9 @@ In the late sixteenth century, Sir Thomas Knyvett welcomed a mysterious Londoner
 #location
 Ashwellthorpe Hall, situated in the village of Ashwellthorpe, Norfolk, UK.
 
+#proposed-coordinates
+52.5354961, 1.1686639
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ In the high ground above Bishop's Cleeve and Cleeve Hill, a local property owner
 #location
 The gateway of the Roundhouse on Stockwell Lane, situated in the upland area near Bishop's Cleeve and Cleeve Hill in Gloucestershire.
 
+#proposed-coordinates
+51.9198638, -2.0058611
+
 #upstream-source
 None.
 

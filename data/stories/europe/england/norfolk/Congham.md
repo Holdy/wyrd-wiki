@@ -10,6 +10,9 @@ In the village of Congham, folklore tells of a secret tunnel running between St.
 #location
 St. Andrew's Church and the Old Rectory stand roughly forty meters apart in the village of Congham, Norfolk.
 
+#proposed-coordinates
+52.7858403, 0.5623466
+
 #upstream-source
 None.
 

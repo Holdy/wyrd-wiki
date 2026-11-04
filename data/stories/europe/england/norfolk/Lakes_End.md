@@ -10,6 +10,9 @@ In the misty, isolated fenlands of Lakes End, Norfolk, generations of locals hav
 #location
 The ghostly hooded monk is frequently encountered near the old abbey ruins in Lakes End, Norfolk.
 
+#proposed-coordinates
+52.5433531, 0.2343875
+
 #upstream-source
 None.
 
@@ -32,6 +35,9 @@ In 1878, a farmyard yardman named Bob Crawford crossed paths with an elderly loc
 
 #location
 The hamlet of Lakes End in the parish of Upwell, Norfolk, where Bob Crawford worked as a farmyard yardman.
+
+#proposed-coordinates
+52.5698739, 0.2322346
 
 #upstream-source
 *Cambridgeshire Customs and Folklore* by Enid Porter (recording an account from the Archaeological and E. Counties Folklore Society, 1936).

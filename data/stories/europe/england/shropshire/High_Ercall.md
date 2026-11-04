@@ -10,6 +10,9 @@ During the late 18th and early 19th centuries, Thomas Light operated as a famous
 #location
 The half-timbered cottage of Thomas Light in the village of Walton, situated just outside High Ercall in Shropshire, served as the primary site where he was heard wrestling with the Devil.
 
+#proposed-coordinates
+52.7526957, -2.6044229
+
 #upstream-source
 Shropshire Folk-lore: A Sheaf of Gleanings (1883-1886) by Georgina Frederica Jackson, edited by Charlotte Sophia Burne, citing a correspondent in Shropshire Notes and Queries (13 February 1885).
 

@@ -10,6 +10,9 @@ For generations, local folklore in Norfolk has preserved a grim prophecy concern
 #location
 Stone Hill (TG277143 area) in the parish of Rackheath, Norfolk, England.
 
+#proposed-coordinates
+52.678948, 1.367705
+
 #upstream-source
 Christopher Marlowe: *People & Places in Marshland* (Cecil Palmer, 1927); *Norfolk Archaeology*, Vol. 2 (1849).
 

@@ -36,6 +36,9 @@ A man and his wife were driving by car to visit his mother's home in Holt when t
 #location
 The sighting occurred near the Tithe Barn on the border between Letheringsett and Holt, situated before the old Holt Rectory.
 
+#proposed-coordinates
+52.9054382, 1.0928322
+
 #upstream-source
 None.
 

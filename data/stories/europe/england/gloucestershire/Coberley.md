@@ -10,6 +10,9 @@ Sir Giles de Berkeley, a 13th-century knight and landholder based in Coberley, f
 #location
 St Giles' Church in the village of Coberley, Gloucestershire.
 
+#proposed-coordinates
+51.841059, -2.0513478
+
 #upstream-source
 Arthur Mee, *The King’s England – Gloucestershire*, and the church leaflet by John Williams.
 

@@ -10,6 +10,9 @@ Located in a small woodland known as the High Plantation on the south slope of t
 #location
 The Silver Well was historically located in the woodland known as the High Plantation on the southern slope of the Nar valley in Fincham, Norfolk.
 
+#proposed-coordinates
+52.623789, 0.49375
+
 #upstream-source
 W.B. Gerish, *Norfolk Folklore Notes* (1892); M. Manning, *Taking the Waters in Norfolk* (1994).
 

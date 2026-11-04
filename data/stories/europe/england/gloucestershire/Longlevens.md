@@ -10,6 +10,9 @@ In late autumn 1969, at approximately 11:30 PM, a young courting couple were dri
 #location
 Cheltenham Road, near the former site of Anderson's Garage (now the BP Garage) in Longlevens, Gloucester, Gloucestershire.
 
+#proposed-coordinates
+51.8719365, -2.217089
+
 #upstream-source
 None.
 

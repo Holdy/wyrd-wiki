@@ -18,3 +18,9 @@ St. Stephen Town Hall - Historical Places file.
 
 #reference
 https://www.historicplaces.ca/en/rep-reg/place-lieu.aspx?id=8357
+
+#coordinates
+45.19454, -67.28119
+
+#tags
+haunted,private

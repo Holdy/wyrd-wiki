@@ -10,6 +10,9 @@ After William the Conqueror granted the Manor of Salhouse to his standard-bearer
 #location
 Salhouse Pool is a small lagoon located beside Salhouse Broad in the village and civil parish of Salhouse, Norfolk.
 
+#proposed-coordinates
+52.6883785, 1.432528
+
 #upstream-source
 None.
 

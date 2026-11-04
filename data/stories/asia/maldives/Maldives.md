@@ -50,6 +50,9 @@ After the construction of the Sinamale' Bridge connecting Malé to the surroundi
 #location
 The Sinamale' Bridge spans the waters of the Indian Ocean, connecting the capital city of Malé to the islands of Hulhulé and Hulhumalé in the Maldives.
 
+#proposed-coordinates
+4.1971866, 73.5299218
+
 #upstream-source
 None.
 

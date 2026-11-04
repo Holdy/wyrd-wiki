@@ -10,6 +10,9 @@ High up in the northern region of the Republic of Guinea, an unfaithful woman wa
 #location
 The eastern slope of Mount Loura, located near the town of Mali in the prefecture of Mali within the Fouta Djallon region of northern Guinea.
 
+#proposed-coordinates
+11.15, -12.26
+
 #upstream-source
 None.
 

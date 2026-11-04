@@ -30,6 +30,9 @@ A devil-possessed Moorish suit of armor fell into the hands of a corrupt Spanish
 #location
 The bell was housed in the bell-gable above the central entrance of the National Palace (Palacio Nacional), located facing the Zócalo in the historic center of Mexico City.
 
+#proposed-coordinates
+19.4325543, -99.1312673
+
 #upstream-source
 None.
 
@@ -49,6 +52,9 @@ As reports of demonic possession steadily increased—with Mexico City alone rec
 
 #location
 La Capilla de las Benditas Animas del Purgatorio located in the central city of Querétaro, Mexico.
+
+#proposed-coordinates
+28.3359247, -106.2802165
 
 #upstream-source
 None.

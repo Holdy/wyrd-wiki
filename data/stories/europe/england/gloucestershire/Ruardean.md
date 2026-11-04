@@ -10,6 +10,9 @@ In the autumn of 1889, four Frenchmen arrived in the Forest of Dean leading two 
 #location
 The former police station located in the village of Ruardean, Gloucestershire.
 
+#proposed-coordinates
+51.8524055, -2.5558932
+
 #upstream-source
 None.
 

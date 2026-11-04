@@ -10,6 +10,9 @@ As recorded in 19th-century East Anglian folklore, a local woman named Mrs. S se
 #location
 St. Michael's Church stands in the village of Geldeston, Norfolk, situated near the north bank of the River Waveney.
 
+#proposed-coordinates
+52.4721469, 1.5191655
+
 #upstream-source
 Margaret Helen James, *Bogie Tales of East Anglia* (1891).
 

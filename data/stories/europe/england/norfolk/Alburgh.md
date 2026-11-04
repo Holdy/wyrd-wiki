@@ -10,6 +10,9 @@ The historic St. Mary's Church in the Norfolk parish of Alburgh is reputed to be
 #location
 St. Mary's Church is located in the village of Alburgh, situated in south Norfolk, UK.
 
+#proposed-coordinates
+52.4415891, 1.3230502
+
 #upstream-source
 None.
 

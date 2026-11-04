@@ -10,6 +10,9 @@ Cutthroat Drift is a straight green track that winds between Dereham Road and Ma
 #location
 Cutthroat Drift is a rural track running between Dereham Road and Mattishall Road in Norfolk, near Yaxham village.
 
+#proposed-coordinates
+52.6569443, 0.9617762
+
 #upstream-source
 Peter Poulter, *The Journal* (October 15, 1932)
 

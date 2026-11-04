@@ -10,6 +10,9 @@ On the boundary between Moulton St. Mary and Cantley parishes lies Callow Pit, a
 #location
 Callow Pit is located on the parish boundary between Moulton St. Mary and Cantley, near the Southwood Road and Grove Road crossroads in Norfolk.
 
+#proposed-coordinates
+52.6210669, 1.2893353
+
 #upstream-source
 John Glyde: 'The Norfolk Garland' (Jarrold & Sons, 1872); Notes & Queries, 1st series, vol. xii, p. 487.
 

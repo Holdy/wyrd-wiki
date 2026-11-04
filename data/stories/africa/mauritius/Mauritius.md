@@ -10,6 +10,9 @@ In 1971, a family camping on the wild coast of Flic en Flac with a South African
 #location
 The coastal area and adjacent dirt lane in Flic en Flac on the west coast of Mauritius.
 
+#proposed-coordinates
+-20.2789702, 57.36914
+
 #upstream-source
 None.
 

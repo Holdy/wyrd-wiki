@@ -10,6 +10,9 @@ Creake Abbey, founded in the 13th century as an Augustinian priory, suffered a c
 #location
 The ruins of Creake Abbey are situated alongside the River Burn, approximately one mile north of the village of North Creake in Norfolk (grid reference TF856395).
 
+#proposed-coordinates
+52.921270, 0.760081
+
 #upstream-source
 Frank Meeres: 'Paranormal Norfolk' (Kindle edition, 2013); Brian P. Levack (ed.): 'The Literature of Witchcraft' (Routledge, 1993), p. 447.
 

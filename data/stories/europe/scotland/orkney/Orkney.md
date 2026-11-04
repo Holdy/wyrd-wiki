@@ -10,6 +10,9 @@ Johina Leith, nee Kirkness, recalled an eerie encounter when she was about nine 
 #location
 The stretch of road near Newhouse, Dounby, where the ghostly woman was seen.
 
+#proposed-coordinates
+59.068048, -3.2311373
+
 #upstream-source
 None
 

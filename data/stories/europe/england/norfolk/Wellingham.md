@@ -10,6 +10,9 @@ For generations, inhabitants and staff of the historic Grade II listed Wellingha
 #location
 Wellingham Hall is located in the rural Norfolk parish of Wellingham, UK.
 
+#proposed-coordinates
+52.7624008, 0.7731619
+
 #upstream-source
 None.
 

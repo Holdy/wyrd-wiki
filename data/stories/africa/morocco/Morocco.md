@@ -36,6 +36,9 @@ Commissioned in the early 18th century in Meknes, Morocco, the massive undergrou
 #location
 Qara Prison is located beneath the square in front of Qubbat al-Khayyatin within the imperial district of the Kasbah of Moulay Ismail in Meknes, Morocco.
 
+#proposed-coordinates
+34.0183786, -6.8250351
+
 #upstream-source
 None.
 

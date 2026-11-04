@@ -38,6 +38,9 @@ Ever since, his spectre has frequently been encountered within the estate's Goth
 #location
 Felbrigg Hall, situated in the village of Felbrigg, near Cromer, Norfolk, England.
 
+#proposed-coordinates
+52.907453, 1.2608062
+
 #upstream-source
 None.
 

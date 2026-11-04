@@ -10,6 +10,9 @@ During a heavy snowstorm in the wolds north of Dursley, a traveller was delighte
 #location
 Downham Hill, situated north of Dursley and southwest of Uley Bury in Gloucestershire.
 
+#proposed-coordinates
+51.6842684, -2.3250785
+
 #upstream-source
 None.
 

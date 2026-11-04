@@ -10,6 +10,9 @@ In the late 19th century, Hugh Gurney Barclay of the prominent banking family ac
 #location
 Colney Hall and St Andrew's Church in the parish of Colney, located west of Norwich, Norfolk.
 
+#proposed-coordinates
+52.6284679, 1.2062611
+
 #upstream-source
 None.
 

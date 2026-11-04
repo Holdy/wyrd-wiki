@@ -10,6 +10,9 @@ Set in Wiveton during the seventeenth century, a young child is brought along by
 #location
 The old parsonage house situated on the hill along the low road leading from Wiveton.
 
+#proposed-coordinates
+52.9461714, 1.0385579
+
 #upstream-source
 None.
 

@@ -50,3 +50,6 @@ https://coastalshadows.ca/2024/09/04/keeping-road-abbotsford-b-c/
 
 #tags
 ghost,canine,approx
+
+#coordinates
+49.08056, -122.19880

@@ -12,6 +12,9 @@ All through the night, the devil pounded relentlessly on the mill's stout wooden
 #location
 Brograve Mill, standing beside the Waxham Cut near the village of Horsey in Norfolk.
 
+#proposed-coordinates
+52.75361, 1.62621
+
 #upstream-source
 None.
 

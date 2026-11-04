@@ -10,6 +10,9 @@ Rooted in the history of prominent Norfolk families from the 15th and 16th centu
 #location
 The rural footpath connecting St Andrew and St Peter's Church in Blofield to St Michael's Church in Braydeston, Norfolk.
 
+#proposed-coordinates
+53.3712272, -2.7758136
+
 #upstream-source
 None.
 

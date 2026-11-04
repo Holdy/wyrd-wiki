@@ -36,6 +36,9 @@ According to local tradition, a knight returned from fighting in the Crusades an
 #location
 Barton Broad, a 130-acre expanse of water situated on the edge of Barton Turf in the Norfolk Broads.
 
+#proposed-coordinates
+52.7389956, 1.497698
+
 #upstream-source
 *Ghosts of the Broads* by Dr Chas Sampson.
 

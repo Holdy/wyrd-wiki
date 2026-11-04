@@ -10,6 +10,9 @@ An elderly woman named Ms. Tilley passed away inside a home in Clarke's Beach. O
 #location
 A specific residence in Clarke's Beach where Ms. Tilley previously lived and passed away.
 
+#proposed-coordinates
+47.5453393, -53.2801682
+
 #upstream-source
 Edited by Lisa Wilson, Foreword by Dale Jarvis, *Folk beliefs and legends of Bay Roberts and area* (2014).
 

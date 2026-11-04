@@ -11,7 +11,7 @@ Local lore and paranormal accounts on Vancouver Island describe a spectral young
 Thetis Cove and Portage Park are situated along the sheltered shores of Esquimalt Harbour within the municipality of View Royal, British Columbia.
 
 #proposed-coordinates
-48.451944, -123.43416699999999
+48.4488716, -123.43388
 
 #upstream-source
 Shanon Sinn, *The Haunting of Vancouver Island: Supernatural Encounters with the Other Side* (2017).

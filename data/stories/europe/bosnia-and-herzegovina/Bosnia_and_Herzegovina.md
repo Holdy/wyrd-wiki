@@ -10,6 +10,9 @@ In the settlement of Polipci near Jajce, a severe curse befell the local residen
 #location
 The stećak necropolis near Polipci, on the outskirts of Jajce in central Bosnia and Herzegovina.
 
+#proposed-coordinates
+44.3396706, 17.2711786
+
 #upstream-source
 None.
 

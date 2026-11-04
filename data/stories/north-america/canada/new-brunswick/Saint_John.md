@@ -11,7 +11,7 @@ Established after the arrival of United Empire Loyalists in 1783, the Loyalist B
 Sydney Street and King Street East, Saint John, New Brunswick
 
 #proposed-coordinates
-45.26718544999999, -66.04781399999999
+45.2701438, -66.0559634
 
 #upstream-source
 None.
@@ -34,7 +34,7 @@ For 150 years, the scenic green space known today as Wolastoq Park was home to t
 Wolastoq Park, Saint John, New Brunswick
 
 #proposed-coordinates
-45.26718544999999, -66.04781399999999
+45.2568233, -66.0904378
 
 #upstream-source
 None.

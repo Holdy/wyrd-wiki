@@ -11,7 +11,7 @@ In 1944, Royal Air Force sergeant Tom Hutchings was convicted of murder and beca
 The Charlotte County Gaol is located on Frederick Street in St. Andrews, New Brunswick.
 
 #proposed-coordinates
-45.080556, -67.06111100000001
+45.0750988, -67.0500215
 
 #upstream-source
 "The Other Side of Truth" by Paul Kimball.

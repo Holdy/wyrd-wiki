@@ -33,6 +33,9 @@ Built by the French in 1726 at the mouth of the Niagara River, Old Fort Niagara 
 #location
 Old Fort Niagara, located at 102 Youngstown-Lockport Road in Youngstown, New York.
 
+#proposed-coordinates
+43.262794, -79.0633774
+
 #upstream-source
 None.
 
@@ -76,6 +79,9 @@ During the French control of Old Fort Niagara, a gathering was held inside the s
 #location
 The French Castle at Old Fort Niagara, situated in Youngstown, New York, where the Niagara River flows into Lake Ontario.
 
+#proposed-coordinates
+51.8775197, -94.5411905
+
 #upstream-source
 None.
 
@@ -95,6 +101,9 @@ Built in the 1830s, the townhouse at 14 West 10th Street in Greenwich Village ha
 
 #location
 14 West 10th Street, Greenwich Village, New York City, NY.
+
+#proposed-coordinates
+40.7335844, -74.0028172
 
 #upstream-source
 Jan Bryant Bartell, Spindrift: Spray from a Psychic Sea.
@@ -116,6 +125,9 @@ Situated along Route 5 between Little Falls and St. Johnsville, New York, Beards
 #location
 Beardslee Castle, located on Route 5 in Little Falls, New York.
 
+#proposed-coordinates
+43.007299, -74.744979
+
 #upstream-source
 None.
 
@@ -135,6 +147,9 @@ In January 1933, local newspapers reported on a mysterious man who frequented th
 
 #location
 Route 9 (the Glens Falls-Lake George Road) runs north-south through Warren County in upstate New York.
+
+#proposed-coordinates
+43.5018687, -73.8164637
 
 #upstream-source
 None.

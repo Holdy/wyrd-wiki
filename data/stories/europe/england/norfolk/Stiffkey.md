@@ -36,6 +36,9 @@ In the 18th century, collecting cockles from the saltmarshes was a grueling and 
 #location
 The saltmarshes and Blacknock sandbank located off the coast of the village of Stiffkey in North Norfolk.
 
+#proposed-coordinates
+52.9562218, 0.9366059
+
 #upstream-source
 None.
 

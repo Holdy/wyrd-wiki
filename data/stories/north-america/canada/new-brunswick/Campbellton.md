@@ -11,7 +11,7 @@ On November 9, 1924, two sisters, Dorval McLean and Lottie Ramsay, hiked up Suga
 The sheer rock cliffs of Sugarloaf Mountain in Campbellton, New Brunswick.
 
 #proposed-coordinates
-47.996918150000006, -66.65169005
+47.9898796, -66.6854745
 
 #upstream-source
 None.

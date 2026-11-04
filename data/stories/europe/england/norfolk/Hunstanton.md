@@ -38,6 +38,9 @@ Years later, during Victorian-era renovations, Emmeline Austin (wife of the esta
 #location
 Hunstanton Hall, located in the village of Old Hunstanton, Norfolk.
 
+#proposed-coordinates
+52.947, 0.5167
+
 #upstream-source
 None.
 

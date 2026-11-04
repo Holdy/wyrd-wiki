@@ -11,7 +11,7 @@ The Onoway Museum, housed in the historic Old Brick Schoolhouse built in 1921, h
 The Onoway Museum, housed in the historic Old Brick Schoolhouse located in Onoway, Alberta.
 
 #proposed-coordinates
-53.7025, -114.19194440000001
+53.7056159, -114.1905612
 
 #upstream-source
 None.
@@ -34,7 +34,7 @@ Long before European settlement, the waters of Lac Ste. Anne—known as Wakamne 
 Lac Ste. Anne, located a few kilometers outside the townsite of Onoway, Alberta.
 
 #proposed-coordinates
-53.7025, -114.19194440000001
+53.7052575, -114.3932172
 
 #upstream-source
 None.

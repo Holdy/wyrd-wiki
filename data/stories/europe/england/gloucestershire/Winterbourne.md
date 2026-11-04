@@ -10,6 +10,9 @@ Winterbourn Down is steeped in enduring folk traditions, most prominently preser
 #location
 The village of Winterbourn Down in South Gloucestershire, centred along Dragon Road near Hillcrest.
 
+#proposed-coordinates
+54.5430367, -3.5717985
+
 #upstream-source
 None.
 

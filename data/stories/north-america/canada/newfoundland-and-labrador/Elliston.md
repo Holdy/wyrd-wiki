@@ -19,6 +19,9 @@ None.
 #reference
 https://www.helencescott.com/post/the-headless-ghost-dog-of-elliston
 
+#tags
+pinless
+
 ---
 
 #title
@@ -41,3 +44,9 @@ Neal Tucker - A Measure of Success: The Story of Elliston 1806-2006.
 
 #reference
 https://www.townofelliston.ca/history/folklore
+
+#coordinates
+48.62431, -53.03165
+
+#tags
+headless-ghost,approx

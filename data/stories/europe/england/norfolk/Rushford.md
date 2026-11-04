@@ -10,6 +10,9 @@ According to local tradition, the Danes were once laying siege to Thetford, but 
 #location
 Tutt Hill is a Bronze Age bowl barrow located near Snarehill in the parish of Rushford, Norfolk (grid reference TL883813).
 
+#proposed-coordinates
+52.397749, 0.766973
+
 #upstream-source
 W. G. Clarke: 'In Breckland Wilds' (Robert Scott, 1925), p.163.
 

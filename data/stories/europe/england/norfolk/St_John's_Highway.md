@@ -10,6 +10,9 @@ Long before the Norman Conquest, the marshlands of western Norfolk—specificall
 #location
 Hickathrift's Corner and Hickathrift's Field are located at the crossroads in the center of Marshland St. James, just south of St John's Highway in West Norfolk.
 
+#proposed-coordinates
+52.9087997, 0.4810131
+
 #upstream-source
 Basil Cozens-Hardy, 'Norfolk Crosses' in *Norfolk Archaeology* (Vol. 25); Miller and Skertchly, *The Fenland Past and Present*.
 

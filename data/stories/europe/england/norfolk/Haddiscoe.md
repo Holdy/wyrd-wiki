@@ -10,6 +10,9 @@ William Salter worked as a stage-coachman driving the Yarmouth stage during the 
 #location
 The monument is set into the churchyard wall of St Mary's Church on Church Lane in Haddiscoe, Norfolk.
 
+#proposed-coordinates
+52.5154597, 1.5928115
+
 #upstream-source
 Charles G. Harper, Stage-coach and Mail in Days of Yore, Volume 2.
 

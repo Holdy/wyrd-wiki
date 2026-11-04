@@ -10,6 +10,9 @@ Motorists travelling along the Old Tramore Road in County Waterford have long sh
 #location
 The Old Tramore Road near its intersection with the N25 in County Waterford, Ireland.
 
+#proposed-coordinates
+52.2240251, -7.1145336
+
 #upstream-source
 None.
 
@@ -49,6 +52,9 @@ Crunden, a farmer from Ulster, lived happily with his mysterious and swift wife,
 
 #location
 The royal site of Emain Macha (Navan Fort), located near Armagh City in County Armagh, Northern Ireland.
+
+#proposed-coordinates
+52.0601448, -9.5003109
 
 #upstream-source
 None.

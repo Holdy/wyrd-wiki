@@ -62,6 +62,9 @@ Dating back to the reign of Queen Elizabeth I, the historic farmhouse of Winston
 #location
 Winston Hall is a historic farmhouse situated near Winston Rectory in the village of Gillingham, Norfolk.
 
+#proposed-coordinates
+52.470771, 1.5465927
+
 #upstream-source
 None.
 

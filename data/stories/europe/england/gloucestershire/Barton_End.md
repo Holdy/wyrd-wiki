@@ -10,6 +10,9 @@ In earlier centuries, stagecoaches traveling between Bristol and Minchinhampton 
 #location
 The crossroads of Tetbury Lane near Barton End, high above Nailsworth in Gloucestershire.
 
+#proposed-coordinates
+51.6838732, -2.2153285
+
 #upstream-source
 None.
 

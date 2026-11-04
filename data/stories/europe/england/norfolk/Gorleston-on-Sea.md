@@ -62,6 +62,9 @@ Close to the side of the main Gorleston to Beccles road (now the A143) lies a de
 #location
 The Lily Pit pond, situated just west of the former Otter's Farm alongside the Gorleston to Beccles road (A143) at grid reference TG518049 in Gorleston-on-Sea.
 
+#proposed-coordinates
+52.583969, 1.716280
+
 #upstream-source
 W. B. Gerish: 'Norfolk Folklore & Miscellaneous Notes on General Folklore' (unpublished, 1898); The 'Yarmouth Mercury', May 26th 1950; N. I. Shelton: 'Gt. Yarmouth Ghost Walk' (private, 1983).
 

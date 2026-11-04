@@ -10,6 +10,9 @@ During a visit to his aunt, Queen Alexandra, at Sandringham House in the early 2
 #location
 Sandringham House is a royal country house situated on the 20,000-acre Sandringham Estate in West Norfolk, England.
 
+#proposed-coordinates
+52.9087997, 0.4810131
+
 #upstream-source
 Prince Michael of Greece and Denmark
 

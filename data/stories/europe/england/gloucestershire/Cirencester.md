@@ -36,6 +36,9 @@ According to a 1685 account, two workmen digging gravel at the foot of Torbarrow
 #location
 Tar Barrow (Torbarrow Hill) is a prehistoric round barrow situated on high ground just northeast of Cirencester, near Burford Road.
 
+#proposed-coordinates
+51.5261659, 0.0480301
+
 #upstream-source
 An anonymous broadsheet published in London in 1685 entitled: “A Strange and Wonderful Discovery Newly made of Houses Under Ground at Colton’s Field in Gloucester-Shire.”
 

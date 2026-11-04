@@ -10,6 +10,9 @@ Following a pilgrimage to Rome, the Norman lord Robert Fitzwalter and his wife S
 #location
 The remains of Horsham St Faith Priory are situated at Abbey Farm, just north of the village church in Horsham St Faith, Norfolk.
 
+#proposed-coordinates
+52.6905266, 1.2784846
+
 #upstream-source
 Sir William Dugdale, Monasticon Anglicanum (1817-30), Vol.3, p.636.
 

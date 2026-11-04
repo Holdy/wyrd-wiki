@@ -10,6 +10,9 @@ Standing proudly on the village green in Pulham Market next to the parish church
 #location
 The Crown Inn, situated on The Green in the village of Pulham Market, Norfolk.
 
+#proposed-coordinates
+52.4368379, 1.2281211
+
 #upstream-source
 None.
 

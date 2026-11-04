@@ -10,6 +10,9 @@ Since the 1970s, taxi drivers and bus operators traveling the lonely stretches o
 #location
 The "Curva del Diablo" on the old road between Barranquilla and Puerto Colombia in the Atlántico Department of Colombia.
 
+#proposed-coordinates
+10.9891292, -74.955414
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ Standing within the bounds of the La Alboraya neighborhood in Barranquilla, a cr
 
 #location
 Castillo La Alboraya is located within the grounds of the Castillo de la Alboraya District Institute in the La Alboraya neighborhood of Barranquilla, Colombia (near Calle 41B and Carrera 8A).
+
+#proposed-coordinates
+9.3166252, -76.0268794
 
 #upstream-source
 None.

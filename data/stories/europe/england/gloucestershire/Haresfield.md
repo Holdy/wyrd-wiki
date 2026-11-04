@@ -10,6 +10,9 @@ According to local Cotswold tradition and oral history, Oliver Cromwell surveyed
 #location
 The Cromwell Stone on Haresfield Hill (Haresfield Beacon), Haresfield, Gloucestershire.
 
+#proposed-coordinates
+51.7782512, -2.261757
+
 #upstream-source
 William Simmonds' Local Oral History Collection (referenced in regional antiquarian and historical records).
 

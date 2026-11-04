@@ -10,6 +10,9 @@ Fleeing the destruction of her home by Ottoman soldiers, a widowed mother climbe
 #location
 The Accursed Mountains (Albanian Alps) rise across northern Albania, bordering Montenegro and Kosovo.
 
+#proposed-coordinates
+41.3118052, 19.4797533
+
 #upstream-source
 None.
 

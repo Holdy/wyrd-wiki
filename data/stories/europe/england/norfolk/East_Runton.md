@@ -36,6 +36,9 @@ Just outside the village of East Runton along the coast road, human skeletal rem
 #location
 Just west of East Runton along the A149 coast road near the old Runton corn mill (approximate grid reference TG195426).
 
+#proposed-coordinates
+52.936320, 1.265612
+
 #upstream-source
 Walter Rye: A History of Norfolk (Elliot Stock, 1887).
 

@@ -10,6 +10,9 @@ During the 14th century, monks building St. Mary's Church in Southery were guard
 #location
 The ruined St. Mary's Church is located in the village of Southery in West Norfolk, near the border with Cambridgeshire.
 
+#proposed-coordinates
+52.9087997, 0.4810131
+
 #upstream-source
 Walter Barrett, *Tales from the Fens* (1963)
 

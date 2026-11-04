@@ -10,6 +10,9 @@ On a cold winter night before Christmas, a mysterious, finely dressed stranger e
 #location
 The Boat Inn is situated in The Tuckies area along the banks of the River Severn in Jackfield, Shropshire.
 
+#proposed-coordinates
+52.6240434, -2.4660099
+
 #upstream-source
 None.
 

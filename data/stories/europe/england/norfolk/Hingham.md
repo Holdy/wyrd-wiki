@@ -36,6 +36,9 @@ According to local historical record and tradition, the Trinity chapel within th
 #location
 The Trinity chapel window is located within St. Andrew's Church in the market town of Hingham, Norfolk.
 
+#proposed-coordinates
+52.5796849, 0.9845613
+
 #upstream-source
 Francis Blomefield, *An Essay Towards a Topographical History of the County of Norfolk*, Volume 2.
 

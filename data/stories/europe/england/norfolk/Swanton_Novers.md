@@ -36,6 +36,9 @@ In August and September 1919, strange and unprecedented phenomena gripped Swanto
 #location
 Swanton Novers Rectory was a Victorian parsonage situated in the village of Swanton Novers in North Norfolk.
 
+#proposed-coordinates
+52.85055, 1.0001
+
 #upstream-source
 None.
 

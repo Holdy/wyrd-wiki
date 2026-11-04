@@ -10,6 +10,9 @@ In the Norfolk village of Norton Subcourse, the historic parish church features 
 #location
 St. Margaret's Parish Church is located off Church Road in the village of Norton Subcourse, Norfolk (Grid Reference TM 407987).
 
+#proposed-coordinates
+52.533363, 1.548280
+
 #upstream-source
 Jennifer Westwood & Jacqueline Simpson: 'The Lore of the Land' (Penguin Books, 2006), p.509.
 

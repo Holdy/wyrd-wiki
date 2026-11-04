@@ -36,6 +36,9 @@ While visiting the churchyard in the Norfolk village of Buxton, a woman was conf
 #location
 The churchyard of St Andrew's Church in the village of Buxton, Norfolk.
 
+#proposed-coordinates
+52.7547251, 1.3067651
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ Local legend holds that the Grey Lady was once a matron at the estate when Plums
 #location
 The grounds of Old Hall (Plumstead Hall) in the village of Little Plumstead, Norfolk, UK.
 
+#proposed-coordinates
+52.6576794, 1.4179244
+
 #upstream-source
 None.
 

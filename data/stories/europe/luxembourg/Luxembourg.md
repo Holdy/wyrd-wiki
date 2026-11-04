@@ -10,6 +10,9 @@ On a Sunday in the village of Strassen, four men gathered to play cards and made
 #location
 The events took place inside the Lorang house (Maison Lorangs) located in Strassen, Luxembourg.
 
+#proposed-coordinates
+49.6112768, 6.129799
+
 #upstream-source
 Dr. N. Gredt, *Sagenschatz des Luxemburger Landes*
 
@@ -30,6 +33,9 @@ Elisabeth von Honulstein was the last descendant of the noble family that once o
 #location
 Mont St. Jean (Gehaansbierg) is a 417-meter-high hill in Dudelange, Luxembourg, marked by the ruins of Dudelange Castle and St. John's Chapel at its summit.
 
+#proposed-coordinates
+49.49046, 6.06033
+
 #upstream-source
 J. Prott, Die Jungfrau vom Johannisberg. In: Sagenschatz des Luxemburger Landes, edited by Nikolaus Gredt.
 
@@ -49,6 +55,9 @@ In the area near Canach and Lenningen, a young man carried on a passionate roman
 
 #location
 The haunting takes place along the forest path and woods situated above the village of Lenningen in eastern Luxembourg.
+
+#proposed-coordinates
+49.6112768, 6.129799
 
 #upstream-source
 None.

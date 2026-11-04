@@ -10,6 +10,9 @@ At the intersection where the Aylsham to Fakenham road meets the Holt to East De
 #location
 Pigg's Grave is situated at the road junction (Grid Reference TG028331) where the parishes of Melton Constable, Briningham, and Swanton Novers join.
 
+#proposed-coordinates
+52.857604, 1.011573
+
 #upstream-source
 Pamela Brooks: 'Norfolk Miscellany' (Breedon Books, 2009); 'Norfolk Fair', Vol.2, No.3 (July 1969).
 

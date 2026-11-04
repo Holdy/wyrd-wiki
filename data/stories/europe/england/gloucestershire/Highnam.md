@@ -10,6 +10,9 @@ Around a century before Ploddy House farm went on the market in 1962, two men br
 #location
 The Dog Inn was located at Over within the parish of Highnam in Gloucestershire.
 
+#proposed-coordinates
+51.8772831, -2.3001256
+
 #upstream-source
 None.
 

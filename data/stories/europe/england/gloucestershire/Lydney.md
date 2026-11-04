@@ -10,6 +10,9 @@ At the ancient Roman temple site atop Dwarf's Hill in Lydney Park, archaeologist
 #location
 The Roman temple of Nodens is located on Dwarf's Hill within the Lydney Park Estate in Lydney, Gloucestershire.
 
+#proposed-coordinates
+51.7207, -2.5532
+
 #upstream-source
 None.
 

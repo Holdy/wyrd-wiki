@@ -10,6 +10,9 @@ In 1833, the Rector of Syderstone, Revd J. Stewart, found his home transformed i
 #location
 Syderstone Parsonage (the old rectory building) located in the village of Syderstone, Norfolk, UK.
 
+#proposed-coordinates
+52.8641705, 0.7340263
+
 #upstream-source
 1833 contemporary newspaper articles (including 'The Real Ghost'), letters by Revd J. Stewart, and the research papers and manuscripts of Revd N. Fourdrinier held in the Norfolk Record Office.
 
@@ -29,6 +32,9 @@ In 1833, Reverend J. Stewart, the Rector of Syderstone, found his home—known l
 
 #location
 The former parsonage in the village of Syderstone, located near Fakenham in Norfolk.
+
+#proposed-coordinates
+52.829919, 0.8477322
 
 #upstream-source
 Manuscripts and unpublished writings of Revd. N. Fourdrinier (Norfolk Record Office, NRO MC 5), citing 1833 local newspaper articles.

@@ -36,6 +36,9 @@ During the late 17th or early 18th century, travelers and farmers returning home
 #location
 The grassy triangle at the junction of Whimpwell Street, School Common Road, and Stalham Road (historically known as Pump Hill or Well Corner) in Happisburgh, Norfolk.
 
+#proposed-coordinates
+52.8125543, 1.5374451
+
 #upstream-source
 E.R. Suckling: 'History and Legends of the Broads District' (Jarrold and Sons, 1891), p.107-111.
 

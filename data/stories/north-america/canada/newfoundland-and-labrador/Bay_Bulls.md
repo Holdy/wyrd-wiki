@@ -13,7 +13,7 @@ The haunting reputation of the house was cemented further when a group of trouti
 The events took place in an old house and nearby pond located along the Bay Bulls Road in Newfoundland.
 
 #proposed-coordinates
-47.319373399999996, -52.792820000000006
+47.4969919, -52.7649137
 
 #upstream-source
 None.

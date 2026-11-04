@@ -36,6 +36,9 @@ Constructed in the 1920s with forced labor under brutal conditions where many ex
 #location
 The Kiyotaki Tunnel is a passageway located between northern Arashiyama and Sagakiyotaki in Kyoto, Japan.
 
+#proposed-coordinates
+35.0090473, 135.6744961
+
 #upstream-source
 None.
 

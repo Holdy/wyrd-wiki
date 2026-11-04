@@ -10,6 +10,9 @@ Legend long maintained that a heavy treasure chest was hidden in the murky depth
 #location
 Callow Pit is located on the parish boundary of Southwood, Moulton St Mary, and Cantley in Norfolk.
 
+#proposed-coordinates
+52.5969918, 1.5328051
+
 #upstream-source
 The East Anglian Handbook of 1885
 
@@ -32,6 +35,9 @@ According to local tradition in Southwood, Norfolk, an iron chest filled with go
 
 #location
 Callow Pit is situated on the boundary between the parishes of Southwood and Moulton in Norfolk, England.
+
+#proposed-coordinates
+54.4294607, -1.6386458
 
 #upstream-source
 The Lore of the Land by Jennifer Westwood and Jacqueline Simpson.

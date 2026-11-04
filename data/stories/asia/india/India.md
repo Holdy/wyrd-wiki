@@ -33,6 +33,9 @@ Every Monday, the remote tribal village of Chougan near Mandla, Madhya Pradesh, 
 #location
 The exorcism rituals take place at the tribal temple situated in Chougan village, approximately 40 kilometers from Mandla town in Madhya Pradesh.
 
+#proposed-coordinates
+22.6871074, 80.5816341
+
 #upstream-source
 None.
 

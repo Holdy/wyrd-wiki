@@ -18,3 +18,9 @@ None.
 
 #reference
 http://www.dalejarvis.ca/2024/02/the-brass-button-man-urban-legend-from.html
+
+#coordinates
+47.60503778831778, -58.86547963252668
+
+#tags
+ghost,approx

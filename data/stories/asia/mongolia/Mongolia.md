@@ -30,6 +30,9 @@ An adventurous traveler and his companions journeyed deep into the northern Mong
 #location
 The ritual and spirit possession took place inside a Dukha shaman's teepee located in the northern Mongolian tundra near Tsagaannuur in Khövsgöl Province.
 
+#proposed-coordinates
+51.0809237, 99.5258443
+
 #upstream-source
 None.
 

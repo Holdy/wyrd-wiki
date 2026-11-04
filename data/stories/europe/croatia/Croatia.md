@@ -10,6 +10,9 @@ In the late 18th and early 19th centuries, foreign powers seized control of Dubr
 #location
 Lokrum Island, located in the Adriatic Sea just a short distance off the coast of Dubrovnik, Croatia.
 
+#proposed-coordinates
+42.6275674, 18.1206642
+
 #upstream-source
 None.
 
@@ -30,6 +33,9 @@ The section of the A3 motorway running between Staro Petrovo Selo and Nova Gradi
 #location
 The haunted stretch of the A3 motorway is located in Croatia between the towns of Staro Petrovo Selo and Nova Gradiška.
 
+#proposed-coordinates
+45.225787, 17.3735286
+
 #upstream-source
 None.
 
@@ -49,6 +55,9 @@ Jure Grando Alilović was a stonemason living in the small village of Kringa, Cr
 
 #location
 The graveyard and churchyard located behind the main church in the village of Kringa on the Istrian peninsula in Croatia.
+
+#proposed-coordinates
+45.1830589, 13.8338656
 
 #upstream-source
 Johann Weikhard von Valvasor, *The Glory of the Duchy of Carniola* (1689).

@@ -10,6 +10,9 @@ For generations, local tradition in the Norfolk parish of Feltwell has centered 
 #location
 The legend centers on Western Close and the medieval moated site known as "The Roundabout" (approx. TL706905) in the parish of Feltwell, Norfolk.
 
+#proposed-coordinates
+52.486178, 0.511798
+
 #upstream-source
 None.
 

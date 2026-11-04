@@ -11,7 +11,7 @@ Master stonemason Rudolph Schultz began construction on his unusual home in Alic
 The historic Stone House (housing the Creston Museum) is located at Alice Siding just outside Creston, British Columbia.
 
 #proposed-coordinates
-49.0975, -116.51305599999998
+49.1060999, -116.5221955
 
 #upstream-source
 Ghost Stories of British Columbia by Jo-Anne Christensen

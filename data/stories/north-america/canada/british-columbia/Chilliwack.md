@@ -21,6 +21,9 @@ Chilliwack Progress archives (November 1951 reporting).
 #reference
 https://fvcurrent.com/p/a-chilliwack-ghost-story
 
+#tags
+pinless
+
 ---
 
 #title
@@ -47,4 +50,7 @@ Eve Lazarus, Sensational Vancouver (with historical accounts drawn from the Chil
 https://evelazarus.com/the-chilliwack-hostess-with-the-ghostess/
 
 #tags
-ghost,site
+ghost
+
+#coordinates
+49.17805, -121.94573

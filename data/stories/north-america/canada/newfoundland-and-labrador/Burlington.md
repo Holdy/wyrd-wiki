@@ -10,6 +10,9 @@ In the community of Burlington, located in Newfoundland's Green Bay region, resi
 #location
 The burial grounds and campground located within the community of Burlington in Newfoundland's Green Bay region.
 
+#proposed-coordinates
+43.3248924, -79.7966835
+
 #upstream-source
 None.
 

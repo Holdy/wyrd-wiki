@@ -11,7 +11,7 @@ William Ingram was a well-known businessman who was attacked and struck on the b
 The historic Ingram Block building located in the 500 block between 1st and 2nd Avenue in downtown Fernie, British Columbia.
 
 #proposed-coordinates
-49.504167, -115.06277800000001
+49.5046847, -115.0599407
 
 #upstream-source
 None.
@@ -34,7 +34,7 @@ In the early frontier days of Fernie, a miner named Benson grew enraged when his
 The historic railway tracks at Coal Creek, just outside Fernie, British Columbia.
 
 #proposed-coordinates
-49.504167, -115.06277800000001
+49.4887332, -114.9570087
 
 #upstream-source
 None.
@@ -57,7 +57,7 @@ Situated on the corner of 1st Avenue in Fernie, the Royal Hotel has accumulated 
 The Royal Hotel at the corner of 1st Avenue in Fernie, British Columbia.
 
 #proposed-coordinates
-49.504167, -115.06277800000001
+49.5028631, -115.060875
 
 #upstream-source
 None.

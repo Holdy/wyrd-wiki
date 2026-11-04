@@ -10,6 +10,9 @@ According to local tradition, the Norman remains of New Buckenham Castle are con
 #location
 The ruins of New Buckenham Castle in Norfolk, located at grid reference TG084903.
 
+#proposed-coordinates
+53.368878, 1.131736
+
 #upstream-source
 Pamela Brooks: 'Norfolk Ghosts & Legends' (Halsgrove, 2008), p.90.
 

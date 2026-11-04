@@ -10,6 +10,9 @@ Running for about two miles along the south and east of the parish of Attleborou
 #location
 Bunn's Bank, a two-mile earthwork running along the southern and eastern borders of the parish of Attleborough, Norfolk, UK.
 
+#proposed-coordinates
+52.5179648, 1.0105931
+
 #upstream-source
 White's 'History, Gazetteer & and Directory of Norfolk' (1854).
 
@@ -29,6 +32,9 @@ During the 19th century in the Norfolk market town of Attleborough, an elderly w
 
 #location
 The Norfolk market town of Attleborough, located along the A11 between Norwich and Thetford.
+
+#proposed-coordinates
+52.4156001, 0.748712
 
 #upstream-source
 None.

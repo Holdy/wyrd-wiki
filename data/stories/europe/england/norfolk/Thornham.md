@@ -36,6 +36,9 @@ During the late 18th century, the coastal village of Thornham and its harbour we
 #location
 The Lifeboat Inn on Ship Lane in the coastal village of Thornham, Norfolk (OS grid reference TF 733 434).
 
+#proposed-coordinates
+52.960400, 0.579412
+
 #upstream-source
 Neil Holmes, *The Lawless Coast* (Larks Press, 2008).
 

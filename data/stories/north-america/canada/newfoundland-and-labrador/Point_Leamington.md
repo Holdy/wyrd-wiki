@@ -11,7 +11,7 @@ In 1789, Thomas Rowsell operated a salmon weir on the brooks of New Bay while tr
 Rowsell's Hill is located in the community of Point Leamington along the southwestern arm of New Bay in Notre Dame Bay, Newfoundland and Labrador.
 
 #proposed-coordinates
-49.3260515065452, -55.41233062504312
+49.4612359, -55.3109293
 
 #upstream-source
 River Lords by Amy Louise Peyton.

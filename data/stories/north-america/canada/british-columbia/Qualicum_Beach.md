@@ -19,6 +19,12 @@ Robert C. Belyk - Ghosts, True Tales of Eerie Encounters
 #reference
 https://livinglibraryblog.com/vancouver-island-the-great-haunted-condos-sale/
 
+#coordinates
+49.35657261536481, -124.42810810834006
+
+#tags
+approx,private,ghost
+
 ---
 
 #title

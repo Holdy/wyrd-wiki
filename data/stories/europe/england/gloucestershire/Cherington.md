@@ -38,6 +38,9 @@ Situated in the Cherington area, the Trouble House Inn earned its distinctive na
 #location
 The Trouble House Inn, located along the London Road near Cherington and Tetbury in Gloucestershire.
 
+#proposed-coordinates
+51.6571237, -2.126263
+
 #upstream-source
 None.
 

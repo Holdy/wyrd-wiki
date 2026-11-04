@@ -10,6 +10,9 @@ In ancient Samoa, a chief named Tautunu commanded the people of Falealupo to bui
 #location
 The House of Rock (*Fale o le Ma'a*) is situated along a winding path amidst volcanic rock in the village of Falealupo on the island of Savai'i in Samoa.
 
+#proposed-coordinates
+-13.496955, -172.7857845
+
 #upstream-source
 None.
 

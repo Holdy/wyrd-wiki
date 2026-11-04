@@ -10,6 +10,9 @@ Centuries ago in ancient Singapore (Singapura), a pious missionary named Tun Jan
 #location
 Tanjung Pagar (historically associated with Hujung Pasar and Kampung Gelam) is a historic district in central Singapore where the swordfish attack and the execution site of the cursed holy man are located.
 
+#proposed-coordinates
+1.2899175, 103.8519072
+
 #upstream-source
 *Sejarah Melayu* (*The Malay Annals*) by Tun Seri Lanang (17th century).
 
@@ -30,6 +33,9 @@ On August 10, 2004, Amutha Valli Krishnan was brought to church by family member
 #location
 The events took place at the Church of St. Alphonsus, popularly known as Novena Church, located at 300 Thomson Road in Singapore.
 
+#proposed-coordinates
+1.3218187, 103.842772
+
 #upstream-source
 None.
 
@@ -49,6 +55,9 @@ Old Upper Thomson Road, once utilized as a racing circuit for the Singapore Gran
 
 #location
 Devil's Bend is a sharp V-turn located along Old Upper Thomson Road in Singapore.
+
+#proposed-coordinates
+1.3865803, 103.8188664
 
 #upstream-source
 None.

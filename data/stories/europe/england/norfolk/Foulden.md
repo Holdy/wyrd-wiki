@@ -10,6 +10,9 @@ In 1997 or 1998, a six- or seven-year-old boy was staying at his grandparents' h
 #location
 A residential lane running behind houses bordering open fields in the village of Foulden, Norfolk.
 
+#proposed-coordinates
+52.5598595, 0.6150196
+
 #upstream-source
 None.
 

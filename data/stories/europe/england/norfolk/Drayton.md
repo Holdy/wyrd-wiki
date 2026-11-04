@@ -10,6 +10,9 @@ Nestled between the A1067 and the road connecting Drayton to Hellesdon, near the
 #location
 Bloods Dale is a sloping valley located in Drayton, Norfolk, situated between the A1067 and the road to Hellesdon near Drayton Lodge (TG185130).
 
+#proposed-coordinates
+52.671065, 1.230987
+
 #upstream-source
 Arthur Mee (ed.) : 'The King's England - Norfolk' (Hodder & Stoughton, 1940), p.104.
 

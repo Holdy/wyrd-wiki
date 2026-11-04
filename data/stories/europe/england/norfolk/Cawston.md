@@ -10,6 +10,9 @@ In 1698, Sir Henry Hobart and local lawyer Oliver Le Neve fought a sword duel on
 #location
 The site of the fateful 1698 duel on Cawston Heath is marked by a stone plinth and urn located just off the Norwich Road in Cawston, Norfolk.
 
+#proposed-coordinates
+52.7669672, 1.2004077
+
 #upstream-source
 This Hollow Land (Aspects of Norfolk Folklore) by Peter Tolhurst
 
@@ -58,6 +61,9 @@ Driven by bitter political and personal rivalries, Witchingham lawyer Oliver Le 
 
 #location
 Cawston Heath, located adjacent to the Woodrow Inn on the eastern side of Cawston in Norfolk.
+
+#proposed-coordinates
+52.7669672, 1.2004077
 
 #upstream-source
 None.

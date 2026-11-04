@@ -10,6 +10,9 @@ On August 1, 1941, in the rural settlement of Ankaramalaza, Madagascar, a catech
 #location
 The events took place in the village of Ankaramalaza, located about twenty kilometers north of Vohipeno in southeastern Madagascar.
 
+#proposed-coordinates
+-22.3548744, 47.8399542
+
 #upstream-source
 _Ankaramalaza-Germaine Volahavana Nenilava: histoires et témoignages_, published by Imprimerie luthérienne malgache, 2007.
 
@@ -29,6 +32,9 @@ When Queen Ranavalona I seized control of the Merina Kingdom, she instituted a b
 
 #location
 The story is centered on the Royal Hill of Ambohimanga and the Manjakamiadana palace within the Rova of Antananarivo in Madagascar.
+
+#proposed-coordinates
+-18.7604557, 47.5623227
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ In the Gloucestershire village of Saul, many homes built by 19th-century sea cap
 #location
 Above the entrance porch of a house on the High Street in the village of Saul, Gloucestershire.
 
+#proposed-coordinates
+51.7775183, -2.3672995
+
 #upstream-source
 None.
 

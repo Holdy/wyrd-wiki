@@ -10,6 +10,9 @@ In the early eleventh century, a nobleman named Wulfin le Rue committed a heinou
 #location
 The historic parish lands and route between Churcham and Gloucester, Gloucestershire.
 
+#proposed-coordinates
+51.8653705, -2.2458192
+
 #upstream-source
 Victoria County History, Gloucestershire, Volume 10 (citing the Gloucester Abbey cartulary).
 

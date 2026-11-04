@@ -10,6 +10,9 @@ In the 1930s, a young woman was devastated after being left at the altar by her 
 #location
 Whirlwind Road is located in the town of Wallingford, Connecticut.
 
+#proposed-coordinates
+41.4564233, -72.8239356
+
 #upstream-source
 None.
 
@@ -105,11 +108,20 @@ Originally opened as a copper mine in 1709, the cavernous underground network in
 #location
 Old New-Gate Prison and Copper Mine is located on New-Gate Road in East Granby, Connecticut.
 
+#proposed-coordinates
+41.96194444, -72.74555556
+
 #upstream-source
 None.
 
 #reference
 https://ournewenglandlegends.com/podcast-351-escape-from-the-haunted-old-newgate-prison/
+
+#coordinates
+41.96198, -72.74503
+
+#tags
+ghost
 
 ---
 
@@ -151,11 +163,17 @@ Union Cemetery in Easton is recognized as one of Connecticut’s oldest and most
 #location
 Union Cemetery is located at the junction of Route 59 and Route 136 in Easton, Connecticut.
 
+#proposed-coordinates
+41.272875, -73.2968772
+
 #upstream-source
 Ed and Lorraine Warren, *Graveyard* (1992).
 
 #reference
 https://www.ctinsider.com/living/article/ct-white-lady-union-cemetery-urban-legend-17533746.php
+
+#tags
+ghost,white-lady
 
 ---
 
@@ -170,6 +188,9 @@ Union Cemetery in Easton, Connecticut, dates back to the 1760s and has long held
 
 #location
 Union Cemetery is situated at the intersection of Routes 59 and 136 in Easton, Connecticut.
+
+#proposed-coordinates
+41.272875, -73.2968772
 
 #upstream-source
 *Graveyard: True Hauntings from an Old New England Cemetery* by Ed Warren (1992).
@@ -190,6 +211,9 @@ Living on Craig Hill in Monroe, Connecticut, Hannah Cranna earned a fearsome rep
 
 #location
 Gregory’s Four Corners Burial Ground is located on Spring Hill Road near the border of Trumbull and Monroe, Connecticut.
+
+#proposed-coordinates
+41.2935, -73.2415
 
 #upstream-source
 David Phillips' Legendary Connecticut.

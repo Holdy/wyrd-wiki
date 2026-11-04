@@ -33,6 +33,9 @@ Located just south of Flin Flon on the Manitoba-Saskatchewan border, Phantom Lak
 #location
 Phantom Lake, situated just south of Flin Flon on the Manitoba-Saskatchewan border.
 
+#proposed-coordinates
+54.713776, -101.8645146
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ At the isolated crossroads on Gallowhill Lane where the boundaries of Briningham
 #location
 Pigg's Grave is situated at the crossroads on Gallowhill Lane where the parishes of Briningham, Melton Constable, and Swanton Novers meet in north Norfolk (Grid Reference TG 0279 3312).
 
+#proposed-coordinates
+52.857401, 1.010741
+
 #upstream-source
 Pamela Brooks: *Norfolk Miscellany* (Breedon Books, 2009); T. H. Bryant: *Hundred of Holt. The Churches of Norfolk* (1902).
 

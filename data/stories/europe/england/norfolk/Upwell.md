@@ -10,6 +10,9 @@ Standing alongside the ancient Well Creek in the Norfolk village of Upwell, St P
 #location
 St Peter's Church, situated along Well Creek in the village of Upwell, Norfolk.
 
+#proposed-coordinates
+52.5843722, 0.2979295
+
 #upstream-source
 Francis Blomefield, *An Essay Towards a Topographical History of the County of Norfolk*, Vol. 7.
 

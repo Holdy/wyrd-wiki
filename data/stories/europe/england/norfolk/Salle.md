@@ -10,6 +10,9 @@ Following her execution in 1536 at the Tower of London, where official records s
 #location
 St Peter and St Paul Church is located in the small rural village and civil parish of Salle in the Broadland district of Norfolk, England.
 
+#proposed-coordinates
+52.7802817, 1.1262452
+
 #upstream-source
 None.
 

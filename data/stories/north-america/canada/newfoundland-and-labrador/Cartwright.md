@@ -11,7 +11,7 @@ In the remote coastal community of Cartwright, Labrador, locals have long passed
 The coastal community of Cartwright, situated on Sandwich Bay in southeastern Labrador, Canada.
 
 #proposed-coordinates
-53.693779000000006, -56.970056
+53.567, -57.167
 
 #upstream-source
 *Haunted Shores: True Ghost Stories of Newfoundland and Labrador* by Dale Gilbert Jarvis (Flanker Press, 2004).

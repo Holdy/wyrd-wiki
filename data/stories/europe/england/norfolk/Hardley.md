@@ -10,6 +10,9 @@ Situated near the village of Hardley in Norfolk, at the intersection of local ro
 #location
 At the junction of Lower Hardley Road and Cross Stone Road, approximately half a mile south-west of St Margaret's Church in Hardley, Norfolk.
 
+#proposed-coordinates
+52.551135, 1.5095415
+
 #upstream-source
 W. B. Gerish: 'Norfolk Folklore Notes' (unpublished, 1890-93), p.88.
 

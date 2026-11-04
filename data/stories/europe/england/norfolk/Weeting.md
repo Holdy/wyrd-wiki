@@ -36,6 +36,9 @@ Near the medieval church and the ruins of Weeting Castle in Norfolk, a round bar
 #location
 Pepper Hill is a round barrow located in the parish of Weeting, Norfolk, at grid reference TL787882.
 
+#proposed-coordinates
+52.462932, 0.629724
+
 #upstream-source
 W. G. Clarke: 'In Breckland Wilds' (Robert Scott, 1925), p.128.
 
@@ -55,6 +58,9 @@ The miles-long linear earthwork dividing the parish of Weeting from Hockwold, kn
 
 #location
 The Fossditch is an early Saxon linear earthwork running along the western boundary of Weeting parish in Norfolk, around grid reference TL771953.
+
+#proposed-coordinates
+52.527215, 0.609974
 
 #upstream-source
 Mark Knights: 'Peeps at the Past' (Jarrold & Sons, 1892), p.42.

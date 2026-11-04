@@ -10,6 +10,9 @@ Perched high on the Cotswold slopes along the old London to Worcester turnpike r
 #location
 Bourton Hill, located within the parish of Bourton-on-the-Hill in Gloucestershire.
 
+#proposed-coordinates
+51.8726807, -1.7721286
+
 #upstream-source
 A History of the County of Gloucester: Volume 6, edited by C.R. Elrington.
 

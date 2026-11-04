@@ -10,6 +10,9 @@ A long-serving driver who frequently passed the Dilke Hospital during late-night
 #location
 The bus stop located near the Dilke Hospital on the Coleford-Cinderford road in Cinderford, Gloucestershire.
 
+#proposed-coordinates
+51.8105258, -2.5197573
+
 #upstream-source
 None.
 

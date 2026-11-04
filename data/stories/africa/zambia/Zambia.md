@@ -53,6 +53,9 @@ After losing their lives in a tragic traffic accident while traveling home from 
 #location
 Kafue Road in Lusaka, Zambia.
 
+#proposed-coordinates
+-15.4321041, 28.2796052
+
 #upstream-source
 None.
 

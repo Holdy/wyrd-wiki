@@ -10,6 +10,9 @@ Following the tragic drowning of 70-year-old labourer Stephen Cutting, local aut
 #location
 At the historic crossroads site of 'Deade Mans Grave' within the parish of Banham, Norfolk.
 
+#proposed-coordinates
+52.4517405, 1.033494
+
 #upstream-source
 *Bury and Norwich Post* (April 18, 1821); Robert Halliday, 'The Roadside Burial of Suicides: An East Anglian Study' (*Folklore*, Vol. 121, No. 1, 2010).
 

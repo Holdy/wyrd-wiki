@@ -10,6 +10,9 @@ The Big Thicket light, also known as the Saratoga light, is a nocturnal ghostly 
 #location
 Bragg Road, running between Bragg Station (Farm Road 1293) and Saratoga in Hardin County, Texas.
 
+#proposed-coordinates
+30.4174491, -94.5649201
+
 #upstream-source
 Francis E. Abernethy, ed., Tales from the Big Thicket (Austin: University of Texas Press, 1966).
 
@@ -29,6 +32,9 @@ Old Bragg Road is a remote, seven-mile dirt road running through the dense woods
 
 #location
 Old Bragg Road runs through the Big Thicket between Farm Road 1293 near Bragg Station and the community of Saratoga in Hardin County, Texas.
+
+#proposed-coordinates
+30.4000279, -94.4604916
 
 #upstream-source
 Francis E. Abernethy, ed., *Tales from the Big Thicket* (Austin: University of Texas Press, 1966).
@@ -50,6 +56,9 @@ Built in 1911 to welcome tourists back to Galveston following the devastating 19
 #location
 Hotel Galvez is located at 2024 Seawall Boulevard in Galveston, Texas, with Room 501 situated on the top floor of the historic building.
 
+#proposed-coordinates
+29.29243, -94.78613
+
 #upstream-source
 Kathleen Maca, A History of the Hotel Galvez (2021) and Ghosts of Galveston (2016).
 
@@ -69,6 +78,9 @@ Dominating downtown Mineral Wells, Texas, the grand Baker Hotel opened in 1929 a
 
 #location
 The Baker Hotel, located at 200 E. Park Avenue in Mineral Wells, Texas.
+
+#proposed-coordinates
+32.8096058, -98.1114844
 
 #upstream-source
 None.
@@ -90,6 +102,9 @@ Bragg Road is an unpaved, seven-mile corridor running through the dense woods of
 #location
 Bragg Road runs through the Big Thicket in Hardin County, Texas, connecting the former site of Bragg Station near Farm Road 1293 to Saratoga.
 
+#proposed-coordinates
+37.2638324, -122.0230146
+
 #upstream-source
 Francis E. Abernethy, ed., Tales from the Big Thicket (Austin: University of Texas Press, 1966).
 
@@ -109,6 +124,9 @@ In October 1948, four cattlemen driving back to Chico, Texas, stopped their car 
 
 #location
 Green Elm Cemetery Bridge spans the west fork of the Trinity River on the Jack-Wise County lines south of Texas FM 1810.
+
+#proposed-coordinates
+31.2954578, -95.671413
 
 #upstream-source
 None.

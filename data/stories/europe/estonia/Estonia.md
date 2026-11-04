@@ -36,6 +36,9 @@ The citizens of medieval Tallinn desired a magnificent church to draw merchants 
 #location
 St. Olaf's Church (Oleviste kirik) is located at Lai 50, in the historic Old Town of Tallinn, Estonia.
 
+#proposed-coordinates
+59.44141667, 24.74780556
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ In 1233, a young novice named Justinius—who had previously worked as an execut
 
 #location
 The story takes place at the Short-Leg Gate Tower on Lühike jalg street in the Old Town of Tallinn, Estonia.
+
+#proposed-coordinates
+59.437242, 24.7572693
 
 #upstream-source
 None.

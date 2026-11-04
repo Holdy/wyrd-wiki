@@ -11,7 +11,7 @@ Nestled in Medicine Hat's Historic Clay District, the century-old Medalta Potter
 Medalta Potteries, located at 713 Medalta Ave SE in the Historic Clay District of Medicine Hat, Alberta.
 
 #proposed-coordinates
-50.0408334, -110.6766667
+50.0319891, -110.6497246
 
 #upstream-source
 None.
@@ -34,7 +34,7 @@ In June 1908, CPR engineer Bob Twohey and fireman Gus Day were heading east from
 The Canadian Pacific Railway tracks winding around the cutbanks of the Ross Creek coulee, approximately two miles outside of Medicine Hat, Alberta.
 
 #proposed-coordinates
-50.0408334, -110.6766667
+50.0127733, -110.5792875
 
 #upstream-source
 Saamis: The Medicine Hat, 1967, Senator F.W. Gershaw.

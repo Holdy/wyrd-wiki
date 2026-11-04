@@ -2,7 +2,7 @@
 //
 //   bun tools/import-stories.ts [--source ~/projects/local-llm-agent] [--dry-run]
 //
-// Every `<subject>-data-targets/**/*.md` (or `<subject>-targets/`, as weeping-statue is named) there holding stories is read, filed
+// Every `<subject>-data-targets/**/*.md` (or `<subject>-targets/`, as weeping-statue is named, or `<subject>-target-data/`, as screaming-skull is) there holding stories is read, filed
 // by its file name (see parseName), and written under data/stories as place
 // files plus sitemaps. See "Importing stories" in README.md.
 import { existsSync } from "node:fs";
@@ -143,12 +143,12 @@ const root: Node = { name: "", dir: outRoot, isPlace: false, children: new Map()
 for (const c of CONTINENTS) child(root, c);
 
 const sourceDirs = (await readdir(sourceRoot, { withFileTypes: true }))
-  .filter((e) => e.isDirectory() && e.name.endsWith("-targets"))
+  .filter((e) => e.isDirectory() && /-target(s|-data)$/.test(e.name))
   .map((e) => e.name)
   .sort();
 let storyCount = 0;
 for (const sourceDir of sourceDirs) {
-  const subject = sourceDir.replace(/(-data)?-targets$/, "");
+  const subject = sourceDir.replace(/(-data)?-targets$|-target-data$/, "");
   for (const file of await walk(path.join(sourceRoot, sourceDir))) {
     const stories = (await readFile(file, "utf8"))
       .split(/^---\s*$/m)
@@ -168,7 +168,7 @@ for (const sourceDir of sourceDirs) {
   }
 }
 
-const isHidden = (s: Story) => s.tags.includes("skip") || s.tags.includes("duplicate");
+const isHidden = (s: Story) => s.tags.includes("skip") || s.tags.includes("duplicate") || s.tags.includes("invalid");
 // A place is listed by its parent only if it, or something under it, has a story to show.
 const hasPage = (n: Node): boolean => n.stories.some((s) => !isHidden(s)) || [...n.children.values()].some(hasPage);
 const sitemap = (kind: "urlset" | "sitemapindex", entries: string[]) =>

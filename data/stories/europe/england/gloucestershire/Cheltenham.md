@@ -10,6 +10,9 @@ In April 1882, Captain Despard and his family moved into a house known as 'Donor
 #location
 Pittville Circus Road, Cheltenham, Gloucestershire (specifically at the house formerly known as 'Donore' or 'Garden Reach').
 
+#proposed-coordinates
+52.271092, 0.2932409
+
 #upstream-source
 R.C. Morton, *Record of a Haunted House* (Proceedings of the Society for Psychical Research, 1892).
 
@@ -29,6 +32,9 @@ In April 1882, Captain F.W. Despard and his family moved into a newly rented hou
 
 #location
 Garden Reach (later St. Anne's House) on Pittville Circus Road in Cheltenham, Gloucestershire.
+
+#proposed-coordinates
+51.8994643, -2.0672849
 
 #upstream-source
 R.C. Morton, "Record of a Haunted House" in *Proceedings of the Society for Psychical Research* (Vol. 8, 1892).

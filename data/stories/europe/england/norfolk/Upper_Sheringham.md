@@ -10,6 +10,9 @@ Drawn from her watery depths by the sweet sound of human voices singing and chur
 #location
 All Saints Church, Upper Sheringham, Norfolk (Grid reference TG144418).
 
+#proposed-coordinates
+52.931199, 1.189322
+
 #upstream-source
 A. C. Erroll, A History of the Parishes of Sheringham & Beeston Regis.
 

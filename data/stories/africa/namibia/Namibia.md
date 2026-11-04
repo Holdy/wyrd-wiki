@@ -10,6 +10,9 @@ In 1915, as World War I drew to a close in the region, the German Schutztruppe d
 #location
 The bank of Lake Otjikoto, situated immediately off the B1 highway approximately 20 kilometers northwest of Tsumeb, Namibia.
 
+#proposed-coordinates
+-19.2653576, 17.7043971
+
 #upstream-source
 Lily Marion Newton, *Faraway Sandy Trails*.
 

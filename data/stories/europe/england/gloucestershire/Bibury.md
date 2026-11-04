@@ -10,6 +10,9 @@ In the Gloucestershire village of Bibury, local legend tells the tragic tale of 
 #location
 Arlington Mill stands beside the River Coln in the village of Bibury, Gloucestershire.
 
+#proposed-coordinates
+51.7602504, -1.8361605
+
 #upstream-source
 Gloucestershire Folk Tales / Gloucestershire Ghost Tales by Kirsty Hartsiotis and Anthony Nanson.
 
@@ -29,6 +32,9 @@ After moving to Bibury to run the local water mill, a wealthy widower married a 
 
 #location
 Arlington Mill is located beside the River Coln in the village of Bibury, Gloucestershire.
+
+#proposed-coordinates
+51.7602504, -1.8361605
 
 #upstream-source
 None.

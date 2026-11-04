@@ -10,6 +10,9 @@ According to centuries-old legend and historical accounts, on October 12, 1216, 
 #location
 Walpole Marsh, situated in the Fenlands between Walpole Cross Keys and Sutton Bridge in Norfolk, England.
 
+#proposed-coordinates
+53.9203178, -0.9281904
+
 #upstream-source
 None.
 

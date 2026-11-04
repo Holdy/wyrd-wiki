@@ -10,6 +10,9 @@ While stationed in the Gilbert Islands (now Kiribati), Arthur Grimble heard of a
 #location
 The events took place along a remote path on Makin Meang (Little Makin) in the Gilbert Islands, Kiribati.
 
+#proposed-coordinates
+3.3731152, 172.9852042
+
 #upstream-source
 A Pattern of Islands by Arthur Grimble (John Murray, 1952).
 
@@ -29,6 +32,9 @@ During the 1930s in the Gilbert Islands (now Kiribati), traditional beliefs rega
 
 #location
 The Roman Catholic mission church and compound on the atoll of Abaiang in Kiribati.
+
+#proposed-coordinates
+2.1941014, 172.780204
 
 #upstream-source
 Father Ernest Sabatier, *Astride the Equator: An Account of the Gilbert Islands* (*Sous l'équateur du Pacifique: Les Isles Gilbert et la Mission Catholique*, 1939; translated by Ursula Nixon, Melbourne: Oxford University Press, 1977).

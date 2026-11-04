@@ -10,6 +10,9 @@ In traditional accounts recorded during the early 1900s, villagers passed down s
 #location
 The spirit was bound into an ancient oak tree formerly standing within the parish of Long Stratton, Norfolk.
 
+#proposed-coordinates
+52.4878256, 1.233093
+
 #upstream-source
 W. B. Gerish: 'Norfolk Folklore Collections' (unpublished, 1916-18, compiled by William de Castre), Vol.3, p.131.
 

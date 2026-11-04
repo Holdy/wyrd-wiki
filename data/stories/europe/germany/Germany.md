@@ -10,6 +10,9 @@ For centuries, a mysterious specter known as the Lady in Black has glided throug
 #location
 The Munich Residenz, located between Odeonsplatz and the English Garden in the heart of Munich, Germany.
 
+#proposed-coordinates
+48.1411608, 11.5790446
+
 #upstream-source
 Detlef Willand, *Die Schwarze Frau in der Münchner Residenz*.
 
@@ -29,6 +32,9 @@ In her late teens, Anneliese Michel began experiencing severe seizures and was d
 
 #location
 The family home in Klingenberg am Main, Bavaria, Germany.
+
+#proposed-coordinates
+49.7853927, 9.1903807
 
 #upstream-source
 None.
@@ -52,6 +58,9 @@ Along State Road 2080 in the vast Ebersberg Forest, drivers traversing the sharp
 
 #location
 The Hubertus Chapel is situated on State Road 2080 (Staatsstrasse 2080) between Ebersberg and Schwaberwegen at the junction with Scheibenweg within the Ebersberg Forest in Bavaria, Germany.
+
+#proposed-coordinates
+53.1173971, 8.2567486
 
 #upstream-source
 None.

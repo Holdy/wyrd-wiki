@@ -10,6 +10,9 @@ Founded in 1851 by Dr. George Story, the remote village of Story, Indiana, dwind
 #location
 The Story Inn is located at 6404 State Road 135 S, in the unincorporated village of Story, Indiana, within Brown County.
 
+#proposed-coordinates
+40.6229748, -79.1546786
+
 #upstream-source
 None.
 
@@ -30,11 +33,17 @@ Located in the tiny timber village of Story, the Story Inn is the state's oldest
 #location
 The Story Inn is located in the historic village of Story in Brown County, Indiana.
 
+#proposed-coordinates
+39.0989187, -86.2141606
+
 #upstream-source
 None.
 
 #reference
 https://storyinn.com/overnight-accommodations
+
+#tags
+ghost,blue-lady
 
 ---
 
@@ -49,6 +58,9 @@ For generations, drivers traveling along Reeder Road in Northwest Indiana have s
 
 #location
 The key location is Reeder Road where it passes Ross Cemetery in Northwest Indiana.
+
+#proposed-coordinates
+41.4164496, -85.7466393
 
 #upstream-source
 None.
@@ -70,6 +82,9 @@ Skiles Edward Test, a wealthy inventor and businessman, lived on a large, heavil
 #location
 Skiles Test Nature Park is located on Fall Creek Road on the northeast side of Indianapolis, Indiana, just west of Shadeland Avenue and Interstate 465.
 
+#proposed-coordinates
+41.547001, -81.603187
+
 #upstream-source
 The 1975 book _The House of Blue Lights_ by Kay J. Miclot.
 
@@ -89,6 +104,9 @@ Dating back to at least the mid-nineteenth century, Stepp Cemetery in Indiana's 
 
 #location
 Stepp Cemetery is located in a remote wooded section of the Morgan-Monroe State Forest in Indiana.
+
+#proposed-coordinates
+39.3138017, -86.4301796
 
 #upstream-source
 Indiana Folklore Volume 5
@@ -110,6 +128,9 @@ Built in 1906 for the Big Four Railroad (and still utilized by CSX today), the m
 #location
 The Avon Haunted Bridge is situated over County Road 625 East, approximately half a mile south of U.S. Route 36 in Avon, Indiana, adjacent to Washington Township Park.
 
+#proposed-coordinates
+42.7203357, -83.0341053
+
 #upstream-source
 None.
 
@@ -129,6 +150,9 @@ Northwest of South Bend, Primrose Road has long been the subject of local ghost 
 
 #location
 Primrose Road is situated northwest of South Bend in St. Joseph County, Indiana.
+
+#proposed-coordinates
+41.7425733, -86.3706653
 
 #upstream-source
 None.
@@ -178,6 +202,9 @@ Dating back to the mid-19th century—with graves including War of 1812 veteran 
 
 #location
 Stepp Cemetery, located within the Morgan-Monroe State Forest near Martinsville, Indiana.
+
+#proposed-coordinates
+39.3138017, -86.4301796
 
 #upstream-source
 Indiana Folklore, Volume 5.

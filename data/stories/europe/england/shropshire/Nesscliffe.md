@@ -10,6 +10,9 @@ Sir Humphrey Kynaston was a nobleman turned highwayman who made his home in a sa
 #location
 Kynaston's Cave is situated high upon the red sandstone cliffs of Nesscliffe Hill, overlooking the village of Nesscliffe in Shropshire, UK.
 
+#proposed-coordinates
+52.7677477, -2.9137952
+
 #upstream-source
 Charlotte Sophia Burne and Georgina Frederica Jackson, 1883, A Sheaf of Gleanings, Trübner and Co.
 

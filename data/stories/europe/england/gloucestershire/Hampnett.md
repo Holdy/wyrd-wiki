@@ -10,6 +10,9 @@ According to local legend associated with the ancient sarsen stone near Hampnett
 #location
 The Hangman's Stone is located near Hampnett and Oxpens Farm, positioned along the rural trackways and parish boundaries west of Northleach in Gloucestershire.
 
+#proposed-coordinates
+51.8345874, -1.8733944
+
 #upstream-source
 DP Sullivan, Old Stones Of The Cotswolds & Forest Of Dean (1999 Reardon)
 

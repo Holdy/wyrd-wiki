@@ -10,6 +10,9 @@ For centuries, All Saints Church in Crostwight utilized a fine silver parcel-gil
 #location
 All Saints Church and Crostwight Hall in the parish of Crostwight, North Norfolk.
 
+#proposed-coordinates
+52.8763026, 1.2397957
+
 #upstream-source
 None.
 

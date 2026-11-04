@@ -36,6 +36,9 @@ In West Norfolk folklore, a remarkably tall and strong youth named Tom Hickathri
 #location
 All Saints' Church is located in the village of Tilney All Saints in West Norfolk (grid reference TF 5685 1795).
 
+#proposed-coordinates
+52.736478, 0.321811
+
 #upstream-source
 None.
 

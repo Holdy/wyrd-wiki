@@ -12,6 +12,9 @@ Seeking answers, the Reverend invited local priests, clergymen, and a surgeon to
 #location
 The former parsonage in the village of Syderstone, located a few miles north-east of Fakenham in Norfolk.
 
+#proposed-coordinates
+52.829919, 0.8477322
+
 #upstream-source
 Bury and Norwich Post and Norfolk Chronicle (1833 newspaper archives).
 
@@ -31,6 +34,9 @@ According to local memory passed down by a resident whose grandmother moved to t
 
 #location
 The former M&GN railway crossing in Hempton, located near the old railway station and the Grove house (grid reference TF917292).
+
+#proposed-coordinates
+52.826653, 0.844637
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ In the 18th century, a cunning indulgence seller (bulero) fled from an angry mob
 #location
 Church of La Merced (Iglesia de La Merced) located in the historic center of Gracias, Department of Lempira, Honduras.
 
+#proposed-coordinates
+14.5907099, -88.5800471
+
 #upstream-source
 Tradiciones de la Ciudad de Gracias, Lempira by Juan-Carlos Torres.
 

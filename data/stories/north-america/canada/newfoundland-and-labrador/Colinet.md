@@ -33,6 +33,9 @@ In days gone by, a man named Paddy Mahony lived in a solitary hut at Horse's Hea
 #location
 Horse's Head on Little Colinet Island in St. Mary's Bay, Newfoundland and Labrador.
 
+#proposed-coordinates
+47.0456887, -53.6660857
+
 #upstream-source
 Dale Gilbert Jarvis, *Haunted Shores: True Ghost Stories of Newfoundland and Labrador* (Flanker Press).
 

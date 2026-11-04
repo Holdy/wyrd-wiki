@@ -10,6 +10,9 @@ According to local tradition and historical topographical accounts, the Norfolk 
 #location
 The village and parish of Billingford, located near Diss in South Norfolk, centred around the historic river ford.
 
+#proposed-coordinates
+52.3769148, 1.1088804
+
 #upstream-source
 Francis Blomefield: 'An Essay Towards a Topographical History of the County of Norfolk' (William Miller, 1806) Vol.5; and David Butcher: 'Waveney Valley' (East Anglian Magazine Ltd, 1975).
 

@@ -12,6 +12,9 @@ When Denzil Suckling passed away in 1747, he left Baldry the fine pack of hounds
 #location
 Ned Baldry's grave is located in the north-east corner of the churchyard of the parish church in Woodton, Norfolk.
 
+#proposed-coordinates
+52.5062566, 1.3665002
+
 #upstream-source
 Lt. Col. J.R. Harvey, Deer Hunting in Norfolk (Norwich, 1910).
 

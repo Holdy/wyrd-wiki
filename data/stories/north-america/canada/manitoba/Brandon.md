@@ -11,7 +11,7 @@ Originally established in 1891 on the north hill overlooking Brandon as the Bran
 The former Brandon Mental Health Centre grounds on the north hill along Highland Road and First Street in Brandon, Manitoba.
 
 #proposed-coordinates
-49.86418029546599, -99.90737662471687
+49.8697499, -99.9347017
 
 #upstream-source
 History of the Brandon Mental Health Centre, 1891-1991 by Kurtland Refvik.
@@ -34,7 +34,7 @@ Constructed in 1882 for Thomas Mayne Daly, who served as Brandon's first mayor, 
 Daly House Museum, located at 122 18th Street in Brandon, Manitoba.
 
 #proposed-coordinates
-49.86418029546599, -99.90737662471687
+49.8477999, -99.9623638
 
 #upstream-source
 None.

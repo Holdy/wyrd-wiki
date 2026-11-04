@@ -10,6 +10,9 @@ Commissioned in the mid-19th century by Archduke Ferdinand Maximilian of the Aus
 #location
 Miramare Castle stands on the rocky promontory of Grignano along the Gulf of Trieste, just northwest of Trieste, Italy.
 
+#proposed-coordinates
+47.4262708, 9.658107
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ Motorists traveling along the Pinzgauer Bundesstrasse in the Salzburg region of 
 
 #location
 The Pinzgauer Bundesstrasse is a federal highway running through the Pinzgau and Pongau regions in the Salzburg region of Austria.
+
+#proposed-coordinates
+47.7981346, 13.0464806
 
 #upstream-source
 None.

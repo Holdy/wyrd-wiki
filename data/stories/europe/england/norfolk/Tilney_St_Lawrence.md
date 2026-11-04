@@ -10,6 +10,9 @@ According to East Anglian folklore, Tom Hickathrift was a gigantic and immensely
 #location
 The churchyard of Tilney All Saints Church, near Tilney St Lawrence, Norfolk, UK.
 
+#proposed-coordinates
+52.737955, 0.320663
+
 #upstream-source
 *More English Fairy Tales* edited by Joseph Jacobs (1894), drawing upon 17th-century chapbooks, and John Weever’s *Ancient Funerall Monuments* (1631).
 

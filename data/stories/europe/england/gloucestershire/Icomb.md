@@ -12,6 +12,9 @@ Their criminal career met a grisly turning point when they targeted Tangley Hall
 #location
 A cottage in the village of Icomb, Gloucestershire, used as a hideout by the Dunsdon brothers.
 
+#proposed-coordinates
+51.9012782, -1.6922932
+
 #upstream-source
 'Folklore of the Cotswolds' by Katherine M. Briggs; 'The Lore of the Land' by Jennifer Westwood and Jacqueline Simpson; 'Folklore of Oxfordshire' by Christine Bloxham; 'Folklore of the Cotswolds' by June Lewis-Jones.
 

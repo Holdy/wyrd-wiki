@@ -10,6 +10,9 @@ In November 1944 or 1945, around midnight, a man cycling home from an away darts
 #location
 The encounter took place on Cooke's Lane (the Thurton to Bergh Apton road), specifically by the pond opposite Washingford House.
 
+#proposed-coordinates
+52.5609944, 1.4080096
+
 #upstream-source
 None.
 

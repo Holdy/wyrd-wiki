@@ -139,6 +139,9 @@ Spanning the barren stretches of what was once designated as U.S. Route 666 (now
 #location
 The New Mexico section of U.S. Route 491 (formerly U.S. Route 666), running north from Gallup toward the Colorado and Utah borders.
 
+#proposed-coordinates
+40.7796156, -111.9237461
+
 #upstream-source
 None.
 
@@ -158,6 +161,9 @@ Originally constructed as the El Monte Hotel, the Laguna Vista building in Eagle
 
 #location
 The Laguna Vista Lodge is located in Eagle Nest, New Mexico.
+
+#proposed-coordinates
+36.5545598, -105.2608544
 
 #upstream-source
 None.

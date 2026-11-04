@@ -10,6 +10,9 @@ Lady Carew sought the help of a witch to secure a wealthy bachelor, Sir Godfrey 
 #location
 Potter Heigham Bridge crosses the River Thurne in Potter Heigham, Norfolk, near the historic parish of Woodbastwick (Bastwick).
 
+#proposed-coordinates
+52.7098036, 1.5810917
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ In the 18th century, Lady Carew sought a witch's help to arrange a marriage betw
 
 #location
 Potter Heigham Bridge is a historic bridge carrying the A149 across the River Thurne in Norfolk.
+
+#proposed-coordinates
+52.7131087, 1.593503
 
 #upstream-source
 None.

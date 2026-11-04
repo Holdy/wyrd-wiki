@@ -10,6 +10,9 @@ When the Ministry of Defence acquired land in Filton during the early 1990s to c
 #location
 Stanley Farm is located in the south-east corner of the Ministry of Defence (MoD) Abbey Wood complex in Filton, South Gloucestershire.
 
+#proposed-coordinates
+51.4995419, -2.563764
+
 #upstream-source
 None.
 

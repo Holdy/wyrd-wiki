@@ -12,6 +12,9 @@ One of the most notable accounts occurred in November 1980, when Frank Colby of 
 #location
 The A47 dual carriageway bypassing the village of Hopton-on-Sea in Norfolk, running parallel to the historic ruins of St Margaret's Church.
 
+#proposed-coordinates
+51.4998839, -0.1267229
+
 #upstream-source
 None.
 
@@ -31,6 +34,9 @@ In 1980, British Transport Police officer PC Frank Colby and his wife were drivi
 
 #location
 The southern section of the Hopton Bypass (A47) in Hopton-on-Sea, Norfolk.
+
+#proposed-coordinates
+52.5437519, 1.7198668
 
 #upstream-source
 None.

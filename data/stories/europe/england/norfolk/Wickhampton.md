@@ -10,6 +10,9 @@ In the 13th century, the neighboring Norfolk villages of Halvergate and Wickhamp
 #location
 St Andrew’s Church in the village of Wickhampton, Norfolk, UK.
 
+#proposed-coordinates
+52.5908141, 1.5810745
+
 #upstream-source
 Weird Norfolk / Norfolk Historic Environment Record.
 

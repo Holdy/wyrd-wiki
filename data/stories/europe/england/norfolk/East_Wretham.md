@@ -10,6 +10,9 @@ Langmere is a fluctuating mere situated on East Wretham Heath in Breckland, char
 #location
 Langmere (grid reference TL906884) is a fluctuating mere located on East Wretham Heath.
 
+#proposed-coordinates
+52.460707, 0.804782
+
 #upstream-source
 Olive Cooke: 'Breckland' (Robert Hale, 2nd edition 1980; orig. 1956), p.73.
 
@@ -32,6 +35,9 @@ Langmere is a small fluctuating lake located on East Wretham Heath within the Br
 
 #location
 Langmere (TL906884) on East Wretham Heath.
+
+#proposed-coordinates
+52.460707, 0.804782
 
 #upstream-source
 Olive Cooke: 'Breckland' (Robert Hale, 2nd edition 1980; orig. 1956), p.73.

@@ -10,6 +10,9 @@ Deep within the sacred grounds of Buhanga Eco Park, an ancient fig tree known lo
 #location
 The Umuvumu tree is located within Buhanga Eco Park in the Northern Province of Rwanda, near Musanze.
 
+#proposed-coordinates
+-1.4745061, 29.569258
+
 #upstream-source
 None.
 

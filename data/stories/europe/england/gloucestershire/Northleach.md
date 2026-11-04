@@ -10,6 +10,9 @@ Northleach, an ancient market town in the Cotswolds, is steeped in folklore rega
 #location
 Guggle Cottage located at the western end of Northleach, Gloucestershire.
 
+#proposed-coordinates
+51.8299662, -1.8371843
+
 #upstream-source
 None.
 

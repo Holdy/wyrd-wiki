@@ -30,6 +30,9 @@ Late at night along the highway between Santa Ana and Chalchuapa, a striking and
 #location
 The ghost is encountered along the highway connecting the cities of Santa Ana and Chalchuapa in El Salvador.
 
+#proposed-coordinates
+13.9853216, -89.6802434
+
 #upstream-source
 None.
 

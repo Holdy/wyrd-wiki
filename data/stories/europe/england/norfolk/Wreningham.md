@@ -10,6 +10,9 @@ According to local tradition recorded in Wreningham, a 13th-century Lady of the 
 #location
 All Saints Church and the village sign site in Wreningham, Norfolk, UK.
 
+#proposed-coordinates
+52.5441399, 1.1889567
+
 #upstream-source
 1977 Wreningham Queen Elizabeth II Silver Jubilee Booklet (as documented by the Wreningham Heritage Group).
 

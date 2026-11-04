@@ -10,6 +10,9 @@ In the 11th-century village of Vesilahti, a local witch made a treaty with the v
 #location
 Ämmänhauta (The Witch's Tomb) is located in the forest in the municipality of Vesilahti, Finland.
 
+#proposed-coordinates
+61.2970187, 23.6388138
+
 #upstream-source
 None.
 
@@ -30,6 +33,9 @@ Beginning in the early 17th century, mourners in Saarijärvi transported decease
 #location
 The historic Pyhäkangas corpse road and pruned forest (*Pyhäkankaan karsikko*) are located off Häkkiläntie 1475 in Saarijärvi, Central Finland.
 
+#proposed-coordinates
+62.766514, 25.5475046
+
 #upstream-source
 Albert Hämäläinen (1903 documentation on Pyhäkankaan karsikko).
 
@@ -49,6 +55,9 @@ On January 12, 1885, strange disturbances broke out at the croft of Efraim Marti
 
 #location
 Efraim Martin's former croft located in the rural parish and village of Ylöjärvi, near Keijärvi in Finland.
+
+#proposed-coordinates
+61.5488965, 23.5951425
 
 #upstream-source
 Olevaisen yöpuoli (1993) by Heikki Tikkala.

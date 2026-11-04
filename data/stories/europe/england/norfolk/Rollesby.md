@@ -10,6 +10,9 @@ Rollesby Hall, a historic building dating back to the mid-16th century that was 
 #location
 The site of the former Rollesby Hall in the village of Rollesby, Norfolk.
 
+#proposed-coordinates
+52.6846174, 1.6347721
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ In 1822, Julia Huggins, daughter of the powerful and controversial plantation ow
 #location
 The Eden Brown Estate ruins are located on a remote hillside in the eastern parish of Saint James Windward on the island of Nevis, Saint Kitts and Nevis.
 
+#proposed-coordinates
+17.16277778, -62.54888889
+
 #upstream-source
 None.
 

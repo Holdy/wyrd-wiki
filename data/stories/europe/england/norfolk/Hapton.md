@@ -36,6 +36,9 @@ For generations, word-of-mouth tradition in Hapton held that Oliver Cromwell vis
 #location
 Hapton Hall and the historic village stables in Hapton, Norfolk.
 
+#proposed-coordinates
+52.5238891, 1.2053161
+
 #upstream-source
 None.
 

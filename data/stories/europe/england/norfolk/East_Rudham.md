@@ -10,6 +10,9 @@ Located a short distance south-east of the ruins of the Augustinian St. Mary's P
 #location
 Mary Bone's Well, situated south-east of St. Mary's Priory ruins between Coxford and Broomsthorpe in East Rudham, Norfolk (Grid Reference TF847287).
 
+#proposed-coordinates
+52.824607, 0.740588
+
 #upstream-source
 Norfolk Historic Environment Record (MNF3642).
 
@@ -30,6 +33,9 @@ On December 26, 1908, word reached East Rudham that Reverend Dr. Astley and his 
 #location
 St. Mary's Church and the vicarage lawn in East Rudham, Norfolk.
 
+#proposed-coordinates
+52.826011, 0.7195956
+
 #upstream-source
 Originally documented in contemporary Norfolk newspapers following the incident.
 
@@ -49,6 +55,9 @@ In December 1908, Reverend R. Brock was serving as the Acting Vicar of St. Mary'
 
 #location
 The vicarage of St. Mary's Church in the village of East Rudham, Norfolk.
+
+#proposed-coordinates
+52.826011, 0.7195956
 
 #upstream-source
 None.

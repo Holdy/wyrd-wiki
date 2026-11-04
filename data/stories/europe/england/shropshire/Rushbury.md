@@ -10,6 +10,9 @@ Local folklore holds that a historic stretch of Roman road and stone pavement le
 #location
 The Devil's Causeway is a historic stretch of road running between Acton Burnell and Cardington that originally connected to Rushbury in Shropshire.
 
+#proposed-coordinates
+52.5228301, -2.7181426
+
 #upstream-source
 Charlotte S. Burne, *Shropshire Folk-Lore* (1883).
 

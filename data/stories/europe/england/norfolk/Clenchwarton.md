@@ -10,6 +10,9 @@ The original moated Margaretta House, located at grid reference TF596200, was de
 #location
 St. Margaret's Church and the former site of Margaretta House (TF596200) in Clenchwarton, Norfolk.
 
+#proposed-coordinates
+52.754478, 0.364190
+
 #upstream-source
 None.
 

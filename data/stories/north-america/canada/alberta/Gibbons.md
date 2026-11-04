@@ -13,7 +13,7 @@ A police detail led by Sub-Inspector Severe Gagnon escorted Swift Runner back to
 The wilderness encampment along the Sturgeon River near present-day Gibbons, Alberta.
 
 #proposed-coordinates
-53.829722200000006, -113.32833329999998
+53.76805556, -113.17083333
 
 #upstream-source
 J.P. Turner's The North-West Mounted Police (1950), T.W. Paterson's Outlaws of Western Canada (1982), Colin A. Thompson's Swift Runner (1984), and Chad Lewis & Kevin Lee Nelson's Wendigo Lore (2020).

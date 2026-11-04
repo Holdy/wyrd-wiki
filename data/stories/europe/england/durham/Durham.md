@@ -33,6 +33,9 @@ On a freezing winter night in the 19th century, nightwatchman James Durham was o
 #location
 The events took place in the cellar of North Road Station, located beside the historic level crossing of the Stockton and Darlington Railway and the Great North Road in Darlington, County Durham.
 
+#proposed-coordinates
+54.5357302, -1.5539294
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ According to late 19th-century accounts reported by the local clergyman, the Old
 #location
 The Old Manor House situated in the historic village of Hinton-on-the-Green, located in the vale south of Evesham.
 
+#proposed-coordinates
+52.0940158, -1.9483083
+
 #upstream-source
 None.
 

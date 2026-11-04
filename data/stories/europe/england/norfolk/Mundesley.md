@@ -10,6 +10,9 @@ During the late 18th century, the lawless, isolated North Norfolk coastline was 
 #location
 The lonely cliff-edge and coastal path between Bacton and Mundesley in Norfolk, UK.
 
+#proposed-coordinates
+52.8802662, 1.4262372
+
 #upstream-source
 *History and Legends of the Broad District* (1891) by Ernest Suffling (also referenced in *The Fabled Coast* by Sophia Kingshill and Jennifer Westwood).
 

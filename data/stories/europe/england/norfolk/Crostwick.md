@@ -10,6 +10,9 @@ According to traditional accounts recorded in the 19th century, a remarkably lar
 #location
 The common land adjacent to St. Peter's Church in Crostwick, Norfolk (grid reference TG258159).
 
+#proposed-coordinates
+52.694101, 1.340747
+
 #upstream-source
 James Grigor: 'The Eastern Arboretum' (Longman, Brown, Green & Longmans, 1841), p.336.
 

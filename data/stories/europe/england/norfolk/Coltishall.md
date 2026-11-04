@@ -10,6 +10,9 @@ In the marshes beside the River Bure within the parish of Coltishall lie the spa
 #location
 Golden Gates Pond, located beside the Great Hautbois Road (grid reference TG261207) in the parish of Coltishall, Norfolk.
 
+#proposed-coordinates
+52.737053, 1.348478
+
 #upstream-source
 'The Marlpit' Community News Magazine, Aug-Sept 2002.
 
@@ -29,6 +32,9 @@ For centuries, the Norfolk village of Coltishall has been haunted by legends of 
 
 #location
 Coltishall Bridge spans the River Bure in the Norfolk village of Coltishall, UK.
+
+#proposed-coordinates
+52.7243382, 1.3559375
 
 #upstream-source
 “A Straunge and Terrible Wunder” by Albert Fleming, 1577.

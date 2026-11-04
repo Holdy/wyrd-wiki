@@ -62,6 +62,9 @@ Amy Robsart, the ill-fated wife of Robert Dudley (the Earl of Leicester) whose s
 #location
 Rainthorpe Hall, situated in the parish of Tasburgh, south of Norwich in Norfolk, England.
 
+#proposed-coordinates
+52.6285576, 1.2923954
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ Local accounts in Cainscross tell of a spectral woman who has been seen crossing
 #location
 Cainscross Road, near Tricorn House in Cainscross, Gloucestershire.
 
+#proposed-coordinates
+51.7440052, -2.239286
+
 #upstream-source
 Modern Day Ghosts of England by Matthew Kenton
 

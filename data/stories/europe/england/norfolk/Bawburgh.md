@@ -36,6 +36,9 @@ Born around 975 AD in Bawburgh, Walstan was the son of noble parents with royal 
 #location
 St. Mary and St. Walstan’s Church is located on Church Street in the village of Bawburgh, Norfolk.
 
+#proposed-coordinates
+52.6321793, 1.1832437
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ Late one moonlit night, Mr. E. Ramsey was cycling home to Bawburgh after attendi
 
 #location
 The encounter took place by the village signpost and a nearby spinney on the approach road into Bawburgh, Norfolk.
+
+#proposed-coordinates
+52.6322939, 1.1842339
 
 #upstream-source
 None.

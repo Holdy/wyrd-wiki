@@ -10,6 +10,9 @@ While staying at a friend's house near Bristol in October 1893, Mrs. Goodeve was
 #location
 St Mary's Church and churchyard in Snettisham, Norfolk.
 
+#proposed-coordinates
+52.87945, 0.51067
+
 #upstream-source
 Ghost Hunters by James M. Deem (Avon, 1992)
 

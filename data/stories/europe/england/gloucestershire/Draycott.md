@@ -10,6 +10,9 @@ For centuries, the small hamlet of Draycott in Gloucestershire lacked its own bu
 #location
 The historic corpse road and footpath running between Draycott and St Peter & St Paul's Church in Blockley, Gloucestershire.
 
+#proposed-coordinates
+52.0223907, -1.7408221
+
 #upstream-source
 Quoted from "Corpse Roads in Gloucestershire" in *The Ley Hunter* archive.
 

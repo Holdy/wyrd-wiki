@@ -10,6 +10,9 @@ Around 1790, an unnamed resident in Saham Toney began pouring wine and beer into
 #location
 The crossroads where Bell Lane, Ovington Road, Cley Lane, and Chequers Lane meet in Saham Toney, Norfolk (Grid Reference TF907019).
 
+#proposed-coordinates
+52.581889, 0.813992
+
 #upstream-source
 Norfolk Historic Environment Record (Record MNF13171).
 
@@ -29,6 +32,9 @@ Local folklore records that the shallow freshwater mere in Saham Toney was said 
 
 #location
 Saham Toney Mere, situated in the center of the village of Saham Toney in Norfolk.
+
+#proposed-coordinates
+52.584582, 0.8077365
 
 #upstream-source
 Ursula Bourne, East Anglian Village & Town Signs (1986).

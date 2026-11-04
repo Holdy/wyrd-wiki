@@ -10,6 +10,9 @@ Beginning over forty years ago, an old, tall bearded man with short dark hair an
 #location
 The Perry Way (B4071) in Frampton-on-Severn, Gloucestershire.
 
+#proposed-coordinates
+51.7643044, -2.3487783
+
 #upstream-source
 Modern Day Ghosts of England by Matthew Kenton.
 

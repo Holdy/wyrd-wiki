@@ -10,6 +10,9 @@ In 1924, a university student named Burke Hardison was driving home to High Poin
 #location
 The ghost is sighted near the railroad bridge underpass and abandoned bridge on E. Main Street in Jamestown, North Carolina.
 
+#proposed-coordinates
+35.9940038, -79.9357573
+
 #upstream-source
 Nancy Roberts, *An Illustrated Guide to Ghosts & Mysterious Occurrences in the Old North State*.
 
@@ -30,11 +33,20 @@ In March 1810, Samuel R. Jocelyn died unexpectedly in Wilmington and was interre
 #location
 The events center on the cemetery at St. James Episcopal Church, situated at the corner of Fourth and Market Streets in Wilmington, New Hanover County, North Carolina.
 
+#proposed-coordinates
+34.235665991731, -77.944696979827
+
 #upstream-source
 Alfred Moore Waddell, A History of New Hanover Co., and the Lower Cape Fear Region 1723-1800 (1909).
 
 #reference
 https://www.ncgenweb.us/newhanover/jocelyn.htm
+
+#coordinates
+34.23511, -77.94497
+
+#tags
+ghost
 
 ---
 
@@ -49,6 +61,9 @@ In western Chatham County, approximately ten miles from Siler City, lies a perfe
 
 #location
 The Devil's Tramping Ground is situated in the pine woods roughly ten miles from Siler City in western Chatham County, North Carolina.
+
+#proposed-coordinates
+35.7234734, -79.4622431
 
 #upstream-source
 John Harden, *The Devil's Tramping Ground and Other North Carolina Mystery Stories* (1949); Richard Walser, *North Carolina Legends* (1980).
@@ -70,6 +85,9 @@ Located in the remote pine forests of western Chatham County, the Devil's Trampi
 #location
 The Devil's Tramping Ground is situated in the pine forests approximately ten miles west of Siler City in Chatham County, North Carolina.
 
+#proposed-coordinates
+35.7234734, -79.4622431
+
 #upstream-source
 John Harden, The Devil's Tramping Ground and Other North Carolina Mystery Stories (1949).
 
@@ -89,6 +107,9 @@ For generations, locals near Harper's Crossroads have whispered about a mysterio
 
 #location
 The barren circle is located within the pine woods off State Road 1100 near Harper's Crossroads in Bear Creek, Chatham County, North Carolina.
+
+#proposed-coordinates
+35.6168118, -79.3847432
 
 #upstream-source
 None.
@@ -110,6 +131,9 @@ Located in the western woods of Chatham County, the Devil's Tramping Ground is a
 #location
 A 40-foot barren circle located in the woods approximately ten miles from Siler City in Chatham County, North Carolina.
 
+#proposed-coordinates
+35.7234734, -79.4622431
+
 #upstream-source
 The Devil's Tramping Ground and Other North Carolina Mystery Stories by John Harden (1949).
 
@@ -130,6 +154,9 @@ Dating back to initial accounts collected around 1924, travelers driving through
 #location
 The old abandoned bridge and railway underpass near E. Main Street in Jamestown, North Carolina (35°59'50.0"N 79°55'33.1"W).
 
+#proposed-coordinates
+35.997222, -79.925861
+
 #upstream-source
 An Illustrated Guide to Ghosts & Mysterious Occurrences in the Old North State by Nancy Roberts (1950) / North Carolina Legends by Richard Walser.
 
@@ -149,6 +176,9 @@ In 1867, a wood-burning train suffered a tragic accident near a rural rail stop 
 
 #location
 The apparition was historically sighted along the former railroad tracks near the old Maco Station site in Brunswick County, North Carolina.
+
+#proposed-coordinates
+34.0624283, -78.24434
 
 #upstream-source
 John Harden, Tar Heel Ghosts (1954).

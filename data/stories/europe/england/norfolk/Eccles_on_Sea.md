@@ -10,6 +10,9 @@ The ancient village of Eccles-on-Sea and its 12th-century St Mary’s Church wer
 #location
 The foreshore and sand dunes where St Mary’s Church once stood in Eccles-on-Sea, Norfolk.
 
+#proposed-coordinates
+52.9511869, -1.1430479
+
 #upstream-source
 Norfolk Life by Lilias Rider Haggard.
 

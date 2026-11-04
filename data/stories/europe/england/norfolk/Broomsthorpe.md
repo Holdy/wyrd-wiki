@@ -10,6 +10,9 @@ Marked on Ordnance Survey maps near the remains of the Augustinian St. Mary's Pr
 #location
 Mary Bone's Well is located a little south-east of the remains of St. Mary's Priory, between Coxford and Broomsthorpe at grid reference TF847287.
 
+#proposed-coordinates
+52.824607, 0.740588
+
 #upstream-source
 None.
 

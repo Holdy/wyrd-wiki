@@ -10,6 +10,9 @@ In the parish of Runcton Holme lies the historic estate of Wallington Hall. Cent
 #location
 Wallington Hall and the ruined tower of St Margaret of Antioch, located within the parish of Runcton Holme, Norfolk, UK.
 
+#proposed-coordinates
+52.6415346, 0.4032527
+
 #upstream-source
 Norfolk Historic Environment Service (Parish Summary for Runcton Holme) and records documented by Norfolk Churches and local historical surveys.
 

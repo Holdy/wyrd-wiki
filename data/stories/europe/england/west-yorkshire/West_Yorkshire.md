@@ -35,6 +35,9 @@ Over the years, motorists have claimed to see ghostly apparitions appearing in t
 #location
 The Stocksbridge Bypass, which connects the M1 with the Woodhead Pass and the A616 in West Yorkshire, is a key location for these ghostly encounters.
 
+#proposed-coordinates
+53.4865249, -1.593051
+
 #upstream-source
 None
 

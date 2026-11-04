@@ -10,6 +10,9 @@ During the Marian persecutions in 1556, a yeoman named Robert Rosier from Mutton
 #location
 The cursed field is located on a hillside beside the main road between Wetherden and Woolpit in Suffolk.
 
+#proposed-coordinates
+52.2247689, 0.8880944
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ According to regional tradition, a set of golden gates was hidden or buried in t
 #location
 The legend centers on a field near Eaton Farm, located just north of the small bridge crossing the Heacham River about one mile outside the village of Heacham in Norfolk.
 
+#proposed-coordinates
+52.8978156, 0.5190778
+
 #upstream-source
 C. H. Lewton Brain: 'The Icknield Way', in 'Norfolk Archaeology' (1966-9), Vol.34, p.421; C. H. Lewton Brain: ‘Places and People’ in the 'Eastern Daily Press' 14/7/1977, reprinted in Brain’s ‘Walking on Buried History’ (Larks Press, 2009), p.65.
 

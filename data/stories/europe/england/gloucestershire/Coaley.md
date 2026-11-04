@@ -36,6 +36,9 @@ At the Fox and Hounds pub in the Gloucestershire village of Coaley, staff and re
 #location
 The Fox and Hounds pub, located in the village of Coaley, Gloucestershire.
 
+#proposed-coordinates
+51.716402, -2.3361588
+
 #upstream-source
 *Modern Day Ghosts of England* by Matthew Kenton.
 

@@ -10,6 +10,9 @@ Tom Hickathrift was born in the Norfolk Marshland as the son of a poor laborer. 
 #location
 All Saints' Church in Tilney All Saints (grid reference TF 5685 1795), located in the West Norfolk marshland region near King's Lynn.
 
+#proposed-coordinates
+52.736478, 0.321811
+
 #upstream-source
 John Weever, 'Ancient Funerall Monuments' (1631); Sir William Dugdale, 'History of Imbanking Divers Fens & Marshes' (1662); Anon., 'The History of Thomas Hickathrift' (c. 1660-90).
 

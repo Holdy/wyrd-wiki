@@ -10,6 +10,9 @@ In 1643, amidst the intense religious and political upheavals of the English Civ
 #location
 All Saints' Church in the village of Dickleburgh, Norfolk.
 
+#proposed-coordinates
+52.3968716, 1.1849058
+
 #upstream-source
 John Walker, *Sufferings of the Clergy* (as recorded in Francis Blomefield, *An Essay Towards a Topographical History of the County of Norfolk*, Vol. 1).
 

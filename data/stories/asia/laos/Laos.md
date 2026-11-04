@@ -33,6 +33,9 @@ Rooted in ethnic Lao folklore, individuals accused of hosting malevolent, organ-
 #location
 Nakasang Village, Khong District, Champasak Province, southern Laos, specifically centered around the village's *ta ho* spirit house and *nong cheut* ritual pond adjacent to the Mekong River.
 
+#proposed-coordinates
+20.0566065, 101.9933152
+
 #upstream-source
 Ian G. Baird, "Where Do the Ravenous Spirits (Phi Pop) Go? Nakasang Village in Southern Laos as a Place of Cultural Healing", *Southeast Asian Studies*, Vol. 13, No. 1 (2024).
 

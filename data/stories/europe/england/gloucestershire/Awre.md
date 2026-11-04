@@ -10,6 +10,9 @@ Situated in the village of Awre, the historic Red Hart Inn—which originally op
 #location
 The Red Hart Inn, located in the village of Awre, Gloucestershire.
 
+#proposed-coordinates
+51.7625974, -2.4474399
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ As Roman forces pushed westward to crush resisting Celtic tribes, they encounter
 
 #location
 The Noose sandbank in the River Severn off Awre Point, near the village of Awre in Gloucestershire.
+
+#proposed-coordinates
+51.7625974, -2.4474399
 
 #upstream-source
 Kirsty Hartsiotis, Cotswold Ways walk: Sabrina and the River Severn (published in Great British Life).

@@ -10,6 +10,9 @@ In 1913, Tom and Kitty Higdon, Christian Socialist teachers at the village schoo
 #location
 St Mary's Church stands on Rectory Road in the village of Burston, near Diss, Norfolk, directly adjacent to the Burston Strike School on the village green.
 
+#proposed-coordinates
+52.3769148, 1.1088804
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ In October 1977, an 18-year-old participating in a night hike with a Venture Sco
 #location
 The encounter took place on Peddar's Way, approximately a quarter of a mile south of Shepherd's Bush in Great Massingham (around grid reference TF797197).
 
+#proposed-coordinates
+52.745478, 0.661529
+
 #upstream-source
 None.
 

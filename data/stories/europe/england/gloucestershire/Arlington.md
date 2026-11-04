@@ -10,6 +10,9 @@ While visiting the museum at Arlington Mill while waiting for a meeting, a story
 #location
 Arlington Mill stands alongside the stream in the village of Arlington, Gloucestershire, near Bibury.
 
+#proposed-coordinates
+51.7602504, -1.8361605
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ In times past, a young woman named Mary was married off by her ambitious parents
 
 #location
 Arlington Mill stands alongside the River Coln in the village of Arlington, near Bibury in Gloucestershire.
+
+#proposed-coordinates
+51.7602504, -1.8361605
 
 #upstream-source
 Gloucestershire Ghost Tales by Anthony Nanson and Kirsty Hartsiotis.

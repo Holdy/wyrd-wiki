@@ -40,7 +40,7 @@ The Hawreliak House originally belonged to Vaselina Hawreliak, a dedicated mothe
 The Hawreliak House is located within the Ukrainian Cultural Heritage Village situated along Highway 16 in Lamont County, just east of Tofield, Alberta.
 
 #proposed-coordinates
-53.370833299999994, -112.66583329999999
+53.570604300000014, -112.41238959999998
 
 #upstream-source
 None.
@@ -66,7 +66,7 @@ According to regional folklore and local ghost lore, a phantom wagon master freq
 The Ukrainian Cultural Heritage Village is located along Highway 16 in Lamont County, east of Edmonton and near Tofield, Alberta.
 
 #proposed-coordinates
-53.370833299999994, -112.66583329999999
+53.570604300000014, -112.41238959999998
 
 #upstream-source
 Haunted Canada 9: Scary True Stories by Joel A. Sutherland.

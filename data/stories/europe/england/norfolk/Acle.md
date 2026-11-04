@@ -36,6 +36,9 @@ Stretching nine miles across reclaimed marshland between Acle and Great Yarmouth
 #location
 The sighting took place on the Acle Straight (A47) near the Halvergate turn-off and the former Stracey Arms between Acle and Great Yarmouth, Norfolk.
 
+#proposed-coordinates
+52.6099342, 1.7137521
+
 #upstream-source
 None.
 
@@ -58,6 +61,9 @@ A driver heading towards Acle watched in horror as a middle-aged man stepped out
 
 #location
 The Acle Straight (A47) near the Halvergate turn-off and the former Stracey Arms between Acle and Great Yarmouth.
+
+#proposed-coordinates
+52.6099342, 1.7137521
 
 #upstream-source
 None.

@@ -36,6 +36,9 @@ In 1897, a gamekeeper was out late at night at West Bilney Hall, near King's Lyn
 #location
 West Bilney Hall is situated in the parish of West Bilney, east of King's Lynn in Norfolk, England.
 
+#proposed-coordinates
+52.708401, 0.5387142
+
 #upstream-source
 None.
 

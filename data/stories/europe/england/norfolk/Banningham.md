@@ -10,6 +10,9 @@ For decades, antiquarian Bryan Hall lived at Banningham Rectory alongside two re
 #location
 Banningham Rectory in Banningham, Norfolk.
 
+#proposed-coordinates
+52.8174107, 1.2875931
+
 #upstream-source
 Betty Puttick's Norfolk Stories of the Supernatural (2000).
 
@@ -29,6 +32,9 @@ During the turbulent era of the 17th century, when witch hunts and strict moral 
 
 #location
 The Banningham village green in the village of Banningham, Norfolk.
+
+#proposed-coordinates
+52.8174107, 1.2875931
 
 #upstream-source
 None.

@@ -36,6 +36,9 @@ For decades, local folklore in the market town of Diss maintained that a large c
 #location
 Fair Green in Diss, Norfolk, specifically in the corner near the playground.
 
+#proposed-coordinates
+52.3729476, 1.0997112
+
 #upstream-source
 None.
 

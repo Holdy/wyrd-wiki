@@ -18,3 +18,9 @@ Submitted by Lorraine Hunt and published on The Kittiwake Coast.
 
 #reference
 https://thekittiwakecoast.wordpress.com/road-to-the-shore/
+
+#coordinates
+49.11922, -53.59921
+
+#tags
+approx,polgergeist

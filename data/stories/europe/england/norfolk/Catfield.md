@@ -10,6 +10,9 @@ Around 1842, several women were out on the marshes near Catfield Hall gathering 
 #location
 The marshes situated near Catfield Hall (grid reference TG378213) in the parish of Catfield, Norfolk, UK.
 
+#proposed-coordinates
+52.737421, 1.521875
+
 #upstream-source
 None.
 

@@ -30,6 +30,9 @@ A young boy and his mother were driving along the highway when their vehicle was
 #location
 The haunting occurs along the Karak Highway, a major expressway connecting Kuala Lumpur to Karak in Malaysia.
 
+#proposed-coordinates
+3.4135539, 102.0348145
+
 #upstream-source
 None.
 

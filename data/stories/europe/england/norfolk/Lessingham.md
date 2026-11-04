@@ -10,6 +10,9 @@ At the stroke of midnight, a terrifying phantom hound is said to roam the sand d
 #location
 The sand dunes of Eccles within the coastal parish of Lessingham in northeast Norfolk.
 
+#proposed-coordinates
+52.7977665, 1.5581983
+
 #upstream-source
 None.
 

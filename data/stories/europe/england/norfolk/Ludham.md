@@ -10,6 +10,9 @@ According to local folklore, in ancient times a dragon held the village of Ludha
 #location
 St Catherine's Church stands in the village of Ludham, Norfolk, near where the dragon's underground labyrinth was said to begin.
 
+#proposed-coordinates
+52.7109856, 1.5310159
+
 #upstream-source
 None.
 

@@ -10,6 +10,9 @@ Pentney Priory was an Augustinian monastery founded in 1075 that stood for nearl
 #location
 Pentney Priory Gatehouse, located off Abbey Road in Pentney, Norfolk (TF728135).
 
+#proposed-coordinates
+52.692046, 0.556160
+
 #upstream-source
 Lilias Rider Haggard (ed.), *I Walked by Night* (Oxford University Press, 1982).
 

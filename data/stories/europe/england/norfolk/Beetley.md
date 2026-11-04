@@ -10,6 +10,9 @@ In the parish of Beetley, within a meadow near East Bilney church known locally 
 #location
 The Bloodfield is located just north-west of the church in East Bilney, within the Norfolk parish of Beetley (grid reference TF 9520 1988).
 
+#proposed-coordinates
+52.741335, 0.890267
+
 #upstream-source
 G. A. Carthew, "The Hundred of Launditch and Deanery of Brisley: In the County of Norfolk" (1879); Bolingbroke Collection archive.
 

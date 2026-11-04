@@ -10,6 +10,9 @@ Set against the turbulent backdrop of revolutionary Ethiopia, a young girl commu
 #location
 The road directly in front of the National Palace in Addis Ababa, Ethiopia.
 
+#proposed-coordinates
+9.0162752, 38.7604062
+
 #upstream-source
 "Ostrich" by Rebecca Fisseha, from the book *Addis Ababa Noir*, edited by Maaza Mengiste.
 

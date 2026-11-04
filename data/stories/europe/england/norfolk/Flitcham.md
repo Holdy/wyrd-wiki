@@ -10,6 +10,9 @@ While etymological records suggest that Flitcham's name stems from the Old Engli
 #location
 St Mary's Church, located at the western end of Flitcham village along the River Babingley in Norfolk (OS Grid Reference TF7226).
 
+#proposed-coordinates
+52.809063, 0.5634262
+
 #upstream-source
 None.
 

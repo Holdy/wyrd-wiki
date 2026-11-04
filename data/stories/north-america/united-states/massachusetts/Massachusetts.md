@@ -62,11 +62,17 @@ On February 29, 1704, during Queen Anne's War, combined French and Native forces
 #location
 The Eunice Williams Covered Bridge spanning the Green River in Greenfield, Massachusetts.
 
+#proposed-coordinates
+42.6465394, -72.6201805
+
 #upstream-source
 None.
 
 #reference
 https://newengland.com/travel/massachusetts/the-ghost-of-the-eunice-williams-covered-bridge/
+
+#tags
+named-ghost
 
 ---
 
@@ -128,6 +134,9 @@ Beginning in 1851, the construction of the 4.75-mile Hoosac Tunnel through Hoosa
 #location
 The Hoosac Tunnel is a historic railroad tunnel piercing through Hoosac Mountain in western Massachusetts, located near the city of North Adams.
 
+#proposed-coordinates
+42.6753105, -73.0445629
+
 #upstream-source
 None.
 
@@ -148,6 +157,9 @@ Construction on the 4.75-mile Hoosac Tunnel began in 1851 and quickly became kno
 #location
 The Hoosac Tunnel cuts through the Hoosac Mountain Range in Berkshire County, Massachusetts, with its East Portal located in Florida, Massachusetts, and its West Portal in North Adams, Massachusetts.
 
+#proposed-coordinates
+42.6753105, -73.0445629
+
 #upstream-source
 None.
 
@@ -167,6 +179,9 @@ After mocking local ghost tales over dinner, a disbelieving couple decides to dr
 
 #location
 Route 44 along the border of Seekonk and Rehoboth, Massachusetts.
+
+#proposed-coordinates
+41.8403786, -71.2494938
 
 #upstream-source
 Thomas D'Agostino, *Haunted Massachusetts*; Joseph Citro, *Weird New England*.

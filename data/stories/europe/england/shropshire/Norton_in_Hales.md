@@ -10,6 +10,9 @@ Local legend holds that after a young girl was murdered at a remote spot on the 
 #location
 The Devil's Ring and Finger standing stones stand in a field near Forge Lane on the boundary of Norton-in-Hales, Shropshire.
 
+#proposed-coordinates
+52.9399055, -2.4443862
+
 #upstream-source
 Report of the N.S. Field Club published in the Newcastle Guardian (22nd August 1908).
 

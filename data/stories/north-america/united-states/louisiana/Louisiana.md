@@ -39,6 +39,9 @@ In the small farming community of Frenier, surrounded by the Manchac Swamp in Lo
 #location
 Frenier Cemetery is located in the wetlands of St. John the Baptist Parish near LaPlace, Louisiana, situated between Lakes Pontchartrain and Maurepas.
 
+#proposed-coordinates
+30.2968621, -90.6639809
+
 #upstream-source
 None.
 
@@ -111,6 +114,9 @@ In the nineteenth century at the Myrtles Plantation just outside St. Francisvill
 #location
 The Myrtles Plantation, located just outside St. Francisville, Louisiana.
 
+#proposed-coordinates
+30.8037393, -91.3881386
+
 #upstream-source
 Adapted from Folklore by Craig Dominey.
 
@@ -153,6 +159,9 @@ For decades, drivers traversing the Bourg-Larose Highway between the communities
 
 #location
 The haunting takes place along the Bourg-Larose Highway (comprising sections of Louisiana Highway 24 and Highway 1) stretching between the communities of Bourg and Larose in Lafourche Parish, Louisiana.
+
+#proposed-coordinates
+29.5549364, -90.5567435
 
 #upstream-source
 None.

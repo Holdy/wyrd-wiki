@@ -11,7 +11,7 @@ Years ago, local designer and shop owner Sheldon Sveinson purchased an old build
 An old building located along Second Street in Lac du Bonnet, Manitoba.
 
 #proposed-coordinates
-50.384159950610254, -95.89395368244969
+50.257316, -96.0602775
 
 #upstream-source
 None.

@@ -10,6 +10,9 @@ Littledean Hall, reputed to be one of the oldest and most haunted houses in Engl
 #location
 Littledean Hall is situated in the historic village of Littledean within the Forest of Dean district of Gloucestershire, England.
 
+#proposed-coordinates
+51.815113, -2.47649
+
 #upstream-source
 Don Macer-Wright, The Hauntings of Littledean Hall; Sybella Mary Crawley-Boevey, Timely Legacies (1899).
 

@@ -12,6 +12,9 @@ Beyond Emily, guests and employees have experienced numerous other unexplained p
 #location
 The Historic Occidental Hotel is located at 10 North Main Street in Buffalo, Wyoming.
 
+#proposed-coordinates
+44.34701128958, -106.698906436304
+
 #upstream-source
 None.
 
@@ -31,6 +34,9 @@ While driving home from Denver late at night, a woman passing through Jeffrey Ci
 
 #location
 Highway 287 just outside Jeffrey City, Wyoming, along the historic route over South Pass.
+
+#proposed-coordinates
+42.3696949, -108.9135991
 
 #upstream-source
 Fremont Haunts by a class of Riverton High School sophomores (2017).
@@ -98,6 +104,9 @@ The Wyoming Frontier Prison in Rawlins opened its doors in December 1901 and hou
 #location
 The Wyoming Frontier Prison is located at 500 Walnut St, Rawlins, Wyoming.
 
+#proposed-coordinates
+41.794491296514, -107.232234509417
+
 #upstream-source
 None.
 
@@ -118,11 +127,20 @@ Operating since the late 19th century in Buffalo, Wyoming, the Occidental Hotel 
 #location
 The Historic Occidental Hotel is located on Main Street in Buffalo, Wyoming.
 
+#proposed-coordinates
+44.3480865, -106.699287
+
 #upstream-source
 None.
 
 #reference
 https://cowboystatedaily.com/2023/09/16/at-wyomings-historic-occidental-hotel-the-ghost-get-into-bed-with-you/
+
+#coordinates
+44.34704, -106.69911
+
+#tags
+ghost
 
 ---
 
@@ -137,6 +155,9 @@ Operating since 1880, the Occidental Hotel in Buffalo, Wyoming, has accumulated 
 
 #location
 The Historic Occidental Hotel is located at 10 N Main St, Buffalo, Wyoming.
+
+#proposed-coordinates
+44.34701128958, -106.698906436304
 
 #upstream-source
 None.
@@ -157,6 +178,9 @@ Fort Laramie, established as a major fur trading post and military garrison on t
 
 #location
 Fort Laramie National Historic Site is situated at the confluence of the Laramie and North Platte rivers in Goshen County, southeastern Wyoming.
+
+#proposed-coordinates
+41.3116442, -105.5917876
 
 #upstream-source
 None.

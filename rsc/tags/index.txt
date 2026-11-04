@@ -71,6 +71,7 @@ giants-grave
 grave
 gravity-hill
 grid
+haunted-doll
 haunted-road
 haunted-stay
 haunting
@@ -138,6 +139,7 @@ sacrificial-stone
 saint
 sanctuary-stone
 scratch-dial
+screaming-skull
 sea-monster
 settlement
 sheela-na-gig

@@ -10,6 +10,9 @@ In 1987, the Gloucestershire Earth Mysteries group launched an investigation int
 #location
 Bowl Hill rises directly above the hamlet of Little London near Stroud and Rodborough in Gloucestershire.
 
+#proposed-coordinates
+51.7288315, -2.2277058
+
 #upstream-source
 Jo-Anne Wilder, 3rd Stone (Issue 23)
 

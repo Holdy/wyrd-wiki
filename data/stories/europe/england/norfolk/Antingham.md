@@ -10,6 +10,9 @@ In the Norfolk village of Antingham, visitors have long been intrigued by the pr
 #location
 St Mary's and St Margaret's churches share a single churchyard off Church Lane in the village of Antingham, Norfolk (NR28 0NL).
 
+#proposed-coordinates
+52.8449099, 1.3412865
+
 #upstream-source
 Bryant (recorded around 1900); referenced in parish and architectural histories.
 

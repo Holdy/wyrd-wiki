@@ -10,6 +10,9 @@ According to local legend, Queen Isabella—infamously known as the "She-Wolf of
 #location
 Castle Rising Castle is a 12th-century medieval fortress situated in the village of Castle Rising, just north of King's Lynn in Norfolk, England.
 
+#proposed-coordinates
+52.7929011, 0.4689342
+
 #upstream-source
 None.
 
@@ -81,6 +84,9 @@ Following decades spent residing at Castle Rising in Norfolk, Queen Isabella's s
 
 #location
 The White Room on the upper floor of Castle Rising Castle in the village of Castle Rising, Norfolk.
+
+#proposed-coordinates
+52.7929011, 0.4689342
 
 #upstream-source
 None.

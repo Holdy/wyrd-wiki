@@ -41,3 +41,9 @@ Jarvis, Dale. *Haunted Shores: True Ghost Stories of Newfoundland and Labrador*.
 
 #reference
 https://nfldherald.com/ghost-islands/
+
+#coordinates
+47.54409, -53.01521
+
+#tags
+approx,ghost,pirate

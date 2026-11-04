@@ -12,6 +12,9 @@ Seeking answers to his troubled conscience and his forbidden romance with Sarah 
 #location
 The Chequers pub and the surrounding historic village of Gissing lie in the South Norfolk district, approximately five miles north-east of Diss.
 
+#proposed-coordinates
+52.492, 1.2312
+
 #upstream-source
 *Reminiscences of the late William Garrard*, compiled by R.A. Barber (privately published, 1874).
 

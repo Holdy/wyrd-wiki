@@ -10,6 +10,9 @@ On August 16, 1660, William Harrison, an estate steward and rent collector in Ch
 #location
 Chipping Campden High Street is located in the Cotswold district of Gloucestershire, England, where William Harrison lived and ultimately returned after his disappearance.
 
+#proposed-coordinates
+51.8451681, -1.8913308
+
 #upstream-source
 _A true and perfect account of the examination, confession, trial, condemnation and execution of Joan Perry, and her two sons, John and Richard Perry, for the supposed murder of William Harrison_ by Sir Thomas Overbury.
 
@@ -29,6 +32,9 @@ In August 1660, seventy-year-old William Harrison, steward of the manor in Chipp
 
 #location
 The banqueting houses of old Campden House and the parish church in Chipping Campden, Gloucestershire, as well as Broadway Hill.
+
+#proposed-coordinates
+52.0241813, -1.8355336
 
 #upstream-source
 _The Campden Wonder_, edited by Sir George Clark.

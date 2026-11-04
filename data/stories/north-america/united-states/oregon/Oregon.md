@@ -10,6 +10,9 @@ The legend of the Bandage Man centers around a phantom wrapped from head to toe 
 #location
 Highway 101 between the Highway 26 junction and the northern entrance to Cannon Beach, Oregon.
 
+#proposed-coordinates
+45.8900275, -123.9618623
+
 #upstream-source
 Mike Helm, *Oregon’s Ghosts and Monsters*; Debbi Gentling, *The Bandage Man: A Cannon Beach Legend* (1974 folklore paper).
 
@@ -29,6 +32,9 @@ Opened in 1889 as the Hotel Warshauer and later renamed by Swiss immigrant Alber
 
 #location
 The Geiser Grand Hotel is situated at 1996 Main Street in downtown Baker City, Oregon.
+
+#proposed-coordinates
+44.777083020259, -117.829736662145
 
 #upstream-source
 None.
@@ -200,6 +206,9 @@ Opened in 1905 by Polish immigrants, the White Eagle operated on multiple levels
 #location
 The White Eagle Saloon is located at 836 N Russell Street in Portland's Mississippi District.
 
+#proposed-coordinates
+45.5408909, -122.675451
+
 #upstream-source
 None.
 
@@ -248,6 +257,9 @@ Built in 1878 next to an earlier log cabin, the Italianate-style house belonged 
 
 #location
 The Helms House is located on South Orange Street in Jacksonville, Oregon.
+
+#proposed-coordinates
+42.3219157, -122.8814016
 
 #upstream-source
 Historic Jacksonville Inc. and articles by Terrie Claflin in The Mail Tribune and Dennis McCarthy in The Sunday Oregonian.

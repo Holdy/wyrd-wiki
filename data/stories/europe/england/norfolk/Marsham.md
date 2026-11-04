@@ -10,6 +10,9 @@ In local tradition recorded by folklorists, the ancient earthworks and pits loca
 #location
 Marsham Pits, situated within the parish of Marsham, Norfolk.
 
+#proposed-coordinates
+52.7673307, 1.2435196
+
 #upstream-source
 W. B. Gerish, *Norfolk Folklore* (unpublished manuscript, 1892).
 

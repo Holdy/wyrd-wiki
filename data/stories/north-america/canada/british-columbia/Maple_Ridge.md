@@ -11,7 +11,7 @@ Local ghost hunters exploring the wooded paths along Kanaka Creek received accou
 The Kanaka Creek Trail is located within Kanaka Creek Regional Park in Maple Ridge, British Columbia.
 
 #proposed-coordinates
-49.220000000000006, -122.59888899999999
+49.2107057, -122.5207703
 
 #upstream-source
 None.
@@ -34,7 +34,7 @@ Local historical research into the Billy Miner Pub revealed that the property is
 The Billy Miner Pub is located at 22330 Lougheed Highway in Maple Ridge, British Columbia.
 
 #proposed-coordinates
-49.220000000000006, -122.59888899999999
+49.1737375, -122.4391294
 
 #upstream-source
 None.
@@ -57,7 +57,7 @@ The Victorian-era Haney House, which was inhabited by the Haney family for decad
 Haney House is located at 11612 224th Street in Maple Ridge, British Columbia.
 
 #proposed-coordinates
-49.220000000000006, -122.59888899999999
+49.213106, -122.6020641
 
 #upstream-source
 None.

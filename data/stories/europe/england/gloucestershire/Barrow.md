@@ -10,6 +10,9 @@ Perched high on the Cotswold escarpment in Gloucestershire, the Neolithic Nympsf
 #location
 Nympsfield Long Barrow, situated on the ridge of the Cotswold escarpment close to the village of Nympsfield in Gloucestershire.
 
+#proposed-coordinates
+51.7102589, -2.2996403
+
 #upstream-source
 None.
 

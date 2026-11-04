@@ -10,6 +10,9 @@ During the English Civil War, Colonel Nathaniel Stephens served as Lord of the M
 #location
 Chavenage House is a late-16th-century country house located in the civil parish of Beverston, near Tetbury in Gloucestershire.
 
+#proposed-coordinates
+51.6553674, -2.1864299
+
 #upstream-source
 Rev. R. W. Huntley, *Chavenage* (1845 poem).
 

@@ -10,6 +10,9 @@ In 1789, John Flaxman, sexton of North Walsham parish, penned a confidential acc
 #location
 St. Nicholas Parish Church and churchyard in the market town of North Walsham, Norfolk.
 
+#proposed-coordinates
+52.8213308, 1.3861979
+
 #upstream-source
 Originally contributed to the *Eastern Daily Press* on May 19, 1889, from the manuscript "The Confessions of John Flaxman, Sexton to the Parish of North Walsham, May 5th 1789."
 

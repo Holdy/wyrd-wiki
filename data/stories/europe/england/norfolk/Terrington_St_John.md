@@ -10,6 +10,9 @@ According to local tradition and historical records, the Norfolk fenland hero an
 #location
 The stone cross known as 'Hickathrift's Candlestick' stands just outside the north door of the Church of St John the Baptist in Terrington St John, Norfolk.
 
+#proposed-coordinates
+52.7038884, 0.2669608
+
 #upstream-source
 17th- and 18th-century chap-books (*The History of Tom Hickathrift*), as well as works cited by historians and antiquaries including John Weever's *Ancient Funerall Monuments* (1631), Sir William Dugdale's *History of Imbanking and Draining* (1662), Francis Blomefield's *History of Norfolk* (1808), Miller and Skertchly (1878), Jonathon Peckover (1879), and Edward A. Hillen (1891).
 

@@ -10,6 +10,9 @@ Sir Humphrey Kynaston, a notorious 16th-century Shropshire highwayman living as 
 #location
 Montford Bridge crosses the River Severn along the B5061 in the parish of Montford, Shropshire.
 
+#proposed-coordinates
+52.732, -2.842
+
 #upstream-source
 Charlotte Sophia Burne and Georgina Frederica Jackson, 1883, A Sheaf of Gleanings, Trübner and Co.
 

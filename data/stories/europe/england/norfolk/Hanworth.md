@@ -10,6 +10,9 @@ Though frequently linked in popular lore to the neighboring town of North Walsha
 #location
 White Post Lane in Hanworth, Norfolk.
 
+#proposed-coordinates
+52.8716945, 1.2583147
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ Hannah Whitepost is a restless spirit said to haunt White Post Lane in the villa
 
 #location
 White Post Lane and the adjacent common land known as Hannah's Common in the village of Hanworth, Norfolk.
+
+#proposed-coordinates
+52.8716945, 1.2583147
 
 #upstream-source
 None.

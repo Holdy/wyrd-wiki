@@ -10,6 +10,9 @@ As the local doctor in nearby Berkeley, Edward Jenner fell deeply in love with C
 #location
 Kingscote Church is situated within the historic parish of Kingscote and Bagpath in the Cotswold district of Gloucestershire.
 
+#proposed-coordinates
+51.6525435, -2.2808498
+
 #upstream-source
 None.
 

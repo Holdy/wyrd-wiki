@@ -10,6 +10,9 @@ According to local memory recorded in William R. Lebbell's *A Little History of 
 #location
 The wooden shack stood on the south side of Penhill Road, just off the track leading to Homelea Farm in Great Ellingham, Norfolk.
 
+#proposed-coordinates
+52.5254103, 0.9669571
+
 #upstream-source
 Lebbell, W.R. & Fay, S., A Little History of Great Ellingham.
 

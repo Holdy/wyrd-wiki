@@ -10,6 +10,9 @@ Local tradition and historical folklore accounts record that a strange hole of u
 #location
 The key location is situated in a field beside the road connecting Bawdeswell and Swanton Morley in Norfolk.
 
+#proposed-coordinates
+52.7080482, 0.981583
+
 #upstream-source
 Michael Sidney Tyler-Whittle, 'Witchcraft', East Anglian Magazine (October 1952).
 

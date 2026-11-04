@@ -10,6 +10,9 @@ In 1682, Thomas Wharton (later the 1st Marquess of Wharton), renowned across the
 #location
 St Mary's Church stands in the village of Great Barrington, Gloucestershire, situated on the north slopes of the Windrush Valley just off the A40.
 
+#proposed-coordinates
+51.7905853, -1.5055202
+
 #upstream-source
 None.
 

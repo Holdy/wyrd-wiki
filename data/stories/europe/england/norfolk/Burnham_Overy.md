@@ -10,6 +10,9 @@ Sent away from her foster home to recover from an illness, young Anna arrives in
 #location
 The Marsh House, a distinctive building with blue windows situated on the salt marshes of Burnham Overy Staithe in Norfolk.
 
+#proposed-coordinates
+52.9642128, 0.7439615
+
 #upstream-source
 Joan G. Robinson, When Marnie Was There (1967)
 

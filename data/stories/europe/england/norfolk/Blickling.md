@@ -36,6 +36,9 @@ After Sir Henry Hobart died from wounds sustained in a late 17th-century duel, h
 #location
 The south-east turret of Blickling Hall is situated within the Blickling Estate, located just north of Aylsham in Norfolk, England.
 
+#proposed-coordinates
+52.811735, 1.2317081
+
 #upstream-source
 F. J. Meyrick, *Round About Norfolk and Suffolk* (1926) (referencing records also cited in Peter Tolhurst, *This Hollow Land: Aspects of Norfolk Folklore*).
 
@@ -59,6 +62,9 @@ After Sir Henry Hobart died following a duel in 1698, his burial at Blickling ch
 #location
 Blickling Hall, situated in the village of Blickling near Aylsham in north Norfolk.
 
+#proposed-coordinates
+52.811735, 1.2317081
+
 #upstream-source
 F. J. Meyrick, *Round About Norfolk and Suffolk* (1926).
 
@@ -78,6 +84,9 @@ Every year on May 19th, the anniversary of her execution in 1536, the spirit of 
 
 #location
 Blickling Hall is a historic stately home and estate located in the village of Blickling, just north of Aylsham in Norfolk, United Kingdom (NR11 6NF).
+
+#proposed-coordinates
+52.811735, 1.2317081
 
 #upstream-source
 None.
@@ -101,6 +110,9 @@ Anne Boleyn, the second wife of King Henry VIII, was born at Blickling Hall in N
 
 #location
 Blickling Hall, situated near Aylsham in Norfolk, UK.
+
+#proposed-coordinates
+52.811735, 1.2317081
 
 #upstream-source
 Alison Weir, The Lady in the Tower (Random House, 2009).

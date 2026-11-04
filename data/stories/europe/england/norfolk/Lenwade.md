@@ -10,6 +10,9 @@ In the final decade of the nineteenth century, residents of the rural Norfolk co
 #location
 The rural lanes and byways connecting Lenwade, Lyng, and Attlebridge in Norfolk, England.
 
+#proposed-coordinates
+52.7079487, 1.1507469
+
 #upstream-source
 None.
 

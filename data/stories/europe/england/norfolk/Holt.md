@@ -10,6 +10,9 @@ In the town of Holt in Norfolk, a longstanding piece of local folklore recounts 
 #location
 The spring is located on the western edge of Spout Common (TG075387) in Holt, Norfolk.
 
+#proposed-coordinates
+52.906082, 1.084843
+
 #upstream-source
 Enid Porter: 'Folklore of East Anglia' (Batsford, 1974), p.129-30.
 
@@ -29,6 +32,9 @@ A man and his wife were driving to his mother's home in Holt when a strange enti
 
 #location
 The encounter took place near the Tithe Barn on the borders of Letheringsett and Holt, just before the old Holt Rectory in Norfolk.
+
+#proposed-coordinates
+52.9054382, 1.0928322
 
 #upstream-source
 None.

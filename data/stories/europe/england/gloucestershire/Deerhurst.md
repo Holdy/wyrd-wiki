@@ -10,6 +10,9 @@ According to local tradition recorded by early historians, a massive dragon or s
 #location
 Walton Hill lies just to the east of Deerhurst parish and north-west of Walton Farm in Gloucestershire.
 
+#proposed-coordinates
+52.8500006, -2.2098303
+
 #upstream-source
 Originally recorded by the 17th-century Gloucestershire historian Robert Atkyns in 1712, and later detailed by Rev. George Butterworth in *Deerhurst: a Parish in the Vale of Gloucester* (Tewkesbury 1887).
 

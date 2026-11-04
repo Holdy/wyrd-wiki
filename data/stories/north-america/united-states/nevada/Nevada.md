@@ -36,6 +36,9 @@ During the height of the gold mining boom in Nevada, the luxurious Goldfield Hot
 #location
 The Goldfield Hotel is located at the intersection of 4th Avenue and Crook Avenue in Goldfield, Nevada.
 
+#proposed-coordinates
+37.7080476, -117.2355902
+
 #upstream-source
 None.
 
@@ -55,6 +58,9 @@ Constructed in 1859 in Virginia City, Nevada, the Mackay Mansion served as the h
 
 #location
 The Mackay Mansion is located at 291 S. C Street in Virginia City, Nevada.
+
+#proposed-coordinates
+39.314800475328, -119.648025473815
 
 #upstream-source
 None.
@@ -76,6 +82,9 @@ Opened in 1907 during Tonopah's silver mining boom, the Mizpah Hotel is widely c
 #location
 The Mizpah Hotel is located at 100 N. Main Street in Tonopah, Nye County, Nevada.
 
+#proposed-coordinates
+38.3544843, -116.406961
+
 #upstream-source
 None.
 
@@ -95,6 +104,9 @@ Opened in 1907 in the thriving silver mining boomtown of Tonopah, Nevada, the Mi
 
 #location
 The historic Mizpah Hotel, located at 100 North Main Street in Tonopah, Nevada.
+
+#proposed-coordinates
+38.067718984312, -117.230552736541
 
 #upstream-source
 None.
@@ -116,11 +128,20 @@ Opened in 1907 in the silver mining hub of Tonopah, Nevada, the Mizpah Hotel was
 #location
 The Mizpah Hotel is located at 100 N. Main Street in Tonopah, Nevada.
 
+#proposed-coordinates
+38.067718984312, -117.230552736541
+
 #upstream-source
 None.
 
 #reference
 https://moonmausoleum.com/the-lady-in-red-haunting-the-mizpah-hotel/
+
+#coordinates
+38.06829, -117.23086
+
+#tags
+ghost,red-lady
 
 ---
 
@@ -135,6 +156,9 @@ Founded in 1875 on B Street and later relocated to C Street after a devastating 
 
 #location
 The Washoe Club Haunted Museum and Saloon is located at 112 N. C Street in Virginia City, Storey County, Nevada.
+
+#proposed-coordinates
+39.3108133, -119.649517
 
 #upstream-source
 None.
@@ -156,6 +180,9 @@ Built in 1908 as a pinnacle of luxury in the Nevada desert, the Goldfield Hotel 
 #location
 The Goldfield Hotel is located on U.S. Route 95 in the historic ghost town of Goldfield, Esmeralda County, Nevada.
 
+#proposed-coordinates
+37.7080476, -117.2355902
+
 #upstream-source
 None.
 
@@ -176,8 +203,14 @@ Built in 1908 during Nevada’s gold rush, the luxury Goldfield Hotel eventually
 #location
 The Goldfield Hotel stands on Main Street in the historic mining ghost town of Goldfield, Nevada.
 
+#proposed-coordinates
+37.7080476, -117.2355902
+
 #upstream-source
 None.
 
 #reference
 https://www.legendsofamerica.com/nv-goldfieldhotel/
+
+#tags
+ghost

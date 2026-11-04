@@ -19,6 +19,12 @@ None.
 #reference
 https://www.paultilley.ca/our-town-clarenville/clarenville-ghost-stories
 
+#coordinates
+48.18357989071121, -53.9713410442216
+
+#tags
+approx,tragedy
+
 ---
 
 #title
@@ -41,3 +47,6 @@ None.
 
 #reference
 https://www.paultilley.ca/our-town-clarenville/clarenville-ghost-stories
+
+#tags
+duplicate

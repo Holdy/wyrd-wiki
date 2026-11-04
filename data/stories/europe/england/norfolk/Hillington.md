@@ -10,6 +10,9 @@ Standing on Lynn Road in Hillington, the Ffolkes Arms is a venerable 300-year-ol
 #location
 The Ffolkes (formerly the Ffolkes Arms) is a historic coaching inn situated on Lynn Road in the village of Hillington, Norfolk.
 
+#proposed-coordinates
+52.8002741, 0.5457733
+
 #upstream-source
 None.
 
@@ -29,6 +32,9 @@ The Ffolkes in Hillington has long been renowned for paranormal activity, most f
 
 #location
 The story takes place at The Ffolkes hotel and public house situated on Lynn Road in the village of Hillington, Norfolk (PE31 6BJ).
+
+#proposed-coordinates
+52.7959877, 0.5274266
 
 #upstream-source
 None.

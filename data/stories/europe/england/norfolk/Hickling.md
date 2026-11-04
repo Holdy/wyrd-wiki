@@ -10,6 +10,9 @@ In the winter of 1815, shortly before the Battle of Waterloo, a poor young drumm
 #location
 Hickling Broad, a large expanse of water in the Norfolk Broads near the village of Hickling, Norfolk.
 
+#proposed-coordinates
+52.7389239, 1.5763728
+
 #upstream-source
 Ernest Suffling, *History and Legends of the Broad District*
 
