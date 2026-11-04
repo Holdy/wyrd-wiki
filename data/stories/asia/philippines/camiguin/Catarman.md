@@ -18,3 +18,6 @@ https://www.abs-cbn.com/lifestyle/classified-odd/05/27/15/look-image-mary-cries-
 
 #tags
 weeping-statue
+
+#coordinates
+9.119111236454323, 124.79828520533296

@@ -18,3 +18,6 @@ https://en.wikipedia.org/wiki/Our_Lady_of_Akita
 
 #tags
 weeping-statue
+
+#coordinates
+39.75966574665778, 140.14988496169693

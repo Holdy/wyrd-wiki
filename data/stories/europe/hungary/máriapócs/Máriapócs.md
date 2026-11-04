@@ -18,3 +18,6 @@ https://cnewa.org/magazine/hungarys-weeping-icon-of-mariapocs-30770/
 
 #tags
 weeping-statue
+
+#coordinates
+47.878234098124366, 22.023865822002634

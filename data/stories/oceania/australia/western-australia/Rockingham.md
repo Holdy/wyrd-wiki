@@ -18,3 +18,6 @@ https://catholicleader.com.au/news/miracle-claim-from-weeping-statue_38345/
 
 #tags
 weeping-statue
+
+#coordinates
+-32.28530147764337, 115.73176728001322

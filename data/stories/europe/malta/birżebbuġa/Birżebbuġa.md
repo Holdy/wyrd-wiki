@@ -18,3 +18,6 @@ https://en.wikipedia.org/wiki/Weeping_statue
 
 #tags
 weeping-statue
+
+#coordinates
+35.831217434727876, 14.52893790768502

@@ -17,4 +17,4 @@ None.
 https://news.bbc.co.uk/1/hi/world/south_asia/2775461.stm
 
 #tags
-weeping-statue
+skip

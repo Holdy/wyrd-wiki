@@ -17,4 +17,4 @@ None.
 https://archpitt.org/carpathian-miraculous-icons-the-weeping-icon-of-klokochovo/
 
 #tags
-weeping-statue
+weeping-statue,pinless

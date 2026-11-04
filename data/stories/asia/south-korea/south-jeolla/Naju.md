@@ -18,3 +18,6 @@ https://www.ucanews.com/news/korean-catholics-warned-over-naju-marian-apparition
 
 #tags
 weeping-statue
+
+#coordinates
+35.03179, 126.71121

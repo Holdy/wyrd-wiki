@@ -17,4 +17,7 @@ None.
 https://www.lagazzettadelmezzogiorno.it/news/lecce/1241554/la-madonna-piange-sangue-preghiere-intorno-alla-statua-a-carmiano.html
 
 #tags
-weeping-statue
+weeping-statue, approx
+
+#coordinates
+40.340518186466895, 18.04539012738559

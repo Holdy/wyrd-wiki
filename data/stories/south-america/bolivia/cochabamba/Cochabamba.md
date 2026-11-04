@@ -17,4 +17,4 @@ None.
 https://www.catholicnewsagency.com/news/bolivian-bishops-cautiously-investigate-bleeding-statue-of-christ
 
 #tags
-weeping-statue
+skip

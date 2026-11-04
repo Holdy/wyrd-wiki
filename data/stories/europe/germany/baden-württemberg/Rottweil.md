@@ -18,3 +18,6 @@ https://en.wikipedia.org/wiki/Our_Lady_of_the_Turning_Eyes
 
 #tags
 weeping-statue
+
+#coordinates
+48.168178831235736, 8.624479244872191

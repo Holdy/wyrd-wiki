@@ -18,3 +18,6 @@ https://www.lcsun-news.com/story/news/local/new-mexico/2018/09/04/virgin-mary-st
 
 #tags
 weeping-statue
+
+#coordinates
+32.69161, -103.12906

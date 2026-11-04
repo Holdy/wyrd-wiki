@@ -18,3 +18,6 @@ https://www.catholicnewsagency.com/news/5498/diocese-asked-to-look-into-alleged-
 
 #tags
 weeping-statue
+
+#coordinates
+38.49662084516328, -121.40528287201273

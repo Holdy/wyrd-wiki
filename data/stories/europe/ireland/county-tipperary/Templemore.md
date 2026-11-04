@@ -17,4 +17,4 @@ None.
 https://en.wikipedia.org/wiki/Templemore_apparitions
 
 #tags
-weeping-statue
+weeping-statue, pinless

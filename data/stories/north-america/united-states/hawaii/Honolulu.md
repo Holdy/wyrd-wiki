@@ -17,4 +17,4 @@ None.
 https://civilbeat.org/2019/12/how-a-wonderworking-icon-helped-revive-an-oahu-russian-orthodox-church/
 
 #tags
-weeping-statue
+weeping-statue,invalid

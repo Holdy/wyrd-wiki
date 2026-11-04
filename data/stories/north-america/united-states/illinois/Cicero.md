@@ -18,3 +18,6 @@ https://orthochristian.com/70303.html
 
 #tags
 weeping-statue
+
+#coordinates
+41.86475876696257, -87.77551615925766

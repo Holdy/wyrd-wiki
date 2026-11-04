@@ -17,4 +17,4 @@ None.
 https://en.wikipedia.org/wiki/Our_Lady_of_Soufanieh
 
 #tags
-weeping-statue
+weeping-statue,pinless

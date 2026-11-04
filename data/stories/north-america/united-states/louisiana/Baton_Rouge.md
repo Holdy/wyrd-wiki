@@ -17,4 +17,4 @@ None.
 https://www.wafb.com/story/18967671/witness-mother-mary-statue-bleeds-in-baton-rouge/
 
 #tags
-weeping-statue
+weeping-statue,pinless

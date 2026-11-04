@@ -17,4 +17,4 @@ None.
 https://en.wikipedia.org/wiki/Weeping_statue
 
 #tags
-weeping-statue
+weeping-statue,pinless

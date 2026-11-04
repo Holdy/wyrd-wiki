@@ -17,4 +17,4 @@ None.
 https://orthochristian.com/49583.html
 
 #tags
-weeping-statue
+weeping-statue, pinless

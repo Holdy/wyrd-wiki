@@ -18,3 +18,6 @@ https://irishcatholic.com/the-irish-weeping-madonna-the-sacred-bond-between-hung
 
 #tags
 weeping-statue
+
+#coordinates
+47.68891062547291, 17.631036618645666
