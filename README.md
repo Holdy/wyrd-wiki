@@ -170,7 +170,7 @@ These options exist only in this site's copy of `rsc/js/triangles.js`, not in th
 
 ### The Hat Man address
 
-A test: a missing address with the words "hat" and "man" in it (or "hatman") is put right by the flyer (`fixAddress()` in `rsc/js/site.js`). About 1.5 seconds after the 404 page shows, it flies straight up off the page at its normal speed, then appears in the address bar as a `◆` after the address, deletes the path a character at a time with `history.replaceState`, types `/mirabilia/apparitions/hat-man` and goes there. With reduced motion it goes there at once. Browsers that hide the path (Safari by default) show only the final page.
+A test: a missing address with the words "hat" and "man" in it (or "hatman") is put right by the flyer (`fixAddress()` in `rsc/js/site.js`). About 1.5 seconds after the 404 page's title is finished, it flies straight up off the page at its normal speed, then appears in the address bar as a `◆` after the address, deletes the path a character at a time with `history.replaceState`, types `/mirabilia/apparitions/hat-man`, and swaps the page in as a link does. The flyer then comes back down to its place once the new title is finished. With reduced motion it goes there at once. Browsers that hide the path (Safari by default) show only the final page.
 
 ### Spelling corrections
 

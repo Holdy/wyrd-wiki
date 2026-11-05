@@ -140,6 +140,7 @@
       if (after) after.then(write); else write();
     }).catch(function () {
       (rest.querySelector(".lines") || rest).textContent = text;     // the module could not load
+      rest.noPen = true;
       h1.classList.remove("pending");
     });
   }
@@ -1115,6 +1116,7 @@
         return;
       }
       if (!sprite.t0) sprite.t0 = now;
+      if (!titleWritten()) return;     // it never sets off until the page's title is finished
       if (sprite.click && sprite.click.isConnected) {     // a link to press: straight off to it
         sprite.t0 = 0;
         launch();
@@ -1201,6 +1203,12 @@
     });
   }
 
+  // Has the pen finished the title of the page showing?
+  function titleWritten() {
+    var rest = (viewEl.hidden ? homeEl : viewEl).querySelector("h1 .rest");
+    return !!rest && (rest.noPen || !!(rest.quill && rest.quill.ready));
+  }
+
   function startSprite() {
     sprite.nextAct = Math.floor(Math.random() * ACTIVITIES.length);     // begin anywhere in the round, then go round in order
     gems().forEach(function (g, i) { g.spot = i; });
@@ -1263,9 +1271,10 @@
 
   // A little test: a missing address with the words "hat" and "man" in it is put right by the flyer. It flies straight up
   // off the page and turns up in the browser's address bar as a diamond after the address, deletes the path a
-  // character at a time (the hostname can't be touched), types the right one and goes there.
+  // character at a time (the hostname can't be touched), types the right one and swaps the page in, as a link does.
   var HAT_MAN = "/mirabilia/apparitions/hat-man";
-  var EXIT_AFTER = 1500;            // ms the page is shown before the flyer leaves
+  var HAT_MAN_TITLE = "The Hat Man";
+  var EXIT_AFTER = 1500;            // ms after the title is finished before the flyer leaves
   var ADDRESS_STEP = 70;            // ms per character deleted or typed in the address bar
   var ADDRESS_PAUSE = 500;          // ms it waits before deleting, between deleting and typing, and before going there
   function meansHatMan(address) {
@@ -1275,31 +1284,57 @@
   function fixAddress() {
     if (!meansHatMan(location.pathname)) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return location.replace(HAT_MAN);
-    setTimeout(function () {
-      if (!sprite.el) return location.replace(HAT_MAN);
-      clearTimeout(sprite.drawTimer);
-      sprite.queue = [];
-      if (sprite.mode === "edit") endEdit(false);
-      sprite.onGone = function () { retypeAddress(HAT_MAN); };
-      sprite.mode = "exit";
-    }, EXIT_AFTER);
+    whenTitleWritten(function () {
+      setTimeout(function () {
+        if (!meansHatMan(location.pathname)) return;
+        if (!sprite.el) return location.replace(HAT_MAN);
+        clearTimeout(sprite.drawTimer);
+        sprite.queue = [];
+        if (sprite.mode === "edit") endEdit(false);
+        sprite.flying = sprite.mode !== "rest" && sprite.mode !== "hold";
+        sprite.onGone = function () { retypeAddress(HAT_MAN); };
+        sprite.mode = "exit";
+      }, EXIT_AFTER);
+    });
+  }
+  function whenTitleWritten(fn) {
+    if (titleWritten()) fn();
+    else setTimeout(function () { whenTitleWritten(fn); }, 100);
+  }
+  // The page stays, so once the title is finished the flyer comes back down from the top to its place in the row.
+  function comeBack() {
+    whenTitleWritten(function () {
+      var x = sprite.x;
+      if (!sprite.flying) launch();    // it left from the row: that took a place there, as any flight does
+      sprite.x = x;
+      sprite.y = -40;
+      sprite.heading = Math.PI / 2;
+      if (window.dustFlyer) window.dustFlyer.reset();    // that jump is not movement
+      goHome();
+    });
   }
   function retypeAddress(to) {
     var text = location.pathname, shown;
     function show() {                 // false if the visitor has gone somewhere else, or the browser won't have it
-      if (shown && location.pathname !== shown) return false;
+      if (shown && location.pathname !== shown) { comeBack(); return false; }
       try { history.replaceState(history.state, "", text + "\u25C6"); } catch (e) { location.replace(to); return false; }
       shown = location.pathname;
       return true;
     }
     function step(fn, ms) { setTimeout(function () { fn(); }, ms); }
+    function arrive() {               // as following a link: the content is swapped
+      leave(HAT_MAN_TITLE);
+      history.replaceState(history.state, "", to);
+      route().then(comeBack);
+      window.scrollTo(0, 0);
+    }
     function erase() {
       if (text.length <= 1) return step(type, ADDRESS_PAUSE);
       text = text.slice(0, -1);
       if (show()) step(erase, ADDRESS_STEP);
     }
     function type() {
-      if (text === to) return step(function () { if (show()) location.replace(to); }, ADDRESS_PAUSE);
+      if (text === to) return step(function () { if (show()) arrive(); }, ADDRESS_PAUSE);
       text = to.slice(0, text.length + 1);
       if (show()) step(type, ADDRESS_STEP);
     }
