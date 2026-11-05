@@ -1,6 +1,6 @@
 # The development server: python's http.server, but telling the browser to check every file each time it is used,
 # so an edited script (even one loaded later with import(), which a hard reload doesn't refetch) is always the new one.
-# Like GitHub Pages, it serves foo.html for /foo and 404.html for anything missing.
+# Like GitHub Pages, it serves docs/, with foo.html for /foo and 404.html for anything missing.
 import http.server
 import os
 import sys
@@ -30,5 +30,6 @@ class NoCache(http.server.SimpleHTTPRequestHandler):
             self.wfile.write(body)
 
 
+os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "docs"))
 port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
 http.server.ThreadingHTTPServer(("", port), NoCache).serve_forever()

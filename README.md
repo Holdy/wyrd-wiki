@@ -9,13 +9,14 @@ It is a static site (plain HTML, CSS and JavaScript), meant for GitHub Pages. Ev
 npm run server        # python's http.server without caching (tools/serve.py), then open http://localhost:8000/
 ```
 
-The pages use addresses from the top of the site (`/js/site.js`), so they must be opened through a server. The server does what GitHub Pages does: it serves `foo.html` for `/foo`, and `404.html` for anything missing. How the filing works is in [filing-scheme.md](filing-scheme.md).
+The pages use addresses from the top of the site (`/rsc/js/site.js`), so they must be opened through a server. The server does what GitHub Pages does: it serves `foo.html` for `/foo`, and `404.html` for anything missing. How the filing works is in [filing-scheme.md](filing-scheme.md).
 
 ## Publishing
 
-The site is served by GitHub Pages from the `main` branch, at the root, at **https://wyrd.wiki** (repo `Holdy/wyrd-wiki`). Pushing to `main` publishes it within a minute or two.
+The site is served by GitHub Pages from the `main` branch, from `docs/`, at **https://wyrd.wiki** (repo `Holdy/wyrd-wiki`). Pushing to `main` publishes it within a minute or two.
 
-- `CNAME` holds the custom domain and `.nojekyll` stops GitHub processing the files, so keep both.
+- `docs/` holds everything that is published. Paths in this file are from there, except `tools/`, which stays at the top.
+- `CNAME` holds the custom domain and `.nojekyll` stops GitHub processing the files, so keep both in `docs/`.
 - DNS is at GoDaddy: four A records for `@` (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`) and the default `www` CNAME to `wyrd.wiki`. "Enforce HTTPS" is on.
 - Not done yet: verifying the domain in GitHub (Settings → Pages, account level, a TXT record), which stops anyone else claiming it on Pages.
 - The `origin` remote is SSH, and the SSH key on this machine belongs to a different GitHub account than the repo's owner, so pushes have been made over HTTPS with the `gh` login: `git -c credential.helper='!gh auth git-credential' push https://github.com/Holdy/wyrd-wiki.git main`.
@@ -26,19 +27,19 @@ The site is served by GitHub Pages from the `main` branch, at the root, at **htt
 | --- | --- |
 | `index.html`, `404.html` | The home page and the page for anything missing. **Generated:** edit the template in `tools/import-stories.ts`, not these |
 | `rsc/site.css` | The styles for every page |
-| `js/head.js` | Runs before the first paint: hides the plain page until it is redrawn, and applies saved options |
-| `js/site.js` | Draws every page: navigation, titles, circles, spelling corrections and the flyer |
-| `js/dust.js` | The dust |
-| `js/triangles.js` | Renderer for the triangle drawings, copied from the triangle-evolution project and extended here (the `animateIn` options below) |
+| `rsc/js/bootstrap.js` | The only script a page names. Runs before the first paint: hides the plain page until it is redrawn, applies saved options, and writes in the fonts, the filter, the paper and dust layers and the other scripts |
+| `rsc/js/site.js` | Draws every page: navigation, titles, circles, spelling corrections and the flyer |
+| `rsc/js/dust.js` | The dust |
+| `rsc/js/triangles.js` | Renderer for the triangle drawings, copied from the triangle-evolution project and extended here (the `animateIn` options below) |
 | `rsc/quill/` | The quill font: its TypeScript source (`src/`, built with `npm run quill`), a demo page, and `word.js`, which draws the rest of each title as pen-written words, one canvas per word, with the real text over them. See its README and "Quill titles" below |
 | `rsc/letters/A.bin` … `Z.bin` | The illuminated letters |
 | `rsc/tags/*.bin` | 182 more drawings, one per tag (witch, ghost-light, …). Shown at the top of the menu for a story |
 | `rsc/tags/index.txt` | The names of those drawings, one per line without `.bin`. **Keep it up to date** whenever a drawing is added, removed or renamed |
-| `data/stories/` | Story pages, place pages and story files, all generated (see below) |
-| `data/spelling.txt` | The word changes the flyer makes to story text (American → British), one `from -> to` per line |
+| `africa/` … `south-america/` | Story pages, place pages and story files, all generated (see below) |
+| `rsc/spelling.txt` | The word changes the flyer makes to story text (American → British), one `from -> to` per line |
 | `W.base64` | The old inline form of the W. No longer used |
 
-The `.bin` files and `js/triangles.js` are copies. When the triangle-evolution project produces new ones, copy them over again (letters go in `rsc/letters/`, the rest in `rsc/tags/`).
+The `.bin` files and `rsc/js/triangles.js` are copies. When the triangle-evolution project produces new ones, copy them over again (letters go in `rsc/letters/`, the rest in `rsc/tags/`).
 
 After changing the files in `rsc/tags/`, regenerate its index from inside that folder:
 
@@ -60,16 +61,16 @@ ls *.bin | sed 's/\.bin$//' > index.txt
 
 | Page | File | Address |
 | --- | --- | --- |
-| Region or country | `data/stories/europe/belgium/index.html` | `/data/stories/europe/belgium/` |
-| Settlement | `data/stories/europe/england/norfolk/norwich/index.html` | `/data/stories/europe/england/norfolk/norwich/` |
-| Story | `data/stories/europe/england/norfolk/old-tom.html` | `/data/stories/europe/england/norfolk/old-tom` |
+| Region or country | `europe/belgium/index.html` | `/europe/belgium/` |
+| Settlement | `europe/england/norfolk/norwich/index.html` | `/europe/england/norfolk/norwich/` |
+| Story | `europe/england/norfolk/old-tom.html` | `/europe/england/norfolk/old-tom` |
 
 - **A settlement's directory holds only its index page.** Its stories sit directly in the region's directory, beside those of the other settlements. A story filed at a country or region goes in that level's directory in the same way.
 - **Story file names** come from the title in lower case. Accented letters become their plain form, and any run of other characters, such as spaces and punctuation, becomes a single `-`. "The Fróðá Wonders" becomes `the-froda-wonders.html`.
 - **When a name is taken** in a directory, the later story is numbered: `old-tom.html` (Thursford), `old-tom-2.html` (Wiveton). A story can't take the name of a place's directory either, so `/norfolk/norwich` can only mean the settlement. The numbers follow the sort order, so a new story can move them.
 - **Links leave off the `.html`.** GitHub Pages serves both forms, so each page has a canonical tag naming the form without it.
 - **Old links** in the `index.html?/europe/...` form have lapsed: they show the home page.
-- **Moving later:** the pages sit under `data/stories/` for now, so a move would change every address.
+- **Old links** under `/data/stories/` have lapsed too: the pages moved to the top of the site, so those addresses show "Nothing found here".
 
 Clicking updates the page without reloading, and the back button works. Unknown places show "Nothing found here" (`404.html`).
 
@@ -77,7 +78,7 @@ Clicking updates the page without reloading, and the back button works. Unknown 
 
 Each file holds its own title, text, menu links and meta description as plain HTML, so Google can read it without running JavaScript. It has no styles or scripts of its own beyond the shared files.
 
-`js/head.js` hides that plain content, `readPage()` in `js/site.js` reads it back, and `render()` draws it with the parchment, quill titles and flyer. Following a link fetches the next page's file and reads it in the same way, so the title can change over without a reload. There are no sitemaps: the links in each page are the navigation, and Google finds pages by following them.
+`rsc/js/bootstrap.js` hides that plain content, `readPage()` in `rsc/js/site.js` reads it back, and `render()` draws it with the parchment, quill titles and flyer. Following a link fetches the next page's file and reads it in the same way, so the title can change over without a reload. There are no sitemaps: the links in each page are the navigation, and Google finds pages by following them.
 
 ### Story files
 
@@ -91,16 +92,17 @@ Stories tagged `skip`, `duplicate` or `invalid` have a `.md` but no `.html`, so 
 
 ### Importing stories
 
-`data/stories` is generated from the research data in the local-llm-agent project (`~/projects/local-llm-agent`, the `*-data-targets/` directories: ghost, witch, hound, devil, curse, …, and `weeping-statue-targets/`, which is named without the `-data`, and `screaming-skull-target-data/`; any directory ending `-targets` or `-target-data` is read, and the subject is its name without that ending). Run
+The continent folders are generated from the research data in the local-llm-agent project (`~/projects/local-llm-agent`, the `*-data-targets/` directories: ghost, witch, hound, devil, curse, …, and `weeping-statue-targets/`, which is named without the `-data`, and `screaming-skull-target-data/`; any directory ending `-targets` or `-target-data` is read, and the subject is its name without that ending). Run
 
 ```
 bun tools/import-stories.ts [--source <dir>] [--dry-run]
 ```
 
-- **Source is the truth.** Every run rebuilds all the story files and pages from the source, and removes any `.md`, `.xml` or `.html` file under `data/stories` that it didn't produce; edit the source files there, not the generated ones. `--dry-run` prints the counts and warnings and writes nothing. Changing the page template in the script means running it again.
+- **Source is the truth.** Every run rebuilds all the story files and pages from the source, and removes any `.md`, `.xml` or `.html` file in the continent folders that it didn't produce; edit the source files there, not the generated ones. `--dry-run` prints the counts and warnings and writes nothing. Changing the page template in the script means running it again.
 - **Filing is by file name only** (the source directory layout differs between subjects and is ignored): `Afghanistan.md` is a country, `Aberdeenshire, UK.md` or `Alabama, USA.md` a region, `Acle,norfolk,uk.md` or `Airdrie, Alberta, Canada.md` a settlement. Region files for the UK are filed under England, Scotland, Wales or Northern Ireland (`UK_REGION_COUNTRY` in the script); countries go under their continent (`COUNTRY_CONTINENT`). A name the script doesn't know is reported as a warning and its stories are skipped, so add it to the lists.
 - **Several subjects, one place:** stories from every subject for the same place are filed together (sorted by title). Identical copies are dropped; two stories with the same title in a place each get a page, the second numbered.
 - **Tags:** `skip`, `duplicate` and `invalid` stories get a `.md` but no page. Everything else (`private`, `pinless`, `approx`, …) is published.
+- **Mirabilia:** the pages under `docs/mirabilia/` are written by hand. Edit the `.md` (with the same `#title`, `#summary`, `#details` and `#tags` sections as a story) and run the import, which makes the `.html` beside it. Its breadcrumbs come from the folders and its menu from the other pages in its folder. Don't edit the `.html`.
 - **Stories filed at a country or region** (such as `Alabama, USA.md`) go in that level's directory. The site shows them in the main area of the country or region's page, under "Tales of <name>" (the menu lists only its places until one of the tales is open, when the other tales join the menu as they do at a place).
 - **A story filed in the wrong place** is fixed by moving it between files in local-llm-agent, not here. The Boleyn bridges, the Hethel Thorn and the Great Yarmouth execution were moved that way (the Boleyn bridges now sit in `Norfolk, UK.md`, listed in `witch-data-targets.progress` so the research run skips it).
 
@@ -113,11 +115,11 @@ All of the animation respects the visitor's *reduced motion* setting (see the en
 - The paper is generated in CSS and SVG noise, with no image files: a flat parchment colour, a fine grain, larger stains, and darkened edges. (There used to be colour blotches and a light-to-dark sweep over the whole page too; they were removed because the sweep made long pages get darker as you scrolled down.)
 - The grain and stains scroll with the page. The dark edges stay fixed to the window.
 - **Arrival:** the page starts white, turns to the flat parchment colour over 1.6 s, then the grain and the dark edges come in together over 3.5 s. Each stage is a layer that only changes its opacity (`#paper` is the colour, `body::before` the grain, `body::after` the edges), so the browser fades it without repainting. This matters: an earlier version animated the gradients themselves, which repainted the whole background every frame and dropped the page from 60 to about 15 frames a second while the title was being written, slowing the quill. Under reduced motion the finished paper shows at once.
-- **No flash of the plain page:** `js/head.js` adds a `loading` class to `<html>`, and a `deep` class on any page below `/data/stories/`. These hide the plain content and the home section until the first render has drawn the page.
+- **No flash of the plain page:** `rsc/js/bootstrap.js` adds a `loading` class to `<html>`, and a `deep` class on any page below `/`. These hide the plain content and the home section until the first render has drawn the page.
 
 ### Illuminated letters
 
-- The first letter of a story or level title, and the **W** of the home page, is a drawing made of semi-transparent triangles, loaded from `rsc/letters/<letter>.bin` and drawn by `js/triangles.js`.
+- The first letter of a story or level title, and the **W** of the home page, is a drawing made of semi-transparent triangles, loaded from `rsc/letters/<letter>.bin` and drawn by `rsc/js/triangles.js`.
 - Each letter's canvas is multiplied onto the paper, so the white of the drawing disappears.
 - A real letter lies invisibly on top, so selecting and copying a title gives plain text ("Peter the wild boy").
 - The empty margin inside each drawing is measured, and the text is pulled in to meet the ink.
@@ -129,19 +131,19 @@ All of the animation respects the visitor's *reduced motion* setting (see the en
 
 ### Quill titles
 
-The rest of each title (everything after the illuminated letter, and the "yrd Wiki" of the home page) is written in a quill font, a stroke font drawn by sweeping a fixed-angle nib along each stroke. The library is in `rsc/quill/` (TypeScript in `src/`, built with `npm run quill`, a demo page in `demo/`); `rsc/quill/word.js` is the page's own part, called by `writeTitle()` in `js/site.js`.
+The rest of each title (everything after the illuminated letter, and the "yrd Wiki" of the home page) is written in a quill font, a stroke font drawn by sweeping a fixed-angle nib along each stroke. The library is in `rsc/quill/` (TypeScript in `src/`, built with `npm run quill`, a demo page in `demo/`); `rsc/quill/word.js` is the page's own part, called by `writeTitle()` in `rsc/js/site.js`.
 
 - **One canvas per word.** Each word is an inline-block holding a canvas and, over it, the real characters in transparent type, each as wide as its glyph. So the browser wraps the words, and selecting, copying and ctrl-F work on real text. The h1 carries the whole title as `aria-label` and the drawn parts are `aria-hidden`, so a screen reader reads it once.
 - **No other font flashes up.** The quill font needs no loading, so the h1 is hidden (`pending`) only until its words are laid out, and nothing is ever shown in another face first. If the module can't load, the plain text is shown.
 - **Look:** faded-ink brown (`#3e2b19`: the `--ink-faded` of the tagline made a tenth darker, then two tenths darker twice) at 82% opacity multiplied onto the paper (`.qw canvas` in the CSS: opacity is on the whole canvas so overlapping strokes don't darken), nib glitches (ink dropouts) at twice the library's default rate (`inkFadeRate` in `QUILL`), size 0.62 of the h1's font size, drawn at the screen's pixel density.
 - **Baseline:** the strokes are centre lines and the slanted nib hangs below them by half its height, so the writing is lifted by that much and the lowest ink sits on the baseline. Word boxes give back `TRIM` (0.15 of the size) above and below, and the offset allows for it, so lines are about 2.1 × the size apart.
 - **Writing:** each letter takes the same time to write, 0.5 s (`LETTER_TIME`), so the pen moves fast over a long letter like "w" and slowly over a short one like "l". Each letter starts 0.15 s (`LETTER_GAP`) after the one before, so pens overlap, and the next word starts when the last letter of the previous word starts. All the timing runs on one clock that advances by real frame time but never more than a frame's worth, so under load everything slows together and nothing catches up. It begins when the illuminated letter's sweep is a third of the way in (`doneAt: 1 / 3` in `drawInitial`). Under reduced motion the title is drawn at once.
-- **Bending:** once a title is fully written, its letters are drawn towards at most two points of influence: slot 0 the mouse pointer, slot 1 the flyer (not while it rests among the diamonds). `js/site.js` just calls `influence(slot, x, y)` from `word.js` (`null` clears a slot); the bending itself is in the library (`makeDrawing(...).bend(points, dt)` in `rsc/quill/src/render.ts`). The two ends of each stroke stay pinned; only its middle point moves (towards a point of influence, more strongly the closer it is, by up to 0.325 of the size but never past it, for anything within 2.2 sizes), and the rest of the stroke follows it in a straight ramp, so each stroke acts as two shorter lines meeting at that point. The middle moves over in about 0.08 s and drift back over about 0.8 s (as the triangle drawings do), and the ink glitches stay where they were. Only words near a point of influence, or still moving, are repainted. Not done under reduced motion.
+- **Bending:** once a title is fully written, its letters are drawn towards at most two points of influence: slot 0 the mouse pointer, slot 1 the flyer (not while it rests among the diamonds). `rsc/js/site.js` just calls `influence(slot, x, y)` from `word.js` (`null` clears a slot); the bending itself is in the library (`makeDrawing(...).bend(points, dt)` in `rsc/quill/src/render.ts`). The two ends of each stroke stay pinned; only its middle point moves (towards a point of influence, more strongly the closer it is, by up to 0.325 of the size but never past it, for anything within 2.2 sizes), and the rest of the stroke follows it in a straight ramp, so each stroke acts as two shorter lines meeting at that point. The middle moves over in about 0.08 s and drift back over about 0.8 s (as the triangle drawings do), and the ink glitches stay where they were. Only words near a point of influence, or still moving, are repainted. Not done under reduced motion.
 - **Debugging:** add `#quill-debug` to the address (or run `quillDebug()` in the console; `quillDebug(false)` turns it off) to draw a one-pixel red box round each glyph's cell: its advance width (the glyph's width plus the letter spacing) by the full height of the word box (1.7 above the baseline, 0.7 below).
 - **Resizing** redraws the words (without animation) only if the font size changed; the line grouping is redone either way.
 - **The flyer** flies through the middle of an "o" using `cell.inkCentre(k)` from `word.js`, which works out the centre of that glyph's strokes, not the transparent text box.
 
-- **Drop caps:** the large red first letter of a paragraph that opens a section (a story's summary and details, and the home page's text) is one of the illustrated letters from `rsc/letters/` (`dropCap()` in `js/site.js`), in the same dark red as the title letters, with the real letter invisibly over it. Its square is 3.84 times the paragraph's font size; its empty margins are trimmed, and its ink starts level with the tops of the first line's capitals, raised by an eighth of the letter's height. It starts as a plain letter in the old drop-cap style until the drawing loads. It flees the mouse like the title letters. The first letter is taken out of the text before circles and spelling corrections look at it, so those skip a first word ("Witches" at the start of a paragraph is not circled).
+- **Drop caps:** the large red first letter of a paragraph that opens a section (a story's summary and details, and the home page's text) is one of the illustrated letters from `rsc/letters/` (`dropCap()` in `rsc/js/site.js`), in the same dark red as the title letters, with the real letter invisibly over it. Its square is 3.84 times the paragraph's font size; its empty margins are trimmed, and its ink starts level with the tops of the first line's capitals, raised by an eighth of the letter's height. It starts as a plain letter in the old drop-cap style until the drawing loads. It flees the mouse like the title letters. The first letter is taken out of the text before circles and spelling corrections look at it, so those skip a first word ("Witches" at the start of a paragraph is not circled).
 
 ### Dust
 
@@ -160,19 +162,23 @@ The rest of each title (everything after the illuminated letter, and the "yrd Wi
 
 ### Animating a drawing in
 
-`renderTriangles` (in `js/triangles.js`) takes an option `animateIn: "from-center"`. In triangle order, each triangle starts as a dot in the middle of the image and eases out to its real position and size. A new one sets off every 1/100 second (`animateGap`, in seconds) and each takes 3 seconds to arrive (`animateTime`), so a 90-triangle drawing finishes after about 4 seconds. Triangles keep their colour throughout; those that haven't set off yet aren't drawn. It works together with the mouse-repel option, and is skipped under reduced motion. Only the menu's tag drawing uses it so far.
+`renderTriangles` (in `rsc/js/triangles.js`) takes an option `animateIn: "from-center"`. In triangle order, each triangle starts as a dot in the middle of the image and eases out to its real position and size. A new one sets off every 1/100 second (`animateGap`, in seconds) and each takes 3 seconds to arrive (`animateTime`), so a 90-triangle drawing finishes after about 4 seconds. Triangles keep their colour throughout; those that haven't set off yet aren't drawn. It works together with the mouse-repel option, and is skipped under reduced motion. Only the menu's tag drawing uses it so far.
 
 `animateIn: "sweep-right"` is used by the illuminated letters. An imaginary line crosses the image from left to right in 2 seconds (`animateTime`, default `SWEEP_TIME`), easing in and out. Each triangle starts flat, all three points at its own leftmost x (so it draws nothing), and stretches to its real width as the line crosses it; very narrow triangles take at least 8% of the image (`SWEEP_MIN_SPAN`). `onDone` is called when the sweep has run `doneAt` of its time (default 1; the title uses 1/3 to start the quill), and at once if nothing animates. Both options work with mouse-repel and are skipped under reduced motion.
 
-These options exist only in this site's copy of `js/triangles.js`, not in the triangle-evolution project, so keep it if you copy a newer renderer over.
+These options exist only in this site's copy of `rsc/js/triangles.js`, not in the triangle-evolution project, so keep it if you copy a newer renderer over.
+
+### The Hat Man address
+
+A test: a missing address with the words "hat" and "man" in it (or "hatman") is put right by the flyer (`fixAddress()` in `rsc/js/site.js`). About 1.5 seconds after the 404 page shows, it flies straight up off the page at its normal speed, then appears in the address bar as a `◆` after the address, deletes the path a character at a time with `history.replaceState`, types `/mirabilia/apparitions/hat-man` and goes there. With reduced motion it goes there at once. Browsers that hide the path (Safari by default) show only the final page.
 
 ### Spelling corrections
 
 The flyer corrects spellings in the summary and details text of a story, by editing the page text for real (a copy of the text only, the story files are not changed).
 
-- **Which way:** the stories are mostly in British spelling. Visitors whose time zone is in the United States (`inUS()` in `js/site.js`: the `America/...` zones of the fifty states, `Pacific/Honolulu` and the old `US/...` names) get American spellings: the list is used the other way round, British to American. Everyone else gets British spellings.
+- **Which way:** the stories are mostly in British spelling. Visitors whose time zone is in the United States (`inUS()` in `rsc/js/site.js`: the `America/...` zones of the fifty states, `Pacific/Honolulu` and the old `US/...` names) get American spellings: the list is used the other way round, British to American. Everyone else gets British spellings.
 - **Where:** a story's summary and details, and the titles of the tales listed on a country or region's page.
-- **The list:** `data/spelling.txt`, lines like `neighbor -> neighbour` (always written American -> British). Matching is by whole word, ignoring case, and a capital at the start is kept. Add plural and other forms as separate lines. Lines starting `#` are comments. The list is loaded in the background when the page starts.
+- **The list:** `rsc/spelling.txt`, lines like `neighbor -> neighbour` (always written American -> British). Matching is by whole word, ignoring case, and a capital at the start is kept. Add plural and other forms as separate lines. Lines starting `#` are comments. The list is loaded in the background when the page starts.
 - **What it does:** about 3 seconds after a story opens, after any pencil circles, the flyer flies to a point just below the place inside the word where the spelling differs. There it narrows to a thin text cursor, then slides up into the gap between the letters. It backspaces the letters that are wrong one at a time and types the right ones (about 0.26 seconds each), pauses a moment, slides up out of the line still thin, and flies off, its diamond shape returning as it goes.
 - **Limit:** corrections count as flight activities (see "The flyer" below): at most one or two per flight. Any left over wait, in the story's queue, for a later flight.
 - **Which letters:** it compares the old and new word from both ends, so `baptizing → baptising` changes only the `z`, `center → centre` swaps the last two letters, and `fulfill → fulfil` deletes one `l`.
@@ -181,7 +187,7 @@ The flyer corrects spellings in the summary and details text of a story, by edit
 
 ### Pencil circles
 
-- In a story's summary and details, and in the titles of the tales listed on a country or region's page, the words *witch*, *witchcraft*, *magic*, *wizard*, *devil*, *devils*, *ghost*, *ghosts* and *curse* (any capitalisation) are circled about 3 seconds after the page opens, when the flyer picks that activity. To add a word, edit the pattern in `fillText` in `js/site.js`.
+- In a story's summary and details, and in the titles of the tales listed on a country or region's page, the words *witch*, *witchcraft*, *magic*, *wizard*, *devil*, *devils*, *ghost*, *ghosts* and *curse* (any capitalisation) are circled about 3 seconds after the page opens, when the flyer picks that activity. To add a word, edit the pattern in `fillText` in `rsc/js/site.js`.
 - The circle is a loose, open, hand-drawn loop: its ends miss each other and the shape is different each time.
 - The flyer draws it. It goes round whichever way carries on from how the flyer arrived.
 - Once drawn, the circle fades out evenly over 255 seconds.
@@ -210,7 +216,7 @@ If the thing it is heading for moves (the mouse, or a word or letter that has sc
   - fly straight through an "o" or "O" in the story title. As it passes through the middle of the ink, eight dust motes join the dust there, thrown one to each compass point (N, NE, E, …); see "Dust".
   Between activities it wanders. As soon as its allowance is used up and the last activity is finished, it goes straight back to the three diamonds, even if they are scrolled off screen. If the page offers nothing to do, it wanders until 65–70 seconds and then goes home.
 - **The only way on:** when a country, region or place offers just one link (one place and no tales of its own, or one tale and no places), the flyer goes to it 2.5 seconds after the page arrives, always coming in from the left heading right (looping round first if it has to), and presses it: it shrinks for a moment on the link, then lets go, which clicks it. Pages with any choice are left alone. This comes before everything else, takes off from rest at once, and doesn't count as an activity.
-- **The visitor's part of the world:** `data/timezones.json` maps each time zone (as the browser reports it, `Intl.DateTimeFormat().resolvedOptions().timeZone`, including older names such as `Asia/Calcutta`) to a path in the hierarchy, e.g. `"Europe/London": "europe/england/greater-london"`. On the home page the flyer circles that path's continent in the menu, on the continent's page its country, then its region and town, for as far as the visitor follows it and the menu has the link. Paths may run deeper than the gazetteer does yet; the missing levels just aren't circled. Zones in places without a country page here map to the continent only. That circle is drawn first, ahead of the activities, and doesn't count as one. If the link is above or below the window (a long menu), the flyer heads for it anyway, and when it reaches the edge of the window it is heading for (80 px in, `EDGE`), the page scrolls along with it, keeping it there, until the link comes into view. Nothing else the flyer does scrolls the page.
+- **The visitor's part of the world:** `rsc/timezones.json` maps each time zone (as the browser reports it, `Intl.DateTimeFormat().resolvedOptions().timeZone`, including older names such as `Asia/Calcutta`) to a path in the hierarchy, e.g. `"Europe/London": "europe/england/greater-london"`. On the home page the flyer circles that path's continent in the menu, on the continent's page its country, then its region and town, for as far as the visitor follows it and the menu has the link. Paths may run deeper than the gazetteer does yet; the missing levels just aren't circled. Zones in places without a country page here map to the continent only. That circle is drawn first, ahead of the activities, and doesn't count as one. If the link is above or below the window (a long menu), the flyer heads for it anyway, and when it reaches the edge of the window it is heading for (80 px in, `EDGE`), the page scrolls along with it, keeping it there, until the link comes into view. Nothing else the flyer does scrolls the page.
 - **Console log:** the browser console shows what it is doing: `flyer: taking off, plans N activities, home in about Ns` at each takeoff (the activities themselves are chosen one at a time, as the page allows), `flyer: next activity "..."` for each, and `flyer: nothing on offer, wandering`.
 - **Mouse visit:** it follows rails towards the mouse until within 3 cm; it gives up after 40 seconds. Only a real mouse counts, not touch.
 - **Leaving and landing smoothly:** it leaves the three diamonds already facing right, on a straight rail out to the right of the row, so it never turns on the spot. Coming home, its rail ends at the free place heading right, so it always arrives from the left (looping round first if it has to).
@@ -219,9 +225,10 @@ If the thing it is heading for moves (the mouse, or a word or letter that has sc
 
 ### Options
 
-- A small gear button at the bottom right of the window opens the options panel. The panel's code is `js/options.js`, kept apart from the page: it is only loaded (`import()`) the first time the button is pressed.
+- A small gear button at the bottom right of the window opens the options panel. The panel's code is `rsc/js/options.js`, kept apart from the page: it is only loaded (`import()`) the first time the button is pressed.
 - **Sections and items** are listed in `SECTIONS` at the top of that file; add an item there to add an option. There is one section so far, **Visuals**, with two toggles (both on by default): *Grainy layer* (`body::before`: the fibres and stains) and *Dark edges* (`body::after`). Switching one off puts `no-grain` or `no-edges` on `<html>`, and the CSS hides that layer.
-- **Saving:** all options are kept in one JSON object in `localStorage` under `wyrd-options`, grouped by section, for example `{"visuals":{"grain":false,"edges":true}}`. A missing value means the default. `js/head.js` reads the same key so a layer that is switched off is never painted (if you add an option that must apply before first paint, add it there too). If storage is blocked the choice lasts only until the page closes.
+- **The chameleon and Chameleoff:** while the panel is open the chameleon may walk anywhere on the page, drawn over the panel, and if it gets there before the panel closes it licks the *Chameleoff* box, which ticks it and takes the chameleon off the page. See `rsc/js/orchestrator.js`.
+- **Saving:** all options are kept in one JSON object in `localStorage` under `wyrd-options`, grouped by section, for example `{"visuals":{"grain":false,"edges":true}}`. A missing value means the default. `rsc/js/bootstrap.js` reads the same key so a layer that is switched off is never painted (if you add an option that must apply before first paint, add it there too). If storage is blocked the choice lasts only until the page closes.
 
 ### The diamonds
 
@@ -237,7 +244,7 @@ If the visitor asks for reduced motion: there is no flyer, circles or dust anima
 
 ## Settings worth knowing
 
-All are variables near the code they affect: the dust script is `js/dust.js`, the flyer code is in `js/site.js`, and the CSS is `rsc/site.css`.
+All are variables near the code they affect: the dust script is `rsc/js/dust.js`, the flyer code is in `rsc/js/site.js`, and the CSS is `rsc/site.css`.
 
 | Setting | Where | What it does |
 | --- | --- | --- |
@@ -252,10 +259,10 @@ All are variables near the code they affect: the dust script is `js/dust.js`, th
 | `65000`, `75000` | `launch`, `stepSprite` | When the flyer comes home |
 | `3 * CM` | `mouse` mode | How close counts as having reached the mouse |
 | `BURST_SPEED`, `BURST_KEEP` | dust script | How hard the "o" motes are thrown, and how many stay |
-| `QUILL` (`color`, `inkFadeRate`), size `0.62` | `js/site.js`, `writeTitle` | Quill ink colour, nib glitch rate, size relative to the title |
+| `QUILL` (`color`, `inkFadeRate`), size `0.62` | `rsc/js/site.js`, `writeTitle` | Quill ink colour, nib glitch rate, size relative to the title |
 | `.qw canvas` opacity | CSS | How see-through the quill writing is |
 | `LETTER_TIME`, `LETTER_GAP`, `TRIM` | `rsc/quill/word.js` | Time to write each letter, delay between letters, line spacing |
 | `BEND_REACH`, `BEND_PUSH`, `PUSH_TIME`, `RETURN_TIME` | `rsc/quill/src/render.ts` | How far from the mouse or flyer the letters are drawn towards it, how far, and how fast they move over and back |
 | `doneAt: 1 / 3` | `drawInitial` | How far through the letter's sweep the quill starts |
-| `SWEEP_TIME`, `SWEEP_MIN_SPAN` | `js/triangles.js` | Length of the sweep, and the least stretch time of a narrow triangle |
+| `SWEEP_TIME`, `SWEEP_MIN_SPAN` | `rsc/js/triangles.js` | Length of the sweep, and the least stretch time of a narrow triangle |
 | `1.6s`, `3.5s` | `#paper`, `body::before` and `body::after` `animation:` lines | Arrival: white to parchment, then the grain and edges |

@@ -1,11 +1,12 @@
-// Rebuilds data/stories from the research data in the local-llm-agent project.
+// Rebuilds the continent folders in docs from the research data in the local-llm-agent project.
 //
 //   bun tools/import-stories.ts [--source ~/projects/local-llm-agent] [--dry-run]
 //
 // Every `<subject>-data-targets/**/*.md` (or `<subject>-targets/`, as weeping-statue is named, or `<subject>-target-data/`, as screaming-skull is) there holding stories is read, filed
-// by its file name (see parseName), and written under data/stories as one .md and
+// by its file name (see parseName), and written under docs/<continent> as one .md and
 // one HTML page per story and an HTML page per place, with the home page and 404.html
-// at the top of the site. See "Importing stories" in README.md.
+// at the top of the site. Each hand-written docs/mirabilia/**/*.md also gets its HTML page.
+// See "Importing stories" in README.md.
 import { existsSync } from "node:fs";
 import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { homedir } from "node:os";
@@ -16,10 +17,10 @@ const dryRun = args.includes("--dry-run");
 const sourceArg = args.indexOf("--source");
 const sourceRoot =
   sourceArg >= 0 ? args[sourceArg + 1] : path.join(homedir(), "projects", "local-llm-agent");
-const siteRoot = path.join(import.meta.dir, "..");
-const outRoot = path.join(siteRoot, "data", "stories");
+const siteRoot = path.join(import.meta.dir, "..", "docs");
+const outRoot = siteRoot;
 const SITE = "https://wyrd.wiki";
-const STORIES_URL = "/data/stories/";
+const STORIES_URL = "/";
 
 const CONTINENTS = ["Africa", "Antarctica", "Asia", "Europe", "North_America", "Oceania", "South_America"];
 
@@ -187,13 +188,17 @@ const HOME_TEXT = [
   "Choose a realm from the list to begin.",
 ];
 
-// The address of a page below data/stories: a story has no ".html", a place ends in "/".
+// The address of a page: a story has no ".html", a place ends in "/".
 const urlOf = (parts: string[]) => STORIES_URL + parts.map(encodeURIComponent).join("/");
 const placeTitle = (name: string) => fileName(name).replace(/_/g, " ");
-// A paragraph, with *asterisks* as italics (js/site.js puts them back to draw the page).
+// A paragraph, with *asterisks* as italics (rsc/js/site.js puts them back to draw the page).
 const inline = (text: string) => text.split(/\*([^*]+)\*/).map((part, i) => (i % 2 ? `<em>${htmlEscape(part)}</em>` : htmlEscape(part))).join("");
 const paragraphs = (text: string) => text.trim().split(/\n\s*\n/).filter(Boolean);
-const linkList = (links: Link[]) => links.map((l) => `<li><a href="${htmlEscape(l.href)}">${htmlEscape(l.title)}</a></li>`).join("");
+// A list of links, one to a line, at the given indent.
+const linkList = (open: string, close: string, links: Link[], at: string) =>
+  links.length ? [at + open, ...links.map((l) => `${at}  <li><a href="${htmlEscape(l.href)}">${htmlEscape(l.title)}</a></li>`), at + close].join("\n") : at + open + close;
+// The page's main view, one element to a line.
+const article = (attrs: string, ...lines: string[]) => [`      <article id="view" class="story" ${attrs}>`, ...lines.filter(Boolean), "      </article>"].join("\n");
 
 // A story's sections, read as the headings fall: any heading line starts a section.
 function storySections(text: string): Record<string, string> {
@@ -217,8 +222,9 @@ function describe(text: string): string {
   return flat.slice(0, 155).replace(/\s+\S*$/, "") + "…";
 }
 
-// Every page: the content is plain HTML, so it can be read without JavaScript. js/head.js hides it and js/site.js
-// redraws it, reading it back with readPage(). The filter is here because url(#...) is safest in the page that holds it.
+// Every page: the content is plain HTML, so it can be read without JavaScript. rsc/js/bootstrap.js, first in the body,
+// hides it and adds everything else a page needs (the scripts, the fonts); rsc/js/site.js redraws it, reading it back
+// with readPage().
 function page(o: { title: string; description: string; url: string; crumbs: Link[]; menu: Link[]; view: string; noindex?: boolean }): string {
   return `<!doctype html>
 <html lang="en">
@@ -228,33 +234,22 @@ function page(o: { title: string; description: string; url: string; crumbs: Link
   <title>${htmlEscape(o.title)}</title>
   <meta name="description" content="${htmlEscape(o.description)}">
 ${o.noindex ? `  <meta name="robots" content="noindex">` : `  <link rel="canonical" href="${htmlEscape(SITE + o.url)}">`}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
-  <script src="/js/head.js"></script>
   <link rel="stylesheet" href="/rsc/site.css">
-  <style>.dropcap.illustrated canvas { filter: url(#white-clear); }</style>
 </head>
 <body>
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="white-clear" color-interpolation-filters="sRGB"><feFlood flood-color="#fff" result="white"/><feComposite in="SourceGraphic" in2="white" operator="over"/><feColorMatrix type="matrix" values="0 0 0 0 0.40  0 0 0 0 0.094  0 0 0 0 0.051  0 -1.1 0 0 1.1"/></filter></svg>
-  <div id="paper" aria-hidden="true"></div>
-  <canvas id="dust" aria-hidden="true"></canvas>
+  <script src="/rsc/js/bootstrap.js"></script>
   <div class="layout">
     <aside aria-label="Options at this level">
-      <nav class="breadcrumb-panel" aria-label="Breadcrumb"><ol id="breadcrumb-panel-list">${linkList(o.crumbs)}</ol></nav>
+      <nav class="breadcrumb-panel" aria-label="Breadcrumb">
+${linkList(`<ol id="breadcrumb-panel-list">`, "</ol>", o.crumbs, "        ")}
+      </nav>
       <div id="tag-image"></div>
-      <ul class="realms" id="options">${linkList(o.menu)}</ul>
+${linkList(`<ul class="realms" id="options">`, "</ul>", o.menu, "      ")}
     </aside>
     <main>
-      ${o.view}
-      <div class="ending" aria-hidden="true"><span class="gem" style="transform: translateX(0)"></span><span class="gem" style="transform: translateX(32px)"></span><span class="gem" style="transform: translateX(64px)"></span></div>
+${o.view}
     </main>
   </div>
-  <button id="options-button" type="button" aria-label="Options" title="Options">&#9881;&#xFE0E;</button>
-  <script src="/js/triangles.js"></script>
-  <script src="/js/site.js"></script>
-  <script src="/js/dust.js"></script>
-  <script type="module" src="/js/orchestrator.js"></script>
 </body>
 </html>
 `;
@@ -263,12 +258,12 @@ ${o.noindex ? `  <meta name="robots" content="noindex">` : `  <link rel="canonic
 function storyPage(s: Story, url: string, crumbs: Link[], menu: Link[]): string {
   const sections = storySections(s.text);
   const block = (name: string, heading: string) =>
-    sections[name]?.trim() ? `<div class="${name}"><h2>${heading}</h2>${paragraphs(sections[name]).map((p) => `<p>${inline(p)}</p>`).join("")}</div>` : "";
+    sections[name]?.trim() ? [`        <div class="${name}">`, `          <h2>${heading}</h2>`, ...paragraphs(sections[name]).map((p) => `          <p>${inline(p)}</p>`), "        </div>"].join("\n") : "";
   return page({
     title: `${s.title} — Wyrd Wiki`,
     description: describe(sections["summary"] ?? "") || s.title,
     url, crumbs, menu,
-    view: `<article id="view" class="story" data-page="story" data-tags="${htmlEscape(s.tags.join(", "))}"><h1>${htmlEscape(s.title)}</h1>${block("summary", "Summary")}${block("details", "Details")}</article>`,
+    view: article(`data-page="story" data-tags="${htmlEscape(s.tags.join(", "))}"`, `        <h1>${htmlEscape(s.title)}</h1>`, block("summary", "Summary"), block("details", "Details")),
   });
 }
 
@@ -277,7 +272,8 @@ function placePage(title: string, url: string, crumbs: Link[], menu: Link[], tal
     title: `${title} — Wyrd Wiki`,
     description: `Folklore of ${title}: a gazetteer of tales, filed by place.`,
     url, crumbs, menu,
-    view: `<article id="view" class="story" data-page="place"><h1>${htmlEscape(title)}</h1>${hint ? `<p class="hint">${hint}</p>` : ""}${tales.length ? `<h2>Tales of ${htmlEscape(title)}</h2><ul class="realms">${linkList(tales)}</ul>` : ""}</article>`,
+    view: article(`data-page="place"`, `        <h1>${htmlEscape(title)}</h1>`, hint && `        <p class="hint">${hint}</p>`,
+      tales.length ? `        <h2>Tales of ${htmlEscape(title)}</h2>\n${linkList(`<ul class="realms">`, "</ul>", tales, "        ")}` : ""),
   });
 }
 
@@ -338,11 +334,12 @@ function emit(node: Node, urlParts: string[], crumbs: Link[], used: Set<string>)
     files.set(path.join(node.dir, `${t.name}.html`), storyPage(t.story, t.link.href, inHere, menu));
   }
   if (!node.name) {
-    const view = `<article id="view" class="story" data-page="home"><h1>Wyrd Wiki</h1><p class="subtitle">${htmlEscape(HOME_TAGLINE)}</p><div class="summary">${HOME_TEXT.map((p) => `<p>${inline(p)}</p>`).join("")}</div></article>`;
+    const view = article(`data-page="home"`, "        <h1>Wyrd Wiki</h1>", `        <p class="subtitle">${htmlEscape(HOME_TAGLINE)}</p>`,
+      ["        <div class=\"summary\">", ...HOME_TEXT.map((p) => `          <p>${inline(p)}</p>`), "        </div>"].join("\n"));
     files.set(path.join(siteRoot, "index.html"), page({ title: "Wyrd Wiki", description: HOME_TAGLINE, url, crumbs: [], menu: listed, view }));
     files.set(path.join(siteRoot, "404.html"), page({
       title: "Nothing found here — Wyrd Wiki", description: "That place is not in the gazetteer.", url: "/", crumbs: inHere, menu: listed, noindex: true,
-      view: `<article id="view" class="story" data-page="missing"><h1>Nothing found here</h1><p class="hint">That place is not in the gazetteer.</p></article>`,
+      view: article(`data-page="missing"`, "        <h1>Nothing found here</h1>", `        <p class="hint">That place is not in the gazetteer.</p>`),
     }));
   } else if (listed.length || tales.length || CONTINENTS.includes(node.name)) {
     const hint = tales.length ? (listed.length ? "Choose a place from the list, or one of the tales below." : "") : listed.length ? "Choose a place from the list." : "";
@@ -354,8 +351,24 @@ function emit(node: Node, urlParts: string[], crumbs: Link[], used: Set<string>)
 emit(root, [], [], new Set());
 for (const { story, dir, names } of hiddenStories) files.set(path.join(dir, `${storyName(story.title, names)}.md`), story.text + "\n");
 
+// The mirabilia are written by hand: each docs/mirabilia/<group>/<name>.md makes the page beside it.
+const mirabilia = (await walk(path.join(siteRoot, "mirabilia"), /\.md$/).catch(() => [])).sort();
+const entries: { file: string; parts: string[]; story: Story }[] = [];
+for (const file of mirabilia) {
+  const story = parseStory(await readFile(file, "utf8"), "mirabilia");
+  if (story) entries.push({ file, parts: path.relative(siteRoot, file).replace(/\.md$/, "").split(path.sep), story });
+  else warn(`${path.relative(siteRoot, file)} has no #title`);
+}
+for (const { file, parts, story } of entries) {
+  const folders = parts.slice(0, -1);
+  const crumbs = [{ title: "Wyrd Wiki", href: "/" }, ...folders.map((f, i) => ({ title: titleCase(f.replace(/-/g, " ")), href: urlOf(folders.slice(0, i + 1)) + "/" }))];
+  const menu = entries.filter((e) => e.file !== file && path.dirname(e.file) === path.dirname(file)).map((e) => ({ title: e.story.title, href: urlOf(e.parts) }));
+  files.set(file.replace(/\.md$/, ".html"), storyPage(story, urlOf(parts), crumbs, menu));
+}
+
 // Report and write.
-const existing = await walk(outRoot, /\.(md|xml|html)$/).catch(() => []);
+// only the continent folders: the rest of docs is not generated
+const existing = (await Promise.all(CONTINENTS.map((c) => walk(path.join(outRoot, dirName(c)), /\.(md|xml|html)$/).catch(() => [])))).flat();
 let written = 0;
 let changed = 0;
 for (const [file, content] of [...files].sort()) {
@@ -369,7 +382,7 @@ for (const [file, content] of [...files].sort()) {
   }
 }
 
-// Everything under data/stories is generated, so what this run didn't produce has gone from the source.
+// Everything in the continent folders is generated, so what this run didn't produce has gone from the source.
 const orphans = existing.filter((f) => !files.has(f));
 if (!dryRun) for (const f of orphans) await rm(f);
 console.log(`${storyCount} stories read from ${sourceDirs.length} subjects, ${stats.storiesFiled} filed after removing identical copies`);

@@ -35,7 +35,7 @@ CPU
 
 - Finish measuring what each piece costs, on the current code: chameleon, dust canvas, flyer, and the mix-blend-mode layers. The chameleon, painting and compositing haven't been measured yet.
 
-- nudgeTriangleDrawing (flyer) and touch in js/orchestrator.js (chameleon) measure every triangle picture each frame. Use a cached box per picture, as the quill titles do. nudgeTriangleDrawing also sends pointermove every frame, even when the flyer hasn't moved or is resting, and each one makes startRepel measure the picture again.
+- nudgeTriangleDrawing (flyer) and touch in rsc/js/orchestrator.js (chameleon) measure every triangle picture each frame. Use a cached box per picture, as the quill titles do. nudgeTriangleDrawing also sends pointermove every frame, even when the flyer hasn't moved or is resting, and each one makes startRepel measure the picture again.
 
 - startRepel still does its vertex maths every frame while a pointer is on a picture, without drawing. It was kept in case an animation moves the triangles under a resting pointer; it could stop when nothing is moving if that is handled.
 
