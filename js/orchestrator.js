@@ -20,6 +20,8 @@ const WAKE_AFTER = 5000;   // ms after load before the chameleon wakes (on the f
 const KEY = "wyrd-chameleon";   // localStorage: { day, x, y, heading }, where it was last, x from the middle of the page
 const SAVE_MS = 10000;     // how often where it is gets saved
 const MIN_MARGIN = 300;    // px of margin to the right of the content needed for it to come at all
+const LENGTH_CM = 6;       // how long it is, in CSS cm
+const CM = 96 / 2.54;      // CSS px in a centimetre (a CSS inch is 96 px)
 const PAPER = "#dbc69b";   // the page's parchment as it looks in the margin (--parchment darkened by the grain layer)
 const PREY = /[B8]/g;      // the characters it eats
 const PER_PAGE = 3;        // how many it eats on a page before going down to the bottom
@@ -27,7 +29,7 @@ const BACK_OFF = 0.6;      // how far it walks away after eating one, before com
 const TOUCH_ID = 100;      // pointer ids from here on are its feet and tail tip on the triangle pictures (well clear
                            // of the mouse's and the flyer's, which are 0 or 1)
 const SETTLE_MS = 2000;    // ms after a page is shown before looking for B's, so the new text has settled in
-const TOP_BAND = 0.7;      // depth of the band across the top of the page it may walk in, in body lengths
+const TOP_BAND_CM = 8.4;   // depth of the band across the top of the page it may walk in
 const PEEK = 0.25;         // how far up over the bottom of the page its head heads for, in body lengths
                            // (a walk ends within 0.15 of its goal, so the head comes up between 0.1 and 0.25)
 
@@ -40,7 +42,7 @@ async function start(){
 
   const { createChameleon } = await import("./chameleon.js");
   const ac = new AbortController(), signal = ac.signal;   // aborted when it is taken away: every listener goes with it
-  const length = Math.max(230, Math.min(560, innerHeight * 0.62, margin));
+  const length = LENGTH_CM * CM;
   // a layer over the whole page for it to live in, so it can walk off the bottom without making the page longer.
   // At z-index 0 and after the page's content, it is above the text and pictures but under the darkened edges
   // (body::after, painted after everything at that level), the dust, the flyer and the options button.
@@ -124,7 +126,7 @@ async function start(){
       area: [
         { x0: 0, y0: 0, x1: left, y1: below },
         { x0: right, y0: 0, x1: width, y1: below },
-        { x0: 0, y0: 0, x1: width, y1: TOP_BAND * length },
+        { x0: 0, y0: 0, x1: width, y1: TOP_BAND_CM * CM },
       ],
     };
   }

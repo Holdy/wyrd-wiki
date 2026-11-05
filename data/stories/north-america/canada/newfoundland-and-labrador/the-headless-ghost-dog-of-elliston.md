@@ -1,0 +1,23 @@
+#title
+The Headless Ghost Dog of Elliston
+
+#summary
+A ghostly, decapitated Newfoundland dog is said to race through the darkness toward Elliston every evening after sunset, unable to find its way home from the sea.
+
+#details
+According to local folklore, this spectral hound was once the faithful working companion of a man named Welcher (or Wiltshire). The dog worked alongside its master in his fishing enterprise—hauling nets, fetching buoys, pulling carts of cod, and accompanying him out to sea. Tragically, the animal was killed far from shore when it was decapitated, either falling through rapidly shifting ice or perishing in a violent schooner wreck. Rather than resting, the dog's spirit is said to continue its journey home. Every night after sunset, the headless phantom of Welcher's dog can be seen racing desperately toward Elliston from the sea, driven by the eternal instinct of loyalty and work.
+
+#location
+The roads and approaches leading into the community of Elliston, Newfoundland and Labrador.
+
+#proposed-coordinates
+48.63283892998063, -53.04295123983835
+
+#upstream-source
+None.
+
+#reference
+https://www.helencescott.com/post/the-headless-ghost-dog-of-elliston
+
+#tags
+pinless

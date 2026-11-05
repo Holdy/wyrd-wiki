@@ -22,13 +22,11 @@ Story data
 
 - Screaming skulls that look like repeats of existing stories. Tag one of each pair `duplicate` in the source files, or the next import loses it: Bettiscombe skull / The Screaming Skull of Bettiscombe Manor; Anne Griffith's skull / The Screaming Skull of Burton Agnes Hall; Wardley Hall skull / The Screaming Skull of Wardley Hall; Dafydd's skull / The Vengeance of the Skull.
 
-- Bran's head: `London, London, England.md` gives a new `london` region beside `greater-london` and `city-of-london`, sharing one sitemap with its settlement, so its sitemap URL (/london/london/bran-s-head) doesn't open directly. Rename the source file to Greater London.
+- Bran's head: `London, London, England.md` gives a new `london` region beside `greater-london` and `city-of-london`. Rename the source file to Greater London.
 
 - O'Lafferty's skull (Derby) is tagged `check` but is published. Check it.
 
 - "The Lady in White" (road-ghost) has no #summary.
-
-- The importer never deletes old files, and doesn't report old .xml files at all, so stale sitemaps stay silently.
 
 - Three `... copy.md` files in curse-data-targets/UK are skipped on purpose: Dunbartonshire, Bristol, Dumfriesshire. Delete them if they aren't needed.
 

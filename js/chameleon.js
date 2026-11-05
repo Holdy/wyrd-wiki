@@ -70,6 +70,7 @@ const LIFT_SHADOW_BLUR = 2.2;   // and blurs to this many times as soft
 const LOWER_THIN = 2;   // px taken off the lower leg's width
 const SHOW_BACK_ZIGZAG = false;   // set to true to draw the zigzag crest down the middle of the back
 const INK_PALE = 0.3;   // line strength while a statue; darkens to full as the shadow comes in
+const INK_FULL = 0.5;   // line strength when fully awake
 const TONGUE = '#3a0b0e';
 const TONGUE_REACH = 0.42;    // how far the tongue can shoot, as a fraction of body length
 const TONGUE_CONE = 0.35;     // radians either side of straight ahead that it will fire at
@@ -78,6 +79,8 @@ const TONGUE_SECS = 0.3;      // seconds from firing to reeled back in
 const TONGUE_HIT = 0.18;      // the moment in the strike (0 to 1) the tongue is fully out
 const MOVING_MS = 300;        // a point of interest counts as moving this long after it last moved
 const AREA_IN = 0.18;         // its head keeps this far (a fraction of body length) inside the edges of the area
+const EDGE_ROOM = 0.6;        // it would rather keep its head this far (body lengths) from the top and sides of the whole area,
+const EDGE_COST = 3;          // and will walk this many px further for each px of that room; it still goes nearer if it has to
 const PAPER_SCALE = 1800;     // px the parchment's mottling is sized for (a full window)
 const PAPER_TILE = 512;       // px: the parchment repeats at this size, pinned to the page
 
@@ -350,6 +353,20 @@ export function createChameleon({ x, y, heading = -Math.PI / 2, length, paper: p
     return best;
   }
   const inside = p => area.some(r => { const q = inner(r); return p.x >= q.x0 && p.x <= q.x1 && p.y >= q.y0 && p.y <= q.y1; });
+  // how far p is inside the room it would like to keep from the top and sides of the whole area (the bottom doesn't count: it walks off it)
+  function crowding(p){
+    const m = EDGE_ROOM * L, x0 = Math.min(...area.map(r => r.x0)), x1 = Math.max(...area.map(r => r.x1)), y0 = Math.min(...area.map(r => r.y0));
+    return Math.max(0, y0 + m - p.y) + Math.max(0, x0 + m - p.x) + Math.max(0, p.x - (x1 - m));
+  }
+  // the nearest point to p where its head may be, moved out from the top and sides as far as the area lets it
+  function roomy(p){
+    const m = EDGE_ROOM * L, x0 = Math.min(...area.map(r => r.x0)), x1 = Math.max(...area.map(r => r.x1)), y0 = Math.min(...area.map(r => r.y0));
+    const q = { ...nearest(p).p }, down = { x: q.x, y: Math.max(q.y, y0 + m) };
+    if (inside(down)) q.y = down.y;
+    const over = { x: clamp(q.x, x0 + m, x1 - m), y: q.y };
+    if (inside(over)) q.x = over.x;
+    return q;
+  }
   // the way to where its head should stand to strike at p: a spot inside the area, a comfortable tongue's length
   // from p, that is the shortest walk from where it is now (a nearer spot to p is slightly preferred); or null
   function strikeWay(p){
@@ -360,7 +377,7 @@ export function createChameleon({ x, y, heading = -Math.PI / 2, length, paper: p
       const way = route(h);
       let walk = 0, at = Z;
       for (const w of way) { walk += dist(at, w); at = w; }
-      const score = walk + k * 0.2 * L;
+      const score = walk + k * 0.2 * L + EDGE_COST * crowding(h);
       if (!best || score < best.score) best = { way, score };
     }
     return best && best.way;
@@ -517,7 +534,7 @@ export function createChameleon({ x, y, heading = -Math.PI / 2, length, paper: p
     INK_LEVELS = [];
     for (let i = 0; i < 16; i++) {
       const c = document.createElement('canvas'); c.width = c.height = 192; const cx = c.getContext('2d');
-      cx.globalAlpha = lerp(INK_PALE, 1, i / 15); cx.drawImage(gc, 0, 0); INK_LEVELS.push(ctx.createPattern(c, 'repeat'));
+      cx.globalAlpha = lerp(INK_PALE, INK_FULL, i / 15); cx.drawImage(gc, 0, 0); INK_LEVELS.push(ctx.createPattern(c, 'repeat'));
     }
     INK = INK_LEVELS[0];
   }
@@ -852,7 +869,7 @@ export function createChameleon({ x, y, heading = -Math.PI / 2, length, paper: p
     },
     setArea(rects){ area = rects.map(r => ({ ...r })); },
     canReach(px, py){ return !!strikeWay({ x: px, y: py }); },
-    walkTo(px, py){ return command(route({ x: px, y: py }), null, null); },
+    walkTo(px, py){ return command(route(roomy({ x: px, y: py })), null, null); },
     hunt(px, py, onHit){ return command(strikeWay({ x: px, y: py }), { x: px, y: py }, onHit); },
     head(){ return { x: Z.x, y: Z.y }; },
     pose(){ return { x: Z.x, y: Z.y, heading: Z.heading }; },
