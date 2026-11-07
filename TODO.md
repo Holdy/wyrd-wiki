@@ -42,3 +42,8 @@ CPU
 - Quill title boxes re-measure when the page or title changes size. Anything that moved a title without changing either would leave its box out of date until the next resize. Nothing on the site does this now.
 
 - Triangle pictures don't always return to exactly their original pixels after a push (differences up to 4 out of 255, too small to see). The same happens without the draw change. Cause unknown.
+
+
+Drawings
+
+- Find a better 'N' illustration.

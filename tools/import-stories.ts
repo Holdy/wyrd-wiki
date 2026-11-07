@@ -5,7 +5,8 @@
 // Every `<subject>-data-targets/**/*.md` (or `<subject>-targets/`, as weeping-statue is named, or `<subject>-target-data/`, as screaming-skull is) there holding stories is read, filed
 // by its file name (see parseName), and written under docs/<continent> as one .md and
 // one HTML page per story and an HTML page per place, with the home page and 404.html
-// at the top of the site. Each hand-written docs/mirabilia/**/*.md also gets its HTML page.
+// at the top of the site. Each hand-written docs/mirabilia/**/*.md also gets its HTML page, and the 404 page's text
+// comes from docs/404.md.
 // See "Importing stories" in README.md.
 import { existsSync } from "node:fs";
 import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
@@ -341,8 +342,8 @@ function emit(node: Node, urlParts: string[], crumbs: Link[], used: Set<string>)
       ["        <div class=\"summary\">", ...HOME_TEXT.map((p) => `          <p>${inline(p)}</p>`), "        </div>"].join("\n"));
     files.set(path.join(siteRoot, "index.html"), page({ title: "Wyrd Wiki", description: HOME_TAGLINE, url, crumbs: [], menu: listed, view, script: OLD_ADDRESS_REDIRECT }));
     files.set(path.join(siteRoot, "404.html"), page({
-      title: "Nothing found here — Wyrd Wiki", description: "That place is not in the gazetteer.", url: "/", crumbs: inHere, menu: listed, noindex: true,
-      view: article(`data-page="missing"`, "        <h1>Nothing found here</h1>", `        <p class="hint">That place is not in the gazetteer.</p>`),
+      title: `${missing.title} — Wyrd Wiki`, description: describe(missing.hints.join(" ")) || missing.title, url: "/", crumbs: inHere, menu: listed, noindex: true,
+      view: article(`data-page="missing"`, `        <h1>${htmlEscape(missing.title)}</h1>`, ...missing.hints.map((h) => `        <p class="hint">${inline(h)}</p>`)),
     }));
   } else if (listed.length || tales.length || CONTINENTS.includes(node.name)) {
     const hint = tales.length ? (listed.length ? "Choose a place from the list, or one of the tales below." : "") : listed.length ? "Choose a place from the list." : "";
@@ -351,6 +352,14 @@ function emit(node: Node, urlParts: string[], crumbs: Link[], used: Set<string>)
   }
   for (const k of kids) emit(k, here, inHere, names);
 }
+// The 404 page's text is written by hand, in docs/404.md: its #title, and an optional #summary shown under it (paragraphs
+// separated by a blank line).
+const missing = await (async () => {
+  const text = await readFile(path.join(siteRoot, "404.md"), "utf8").catch(() => "");
+  const sections = storySections(text), title = sections["title"]?.split("\n").map((l) => l.trim()).find(Boolean);
+  if (!title) warn("docs/404.md has no #title: the 404 page says \"Nothing found here\"");
+  return { title: title || "Nothing found here", hints: paragraphs(sections["summary"] ?? "").map((p) => p.trim().replace(/\s+/g, " ")) };
+})();
 emit(root, [], [], new Set());
 for (const { story, dir, names } of hiddenStories) files.set(path.join(dir, `${storyName(story.title, names)}.md`), story.text + "\n");
 

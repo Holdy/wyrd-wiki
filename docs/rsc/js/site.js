@@ -43,12 +43,12 @@
       return [].map.call(p.childNodes, function (n) { return n.nodeName === "EM" ? "*" + n.textContent + "*" : n.textContent; }).join("");
     };
     var texts = function (sel) { return [].map.call(view.querySelectorAll(sel), source); };
-    var page = view.dataset.page, title = view.querySelector("h1").textContent, hint = view.querySelector(".hint");
+    var page = view.dataset.page, title = view.querySelector("h1").textContent;
     var state = {
       page: page, path: segmentsOf(location.pathname),
       crumbs: listOf(doc.getElementById("breadcrumb-panel-list")), items: listOf(doc.getElementById("options")),
       levelTitle: title, levelStories: listOf(view.querySelector(".realms")), story: null,
-      hint: hint ? hint.textContent : ""
+      hints: [].map.call(view.querySelectorAll(".hint"), function (p) { return p.textContent; })
     };
     if (page === "home") {
       state.tagline = view.querySelector(".subtitle").textContent;
@@ -1116,7 +1116,7 @@
         return;
       }
       if (!sprite.t0) sprite.t0 = now;
-      if (!titleWritten()) return;     // it never sets off until the page's title is finished
+      if (!titleWritten() || !crawlersUp) return;     // it never sets off until the page's title is finished (and the nightcrawlers are up)
       if (sprite.click && sprite.click.isConnected) {     // a link to press: straight off to it
         sprite.t0 = 0;
         launch();
@@ -1298,7 +1298,7 @@
     found.then(function (fix) {
       if (!fix || location.pathname !== from) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return location.replace(fix.to);
-      whenTitleWritten(function () {
+      whenTitleWritten(function () { whenCrawlersUp(function () {
         setTimeout(function () {
           if (location.pathname !== from) return;
           if (!sprite.el) return location.replace(fix.to);
@@ -1309,7 +1309,15 @@
           sprite.onGone = function () { retypeAddress(fix.to, fix.title); };
           sprite.mode = "exit";
         }, EXIT_AFTER);
-      });
+      }); });
+    });
+  }
+  // The flyer doesn't set off to put an address right until the nightcrawlers are all up (if there are any).
+  function whenCrawlersUp(fn) {
+    if (!crawlers) return fn();
+    crawlers.then(function (c) {
+      if (!c || c.allStarted()) fn();
+      else window.addEventListener("all-nightcrawlers-started", fn, { once: true });
     });
   }
   function whenTitleWritten(fn) {
@@ -1343,6 +1351,7 @@
     }
     function step(fn, ms) { setTimeout(function () { fn(); }, ms); }
     function arrive() {               // as following a link: the content is swapped
+      nightcrawlers(false, true);
       leave(title);
       history.replaceState(history.state, "", to);
       route().then(comeBack);
@@ -1589,8 +1598,33 @@
     state.homeText.forEach(function (text, i) { homeEl.appendChild(paragraph(text, i === 0)); });
   }
 
+  // The nightcrawlers (rsc/js/nightcrawlers.js) walk on the 404 page only. When another page is shown they go at once,
+  // except after the flyer puts the address right (`walkOff`), when they walk off the window first.
+  var crawlers = null;
+  var crawlersUp = true;     // false while there are nightcrawlers still to get up: the flyer doesn't set off until then
+  window.addEventListener("all-nightcrawlers-started", function () { crawlersUp = true; });
+  function nightcrawlers(on, walkOff) {
+    if (!on) {
+      crawlersUp = true;
+      if (crawlers) crawlers.then(function (c) { if (c) { if (walkOff) c.leave(); else c.stop(); } });
+      crawlers = null;
+      return;
+    }
+    if (crawlers || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    crawlersUp = false;
+    var mine = crawlers = import("/rsc/js/nightcrawlers.js").then(function (m) {
+      var c = m.startNightcrawlers({ centreX: function () {     // centred on the main column, as the diamonds are
+        var r = document.querySelector("main").getBoundingClientRect();
+        return r.left + r.width / 2;
+      } });
+      if (crawlers !== mine) { c.stop(); return null; }     // another page was shown while it loaded
+      return c;
+    }, function () { crawlersUp = true; return null; });
+  }
+
   function render(state) {
     document.documentElement.classList.remove("deep", "loading");     // from here the hidden attributes decide
+    nightcrawlers(state.page === "missing");
     // the old content may still be wiping out: it stays, lifted out of the flow, until it has gone
     var old = viewEl.querySelector(".body.wipe-out");
     if (old) {
@@ -1620,7 +1654,7 @@
         var h1 = el("h1", null, "story-title");
         viewEl.appendChild(h1);
         addInitial(h1, state.message || state.levelTitle);
-        if (state.hint) body.appendChild(el("p", state.hint, "hint"));
+        state.hints.forEach(function (h) { body.appendChild(el("p", h, "hint")); });
         if (state.levelStories && state.levelStories.length) {
           body.appendChild(el("h2", "Tales of " + state.levelTitle));
           var tales = el("ul", null, "realms");

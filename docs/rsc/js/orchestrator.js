@@ -34,11 +34,14 @@ const TOUCH_ID = 100;      // pointer ids from here on are its feet and tail tip
                            // of the mouse's and the flyer's, which are 0 or 1)
 const SETTLE_MS = 2000;    // ms after a page is shown before looking for B's, so the new text has settled in
 const TOP_BAND_CM = 8.4;   // depth of the band across the top of the page it may walk in
+const START_HEADING = -3 * Math.PI / 4;   // where it starts, it looks diagonally up and to the left
+const START_IN = 0.06;     // how far its tail tip is from the window's bottom right corner, in body lengths
 const PEEK = 0.25;         // how far up over the bottom of the page its head heads for, in body lengths
                            // (a walk ends within 0.15 of its goal, so the head comes up between 0.1 and 0.25)
 
 // Brings the chameleon onto the page, if it may come; returns a function that takes it away again, or null.
-async function start(){
+// `fresh`: it has just been turned on, so it starts as on the first visit of the day.
+async function start(fresh){
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return null;
   const content = document.querySelector(".layout").getBoundingClientRect();
   const margin = document.documentElement.clientWidth - content.right;
@@ -60,18 +63,25 @@ async function start(){
   // It only fades in on the first visit of the day. After that it carries on from where it was last saved, already
   // awake, if that spot is somewhere it may walk and its head would be in the window as the page opens (the page may
   // be a different one, and is still short while its text is fetched, so a spot further down could leave it out of
-  // sight, or below the end of the page); if not, it starts from its usual spot.
+  // sight, or below the end of the page); if not, it starts from its usual spot: in the window's bottom right corner,
+  // looking diagonally up and to the left, with its body and tail running back into the corner (its head never left of
+  // the right margin, so in a narrow margin its tail goes off the side of the window instead of over the text).
   const today = new Date().toLocaleDateString("en-CA"), centre = () => document.documentElement.clientWidth / 2;
   const saved = load();
-  const again = saved && saved.day === today;
+  const again = !fresh && saved && saved.day === today;
   const there = again && { x: saved.x + centre(), y: saved.y };
+  const corner = () => {
+    const back = (1 + START_IN) * length, dx = -Math.cos(START_HEADING) * back, dy = -Math.sin(START_HEADING) * back;
+    const x = scrollX + document.documentElement.clientWidth - dx, y = scrollY + innerHeight - dy;
+    return { x: Math.max(x, scrollX + content.right + 0.18 * length), y };
+  };
   const at = there && there.y >= scrollY && there.y <= scrollY + innerHeight
       && layout().area.some(r => there.x >= r.x0 && there.x <= r.x1 && there.y >= r.y0 && there.y <= r.y1)
     ? there
-    : { x: scrollX + content.right + margin / 2, y: scrollY + (innerHeight - length) / 2 };   // its whole length centred in the window
+    : corner();
   const chameleon = createChameleon({
     ...at,
-    heading: again ? saved.heading : -Math.PI / 2,
+    heading: at === there ? saved.heading : START_HEADING,
     length,
     paper: paper(),
     mottled: grain(),
@@ -277,10 +287,11 @@ let tongueOut = null;   // the lick that ticked the box: it stays until its tong
 function follow(){
   const off = document.documentElement.classList.contains("chameleoff");
   if (off === wasOff) return;   // some other class changed
+  const turnedOn = wasOff === true;   // not when the page loads
   wasOff = off;
   busy = busy.then(async () => {
     if (off) { await tongueOut; if (stop) stop(); stop = null; }
-    else stop = await start();
+    else stop = await start(turnedOn);
   });
 }
 new MutationObserver(follow).observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
