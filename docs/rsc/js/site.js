@@ -1269,9 +1269,10 @@
     })(performance.now());
   }
 
-  // A little test: a missing address with the words "hat" and "man" in it is put right by the flyer. It flies straight up
-  // off the page and turns up in the browser's address bar as a diamond after the address, deletes the path a
-  // character at a time (the hostname can't be touched), types the right one and swaps the page in, as a link does.
+  // A missing address the flyer can put right: one with the words "hat" and "man" in it (a little test), or an old
+  // one with a story's settlement in it (/<region>/<place>/<story>, where a story is now beside its region's). It flies
+  // straight up off the page and turns up in the browser's address bar as a diamond, at the part that is wrong (the
+  // hostname can't be touched), deletes it a character at a time, types the right part and swaps the page in, as a link does.
   var HAT_MAN = "/mirabilia/apparitions/hat-man";
   var HAT_MAN_TITLE = "The Hat Man";
   var EXIT_AFTER = 1500;            // ms after the title is finished before the flyer leaves
@@ -1281,20 +1282,34 @@
     var words = address.toLowerCase().split(/[^a-z]+/);
     return words.indexOf("hatman") >= 0 || (words.indexOf("hat") >= 0 && words.indexOf("man") >= 0);
   }
+  // The address without its settlement, and that page's title, if there is such a page; or null.
+  function withoutPlace(address) {
+    var parts = address.split("/").filter(Boolean);
+    if (parts.length < 3) return Promise.resolve(null);
+    var to = "/" + parts.slice(0, -2).concat(parts.slice(-1)).join("/");
+    return fetch(to).then(function (res) { return res.ok ? res.text() : null; }).then(function (text) {
+      var h1 = text && new DOMParser().parseFromString(text, "text/html").querySelector("h1");
+      return h1 ? { to: to, title: h1.textContent.trim() } : null;
+    }).catch(function () { return null; });
+  }
   function fixAddress() {
-    if (!meansHatMan(location.pathname)) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return location.replace(HAT_MAN);
-    whenTitleWritten(function () {
-      setTimeout(function () {
-        if (!meansHatMan(location.pathname)) return;
-        if (!sprite.el) return location.replace(HAT_MAN);
-        clearTimeout(sprite.drawTimer);
-        sprite.queue = [];
-        if (sprite.mode === "edit") endEdit(false);
-        sprite.flying = sprite.mode !== "rest" && sprite.mode !== "hold";
-        sprite.onGone = function () { retypeAddress(HAT_MAN); };
-        sprite.mode = "exit";
-      }, EXIT_AFTER);
+    var from = location.pathname;
+    var found = meansHatMan(from) ? Promise.resolve({ to: HAT_MAN, title: HAT_MAN_TITLE }) : withoutPlace(from);
+    found.then(function (fix) {
+      if (!fix || location.pathname !== from) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return location.replace(fix.to);
+      whenTitleWritten(function () {
+        setTimeout(function () {
+          if (location.pathname !== from) return;
+          if (!sprite.el) return location.replace(fix.to);
+          clearTimeout(sprite.drawTimer);
+          sprite.queue = [];
+          if (sprite.mode === "edit") endEdit(false);
+          sprite.flying = sprite.mode !== "rest" && sprite.mode !== "hold";
+          sprite.onGone = function () { retypeAddress(fix.to, fix.title); };
+          sprite.mode = "exit";
+        }, EXIT_AFTER);
+      });
     });
   }
   function whenTitleWritten(fn) {
@@ -1313,29 +1328,34 @@
       goHome();
     });
   }
-  function retypeAddress(to) {
-    var text = location.pathname, shown;
+  // Only the part of the address that differs is deleted and retyped: what it shares with the right one at the start
+  // and the end stays, with the diamond between them.
+  function retypeAddress(to, title) {
+    var from = location.pathname, p = 0, q = 0, shown;
+    while (p < from.length && p < to.length && from.charAt(p) === to.charAt(p)) p++;
+    while (q < from.length - p && q < to.length - p && from.charAt(from.length - 1 - q) === to.charAt(to.length - 1 - q)) q++;
+    var prefix = from.slice(0, p), suffix = from.slice(from.length - q), mid = from.slice(p, from.length - q), want = to.slice(p, to.length - q);
     function show() {                 // false if the visitor has gone somewhere else, or the browser won't have it
       if (shown && location.pathname !== shown) { comeBack(); return false; }
-      try { history.replaceState(history.state, "", text + "\u25C6"); } catch (e) { location.replace(to); return false; }
+      try { history.replaceState(history.state, "", prefix + mid + "\u25C6" + suffix); } catch (e) { location.replace(to); return false; }
       shown = location.pathname;
       return true;
     }
     function step(fn, ms) { setTimeout(function () { fn(); }, ms); }
     function arrive() {               // as following a link: the content is swapped
-      leave(HAT_MAN_TITLE);
+      leave(title);
       history.replaceState(history.state, "", to);
       route().then(comeBack);
       window.scrollTo(0, 0);
     }
     function erase() {
-      if (text.length <= 1) return step(type, ADDRESS_PAUSE);
-      text = text.slice(0, -1);
+      if (!mid.length) return step(type, ADDRESS_PAUSE);
+      mid = mid.slice(0, -1);
       if (show()) step(erase, ADDRESS_STEP);
     }
     function type() {
-      if (text === to) return step(function () { if (show()) arrive(); }, ADDRESS_PAUSE);
-      text = to.slice(0, text.length + 1);
+      if (mid === want) return step(function () { if (show()) arrive(); }, ADDRESS_PAUSE);
+      mid = want.slice(0, mid.length + 1);
       if (show()) step(type, ADDRESS_STEP);
     }
     if (show()) step(erase, ADDRESS_PAUSE);
