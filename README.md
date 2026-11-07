@@ -168,6 +168,10 @@ The rest of each title (everything after the illuminated letter, and the "yrd Wi
 
 These options exist only in this site's copy of `rsc/js/triangles.js`, not in the triangle-evolution project, so keep it if you copy a newer renderer over.
 
+### Old addresses
+
+The site used to have addresses like `/index.html?/europe/england/norfolk`, and search engines still have some. A script at the top of the home page (`OLD_ADDRESS_REDIRECT` in `tools/import-stories.ts`) sends `/` or `/index.html` with a query starting `?/` on to that path, `/europe/england/norfolk`, whether or not it exists. Other queries are left alone.
+
 ### The Hat Man address
 
 A test: a missing address with the words "hat" and "man" in it (or "hatman") is put right by the flyer (`fixAddress()` in `rsc/js/site.js`). About 1.5 seconds after the 404 page's title is finished, it flies straight up off the page at its normal speed, then appears in the address bar as a `◆` after the address, deletes the path a character at a time with `history.replaceState`, types `/mirabilia/apparitions/hat-man`, and swaps the page in as a link does. The flyer then comes back down to its place once the new title is finished. With reduced motion it goes there at once. Browsers that hide the path (Safari by default) show only the final page.

@@ -6,6 +6,10 @@
   <title>Wyrd Wiki</title>
   <meta name="description" content="A gazetteer of folklore, filed by place">
   <link rel="canonical" href="https://wyrd.wiki/">
+  <script>
+    if ((location.pathname === "/" || location.pathname === "/index.html") && location.search.charAt(1) === "/")
+      location.replace(location.search.slice(1) + location.hash);
+  </script>
   <link rel="stylesheet" href="/rsc/site.css">
 </head>
 <body>

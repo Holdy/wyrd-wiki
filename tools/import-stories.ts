@@ -21,6 +21,9 @@ const siteRoot = path.join(import.meta.dir, "..", "docs");
 const outRoot = siteRoot;
 const SITE = "https://wyrd.wiki";
 const STORIES_URL = "/";
+// On the home page: the old addresses were /index.html?/<path> (and search engines still have some), so they go to /<path>.
+const OLD_ADDRESS_REDIRECT = `if ((location.pathname === "/" || location.pathname === "/index.html") && location.search.charAt(1) === "/")
+      location.replace(location.search.slice(1) + location.hash);`;
 
 const CONTINENTS = ["Africa", "Antarctica", "Asia", "Europe", "North_America", "Oceania", "South_America"];
 
@@ -225,7 +228,7 @@ function describe(text: string): string {
 // Every page: the content is plain HTML, so it can be read without JavaScript. rsc/js/bootstrap.js, first in the body,
 // hides it and adds everything else a page needs (the scripts, the fonts); rsc/js/site.js redraws it, reading it back
 // with readPage().
-function page(o: { title: string; description: string; url: string; crumbs: Link[]; menu: Link[]; view: string; noindex?: boolean }): string {
+function page(o: { title: string; description: string; url: string; crumbs: Link[]; menu: Link[]; view: string; noindex?: boolean; script?: string }): string {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -234,7 +237,7 @@ function page(o: { title: string; description: string; url: string; crumbs: Link
   <title>${htmlEscape(o.title)}</title>
   <meta name="description" content="${htmlEscape(o.description)}">
 ${o.noindex ? `  <meta name="robots" content="noindex">` : `  <link rel="canonical" href="${htmlEscape(SITE + o.url)}">`}
-  <link rel="stylesheet" href="/rsc/site.css">
+${o.script ? `  <script>\n    ${o.script}\n  </script>\n` : ""}  <link rel="stylesheet" href="/rsc/site.css">
 </head>
 <body>
   <script src="/rsc/js/bootstrap.js"></script>
@@ -336,7 +339,7 @@ function emit(node: Node, urlParts: string[], crumbs: Link[], used: Set<string>)
   if (!node.name) {
     const view = article(`data-page="home"`, "        <h1>Wyrd Wiki</h1>", `        <p class="subtitle">${htmlEscape(HOME_TAGLINE)}</p>`,
       ["        <div class=\"summary\">", ...HOME_TEXT.map((p) => `          <p>${inline(p)}</p>`), "        </div>"].join("\n"));
-    files.set(path.join(siteRoot, "index.html"), page({ title: "Wyrd Wiki", description: HOME_TAGLINE, url, crumbs: [], menu: listed, view }));
+    files.set(path.join(siteRoot, "index.html"), page({ title: "Wyrd Wiki", description: HOME_TAGLINE, url, crumbs: [], menu: listed, view, script: OLD_ADDRESS_REDIRECT }));
     files.set(path.join(siteRoot, "404.html"), page({
       title: "Nothing found here — Wyrd Wiki", description: "That place is not in the gazetteer.", url: "/", crumbs: inHere, menu: listed, noindex: true,
       view: article(`data-page="missing"`, "        <h1>Nothing found here</h1>", `        <p class="hint">That place is not in the gazetteer.</p>`),
