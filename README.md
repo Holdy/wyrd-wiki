@@ -29,7 +29,7 @@ The site is served by GitHub Pages from the `main` branch, from `docs/`, at **ht
 | `rsc/site.css` | The styles for every page |
 | `rsc/js/bootstrap.js` | The only script a page names. Runs before the first paint: hides the plain page until it is redrawn, applies saved options, and writes in the fonts, the filter, the paper and dust layers and the other scripts |
 | `rsc/js/site.js` | Draws every page: navigation, titles, circles, spelling corrections and the flyer |
-| `rsc/js/nightcrawlers.js` | The walking creature skeletons on the 404 page, from `experiments/Creature skeleton.html`. Started and stopped by `site.js`. After the flyer corrects an address, they get up and walk directly away from the middle of the main column (where their rows are centred, as the diamonds are), and the canvas goes once they are all off it. Not shown under reduced motion |
+| `rsc/js/nightcrawlers.js` | The walking creature skeletons on the 404 page, from `experiments/Creature skeleton.html`. Started and stopped by `site.js`. After the flyer corrects an address, they get up and walk directly away from the middle of their rows, which are centred under the row of diamonds, and the canvas goes once they are all off it. Not shown under reduced motion |
 | `rsc/js/dust.js` | The dust |
 | `rsc/js/triangles.js` | Renderer for the triangle drawings, copied from the triangle-evolution project and extended here (the `animateIn` options below) |
 | `rsc/quill/` | The quill font: its TypeScript source (`src/`, built with `npm run quill`), a demo page, and `word.js`, which draws the rest of each title as pen-written words, one canvas per word, with the real text over them. See its README and "Quill titles" below |

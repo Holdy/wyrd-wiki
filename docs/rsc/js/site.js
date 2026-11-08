@@ -1613,9 +1613,9 @@
     if (crawlers || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     crawlersUp = false;
     var mine = crawlers = import("/rsc/js/nightcrawlers.js").then(function (m) {
-      var c = m.startNightcrawlers({ centreX: function () {     // centred on the main column, as the diamonds are
-        var r = document.querySelector("main").getBoundingClientRect();
-        return r.left + r.width / 2;
+      var c = m.startNightcrawlers({ centreX: function () {     // centred under the diamonds (not on main, which in
+        var r = document.getElementById("pips").getBoundingClientRect();     // portrait has no box of its own)
+        return r.width ? r.left + r.width / 2 : window.innerWidth / 2;
       } });
       if (crawlers !== mine) { c.stop(); return null; }     // another page was shown while it loaded
       return c;
