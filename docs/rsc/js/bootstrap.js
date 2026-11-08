@@ -15,6 +15,13 @@
     if (visuals.edges === false) root.classList.add("no-edges");
     if (visuals.chameleoff === true) root.classList.add("chameleoff");
   } catch (e) {}
+  // Visits are counted by GoatCounter (wyrd-wiki.goatcounter.com), which counts the page as it loads; rsc/js/site.js
+  // counts the pages it swaps in after that.
+  var counter = document.createElement("script");
+  counter.async = true;
+  counter.src = "https://gc.zgo.at/count.js";
+  counter.setAttribute("data-goatcounter", "https://wyrd-wiki.goatcounter.com/count");
+  document.head.appendChild(counter);
   document.write(
     '<link rel="preconnect" href="https://fonts.googleapis.com">' +
     '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' +

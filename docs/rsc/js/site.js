@@ -1622,6 +1622,7 @@
     }, function () { crawlersUp = true; return null; });
   }
 
+  var counted = 0;
   function render(state) {
     document.documentElement.classList.remove("deep", "loading");     // from here the hidden attributes decide
     nightcrawlers(state.page === "missing");
@@ -1689,6 +1690,8 @@
     pending = null;
     document.title = (state.story ? state.story.title + " — " : atHome ? "" : state.levelTitle + " — ") + "Wyrd Wiki";
     window.dispatchEvent(new Event("pagerendered"));     // anyone may listen to know a new page is showing
+    // GoatCounter (rsc/js/bootstrap.js) counted the first page as it loaded; each one swapped in after it is counted here
+    if (counted++ && window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: location.pathname, title: document.title });
     if (state.message) fixAddress();
   }
 
