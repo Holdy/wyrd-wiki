@@ -100,7 +100,16 @@ The continent folders are generated from the research data in the local-llm-agen
 bun tools/import-stories.ts [--source <dir>] [--dry-run]
 ```
 
-- **Source is the truth.** Every run rebuilds all the story files and pages from the source, and removes any `.md`, `.xml` or `.html` file in the continent folders that it didn't produce; edit the source files there, not the generated ones. `--dry-run` prints the counts and warnings and writes nothing. Changing the page template in the script means running it again.
+To rebuild the pages from the story `.md` files already in `docs/`, without reading the research data (after adding or editing a story by hand), run
+
+```
+bun tools/import-stories.ts --generate [--dry-run]
+```
+
+- **The source writes its stories.** Every import rewrites the `.md` of each story in the source and rebuilds all the pages. Edit a story that comes from the source there, not here, or the next import puts it back. `--dry-run` prints the counts and warnings and writes nothing. Changing the page template in the script means running it again (`--generate` is enough).
+- **Story files are never deleted.** A `.md` in the continent folders that the source didn't produce (a story added by hand, or one since removed from the source) is kept and given its page like any other, and the import lists them. Delete one by hand if it has gone from the source. Only `.html` and `.xml` files that the run didn't make are removed, as pages are always made again from the story files.
+- **Adding a story by hand:** write its `.md` (the same sections as any story) in its region's folder, or in a settlement's folder (`bedfordshire/keysoe/the-keysoe-miracle.md`; the folder is made if need be, and the page goes beside the `.md`), then run `--generate`. It keeps its file name, so its address is `/europe/england/bedfordshire/keysoe/the-keysoe-miracle`.
+- **How `--generate` files the stories:** by the folders they are in. A settlement's stories normally sit in its region's folder, so which settlement each belongs to is read from the settlement's own page (`<settlement>/index.html`, whose menu lists them); names come from the pages' headings. Every story keeps its file name, so no address moves.
 - **Filing is by file name only** (the source directory layout differs between subjects and is ignored): `Afghanistan.md` is a country, `Aberdeenshire, UK.md` or `Alabama, USA.md` a region, `Acle,norfolk,uk.md` or `Airdrie, Alberta, Canada.md` a settlement. Region files for the UK are filed under England, Scotland, Wales or Northern Ireland (`UK_REGION_COUNTRY` in the script); countries go under their continent (`COUNTRY_CONTINENT`). A name the script doesn't know is reported as a warning and its stories are skipped, so add it to the lists.
 - **Several subjects, one place:** stories from every subject for the same place are filed together (sorted by title). Identical copies are dropped; two stories with the same title in a place each get a page, the second numbered.
 - **Tags:** `skip`, `duplicate` and `invalid` stories get a `.md` but no page. Everything else (`private`, `pinless`, `approx`, …) is published.
@@ -115,7 +124,7 @@ All of the animation respects the visitor's *reduced motion* setting (see the en
 
 ### Parchment
 
-- The paper is generated in CSS and SVG noise, with no image files: a flat parchment colour, a fine grain, larger stains, and darkened edges. (There used to be colour blotches and a light-to-dark sweep over the whole page too; they were removed because the sweep made long pages get darker as you scrolled down.)
+- The paper is a flat parchment colour (`#paper`), a fine grain and larger stains (`body::before`), and darkened edges (`body::after`, CSS gradients). The grain and stains are one opaque 900 px tile, `rsc/paper.jpg`, with the parchment colour baked in, so nothing has to be blended live. It is made by `bun tools/bake-paper.ts` (macOS: it uses `sips` for the JPEG), which draws the SVG turbulence noise the layer used to draw in the browser (a 300 px fibre tile over a 900 px stain tile, multiplied at 55% into the parchment); change the settings at the top of that script and run it again. (There used to be colour blotches and a light-to-dark sweep over the whole page too; they were removed because the sweep made long pages get darker as you scrolled down.)
 - The grain and stains scroll with the page. The dark edges stay fixed to the window.
 - **Arrival:** the page starts white, turns to the flat parchment colour over 1.6 s, then the grain and the dark edges come in together over 3.5 s. Each stage is a layer that only changes its opacity (`#paper` is the colour, `body::before` the grain, `body::after` the edges), so the browser fades it without repainting. This matters: an earlier version animated the gradients themselves, which repainted the whole background every frame and dropped the page from 60 to about 15 frames a second while the title was being written, slowing the quill. Under reduced motion the finished paper shows at once.
 - **No flash of the plain page:** `rsc/js/bootstrap.js` adds a `loading` class to `<html>`, and a `deep` class on any page below `/`. These hide the plain content and the home section until the first render has drawn the page.

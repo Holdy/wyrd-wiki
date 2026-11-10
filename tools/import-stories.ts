@@ -1,6 +1,11 @@
 // Rebuilds the continent folders in docs from the research data in the local-llm-agent project.
 //
 //   bun tools/import-stories.ts [--source ~/projects/local-llm-agent] [--dry-run]
+//   bun tools/import-stories.ts --generate [--dry-run]
+//
+// --generate reads no research data: it rebuilds every page from the story .md files already in docs (see
+// addDocsStories), leaving the .md files as they are. Neither way ever deletes a .md file: an import also keeps
+// (and makes pages for) the stories in docs that the research data didn't produce, and lists them.
 //
 // Every `<subject>-data-targets/**/*.md` (or `<subject>-targets/`, as weeping-statue is named, or `<subject>-target-data/`, as screaming-skull is) there holding stories is read, filed
 // by its file name (see parseName), and written under docs/<continent> as one .md and
@@ -15,6 +20,7 @@ import path from "node:path";
 
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
+const generateOnly = args.includes("--generate");
 const sourceArg = args.indexOf("--source");
 const sourceRoot =
   sourceArg >= 0 ? args[sourceArg + 1] : path.join(homedir(), "projects", "local-llm-agent");
@@ -106,7 +112,9 @@ const slugify = (text: string) =>
     .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 const htmlEscape = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-type Story = { text: string; title: string; tags: string[]; subject: string };
+// `name` and `dir` are set for a story read from a .md file in docs: its file name (without .md) and the directory it
+// is in, both kept as they are.
+type Story = { text: string; title: string; tags: string[]; subject: string; name?: string; dir?: string };
 
 function parseStory(chunk: string, subject: string): Story | undefined {
   const text = chunk.trim();
@@ -141,7 +149,9 @@ async function walk(dir: string, match = /\.md$/): Promise<string[]> {
 
 // A node in the output tree; `stories` are those filed at that level. A settlement's story files
 // sit beside its region's; its directory holds only its index page.
-type Node = { name: string; dir: string; isPlace: boolean; children: Map<string, Node>; stories: Story[] };
+// `slug` is the node's directory name when it was read from docs (otherwise dirName(name)).
+type Node = { name: string; dir: string; isPlace: boolean; children: Map<string, Node>; stories: Story[]; slug?: string };
+const slugOf = (n: Node) => n.slug ?? dirName(n.name);
 const child = (parent: Node, name: string, isPlace = false): Node => {
   const key = name.toLowerCase();
   let node = parent.children.get(key);
@@ -155,7 +165,7 @@ const child = (parent: Node, name: string, isPlace = false): Node => {
 const root: Node = { name: "", dir: outRoot, isPlace: false, children: new Map(), stories: [] };
 for (const c of CONTINENTS) child(root, c);
 
-const sourceDirs = (await readdir(sourceRoot, { withFileTypes: true }))
+const sourceDirs = generateOnly ? [] : (await readdir(sourceRoot, { withFileTypes: true }))
   .filter((e) => e.isDirectory() && /-target(s|-data)$/.test(e.name))
   .map((e) => e.name)
   .sort();
@@ -282,16 +292,18 @@ function placePage(title: string, url: string, crumbs: Link[], menu: Link[], tal
 }
 
 const files = new Map<string, string>();
-const stats = { storiesFiled: 0, visible: 0, numbered: 0, places: 0 };
+const stats = { storiesFiled: 0, visible: 0, hidden: 0, numbered: 0, places: 0 };
 // Hidden stories get a .md but no page. They are named last, so they never move a page's address.
 const hiddenStories: { story: Story; dir: string; names: Set<string> }[] = [];
 
 // A file name for a story in a directory, numbered if it is taken. `used` also holds the names of the directories there,
 // so a story can't take a place's address (GitHub Pages can't tell /norfolk/norwich the story from norwich/ the place).
-function storyName(title: string, used: Set<string>): string {
+// Names already taken in each directory by stories read from docs, which keep their own (see `reserved` below).
+const reserved = new Map<string, Set<string>>();
+function storyName(title: string, used: Set<string>, dir: string): string {
   const base = slugify(title) || "story";
   let name = base;
-  for (let n = 2; used.has(name); n++) name = `${base}-${n}`;
+  for (let n = 2; used.has(name) || reserved.get(dir)?.has(name); n++) name = `${base}-${n}`;
   if (name !== base) stats.numbered++;
   used.add(name);
   return name;
@@ -301,41 +313,45 @@ function storyName(title: string, used: Set<string>): string {
 function emit(node: Node, urlParts: string[], crumbs: Link[], used: Set<string>) {
   const kids = [...node.children.values()].sort((a, b) => a.name.localeCompare(b.name));
   const own = [...new Map(node.stories.map((s) => [s.text, s])).values()].sort(
-    (a, b) => a.title.localeCompare(b.title) || a.subject.localeCompare(b.subject),
+    (a, b) => a.title.localeCompare(b.title) || a.subject.localeCompare(b.subject) || (a.name ?? "").localeCompare(b.name ?? "", undefined, { numeric: true }),
   );
   stats.storiesFiled += own.length;
 
-  const here = node.name ? [...urlParts, dirName(node.name)] : [];
+  const here = node.name ? [...urlParts, slugOf(node)] : [];
   const url = node.name ? urlOf(here) + "/" : "/";
   const inHere = node.name ? [...crumbs, { title: placeTitle(node.name), href: url }] : [{ title: "Wyrd Wiki", href: "/" }];
-  const names = node.isPlace ? used : new Set(["index", ...kids.map((k) => dirName(k.name))]);
+  const names = node.isPlace ? used : new Set(["index", ...kids.map(slugOf)]);
   // A place's stories sit beside its parent's, so their addresses leave out the place.
   const storyDir = node.isPlace ? urlParts : here;
+  // a story read from docs keeps its file name and directory (which may be the place's own, for one added by hand)
   const tales = own.filter((s) => !isHidden(s)).map((s) => {
-    const name = storyName(s.title, names);
-    return { story: s, name, link: { title: s.title, href: urlOf([...storyDir, name]) } };
+    const name = s.name ?? storyName(s.title, names, node.dir);
+    const dir = s.dir ?? node.dir;
+    const parts = s.dir ? path.relative(siteRoot, s.dir).split(path.sep) : storyDir;
+    return { story: s, name, dir, link: { title: s.title, href: urlOf([...parts, name]) } };
   });
-  for (const t of tales) files.set(path.join(node.dir, `${t.name}.md`), t.story.text + "\n");
-  for (const s of own.filter(isHidden)) hiddenStories.push({ story: s, dir: node.dir, names });
+  for (const t of tales) if (!t.story.dir) files.set(path.join(node.dir, `${t.name}.md`), t.story.text + "\n");
+  for (const s of own.filter(isHidden)) if (!s.dir) hiddenStories.push({ story: s, dir: node.dir, names });
   const taleLinks = tales.map((t) => t.link);
   stats.visible += tales.length;
+  stats.hidden += own.length - tales.length;
 
   if (node.isPlace) {
     if (!tales.length) return;
     for (const t of tales) {
       const menu = taleLinks.filter((l) => l !== t.link);
-      files.set(path.join(node.dir, `${t.name}.html`), storyPage(t.story, t.link.href, inHere, menu));
+      files.set(path.join(t.dir, `${t.name}.html`), storyPage(t.story, t.link.href, inHere, menu));
     }
-    files.set(path.join(node.dir, dirName(node.name), "index.html"), placePage(placeTitle(node.name), url, crumbs, taleLinks, [], "Choose a story from the list."));
+    files.set(path.join(node.dir, slugOf(node), "index.html"), placePage(placeTitle(node.name), url, crumbs, taleLinks, [], "Choose a story from the list."));
     stats.places++;
     return;
   }
 
   // A country or region's own tales are listed in the main area of its page; once one is open they join the menu.
-  const listed = (node.name ? kids.filter(hasPage) : kids).map((k) => ({ title: placeTitle(k.name), href: urlOf([...here, dirName(k.name)]) + "/" }));
+  const listed = (node.name ? kids.filter(hasPage) : kids).map((k) => ({ title: placeTitle(k.name), href: urlOf([...here, slugOf(k)]) + "/" }));
   for (const t of tales) {
     const menu = [...listed, ...taleLinks.filter((l) => l !== t.link)];
-    files.set(path.join(node.dir, `${t.name}.html`), storyPage(t.story, t.link.href, inHere, menu));
+    files.set(path.join(t.dir, `${t.name}.html`), storyPage(t.story, t.link.href, inHere, menu));
   }
   if (!node.name) {
     const view = article(`data-page="home"`, "        <h1>Wyrd Wiki</h1>", `        <p class="subtitle">${htmlEscape(HOME_TAGLINE)}</p>`,
@@ -360,8 +376,87 @@ const missing = await (async () => {
   if (!title) warn("docs/404.md has no #title: the 404 page says \"Nothing found here\"");
   return { title: title || "Nothing found here", hints: paragraphs(sections["summary"] ?? "").map((p) => p.trim().replace(/\s+/g, " ")) };
 })();
+
+// The stories already in docs, filed by the folders they are in. A settlement's stories sit in its region's folder,
+// so which settlement each belongs to is read from the settlement's page (its menu lists them); a story put in the
+// settlement's own folder by hand belongs to it too. Only the files `keep` accepts are added; their paths are returned.
+type Step = { name: string; slug: string; isPlace: boolean; dir: string };
+async function addDocsStories(keep: (file: string) => boolean): Promise<string[]> {
+  const added: string[] = [];
+  const unescape = (s: string) => s.replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
+  const placeOf = new Map<string, Step[]>();      // a story .md in a region's folder -> the path to its settlement
+  // the tree node for a path, made if need be (matched on directory name, so a differently written name can't double it)
+  const nodeAt = (steps: Step[]) => {
+    let node = root;
+    for (const st of steps) {
+      let next = [...node.children.values()].find((k) => slugOf(k) === st.slug);
+      if (!next) next = child(node, st.name, st.isPlace);
+      next.slug = st.slug;
+      if (!st.isPlace) next.dir = st.dir;
+      node = next;
+    }
+    return node;
+  };
+  // depth: 1 continent, 2 country, 3 region, 4 settlement
+  async function visit(dir: string, steps: Step[], depth: number) {
+    const entries = (await readdir(dir, { withFileTypes: true }).catch(() => [])).sort((a, b) => a.name.localeCompare(b.name));
+    for (const e of entries.filter((e) => e.isDirectory())) {
+      const full = path.join(dir, e.name);
+      const html = await readFile(path.join(full, "index.html"), "utf8").catch(() => "");
+      const h1 = html.match(/<h1>([^<]*)<\/h1>/);
+      const isPlace = depth === 3;
+      const step: Step = { name: h1 ? unescape(h1[1]) : titleCase(e.name.replace(/-/g, " ")), slug: e.name, isPlace, dir: isPlace ? dir : full };
+      if (isPlace) {
+        const menu = html.match(/<ul class="realms" id="options">([\s\S]*?)<\/ul>/);
+        for (const m of (menu?.[1] ?? "").matchAll(/href="([^"]+)"/g)) {
+          const parts = unescape(m[1]).split("/").filter(Boolean).map(decodeURIComponent);
+          placeOf.set(path.join(siteRoot, ...parts) + ".md", [...steps, step]);
+        }
+      }
+      await visit(full, [...steps, step], depth + 1);
+    }
+    for (const e of entries.filter((e) => e.isFile() && e.name.endsWith(".md"))) {
+      const file = path.join(dir, e.name);
+      if (!keep(file)) continue;
+      const story = parseStory(await readFile(file, "utf8"), "docs");
+      if (!story) { warn(`${path.relative(siteRoot, file)} has no #title`); continue; }
+      story.name = e.name.replace(/\.md$/, "");
+      story.dir = dir;
+      nodeAt(placeOf.get(file) ?? steps).stories.push(story);
+      added.push(file);
+    }
+  }
+  for (const c of CONTINENTS) {
+    const slug = dirName(c);
+    await visit(path.join(siteRoot, slug), [{ name: c, slug, isPlace: false, dir: path.join(siteRoot, slug) }], 1);
+  }
+  return added;
+}
+
+// Stories in docs that the research data doesn't produce (added by hand, or gone from the source) are kept as they are.
+// An import first works out which .md files it writes, then adds every other story file in docs.
+let kept: string[];
+if (generateOnly) kept = await addDocsStories(() => true);
+else {
+  emit(root, [], [], new Set());
+  for (const { story, dir, names } of hiddenStories) files.set(path.join(dir, `${storyName(story.title, names, dir)}.md`), story.text + "\n");
+  const produced = new Set([...files.keys()].filter((f) => f.endsWith(".md")));
+  files.clear();
+  hiddenStories.length = 0;
+  Object.assign(stats, { storiesFiled: 0, visible: 0, hidden: 0, numbered: 0, places: 0 });
+  kept = await addDocsStories((f) => !produced.has(f));
+}
+// their names are taken, so no other story is given one of them
+const reserve = (n: Node) => {
+  for (const s of n.stories) if (s.name && s.dir) {
+    if (!reserved.has(s.dir)) reserved.set(s.dir, new Set());
+    reserved.get(s.dir)!.add(s.name);
+  }
+  n.children.forEach(reserve);
+};
+reserve(root);
 emit(root, [], [], new Set());
-for (const { story, dir, names } of hiddenStories) files.set(path.join(dir, `${storyName(story.title, names)}.md`), story.text + "\n");
+for (const { story, dir, names } of hiddenStories) files.set(path.join(dir, `${storyName(story.title, names, dir)}.md`), story.text + "\n");
 
 // The mirabilia are written by hand: each docs/mirabilia/<group>/<name>.md makes the page beside it.
 const mirabilia = (await walk(path.join(siteRoot, "mirabilia"), /\.md$/).catch(() => [])).sort();
@@ -394,11 +489,15 @@ for (const [file, content] of [...files].sort()) {
   }
 }
 
-// Everything in the continent folders is generated, so what this run didn't produce has gone from the source.
-const orphans = existing.filter((f) => !files.has(f));
+// Pages are made from the story files, so a page this run didn't make is out of date. Story .md files are never removed.
+const orphans = existing.filter((f) => !files.has(f) && !f.endsWith(".md"));
 if (!dryRun) for (const f of orphans) await rm(f);
-console.log(`${storyCount} stories read from ${sourceDirs.length} subjects, ${stats.storiesFiled} filed after removing identical copies`);
-console.log(`${stats.visible} story pages, ${hiddenStories.length} hidden stories with no page, ${stats.numbered} numbered because the name was taken`);
+if (generateOnly) console.log(`${kept.length} story files read from docs`);
+else {
+  console.log(`${storyCount} stories read from ${sourceDirs.length} subjects, ${stats.storiesFiled} filed after removing identical copies`);
+  if (kept.length) console.log(`${kept.length} story files in docs kept that the source didn't produce:\n  ${kept.map((f) => path.relative(siteRoot, f)).join("\n  ")}`);
+}
+console.log(`${stats.visible} story pages, ${stats.hidden} hidden stories with no page, ${stats.numbered} numbered because the name was taken`);
 console.log(`${stats.places} place pages`);
 console.log(`${files.size} files generated, ${changed} ${dryRun ? "would change" : "written"}`);
 if (orphans.length) console.log(`${orphans.length} old files ${dryRun ? "would be removed" : "removed"}`);

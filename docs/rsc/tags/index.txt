@@ -44,6 +44,7 @@ event
 exhibit
 fairy-tree
 fairy
+fluke
 folk-song
 folklore-cat
 folklore-fox
