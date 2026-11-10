@@ -26,9 +26,12 @@
  * animateIn "sweep-left": the same, mirrored: the line starts at the right edge, each triangle
  * starts flat at its own rightmost x, and the picture unfolds from right to left.
  *
+ * animateIn "sweep-down": the same, turned on its side: the line runs from the top edge to the bottom, each
+ * triangle starts flat at its own topmost y, and the picture unfolds from top to bottom.
+ *
  * options.ink [r, g, b] tints the picture: black becomes that colour and white stays white.
  *
- * The canvas gets a method morphTo(base64, { shift: [dx, dy] }) that turns the picture into another one with
+ * The canvas gets a method morphTo(base64, { shift: [dx, dy], style }) that turns the picture into another one with
  * the same number of triangles: the old picture fades out while the new one fades in over it, each triangle
  * drifting a little (outwards from the middle) as it does. The canvas also
  * slides by `shift` CSS pixels over the same time. `since` (a performance.now() time) is when the morph counts as having begun, if that was
@@ -50,8 +53,17 @@ const ANIMATE_TIME = 3;
 /** morphTo: seconds the whole morph takes, and how far each triangle drifts meanwhile (a share of the picture). */
 const MORPH_TIME = 3;
 const MORPH_DRIFT = 0.05;
-/** morphTo: "layers" (each triangle in turn, lowest first, moves to its new place, grey and opacity), "blow" (the old letter is blown out to the right as the new one unfolds from the left, which starts a third of a second earlier), "outline" (fills fade to outlines, the outlines move, then the new fills cascade in) or "crossfade" (the old picture fades into the new, each triangle drifting a little). */
+/** morphTo: the style used unless morphTo is given { style }: "match" (each triangle is paired with the most similar one in the new picture, and they all move, reshape and
+ * change shade into their partners at once, after small random waits, their painting order moving from the old to the new),
+ * "layers" (each triangle in turn, lowest first, moves to its new place, grey and opacity), "blow" (the old letter is blown out to the right as the new one unfolds from the left, which starts a third of a second earlier), "outline" (fills fade to outlines, the outlines move, then the new fills cascade in) or "crossfade" (the old picture fades into the new, each triangle drifting a little). */
 const MORPH_STYLE = "blow";
+/** morphTo "match": what pairing two triangles costs besides the distance between their middles and the difference in
+ * their sizes (both as shares of the picture): this much for each full step of grey (0–255), of opacity (0–1) and of
+ * place in the stack (bottom to top); and the share of the time over which the triangles set off. */
+const MATCH_GRAY = 0.5;
+const MATCH_ALPHA = 0.5;
+const MATCH_RANK = 0.5;
+const MATCH_SPREAD = 0.3;
 /** morphTo "blow": seconds for the old letter to blow out to the right and for the new one to unfold from the left (the new one first, by MORPH_HEAD), and how much of the first the leftmost-to-rightmost start times take up. */
 const MORPH_COLLAPSE = 1.3;
 const MORPH_UNFOLD = 2.6;
@@ -69,6 +81,59 @@ const SWEEP_TIME = 2;
 const SWEEP_MIN_SPAN = 0.08;
 /** Stops the animation and listeners from a previous render into the same canvas. */
 const cleanups = new WeakMap();
+/**
+ * The pairing of rows to columns of an n×n cost matrix (cost[row * n + col]) with the least total cost
+ * (the Hungarian method). Returns, for each row, its column.
+ */
+function assign(cost, n) {
+    const u = new Float64Array(n + 1);
+    const v = new Float64Array(n + 1);
+    const p = new Int32Array(n + 1);
+    const way = new Int32Array(n + 1);
+    for (let i = 1; i <= n; i++) {
+        p[0] = i;
+        let j0 = 0;
+        const minv = new Float64Array(n + 1).fill(Infinity);
+        const used = new Uint8Array(n + 1);
+        do {
+            used[j0] = 1;
+            const i0 = p[j0];
+            let delta = Infinity;
+            let j1 = 0;
+            for (let j = 1; j <= n; j++) {
+                if (used[j])
+                    continue;
+                const cur = cost[(i0 - 1) * n + j - 1] - u[i0] - v[j];
+                if (cur < minv[j]) {
+                    minv[j] = cur;
+                    way[j] = j0;
+                }
+                if (minv[j] < delta) {
+                    delta = minv[j];
+                    j1 = j;
+                }
+            }
+            for (let j = 0; j <= n; j++) {
+                if (used[j]) {
+                    u[p[j]] += delta;
+                    v[j] -= delta;
+                }
+                else
+                    minv[j] -= delta;
+            }
+            j0 = j1;
+        } while (p[j0] !== 0);
+        do {
+            const j1 = way[j0];
+            p[j0] = p[j1];
+            j0 = j1;
+        } while (j0);
+    }
+    const match = new Int32Array(n);
+    for (let j = 1; j <= n; j++)
+        match[p[j] - 1] = j - 1;
+    return match;
+}
 function decodeBase64(base64) {
     const binary = atob(base64.replace(/\s+/g, ""));
     const bytes = new Uint8Array(binary.length);
@@ -128,8 +193,8 @@ function renderTriangles(target, base64, size, options = {}) {
     const pos = new Float32Array(home);
     // animateIn: triangles that have not set off yet are not drawn.
     const animateIn = options.animateIn;
-    if (animateIn !== undefined && animateIn !== "from-center" && animateIn !== "sweep-right" && animateIn !== "sweep-left") {
-        throw new Error(`renderTriangles: unknown animateIn "${String(animateIn)}" (expected "from-center", "sweep-right" or "sweep-left")`);
+    if (animateIn !== undefined && animateIn !== "from-center" && animateIn !== "sweep-right" && animateIn !== "sweep-left" && animateIn !== "sweep-down") {
+        throw new Error(`renderTriangles: unknown animateIn "${String(animateIn)}" (expected "from-center", "sweep-right", "sweep-left" or "sweep-down")`);
     }
     const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     const animating = animateIn !== undefined && !reduceMotion;
@@ -143,14 +208,16 @@ function renderTriangles(target, base64, size, options = {}) {
             home[i + 1] = pos[i + 1] = size / 2;
         }
     }
-    const sweeping = animateIn === "sweep-right" || animateIn === "sweep-left";
+    const sweeping = animateIn === "sweep-right" || animateIn === "sweep-left" || animateIn === "sweep-down";
     const leftward = animateIn === "sweep-left";
+    const axis = animateIn === "sweep-down" ? 1 : 0;   // which coordinate the sweep runs along: 0 x, 1 y
     if (animating && sweeping) {
-        // flat: every point at its triangle's leading x (leftmost, or rightmost for sweep-left); a triangle with no width draws nothing
+        // flat: every point at its triangle's leading x (leftmost, or rightmost for sweep-left), or topmost y for
+        // sweep-down; a triangle with no width (or height) draws nothing
         for (let t = 0; t < n; t++) {
-            const xs3 = [final[t * 6], final[t * 6 + 2], final[t * 6 + 4]];
+            const xs3 = [final[t * 6 + axis], final[t * 6 + 2 + axis], final[t * 6 + 4 + axis]];
             const left = leftward ? Math.max(...xs3) : Math.min(...xs3);
-            for (let k = 0; k < 6; k += 2)
+            for (let k = axis; k < 6; k += 2)
                 home[t * 6 + k] = pos[t * 6 + k] = left;
         }
     }
@@ -183,7 +250,7 @@ function renderTriangles(target, base64, size, options = {}) {
         animStops.push(startAnimateIn(final, home, pos, shown, size, options.animateGap ?? ANIMATE_GAP, options.animateTime ?? ANIMATE_TIME, draw));
     }
     if (animating && sweeping) {
-        animStops.push(startSweep(final, home, pos, size, options.animateTime ?? SWEEP_TIME, draw, options.onDone, options.doneAt ?? 1, leftward));
+        animStops.push(startSweep(final, home, pos, size, options.animateTime ?? SWEEP_TIME, draw, options.onDone, options.doneAt ?? 1, leftward, axis));
     }
     else
         options.onDone?.();
@@ -243,6 +310,7 @@ function renderTriangles(target, base64, size, options = {}) {
             draw();
         };
         const total = morph.time ?? MORPH_TIME;
+        const style = morph.style ?? MORPH_STYLE;
         if (reduceMotion) {
             install();
             return Promise.resolve();
@@ -281,7 +349,7 @@ function renderTriangles(target, base64, size, options = {}) {
                 slide = { anim, dx: sx, dy: sy, total: duration };
             }
         };
-        if (MORPH_STYLE === "blow") {
+        if (style === "blow") {
             // At the same time: the old letter is blown out to the right, the leftmost triangles first, each
             // speeding up as it goes; and the new one unfolds from the left edge (the way a letter does when
             // a page first opens). Each is painted on a layer of its own and the two are laid over each
@@ -350,7 +418,7 @@ function renderTriangles(target, base64, size, options = {}) {
                 });
             });
         }
-        if (MORPH_STYLE === "outline") {
+        if (style === "outline") {
             // Three parts: every triangle's fill fades away to a faint outline; the outlines all move to their
             // new places; then the new fills come in one after another from the lowest, the outlines fading as they do.
             const from = new Float32Array(home);
@@ -427,7 +495,90 @@ function renderTriangles(target, base64, size, options = {}) {
                 });
             });
         }
-        if (MORPH_STYLE === "layers") {
+        if (style === "match") {
+            // Each old triangle is paired with the new one most like it (place, size, grey, opacity and place in
+            // the stack), the pairs chosen together so the total difference is least; then every triangle moves
+            // to its partner's place, grey and opacity, each setting off after a small random wait.
+            // The picture depends on painting order, so a triangle's place in the stack also moves, from its
+            // old rank to its partner's: the order is the old picture's at the start and the new one's at the end.
+            const from = new Float32Array(home);
+            const fromGray = new Float32Array(grayV);
+            const fromAlpha = new Float32Array(alphaV);
+            const fromRank = new Float32Array(n);
+            for (let k = 0; k < n; k++)
+                fromRank[paintOrder[k]] = k;
+            const shape = (set, t) => {
+                const p = t * 6;
+                const cx = (set[p] + set[p + 2] + set[p + 4]) / 3;
+                const cy = (set[p + 1] + set[p + 3] + set[p + 5]) / 3;
+                const area = Math.abs((set[p + 2] - set[p]) * (set[p + 5] - set[p + 1]) - (set[p + 4] - set[p]) * (set[p + 3] - set[p + 1])) / 2;
+                return [cx, cy, Math.sqrt(area)];
+            };
+            const cost = new Float64Array(n * n);
+            for (let i = 0; i < n; i++) {
+                const [ax, ay, as] = shape(from, i);
+                for (let j = 0; j < n; j++) {
+                    const [bx, by, bs] = shape(goal, j);
+                    cost[i * n + j] = Math.hypot(bx - ax, by - ay) / size + Math.abs(bs - as) / size
+                        + MATCH_GRAY * Math.abs(goalGray[j] - fromGray[i]) / 255
+                        + MATCH_ALPHA * Math.abs(goalAlpha[j] - fromAlpha[i])
+                        + MATCH_RANK * Math.abs(j - fromRank[i]) / n;
+                }
+            }
+            const match = assign(cost, n);
+            const partner = new Float32Array(n * 6);
+            for (let t = 0; t < n; t++)
+                for (let i = 0; i < 6; i++)
+                    partner[t * 6 + i] = goal[match[t] * 6 + i];
+            const to = pairVertices(from, partner);
+            const wait = new Float32Array(n);
+            for (let t = 0; t < n; t++)
+                wait[t] = Math.random() * MATCH_SPREAD * total;
+            const travel = total * (1 - MATCH_SPREAD);
+            const key = new Float32Array(n);
+            const byKey = Array.from({ length: n }, (_, t) => t);
+            slideBy(morph.shift, morph.since);
+            return new Promise((resolve) => {
+                let frame = 0;
+                let start = 0;
+                const step = (now) => {
+                    if (!start)
+                        start = morph.since ?? now;
+                    const elapsed = (now - start) / 1000;
+                    for (let t = 0; t < n; t++) {
+                        const u = Math.min(Math.max((elapsed - wait[t]) / travel, 0), 1);
+                        const e = u < 0.5 ? 4 * u * u * u : 1 - (-2 * u + 2) ** 3 / 2;
+                        for (let k = t * 6; k < t * 6 + 6; k++) {
+                            const next = from[k] + (to[k] - from[k]) * e;
+                            pos[k] += next - home[k];
+                            home[k] = next;
+                        }
+                        const j = match[t];
+                        grayV[t] = fromGray[t] + (goalGray[j] - fromGray[t]) * e;
+                        alphaV[t] = fromAlpha[t] + (goalAlpha[j] - fromAlpha[t]) * e;
+                        grays[t] = fillOf(grayV[t], alphaV[t]);
+                        key[t] = fromRank[t] + (j - fromRank[t]) * e;
+                    }
+                    // ties (two triangles crossing ranks) go to the one that will end lower
+                    byKey.sort((a, b) => key[a] - key[b] || match[a] - match[b]);
+                    for (let k = 0; k < n; k++)
+                        paintOrder[k] = byKey[k];
+                    draw();
+                    if (elapsed < total)
+                        frame = requestAnimationFrame(step);
+                    else {
+                        install();
+                        resolve();
+                    }
+                };
+                frame = requestAnimationFrame(step);
+                animStops.push(() => {
+                    cancelAnimationFrame(frame);
+                    resolve();
+                });
+            });
+        }
+        if (style === "layers") {
             // Triangle by triangle from the lowest layer up: each in turn moves to the place, grey and
             // opacity of the one at the same position in the other file, the lowest first.
             const from = new Float32Array(home);
@@ -581,20 +732,21 @@ function startAnimateIn(final, home, pos, shown, size, gap, travel, draw) {
     return () => cancelAnimationFrame(frame);
 }
 /**
- * A line crosses the image from left to right (right to left if `leftward`) in `travel` seconds (easing in and out).
+ * A line crosses the image from left to right (right to left if `leftward`; top to bottom if `axis` is 1, measuring
+ * y instead of x throughout) in `travel` seconds (easing in and out).
  * A triangle starts to stretch when the line reaches its leftmost point and is full size
  * once the line has passed its rightmost (or SWEEP_MIN_SPAN of the image further on, for
  * very narrow ones). Home positions are updated as it goes, so a push from the cursor is
  * carried along.
  */
-function startSweep(final, home, pos, size, travel, draw, onDone, doneAt, leftward) {
+function startSweep(final, home, pos, size, travel, draw, onDone, doneAt, leftward, axis = 0) {
     const n = final.length / 6;
     // anchor: the x a triangle stretches from; lead: the same measured along the sweep (from the edge it starts at)
     const anchor = new Float32Array(n);
     const lead = new Float32Array(n);
     const span = new Float32Array(n);
     for (let t = 0; t < n; t++) {
-        const xs = [final[t * 6], final[t * 6 + 2], final[t * 6 + 4]];
+        const xs = [final[t * 6 + axis], final[t * 6 + 2 + axis], final[t * 6 + 4 + axis]];
         anchor[t] = leftward ? Math.max(...xs) : Math.min(...xs);
         lead[t] = leftward ? size - anchor[t] : anchor[t];
         span[t] = Math.max(Math.max(...xs) - Math.min(...xs), size * SWEEP_MIN_SPAN);
@@ -609,7 +761,7 @@ function startSweep(final, home, pos, size, travel, draw, onDone, doneAt, leftwa
         for (let t = 0; t < n; t++) {
             const u = Math.min(Math.max((line - lead[t]) / span[t], 0), 1);
             const e = 1 - (1 - u) ** 2;
-            for (let k = 0; k < 6; k += 2) {
+            for (let k = axis; k < 6; k += 2) {
                 const next = anchor[t] + (final[t * 6 + k] - anchor[t]) * e;
                 pos[t * 6 + k] += next - home[t * 6 + k];
                 home[t * 6 + k] = next;

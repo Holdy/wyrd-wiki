@@ -252,10 +252,10 @@ export function createChameleon({ x, y, heading = -Math.PI / 2, length, paper: p
       G.phase = 'hold'; G.timer = G.holdLen = 0; G.pair = 1 - G.pair;
       // turning on the spot: once all four feet have stepped (both pairs), pause for half a second before the next round
       if (G.spin) { G.spinSteps = (G.spinSteps || 0) + 1; if (G.spinSteps % 2 === 0) G.timer = G.holdLen = 0.5; } else G.spinSteps = 0;
-      // walking: go in short bursts of one to three steps, each followed by a short pause
+      // walking: go in short bursts of one to five steps, each followed by a short pause
       if (!G.spin && !G.tidy) {
         G.walkSteps = (G.walkSteps || 0) + 1;
-        if (G.walkSteps >= (G.burst || 1)) { G.timer = G.holdLen = rand(0.3, 0.8); G.walkSteps = 0; G.burst = 1 + Math.floor(Math.random() * 3); }
+        if (G.walkSteps >= (G.burst || 1)) { G.timer = G.holdLen = rand(0.3, 0.8); G.walkSteps = 0; G.burst = 1 + Math.floor(Math.random() * 5); }
       }
     }
   }

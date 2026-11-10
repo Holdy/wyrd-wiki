@@ -144,6 +144,7 @@ aside ul.realms { margin: 0; }
 /* The drawing for an open story's first tag, at the top of the menu column */
 #tag-image { position: relative; margin-bottom: 1.2rem; }
 #tag-image:empty { display: none; }
+#tag-image.waiting { display: block; height: 200px; }   /* keeps the drawing's place while it waits for the story */
 #tag-image canvas { display: block; mix-blend-mode: multiply; }
 .empty, .hint {
   font-style: italic;

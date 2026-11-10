@@ -162,12 +162,16 @@ The rest of each title (everything after the illuminated letter, and the "yrd Wi
 - Which tags have drawings comes from `rsc/tags/index.txt`, which is loaded in the background when the page starts. It must be kept up to date.
 - The drawing is 200 px, multiplied onto the paper like the letters, with no tooltip. Its points flee the mouse and the flyer in the same way.
 - It builds up on screen: each triangle starts as a dot in the middle of the image and moves out to its position and size (see "Animating a drawing in" below).
+- Going from one story to another, the drawing already showing morphs into the new one instead (`showTag()` in `rsc/js/site.js`, `morphTo(genome, { style: "match" })`): each triangle is paired with the most similar triangle of the new drawing (place, size, grey, opacity and place in the stack, all 90 pairs chosen together for the least total difference) and moves, reshapes and changes shade into it after a short random wait, over 1.5 seconds (`TAG_MORPH_TIME`). As the picture depends on painting order, each triangle's place in the stack also moves from its old rank to its partner's, so the order is the old drawing's at the start and the new one's at the end. A story with the same drawing leaves it as it is. Tuned by `MATCH_GRAY`, `MATCH_ALPHA`, `MATCH_RANK` and `MATCH_SPREAD` in `rsc/js/triangles.js`; the illuminated letters keep their own morph (`MORPH_STYLE`).
+- Taller than wide (portrait), where the drawing sits below the story, a story's drawing waits until the story's text has wiped fully in (its place is kept empty meanwhile) and then unfolds from the top down (`animateIn: "sweep-down"`), or morphs from the last story's drawing, which stays in its place while it waits.
 
 ### Animating a drawing in
 
 `renderTriangles` (in `rsc/js/triangles.js`) takes an option `animateIn: "from-center"`. In triangle order, each triangle starts as a dot in the middle of the image and eases out to its real position and size. A new one sets off every 1/100 second (`animateGap`, in seconds) and each takes 3 seconds to arrive (`animateTime`), so a 90-triangle drawing finishes after about 4 seconds. Triangles keep their colour throughout; those that haven't set off yet aren't drawn. It works together with the mouse-repel option, and is skipped under reduced motion. Only the menu's tag drawing uses it so far.
 
 `animateIn: "sweep-right"` is used by the illuminated letters. An imaginary line crosses the image from left to right in 2 seconds (`animateTime`, default `SWEEP_TIME`), easing in and out. Each triangle starts flat, all three points at its own leftmost x (so it draws nothing), and stretches to its real width as the line crosses it; very narrow triangles take at least 8% of the image (`SWEEP_MIN_SPAN`). `onDone` is called when the sweep has run `doneAt` of its time (default 1; the title uses 1/3 to start the quill), and at once if nothing animates. Both options work with mouse-repel and are skipped under reduced motion.
+
+`animateIn: "sweep-down"` is the same sweep turned on its side: the line runs from the top edge to the bottom, and each triangle starts flat at its own topmost y. It is used by the tag drawing in portrait.
 
 These options exist only in this site's copy of `rsc/js/triangles.js`, not in the triangle-evolution project, so keep it if you copy a newer renderer over.
 

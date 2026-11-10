@@ -320,9 +320,37 @@
     return tags.filter(function (t) { return have.indexOf(t) >= 0; })[0] || (have.indexOf("book") >= 0 ? "book" : null);   // a story with no drawing of its own gets the book
   }
 
-  async function drawTag(box, tag) {
+  // Shows a story's drawing in the menu. If another story's drawing is already there, it morphs into this one
+  // (each triangle travelling to the most similar one in the new drawing); otherwise this one sweeps in (`how`).
+  var tagShown = null;     // the tag whose drawing is showing, or on its way
+  var TAG_MORPH_TIME = 1.5;   // seconds for one drawing to morph into the next (the letters take 3)
+  async function showTag(tag, how) {
+    if (tag === tagShown) return;
+    tagShown = tag;
+    var canvas = tagImageEl.querySelector("canvas");
+    if (!canvas || !canvas.morphTo || !tagImageEl.genome) {
+      tagImageEl.textContent = "";
+      tagImageEl.genome = null;
+      return drawTag(tagImageEl, tag, how);
+    }
     try {
-      var canvas = renderTriangles(box, await genomeBase64("/rsc/tags/" + tag + ".bin"), 200, { repel: true, animateIn: "sweep-left", ink: RUBRIC });
+      var genome = await genomeBase64("/rsc/tags/" + tag + ".bin");
+      if (tagShown !== tag || !canvas.isConnected) return;
+      if (genome.length !== tagImageEl.genome.length) {          // a different number of triangles can't morph
+        tagImageEl.textContent = "";
+        return drawTag(tagImageEl, tag, how);
+      }
+      tagImageEl.genome = genome;
+      canvas.morphTo(genome, { style: "match", time: TAG_MORPH_TIME });
+    } catch (e) {}
+  }
+
+  async function drawTag(box, tag, how) {
+    try {
+      var genome = await genomeBase64("/rsc/tags/" + tag + ".bin");
+      if (box === tagImageEl && tagShown !== tag) return;      // another story's drawing was asked for meanwhile
+      var canvas = renderTriangles(box, genome, 200, { repel: true, animateIn: how || "sweep-left", ink: RUBRIC });
+      if (box === tagImageEl) box.genome = genome;
       canvas.setAttribute("aria-hidden", "true");
     } catch (e) {}
   }
@@ -1500,9 +1528,23 @@
       breadcrumbPanelEl.appendChild(li);
     });
 
-    // the open story is not listed again: its first tag's drawing sits at the top instead
-    tagImageEl.textContent = "";
-    if (state.tagImage) drawTag(tagImageEl, state.tagImage);
+    // the open story is not listed again: its first tag's drawing sits at the top instead.
+    // Taller than wide it sits below the story instead, and waits until the story's text has wiped fully in
+    // (render resolves textShown); its place is kept meanwhile, still showing the last story's drawing if there was one.
+    tagImageEl.classList.remove("waiting");
+    textShown = null;
+    if (!state.tagImage) { tagImageEl.textContent = ""; tagImageEl.genome = null; tagShown = null; }
+    else if (state.story && window.matchMedia("(max-aspect-ratio: 1/1)").matches) {
+      var wait = textShown = {}, tag = state.tagImage;
+      wait.promise = new Promise(function (resolve) { wait.resolve = resolve; });
+      if (!tagImageEl.querySelector("canvas")) tagImageEl.classList.add("waiting");
+      genomeBase64("/rsc/tags/" + tag + ".bin").catch(function () {});     // load it meanwhile
+      wait.promise.then(function () {
+        if (textShown !== wait) return;          // another page has come since
+        tagImageEl.classList.remove("waiting");
+        showTag(tag, "sweep-down");
+      });
+    } else showTag(state.tagImage, "sweep-left");
     optionsEl.textContent = "";
     state.items.forEach(function (item) {
       var li = document.createElement("li");
@@ -1517,7 +1559,11 @@
     }
   }
 
-  // Wipe a block of page content in or out, top to bottom (see .wipe-in in the styles).
+  // Set by renderSide when the tag drawing waits for the story's text: { promise, resolve }, resolved once it has wiped in.
+  var textShown = null;
+
+  // Wipe a block of page content in or out, top to bottom (see .wipe-in in the styles). Returns a promise
+  // that resolves when the wipe has finished.
   var WIPE_MS = 1100;          // how long the wipe takes to cross the page
   var WIPE_OUT_AFTER = 500;    // ms after the click that the old content starts to go: it is half gone when the new page arrives, which then follows close behind
   // The closing diamonds fade out as the old page goes and back in as the new one finishes arriving, so they don't jump.
@@ -1532,8 +1578,9 @@
   function wipe(block, how, delay) {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       if (how === "wipe-out" && block.parentNode) block.parentNode.removeChild(block);
-      return;
+      return Promise.resolve();
     }
+    var finished, ended = new Promise(function (resolve) { finished = resolve; });
     block.style.setProperty("--wipe-end", block.offsetHeight + 48 + 40 + "px");
     block.style.setProperty("--wipe-ms", WIPE_MS + "ms");
     block.style.animationDelay = delay + "ms";
@@ -1543,7 +1590,9 @@
       block.removeEventListener("animationend", done);
       if (how === "wipe-out") { if (block.parentNode) block.parentNode.removeChild(block); }
       else block.classList.remove(how);
+      finished();
     });
+    return ended;
   }
 
   // When the title changes height (a longer title wraps, a different letter sits lower) the diamonds
@@ -1672,7 +1721,8 @@
     }
     var title = (atHome ? homeEl : viewEl).querySelector("h1");
     if (title) title.after(pips);
-    if (!atHome) wipe(body, "wipe-in", 0);
+    var shown = textShown;
+    if (!atHome) wipe(body, "wipe-in", 0).then(function () { if (shown) shown.resolve(); });
     fadeClosing(true);
     watchTitle(title);
     followTitle();
