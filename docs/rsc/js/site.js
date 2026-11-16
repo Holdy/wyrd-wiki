@@ -57,7 +57,7 @@
       state.message = title;
     } else if (page === "story") {
       state.story = {
-        title: title, paragraphs: texts(".summary p"), details: texts(".details p"),
+        title: title, paragraphs: texts(".summary p"), details: texts(".details p"), openings: texts(".paragraphs p"),
         tags: (view.dataset.tags || "").split(",").map(function (t) { return t.trim(); }).filter(Boolean)
       };
     }
@@ -1694,12 +1694,14 @@
         var h1 = el("h1", null, "story-title");
         viewEl.appendChild(h1);
         addInitial(h1, state.story.title);
-        body.appendChild(el("h2", "Summary"));
+        if (state.story.paragraphs.length) body.appendChild(el("h2", "Summary"));
         state.story.paragraphs.forEach(function (p, i) { body.appendChild(paragraph(p, i === 0)); });
         if (state.story.details.length) {
           body.appendChild(el("h2", "Details", "later-heading"));
           state.story.details.forEach(function (p, i) { body.appendChild(paragraph(p, i === 0)); });
         }
+        // each #paragraph section of the .md: one paragraph, always with an illuminated first letter
+        state.story.openings.forEach(function (p) { body.appendChild(paragraph(p, true)); });
       } else {
         var h1 = el("h1", null, "story-title");
         viewEl.appendChild(h1);

@@ -133,7 +133,7 @@ function parseStory(chunk: string, subject: string): Story | undefined {
   const title = sections["title"]?.split("\n").map((l) => l.trim()).find(Boolean);
   if (!title) return undefined;
   const tags = (sections["tags"] ?? "").split(/[,\n]/).map((t) => t.trim().toLowerCase()).filter(Boolean);
-  if (!sections["summary"]) warn(`"${title}" (${subject}) has no #summary section`);
+  if (!sections["summary"] && !sections["paragraph"]) warn(`"${title}" (${subject}) has no #summary section`);
   return { text, title, tags, subject };
 }
 
@@ -230,6 +230,22 @@ function storySections(text: string): Record<string, string> {
   return sections;
 }
 
+// The text of each #paragraph section, in order: a page may have any number, each shown as one paragraph that starts
+// with an illuminated letter (storySections keeps only the last section of a name, so they are read here).
+function storyParagraphs(text: string): string[] {
+  const out: string[] = [];
+  let current: string | null = null;
+  for (const line of text.split(/\r?\n/)) {
+    const m = line.match(/^#+\s*(.*)$/);
+    if (m) {
+      if (current !== null && current.trim()) out.push(current.trim().replace(/\s+/g, " "));
+      current = m[1].trim().toLowerCase() === "paragraph" ? "" : null;
+    } else if (current !== null) current += line + "\n";
+  }
+  if (current !== null && current.trim()) out.push(current.trim().replace(/\s+/g, " "));
+  return out;
+}
+
 function describe(text: string): string {
   const flat = text.replace(/\*/g, "").replace(/\s+/g, " ").trim();
   if (flat.length <= 155) return flat;
@@ -270,14 +286,15 @@ ${o.view}
 }
 
 function storyPage(s: Story, url: string, crumbs: Link[], menu: Link[]): string {
-  const sections = storySections(s.text);
+  const sections = storySections(s.text), own = storyParagraphs(s.text);
   const block = (name: string, heading: string) =>
     sections[name]?.trim() ? [`        <div class="${name}">`, `          <h2>${heading}</h2>`, ...paragraphs(sections[name]).map((p) => `          <p>${inline(p)}</p>`), "        </div>"].join("\n") : "";
   return page({
     title: `${s.title} — Wyrd Wiki`,
-    description: describe(sections["summary"] ?? "") || s.title,
+    description: describe(sections["summary"] ?? "") || describe(own.join(" ")) || s.title,
     url, crumbs, menu,
-    view: article(`data-page="story" data-tags="${htmlEscape(s.tags.join(", "))}"`, `        <h1>${htmlEscape(s.title)}</h1>`, block("summary", "Summary"), block("details", "Details")),
+    view: article(`data-page="story" data-tags="${htmlEscape(s.tags.join(", "))}"`, `        <h1>${htmlEscape(s.title)}</h1>`, block("summary", "Summary"), block("details", "Details"),
+      own.length ? ["        <div class=\"paragraphs\">", ...own.map((p) => `          <p>${inline(p)}</p>`), "        </div>"].join("\n") : ""),
   });
 }
 
@@ -458,8 +475,12 @@ reserve(root);
 emit(root, [], [], new Set());
 for (const { story, dir, names } of hiddenStories) files.set(path.join(dir, `${storyName(story.title, names, dir)}.md`), story.text + "\n");
 
-// The mirabilia are written by hand: each docs/mirabilia/<group>/<name>.md makes the page beside it.
-const mirabilia = (await walk(path.join(siteRoot, "mirabilia"), /\.md$/).catch(() => [])).sort();
+// Every other .md in docs is written by hand (the mirabilia, and pages such as docs/alphabet.md): each makes the page
+// beside it. Not the continent folders (filed above), rsc (the site's own files) or 404.md (the 404 page's text).
+const handWritten = new Set([...CONTINENTS.map(dirName), "rsc"]);
+const mirabilia = (await Promise.all((await readdir(siteRoot, { withFileTypes: true })).map((e) =>
+  e.isDirectory() ? (handWritten.has(e.name) ? [] : walk(path.join(siteRoot, e.name), /\.md$/).catch(() => []))
+  : e.name.endsWith(".md") && e.name !== "404.md" ? [path.join(siteRoot, e.name)] : []))).flat().sort();
 const entries: { file: string; parts: string[]; story: Story }[] = [];
 for (const file of mirabilia) {
   const story = parseStory(await readFile(file, "utf8"), "mirabilia");

@@ -832,9 +832,6 @@ export function createChameleon({ x, y, heading = -Math.PI / 2, length, paper: p
 
   function render(){
     INK = INK_LEVELS[Math.round(ease(WAKE.ink) * 15)];   // waking: the whole drawing fades from pale to full ink
-    // the canvas follows the chameleon, centred a little behind its shoulders; drawing stays in page coordinates
-    const c = spine[Math.round(0.35 * (NSEG - 1))], nx = Math.round(c.x - C / 2), ny = Math.round(c.y - C / 2);
-    if (nx !== bx || ny !== by) { bx = nx; by = ny; cv.style.transform = `translate(${bx}px,${by}px)`; }
     ctx.setTransform(DPR, 0, 0, DPR, -bx * DPR, -by * DPR);
     ctx.clearRect(bx, by, C, C);
     const pts = drawnSpine();
@@ -850,6 +847,14 @@ export function createChameleon({ x, y, heading = -Math.PI / 2, length, paper: p
   for (const l of LEGS) { l.pos = homeOf(l); l.ang = footAngle(l); }
   LEGS.forEach(solveLeg);
 
+  // the canvas follows the chameleon, centred a little behind its shoulders; drawing stays in page coordinates.
+  // This runs every frame, even while drawing is skipped, so the canvas is always where the chameleon is and the
+  // observer below sees it come back into view.
+  function place(){
+    const c = spine[Math.round(0.35 * (NSEG - 1))], nx = Math.round(c.x - C / 2), ny = Math.round(c.y - C / 2);
+    if (nx !== bx || ny !== by) { bx = nx; by = ny; cv.style.transform = `translate(${bx}px,${by}px)`; }
+  }
+
   // drawing is skipped while it is scrolled out of view
   let visible = true;
   const seen = new IntersectionObserver(([en]) => { visible = en.isIntersecting; });
@@ -858,10 +863,11 @@ export function createChameleon({ x, y, heading = -Math.PI / 2, length, paper: p
   function loop(now){
     const dt = Math.min(1 / 30, (now - last) / 1000); last = now;
     update(dt);
+    place();
     if (visible) render();
     frame = requestAnimationFrame(loop);
   }
-  update(0.001); render();
+  update(0.001); place(); render();
   frame = requestAnimationFrame(loop);
 
   // a new walk or hunt: the one in hand is dropped, and it sets off at its next pause between steps
