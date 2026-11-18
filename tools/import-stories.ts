@@ -432,7 +432,7 @@ async function addDocsStories(keep: (file: string) => boolean): Promise<string[]
       }
       await visit(full, [...steps, step], depth + 1);
     }
-    for (const e of entries.filter((e) => e.isFile() && e.name.endsWith(".md"))) {
+    for (const e of entries.filter((e) => e.isFile() && e.name.endsWith(".md") && !e.name.includes(".duplicate"))) {
       const file = path.join(dir, e.name);
       if (!keep(file)) continue;
       const story = parseStory(await readFile(file, "utf8"), "docs");
@@ -475,12 +475,14 @@ reserve(root);
 emit(root, [], [], new Set());
 for (const { story, dir, names } of hiddenStories) files.set(path.join(dir, `${storyName(story.title, names, dir)}.md`), story.text + "\n");
 
+// Files with ".duplicate" in their name (copies such as foo.duplicate2.md) are skipped here and among the stories.
 // Every other .md in docs is written by hand (the mirabilia, and pages such as docs/alphabet.md): each makes the page
 // beside it. Not the continent folders (filed above), rsc (the site's own files) or 404.md (the 404 page's text).
 const handWritten = new Set([...CONTINENTS.map(dirName), "rsc"]);
 const mirabilia = (await Promise.all((await readdir(siteRoot, { withFileTypes: true })).map((e) =>
   e.isDirectory() ? (handWritten.has(e.name) ? [] : walk(path.join(siteRoot, e.name), /\.md$/).catch(() => []))
-  : e.name.endsWith(".md") && e.name !== "404.md" ? [path.join(siteRoot, e.name)] : []))).flat().sort();
+  : e.name.endsWith(".md") && e.name !== "404.md" ? [path.join(siteRoot, e.name)] : []))).flat()
+  .filter((f) => !path.basename(f).includes(".duplicate")).sort();
 const entries: { file: string; parts: string[]; story: Story }[] = [];
 for (const file of mirabilia) {
   const story = parseStory(await readFile(file, "utf8"), "mirabilia");

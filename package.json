@@ -1,6 +1,7 @@
 {
   "scripts": {
     "server": "python3 tools/serve.py",
+    "generate": "bun tools/import-stories.ts --generate",
     "quill": "tsc -p docs/rsc/quill/tsconfig.json",
     "quill-demo": "tsc -p docs/rsc/quill/tsconfig.json && python3 docs/rsc/quill/demo/serve.py 8001"
   },
